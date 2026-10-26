@@ -1,0 +1,645 @@
+{
+ "program": "mayhem",
+ "sha256": "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199bdb",
+ "insns": 83947,
+ "functions": 374,
+ "name_table": null,
+ "name_probe": {
+  "fn": 78653,
+  "abi": "r2ptr",
+  "base": 2000,
+  "entries": 4100,
+  "distinct": 71,
+  "fallback": "Deprecated",
+  "covers_observed": 14,
+  "sample": [
+   "ConstraintMut",
+   "ConstraintHasOne",
+   "ConstraintSigner",
+   "ConstraintRaw",
+   "ConstraintOwner",
+   "ConstraintRentExempt"
+  ]
+ },
+ "handlers": {
+  "burn_tokens": 65505,
+  "buy": 66175,
+  "buy_pump_swap": 66591,
+  "buy_v2": 66383,
+  "extend_account": 65564,
+  "initialize_fee_recipient": 64577,
+  "initialize_global_params": 64508,
+  "initialize_mayhem_state": 66014,
+  "reset_sol_deployed": 65325,
+  "reset_stable_deployed": 65369,
+  "reset_state": 65265,
+  "resume_trading": 65413,
+  "sell": 66071,
+  "sell_pump_swap": 66487,
+  "sell_v2": 66279,
+  "stop_trading": 65459,
+  "sweep_fees": 64662,
+  "sweep_fees_admin": 64723,
+  "update_admin": 65171,
+  "update_global_params": 65611,
+  "update_max_sol_per_sweep": 64784,
+  "update_max_stable_per_sweep": 64848,
+  "update_trader": 65077,
+  "withdraw_admin": 64912,
+  "withdraw_quote_admin": 64994
+ },
+ "observed_codes": [
+  6000,
+  6002,
+  6003,
+  6004,
+  6005,
+  6006,
+  6007,
+  6008,
+  6010,
+  6014,
+  6015,
+  6016,
+  6017,
+  6019
+ ],
+ "sites": [
+  {
+   "pc": 22613,
+   "byte": 180904,
+   "code": 6000,
+   "name": null,
+   "func": 22573,
+   "file": "programs/mayhem-program/src/state.rs",
+   "file_len": 36,
+   "line": 215,
+   "handlers": [
+    {
+     "handler": "stop_trading",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22683,
+   "byte": 181464,
+   "code": 6000,
+   "name": null,
+   "func": 22640,
+   "file": "programs/mayhem-program/src/state.rs",
+   "file_len": 36,
+   "line": 221,
+   "handlers": [
+    {
+     "handler": "resume_trading",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23501,
+   "byte": 188008,
+   "code": 6000,
+   "name": null,
+   "func": 23459,
+   "file": "programs/mayhem-program/src/state.rs",
+   "file_len": 36,
+   "line": 556,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    },
+    {
+     "handler": "sell_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 10834,
+   "byte": 86672,
+   "code": 6002,
+   "name": null,
+   "func": 10700,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "buy_pump_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 12125,
+   "byte": 97000,
+   "code": 6002,
+   "name": null,
+   "func": 11981,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "sell_pump_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22556,
+   "byte": 180448,
+   "code": 6002,
+   "name": null,
+   "func": 22349,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "update_global_params",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 22835,
+   "byte": 182680,
+   "code": 6002,
+   "name": null,
+   "func": 22707,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 23141,
+   "byte": 185128,
+   "code": 6002,
+   "name": null,
+   "func": 23025,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    },
+    {
+     "handler": "sell_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 23738,
+   "byte": 189904,
+   "code": 6003,
+   "name": null,
+   "func": 23608,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    },
+    {
+     "handler": "sell_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 7023,
+   "byte": 56184,
+   "code": 6004,
+   "name": null,
+   "func": 6931,
+   "file": "programs/mayhem-program/src/instructions/burn.rs",
+   "file_len": 48,
+   "line": 82,
+   "handlers": [
+    {
+     "handler": "burn_tokens",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23675,
+   "byte": 189400,
+   "code": 6004,
+   "name": null,
+   "func": 23608,
+   "file": "programs/mayhem-program/src/state.rs",
+   "file_len": 36,
+   "line": 579,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    },
+    {
+     "handler": "sell_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 6979,
+   "byte": 55832,
+   "code": 6005,
+   "name": null,
+   "func": 6931,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "burn_tokens",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22999,
+   "byte": 183992,
+   "code": 6006,
+   "name": null,
+   "func": 22707,
+   "file": "programs/mayhem-program/src/state.rs",
+   "file_len": 36,
+   "line": 243,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 22946,
+   "byte": 183568,
+   "code": 6007,
+   "name": null,
+   "func": 22707,
+   "file": "programs/mayhem-program/src/state.rs",
+   "file_len": 36,
+   "line": 250,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 15570,
+   "byte": 124560,
+   "code": 6008,
+   "name": null,
+   "func": 14209,
+   "file": "programs/mayhem-program/src/instructions/pump_interface.rs",
+   "file_len": 58,
+   "line": 313,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 17206,
+   "byte": 137648,
+   "code": 6008,
+   "name": null,
+   "func": 15940,
+   "file": "programs/mayhem-program/src/instructions/pump_interface.rs",
+   "file_len": 58,
+   "line": 436,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 19473,
+   "byte": 155784,
+   "code": 6008,
+   "name": null,
+   "func": 17564,
+   "file": "programs/mayhem-program/src/instructions/pump_interface_v2.rs",
+   "file_len": 61,
+   "line": 376,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 21737,
+   "byte": 173896,
+   "code": 6008,
+   "name": null,
+   "func": 19895,
+   "file": "programs/mayhem-program/src/instructions/pump_interface_v2.rs",
+   "file_len": 61,
+   "line": 574,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 11957,
+   "byte": 95656,
+   "code": 6010,
+   "name": null,
+   "func": 11917,
+   "file": "programs/mayhem-program/src/instructions/pump_amm_interface.rs",
+   "file_len": 62,
+   "line": 376,
+   "handlers": [
+    {
+     "handler": "buy_pump_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 14185,
+   "byte": 113480,
+   "code": 6010,
+   "name": null,
+   "func": 14145,
+   "file": "programs/mayhem-program/src/instructions/pump_amm_interface.rs",
+   "file_len": 62,
+   "line": 568,
+   "handlers": [
+    {
+     "handler": "sell_pump_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 22220,
+   "byte": 177760,
+   "code": 6014,
+   "name": null,
+   "func": 22157,
+   "file": "programs/mayhem-program/src/state.rs",
+   "file_len": 36,
+   "line": 110,
+   "handlers": [
+    {
+     "handler": "withdraw_admin",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 22316,
+   "byte": 178528,
+   "code": 6014,
+   "name": null,
+   "func": 22253,
+   "file": "programs/mayhem-program/src/state.rs",
+   "file_len": 36,
+   "line": 125,
+   "handlers": [
+    {
+     "handler": "withdraw_quote_admin",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 23568,
+   "byte": 188544,
+   "code": 6015,
+   "name": null,
+   "func": 23459,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    },
+    {
+     "handler": "sell_pump_swap",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 7723,
+   "byte": 61784,
+   "code": 6016,
+   "name": null,
+   "func": 7650,
+   "file": "programs/mayhem-program/src/instructions/extend_account.rs",
+   "file_len": 58,
+   "line": 89,
+   "handlers": [
+    {
+     "handler": "extend_account",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 8001,
+   "byte": 64008,
+   "code": 6016,
+   "name": null,
+   "func": 7650,
+   "file": "programs/mayhem-program/src/instructions/extend_account.rs",
+   "file_len": 58,
+   "line": 108,
+   "handlers": [
+    {
+     "handler": "extend_account",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 8717,
+   "byte": 69736,
+   "code": 6016,
+   "name": null,
+   "func": 8649,
+   "file": "programs/mayhem-program/src/instructions/fee_recipients.rs",
+   "file_len": 58,
+   "line": 399,
+   "handlers": [
+    {
+     "handler": "sweep_fees_admin",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 9717,
+   "byte": 77736,
+   "code": 6016,
+   "name": null,
+   "func": 9650,
+   "file": "programs/mayhem-program/src/instructions/fee_recipients.rs",
+   "file_len": 58,
+   "line": 431,
+   "handlers": [
+    {
+     "handler": "sweep_fees",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 8339,
+   "byte": 66712,
+   "code": 6017,
+   "name": null,
+   "func": 8298,
+   "file": "programs/mayhem-program/src/instructions/fee_recipients.rs",
+   "file_len": 58,
+   "line": 186,
+   "handlers": [
+    {
+     "handler": "initialize_fee_recipient",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 8251,
+   "byte": 66008,
+   "code": 6019,
+   "name": null,
+   "func": 8184,
+   "file": "programs/mayhem-program/src/instructions/fee_recipients.rs",
+   "file_len": 58,
+   "line": 61,
+   "handlers": [
+    {
+     "handler": "sweep_fees",
+     "depth": 2
+    }
+   ]
+  }
+ ]
+}

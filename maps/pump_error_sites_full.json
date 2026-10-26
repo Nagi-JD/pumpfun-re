@@ -1,0 +1,7944 @@
+{
+ "program": "pump",
+ "sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+ "insns": 215873,
+ "functions": 906,
+ "name_table": {
+  "fn": 179605,
+  "mode": "value",
+  "insns": 438,
+  "table": {
+   "0": {
+    "name": "NotAuthorized",
+    "at": 1802694,
+    "len": 13
+   },
+   "1": {
+    "name": "AlreadyInitialized",
+    "at": 1802707,
+    "len": 18
+   },
+   "2": {
+    "name": "TooMuchSolRequired",
+    "at": 1802725,
+    "len": 18
+   },
+   "3": {
+    "name": "TooLittleSolReceived",
+    "at": 1802743,
+    "len": 20
+   },
+   "4": {
+    "name": "MintDoesNotMatchBondingCurve",
+    "at": 1802763,
+    "len": 28
+   },
+   "5": {
+    "name": "BondingCurveComplete",
+    "at": 1802791,
+    "len": 20
+   },
+   "6": {
+    "name": "BondingCurveNotComplete",
+    "at": 1802811,
+    "len": 23
+   },
+   "7": {
+    "name": "NotInitialized",
+    "at": 1802834,
+    "len": 14
+   },
+   "8": {
+    "name": "WithdrawTooFrequent",
+    "at": 1802848,
+    "len": 19
+   },
+   "9": {
+    "name": "NewSizeShouldBeGreaterThanCurrentSize",
+    "at": 1802867,
+    "len": 37
+   },
+   "10": {
+    "name": "AccountTypeNotSupported",
+    "at": 1802904,
+    "len": 23
+   },
+   "11": {
+    "name": "InitialRealTokenReservesShouldBeLessThanTokenTotalSupply",
+    "at": 1802927,
+    "len": 56
+   },
+   "12": {
+    "name": "InitialVirtualTokenReservesShouldBeGreaterThanInitialRealTokenReserves",
+    "at": 1802983,
+    "len": 70
+   },
+   "13": {
+    "name": "FeeBasisPointsGreaterThanMaximum",
+    "at": 1792872,
+    "len": 32
+   },
+   "14": {
+    "name": "AllZerosWithdrawAuthority",
+    "at": 1803053,
+    "len": 25
+   },
+   "15": {
+    "name": "PoolMigrationFeeShouldBeLessThanFinalRealSolReserves",
+    "at": 1803078,
+    "len": 52
+   },
+   "16": {
+    "name": "PoolMigrationFeeShouldBeGreaterThanCreatorFeePlusMaxMigrateFees",
+    "at": 1803130,
+    "len": 63
+   },
+   "17": {
+    "name": "DisabledWithdraw",
+    "at": 1795744,
+    "len": 16
+   },
+   "18": {
+    "name": "DisabledMigrate",
+    "at": 1803193,
+    "len": 15
+   },
+   "19": {
+    "name": "InvalidCreator",
+    "at": 1803208,
+    "len": 14
+   },
+   "20": {
+    "name": "BuyZeroAmount",
+    "at": 1803222,
+    "len": 13
+   },
+   "21": {
+    "name": "NotEnoughTokensToBuy",
+    "at": 1803235,
+    "len": 20
+   },
+   "22": {
+    "name": "SellZeroAmount",
+    "at": 1803255,
+    "len": 14
+   },
+   "23": {
+    "name": "NotEnoughTokensToSell",
+    "at": 1803269,
+    "len": 21
+   },
+   "24": {
+    "name": "Overflow",
+    "at": 1795167,
+    "len": 8
+   },
+   "25": {
+    "name": "Truncation",
+    "at": 1803290,
+    "len": 10
+   },
+   "26": {
+    "name": "DivisionByZero",
+    "at": 1803300,
+    "len": 14
+   },
+   "27": {
+    "name": "NotEnoughRemainingAccounts",
+    "at": 1803314,
+    "len": 26
+   },
+   "28": {
+    "name": "AllFeeRecipientsShouldBeNonZero",
+    "at": 1803340,
+    "len": 31
+   },
+   "29": {
+    "name": "UnsortedNotUniqueFeeRecipients",
+    "at": 1803371,
+    "len": 30
+   },
+   "30": {
+    "name": "CreatorShouldNotBeZero",
+    "at": 1803401,
+    "len": 22
+   },
+   "31": {
+    "name": "StartTimeInThePast",
+    "at": 1803423,
+    "len": 18
+   },
+   "32": {
+    "name": "EndTimeInThePast",
+    "at": 1795568,
+    "len": 16
+   },
+   "33": {
+    "name": "EndTimeBeforeStartTime",
+    "at": 1803441,
+    "len": 22
+   },
+   "34": {
+    "name": "TimeRangeTooLarge",
+    "at": 1803463,
+    "len": 17
+   },
+   "35": {
+    "name": "EndTimeBeforeCurrentDay",
+    "at": 1803480,
+    "len": 23
+   },
+   "36": {
+    "name": "SupplyUpdateForFinishedRange",
+    "at": 1803503,
+    "len": 28
+   },
+   "37": {
+    "name": "DayIndexAfterEndIndex",
+    "at": 1803531,
+    "len": 21
+   },
+   "38": {
+    "name": "DayInActiveRange",
+    "at": 1795664,
+    "len": 16
+   },
+   "39": {
+    "name": "InvalidIncentiveMint",
+    "at": 1803552,
+    "len": 20
+   },
+   "40": {
+    "name": "BuyNotEnoughSolToCoverRent",
+    "at": 1803572,
+    "len": 26
+   },
+   "41": {
+    "name": "BuyNotEnoughSolToCoverFees",
+    "at": 1803598,
+    "len": 26
+   },
+   "42": {
+    "name": "BuySlippageBelowMinTokensOut",
+    "at": 1803624,
+    "len": 28
+   },
+   "43": {
+    "name": "NameTooLong",
+    "at": 1803652,
+    "len": 11
+   },
+   "44": {
+    "name": "SymbolTooLong",
+    "at": 1803663,
+    "len": 13
+   },
+   "45": {
+    "name": "UriTooLong",
+    "at": 1803676,
+    "len": 10
+   },
+   "46": {
+    "name": "CreateV2Disabled",
+    "at": 1795840,
+    "len": 16
+   },
+   "47": {
+    "name": "CpitializeMayhemFailed",
+    "at": 1803686,
+    "len": 22
+   },
+   "48": {
+    "name": "MayhemModeDisabled",
+    "at": 1803708,
+    "len": 18
+   },
+   "49": {
+    "name": "CreatorMigratedToSharingConfig",
+    "at": 1803726,
+    "len": 30
+   },
+   "50": {
+    "name": "UnableToDistributeCreatorVaultMigratedToSharingConfig",
+    "at": 1803756,
+    "len": 53
+   },
+   "51": {
+    "name": "SharingConfigNotActive",
+    "at": 1803809,
+    "len": 22
+   },
+   "52": {
+    "name": "UnableToDistributeCreatorFeesToExecutableRecipient",
+    "at": 1803831,
+    "len": 50
+   },
+   "53": {
+    "name": "BondingCurveAndSharingConfigCreatorMismatch",
+    "at": 1803881,
+    "len": 43
+   },
+   "54": {
+    "name": "ShareholdersAndRemainingAccountsMismatch",
+    "at": 1803924,
+    "len": 40
+   },
+   "55": {
+    "name": "InvalidShareBps",
+    "at": 1803964,
+    "len": 15
+   },
+   "56": {
+    "name": "CashbackNotEnabled",
+    "at": 1803979,
+    "len": 18
+   },
+   "57": {
+    "name": "BuybackFeeRecipientNotAuthorized",
+    "at": 1793096,
+    "len": 32
+   },
+   "58": {
+    "name": "AllBuybackFeeRecipientsShouldBeNonZero",
+    "at": 1803997,
+    "len": 38
+   },
+   "59": {
+    "name": "NotUniqueBuybackFeeRecipients",
+    "at": 1804035,
+    "len": 29
+   },
+   "60": {
+    "name": "BuybackBasisPointsOutOfRange",
+    "at": 1804064,
+    "len": 28
+   },
+   "61": {
+    "name": "WrongBuybackFeeRecipientsCount",
+    "at": 1804092,
+    "len": 30
+   },
+   "62": {
+    "name": "BuybackFeeRecipientMissing",
+    "at": 1804122,
+    "len": 26
+   },
+   "63": {
+    "name": "UnsupportedQuoteMint",
+    "at": 1804148,
+    "len": 20
+   },
+   "64": {
+    "name": "InvalidQuoteTokenProgram",
+    "at": 1804168,
+    "len": 24
+   },
+   "65": {
+    "name": "InvalidAssociatedQuoteBondingCurve",
+    "at": 1804192,
+    "len": 34
+   },
+   "66": {
+    "name": "QuoteMintWhitelistFull",
+    "at": 1804226,
+    "len": 22
+   },
+   "67": {
+    "name": "QuoteMintAlreadyWhitelisted",
+    "at": 1804248,
+    "len": 27
+   },
+   "68": {
+    "name": "QuoteMintNotWhitelisted",
+    "at": 1804275,
+    "len": 23
+   },
+   "69": {
+    "name": "QuoteMintNotEligibleForWhitelist",
+    "at": 1792712,
+    "len": 32
+   },
+   "70": {
+    "name": "UnableToDistributeCreatorFeesToUninitializedAccount",
+    "at": 1804298,
+    "len": 51
+   },
+   "71": {
+    "name": "MayhemModeQuoteMintNotAllowed",
+    "at": 1804349,
+    "len": 29
+   },
+   "72": {
+    "name": "MissingCashbackAccounts",
+    "at": 1804378,
+    "len": 23
+   },
+   "73": {
+    "name": "InvalidCashbackAccumulator",
+    "at": 1804401,
+    "len": 26
+   },
+   "74": {
+    "name": "InvalidBondingCurveV2",
+    "at": 1804427,
+    "len": 21
+   },
+   "75": {
+    "name": "InvalidQuoteControl",
+    "at": 1804448,
+    "len": 19
+   },
+   "76": {
+    "name": "InvalidCashbackRecipient",
+    "at": 1804467,
+    "len": 24
+   },
+   "77": {
+    "name": "CreatorFeeNotConfigurable",
+    "at": 1804491,
+    "len": 25
+   },
+   "78": {
+    "name": "CreatorFeeBpsOutOfRange",
+    "at": 1804516,
+    "len": 23
+   },
+   "79": {
+    "name": "CreatorFeeNotEditable",
+    "at": 1804539,
+    "len": 21
+   },
+   "80": {
+    "name": "CreatorFeeNotAllowedForCashbackCoin",
+    "at": 1804560,
+    "len": 35
+   },
+   "81": {
+    "name": "BondingCurveAlreadyMigrated",
+    "at": 1804595,
+    "len": 27
+   },
+   "82": {
+    "name": "CashbackDeprecated",
+    "at": 1804622,
+    "len": 18
+   },
+   "83": {
+    "name": "HolderRewardCreatorImmutable",
+    "at": 1804640,
+    "len": 28
+   },
+   "84": {
+    "name": "HolderRewardDisabled",
+    "at": 1804668,
+    "len": 20
+   },
+   "85": {
+    "name": "HolderRewardRecipientsMismatch",
+    "at": 1804688,
+    "len": 30
+   },
+   "86": {
+    "name": "HolderRewardsRentFloor",
+    "at": 1804718,
+    "len": 22
+   },
+   "87": {
+    "name": "HolderRewardTokenAccountMissing",
+    "at": 1804740,
+    "len": 31
+   },
+   "88": {
+    "name": "CtoNotAllowedForMayhemCoin",
+    "at": 1804771,
+    "len": 26
+   },
+   "89": {
+    "name": "CtoNewCreatorRequired",
+    "at": 1804797,
+    "len": 21
+   },
+   "90": {
+    "name": "CtoNewCreatorNotAllowed",
+    "at": 1804818,
+    "len": 23
+   },
+   "91": {
+    "name": "CreatorFeeNotConfigurableForQuote",
+    "at": 1804841,
+    "len": 33
+   },
+   "92": {
+    "name": "CtoCreatorAccountNotWritable",
+    "at": 1804874,
+    "len": 28
+   },
+   "93": {
+    "name": "CtoSharedVaultFrozen",
+    "at": 1804902,
+    "len": 20
+   },
+   "94": {
+    "name": "CashbackCoinNotSupported",
+    "at": 1804922,
+    "len": 24
+   },
+   "95": {
+    "name": "CreatorFeesNotSwept",
+    "at": 1804946,
+    "len": 19
+   },
+   "96": {
+    "name": "FeeTiersEmpty",
+    "at": 1804965,
+    "len": 13
+   },
+   "97": {
+    "name": "FeeConfigTooShort",
+    "at": 1804978,
+    "len": 17
+   },
+   "98": {
+    "name": "MultiHopDiscontinuousPath",
+    "at": 1804995,
+    "len": 25
+   },
+   "99": {
+    "name": "InvalidQuoteBondingCurve",
+    "at": 1805020,
+    "len": 24
+   },
+   "100": {
+    "name": "QuoteBondingCurveNotEligible",
+    "at": 1805044,
+    "len": 28
+   },
+   "101": {
+    "name": "QuotePoolAccountsRequired",
+    "at": 1805072,
+    "len": 25
+   },
+   "102": {
+    "name": "QuotePoolNotFound",
+    "at": 1805097,
+    "len": 17
+   },
+   "103": {
+    "name": "InvalidQuotePool",
+    "at": 1795680,
+    "len": 16
+   },
+   "104": {
+    "name": "QuoteReservesOutOfRange",
+    "at": 1805114,
+    "len": 23
+   },
+   "105": {
+    "name": "CurveDepthExceeded",
+    "at": 1805137,
+    "len": 18
+   },
+   "106": {
+    "name": "MultiHopHopFeesMismatch",
+    "at": 1805155,
+    "len": 23
+   },
+   "107": {
+    "name": "QuoteCurveAwaitingMigration",
+    "at": 1805178,
+    "len": 27
+   },
+   "108": {
+    "name": "MultiHopMayhemCurveNotSupported",
+    "at": 1805205,
+    "len": 31
+   },
+   "109": {
+    "name": "QuoteChainAccountsRequired",
+    "at": 1805236,
+    "len": 26
+   },
+   "110": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "111": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "112": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "113": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "114": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "115": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "116": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "117": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "118": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "119": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "120": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "121": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "122": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "123": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "124": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "125": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "126": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "127": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "128": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "129": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "130": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "131": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "132": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "133": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "134": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "135": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "136": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "137": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "138": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "139": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "140": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "141": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "142": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "143": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "144": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "145": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "146": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "147": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "148": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "149": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "150": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "151": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "152": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "153": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "154": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "155": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "156": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "157": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "158": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "159": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "160": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "161": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "162": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "163": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "164": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "165": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "166": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "167": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "168": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "169": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "170": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "171": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "172": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "173": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "174": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "175": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "176": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "177": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "178": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "179": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "180": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "181": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "182": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "183": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "184": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "185": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "186": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "187": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "188": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "189": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "190": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "191": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "192": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "193": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "194": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "195": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "196": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "197": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "198": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   },
+   "199": {
+    "name": "QuoteMintNotWritable",
+    "at": 1805262,
+    "len": 20
+   }
+  },
+  "entries": 111,
+  "covered": [
+   6000,
+   6002,
+   6003,
+   6004,
+   6005,
+   6006,
+   6010,
+   6011,
+   6012,
+   6013,
+   6014,
+   6015,
+   6019,
+   6020,
+   6021,
+   6022,
+   6023,
+   6024,
+   6025,
+   6026,
+   6027,
+   6028,
+   6029,
+   6030,
+   6031,
+   6032,
+   6033,
+   6034,
+   6035,
+   6036,
+   6037,
+   6038,
+   6041,
+   6042,
+   6043,
+   6044,
+   6045,
+   6046,
+   6048,
+   6050,
+   6051,
+   6052,
+   6054,
+   6055,
+   6057,
+   6058,
+   6059,
+   6060,
+   6061,
+   6062,
+   6063,
+   6064,
+   6065,
+   6066,
+   6067,
+   6068,
+   6069,
+   6070,
+   6071,
+   6072,
+   6073,
+   6074,
+   6075,
+   6076,
+   6077,
+   6078,
+   6080,
+   6082,
+   6083,
+   6084,
+   6085,
+   6086,
+   6087,
+   6088,
+   6089,
+   6090,
+   6091,
+   6092,
+   6093,
+   6094,
+   6095,
+   6096,
+   6097,
+   6098,
+   6099,
+   6100,
+   6101,
+   6102,
+   6103,
+   6104,
+   6105,
+   6106,
+   6107,
+   6108,
+   6109,
+   6110
+  ],
+  "covered_observed": 96,
+  "errors": []
+ },
+ "name_probe": null,
+ "handlers": {
+  "add_quote_mint": 149364,
+  "admin_cto": 154432,
+  "admin_set_idl_authority": 155811,
+  "admin_update_token_incentives": 154708,
+  "buy": 152732,
+  "buy_exact_quote_in_v2": 151403,
+  "buy_exact_quote_in_v3": 151941,
+  "buy_exact_sol_in": 152953,
+  "buy_v2": 151202,
+  "buy_v3": 151769,
+  "claim_cashback": 155033,
+  "claim_cashback_v2": 155178,
+  "claim_token_incentives": 154894,
+  "close_user_volume_accumulator": 155501,
+  "collect_creator_fee": 153710,
+  "create": 150555,
+  "create_v2": 150805,
+  "distribute_creator_fees": 156197,
+  "distribute_creator_fees_v2": 156381,
+  "distribute_fee_to_holders": 153850,
+  "extend_account": 153551,
+  "get_minimum_distributable_fee": 156072,
+  "init_user_volume_accumulator": 155324,
+  "initialize": 147995,
+  "initialize_quote_control": 156834,
+  "migrate": 153339,
+  "migrate_bonding_curve_creator": 155928,
+  "migrate_v2": 153417,
+  "multi_hop_curve_swap": 152248,
+  "remove_quote_control_mint": 157287,
+  "remove_quote_mint": 149542,
+  "sell": 153174,
+  "sell_v2": 151604,
+  "sell_v3": 152113,
+  "set_creator": 154242,
+  "set_max_curve_depth": 148838,
+  "set_mayhem_virtual_params": 150197,
+  "set_metaplex_creator": 154098,
+  "set_params": 149838,
+  "set_quote_control_admin": 156899,
+  "set_quote_control_mint_reserves": 157673,
+  "set_quote_control_reserves_admin": 157480,
+  "set_reserved_fee_recipients": 150365,
+  "set_virtual_quote_reserves": 149720,
+  "sweep_creator_fee": 152585,
+  "sweep_protocol_fee": 152438,
+  "sync_user_volume_accumulator": 155633,
+  "toggle_cashback_enabled": 148440,
+  "toggle_create_v2": 148238,
+  "toggle_mayhem_mode": 148956,
+  "update_creator_fee_config": 149158,
+  "update_global_authority": 148065,
+  "update_holder_reward_config": 148642
+ },
+ "observed_codes": [
+  6000,
+  6002,
+  6003,
+  6004,
+  6005,
+  6006,
+  6010,
+  6011,
+  6012,
+  6013,
+  6014,
+  6015,
+  6019,
+  6020,
+  6021,
+  6022,
+  6023,
+  6024,
+  6025,
+  6026,
+  6027,
+  6028,
+  6029,
+  6030,
+  6031,
+  6032,
+  6033,
+  6034,
+  6035,
+  6036,
+  6037,
+  6038,
+  6041,
+  6042,
+  6043,
+  6044,
+  6045,
+  6046,
+  6048,
+  6050,
+  6051,
+  6052,
+  6054,
+  6055,
+  6057,
+  6058,
+  6059,
+  6060,
+  6061,
+  6062,
+  6063,
+  6064,
+  6065,
+  6066,
+  6067,
+  6068,
+  6069,
+  6070,
+  6071,
+  6072,
+  6073,
+  6074,
+  6075,
+  6076,
+  6077,
+  6078,
+  6080,
+  6082,
+  6083,
+  6084,
+  6085,
+  6086,
+  6087,
+  6088,
+  6089,
+  6090,
+  6091,
+  6092,
+  6093,
+  6094,
+  6095,
+  6096,
+  6097,
+  6098,
+  6099,
+  6100,
+  6101,
+  6102,
+  6103,
+  6104,
+  6105,
+  6106,
+  6107,
+  6108,
+  6109,
+  6110
+ ],
+ "sites": [
+  {
+   "pc": 31868,
+   "byte": 254944,
+   "code": 6000,
+   "name": "NotAuthorized",
+   "func": 31663,
+   "file": "programs/pump/src/fee_recipient.rs",
+   "file_len": 34,
+   "line": 35,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 31896,
+   "byte": 255168,
+   "code": 6000,
+   "name": "NotAuthorized",
+   "func": 31663,
+   "file": "programs/pump/src/fee_recipient.rs",
+   "file_len": 34,
+   "line": 19,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 58788,
+   "byte": 470304,
+   "code": 6000,
+   "name": "NotAuthorized",
+   "func": 58626,
+   "file": "programs/pump/src/sweep_fees.rs",
+   "file_len": 31,
+   "line": 123,
+   "handlers": [
+    {
+     "handler": "sweep_creator_fee",
+     "depth": 1
+    },
+    {
+     "handler": "sweep_protocol_fee",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 158446,
+   "byte": 1267568,
+   "code": 6000,
+   "name": "NotAuthorized",
+   "func": 158384,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 114,
+   "handlers": [
+    {
+     "handler": "toggle_create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 158530,
+   "byte": 1268240,
+   "code": 6000,
+   "name": "NotAuthorized",
+   "func": 158468,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 121,
+   "handlers": [
+    {
+     "handler": "toggle_cashback_enabled",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 158614,
+   "byte": 1268912,
+   "code": 6000,
+   "name": "NotAuthorized",
+   "func": 158552,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 149,
+   "handlers": [
+    {
+     "handler": "toggle_mayhem_mode",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 162416,
+   "byte": 1299328,
+   "code": 6002,
+   "name": "TooMuchSolRequired",
+   "func": 161591,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 494,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 164733,
+   "byte": 1317864,
+   "code": 6002,
+   "name": "TooMuchSolRequired",
+   "func": 163526,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 967,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 168166,
+   "byte": 1345328,
+   "code": 6002,
+   "name": "TooMuchSolRequired",
+   "func": 167796,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 842,
+   "handlers": [
+    {
+     "handler": "buy_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 168994,
+   "byte": 1351952,
+   "code": 6002,
+   "name": "TooMuchSolRequired",
+   "func": 168255,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 935,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 170314,
+   "byte": 1362512,
+   "code": 6002,
+   "name": "TooMuchSolRequired",
+   "func": 169991,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 654,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 172666,
+   "byte": 1381328,
+   "code": 6002,
+   "name": "TooMuchSolRequired",
+   "func": 171676,
+   "file": "programs/pump/src/buy.rs",
+   "file_len": 24,
+   "line": 133,
+   "handlers": [
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 166871,
+   "byte": 1334968,
+   "code": 6003,
+   "name": "TooLittleSolReceived",
+   "func": 166049,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_len": 28,
+   "line": 379,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 169506,
+   "byte": 1356048,
+   "code": 6003,
+   "name": "TooLittleSolReceived",
+   "func": 169237,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 1148,
+   "handlers": [
+    {
+     "handler": "sell_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 173698,
+   "byte": 1389584,
+   "code": 6003,
+   "name": "TooLittleSolReceived",
+   "func": 173329,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1012,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 10864,
+   "byte": 86912,
+   "code": 6004,
+   "name": "MintDoesNotMatchBondingCurve",
+   "func": 10530,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 88,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sweep_creator_fee",
+     "depth": 2
+    },
+    {
+     "handler": "sweep_protocol_fee",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 11409,
+   "byte": 91272,
+   "code": 6004,
+   "name": "MintDoesNotMatchBondingCurve",
+   "func": 11290,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 116,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 64885,
+   "byte": 519080,
+   "code": 6004,
+   "name": "MintDoesNotMatchBondingCurve",
+   "func": 64658,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 180,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 64615,
+   "byte": 516920,
+   "code": 6005,
+   "name": "BondingCurveComplete",
+   "func": 64534,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 149,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 161713,
+   "byte": 1293704,
+   "code": 6005,
+   "name": "BondingCurveComplete",
+   "func": 161591,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 345,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 163752,
+   "byte": 1310016,
+   "code": 6005,
+   "name": "BondingCurveComplete",
+   "func": 163526,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 767,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 166126,
+   "byte": 1329008,
+   "code": 6005,
+   "name": "BondingCurveComplete",
+   "func": 166049,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_len": 28,
+   "line": 243,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 170143,
+   "byte": 1361144,
+   "code": 6005,
+   "name": "BondingCurveComplete",
+   "func": 169991,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 608,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 171808,
+   "byte": 1374464,
+   "code": 6005,
+   "name": "BondingCurveComplete",
+   "func": 171676,
+   "file": "programs/pump/src/buy.rs",
+   "file_len": 24,
+   "line": 53,
+   "handlers": [
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 173418,
+   "byte": 1387344,
+   "code": 6005,
+   "name": "BondingCurveComplete",
+   "func": 173329,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 968,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 32718,
+   "byte": 261744,
+   "code": 6006,
+   "name": "BondingCurveNotComplete",
+   "func": 32622,
+   "file": "programs/pump/src/migrate.rs",
+   "file_len": 28,
+   "line": 251,
+   "handlers": [
+    {
+     "handler": "migrate",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 37874,
+   "byte": 302992,
+   "code": 6006,
+   "name": "BondingCurveNotComplete",
+   "func": 37649,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_len": 31,
+   "line": 249,
+   "handlers": [
+    {
+     "handler": "migrate_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 10640,
+   "byte": 85120,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 10530,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 81,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sweep_creator_fee",
+     "depth": 2
+    },
+    {
+     "handler": "sweep_protocol_fee",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 11539,
+   "byte": 92312,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 11290,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 109,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 11590,
+   "byte": 92720,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 11290,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 121,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 30569,
+   "byte": 244552,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 30491,
+   "file": "programs/pump/src/extend_account.rs",
+   "file_len": 35,
+   "line": 84,
+   "handlers": [
+    {
+     "handler": "extend_account",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 30752,
+   "byte": 246016,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 30491,
+   "file": "programs/pump/src/extend_account.rs",
+   "file_len": 35,
+   "line": 107,
+   "handlers": [
+    {
+     "handler": "extend_account",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 45362,
+   "byte": 362896,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 45261,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 359,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 61516,
+   "byte": 492128,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 61224,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_len": 60,
+   "line": 310,
+   "handlers": [
+    {
+     "handler": "claim_cashback_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 62140,
+   "byte": 497120,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 61224,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_len": 60,
+   "line": 333,
+   "handlers": [
+    {
+     "handler": "claim_cashback_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 64739,
+   "byte": 517912,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 64658,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 172,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 174930,
+   "byte": 1399440,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 174845,
+   "file": "programs/pump/src/admin_set_idl_authority.rs",
+   "file_len": 44,
+   "line": 72,
+   "handlers": [
+    {
+     "handler": "admin_set_idl_authority",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 175272,
+   "byte": 1402176,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 174845,
+   "file": "programs/pump/src/admin_set_idl_authority.rs",
+   "file_len": 44,
+   "line": 79,
+   "handlers": [
+    {
+     "handler": "admin_set_idl_authority",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 175323,
+   "byte": 1402584,
+   "code": 6010,
+   "name": "AccountTypeNotSupported",
+   "func": 174845,
+   "file": "programs/pump/src/admin_set_idl_authority.rs",
+   "file_len": 44,
+   "line": 90,
+   "handlers": [
+    {
+     "handler": "admin_set_idl_authority",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 159311,
+   "byte": 1274488,
+   "code": 6011,
+   "name": "InitialRealTokenReservesShouldBeLessThanTokenTotalSupply",
+   "func": 158968,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 222,
+   "handlers": [
+    {
+     "handler": "set_params",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 159102,
+   "byte": 1272816,
+   "code": 6012,
+   "name": "InitialVirtualTokenReservesShouldBeGreaterThanInitialRealTokenReserves",
+   "func": 158968,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 228,
+   "handlers": [
+    {
+     "handler": "set_params",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 159186,
+   "byte": 1273488,
+   "code": 6013,
+   "name": "FeeBasisPointsGreaterThanMaximum",
+   "func": 158968,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 278,
+   "handlers": [
+    {
+     "handler": "set_params",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 159217,
+   "byte": 1273736,
+   "code": 6013,
+   "name": "FeeBasisPointsGreaterThanMaximum",
+   "func": 158968,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 242,
+   "handlers": [
+    {
+     "handler": "set_params",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 159349,
+   "byte": 1274792,
+   "code": 6014,
+   "name": "AllZerosWithdrawAuthority",
+   "func": 158968,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 249,
+   "handlers": [
+    {
+     "handler": "set_params",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 159405,
+   "byte": 1275240,
+   "code": 6015,
+   "name": "PoolMigrationFeeShouldBeLessThanFinalRealSolReserves",
+   "func": 158968,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 270,
+   "handlers": [
+    {
+     "handler": "set_params",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18334,
+   "byte": 146672,
+   "code": 6019,
+   "name": "InvalidCreator",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 312,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 44404,
+   "byte": 355232,
+   "code": 6020,
+   "name": "BuyZeroAmount",
+   "func": 44283,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 208,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 47984,
+   "byte": 383872,
+   "code": 6020,
+   "name": "BuyZeroAmount",
+   "func": 46710,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 590,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 161744,
+   "byte": 1293952,
+   "code": 6020,
+   "name": "BuyZeroAmount",
+   "func": 161591,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 354,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 163659,
+   "byte": 1309272,
+   "code": 6020,
+   "name": "BuyZeroAmount",
+   "func": 163526,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 769,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 167936,
+   "byte": 1343488,
+   "code": 6020,
+   "name": "BuyZeroAmount",
+   "func": 167796,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 801,
+   "handlers": [
+    {
+     "handler": "buy_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 168373,
+   "byte": 1346984,
+   "code": 6020,
+   "name": "BuyZeroAmount",
+   "func": 168255,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 881,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 170176,
+   "byte": 1361408,
+   "code": 6020,
+   "name": "BuyZeroAmount",
+   "func": 169991,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 617,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 171841,
+   "byte": 1374728,
+   "code": 6020,
+   "name": "BuyZeroAmount",
+   "func": 171676,
+   "file": "programs/pump/src/buy.rs",
+   "file_len": 24,
+   "line": 57,
+   "handlers": [
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 47855,
+   "byte": 382840,
+   "code": 6021,
+   "name": "NotEnoughTokensToBuy",
+   "func": 46710,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 599,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 66801,
+   "byte": 534408,
+   "code": 6021,
+   "name": "NotEnoughTokensToBuy",
+   "func": 66597,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 506,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 67012,
+   "byte": 536096,
+   "code": 6021,
+   "name": "NotEnoughTokensToBuy",
+   "func": 66911,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 518,
+   "handlers": [
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 162139,
+   "byte": 1297112,
+   "code": 6021,
+   "name": "NotEnoughTokensToBuy",
+   "func": 161591,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 356,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 165171,
+   "byte": 1321368,
+   "code": 6021,
+   "name": "NotEnoughTokensToBuy",
+   "func": 163526,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 997,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 167981,
+   "byte": 1343848,
+   "code": 6021,
+   "name": "NotEnoughTokensToBuy",
+   "func": 167796,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 802,
+   "handlers": [
+    {
+     "handler": "buy_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 168652,
+   "byte": 1349216,
+   "code": 6021,
+   "name": "NotEnoughTokensToBuy",
+   "func": 168255,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 926,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 170074,
+   "byte": 1360592,
+   "code": 6021,
+   "name": "NotEnoughTokensToBuy",
+   "func": 169991,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 619,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 172282,
+   "byte": 1378256,
+   "code": 6021,
+   "name": "NotEnoughTokensToBuy",
+   "func": 171676,
+   "file": "programs/pump/src/buy.rs",
+   "file_len": 24,
+   "line": 151,
+   "handlers": [
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 47688,
+   "byte": 381504,
+   "code": 6022,
+   "name": "SellZeroAmount",
+   "func": 46710,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 686,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 166213,
+   "byte": 1329704,
+   "code": 6022,
+   "name": "SellZeroAmount",
+   "func": 166049,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_len": 28,
+   "line": 245,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 169347,
+   "byte": 1354776,
+   "code": 6022,
+   "name": "SellZeroAmount",
+   "func": 169237,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 1126,
+   "handlers": [
+    {
+     "handler": "sell_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 173504,
+   "byte": 1388032,
+   "code": 6022,
+   "name": "SellZeroAmount",
+   "func": 173329,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 970,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 166591,
+   "byte": 1332728,
+   "code": 6023,
+   "name": "NotEnoughTokensToSell",
+   "func": 166049,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_len": 28,
+   "line": 247,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 169391,
+   "byte": 1355128,
+   "code": 6023,
+   "name": "NotEnoughTokensToSell",
+   "func": 169237,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 1127,
+   "handlers": [
+    {
+     "handler": "sell_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 173551,
+   "byte": 1388408,
+   "code": 6023,
+   "name": "NotEnoughTokensToSell",
+   "func": 173329,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 972,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 11754,
+   "byte": 94032,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 11704,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 469,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 11967,
+   "byte": 95736,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 11899,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 949,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 12175,
+   "byte": 97400,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 12125,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 995,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 13186,
+   "byte": 105488,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 12495,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 473,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 13944,
+   "byte": 111552,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 13701,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 586,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 14016,
+   "byte": 112128,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 13701,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 588,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 23197,
+   "byte": 185576,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 22499,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 168,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25094,
+   "byte": 200752,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 24396,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 378,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25610,
+   "byte": 204880,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 25151,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_len": 52,
+   "line": 158,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees",
+     "depth": 2
+    },
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    },
+    {
+     "handler": "get_minimum_distributable_fee",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25753,
+   "byte": 206024,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 25151,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_len": 52,
+   "line": 165,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees",
+     "depth": 2
+    },
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    },
+    {
+     "handler": "get_minimum_distributable_fee",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 26761,
+   "byte": 214088,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 26506,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_len": 52,
+   "line": 343,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees",
+     "depth": 2
+    },
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 27914,
+   "byte": 223312,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 26795,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "file_len": 54,
+   "line": 157,
+   "handlers": [
+    {
+     "handler": "distribute_fee_to_holders",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 31648,
+   "byte": 253184,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 31306,
+   "file": "programs/pump/src/extend_account.rs",
+   "file_len": 35,
+   "line": 141,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 3
+    },
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 33352,
+   "byte": 266816,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 33302,
+   "file": "programs/pump/src/migrate.rs",
+   "file_len": 28,
+   "line": 280,
+   "handlers": [
+    {
+     "handler": "migrate",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 33417,
+   "byte": 267336,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 33367,
+   "file": "programs/pump/src/migrate.rs",
+   "file_len": 28,
+   "line": 282,
+   "handlers": [
+    {
+     "handler": "migrate",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 38810,
+   "byte": 310480,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 38760,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_len": 31,
+   "line": 309,
+   "handlers": [
+    {
+     "handler": "migrate_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 38875,
+   "byte": 311000,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 38825,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_len": 31,
+   "line": 313,
+   "handlers": [
+    {
+     "handler": "migrate_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 38940,
+   "byte": 311520,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 38890,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_len": 31,
+   "line": 326,
+   "handlers": [
+    {
+     "handler": "migrate_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 44985,
+   "byte": 359880,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 44935,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 259,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 49083,
+   "byte": 392664,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 49033,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 571,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 49213,
+   "byte": 393704,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 49163,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 624,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 49343,
+   "byte": 394744,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 49293,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 692,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 49408,
+   "byte": 395264,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 49358,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 736,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 49473,
+   "byte": 395784,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 49423,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 744,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 49575,
+   "byte": 396600,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 49488,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 61,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 49847,
+   "byte": 398776,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 49769,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 104,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 50068,
+   "byte": 400544,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 49917,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 117,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 50122,
+   "byte": 400976,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 49917,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 119,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 50207,
+   "byte": 401656,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 49917,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 122,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 50403,
+   "byte": 403224,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 50222,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 134,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 50446,
+   "byte": 403568,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 50222,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 137,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 50667,
+   "byte": 405336,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 50516,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 199,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 50904,
+   "byte": 407232,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 50854,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 212,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 50969,
+   "byte": 407752,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 50919,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 222,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 51456,
+   "byte": 411648,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 51391,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 334,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 53612,
+   "byte": 428896,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 53539,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 52,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 54637,
+   "byte": 437096,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 54549,
+   "file": "programs/pump/src/quote_control/update_quote_control_mints.rs",
+   "file_len": 61,
+   "line": 71,
+   "handlers": []
+  },
+  {
+   "pc": 56606,
+   "byte": 452848,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 55727,
+   "file": "programs/pump/src/sell.rs",
+   "file_len": 25,
+   "line": 102,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56700,
+   "byte": 453600,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 55727,
+   "file": "programs/pump/src/sell.rs",
+   "file_len": 25,
+   "line": 102,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 57166,
+   "byte": 457328,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 57116,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_len": 28,
+   "line": 366,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 57231,
+   "byte": 457848,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 57181,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_len": 28,
+   "line": 368,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 57296,
+   "byte": 458368,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 57246,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_len": 28,
+   "line": 386,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 61004,
+   "byte": 488032,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 60741,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_len": 60,
+   "line": 252,
+   "handlers": [
+    {
+     "handler": "claim_cashback",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 61187,
+   "byte": 489496,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 60741,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_len": 60,
+   "line": 252,
+   "handlers": [
+    {
+     "handler": "claim_cashback",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 65666,
+   "byte": 525328,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 65599,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 285,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 65734,
+   "byte": 525872,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 65681,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 294,
+   "handlers": [
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 66185,
+   "byte": 529480,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 65983,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 371,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 66218,
+   "byte": 529744,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 65983,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 375,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 66298,
+   "byte": 530384,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 66248,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 382,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 66373,
+   "byte": 530984,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 66313,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 390,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 66528,
+   "byte": 532224,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 66388,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 442,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 66581,
+   "byte": 532648,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 66388,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 446,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 66687,
+   "byte": 533496,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 66597,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 494,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 66740,
+   "byte": 533920,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 66597,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 498,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 66835,
+   "byte": 534680,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 66597,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 502,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 66888,
+   "byte": 535104,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 66597,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 507,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 67705,
+   "byte": 541640,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 67456,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 691,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 67936,
+   "byte": 543488,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 67886,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 721,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 68001,
+   "byte": 544008,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 67951,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 767,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 68326,
+   "byte": 546608,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 68276,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 970,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 69639,
+   "byte": 557112,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 69589,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 1155,
+   "handlers": [
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 69787,
+   "byte": 558296,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 69654,
+   "file": "programs/pump/src/util/constant_product.rs",
+   "file_len": 42,
+   "line": 17,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 69874,
+   "byte": 558992,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 69654,
+   "file": "programs/pump/src/util/constant_product.rs",
+   "file_len": 42,
+   "line": 13,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 69998,
+   "byte": 559984,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 69921,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_len": 29,
+   "line": 17,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy",
+     "depth": 4
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 4
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 70085,
+   "byte": 560680,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 69921,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_len": 29,
+   "line": 15,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy",
+     "depth": 4
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 4
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 76301,
+   "byte": 610408,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 76229,
+   "file": "programs/pump/src/util/transfer_fee.rs",
+   "file_len": 38,
+   "line": 48,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 76381,
+   "byte": 611048,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 76316,
+   "file": "programs/pump/src/util/transfer_fee.rs",
+   "file_len": 38,
+   "line": 56,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 76467,
+   "byte": 611736,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 76396,
+   "file": "programs/pump/src/util/transfer_fee.rs",
+   "file_len": 38,
+   "line": 66,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 82021,
+   "byte": 656168,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 81934,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2428,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 82384,
+   "byte": 659072,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 82302,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2496,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 82457,
+   "byte": 659656,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 82302,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2501,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 82510,
+   "byte": 660080,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 82302,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2506,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 82541,
+   "byte": 660328,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 82302,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2511,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 82644,
+   "byte": 661152,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 82556,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2525,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 82736,
+   "byte": 661888,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 82556,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2520,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 82766,
+   "byte": 662128,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 82556,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2530,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 82798,
+   "byte": 662384,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 82556,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2535,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 82930,
+   "byte": 663440,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 82811,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2550,
+   "handlers": [
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 82962,
+   "byte": 663696,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 82811,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2554,
+   "handlers": [
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 83055,
+   "byte": 664440,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 82993,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2562,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 4
+    },
+    {
+     "handler": "buy",
+     "depth": 4
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 4
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 4
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 4
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 88201,
+   "byte": 705608,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 88151,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 498,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 88266,
+   "byte": 706128,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 88216,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 500,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 170670,
+   "byte": 1365360,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 169991,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 747,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 171109,
+   "byte": 1368872,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 169991,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 747,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 171466,
+   "byte": 1371728,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 171416,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 674,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 171531,
+   "byte": 1372248,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 171481,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 679,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 171596,
+   "byte": 1372768,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 171546,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 684,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 171661,
+   "byte": 1373288,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 171611,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 689,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 172778,
+   "byte": 1382224,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 171676,
+   "file": "programs/pump/src/buy.rs",
+   "file_len": 24,
+   "line": 232,
+   "handlers": [
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 172823,
+   "byte": 1382584,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 171676,
+   "file": "programs/pump/src/buy.rs",
+   "file_len": 24,
+   "line": 232,
+   "handlers": [
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 174505,
+   "byte": 1396040,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 174455,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1007,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 174570,
+   "byte": 1396560,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 174520,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1009,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 174635,
+   "byte": 1397080,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 174585,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1022,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 174700,
+   "byte": 1397600,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 174650,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1027,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 174765,
+   "byte": 1398120,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 174715,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1032,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 174830,
+   "byte": 1398640,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 174780,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1037,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 192209,
+   "byte": 1537672,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 192159,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 664,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 192274,
+   "byte": 1538192,
+   "code": 6024,
+   "name": "Overflow",
+   "func": 192224,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 666,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 11689,
+   "byte": 93512,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 11639,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 465,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 11819,
+   "byte": 94552,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 11769,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 881,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 11884,
+   "byte": 95072,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 11834,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 927,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 12045,
+   "byte": 96360,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 11995,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 959,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 12110,
+   "byte": 96880,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 12060,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 983,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 45076,
+   "byte": 360608,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 45000,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 295,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 49148,
+   "byte": 393184,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 49098,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 589,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 49278,
+   "byte": 394224,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 49228,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 673,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 57101,
+   "byte": 456808,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 57051,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_len": 28,
+   "line": 341,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 63634,
+   "byte": 509072,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 63483,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_len": 56,
+   "line": 103,
+   "handlers": [
+    {
+     "handler": "claim_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 67049,
+   "byte": 536392,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 66911,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 526,
+   "handlers": [
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 67299,
+   "byte": 538392,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 67225,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 591,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 68066,
+   "byte": 544528,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 68016,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 811,
+   "handlers": [
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 68131,
+   "byte": 545048,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 68081,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 904,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 68196,
+   "byte": 545568,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 68146,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 911,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 68261,
+   "byte": 546088,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 68211,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 930,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 68391,
+   "byte": 547128,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 68341,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 997,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 69574,
+   "byte": 556592,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 69524,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 1140,
+   "handlers": [
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 70201,
+   "byte": 561608,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 70130,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_len": 29,
+   "line": 34,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 2
+    },
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "sell",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 159721,
+   "byte": 1277768,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 159671,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 268,
+   "handlers": [
+    {
+     "handler": "set_params",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 171401,
+   "byte": 1371208,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 171351,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 629,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 174440,
+   "byte": 1395520,
+   "code": 6025,
+   "name": "Truncation",
+   "func": 174390,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 981,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 49900,
+   "byte": 399200,
+   "code": 6026,
+   "name": "DivisionByZero",
+   "func": 49769,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 106,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 50175,
+   "byte": 401400,
+   "code": 6026,
+   "name": "DivisionByZero",
+   "func": 49917,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 121,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 50350,
+   "byte": 402800,
+   "code": 6026,
+   "name": "DivisionByZero",
+   "func": 50222,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 131,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 50499,
+   "byte": 403992,
+   "code": 6026,
+   "name": "DivisionByZero",
+   "func": 50222,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 139,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 50767,
+   "byte": 406136,
+   "code": 6026,
+   "name": "DivisionByZero",
+   "func": 50516,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 201,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 69908,
+   "byte": 559264,
+   "code": 6026,
+   "name": "DivisionByZero",
+   "func": 69654,
+   "file": "programs/pump/src/util/constant_product.rs",
+   "file_len": 42,
+   "line": 19,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 70117,
+   "byte": 560936,
+   "code": 6026,
+   "name": "DivisionByZero",
+   "func": 69921,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_len": 29,
+   "line": 19,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy",
+     "depth": 4
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 4
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 82070,
+   "byte": 656560,
+   "code": 6026,
+   "name": "DivisionByZero",
+   "func": 81934,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2430,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 82166,
+   "byte": 657328,
+   "code": 6026,
+   "name": "DivisionByZero",
+   "func": 82087,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2454,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 82285,
+   "byte": 658280,
+   "code": 6026,
+   "name": "DivisionByZero",
+   "func": 82207,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 2481,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 16249,
+   "byte": 129992,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 198,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23068,
+   "byte": 184544,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 22499,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 152,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 23284,
+   "byte": 186272,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 22499,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 149,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 24974,
+   "byte": 199792,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 24396,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 346,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25066,
+   "byte": 200528,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 24396,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 340,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25725,
+   "byte": 205800,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 25151,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_len": 52,
+   "line": 143,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees",
+     "depth": 2
+    },
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    },
+    {
+     "handler": "get_minimum_distributable_fee",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 26733,
+   "byte": 213864,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 26506,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_len": 52,
+   "line": 325,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees",
+     "depth": 2
+    },
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 32209,
+   "byte": 257672,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 31914,
+   "file": "programs/pump/src/fee_recipient.rs",
+   "file_len": 34,
+   "line": 47,
+   "handlers": [
+    {
+     "handler": "set_params",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 35910,
+   "byte": 287280,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 35828,
+   "file": "programs/pump/src/migrate.rs",
+   "file_len": 28,
+   "line": 527,
+   "handlers": [
+    {
+     "handler": "migrate",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 42264,
+   "byte": 338112,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 42188,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_len": 31,
+   "line": 658,
+   "handlers": [
+    {
+     "handler": "migrate_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 44438,
+   "byte": 355504,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 44283,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 214,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 57991,
+   "byte": 463928,
+   "code": 6027,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 57311,
+   "file": "programs/pump/src/set_reserved_fee_recipients.rs",
+   "file_len": 48,
+   "line": 40,
+   "handlers": [
+    {
+     "handler": "set_reserved_fee_recipients",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 32244,
+   "byte": 257952,
+   "code": 6028,
+   "name": "AllFeeRecipientsShouldBeNonZero",
+   "func": 31914,
+   "file": "programs/pump/src/fee_recipient.rs",
+   "file_len": 34,
+   "line": 60,
+   "handlers": [
+    {
+     "handler": "set_params",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 58028,
+   "byte": 464224,
+   "code": 6028,
+   "name": "AllFeeRecipientsShouldBeNonZero",
+   "func": 57311,
+   "file": "programs/pump/src/set_reserved_fee_recipients.rs",
+   "file_len": 48,
+   "line": 60,
+   "handlers": [
+    {
+     "handler": "set_reserved_fee_recipients",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 32523,
+   "byte": 260184,
+   "code": 6029,
+   "name": "UnsortedNotUniqueFeeRecipients",
+   "func": 31914,
+   "file": "programs/pump/src/fee_recipient.rs",
+   "file_len": 34,
+   "line": 78,
+   "handlers": [
+    {
+     "handler": "set_params",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 15841,
+   "byte": 126728,
+   "code": 6030,
+   "name": "CreatorShouldNotBeZero",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 732,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18360,
+   "byte": 146880,
+   "code": 6030,
+   "name": "CreatorShouldNotBeZero",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 307,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 160753,
+   "byte": 1286024,
+   "code": 6030,
+   "name": "CreatorShouldNotBeZero",
+   "func": 160100,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 334,
+   "handlers": [
+    {
+     "handler": "create",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 64407,
+   "byte": 515256,
+   "code": 6031,
+   "name": "StartTimeInThePast",
+   "func": 63716,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_len": 56,
+   "line": 359,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 63898,
+   "byte": 511184,
+   "code": 6032,
+   "name": "EndTimeInThePast",
+   "func": 63716,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_len": 56,
+   "line": 369,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 64047,
+   "byte": 512376,
+   "code": 6033,
+   "name": "EndTimeBeforeStartTime",
+   "func": 63716,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_len": 56,
+   "line": 371,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 64178,
+   "byte": 513424,
+   "code": 6034,
+   "name": "TimeRangeTooLarge",
+   "func": 63716,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_len": 56,
+   "line": 373,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 64446,
+   "byte": 515568,
+   "code": 6035,
+   "name": "EndTimeBeforeCurrentDay",
+   "func": 63716,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_len": 56,
+   "line": 394,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 63964,
+   "byte": 511712,
+   "code": 6036,
+   "name": "SupplyUpdateForFinishedRange",
+   "func": 63716,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_len": 56,
+   "line": 297,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 64088,
+   "byte": 512704,
+   "code": 6037,
+   "name": "DayIndexAfterEndIndex",
+   "func": 63716,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_len": 56,
+   "line": 309,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 64241,
+   "byte": 513928,
+   "code": 6037,
+   "name": "DayIndexAfterEndIndex",
+   "func": 63716,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_len": 56,
+   "line": 337,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 64311,
+   "byte": 514488,
+   "code": 6038,
+   "name": "DayInActiveRange",
+   "func": 63716,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_len": 56,
+   "line": 338,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 65914,
+   "byte": 527312,
+   "code": 6041,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 65753,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 317,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 163782,
+   "byte": 1310256,
+   "code": 6041,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 163526,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 771,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 164348,
+   "byte": 1314784,
+   "code": 6041,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 163526,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 873,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 164550,
+   "byte": 1316400,
+   "code": 6041,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 163526,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 907,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 168407,
+   "byte": 1347256,
+   "code": 6041,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 168255,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 882,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 168544,
+   "byte": 1348352,
+   "code": 6041,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 168255,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 891,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 171873,
+   "byte": 1374984,
+   "code": 6041,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 171676,
+   "file": "programs/pump/src/buy.rs",
+   "file_len": 24,
+   "line": 59,
+   "handlers": [
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 172060,
+   "byte": 1376480,
+   "code": 6041,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 171676,
+   "file": "programs/pump/src/buy.rs",
+   "file_len": 24,
+   "line": 92,
+   "handlers": [
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 65959,
+   "byte": 527672,
+   "code": 6042,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 65753,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 326,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 164604,
+   "byte": 1316832,
+   "code": 6042,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 163526,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 921,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 164792,
+   "byte": 1318336,
+   "code": 6042,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 163526,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 986,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 165139,
+   "byte": 1321112,
+   "code": 6042,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 163526,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 979,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 168733,
+   "byte": 1349864,
+   "code": 6042,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 168255,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 1001,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 168840,
+   "byte": 1350720,
+   "code": 6042,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 168255,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 993,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 169119,
+   "byte": 1352952,
+   "code": 6042,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 168255,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 971,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 172094,
+   "byte": 1376752,
+   "code": 6042,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 171676,
+   "file": "programs/pump/src/buy.rs",
+   "file_len": 24,
+   "line": 110,
+   "handlers": [
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 172170,
+   "byte": 1377360,
+   "code": 6042,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 171676,
+   "file": "programs/pump/src/buy.rs",
+   "file_len": 24,
+   "line": 143,
+   "handlers": [
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16668,
+   "byte": 133344,
+   "code": 6043,
+   "name": "NameTooLong",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 541,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16908,
+   "byte": 135264,
+   "code": 6044,
+   "name": "SymbolTooLong",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 547,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16943,
+   "byte": 135544,
+   "code": 6045,
+   "name": "UriTooLong",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 553,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 15940,
+   "byte": 127520,
+   "code": 6046,
+   "name": "CreateV2Disabled",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 738,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16869,
+   "byte": 134952,
+   "code": 6048,
+   "name": "MayhemModeDisabled",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 709,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 21357,
+   "byte": 170856,
+   "code": 6050,
+   "name": "UnableToDistributeCreatorVaultMigratedToSharingConfig",
+   "func": 21270,
+   "file": "programs/pump/src/creator/collect_creator_fee.rs",
+   "file_len": 48,
+   "line": 103,
+   "handlers": [
+    {
+     "handler": "collect_creator_fee",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22232,
+   "byte": 177856,
+   "code": 6050,
+   "name": "UnableToDistributeCreatorVaultMigratedToSharingConfig",
+   "func": 22162,
+   "file": "programs/pump/src/creator/collect_creator_fee.rs",
+   "file_len": 48,
+   "line": 198,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 23440,
+   "byte": 187520,
+   "code": 6051,
+   "name": "SharingConfigNotActive",
+   "func": 23332,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 205,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 25972,
+   "byte": 207776,
+   "code": 6051,
+   "name": "SharingConfigNotActive",
+   "func": 25864,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_len": 52,
+   "line": 241,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22922,
+   "byte": 183376,
+   "code": 6052,
+   "name": "UnableToDistributeCreatorFeesToExecutableRecipient",
+   "func": 22499,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 125,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25447,
+   "byte": 203576,
+   "code": 6052,
+   "name": "UnableToDistributeCreatorFeesToExecutableRecipient",
+   "func": 25151,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_len": 52,
+   "line": 116,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees",
+     "depth": 2
+    },
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    },
+    {
+     "handler": "get_minimum_distributable_fee",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 22730,
+   "byte": 181840,
+   "code": 6054,
+   "name": "ShareholdersAndRemainingAccountsMismatch",
+   "func": 22499,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 101,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 22810,
+   "byte": 182480,
+   "code": 6054,
+   "name": "ShareholdersAndRemainingAccountsMismatch",
+   "func": 22499,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 112,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25335,
+   "byte": 202680,
+   "code": 6054,
+   "name": "ShareholdersAndRemainingAccountsMismatch",
+   "func": 25151,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_len": 52,
+   "line": 103,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees",
+     "depth": 2
+    },
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    },
+    {
+     "handler": "get_minimum_distributable_fee",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 23121,
+   "byte": 184968,
+   "code": 6055,
+   "name": "InvalidShareBps",
+   "func": 22499,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 163,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25638,
+   "byte": 205104,
+   "code": 6055,
+   "name": "InvalidShareBps",
+   "func": 25151,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_len": 52,
+   "line": 148,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees",
+     "depth": 2
+    },
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    },
+    {
+     "handler": "get_minimum_distributable_fee",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 78161,
+   "byte": 625288,
+   "code": 6057,
+   "name": "BuybackFeeRecipientNotAuthorized",
+   "func": 77959,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1884,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 3
+    },
+    {
+     "handler": "sell",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 78572,
+   "byte": 628576,
+   "code": 6058,
+   "name": "AllBuybackFeeRecipientsShouldBeNonZero",
+   "func": 78174,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1895,
+   "handlers": []
+  },
+  {
+   "pc": 78401,
+   "byte": 627208,
+   "code": 6059,
+   "name": "NotUniqueBuybackFeeRecipients",
+   "func": 78174,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1905,
+   "handlers": []
+  },
+  {
+   "pc": 77944,
+   "byte": 623552,
+   "code": 6060,
+   "name": "BuybackBasisPointsOutOfRange",
+   "func": 77890,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1870,
+   "handlers": []
+  },
+  {
+   "pc": 58611,
+   "byte": 468888,
+   "code": 6061,
+   "name": "WrongBuybackFeeRecipientsCount",
+   "func": 58458,
+   "file": "programs/pump/src/set_reserved_fee_recipients.rs",
+   "file_len": 48,
+   "line": 121,
+   "handlers": []
+  },
+  {
+   "pc": 57032,
+   "byte": 456256,
+   "code": 6062,
+   "name": "BuybackFeeRecipientMissing",
+   "func": 56957,
+   "file": "programs/pump/src/sell.rs",
+   "file_len": 25,
+   "line": 145,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 78112,
+   "byte": 624896,
+   "code": 6062,
+   "name": "BuybackFeeRecipientMissing",
+   "func": 77959,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1879,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 3
+    },
+    {
+     "handler": "sell",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 12352,
+   "byte": 98816,
+   "code": 6063,
+   "name": "UnsupportedQuoteMint",
+   "func": 12190,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 345,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 13153,
+   "byte": 105224,
+   "code": 6063,
+   "name": "UnsupportedQuoteMint",
+   "func": 12495,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 390,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 13683,
+   "byte": 109464,
+   "code": 6063,
+   "name": "UnsupportedQuoteMint",
+   "func": 13603,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 528,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 17226,
+   "byte": 137808,
+   "code": 6063,
+   "name": "UnsupportedQuoteMint",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 220,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 17279,
+   "byte": 138232,
+   "code": 6063,
+   "name": "UnsupportedQuoteMint",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 243,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 43373,
+   "byte": 346984,
+   "code": 6063,
+   "name": "UnsupportedQuoteMint",
+   "func": 42188,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_len": 31,
+   "line": 747,
+   "handlers": [
+    {
+     "handler": "migrate_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 76192,
+   "byte": 609536,
+   "code": 6063,
+   "name": "UnsupportedQuoteMint",
+   "func": 76065,
+   "file": "programs/pump/src/util/transfer_fee.rs",
+   "file_len": 38,
+   "line": 31,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "migrate_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 162235,
+   "byte": 1297880,
+   "code": 6063,
+   "name": "UnsupportedQuoteMint",
+   "func": 161591,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 369,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 164265,
+   "byte": 1314120,
+   "code": 6063,
+   "name": "UnsupportedQuoteMint",
+   "func": 163526,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_len": 27,
+   "line": 780,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 166685,
+   "byte": 1333480,
+   "code": 6063,
+   "name": "UnsupportedQuoteMint",
+   "func": 166049,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_len": 28,
+   "line": 260,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16460,
+   "byte": 131680,
+   "code": 6064,
+   "name": "InvalidQuoteTokenProgram",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 205,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16774,
+   "byte": 134192,
+   "code": 6064,
+   "name": "InvalidQuoteTokenProgram",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 210,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 61463,
+   "byte": 491704,
+   "code": 6064,
+   "name": "InvalidQuoteTokenProgram",
+   "func": 61224,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_len": 60,
+   "line": 305,
+   "handlers": [
+    {
+     "handler": "claim_cashback_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16202,
+   "byte": 129616,
+   "code": 6065,
+   "name": "InvalidAssociatedQuoteBondingCurve",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 258,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 54043,
+   "byte": 432344,
+   "code": 6066,
+   "name": "QuoteMintWhitelistFull",
+   "func": 53627,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 82,
+   "handlers": []
+  },
+  {
+   "pc": 78980,
+   "byte": 631840,
+   "code": 6066,
+   "name": "QuoteMintWhitelistFull",
+   "func": 78898,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1971,
+   "handlers": [
+    {
+     "handler": "add_quote_mint",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 53884,
+   "byte": 431072,
+   "code": 6067,
+   "name": "QuoteMintAlreadyWhitelisted",
+   "func": 53627,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 77,
+   "handlers": []
+  },
+  {
+   "pc": 79194,
+   "byte": 633552,
+   "code": 6067,
+   "name": "QuoteMintAlreadyWhitelisted",
+   "func": 78898,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1960,
+   "handlers": [
+    {
+     "handler": "add_quote_mint",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 54138,
+   "byte": 433104,
+   "code": 6068,
+   "name": "QuoteMintNotWhitelisted",
+   "func": 54063,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 99,
+   "handlers": [
+    {
+     "handler": "remove_quote_control_mint",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 54311,
+   "byte": 434488,
+   "code": 6068,
+   "name": "QuoteMintNotWhitelisted",
+   "func": 54245,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 113,
+   "handlers": [
+    {
+     "handler": "set_quote_control_mint_reserves",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 79299,
+   "byte": 634392,
+   "code": 6068,
+   "name": "QuoteMintNotWhitelisted",
+   "func": 79237,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1986,
+   "handlers": [
+    {
+     "handler": "remove_quote_mint",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 53724,
+   "byte": 429792,
+   "code": 6069,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 53627,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 67,
+   "handlers": []
+  },
+  {
+   "pc": 53804,
+   "byte": 430432,
+   "code": 6069,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 53627,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 72,
+   "handlers": []
+  },
+  {
+   "pc": 53996,
+   "byte": 431968,
+   "code": 6069,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 53627,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 62,
+   "handlers": []
+  },
+  {
+   "pc": 54200,
+   "byte": 433600,
+   "code": 6069,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 54063,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 92,
+   "handlers": [
+    {
+     "handler": "remove_quote_control_mint",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 79033,
+   "byte": 632264,
+   "code": 6069,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 78898,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1955,
+   "handlers": [
+    {
+     "handler": "add_quote_mint",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 79147,
+   "byte": 633176,
+   "code": 6069,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 78898,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1950,
+   "handlers": [
+    {
+     "handler": "add_quote_mint",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 79361,
+   "byte": 634888,
+   "code": 6069,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 79237,
+   "file": "programs/pump/src/lib.rs",
+   "file_len": 24,
+   "line": 1975,
+   "handlers": [
+    {
+     "handler": "remove_quote_mint",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23312,
+   "byte": 186496,
+   "code": 6070,
+   "name": "UnableToDistributeCreatorFeesToUninitializedAccount",
+   "func": 22499,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 173,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 16715,
+   "byte": 133720,
+   "code": 6071,
+   "name": "MayhemModeQuoteMintNotAllowed",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 758,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 55896,
+   "byte": 447168,
+   "code": 6072,
+   "name": "MissingCashbackAccounts",
+   "func": 55727,
+   "file": "programs/pump/src/sell.rs",
+   "file_len": 25,
+   "line": 23,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 55867,
+   "byte": 446936,
+   "code": 6073,
+   "name": "InvalidCashbackAccumulator",
+   "func": 55727,
+   "file": "programs/pump/src/sell.rs",
+   "file_len": 25,
+   "line": 33,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 55992,
+   "byte": 447936,
+   "code": 6073,
+   "name": "InvalidCashbackAccumulator",
+   "func": 55727,
+   "file": "programs/pump/src/sell.rs",
+   "file_len": 25,
+   "line": 81,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56338,
+   "byte": 450704,
+   "code": 6073,
+   "name": "InvalidCashbackAccumulator",
+   "func": 55727,
+   "file": "programs/pump/src/sell.rs",
+   "file_len": 25,
+   "line": 85,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56658,
+   "byte": 453264,
+   "code": 6074,
+   "name": "InvalidBondingCurveV2",
+   "func": 55727,
+   "file": "programs/pump/src/sell.rs",
+   "file_len": 25,
+   "line": 107,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56779,
+   "byte": 454232,
+   "code": 6074,
+   "name": "InvalidBondingCurveV2",
+   "func": 55727,
+   "file": "programs/pump/src/sell.rs",
+   "file_len": 25,
+   "line": 114,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56913,
+   "byte": 455304,
+   "code": 6074,
+   "name": "InvalidBondingCurveV2",
+   "func": 56795,
+   "file": "programs/pump/src/sell.rs",
+   "file_len": 25,
+   "line": 133,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56941,
+   "byte": 455528,
+   "code": 6074,
+   "name": "InvalidBondingCurveV2",
+   "func": 56795,
+   "file": "programs/pump/src/sell.rs",
+   "file_len": 25,
+   "line": 126,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_sol_in",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 12301,
+   "byte": 98408,
+   "code": 6075,
+   "name": "InvalidQuoteControl",
+   "func": 12190,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 348,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 12416,
+   "byte": 99328,
+   "code": 6075,
+   "name": "InvalidQuoteControl",
+   "func": 12190,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 353,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 54414,
+   "byte": 435312,
+   "code": 6075,
+   "name": "InvalidQuoteControl",
+   "func": 54332,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 145,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 54442,
+   "byte": 435536,
+   "code": 6075,
+   "name": "InvalidQuoteControl",
+   "func": 54332,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 146,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 54532,
+   "byte": 436256,
+   "code": 6075,
+   "name": "InvalidQuoteControl",
+   "func": 54332,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_len": 40,
+   "line": 158,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 61835,
+   "byte": 494680,
+   "code": 6076,
+   "name": "InvalidCashbackRecipient",
+   "func": 61224,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_len": 60,
+   "line": 342,
+   "handlers": [
+    {
+     "handler": "claim_cashback_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 15792,
+   "byte": 126336,
+   "code": 6077,
+   "name": "CreatorFeeNotConfigurable",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 774,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18489,
+   "byte": 147912,
+   "code": 6077,
+   "name": "CreatorFeeNotConfigurable",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 334,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16383,
+   "byte": 131064,
+   "code": 6078,
+   "name": "CreatorFeeBpsOutOfRange",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 778,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18463,
+   "byte": 147704,
+   "code": 6078,
+   "name": "CreatorFeeBpsOutOfRange",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 338,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18432,
+   "byte": 147456,
+   "code": 6080,
+   "name": "CreatorFeeNotAllowedForCashbackCoin",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 330,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 15702,
+   "byte": 125616,
+   "code": 6082,
+   "name": "CashbackDeprecated",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 716,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18004,
+   "byte": 144032,
+   "code": 6083,
+   "name": "HolderRewardCreatorImmutable",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 289,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 28689,
+   "byte": 229512,
+   "code": 6083,
+   "name": "HolderRewardCreatorImmutable",
+   "func": 28609,
+   "file": "programs/pump/src/creator/migrate_bonding_curve_creator.rs",
+   "file_len": 58,
+   "line": 46,
+   "handlers": [
+    {
+     "handler": "migrate_bonding_curve_creator",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16001,
+   "byte": 128008,
+   "code": 6084,
+   "name": "HolderRewardDisabled",
+   "func": 15608,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 719,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18258,
+   "byte": 146064,
+   "code": 6084,
+   "name": "HolderRewardDisabled",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 296,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 26854,
+   "byte": 214832,
+   "code": 6085,
+   "name": "HolderRewardRecipientsMismatch",
+   "func": 26795,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "file_len": 54,
+   "line": 82,
+   "handlers": [
+    {
+     "handler": "distribute_fee_to_holders",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 28020,
+   "byte": 224160,
+   "code": 6085,
+   "name": "HolderRewardRecipientsMismatch",
+   "func": 26795,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "file_len": 54,
+   "line": 122,
+   "handlers": [
+    {
+     "handler": "distribute_fee_to_holders",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 28247,
+   "byte": 225976,
+   "code": 6086,
+   "name": "HolderRewardsRentFloor",
+   "func": 26795,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "file_len": 54,
+   "line": 164,
+   "handlers": [
+    {
+     "handler": "distribute_fee_to_holders",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 27967,
+   "byte": 223736,
+   "code": 6087,
+   "name": "HolderRewardTokenAccountMissing",
+   "func": 26795,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "file_len": 54,
+   "line": 120,
+   "handlers": [
+    {
+     "handler": "distribute_fee_to_holders",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 20547,
+   "byte": 164376,
+   "code": 6088,
+   "name": "CtoNotAllowedForMayhemCoin",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 284,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18205,
+   "byte": 145640,
+   "code": 6089,
+   "name": "CtoNewCreatorRequired",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 306,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18060,
+   "byte": 144480,
+   "code": 6090,
+   "name": "CtoNewCreatorNotAllowed",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 298,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18304,
+   "byte": 146432,
+   "code": 6091,
+   "name": "CreatorFeeNotConfigurableForQuote",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 326,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 20578,
+   "byte": 164624,
+   "code": 6092,
+   "name": "CtoCreatorAccountNotWritable",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 556,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18816,
+   "byte": 150528,
+   "code": 6093,
+   "name": "CtoSharedVaultFrozen",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 719,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18939,
+   "byte": 151512,
+   "code": 6093,
+   "name": "CtoSharedVaultFrozen",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 660,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 64643,
+   "byte": 517144,
+   "code": 6094,
+   "name": "CashbackCoinNotSupported",
+   "func": 64534,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_len": 29,
+   "line": 150,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 18628,
+   "byte": 149024,
+   "code": 6095,
+   "name": "CreatorFeesNotSwept",
+   "func": 17730,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_len": 38,
+   "line": 410,
+   "handlers": [
+    {
+     "handler": "admin_cto",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23378,
+   "byte": 187024,
+   "code": 6095,
+   "name": "CreatorFeesNotSwept",
+   "func": 23332,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_len": 54,
+   "line": 213,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 25910,
+   "byte": 207280,
+   "code": 6095,
+   "name": "CreatorFeesNotSwept",
+   "func": 25864,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_len": 52,
+   "line": 249,
+   "handlers": [
+    {
+     "handler": "distribute_creator_fees",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 28717,
+   "byte": 229736,
+   "code": 6095,
+   "name": "CreatorFeesNotSwept",
+   "func": 28609,
+   "file": "programs/pump/src/creator/migrate_bonding_curve_creator.rs",
+   "file_len": 58,
+   "line": 53,
+   "handlers": [
+    {
+     "handler": "migrate_bonding_curve_creator",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 70591,
+   "byte": 564728,
+   "code": 6096,
+   "name": "FeeTiersEmpty",
+   "func": 70505,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_len": 29,
+   "line": 162,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 4
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 4
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 4
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 70733,
+   "byte": 565864,
+   "code": 6097,
+   "name": "FeeConfigTooShort",
+   "func": 70617,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_len": 29,
+   "line": 183,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v3",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v3",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v3",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 44576,
+   "byte": 356608,
+   "code": 6098,
+   "name": "MultiHopDiscontinuousPath",
+   "func": 44283,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 262,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 47350,
+   "byte": 378800,
+   "code": 6098,
+   "name": "MultiHopDiscontinuousPath",
+   "func": 46710,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 546,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 13364,
+   "byte": 106912,
+   "code": 6099,
+   "name": "InvalidQuoteBondingCurve",
+   "func": 13273,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 442,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 13503,
+   "byte": 108024,
+   "code": 6099,
+   "name": "InvalidQuoteBondingCurve",
+   "func": 13273,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 437,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 13574,
+   "byte": 108592,
+   "code": 6099,
+   "name": "InvalidQuoteBondingCurve",
+   "func": 13273,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 449,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 12599,
+   "byte": 100792,
+   "code": 6100,
+   "name": "QuoteBondingCurveNotEligible",
+   "func": 12495,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 395,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 49756,
+   "byte": 398048,
+   "code": 6100,
+   "name": "QuoteBondingCurveNotEligible",
+   "func": 49628,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 90,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 13057,
+   "byte": 104456,
+   "code": 6101,
+   "name": "QuotePoolAccountsRequired",
+   "func": 12495,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 493,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 51846,
+   "byte": 414768,
+   "code": 6102,
+   "name": "QuotePoolNotFound",
+   "func": 51783,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 407,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 51182,
+   "byte": 409456,
+   "code": 6103,
+   "name": "InvalidQuotePool",
+   "func": 51102,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 279,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 51210,
+   "byte": 409680,
+   "code": 6103,
+   "name": "InvalidQuotePool",
+   "func": 51102,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 280,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 51374,
+   "byte": 410992,
+   "code": 6103,
+   "name": "InvalidQuotePool",
+   "func": 51307,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 307,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 6
+    }
+   ]
+  },
+  {
+   "pc": 51569,
+   "byte": 412552,
+   "code": 6103,
+   "name": "InvalidQuotePool",
+   "func": 51473,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 365,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 51624,
+   "byte": 412992,
+   "code": 6103,
+   "name": "InvalidQuotePool",
+   "func": 51473,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 366,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 51668,
+   "byte": 413344,
+   "code": 6103,
+   "name": "InvalidQuotePool",
+   "func": 51473,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 371,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 51728,
+   "byte": 413824,
+   "code": 6103,
+   "name": "InvalidQuotePool",
+   "func": 51473,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 372,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 51765,
+   "byte": 414120,
+   "code": 6103,
+   "name": "InvalidQuotePool",
+   "func": 51473,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 378,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 51987,
+   "byte": 415896,
+   "code": 6103,
+   "name": "InvalidQuotePool",
+   "func": 51783,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 406,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 52042,
+   "byte": 416336,
+   "code": 6103,
+   "name": "InvalidQuotePool",
+   "func": 51783,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 410,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 52106,
+   "byte": 416848,
+   "code": 6103,
+   "name": "InvalidQuotePool",
+   "func": 51783,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 415,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 51081,
+   "byte": 408648,
+   "code": 6104,
+   "name": "QuoteReservesOutOfRange",
+   "func": 50984,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 241,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 49606,
+   "byte": 396848,
+   "code": 6105,
+   "name": "CurveDepthExceeded",
+   "func": 49488,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_len": 31,
+   "line": 62,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 44466,
+   "byte": 355728,
+   "code": 6106,
+   "name": "MultiHopHopFeesMismatch",
+   "func": 44283,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 218,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 13029,
+   "byte": 104232,
+   "code": 6107,
+   "name": "QuoteCurveAwaitingMigration",
+   "func": 12495,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 466,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 46813,
+   "byte": 374504,
+   "code": 6108,
+   "name": "MultiHopMayhemCurveNotSupported",
+   "func": 46710,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_len": 41,
+   "line": 484,
+   "handlers": [
+    {
+     "handler": "multi_hop_curve_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 13258,
+   "byte": 106064,
+   "code": 6109,
+   "name": "QuoteChainAccountsRequired",
+   "func": 13208,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_len": 30,
+   "line": 412,
+   "handlers": [
+    {
+     "handler": "create_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 38516,
+   "byte": 308128,
+   "code": 6110,
+   "name": "QuoteMintNotWritable",
+   "func": 37649,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_len": 31,
+   "line": 335,
+   "handlers": [
+    {
+     "handler": "migrate_v2",
+     "depth": 1
+    }
+   ]
+  }
+ ]
+}
