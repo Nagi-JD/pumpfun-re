@@ -1,0 +1,37 @@
+# direct-call graph: 438 functions with callees
+handler                                entry insns  alloc/memmove fn 0xb1b0  memcpy thunk 0xc26c8  memmove thunk 0xc26e8
+initialize_fee_config                0x12d72   139                        -                   YES                      -
+initialize_fee_program_global        0x12e01   197                        -                   YES                      -
+set_social_claim_authority           0x12eca   188                        -                   YES                      -
+set_disable_flags                    0x12f8a   166                        -                   YES                      -
+set_claim_rate_limit                 0x13034   166                        -                   YES                      -
+set_authority                        0x130de   188                        -                   YES                      -
+update_fee_config                    0x1319e   195                        -                   YES                      -
+upsert_fee_tiers                     0x13267   188                        -                   YES                      -
+update_stable_fee_config             0x13329   179                        -                   YES                      -
+upsert_stable_fee_tiers              0x133e0   188                        -                   YES                      -
+extend_fee_config                    0x134a2   158                        -                   YES                      -
+set_exotic_flat_fees                 0x13541   173                        -                   YES                      -
+update_admin                         0x135f3   169                        -                   YES                      -
+get_fees                             0x136a0   184                        -                   YES                      -
+get_fees_with_quote_mint             0x13763   164                        -                   YES                      -
+create_fee_sharing_config            0x13810   168                        -                   YES                      -
+revoke_fee_sharing_authority         0x138ba    12                        -                   YES                      -
+transfer_fee_sharing_authority       0x138c7    12                        -                   YES                      -
+update_fee_shares                    0x138d4   129                      YES                   YES                    YES
+update_fee_shares_v2                 0x1395a   134                      YES                   YES                    YES
+admin_cto_sharing_config             0x139e4   171                        -                   YES                      -
+create_social_fee_pda                0x13a95   194                        -                   YES                      -
+claim_social_fee_pda                 0x13b5d   248                        -                   YES                      -
+claim_social_fee_pda_v2              0x13c64   249                        -                   YES                      -
+initialize_buyback                   0x13d6a   149                        -                   YES                      -
+sweep_buyback                        0x13e01   163                        -                   YES                      -
+update_buyback_authority             0x13ea6   212                        -                   YES                      -
+update_buyback_claim_rate_limit      0x13f80   190                        -                   YES                      -
+create_donation_fee_pda              0x14044   113                        -                   YES                      -
+crank_donation_fee_pda               0x140b8   104                        -                   YES                      -
+withdraw                             0x14121   137                        -                   YES                      -
+
+dispatcher @ 0x1240e reaches 485 functions; ELF entry @ 0x14299 reaches 489 (443 reachable from handlers)
+
+# functions not reachable from the dispatcher or any handler: 0
