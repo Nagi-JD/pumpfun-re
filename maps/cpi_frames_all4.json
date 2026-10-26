@@ -1,0 +1,1696 @@
+{
+ "_meta": {
+  "tool": "tools/cpi_frames.py",
+  "disc_entries": 122,
+  "disc_rule": "sha256(\"global:\"+name)[:8] as the little-endian lddw immediate",
+  "payload_rule": "stores into the register the discriminator is stored through"
+ },
+ "programs": {
+  "pump": {
+   "elf_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+   "dispatcher_pc": 145131,
+   "invoke_wrapper_pc": [
+    213934
+   ],
+   "invoke_wrapper": [
+    {
+     "func_pc": 213934,
+     "insns": 121,
+     "metas_repack_mul0x22_pc": [
+      213952,
+      214042
+     ],
+     "accountinfo_byte_reads": [
+      213972,
+      213973
+     ]
+    }
+   ],
+   "handlers_resolved": 56,
+   "edges": [
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "admin_cto_pool",
+     "target_disc": "2d3da597680031bd",
+     "disc_site_pc": 136246,
+     "builder_func_pc": 136220,
+     "builder_func_byte": 1089760,
+     "builder_func_insns": 496,
+     "depth_to_invoke": 2,
+     "payload_len": 50,
+     "payload_spans": [
+      [
+       0,
+       50
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 136248
+      },
+      {
+       "off": 8,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 136250
+      },
+      {
+       "off": 16,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 136252
+      },
+      {
+       "off": 24,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 136254
+      },
+      {
+       "off": 32,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 136256
+      },
+      {
+       "off": 40,
+       "width": 1,
+       "kind": "reg",
+       "value": null,
+       "pc": 136257
+      },
+      {
+       "off": 41,
+       "width": 1,
+       "kind": "imm",
+       "value": 0,
+       "pc": 136259
+      },
+      {
+       "off": 42,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 136262
+      }
+     ],
+     "declared": [
+      {
+       "name": "coin_creator",
+       "type": "\"pubkey\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 32
+      },
+      {
+       "name": "is_holder_reward",
+       "type": "\"bool\"",
+       "kind": "fixed",
+       "off": 40,
+       "size": 1
+      },
+      {
+       "name": "creator_fee_bps",
+       "type": "{\"option\": \"u64\"}",
+       "kind": "variable",
+       "off": 41,
+       "size": 1
+      }
+     ],
+     "declared_len_min": 42,
+     "declared_all_fixed": false,
+     "handlers": [
+      {
+       "handler": "admin_cto",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "pump_amm:admin_cto_pool"
+     ]
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "collect_coin_creator_fee",
+     "target_disc": "a039592ab58b2b42",
+     "disc_site_pc": 136750,
+     "builder_func_pc": 136727,
+     "builder_func_byte": 1093816,
+     "builder_func_insns": 501,
+     "depth_to_invoke": 2,
+     "payload_len": 8,
+     "payload_spans": [
+      [
+       0,
+       8
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 136752
+      }
+     ],
+     "declared": [],
+     "declared_len_min": 8,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "admin_cto",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "pump_amm:collect_coin_creator_fee"
+     ],
+     "verify": "match"
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "create_pool",
+     "target_disc": "e992d18ecf6840bc",
+     "disc_site_pc": 137274,
+     "builder_func_pc": 137239,
+     "builder_func_byte": 1097912,
+     "builder_func_insns": 677,
+     "depth_to_invoke": 2,
+     "payload_len": 70,
+     "payload_spans": [
+      [
+       0,
+       70
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 137276
+      },
+      {
+       "off": 8,
+       "width": 2,
+       "kind": "reg",
+       "value": null,
+       "pc": 137273
+      },
+      {
+       "off": 10,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 137271
+      },
+      {
+       "off": 18,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 137270
+      },
+      {
+       "off": 26,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 137278
+      },
+      {
+       "off": 34,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 137280
+      },
+      {
+       "off": 42,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 137282
+      },
+      {
+       "off": 50,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 137284
+      },
+      {
+       "off": 58,
+       "width": 1,
+       "kind": "reg",
+       "value": null,
+       "pc": 137289
+      },
+      {
+       "off": 59,
+       "width": 1,
+       "kind": "reg",
+       "value": null,
+       "pc": 137288
+      },
+      {
+       "off": 60,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 137287
+      },
+      {
+       "off": 68,
+       "width": 1,
+       "kind": "reg",
+       "value": null,
+       "pc": 137286
+      },
+      {
+       "off": 69,
+       "width": 1,
+       "kind": "reg",
+       "value": null,
+       "pc": 137285
+      }
+     ],
+     "declared": [
+      {
+       "name": "index",
+       "type": "\"u16\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 2
+      },
+      {
+       "name": "base_amount_in",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 10,
+       "size": 8
+      },
+      {
+       "name": "quote_amount_in",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 18,
+       "size": 8
+      },
+      {
+       "name": "coin_creator",
+       "type": "\"pubkey\"",
+       "kind": "fixed",
+       "off": 26,
+       "size": 32
+      },
+      {
+       "name": "is_mayhem_mode",
+       "type": "\"bool\"",
+       "kind": "fixed",
+       "off": 58,
+       "size": 1
+      },
+      {
+       "name": "is_cashback_coin",
+       "type": "{\"defined\": {\"name\": \"OptionBool\"}}",
+       "kind": "variable",
+       "off": 59,
+       "size": 1
+      },
+      {
+       "name": "creator_fee_bps",
+       "type": "{\"defined\": {\"name\": \"OptionU64\"}}",
+       "kind": "variable",
+       "off": 60,
+       "size": 1
+      },
+      {
+       "name": "can_edit_creator_fee",
+       "type": "{\"defined\": {\"name\": \"OptionBool\"}}",
+       "kind": "variable",
+       "off": 61,
+       "size": 1
+      },
+      {
+       "name": "is_holder_reward",
+       "type": "{\"defined\": {\"name\": \"OptionBool\"}}",
+       "kind": "variable",
+       "off": 62,
+       "size": 1
+      }
+     ],
+     "declared_len_min": 63,
+     "declared_all_fixed": false,
+     "handlers": [
+      {
+       "handler": "migrate",
+       "depth": 3
+      },
+      {
+       "handler": "migrate_v2",
+       "depth": 3
+      }
+     ],
+     "name_candidates": [
+      "pump_amm:create_pool"
+     ]
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "init_boost",
+     "target_disc": "8ce9215e845ac28f",
+     "disc_site_pc": 137950,
+     "builder_func_pc": 137927,
+     "builder_func_byte": 1103416,
+     "builder_func_insns": 597,
+     "depth_to_invoke": 2,
+     "payload_len": 8,
+     "payload_spans": [
+      [
+       0,
+       8
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 137952
+      }
+     ],
+     "declared": [],
+     "declared_len_min": 8,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "migrate",
+       "depth": 3
+      },
+      {
+       "handler": "migrate_v2",
+       "depth": 3
+      }
+     ],
+     "name_candidates": [
+      "pump_amm:init_boost"
+     ],
+     "verify": "match"
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "transfer_creator_fees_to_pump_v2",
+     "target_disc": "01214eb921432c5c",
+     "disc_site_pc": 138558,
+     "builder_func_pc": 138535,
+     "builder_func_byte": 1108280,
+     "builder_func_insns": 565,
+     "depth_to_invoke": 2,
+     "payload_len": 8,
+     "payload_spans": [
+      [
+       0,
+       8
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 138560
+      }
+     ],
+     "declared": [],
+     "declared_len_min": 8,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "admin_cto",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "pump_amm:transfer_creator_fees_to_pump_v2"
+     ],
+     "verify": "match"
+    },
+    {
+     "target_program": "pump_fees",
+     "target_instruction": "admin_cto_sharing_config",
+     "target_disc": "3c64909c408ab625",
+     "disc_site_pc": 142586,
+     "builder_func_pc": 142563,
+     "builder_func_byte": 1140504,
+     "builder_func_insns": 494,
+     "depth_to_invoke": 2,
+     "payload_len": 41,
+     "payload_spans": [
+      [
+       0,
+       41
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 142588
+      },
+      {
+       "off": 8,
+       "width": 1,
+       "kind": "imm",
+       "value": 0,
+       "pc": 142592
+      },
+      {
+       "off": 9,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 142598
+      },
+      {
+       "off": 17,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 142600
+      },
+      {
+       "off": 25,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 142602
+      },
+      {
+       "off": 33,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 142604
+      }
+     ],
+     "declared": [
+      {
+       "name": "new_admin",
+       "type": "{\"option\": \"pubkey\"}",
+       "kind": "variable",
+       "off": 8,
+       "size": 1
+      }
+     ],
+     "declared_len_min": 9,
+     "declared_all_fixed": false,
+     "handlers": [
+      {
+       "handler": "admin_cto",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "pump_fees:admin_cto_sharing_config"
+     ]
+    },
+    {
+     "target_program": "pump_fees",
+     "target_instruction": "get_fees_with_quote_mint",
+     "target_disc": "9aed8a5ca202a2bb",
+     "disc_site_pc": 143096,
+     "builder_func_pc": 143068,
+     "builder_func_byte": 1144544,
+     "builder_func_insns": 389,
+     "depth_to_invoke": 2,
+     "payload_len": 57,
+     "payload_spans": [
+      [
+       0,
+       57
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 143098
+      },
+      {
+       "off": 8,
+       "width": 1,
+       "kind": "reg",
+       "value": null,
+       "pc": 143095
+      },
+      {
+       "off": 9,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 143094
+      },
+      {
+       "off": 17,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 143093
+      },
+      {
+       "off": 25,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 143100
+      },
+      {
+       "off": 33,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 143102
+      },
+      {
+       "off": 41,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 143104
+      },
+      {
+       "off": 49,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 143106
+      }
+     ],
+     "declared": [
+      {
+       "name": "is_pump_pool",
+       "type": "\"bool\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 1
+      },
+      {
+       "name": "market_cap_lamports",
+       "type": "\"u128\"",
+       "kind": "fixed",
+       "off": 9,
+       "size": 16
+      },
+      {
+       "name": "quote_mint",
+       "type": "\"pubkey\"",
+       "kind": "fixed",
+       "off": 25,
+       "size": 32
+      }
+     ],
+     "declared_len_min": 57,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "buy",
+       "depth": 3
+      },
+      {
+       "handler": "buy_exact_quote_in_v2",
+       "depth": 3
+      },
+      {
+       "handler": "buy_exact_sol_in",
+       "depth": 3
+      },
+      {
+       "handler": "buy_v2",
+       "depth": 3
+      },
+      {
+       "handler": "sell",
+       "depth": 3
+      },
+      {
+       "handler": "sell_v2",
+       "depth": 3
+      }
+     ],
+     "name_candidates": [
+      "pump_fees:get_fees_with_quote_mint"
+     ],
+     "verify": "match",
+     "word_fragments": [
+      17,
+      33,
+      41,
+      49
+     ]
+    },
+    {
+     "target_program": "mayhem",
+     "target_instruction": "initialize_mayhem_state",
+     "target_disc": "9dbd5e485545cc2d",
+     "disc_site_pc": 143745,
+     "builder_func_pc": 143722,
+     "builder_func_byte": 1149776,
+     "builder_func_insns": 533,
+     "depth_to_invoke": 2,
+     "payload_len": 8,
+     "payload_spans": [
+      [
+       0,
+       8
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 143747
+      }
+     ],
+     "declared": [],
+     "declared_len_min": 8,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "create_v2",
+       "depth": 3
+      }
+     ],
+     "name_candidates": [
+      "mayhem:initialize_mayhem_state"
+     ],
+     "verify": "disc-only"
+    }
+   ],
+   "edge_count": 8
+  },
+  "pump_amm": {
+   "elf_sha256": "6a7ad34596d83b4c435b32f458a56e718e9f82eb4ad38e4316616d15d24d8ff7",
+   "dispatcher_pc": 112531,
+   "invoke_wrapper_pc": [
+    135244
+   ],
+   "invoke_wrapper": [
+    {
+     "func_pc": 135244,
+     "insns": 121,
+     "metas_repack_mul0x22_pc": [
+      135262,
+      135352
+     ],
+     "accountinfo_byte_reads": [
+      135282,
+      135283
+     ]
+    }
+   ],
+   "handlers_resolved": 38,
+   "edges": [
+    {
+     "target_program": "pump",
+     "target_instruction": "multi_hop_curve_swap",
+     "target_disc": "e19a7516d756f667",
+     "disc_site_pc": 110403,
+     "builder_func_pc": 110374,
+     "builder_func_byte": 882992,
+     "builder_func_insns": 356,
+     "depth_to_invoke": 2,
+     "payload_len": 16,
+     "payload_spans": [
+      [
+       0,
+       16
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 110405
+      },
+      {
+       "off": 8,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 110402
+      }
+     ],
+     "declared": [
+      {
+       "name": "amount_in",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 8
+      },
+      {
+       "name": "hop_fees",
+       "type": "\"bytes\"",
+       "kind": "variable",
+       "off": 16,
+       "size": 4
+      }
+     ],
+     "declared_len_min": 20,
+     "declared_all_fixed": false,
+     "handlers": [
+      {
+       "handler": "multi_hop_swap",
+       "depth": 3
+      }
+     ],
+     "name_candidates": [
+      "pump:multi_hop_curve_swap"
+     ]
+    },
+    {
+     "target_program": "pump_fees",
+     "target_instruction": "get_fees_with_quote_mint",
+     "target_disc": "9aed8a5ca202a2bb",
+     "disc_site_pc": 112089,
+     "builder_func_pc": 112061,
+     "builder_func_byte": 896488,
+     "builder_func_insns": 389,
+     "depth_to_invoke": 2,
+     "payload_len": 57,
+     "payload_spans": [
+      [
+       0,
+       57
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 112091
+      },
+      {
+       "off": 8,
+       "width": 1,
+       "kind": "reg",
+       "value": null,
+       "pc": 112088
+      },
+      {
+       "off": 9,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 112087
+      },
+      {
+       "off": 17,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 112086
+      },
+      {
+       "off": 25,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 112093
+      },
+      {
+       "off": 33,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 112095
+      },
+      {
+       "off": 41,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 112097
+      },
+      {
+       "off": 49,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 112099
+      }
+     ],
+     "declared": [
+      {
+       "name": "is_pump_pool",
+       "type": "\"bool\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 1
+      },
+      {
+       "name": "market_cap_lamports",
+       "type": "\"u128\"",
+       "kind": "fixed",
+       "off": 9,
+       "size": 16
+      },
+      {
+       "name": "quote_mint",
+       "type": "\"pubkey\"",
+       "kind": "fixed",
+       "off": 25,
+       "size": 32
+      }
+     ],
+     "declared_len_min": 57,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "buy",
+       "depth": 3
+      },
+      {
+       "handler": "buy_exact_quote_in",
+       "depth": 3
+      },
+      {
+       "handler": "sell",
+       "depth": 3
+      }
+     ],
+     "name_candidates": [
+      "pump_fees:get_fees_with_quote_mint"
+     ],
+     "verify": "match",
+     "word_fragments": [
+      17,
+      33,
+      41,
+      49
+     ]
+    }
+   ],
+   "edge_count": 2
+  },
+  "pump_fees": {
+   "elf_sha256": "4f2955d0f6b40cc9ff7daa18ccad7d19119ba1249759f4e7e3bb691beee6b35e",
+   "dispatcher_pc": 74766,
+   "invoke_wrapper_pc": [
+    91299
+   ],
+   "invoke_wrapper": [
+    {
+     "func_pc": 91299,
+     "insns": 121,
+     "metas_repack_mul0x22_pc": [
+      91317,
+      91407
+     ],
+     "accountinfo_byte_reads": [
+      91337,
+      91338
+     ]
+    }
+   ],
+   "handlers_resolved": 31,
+   "edges": [
+    {
+     "target_program": "pump",
+     "target_instruction": "distribute_creator_fees",
+     "target_disc": "a572670079cef751",
+     "disc_site_pc": 68047,
+     "builder_func_pc": 68024,
+     "builder_func_byte": 544192,
+     "builder_func_insns": 485,
+     "depth_to_invoke": 2,
+     "payload_len": 8,
+     "payload_spans": [
+      [
+       0,
+       8
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 68049
+      }
+     ],
+     "declared": [],
+     "declared_len_min": 8,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "update_fee_shares",
+       "depth": 3
+      }
+     ],
+     "name_candidates": [
+      "pump:distribute_creator_fees"
+     ],
+     "verify": "match"
+    },
+    {
+     "target_program": "pump",
+     "target_instruction": "distribute_creator_fees_v2",
+     "target_disc": "ffcb134ff444089f",
+     "disc_site_pc": 68544,
+     "builder_func_pc": 68520,
+     "builder_func_byte": 548160,
+     "builder_func_insns": 566,
+     "depth_to_invoke": 2,
+     "payload_len": 9,
+     "payload_spans": [
+      [
+       0,
+       9
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 68546
+      },
+      {
+       "off": 8,
+       "width": 1,
+       "kind": "reg",
+       "value": null,
+       "pc": 68543
+      }
+     ],
+     "declared": [
+      {
+       "name": "initialize_ata",
+       "type": "\"bool\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 1
+      }
+     ],
+     "declared_len_min": 9,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "update_fee_shares_v2",
+       "depth": 3
+      }
+     ],
+     "name_candidates": [
+      "pump:distribute_creator_fees_v2"
+     ],
+     "verify": "match"
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "extend_account",
+     "target_disc": "ea66c2cb96483ee5",
+     "disc_site_pc": 69120,
+     "builder_func_pc": 69097,
+     "builder_func_byte": 552776,
+     "builder_func_insns": 453,
+     "depth_to_invoke": 2,
+     "payload_len": 8,
+     "payload_spans": [
+      [
+       0,
+       8
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 69122
+      }
+     ],
+     "declared": [],
+     "declared_len_min": 8,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "create_fee_sharing_config",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "mayhem:extend_account",
+      "pump:extend_account",
+      "pump_amm:extend_account"
+     ],
+     "verify": "match"
+    },
+    {
+     "target_program": "pump",
+     "target_instruction": "migrate_bonding_curve_creator",
+     "target_disc": "577c34bf3426d6e8",
+     "disc_site_pc": 69584,
+     "builder_func_pc": 69561,
+     "builder_func_byte": 556488,
+     "builder_func_insns": 453,
+     "depth_to_invoke": 2,
+     "payload_len": 8,
+     "payload_spans": [
+      [
+       0,
+       8
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 69586
+      }
+     ],
+     "declared": [],
+     "declared_len_min": 8,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "create_fee_sharing_config",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "pump:migrate_bonding_curve_creator"
+     ],
+     "verify": "match"
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "migrate_pool_coin_creator",
+     "target_disc": "d0089f044aaf103a",
+     "disc_site_pc": 72403,
+     "builder_func_pc": 72380,
+     "builder_func_byte": 579040,
+     "builder_func_insns": 437,
+     "depth_to_invoke": 2,
+     "payload_len": 8,
+     "payload_spans": [
+      [
+       0,
+       8
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 72405
+      }
+     ],
+     "declared": [],
+     "declared_len_min": 8,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "create_fee_sharing_config",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "pump_amm:migrate_pool_coin_creator"
+     ],
+     "verify": "match"
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "transfer_creator_fees_to_pump",
+     "target_disc": "8b348655e4e56cf1",
+     "disc_site_pc": 72851,
+     "builder_func_pc": 72828,
+     "builder_func_byte": 582624,
+     "builder_func_insns": 533,
+     "depth_to_invoke": 2,
+     "payload_len": 8,
+     "payload_spans": [
+      [
+       0,
+       8
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 72853
+      }
+     ],
+     "declared": [],
+     "declared_len_min": 8,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "update_fee_shares",
+       "depth": 3
+      }
+     ],
+     "name_candidates": [
+      "pump_amm:transfer_creator_fees_to_pump"
+     ],
+     "verify": "match"
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "transfer_creator_fees_to_pump_v2",
+     "target_disc": "01214eb921432c5c",
+     "disc_site_pc": 73395,
+     "builder_func_pc": 73372,
+     "builder_func_byte": 586976,
+     "builder_func_insns": 565,
+     "depth_to_invoke": 2,
+     "payload_len": 8,
+     "payload_spans": [
+      [
+       0,
+       8
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 73397
+      }
+     ],
+     "declared": [],
+     "declared_len_min": 8,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "update_fee_shares_v2",
+       "depth": 3
+      }
+     ],
+     "name_candidates": [
+      "pump_amm:transfer_creator_fees_to_pump_v2"
+     ],
+     "verify": "match"
+    }
+   ],
+   "edge_count": 7
+  },
+  "mayhem": {
+   "elf_sha256": "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199bdb",
+   "dispatcher_pc": 64262,
+   "invoke_wrapper_pc": [
+    79523
+   ],
+   "invoke_wrapper": [
+    {
+     "func_pc": 79523,
+     "insns": 125,
+     "metas_repack_mul0x22_pc": [
+      79537
+     ],
+     "accountinfo_byte_reads": [
+      79572
+     ]
+    }
+   ],
+   "handlers_resolved": 25,
+   "edges": [
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "buy",
+     "target_disc": "66063d1201daebea",
+     "disc_site_pc": 56599,
+     "builder_func_pc": 56572,
+     "builder_func_byte": 452576,
+     "builder_func_insns": 558,
+     "depth_to_invoke": 1,
+     "payload_len": 25,
+     "payload_spans": [
+      [
+       0,
+       25
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 56601
+      },
+      {
+       "off": 8,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 56598
+      },
+      {
+       "off": 16,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 56597
+      },
+      {
+       "off": 24,
+       "width": 1,
+       "kind": "reg",
+       "value": null,
+       "pc": 56596
+      }
+     ],
+     "declared": [
+      {
+       "name": "base_amount_out",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 8
+      },
+      {
+       "name": "max_quote_amount_in",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 16,
+       "size": 8
+      },
+      {
+       "name": "track_volume",
+       "type": "{\"defined\": {\"name\": \"OptionBool\"}}",
+       "kind": "variable",
+       "off": 24,
+       "size": 1
+      }
+     ],
+     "declared_len_min": 25,
+     "declared_all_fixed": false,
+     "handlers": [
+      {
+       "handler": "buy",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "mayhem:buy",
+      "pump:buy",
+      "pump_amm:buy"
+     ]
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "sell",
+     "target_disc": "33e685a4017f83ad",
+     "disc_site_pc": 57168,
+     "builder_func_pc": 57144,
+     "builder_func_byte": 457152,
+     "builder_func_insns": 521,
+     "depth_to_invoke": 1,
+     "payload_len": 24,
+     "payload_spans": [
+      [
+       0,
+       24
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 57170
+      },
+      {
+       "off": 8,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 57167
+      },
+      {
+       "off": 16,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 57166
+      }
+     ],
+     "declared": [
+      {
+       "name": "base_amount_in",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 8
+      },
+      {
+       "name": "min_quote_amount_out",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 16,
+       "size": 8
+      }
+     ],
+     "declared_len_min": 24,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "sell",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "mayhem:sell",
+      "pump:sell",
+      "pump_amm:sell"
+     ],
+     "verify": "match"
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "buy",
+     "target_disc": "66063d1201daebea",
+     "disc_site_pc": 60246,
+     "builder_func_pc": 60219,
+     "builder_func_byte": 481752,
+     "builder_func_insns": 670,
+     "depth_to_invoke": 1,
+     "payload_len": 25,
+     "payload_spans": [
+      [
+       0,
+       25
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 60248
+      },
+      {
+       "off": 8,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 60245
+      },
+      {
+       "off": 16,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 60244
+      },
+      {
+       "off": 24,
+       "width": 1,
+       "kind": "reg",
+       "value": null,
+       "pc": 60243
+      }
+     ],
+     "declared": [
+      {
+       "name": "base_amount_out",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 8
+      },
+      {
+       "name": "max_quote_amount_in",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 16,
+       "size": 8
+      },
+      {
+       "name": "track_volume",
+       "type": "{\"defined\": {\"name\": \"OptionBool\"}}",
+       "kind": "variable",
+       "off": 24,
+       "size": 1
+      }
+     ],
+     "declared_len_min": 25,
+     "declared_all_fixed": false,
+     "handlers": [
+      {
+       "handler": "buy_pump_swap",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "mayhem:buy",
+      "pump:buy",
+      "pump_amm:buy"
+     ]
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "sell",
+     "target_disc": "33e685a4017f83ad",
+     "disc_site_pc": 60927,
+     "builder_func_pc": 60903,
+     "builder_func_byte": 487224,
+     "builder_func_insns": 633,
+     "depth_to_invoke": 1,
+     "payload_len": 24,
+     "payload_spans": [
+      [
+       0,
+       24
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 60929
+      },
+      {
+       "off": 8,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 60926
+      },
+      {
+       "off": 16,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 60925
+      }
+     ],
+     "declared": [
+      {
+       "name": "base_amount_in",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 8
+      },
+      {
+       "name": "min_quote_amount_out",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 16,
+       "size": 8
+      }
+     ],
+     "declared_len_min": 24,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "sell_pump_swap",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "mayhem:sell",
+      "pump:sell",
+      "pump_amm:sell"
+     ],
+     "verify": "match"
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "buy_v2",
+     "target_disc": "b817ee6167c5d33d",
+     "disc_site_pc": 67992,
+     "builder_func_pc": 67981,
+     "builder_func_byte": 543848,
+     "builder_func_insns": 734,
+     "depth_to_invoke": 1,
+     "payload_len": 8,
+     "payload_spans": [
+      [
+       0,
+       8
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 67994
+      }
+     ],
+     "declared": [
+      {
+       "name": "base_amount_out",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 8
+      },
+      {
+       "name": "max_quote_amount_in",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 16,
+       "size": 8
+      }
+     ],
+     "declared_len_min": 24,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "buy_v2",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "mayhem:buy_v2",
+      "pump:buy_v2",
+      "pump_amm:buy_v2"
+     ],
+     "serializer": {
+      "helper_pc": 73568,
+      "len_at_handoff": 8,
+      "len_imm_pc": 67995
+     },
+     "payload_len_final": 24,
+     "verify": "serializer"
+    },
+    {
+     "target_program": "pump_amm",
+     "target_instruction": "sell_v2",
+     "target_disc": "5df6823ce7e940b2",
+     "disc_site_pc": 68728,
+     "builder_func_pc": 68718,
+     "builder_func_byte": 549744,
+     "builder_func_insns": 706,
+     "depth_to_invoke": 1,
+     "payload_len": 24,
+     "payload_spans": [
+      [
+       0,
+       24
+      ]
+     ],
+     "payload": [
+      {
+       "off": 0,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 68731
+      },
+      {
+       "off": 8,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 68727
+      },
+      {
+       "off": 16,
+       "width": 8,
+       "kind": "reg",
+       "value": null,
+       "pc": 68726
+      }
+     ],
+     "declared": [
+      {
+       "name": "base_amount_in",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 8,
+       "size": 8
+      },
+      {
+       "name": "min_quote_amount_out",
+       "type": "\"u64\"",
+       "kind": "fixed",
+       "off": 16,
+       "size": 8
+      }
+     ],
+     "declared_len_min": 24,
+     "declared_all_fixed": true,
+     "handlers": [
+      {
+       "handler": "sell_v2",
+       "depth": 2
+      }
+     ],
+     "name_candidates": [
+      "mayhem:sell_v2",
+      "pump:sell_v2",
+      "pump_amm:sell_v2"
+     ],
+     "verify": "match"
+    }
+   ],
+   "edge_count": 6
+  }
+ }
+}
