@@ -113,3 +113,16 @@ callers' fee_config PDAs. Independently re-verified.
   PDA[fee_config,pump] bump=253; PDA[fee_config,amm] bump=255. A wrong stored bump → ConstraintSeeds(2006).
 - AMM swap unblock: seed the amm fee_config with stored bump=255 (the real on-chain value) to let
   pump_amm buy/sell clear the fee CPI and verify swap pricing end-to-end.
+
+## UPDATE 4 — PumpSwap swap: fee gate cleared, buyback gate next
+Applied the known fix: seed amm fee_config at PDA[b"fee_config", pAMMBay…] with stored
+bump=255 (asserted canonical at runtime). Result:
+- The Custom(2006) fee gate is GONE. get_fees_with_quote_mint CPI now returns byte-identical
+  fees (lp0/protocol95/creator30) on both builds; fee transfers execute identically. buy CU
+  93443/55691 (vs ~82k/45k before) — execution now runs deep into the swap handler.
+- buy/sell now hit a NEW matched gate: Custom(6058) BuybackFeeRecipientMissing (buy.rs:116),
+  identical on both builds (matched rejection, not a divergence).
+- Zeroing the IDL-layout buyback fields in global_config did NOT clear it → the live binary
+  reads the buyback requirement from a source the stale IDL doesn't capture. Clearing it
+  requires RE of buy @0x1cec9 around buy.rs:116 to find the expected buyback recipient
+  account(s)/offset, then seeding+passing them. create_pool/deposit/withdraw remain byte-id.
