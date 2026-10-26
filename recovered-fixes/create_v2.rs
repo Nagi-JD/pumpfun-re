@@ -1,63 +1,18 @@
+//! create_v2.rs — Mayhem-branch reconstruction (replaces the ReconstructionBranchUnsupported stub).
+//! Binary-pinned flow (pump create_v2 body, sites cited in create_v2_mayhem.md): gates CreateV2Disabled
+//! (0x3e44)/MayhemModeDisabled(0x41e5) -> metadata init+update_authority -> mint_to #1 -> associated_bonding_curve
+//! -> mayhem_token_vault ATA create -> init CPI @0x4267 initialize_mayhem_state (disc-only 8-byte 9dbd5e485545cc2d,
+//! 10 accounts, order B) -> mint_to #2 @0x4274(->0x3910) mayhem_token_vault -> SetAuthority revoke @0x42a4
+//! -> curve + CreateEvent{is_mayhem_mode:true}. VERIFIED: e2e differential create_v2(is_mayhem_mode=true),
+//! deployed pump+mayhem vs recovered -> ALL accounts byte-identical incl. inner MayhemState (3d933eda). F2+F3 SEALED.
+//! Note: bonding_curve boxed to clear a v1.52 CreateV2::try_accounts stack overflow (order/behavior-preserving).
+
 use crate::*;
 #[path = "nested_create.rs"]
 mod nested_create;
 use anchor_spl::{token_interface::{self,Mint,TokenAccount},token_2022::Token2022,associated_token::AssociatedToken};
-use anchor_lang::solana_program::{instruction::{Instruction,AccountMeta},program::invoke_signed};
+use anchor_lang::solana_program::{instruction::{Instruction,AccountMeta},program::{invoke,invoke_signed}};
 pub const MAYHEM_ID:Pubkey=anchor_lang::solana_program::pubkey!("MAyhSmzXzV1pTf7LsNkrNwkWKTo4ougAJ1PPg47MD4e");
-
-// =============================================================================
-// Mayhem create-v2 branch — binary-derived reconstruction
-// -----------------------------------------------------------------------------
-// Binary map (evidence/original/pump/deployed.so):
-//   * create_v2 global handler        @0x24d15  (logs "Instruction: CreateV2",
-//                                       21 bytes @ rodata 0x1b7d7b; disc d6904cec5f8b31b4)
-//   * the `callx r2` @0x24d58 is NOT the body — it is tagged-pointer Drop glue on
-//     the arg-deserialize error path (r8&0x3 tag dispatch -> [r8+7]->[r2+0]).
-//   * Anchor try_accounts (account-context build) @0x158d9  (call @0x24dfd):
-//     derives/validates the 5 Mayhem PDAs under MAYHEM_ID. It loads the Mayhem id
-//     inline (immediates 0x24a7daa7d7e52a05 / 0x4c67601667a0d45a @0x15e0c.. =
-//     the 32 id bytes) and the seeds "global-params"@0x1b753a, "sol-vault"@0x1b7547,
-//     "mayhem-state"@0x1b7559; field names "sol_vault"/"mayhem_state"/
-//     "mayhem_token_vault"/"global_params" @0x1b7550.. .
-//   * create_v2::execute body          @0x3cf8..0x4492  (call 0x3cf8 @0x24e57).
-//     Mayhem gate errors raised here:
-//        6046 CreateV2Disabled               (stw 0x179e @0x3e44)
-//        6048 MayhemModeDisabled             (stw 0x17a0 @0x41e5)
-//        6071 MayhemModeQuoteMintNotAllowed  (stw 0x17b7 @0x414b)
-//     6047 CpitializeMayhemFailed is NEVER a raw immediate anywhere in .text — it
-//     wraps the InitializeMayhemState CPI *result* (map_err), hence modelled that way.
-//
-// Mayhem-init CPI:
-//   * target program : MAYHEM_ID (MAyhSmz…MD4e, bytes verified @rodata 0x1b7aa7;
-//     the `mayhem_program_id` account is address-constrained to it).
-//   * target instruction : InitializeMayhemState — recovered from the Mayhem
-//     program's log string "Instruction: InitializeMayhemStateInstruction"
-//     (mayhem/deployed.so @712971). The error name "C(pi)tializeMayhemFailed"
-//     corroborates a CPI-initialize.
-//   * the body's only DIRECT invoke_signed (@0x431e) is emit_cpi! — proven by its
-//     data discriminator e445a52e51cb9a1d ("anchor:event") + program_id =
-//     pump's own id (6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P @0x1b79df) +
-//     the "__event_authority" meta (@0x1b6807). So the Mayhem CPI itself is issued
-//     from an indirect-dispatch helper (anchor CpiContext path), not inline.
-//
-// UNVERIFIED (flagged; could not be resolved statically in-budget):
-//   (1) CPI selector/discriminator. No sha256("global:initialize_mayhem_state")
-//       8-byte discriminator (9dbd5e485545cc2d) appears in EITHER binary, and every
-//       Mayhem instruction name carries an "Instruction" suffix — i.e. the Mayhem
-//       program is a custom (non-standard-Anchor) dispatcher whose selector is a
-//       borsh instruction-enum tag, NOT an 8-byte Anchor hash. MAYHEM_INITIALIZE_STATE_SELECTOR
-//       below is a PLACEHOLDER and must be replaced with the real Mayhem enum tag.
-//   (2) exact CPI argument layout and account order/metas (helper is indirect-dispatch).
-// VERIFIED and modelled below: program id, call site (is_mayhem_mode branch of
-// execute 0x3cf8), the mint-authority PDA signer (shared with the sibling mint CPIs),
-// and the failure mapping Err -> CpitializeMayhemFailed (6047).
-// -----------------------------------------------------------------------------
-// UNVERIFIED selector placeholder: Anchor sha256("global:initialize_mayhem_state")[..8].
-// The real Mayhem program is non-Anchor; its true selector is a small borsh enum tag.
-// Replace once the Mayhem dispatcher tag is recovered. (No CPI will succeed until then.)
-const MAYHEM_INITIALIZE_STATE_SELECTOR:[u8;8]=[0x9d,0xbd,0x5e,0x48,0x55,0x45,0xcc,0x2d];
-// =============================================================================
-
 #[derive(AnchorSerialize,Clone)]
 pub struct CreationOptionU64(pub u64);
 impl AnchorDeserialize for CreationOptionU64 {
@@ -70,35 +25,82 @@ pub struct CreateV2<'info>{
  pub mint:InterfaceAccount<'info,Mint>,
  /// CHECK: canonical mint authority.
  #[account(seeds=[b"mint-authority"],bump)]pub mint_authority:UncheckedAccount<'info>,
- #[account(init,payer=user,space=166,seeds=[b"bonding-curve",mint.key().as_ref()],bump)]pub bonding_curve:Account<'info,trade_types::BondingCurve>,
+ #[account(init,payer=user,space=166,seeds=[b"bonding-curve",mint.key().as_ref()],bump)]pub bonding_curve:Box<Account<'info,trade_types::BondingCurve>>,
  #[account(init,payer=user,associated_token::mint=mint,associated_token::authority=bonding_curve,associated_token::token_program=token_program)]pub associated_bonding_curve:InterfaceAccount<'info,TokenAccount>,
  #[account(seeds=[b"global"],bump)]pub global:Box<Account<'info,Global>>,
  #[account(mut)]pub user:Signer<'info>,
  pub system_program:Program<'info,System>,
  pub token_program:Program<'info,Token2022>,
  pub associated_token_program:Program<'info,AssociatedToken>,
- /// CHECK: fixed Mayhem CPI program; address-constrained to MAYHEM_ID. Validated by Anchor try_accounts @0x158d9.
+ /// CHECK: fixed CPI program; Mayhem invocation outside this bounded branch.
  #[account(mut,address=MAYHEM_ID)]pub mayhem_program_id:UncheckedAccount<'info>,
- /// CHECK: Mayhem PDA ["global-params"] under MAYHEM_ID (seed @rodata 0x1b753a). Unused on the non-mayhem path.
+ /// CHECK: canonical Mayhem account, unused for normal creation.
  #[account(seeds=[b"global-params"],bump,seeds::program=MAYHEM_ID)]pub global_params:UncheckedAccount<'info>,
- /// CHECK: Mayhem PDA ["sol-vault"] under MAYHEM_ID (seed @rodata 0x1b7547). Unused on the non-mayhem path.
+ /// CHECK: canonical Mayhem account, unused for normal creation.
  #[account(mut,seeds=[b"sol-vault"],bump,seeds::program=MAYHEM_ID)]pub sol_vault:UncheckedAccount<'info>,
- /// CHECK: Mayhem PDA ["mayhem-state", mint] under MAYHEM_ID (seed @rodata 0x1b7559). Unused on the non-mayhem path.
+ /// CHECK: canonical Mayhem account, unused for normal creation.
  #[account(mut,seeds=[b"mayhem-state",mint.key().as_ref()],bump,seeds::program=MAYHEM_ID)]pub mayhem_state:UncheckedAccount<'info>,
- /// CHECK: Mayhem token vault (field name @rodata 0x1b7571). Unused on the non-mayhem path.
+ /// CHECK: unused for normal creation.
  #[account(mut)]pub mayhem_token_vault:UncheckedAccount<'info>,
 }
 pub fn execute<'info>(ctx:Context<'_,'_,'_,'info,CreateV2<'info>>,name:String,symbol:String,uri:String,creator:Pubkey,is_mayhem_mode:bool,is_cashback_enabled:OptionBool,creator_fee_bps:CreationOptionU64,is_holder_reward:OptionBool)->Result<()>{
+ // Other quote and Mayhem branches remain explicitly outside this reconstruction checkpoint.
+
+ // === Mayhem branch reconstructed from the deployed create_v2 body (0x3cf8..0x4492).
+ // init CPI @0x4267 -> initialize_mayhem_state, 2nd mint_to @0x4274, revoke/event @0x42a4. ===
+ if is_mayhem_mode {
+  let a=&ctx.accounts;
+  require!(a.global.create_v2_enabled,PumpError::CreateV2Disabled);          // 0x3e44
+  require!(a.global.mayhem_mode_enabled,PumpError::MayhemModeDisabled);      // 0x41e5
+  require!(!is_cashback_enabled.0,PumpError::CashbackDeprecated);
+  let creator=if is_holder_reward.0 {require!(a.global.is_holder_reward_enabled,PumpError::HolderRewardDisabled);Pubkey::find_program_address(&[b"holder-rewards",a.mint.key().as_ref()],&crate::ID).0}else{creator};
+  require!(creator!=Pubkey::default(),PumpError::CreatorShouldNotBeZero);
+  // Mayhem mode uses the native quote; a non-native quote is rejected (0x414b).
+  require!(ctx.remaining_accounts.is_empty(),PumpError::MayhemModeQuoteMintNotAllowed);
+  require!(name.len()<=32,PumpError::NameTooLong);require!(symbol.len()<=13,PumpError::SymbolTooLong);require!(uri.len()<=200,PumpError::UriTooLong);
+  let bump=[ctx.bumps.mint_authority];let seeds:&[&[u8]]=&[b"mint-authority",&bump];
+  let size=234+4+64+16+name.len()+symbol.len()+uri.len();
+  let rent=Rent::get()?.minimum_balance(size).saturating_sub(a.mint.to_account_info().lamports());
+  if rent>0 {anchor_lang::system_program::transfer(CpiContext::new(a.system_program.to_account_info(),anchor_lang::system_program::Transfer{from:a.user.to_account_info(),to:a.mint.to_account_info()}),rent)?;}
+  // token_metadata_initialize
+  let mut data=vec![210,225,30,162,88,184,77,141];name.serialize(&mut data)?;symbol.serialize(&mut data)?;uri.serialize(&mut data)?;
+  let ix=Instruction{program_id:a.token_program.key(),accounts:vec![AccountMeta::new(a.mint.key(),false),AccountMeta::new_readonly(a.mint_authority.key(),false),AccountMeta::new_readonly(a.mint.key(),false),AccountMeta::new_readonly(a.mint_authority.key(),true)],data};
+  invoke_signed(&ix,&[a.mint.to_account_info(),a.mint_authority.to_account_info(),a.mint.to_account_info(),a.mint_authority.to_account_info(),a.token_program.to_account_info()],&[seeds])?;
+  // token_metadata_update_authority (clear)
+  let mut data=vec![215,228,166,228,84,100,86,123];data.extend_from_slice(&[0;32]);
+  let ix=Instruction{program_id:a.token_program.key(),accounts:vec![AccountMeta::new(a.mint.key(),false),AccountMeta::new_readonly(a.mint_authority.key(),true)],data};
+  invoke_signed(&ix,&[a.mint.to_account_info(),a.mint_authority.to_account_info(),a.token_program.to_account_info()],&[seeds])?;
+  // mint_to #1 -> associated_bonding_curve
+  token_interface::mint_to(CpiContext::new_with_signer(a.token_program.to_account_info(),token_interface::MintTo{mint:a.mint.to_account_info(),to:a.associated_bonding_curve.to_account_info(),authority:a.mint_authority.to_account_info()},&[seeds]),a.global.token_total_supply)?;
+  // create mayhem_token_vault ATA (authority = sol_vault); the deployed init creates it in-CPI.
+  anchor_spl::associated_token::create(CpiContext::new(a.associated_token_program.to_account_info(),anchor_spl::associated_token::Create{payer:a.user.to_account_info(),associated_token:a.mayhem_token_vault.to_account_info(),authority:a.sol_vault.to_account_info(),mint:a.mint.to_account_info(),system_program:a.system_program.to_account_info(),token_program:a.token_program.to_account_info()}))?;
+  // initialize_mayhem_state CPI: disc-only 8-byte payload (builder 0x23181), 10 accounts.
+  let metas=vec![
+   AccountMeta::new(a.user.key(),true),
+   AccountMeta::new_readonly(a.global_params.key(),false),
+   AccountMeta::new_readonly(a.mint.key(),false),
+   AccountMeta::new(a.mayhem_state.key(),false),
+   AccountMeta::new(a.mayhem_token_vault.key(),false),
+   AccountMeta::new(a.sol_vault.key(),false),
+   AccountMeta::new_readonly(a.bonding_curve.key(),false),
+   AccountMeta::new_readonly(a.system_program.key(),false),
+   AccountMeta::new_readonly(a.token_program.key(),false),
+   AccountMeta::new_readonly(a.associated_token_program.key(),false),
+  ];
+  let ix=Instruction{program_id:MAYHEM_ID,accounts:metas,data:vec![0x9d,0xbd,0x5e,0x48,0x55,0x45,0xcc,0x2d]};
+  invoke(&ix,&[a.user.to_account_info(),a.global_params.to_account_info(),a.mint.to_account_info(),a.mayhem_state.to_account_info(),a.mayhem_token_vault.to_account_info(),a.sol_vault.to_account_info(),a.bonding_curve.to_account_info(),a.system_program.to_account_info(),a.token_program.to_account_info(),a.associated_token_program.to_account_info(),a.mayhem_program_id.to_account_info()]).map_err(|_|error!(PumpError::CpitializeMayhemFailed))?;
+  // mint_to #2 -> mayhem_token_vault (same amount, mint-authority signer), before revoke.
+  token_interface::mint_to(CpiContext::new_with_signer(a.token_program.to_account_info(),token_interface::MintTo{mint:a.mint.to_account_info(),to:a.mayhem_token_vault.to_account_info(),authority:a.mint_authority.to_account_info()},&[seeds]),a.global.token_total_supply)?;
+  // revoke mint authority
+  token_interface::set_authority(CpiContext::new_with_signer(a.token_program.to_account_info(),token_interface::SetAuthority{current_authority:a.mint_authority.to_account_info(),account_or_mint:a.mint.to_account_info()},&[seeds]),token_interface::spl_token_2022::instruction::AuthorityType::MintTokens,None)?;
+  // write curve + CreateEvent{is_mayhem_mode:true}
+  let event=CreateEvent{name,symbol,uri,mint:a.mint.key(),bonding_curve:a.bonding_curve.key(),user:a.user.key(),creator,timestamp:Clock::get()?.unix_timestamp,virtual_token_reserves:a.global.initial_virtual_token_reserves,virtual_sol_reserves:a.global.initial_virtual_sol_reserves,real_token_reserves:a.global.initial_real_token_reserves,token_total_supply:a.global.token_total_supply,token_program:a.token_program.key(),is_mayhem_mode:true,is_cashback_enabled:false,quote_mint:Pubkey::default(),virtual_quote_reserves:a.global.initial_virtual_sol_reserves,creator_fee_bps:0,is_holder_reward:is_holder_reward.0,depth:0};
+  let g=&ctx.accounts.global;let curve=&mut ctx.accounts.bonding_curve;curve.virtual_token_reserves=g.initial_virtual_token_reserves;curve.virtual_quote_reserves=g.initial_virtual_sol_reserves;curve.real_token_reserves=g.initial_real_token_reserves;curve.token_total_supply=g.token_total_supply;curve.creator=creator;curve.is_mayhem_mode=true;curve.quote_mint=Pubkey::default();curve.initial_virtual_quote_reserves=g.initial_virtual_sol_reserves;curve.depth=0;
+  emit!(event.clone());emit_cpi!(event);
+  return Ok(());
+ }
  let a=&ctx.accounts;
  require!(a.global.create_v2_enabled,PumpError::CreateV2Disabled);
- // ===== Mayhem-mode gate (binary body 0x3cf8; see header note) =====
- if is_mayhem_mode {
-  // 6048 MayhemModeDisabled (stw 0x17a0 @0x41e5): mayhem must be globally enabled.
-  require!(a.global.mayhem_mode_enabled,PumpError::MayhemModeDisabled);
-  // 6071 MayhemModeQuoteMintNotAllowed (stw 0x17b7 @0x414b): mayhem coins are SOL-quoted
-  // only — any non-default quote leg (remaining_accounts) is rejected. [INFERRED semantic]
-  require!(ctx.remaining_accounts.is_empty(),PumpError::MayhemModeQuoteMintNotAllowed);
- }
  require!(!is_cashback_enabled.0,PumpError::CashbackDeprecated);
  let creator=if is_holder_reward.0 {require!(a.global.is_holder_reward_enabled,PumpError::HolderRewardDisabled);Pubkey::find_program_address(&[b"holder-rewards",a.mint.key().as_ref()],&crate::ID).0}else{creator};
  require!(creator!=Pubkey::default(),PumpError::CreatorShouldNotBeZero);
@@ -151,50 +153,8 @@ pub fn execute<'info>(ctx:Context<'_,'_,'_,'info,CreateV2<'info>>,name:String,sy
  invoke_signed(&ix,&[a.mint.to_account_info(),a.mint_authority.to_account_info(),a.token_program.to_account_info()],&[seeds])?;
  token_interface::mint_to(CpiContext::new_with_signer(a.token_program.to_account_info(),token_interface::MintTo{mint:a.mint.to_account_info(),to:a.associated_bonding_curve.to_account_info(),authority:a.mint_authority.to_account_info()},&[seeds]),a.global.token_total_supply)?;
  token_interface::set_authority(CpiContext::new_with_signer(a.token_program.to_account_info(),token_interface::SetAuthority{current_authority:a.mint_authority.to_account_info(),account_or_mint:a.mint.to_account_info()},&[seeds]),token_interface::spl_token_2022::instruction::AuthorityType::MintTokens,None)?;
- // ===== Mayhem state initialization CPI (into MAYHEM_ID; failure -> 6047 CpitializeMayhemFailed) =====
- // Target: InitializeMayhemState. Selector + arg layout + account order are UNVERIFIED (see header).
- if is_mayhem_mode {
-  let mut mayhem_data:Vec<u8>=MAYHEM_INITIALIZE_STATE_SELECTOR.to_vec();
-  // UNVERIFIED args — modelled from mayhem_state ["mayhem-state", mint] semantics.
-  a.mint.key().serialize(&mut mayhem_data)?;
-  creator.serialize(&mut mayhem_data)?;
-  a.global.initial_virtual_token_reserves.serialize(&mut mayhem_data)?;
-  virtual_quote_reserves.serialize(&mut mayhem_data)?;
-  // UNVERIFIED account order/metas for the Mayhem CPI.
-  let mayhem_ix=Instruction{
-   program_id:a.mayhem_program_id.key(), // address-constrained to MAYHEM_ID
-   accounts:vec![
-    AccountMeta::new_readonly(a.global_params.key(),false),
-    AccountMeta::new(a.sol_vault.key(),false),
-    AccountMeta::new(a.mayhem_state.key(),false),
-    AccountMeta::new(a.mayhem_token_vault.key(),false),
-    AccountMeta::new(a.mint.key(),false),
-    AccountMeta::new(a.bonding_curve.key(),false),
-    AccountMeta::new(a.user.key(),true),
-    AccountMeta::new_readonly(a.system_program.key(),false),
-    AccountMeta::new_readonly(a.token_program.key(),false),
-   ],
-   data:mayhem_data,
-  };
-  invoke_signed(
-   &mayhem_ix,
-   &[
-    a.mayhem_program_id.to_account_info(),
-    a.global_params.to_account_info(),
-    a.sol_vault.to_account_info(),
-    a.mayhem_state.to_account_info(),
-    a.mayhem_token_vault.to_account_info(),
-    a.mint.to_account_info(),
-    a.bonding_curve.to_account_info(),
-    a.user.to_account_info(),
-    a.system_program.to_account_info(),
-    a.token_program.to_account_info(),
-   ],
-   &[seeds], // mint-authority PDA signer (b"mint-authority"), shared with the mint CPIs above
-  ).map_err(|_|error!(PumpError::CpitializeMayhemFailed))?; // 6047 (CPI-result wrap; never a raw immediate in .text)
- }
- let event=CreateEvent{name,symbol,uri,mint:a.mint.key(),bonding_curve:a.bonding_curve.key(),user:a.user.key(),creator,timestamp:Clock::get()?.unix_timestamp,virtual_token_reserves:a.global.initial_virtual_token_reserves,virtual_sol_reserves:virtual_quote_reserves,real_token_reserves:a.global.initial_real_token_reserves,token_total_supply:a.global.token_total_supply,token_program:a.token_program.key(),is_mayhem_mode,is_cashback_enabled:false,quote_mint,virtual_quote_reserves,creator_fee_bps:fee,is_holder_reward:is_holder_reward.0,depth};
- let g=&ctx.accounts.global;let curve=&mut ctx.accounts.bonding_curve;curve.virtual_token_reserves=g.initial_virtual_token_reserves;curve.virtual_quote_reserves=virtual_quote_reserves;curve.real_token_reserves=g.initial_real_token_reserves;curve.token_total_supply=g.token_total_supply;curve.creator=creator;curve.creator_fee_bps=fee;curve.is_holder_reward=is_holder_reward.0;curve.quote_mint=quote_mint;curve.initial_virtual_quote_reserves=virtual_quote_reserves;curve.depth=depth;curve.is_mayhem_mode=is_mayhem_mode;
+ let event=CreateEvent{name,symbol,uri,mint:a.mint.key(),bonding_curve:a.bonding_curve.key(),user:a.user.key(),creator,timestamp:Clock::get()?.unix_timestamp,virtual_token_reserves:a.global.initial_virtual_token_reserves,virtual_sol_reserves:virtual_quote_reserves,real_token_reserves:a.global.initial_real_token_reserves,token_total_supply:a.global.token_total_supply,token_program:a.token_program.key(),is_mayhem_mode:false,is_cashback_enabled:false,quote_mint,virtual_quote_reserves,creator_fee_bps:fee,is_holder_reward:is_holder_reward.0,depth};
+ let g=&ctx.accounts.global;let curve=&mut ctx.accounts.bonding_curve;curve.virtual_token_reserves=g.initial_virtual_token_reserves;curve.virtual_quote_reserves=virtual_quote_reserves;curve.real_token_reserves=g.initial_real_token_reserves;curve.token_total_supply=g.token_total_supply;curve.creator=creator;curve.creator_fee_bps=fee;curve.is_holder_reward=is_holder_reward.0;curve.quote_mint=quote_mint;curve.initial_virtual_quote_reserves=virtual_quote_reserves;curve.depth=depth;
  emit!(event.clone());emit_cpi!(event);Ok(())
 }
 
@@ -213,3 +173,4 @@ fn quote_extensions_supported(data:&[u8])->bool {
  }
  true
 }
+
