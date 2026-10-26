@@ -39,17 +39,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fees_prog import load  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SO = {
-    'pump': '/opt/data/lab-pumpfun/pumpfun-source/evidence/original/pump/deployed.so',
-    'pump_amm': '/opt/data/lab-pumpfun/pumpfun-source/evidence/original/pump_amm/deployed.so',
-    'pump_fees': '/opt/data/lab-pumpfun/pumpfun-source/evidence/original/pump_fees/deployed.so',
-    'mayhem': '/opt/data/lab-pumpfun/pumpfun-source/evidence/original/mayhem/deployed.so',
-}
-IDL = {
-    'pump': '/opt/data/lab-pumpfun/pumpfun-source/evidence/upstream/pump.json',
-    'pump_amm': '/opt/data/lab-pumpfun/pumpfun-source/evidence/upstream/pump_amm.json',
-    'pump_fees': '/opt/data/lab-pumpfun/pumpfun-source/evidence/upstream/pump_fees.json',
-}
+# The deployed ELFs and the upstream IDL dumps live in the sibling reconstruction
+# checkout (`../pumpfun-source/evidence`), same layout the other tools use.
+EVIDENCE = os.environ.get('PUMPFUN_EVIDENCE', os.path.join(os.path.dirname(ROOT), 'pumpfun-source', 'evidence'))
+SO = {prog: os.path.join(EVIDENCE, 'original', prog, 'deployed.so') for prog in ('pump', 'pump_amm', 'pump_fees', 'mayhem')}
+IDL = {prog: os.path.join(EVIDENCE, 'upstream', prog + '.json') for prog in ('pump', 'pump_amm', 'pump_fees')}
 
 # opcodes (sBPF v1)
 LD = {0x61: 4, 0x69: 2, 0x71: 1, 0x79: 8}
