@@ -1,0 +1,3885 @@
+{
+ "binary": "deployed.so",
+ "callee_raise_stores": 0,
+ "frames": 489,
+ "frames_naive": 637,
+ "funnels": [
+  {
+   "frame": "0x1750d",
+   "frame_insns": 2,
+   "handlers": 0,
+   "site": "0x1750d",
+   "symbol": "custom_panic"
+  },
+  {
+   "frame": "0x16f7a",
+   "frame_insns": 56,
+   "handlers": 0,
+   "site": "0x16f8f",
+   "symbol": "sol_create_program_address"
+  },
+  {
+   "frame": "0x1621e",
+   "frame_insns": 29,
+   "handlers": 0,
+   "site": "0x16226",
+   "symbol": "sol_get_clock_sysvar"
+  },
+  {
+   "frame": "0x1623b",
+   "frame_insns": 24,
+   "handlers": 0,
+   "site": "0x16243",
+   "symbol": "sol_get_rent_sysvar"
+  },
+  {
+   "frame": "0x164a3",
+   "frame_insns": 121,
+   "handlers": 0,
+   "site": "0x16502",
+   "symbol": "sol_invoke_signed_rust"
+  },
+  {
+   "frame": "0x161a7",
+   "frame_insns": 2,
+   "handlers": 0,
+   "site": "0x161a7",
+   "symbol": "sol_log_data"
+  },
+  {
+   "frame": "0x16fb4",
+   "frame_insns": 2,
+   "handlers": 0,
+   "site": "0x16fb4",
+   "symbol": "sol_log_pubkey"
+  },
+  {
+   "frame": "0x184e6",
+   "frame_insns": 8,
+   "handlers": 0,
+   "site": "0x184e9",
+   "symbol": "sol_memcmp_"
+  },
+  {
+   "frame": "0x184dd",
+   "frame_insns": 4,
+   "handlers": 0,
+   "site": "0x184de",
+   "symbol": "sol_memmove_"
+  },
+  {
+   "frame": "0x1651e",
+   "frame_insns": 2,
+   "handlers": 0,
+   "site": "0x1651e",
+   "symbol": "sol_set_return_data"
+  },
+  {
+   "frame": "0x17171",
+   "frame_insns": 20,
+   "handlers": 0,
+   "site": "0x1717b",
+   "symbol": "sol_sha256"
+  },
+  {
+   "frame": "0x16f53",
+   "frame_insns": 37,
+   "handlers": 0,
+   "site": "0x16f61",
+   "symbol": "sol_try_find_program_address"
+  }
+ ],
+ "handlers": {
+  "admin_cto_sharing_config": {
+   "body": "0x139e4",
+   "body_end": "0x13a95",
+   "callees": [
+    {
+     "callee": "0xba35",
+     "callsite": "0x13a21",
+     "disc_hits": [],
+     "insns": 733,
+     "raise_stores": 0,
+     "strings": [
+      "pool_authority",
+      "authority",
+      "global",
+      "mint",
+      "sharing_config",
+      "pool_authority"
+     ],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x13a2a",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x175c5",
+     "callsite": "0x13a40",
+     "disc_hits": [],
+     "insns": 68,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1275",
+     "callsite": "0x13a43",
+     "disc_hits": [],
+     "insns": 31,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13a52",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13a5f",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x3e64",
+     "callsite": "0x13a77",
+     "disc_hits": [],
+     "insns": 586,
+     "raise_stores": 1,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x989",
+     "callsite": "0x13a81",
+     "disc_hits": [],
+     "insns": 132,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x13a8c",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "3c64909c408ab625",
+   "handler_pc": "0x139e4",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: AdminCtoSharingConfig",
+   "identity_string_found": [
+    "Instruction: AdminCtoSharingConfig"
+   ],
+   "insns": 171,
+   "own_disc_hits": [],
+   "own_immediates": 6,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 34,
+     "pc": "0x139e9",
+     "text": "Instruction: AdminCtoSharingConfig",
+     "va": "0xc52c2"
+    },
+    {
+     "kind": "identifier",
+     "len": 14,
+     "pc": "0x13a89",
+     "text": "sharing_config",
+     "va": "0xc4c1c"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x139ec",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "claim_social_fee_pda": {
+   "body": "0x13b5d",
+   "body_end": "0x13c64",
+   "callees": [
+    {
+     "callee": "0x1d11",
+     "callsite": "0x13b6e",
+     "disc_hits": [],
+     "insns": 69,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xbe2e",
+     "callsite": "0x13b88",
+     "disc_hits": [],
+     "insns": 748,
+     "raise_stores": 0,
+     "strings": [
+      "social_fee_pda",
+      "recipient",
+      "fee_program_global",
+      "social_claim_authority",
+      "program",
+      "event_authority"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13b96",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x40d1",
+     "callsite": "0x13bb0",
+     "disc_hits": [],
+     "insns": 551,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort",
+      "sol_log_"
+     ]
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x13be2",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13bf1",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xc685",
+     "callsite": "0x13c1c",
+     "disc_hits": [],
+     "insns": 257,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1621c",
+     "callsite": "0x13c20",
+     "disc_hits": [],
+     "insns": 2,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xa8d",
+     "callsite": "0x13c28",
+     "disc_hits": [],
+     "insns": 170,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x13c32",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x175af",
+     "callsite": "0x13c58",
+     "disc_hits": [],
+     "insns": 3,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x178c8",
+     "callsite": "0x13c63",
+     "disc_hits": [],
+     "insns": 26,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "e115fb85a11ec7e2",
+   "handler_pc": "0x13b5d",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: ClaimSocialFeePda",
+   "identity_string_found": [
+    "Instruction: ClaimSocialFeePda"
+   ],
+   "insns": 248,
+   "own_disc_hits": [],
+   "own_immediates": 15,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 30,
+     "pc": "0x13b62",
+     "text": "Instruction: ClaimSocialFeePda",
+     "va": "0xc5303"
+    },
+    {
+     "kind": "identifier",
+     "len": 14,
+     "pc": "0x13c2f",
+     "text": "social_fee_pda",
+     "va": "0xc4c41"
+    },
+    {
+     "kind": "message",
+     "len": 43,
+     "pc": "0x13c5c",
+     "text": "called `Result::unwrap()` on an `Err` value",
+     "va": "0xc44f3"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x13b65",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "claim_social_fee_pda_v2": {
+   "body": "0x13c64",
+   "body_end": "0x13d6a",
+   "callees": [
+    {
+     "callee": "0x1d11",
+     "callsite": "0x13c75",
+     "disc_hits": [],
+     "insns": 69,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xc131",
+     "callsite": "0x13c90",
+     "disc_hits": [],
+     "insns": 1199,
+     "raise_stores": 0,
+     "strings": [
+      "social_fee_pda",
+      "quote_mint",
+      "associated_recipient",
+      "recipient",
+      "event_authority",
+      "quote_token_program"
+     ],
+     "syscalls": []
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13c9e",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x4308",
+     "callsite": "0x13cba",
+     "disc_hits": [],
+     "insns": 1303,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort",
+      "sol_log_"
+     ]
+    },
+    {
+     "callee": "0x1621c",
+     "callsite": "0x13ce7",
+     "disc_hits": [],
+     "insns": 2,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xc607",
+     "callsite": "0x13ced",
+     "disc_hits": [],
+     "insns": 66,
+     "raise_stores": 0,
+     "strings": [
+      "social_fee_pda",
+      "quote_mint"
+     ],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x13cf3",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13d02",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xc685",
+     "callsite": "0x13d2d",
+     "disc_hits": [],
+     "insns": 257,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x175af",
+     "callsite": "0x13d5e",
+     "disc_hits": [],
+     "insns": 3,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x178c8",
+     "callsite": "0x13d69",
+     "disc_hits": [],
+     "insns": 26,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "114df0863abc3595",
+   "handler_pc": "0x13c64",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: ClaimSocialFeePdaV2",
+   "identity_string_found": [
+    "Instruction: ClaimSocialFeePdaV2"
+   ],
+   "insns": 249,
+   "own_disc_hits": [],
+   "own_immediates": 13,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 32,
+     "pc": "0x13c69",
+     "text": "Instruction: ClaimSocialFeePdaV2",
+     "va": "0xc3800"
+    },
+    {
+     "kind": "message",
+     "len": 43,
+     "pc": "0x13d62",
+     "text": "called `Result::unwrap()` on an `Err` value",
+     "va": "0xc44f3"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x13c6c",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "crank_donation_fee_pda": {
+   "body": "0x140b8",
+   "body_end": "0x14121",
+   "callees": [
+    {
+     "callee": "0xc788",
+     "callsite": "0x140cc",
+     "disc_hits": [],
+     "insns": 1312,
+     "raise_stores": 0,
+     "strings": [
+      "event_authority",
+      "program",
+      "payer",
+      "system_program",
+      "token_program",
+      "associated_token_program"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x140d6",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x483d",
+     "callsite": "0x140f2",
+     "disc_hits": [],
+     "insns": 1950,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort",
+      "sol_log_"
+     ]
+    },
+    {
+     "callee": "0xcf6f",
+     "callsite": "0x140fb",
+     "disc_hits": [],
+     "insns": 112,
+     "raise_stores": 0,
+     "strings": [
+      "donation_fee_pda",
+      "donation_fee_pda_ata",
+      "quote_mint"
+     ],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "dc0abda7a9111945",
+   "handler_pc": "0x140b8",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: CrankDonationFeePda",
+   "identity_string_found": [
+    "Instruction: CrankDonationFeePda"
+   ],
+   "insns": 104,
+   "own_disc_hits": [],
+   "own_immediates": 1,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 32,
+     "pc": "0x140bc",
+     "text": "Instruction: CrankDonationFeePda",
+     "va": "0xc3700"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x140bf",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "create_donation_fee_pda": {
+   "body": "0x14044",
+   "body_end": "0x140b8",
+   "callees": [
+    {
+     "callee": "0xcfe6",
+     "callsite": "0x14058",
+     "disc_hits": [],
+     "insns": 1094,
+     "raise_stores": 0,
+     "strings": [
+      "event_authority",
+      "program",
+      "payer",
+      "system_program",
+      "fee_program_global",
+      "base_mint"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x14065",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x500a",
+     "callsite": "0x14079",
+     "disc_hits": [],
+     "insns": 1641,
+     "raise_stores": 10,
+     "strings": [],
+     "syscalls": [
+      "abort",
+      "sol_log_"
+     ]
+    },
+    {
+     "callee": "0xb3b",
+     "callsite": "0x14084",
+     "disc_hits": [],
+     "insns": 147,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x1408e",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "f48b10580eff7a1a",
+   "handler_pc": "0x14044",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: CreateDonationFeePda",
+   "identity_string_found": [
+    "Instruction: CreateDonationFeePda"
+   ],
+   "insns": 113,
+   "own_disc_hits": [],
+   "own_immediates": 3,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 33,
+     "pc": "0x14048",
+     "text": "Instruction: CreateDonationFeePda",
+     "va": "0xc53a3"
+    },
+    {
+     "kind": "identifier",
+     "len": 16,
+     "pc": "0x1408b",
+     "text": "donation_fee_pda",
+     "va": "0xc4218"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x1404b",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "create_fee_sharing_config": {
+   "body": "0x13810",
+   "body_end": "0x138ba",
+   "callees": [
+    {
+     "callee": "0xd95d",
+     "callsite": "0x13827",
+     "disc_hits": [],
+     "insns": 1321,
+     "raise_stores": 0,
+     "strings": [
+      "global",
+      "event_authority",
+      "program",
+      "payer",
+      "mint",
+      "bonding_curve"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13833",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x56c7",
+     "callsite": "0x13847",
+     "disc_hits": [],
+     "insns": 1510,
+     "raise_stores": 5,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xe2a5",
+     "callsite": "0x13850",
+     "disc_hits": [],
+     "insns": 365,
+     "raise_stores": 0,
+     "strings": [
+      "sharing_config",
+      "bonding_curve",
+      "pool"
+     ],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "c34e564c6f34fbd5",
+   "handler_pc": "0x13810",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: CreateFeeSharingConfig",
+   "identity_string_found": [
+    "Instruction: CreateFeeSharingConfig"
+   ],
+   "insns": 168,
+   "own_disc_hits": [],
+   "own_immediates": 2,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 35,
+     "pc": "0x13814",
+     "text": "Instruction: CreateFeeSharingConfig",
+     "va": "0xc5217"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x13817",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "create_social_fee_pda": {
+   "body": "0x13a95",
+   "body_end": "0x13b5d",
+   "callees": [
+    {
+     "callee": "0x1d11",
+     "callsite": "0x13aa6",
+     "disc_hits": [],
+     "insns": 69,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xe4d2",
+     "callsite": "0x13ac3",
+     "disc_hits": [],
+     "insns": 860,
+     "raise_stores": 0,
+     "strings": [
+      "payer",
+      "system_program",
+      "fee_program_global",
+      "event_authority",
+      "program",
+      "social_fee_pda"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13ad1",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x5cd3",
+     "callsite": "0x13aee",
+     "disc_hits": [],
+     "insns": 389,
+     "raise_stores": 1,
+     "strings": [],
+     "syscalls": [
+      "abort",
+      "sol_log_"
+     ]
+    },
+    {
+     "callee": "0xa8d",
+     "callsite": "0x13af8",
+     "disc_hits": [],
+     "insns": 170,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x13b02",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x13b25",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13b34",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "90e03bd34ef8cadc",
+   "handler_pc": "0x13a95",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: CreateSocialFeePda",
+   "identity_string_found": [
+    "Instruction: CreateSocialFeePda"
+   ],
+   "insns": 194,
+   "own_disc_hits": [],
+   "own_immediates": 6,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 31,
+     "pc": "0x13a9a",
+     "text": "Instruction: CreateSocialFeePda",
+     "va": "0xc52e4"
+    },
+    {
+     "kind": "identifier",
+     "len": 14,
+     "pc": "0x13aff",
+     "text": "social_fee_pda",
+     "va": "0xc4c41"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x13a9d",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "extend_fee_config": {
+   "body": "0x134a2",
+   "body_end": "0x13541",
+   "callees": [
+    {
+     "callee": "0x8e83",
+     "callsite": "0x134b6",
+     "disc_hits": [],
+     "insns": 430,
+     "raise_stores": 0,
+     "strings": [
+      "fee_config",
+      "user",
+      "system_program",
+      "config_program_id",
+      "event_authority",
+      "event_authority"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x134c0",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x254c",
+     "callsite": "0x134d6",
+     "disc_hits": [],
+     "insns": 750,
+     "raise_stores": 5,
+     "strings": [],
+     "syscalls": [
+      "sol_log_"
+     ]
+    }
+   ],
+   "expected_disc": "44b3f45aad3811d9",
+   "handler_pc": "0x134a2",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: ExtendFeeConfig",
+   "identity_string_found": [
+    "Instruction: ExtendFeeConfig"
+   ],
+   "insns": 158,
+   "own_disc_hits": [],
+   "own_immediates": 1,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 28,
+     "pc": "0x134a6",
+     "text": "Instruction: ExtendFeeConfig",
+     "va": "0xc5190"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x134a9",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "get_fees": {
+   "body": "0x136a0",
+   "body_end": "0x13763",
+   "callees": [
+    {
+     "callee": "0x175c5",
+     "callsite": "0x136c3",
+     "disc_hits": [],
+     "insns": 68,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1275",
+     "callsite": "0x136c6",
+     "disc_hits": [],
+     "insns": 31,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xfd68",
+     "callsite": "0x136df",
+     "disc_hits": [],
+     "insns": 216,
+     "raise_stores": 0,
+     "strings": [
+      "fee_config",
+      "fee_config",
+      "fee_config",
+      "config_program_id"
+     ],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x136ea",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x136f8",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13709",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x1562b",
+     "callsite": "0x13737",
+     "disc_hits": [],
+     "insns": 46,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1cbd",
+     "callsite": "0x1375a",
+     "disc_hits": [],
+     "insns": 58,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1621c",
+     "callsite": "0x1375d",
+     "disc_hits": [],
+     "insns": 2,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x175af",
+     "callsite": "0x13762",
+     "disc_hits": [],
+     "insns": 3,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "e7257e55cf5b3f34",
+   "handler_pc": "0x136a0",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: GetFees",
+   "identity_string_found": [
+    "Instruction: GetFees"
+   ],
+   "insns": 184,
+   "own_disc_hits": [],
+   "own_immediates": 11,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 20,
+     "pc": "0x136a5",
+     "text": "Instruction: GetFees",
+     "va": "0xc51e2"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x136a8",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "get_fees_with_quote_mint": {
+   "body": "0x13763",
+   "body_end": "0x13810",
+   "callees": [
+    {
+     "callee": "0x175c5",
+     "callsite": "0x13786",
+     "disc_hits": [],
+     "insns": 68,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1275",
+     "callsite": "0x13789",
+     "disc_hits": [],
+     "insns": 31,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xfd68",
+     "callsite": "0x137ab",
+     "disc_hits": [],
+     "insns": 216,
+     "raise_stores": 0,
+     "strings": [
+      "fee_config",
+      "fee_config",
+      "fee_config",
+      "config_program_id"
+     ],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x137b6",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x137c4",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x137d2",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x7ee9",
+     "callsite": "0x137e6",
+     "disc_hits": [],
+     "insns": 79,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1cbd",
+     "callsite": "0x13807",
+     "disc_hits": [],
+     "insns": 58,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1621c",
+     "callsite": "0x1380a",
+     "disc_hits": [],
+     "insns": 2,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x175af",
+     "callsite": "0x1380f",
+     "disc_hits": [],
+     "insns": 3,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "9aed8a5ca202a2bb",
+   "handler_pc": "0x13763",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: GetFeesWithQuoteMint",
+   "identity_string_found": [
+    "Instruction: GetFeesWithQuoteMint"
+   ],
+   "insns": 164,
+   "own_disc_hits": [],
+   "own_immediates": 9,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 33,
+     "pc": "0x13768",
+     "text": "Instruction: GetFeesWithQuoteMint",
+     "va": "0xc51f6"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x1376b",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "initialize_buyback": {
+   "body": "0x13d6a",
+   "body_end": "0x13e01",
+   "callees": [
+    {
+     "callee": "0xab73",
+     "callsite": "0x13d84",
+     "disc_hits": [],
+     "insns": 879,
+     "raise_stores": 0,
+     "strings": [
+      "payer",
+      "mint",
+      "system_program",
+      "associated_token_program",
+      "event_authority",
+      "token_program"
+     ],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x13d8d",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13d9b",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13da9",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x3ab3",
+     "callsite": "0x13db2",
+     "disc_hits": [],
+     "insns": 68,
+     "raise_stores": 1,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xb4b4",
+     "callsite": "0x13dbb",
+     "disc_hits": [],
+     "insns": 66,
+     "raise_stores": 0,
+     "strings": [
+      "buyback_vault",
+      "buyback_vault_ata"
+     ],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "fa81eca0e3246786",
+   "handler_pc": "0x13d6a",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: InitializeBuyback",
+   "identity_string_found": [
+    "Instruction: InitializeBuyback"
+   ],
+   "insns": 149,
+   "own_disc_hits": [],
+   "own_immediates": 2,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 30,
+     "pc": "0x13d6f",
+     "text": "Instruction: InitializeBuyback",
+     "va": "0xc5321"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x13d72",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "initialize_fee_config": {
+   "body": "0x12d72",
+   "body_end": "0x12e01",
+   "callees": [
+    {
+     "callee": "0x906f",
+     "callsite": "0x12d86",
+     "disc_hits": [],
+     "insns": 753,
+     "raise_stores": 0,
+     "strings": [
+      "event_authority",
+      "admin",
+      "system_program",
+      "config_program_id",
+      "program",
+      "fee_config"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x12d92",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x2861",
+     "callsite": "0x12da6",
+     "disc_hits": [],
+     "insns": 337,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xbd0",
+     "callsite": "0x12db1",
+     "disc_hits": [],
+     "insns": 122,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x12dbb",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "3ea214857941911b",
+   "handler_pc": "0x12d72",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: InitializeFeeConfig",
+   "identity_string_found": [
+    "Instruction: InitializeFeeConfig"
+   ],
+   "insns": 139,
+   "own_disc_hits": [],
+   "own_immediates": 4,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 32,
+     "pc": "0x12d76",
+     "text": "Instruction: InitializeFeeConfig",
+     "va": "0xc35e0"
+    },
+    {
+     "kind": "identifier",
+     "len": 10,
+     "pc": "0x12db8",
+     "text": "fee_config",
+     "va": "0xc3eb8"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x12d79",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "initialize_fee_program_global": {
+   "body": "0x12e01",
+   "body_end": "0x12eca",
+   "callees": [
+    {
+     "callee": "0x9690",
+     "callsite": "0x12e37",
+     "disc_hits": [],
+     "insns": 833,
+     "raise_stores": 0,
+     "strings": [
+      "pump_global",
+      "authority",
+      "system_program",
+      "event_authority",
+      "program",
+      "fee_program_global"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x12e41",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x29c7",
+     "callsite": "0x12e5b",
+     "disc_hits": [],
+     "insns": 353,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xa0f",
+     "callsite": "0x12e66",
+     "disc_hits": [],
+     "insns": 124,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x12e70",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x12e93",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x12ea1",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "23d78254e9387ca7",
+   "handler_pc": "0x12e01",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: InitializeFeeProgramGlobal",
+   "identity_string_found": [
+    "Instruction: InitializeFeeProgramGlobal"
+   ],
+   "insns": 197,
+   "own_disc_hits": [],
+   "own_immediates": 4,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 39,
+     "pc": "0x12e06",
+     "text": "Instruction: InitializeFeeProgramGlobal",
+     "va": "0xc5078"
+    },
+    {
+     "kind": "identifier",
+     "len": 18,
+     "pc": "0x12e6d",
+     "text": "fee_program_global",
+     "va": "0xc4afc"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x12e09",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "revoke_fee_sharing_authority": {
+   "body": "0x138ba",
+   "body_end": "0x138c7",
+   "callees": [
+    {
+     "callee": "0x14217",
+     "callsite": "0x138c1",
+     "disc_hits": [],
+     "insns": 58,
+     "raise_stores": 1,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "12e99e27b9cf3a68",
+   "handler_pc": "0x138ba",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: RevokeFeeSharingAuthority",
+   "identity_string_found": [
+    "Instruction: RevokeFeeSharingAuthority"
+   ],
+   "insns": 12,
+   "own_disc_hits": [],
+   "own_immediates": 1,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 38,
+     "pc": "0x138bb",
+     "text": "Instruction: RevokeFeeSharingAuthority",
+     "va": "0xc523a"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x138be",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "set_authority": {
+   "body": "0x130de",
+   "body_end": "0x1319e",
+   "callees": [
+    {
+     "callee": "0xa5d2",
+     "callsite": "0x1310d",
+     "disc_hits": [],
+     "insns": 548,
+     "raise_stores": 0,
+     "strings": [
+      "authority",
+      "fee_program_global",
+      "fee_program_global",
+      "event_authority",
+      "program",
+      "authority"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13117",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x327e",
+     "callsite": "0x1312f",
+     "disc_hits": [],
+     "insns": 387,
+     "raise_stores": 1,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xa0f",
+     "callsite": "0x1313a",
+     "disc_hits": [],
+     "insns": 124,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x13144",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x13167",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13175",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "85fa25156ea31a79",
+   "handler_pc": "0x130de",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: SetAuthority",
+   "identity_string_found": [
+    "Instruction: SetAuthority"
+   ],
+   "insns": 188,
+   "own_disc_hits": [],
+   "own_immediates": 4,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 25,
+     "pc": "0x130e3",
+     "text": "Instruction: SetAuthority",
+     "va": "0xc50fd"
+    },
+    {
+     "kind": "identifier",
+     "len": 18,
+     "pc": "0x13141",
+     "text": "fee_program_global",
+     "va": "0xc4afc"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x130e6",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "set_claim_rate_limit": {
+   "body": "0x13034",
+   "body_end": "0x130de",
+   "callees": [
+    {
+     "callee": "0xa5d2",
+     "callsite": "0x1304e",
+     "disc_hits": [],
+     "insns": 548,
+     "raise_stores": 0,
+     "strings": [
+      "authority",
+      "fee_program_global",
+      "fee_program_global",
+      "event_authority",
+      "program",
+      "authority"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13058",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x36ee",
+     "callsite": "0x1306f",
+     "disc_hits": [],
+     "insns": 313,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xa0f",
+     "callsite": "0x1307a",
+     "disc_hits": [],
+     "insns": 124,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x13084",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x130a7",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x130b5",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "b9d39faed4315804",
+   "handler_pc": "0x13034",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: SetClaimRateLimit",
+   "identity_string_found": [
+    "Instruction: SetClaimRateLimit"
+   ],
+   "insns": 166,
+   "own_disc_hits": [],
+   "own_immediates": 4,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 30,
+     "pc": "0x13039",
+     "text": "Instruction: SetClaimRateLimit",
+     "va": "0xc50df"
+    },
+    {
+     "kind": "identifier",
+     "len": 18,
+     "pc": "0x13081",
+     "text": "fee_program_global",
+     "va": "0xc4afc"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x1303c",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "set_disable_flags": {
+   "body": "0x12f8a",
+   "body_end": "0x13034",
+   "callees": [
+    {
+     "callee": "0xa5d2",
+     "callsite": "0x12fa4",
+     "disc_hits": [],
+     "insns": 548,
+     "raise_stores": 0,
+     "strings": [
+      "authority",
+      "fee_program_global",
+      "fee_program_global",
+      "event_authority",
+      "program",
+      "authority"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x12fae",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x35af",
+     "callsite": "0x12fc5",
+     "disc_hits": [],
+     "insns": 299,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xa0f",
+     "callsite": "0x12fd0",
+     "disc_hits": [],
+     "insns": 124,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x12fda",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x12ffd",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x1300b",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "c2d9702372de33be",
+   "handler_pc": "0x12f8a",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: SetDisableFlags",
+   "identity_string_found": [
+    "Instruction: SetDisableFlags"
+   ],
+   "insns": 166,
+   "own_disc_hits": [],
+   "own_immediates": 4,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 28,
+     "pc": "0x12f8f",
+     "text": "Instruction: SetDisableFlags",
+     "va": "0xc50c3"
+    },
+    {
+     "kind": "identifier",
+     "len": 18,
+     "pc": "0x12fd7",
+     "text": "fee_program_global",
+     "va": "0xc4afc"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x12f92",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "set_exotic_flat_fees": {
+   "body": "0x13541",
+   "body_end": "0x135f3",
+   "callees": [
+    {
+     "callee": "0x9cc5",
+     "callsite": "0x13562",
+     "disc_hits": [],
+     "insns": 632,
+     "raise_stores": 0,
+     "strings": [
+      "fee_config",
+      "admin",
+      "system_program",
+      "config_program_id",
+      "fee_config",
+      "event_authority"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x1356e",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x2b3d",
+     "callsite": "0x13582",
+     "disc_hits": [],
+     "insns": 665,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xbd0",
+     "callsite": "0x1358d",
+     "disc_hits": [],
+     "insns": 122,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x13597",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x135be",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x135cc",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "1eea958afce62749",
+   "handler_pc": "0x13541",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: SetExoticFlatFees",
+   "identity_string_found": [
+    "Instruction: SetExoticFlatFees"
+   ],
+   "insns": 173,
+   "own_disc_hits": [],
+   "own_immediates": 5,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 30,
+     "pc": "0x13546",
+     "text": "Instruction: SetExoticFlatFees",
+     "va": "0xc51ac"
+    },
+    {
+     "kind": "identifier",
+     "len": 10,
+     "pc": "0x13594",
+     "text": "fee_config",
+     "va": "0xc3eb8"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x13549",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "set_social_claim_authority": {
+   "body": "0x12eca",
+   "body_end": "0x12f8a",
+   "callees": [
+    {
+     "callee": "0xa5d2",
+     "callsite": "0x12ef9",
+     "disc_hits": [],
+     "insns": 548,
+     "raise_stores": 0,
+     "strings": [
+      "authority",
+      "fee_program_global",
+      "fee_program_global",
+      "event_authority",
+      "program",
+      "authority"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x12f03",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x341d",
+     "callsite": "0x12f1b",
+     "disc_hits": [],
+     "insns": 382,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xa0f",
+     "callsite": "0x12f26",
+     "disc_hits": [],
+     "insns": 124,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x12f30",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x12f53",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x12f61",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "9336b89a88edb999",
+   "handler_pc": "0x12eca",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: SetSocialClaimAuthority",
+   "identity_string_found": [
+    "Instruction: SetSocialClaimAuthority"
+   ],
+   "insns": 188,
+   "own_disc_hits": [],
+   "own_immediates": 4,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 36,
+     "pc": "0x12ecf",
+     "text": "Instruction: SetSocialClaimAuthority",
+     "va": "0xc509f"
+    },
+    {
+     "kind": "identifier",
+     "len": 18,
+     "pc": "0x12f2d",
+     "text": "fee_program_global",
+     "va": "0xc4afc"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x12ed2",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "sweep_buyback": {
+   "body": "0x13e01",
+   "body_end": "0x13ea6",
+   "callees": [
+    {
+     "callee": "0xb4fa",
+     "callsite": "0x13e1b",
+     "disc_hits": [],
+     "insns": 1125,
+     "raise_stores": 0,
+     "strings": [
+      "authority",
+      "destination",
+      "buyback_vault",
+      "buyback_vault_ata",
+      "destination_ata",
+      "mint"
+     ],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x13e24",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13e32",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13e40",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x3afe",
+     "callsite": "0x13e57",
+     "disc_hits": [],
+     "insns": 848,
+     "raise_stores": 1,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xb982",
+     "callsite": "0x13e60",
+     "disc_hits": [],
+     "insns": 112,
+     "raise_stores": 0,
+     "strings": [
+      "buyback_vault",
+      "destination_ata",
+      "buyback_vault_ata"
+     ],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "8a21cc26cfa19fe2",
+   "handler_pc": "0x13e01",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: SweepBuyback",
+   "identity_string_found": [
+    "Instruction: SweepBuyback"
+   ],
+   "insns": 163,
+   "own_disc_hits": [],
+   "own_immediates": 2,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 25,
+     "pc": "0x13e06",
+     "text": "Instruction: SweepBuyback",
+     "va": "0xc533f"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x13e09",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "transfer_fee_sharing_authority": {
+   "body": "0x138c7",
+   "body_end": "0x138d4",
+   "callees": [
+    {
+     "callee": "0x14258",
+     "callsite": "0x138ce",
+     "disc_hits": [],
+     "insns": 58,
+     "raise_stores": 1,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "ca0a4bc8a422d260",
+   "handler_pc": "0x138c7",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: TransferFeeSharingAuthority",
+   "identity_string_found": [
+    "Instruction: TransferFeeSharingAuthority"
+   ],
+   "insns": 12,
+   "own_disc_hits": [],
+   "own_immediates": 1,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 40,
+     "pc": "0x138c8",
+     "text": "Instruction: TransferFeeSharingAuthority",
+     "va": "0xc5260"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x138cb",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "update_admin": {
+   "body": "0x135f3",
+   "body_end": "0x136a0",
+   "callees": [
+    {
+     "callee": "0x9f50",
+     "callsite": "0x13607",
+     "disc_hits": [],
+     "insns": 689,
+     "raise_stores": 0,
+     "strings": [
+      "admin",
+      "fee_config",
+      "event_authority",
+      "new_admin",
+      "fee_config",
+      "config_program_id"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13613",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x2def",
+     "callsite": "0x13625",
+     "disc_hits": [],
+     "insns": 332,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xbd0",
+     "callsite": "0x13630",
+     "disc_hits": [],
+     "insns": 122,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x1363a",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "a1b028d53cb8b3e4",
+   "handler_pc": "0x135f3",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: UpdateAdmin",
+   "identity_string_found": [
+    "Instruction: UpdateAdmin"
+   ],
+   "insns": 169,
+   "own_disc_hits": [],
+   "own_immediates": 4,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 24,
+     "pc": "0x135f7",
+     "text": "Instruction: UpdateAdmin",
+     "va": "0xc51ca"
+    },
+    {
+     "kind": "identifier",
+     "len": 10,
+     "pc": "0x13637",
+     "text": "fee_config",
+     "va": "0xc3eb8"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x135fa",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "update_buyback_authority": {
+   "body": "0x13ea6",
+   "body_end": "0x13f80",
+   "callees": [
+    {
+     "callee": "0xa214",
+     "callsite": "0x13ed9",
+     "disc_hits": [],
+     "insns": 711,
+     "raise_stores": 0,
+     "strings": [
+      "authority",
+      "fee_program_global",
+      "buyback_vault",
+      "fee_program_global",
+      "event_authority",
+      "program"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13ee3",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x2f50",
+     "callsite": "0x13efe",
+     "disc_hits": [],
+     "insns": 80,
+     "raise_stores": 1,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xa0f",
+     "callsite": "0x13f09",
+     "disc_hits": [],
+     "insns": 124,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xc4c",
+     "callsite": "0x13f12",
+     "disc_hits": [],
+     "insns": 139,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x13f1c",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x13f22",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13f30",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "426271ca7925db6b",
+   "handler_pc": "0x13ea6",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: UpdateBuybackAuthority",
+   "identity_string_found": [
+    "Instruction: UpdateBuybackAuthority"
+   ],
+   "insns": 212,
+   "own_disc_hits": [],
+   "own_immediates": 6,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 35,
+     "pc": "0x13eab",
+     "text": "Instruction: UpdateBuybackAuthority",
+     "va": "0xc5358"
+    },
+    {
+     "kind": "identifier",
+     "len": 13,
+     "pc": "0x13f19",
+     "text": "buyback_vault",
+     "va": "0xc4b31"
+    },
+    {
+     "kind": "identifier",
+     "len": 18,
+     "pc": "0x13f5c",
+     "text": "fee_program_global",
+     "va": "0xc4afc"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x13eae",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "update_buyback_claim_rate_limit": {
+   "body": "0x13f80",
+   "body_end": "0x14044",
+   "callees": [
+    {
+     "callee": "0xa214",
+     "callsite": "0x13f9e",
+     "disc_hits": [],
+     "insns": 711,
+     "raise_stores": 0,
+     "strings": [
+      "authority",
+      "fee_program_global",
+      "buyback_vault",
+      "fee_program_global",
+      "event_authority",
+      "program"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13fa8",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x2fa7",
+     "callsite": "0x13fc2",
+     "disc_hits": [],
+     "insns": 73,
+     "raise_stores": 1,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xa0f",
+     "callsite": "0x13fcd",
+     "disc_hits": [],
+     "insns": 124,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xc4c",
+     "callsite": "0x13fd6",
+     "disc_hits": [],
+     "insns": 139,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x13fe0",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x13fe6",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13ff4",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "ba5f87beffc789aa",
+   "handler_pc": "0x13f80",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: UpdateBuybackClaimRateLimit",
+   "identity_string_found": [
+    "Instruction: UpdateBuybackClaimRateLimit"
+   ],
+   "insns": 190,
+   "own_disc_hits": [],
+   "own_immediates": 6,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 40,
+     "pc": "0x13f85",
+     "text": "Instruction: UpdateBuybackClaimRateLimit",
+     "va": "0xc537b"
+    },
+    {
+     "kind": "identifier",
+     "len": 13,
+     "pc": "0x13fdd",
+     "text": "buyback_vault",
+     "va": "0xc4b31"
+    },
+    {
+     "kind": "identifier",
+     "len": 18,
+     "pc": "0x14020",
+     "text": "fee_program_global",
+     "va": "0xc4afc"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x13f88",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "update_fee_config": {
+   "body": "0x1319e",
+   "body_end": "0x13267",
+   "callees": [
+    {
+     "callee": "0x1f95",
+     "callsite": "0x131af",
+     "disc_hits": [],
+     "insns": 133,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xa8fc",
+     "callsite": "0x131d0",
+     "disc_hits": [],
+     "insns": 612,
+     "raise_stores": 0,
+     "strings": [
+      "event_authority",
+      "fee_config",
+      "admin",
+      "fee_config",
+      "config_program_id",
+      "program"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x131dd",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x2ff7",
+     "callsite": "0x131f9",
+     "disc_hits": [],
+     "insns": 312,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xbd0",
+     "callsite": "0x13203",
+     "disc_hits": [],
+     "insns": 122,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x1320d",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x13230",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x1323e",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "68b867f258976b14",
+   "handler_pc": "0x1319e",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: UpdateFeeConfig",
+   "identity_string_found": [
+    "Instruction: UpdateFeeConfig"
+   ],
+   "insns": 195,
+   "own_disc_hits": [],
+   "own_immediates": 6,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 28,
+     "pc": "0x131a3",
+     "text": "Instruction: UpdateFeeConfig",
+     "va": "0xc5116"
+    },
+    {
+     "kind": "identifier",
+     "len": 10,
+     "pc": "0x1320a",
+     "text": "fee_config",
+     "va": "0xc3eb8"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x131a6",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "update_fee_shares": {
+   "body": "0x138d4",
+   "body_end": "0x1395a",
+   "callees": [
+    {
+     "callee": "0x212b",
+     "callsite": "0x138e5",
+     "disc_hits": [],
+     "insns": 147,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xecba",
+     "callsite": "0x138fc",
+     "disc_hits": [],
+     "insns": 1927,
+     "raise_stores": 0,
+     "strings": [
+      "global",
+      "event_authority",
+      "program",
+      "authority",
+      "mint",
+      "sharing_config"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13909",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x5e6f",
+     "callsite": "0x13925",
+     "disc_hits": [],
+     "insns": 696,
+     "raise_stores": 2,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x989",
+     "callsite": "0x1392f",
+     "disc_hits": [],
+     "insns": 132,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x156a",
+     "callsite": "0x13934",
+     "disc_hits": [],
+     "insns": 97,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13944",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x13950",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "bd0d8863bba4ed23",
+   "handler_pc": "0x138d4",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: UpdateFeeShares",
+   "identity_string_found": [
+    "Instruction: UpdateFeeShares"
+   ],
+   "insns": 129,
+   "own_disc_hits": [],
+   "own_immediates": 5,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 28,
+     "pc": "0x138d9",
+     "text": "Instruction: UpdateFeeShares",
+     "va": "0xc5288"
+    },
+    {
+     "kind": "identifier",
+     "len": 14,
+     "pc": "0x1394d",
+     "text": "sharing_config",
+     "va": "0xc4c1c"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x138dc",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "update_fee_shares_v2": {
+   "body": "0x1395a",
+   "body_end": "0x139e4",
+   "callees": [
+    {
+     "callee": "0x212b",
+     "callsite": "0x1396b",
+     "disc_hits": [],
+     "insns": 147,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xf52a",
+     "callsite": "0x13981",
+     "disc_hits": [],
+     "insns": 2034,
+     "raise_stores": 0,
+     "strings": [
+      "program",
+      "authority",
+      "event_authority",
+      "global",
+      "mint",
+      "sharing_config"
+     ],
+     "syscalls": []
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x1398f",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x673a",
+     "callsite": "0x139ad",
+     "disc_hits": [],
+     "insns": 974,
+     "raise_stores": 2,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x989",
+     "callsite": "0x139b6",
+     "disc_hits": [],
+     "insns": 132,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x15cb",
+     "callsite": "0x139bb",
+     "disc_hits": [],
+     "insns": 105,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x139cb",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x139da",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "6ffb31064e4e6a12",
+   "handler_pc": "0x1395a",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: UpdateFeeSharesV2",
+   "identity_string_found": [
+    "Instruction: UpdateFeeSharesV2"
+   ],
+   "insns": 134,
+   "own_disc_hits": [],
+   "own_immediates": 4,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 30,
+     "pc": "0x1395f",
+     "text": "Instruction: UpdateFeeSharesV2",
+     "va": "0xc52a4"
+    },
+    {
+     "kind": "identifier",
+     "len": 14,
+     "pc": "0x139d7",
+     "text": "sharing_config",
+     "va": "0xc4c1c"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x13962",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "update_stable_fee_config": {
+   "body": "0x13329",
+   "body_end": "0x133e0",
+   "callees": [
+    {
+     "callee": "0x1f95",
+     "callsite": "0x1333a",
+     "disc_hits": [],
+     "insns": 133,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xa8fc",
+     "callsite": "0x1334f",
+     "disc_hits": [],
+     "insns": 612,
+     "raise_stores": 0,
+     "strings": [
+      "event_authority",
+      "fee_config",
+      "admin",
+      "fee_config",
+      "config_program_id",
+      "program"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x1335b",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x313d",
+     "callsite": "0x13375",
+     "disc_hits": [],
+     "insns": 307,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xbd0",
+     "callsite": "0x1337f",
+     "disc_hits": [],
+     "insns": 122,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x13389",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x133b7",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "6ba964b3869b92dd",
+   "handler_pc": "0x13329",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: UpdateStableFeeConfig",
+   "identity_string_found": [
+    "Instruction: UpdateStableFeeConfig"
+   ],
+   "insns": 179,
+   "own_disc_hits": [],
+   "own_immediates": 4,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 34,
+     "pc": "0x1332e",
+     "text": "Instruction: UpdateStableFeeConfig",
+     "va": "0xc514d"
+    },
+    {
+     "kind": "identifier",
+     "len": 10,
+     "pc": "0x13386",
+     "text": "fee_config",
+     "va": "0xc3eb8"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x13331",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "upsert_fee_tiers": {
+   "body": "0x13267",
+   "body_end": "0x13329",
+   "callees": [
+    {
+     "callee": "0x1f95",
+     "callsite": "0x13278",
+     "disc_hits": [],
+     "insns": 133,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xa8fc",
+     "callsite": "0x13291",
+     "disc_hits": [],
+     "insns": 612,
+     "raise_stores": 0,
+     "strings": [
+      "event_authority",
+      "fee_config",
+      "admin",
+      "fee_config",
+      "config_program_id",
+      "program"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x1329f",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x383b",
+     "callsite": "0x132ba",
+     "disc_hits": [],
+     "insns": 302,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xbd0",
+     "callsite": "0x132c4",
+     "disc_hits": [],
+     "insns": 122,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x132ce",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x132f1",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13300",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "e317960c4d565e04",
+   "handler_pc": "0x13267",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: UpsertFeeTiers",
+   "identity_string_found": [
+    "Instruction: UpsertFeeTiers"
+   ],
+   "insns": 188,
+   "own_disc_hits": [],
+   "own_immediates": 6,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 27,
+     "pc": "0x1326c",
+     "text": "Instruction: UpsertFeeTiers",
+     "va": "0xc5132"
+    },
+    {
+     "kind": "identifier",
+     "len": 10,
+     "pc": "0x132cb",
+     "text": "fee_config",
+     "va": "0xc3eb8"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x1326f",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "upsert_stable_fee_tiers": {
+   "body": "0x133e0",
+   "body_end": "0x134a2",
+   "callees": [
+    {
+     "callee": "0x1f95",
+     "callsite": "0x133f1",
+     "disc_hits": [],
+     "insns": 133,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0xa8fc",
+     "callsite": "0x1340a",
+     "disc_hits": [],
+     "insns": 612,
+     "raise_stores": 0,
+     "strings": [
+      "event_authority",
+      "fee_config",
+      "admin",
+      "fee_config",
+      "config_program_id",
+      "program"
+     ],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x13418",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x3977",
+     "callsite": "0x13433",
+     "disc_hits": [],
+     "insns": 302,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0xbd0",
+     "callsite": "0x1343d",
+     "disc_hits": [],
+     "insns": 122,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x2b1",
+     "callsite": "0x13447",
+     "disc_hits": [],
+     "insns": 77,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x17148",
+     "callsite": "0x1346a",
+     "disc_hits": [],
+     "insns": 41,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    },
+    {
+     "callee": "0x1601e",
+     "callsite": "0x13479",
+     "disc_hits": [],
+     "insns": 70,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "b5a0a2fc4a4ce0dd",
+   "handler_pc": "0x133e0",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: UpsertStableFeeTiers",
+   "identity_string_found": [
+    "Instruction: UpsertStableFeeTiers"
+   ],
+   "insns": 188,
+   "own_disc_hits": [],
+   "own_immediates": 6,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 33,
+     "pc": "0x133e5",
+     "text": "Instruction: UpsertStableFeeTiers",
+     "va": "0xc516f"
+    },
+    {
+     "kind": "identifier",
+     "len": 10,
+     "pc": "0x13444",
+     "text": "fee_config",
+     "va": "0xc3eb8"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x133e8",
+     "symbol": "sol_log_"
+    }
+   ]
+  },
+  "withdraw": {
+   "body": "0x14121",
+   "body_end": "0x141ab",
+   "callees": [
+    {
+     "callee": "0xfe47",
+     "callsite": "0x14135",
+     "disc_hits": [],
+     "insns": 967,
+     "raise_stores": 0,
+     "strings": [
+      "user",
+      "referral_vault",
+      "quote_mint",
+      "vault_ata",
+      "user_ata",
+      "token_program"
+     ],
+     "syscalls": []
+    },
+    {
+     "callee": "0x184d9",
+     "callsite": "0x14142",
+     "disc_hits": [],
+     "insns": 4,
+     "raise_stores": 0,
+     "strings": [],
+     "syscalls": [
+      "sol_memcpy_"
+     ]
+    },
+    {
+     "callee": "0x79b6",
+     "callsite": "0x14158",
+     "disc_hits": [],
+     "insns": 967,
+     "raise_stores": 2,
+     "strings": [],
+     "syscalls": [
+      "abort"
+     ]
+    },
+    {
+     "callee": "0x10223",
+     "callsite": "0x14161",
+     "disc_hits": [],
+     "insns": 99,
+     "raise_stores": 0,
+     "strings": [
+      "user_ata",
+      "vault_ata"
+     ],
+     "syscalls": []
+    }
+   ],
+   "expected_disc": "b712469c946da122",
+   "handler_pc": "0x14121",
+   "identity_ok": true,
+   "identity_string_expected": "Instruction: Withdraw",
+   "identity_string_found": [
+    "Instruction: Withdraw"
+   ],
+   "insns": 137,
+   "own_disc_hits": [],
+   "own_immediates": 1,
+   "own_raise_stores": [],
+   "own_strings": [
+    {
+     "kind": "identity",
+     "len": 21,
+     "pc": "0x14125",
+     "text": "Instruction: Withdraw",
+     "va": "0xc53c4"
+    }
+   ],
+   "own_syscalls": [
+    {
+     "pc": "0x14128",
+     "symbol": "sol_log_"
+    }
+   ]
+  }
+ },
+ "identity": {
+  "mismatch": 0,
+  "missing": 0,
+  "ok": 31
+ },
+ "program": "pump_fees",
+ "raise_attribution": {
+  "codes": [
+   6001,
+   6002,
+   6003,
+   6004,
+   6005,
+   6006,
+   6007,
+   6008,
+   6010,
+   6011,
+   6012,
+   6013,
+   6014,
+   6016,
+   6017,
+   6018,
+   6020,
+   6022,
+   6023,
+   6024,
+   6026,
+   6028,
+   6029,
+   6030,
+   6031,
+   6033,
+   6034,
+   6036
+  ],
+  "deeper": 33,
+  "direct_callee": 35,
+  "frames_holding_raises": 26,
+  "handler_frame": 0,
+  "total": 68
+ },
+ "sha256": "4f2955d0f6b40cc9ff7daa18ccad7d19119ba1249759f4e7e3bb691beee6b35e",
+ "shared_helpers": [
+  {
+   "callee": "0x184d9",
+   "handlers": 29,
+   "insns": 4,
+   "raise_stores": 0,
+   "sample": [
+    "admin_cto_sharing_config",
+    "claim_social_fee_pda",
+    "claim_social_fee_pda_v2",
+    "crank_donation_fee_pda"
+   ],
+   "strings": [],
+   "syscalls": [
+    "sol_memcpy_"
+   ]
+  },
+  {
+   "callee": "0x1601e",
+   "handlers": 22,
+   "insns": 70,
+   "raise_stores": 0,
+   "sample": [
+    "admin_cto_sharing_config",
+    "claim_social_fee_pda",
+    "claim_social_fee_pda_v2",
+    "create_social_fee_pda"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0x2b1",
+   "handlers": 20,
+   "insns": 77,
+   "raise_stores": 0,
+   "sample": [
+    "admin_cto_sharing_config",
+    "claim_social_fee_pda",
+    "create_donation_fee_pda",
+    "create_social_fee_pda"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0x17148",
+   "handlers": 19,
+   "insns": 41,
+   "raise_stores": 0,
+   "sample": [
+    "admin_cto_sharing_config",
+    "claim_social_fee_pda",
+    "claim_social_fee_pda_v2",
+    "create_social_fee_pda"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0xbd0",
+   "handlers": 7,
+   "insns": 122,
+   "raise_stores": 0,
+   "sample": [
+    "initialize_fee_config",
+    "set_exotic_flat_fees",
+    "update_admin",
+    "update_fee_config"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0xa0f",
+   "handlers": 7,
+   "insns": 124,
+   "raise_stores": 0,
+   "sample": [
+    "initialize_fee_program_global",
+    "set_authority",
+    "set_claim_rate_limit",
+    "set_disable_flags"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0x1621c",
+   "handlers": 4,
+   "insns": 2,
+   "raise_stores": 0,
+   "sample": [
+    "claim_social_fee_pda",
+    "claim_social_fee_pda_v2",
+    "get_fees",
+    "get_fees_with_quote_mint"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0x175af",
+   "handlers": 4,
+   "insns": 3,
+   "raise_stores": 0,
+   "sample": [
+    "claim_social_fee_pda",
+    "claim_social_fee_pda_v2",
+    "get_fees",
+    "get_fees_with_quote_mint"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0xa5d2",
+   "handlers": 4,
+   "insns": 548,
+   "raise_stores": 0,
+   "sample": [
+    "set_authority",
+    "set_claim_rate_limit",
+    "set_disable_flags",
+    "set_social_claim_authority"
+   ],
+   "strings": [
+    "authority",
+    "fee_program_global",
+    "fee_program_global",
+    "event_authority",
+    "program",
+    "authority"
+   ],
+   "syscalls": [
+    "abort"
+   ]
+  },
+  {
+   "callee": "0x1f95",
+   "handlers": 4,
+   "insns": 133,
+   "raise_stores": 0,
+   "sample": [
+    "update_fee_config",
+    "update_stable_fee_config",
+    "upsert_fee_tiers",
+    "upsert_stable_fee_tiers"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0xa8fc",
+   "handlers": 4,
+   "insns": 612,
+   "raise_stores": 0,
+   "sample": [
+    "update_fee_config",
+    "update_stable_fee_config",
+    "upsert_fee_tiers",
+    "upsert_stable_fee_tiers"
+   ],
+   "strings": [
+    "event_authority",
+    "fee_config",
+    "admin",
+    "fee_config",
+    "config_program_id",
+    "program"
+   ],
+   "syscalls": [
+    "abort"
+   ]
+  },
+  {
+   "callee": "0x175c5",
+   "handlers": 3,
+   "insns": 68,
+   "raise_stores": 0,
+   "sample": [
+    "admin_cto_sharing_config",
+    "get_fees",
+    "get_fees_with_quote_mint"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0x1275",
+   "handlers": 3,
+   "insns": 31,
+   "raise_stores": 0,
+   "sample": [
+    "admin_cto_sharing_config",
+    "get_fees",
+    "get_fees_with_quote_mint"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0x989",
+   "handlers": 3,
+   "insns": 132,
+   "raise_stores": 0,
+   "sample": [
+    "admin_cto_sharing_config",
+    "update_fee_shares",
+    "update_fee_shares_v2"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0x1d11",
+   "handlers": 3,
+   "insns": 69,
+   "raise_stores": 0,
+   "sample": [
+    "claim_social_fee_pda",
+    "claim_social_fee_pda_v2",
+    "create_social_fee_pda"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0xc685",
+   "handlers": 2,
+   "insns": 257,
+   "raise_stores": 0,
+   "sample": [
+    "claim_social_fee_pda",
+    "claim_social_fee_pda_v2"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0xa8d",
+   "handlers": 2,
+   "insns": 170,
+   "raise_stores": 0,
+   "sample": [
+    "claim_social_fee_pda",
+    "create_social_fee_pda"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0x178c8",
+   "handlers": 2,
+   "insns": 26,
+   "raise_stores": 0,
+   "sample": [
+    "claim_social_fee_pda",
+    "claim_social_fee_pda_v2"
+   ],
+   "strings": [],
+   "syscalls": []
+  },
+  {
+   "callee": "0xfd68",
+   "handlers": 2,
+   "insns": 216,
+   "raise_stores": 0,
+   "sample": [
+    "get_fees",
+    "get_fees_with_quote_mint"
+   ],
+   "strings": [
+    "fee_config",
+    "fee_config",
+    "fee_config",
+    "config_program_id"
+   ],
+   "syscalls": []
+  },
+  {
+   "callee": "0x1cbd",
+   "handlers": 2,
+   "insns": 58,
+   "raise_stores": 0,
+   "sample": [
+    "get_fees",
+    "get_fees_with_quote_mint"
+   ],
+   "strings": [],
+   "syscalls": []
+  }
+ ],
+ "spurious_starts": 149,
+ "syscall_census": {
+  "abort": 73,
+  "custom_panic": 1,
+  "sol_create_program_address": 1,
+  "sol_get_clock_sysvar": 1,
+  "sol_get_rent_sysvar": 1,
+  "sol_invoke_signed_rust": 1,
+  "sol_log_": 66,
+  "sol_log_data": 1,
+  "sol_log_pubkey": 1,
+  "sol_memcmp_": 1,
+  "sol_memcpy_": 2,
+  "sol_memmove_": 1,
+  "sol_memset_": 2,
+  "sol_set_return_data": 1,
+  "sol_sha256": 1,
+  "sol_try_find_program_address": 1
+ },
+ "syscall_own_frame": {
+  "sol_log_": 31
+ },
+ "syscall_shared": {
+  "abort": 73,
+  "custom_panic": 1,
+  "sol_create_program_address": 1,
+  "sol_get_clock_sysvar": 1,
+  "sol_get_rent_sysvar": 1,
+  "sol_invoke_signed_rust": 1,
+  "sol_log_": 35,
+  "sol_log_data": 1,
+  "sol_log_pubkey": 1,
+  "sol_memcmp_": 1,
+  "sol_memcpy_": 2,
+  "sol_memmove_": 1,
+  "sol_memset_": 2,
+  "sol_set_return_data": 1,
+  "sol_sha256": 1,
+  "sol_try_find_program_address": 1
+ }
+}
