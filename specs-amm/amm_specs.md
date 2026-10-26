@@ -183,7 +183,7 @@ discriminator) **[R]** (from `state.rs`):
    6004 ExceededSlippage, 6040 BuySlippageBelowMinBaseAmountOut, 6023 Overflow, 6024
    Truncation, 6025 DivisionByZero, 6053/6054/6055/6058 buyback errors, 6059/6060/6061
    cashback errors, 6062 InvalidPoolV2, 6087 SelfTransferNotAllowed.
-5. **CPIs [R]**: fees-program `get_fees` (`pfeeUx...`, disc bytes
+5. **CPIs [R]**: fees-program `get_fees_with_quote_mint` (`pfeeUx...`, disc bytes
    `154,237,138,92,162,2,162,187`; accounts `[fee_config, pump_amm]`); token
    `transfer_checked` for base out, quote in (grossed up by Token-2022 fee), protocol fee,
    creator fee, buyback fee; ATA create for cashback/buyback destinations; optional System
@@ -205,7 +205,7 @@ discriminator) **[R]** (from `state.rs`):
    (requires exactly >=16 bytes).
 4. **Errors [R]**: 6021 DisabledSell, 6013, 6001, 6063 InsufficientRealQuoteReserves,
    6004 ExceededSlippage, 6023/6024/6025, cashback/buyback codes as in buy.
-5. **CPIs [R]**: fees `get_fees`; base transfer user->pool (user authority); quote transfer
+5. **CPIs [R]**: fees `get_fees_with_quote_mint`; base transfer user->pool (user authority); quote transfer
    pool->user, pool->protocol recipient, pool->creator vault, pool->cashback/buyback ATAs
    (pool PDA signer); ATA create.
 6. **State writes [R]**: only token balances + `BuyEvent`-family `SellEvent` (log + CPI);

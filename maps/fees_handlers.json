@@ -1,126 +1,250 @@
 {
  "initialize_fee_config": {
   "disc": "3ea214857941911b",
-  "handler": "0x12d72"
+  "lddw": "0x12420",
+  "cmp": "jeq",
+  "stub": "0x124c2",
+  "handler": "0x12d72",
+  "handler_byte": "0x96b90"
  },
  "initialize_fee_program_global": {
   "disc": "23d78254e9387ca7",
-  "handler": "0x12e01"
+  "lddw": "0x12424",
+  "cmp": "jeq",
+  "stub": "0x124d0",
+  "handler": "0x12e01",
+  "handler_byte": "0x97008"
  },
  "set_social_claim_authority": {
   "disc": "9336b89a88edb999",
-  "handler": "0x12eca"
+  "lddw": "0x1242a",
+  "cmp": "jeq",
+  "stub": "0x124de",
+  "handler": "0x12eca",
+  "handler_byte": "0x97650"
  },
  "set_disable_flags": {
   "disc": "c2d9702372de33be",
-  "handler": "0x12f8a"
+  "lddw": "0x1242e",
+  "cmp": "jeq",
+  "stub": "0x124ec",
+  "handler": "0x12f8a",
+  "handler_byte": "0x97c50"
  },
  "set_claim_rate_limit": {
   "disc": "b9d39faed4315804",
-  "handler": "0x13034"
+  "lddw": "0x12432",
+  "cmp": "jeq",
+  "stub": "0x124fa",
+  "handler": "0x13034",
+  "handler_byte": "0x981a0"
  },
  "set_authority": {
   "disc": "85fa25156ea31a79",
-  "handler": "0x130de"
+  "lddw": "0x12436",
+  "cmp": "jeq",
+  "stub": "0x12508",
+  "handler": "0x130de",
+  "handler_byte": "0x986f0"
  },
  "update_fee_config": {
   "disc": "68b867f258976b14",
-  "handler": "0x1319e"
+  "lddw": "0x1243a",
+  "cmp": "jeq",
+  "stub": "0x12516",
+  "handler": "0x1319e",
+  "handler_byte": "0x98cf0"
  },
  "upsert_fee_tiers": {
   "disc": "e317960c4d565e04",
-  "handler": "0x13267"
+  "lddw": "0x1243e",
+  "cmp": "jeq",
+  "stub": "0x12524",
+  "handler": "0x13267",
+  "handler_byte": "0x99338"
  },
  "update_stable_fee_config": {
   "disc": "6ba964b3869b92dd",
-  "handler": "0x13329"
+  "lddw": "0x12442",
+  "cmp": "jeq",
+  "stub": "0x12532",
+  "handler": "0x13329",
+  "handler_byte": "0x99948"
  },
  "upsert_stable_fee_tiers": {
   "disc": "b5a0a2fc4a4ce0dd",
-  "handler": "0x133e0"
+  "lddw": "0x12446",
+  "cmp": "jeq",
+  "stub": "0x12540",
+  "handler": "0x133e0",
+  "handler_byte": "0x99f00"
  },
  "extend_fee_config": {
   "disc": "44b3f45aad3811d9",
-  "handler": "0x134a2"
+  "lddw": "0x1244a",
+  "cmp": "jeq",
+  "stub": "0x1254e",
+  "handler": "0x134a2",
+  "handler_byte": "0x9a510"
  },
  "set_exotic_flat_fees": {
   "disc": "1eea958afce62749",
-  "handler": "0x13541"
+  "lddw": "0x1244e",
+  "cmp": "jeq",
+  "stub": "0x1255c",
+  "handler": "0x13541",
+  "handler_byte": "0x9aa08"
  },
  "update_admin": {
   "disc": "a1b028d53cb8b3e4",
-  "handler": "0x135f3"
+  "lddw": "0x12452",
+  "cmp": "jeq",
+  "stub": "0x1256a",
+  "handler": "0x135f3",
+  "handler_byte": "0x9af98"
  },
  "get_fees": {
   "disc": "e7257e55cf5b3f34",
-  "handler": "0x136a0"
+  "lddw": "0x12456",
+  "cmp": "jeq",
+  "stub": "0x12578",
+  "handler": "0x136a0",
+  "handler_byte": "0x9b500"
  },
  "get_fees_with_quote_mint": {
   "disc": "9aed8a5ca202a2bb",
-  "handler": "0x13763"
+  "lddw": "0x1245a",
+  "cmp": "jeq",
+  "stub": "0x12586",
+  "handler": "0x13763",
+  "handler_byte": "0x9bb18"
  },
  "create_fee_sharing_config": {
   "disc": "c34e564c6f34fbd5",
-  "handler": "0x13810"
+  "lddw": "0x1245e",
+  "cmp": "jeq",
+  "stub": "0x12594",
+  "handler": "0x13810",
+  "handler_byte": "0x9c080"
  },
  "revoke_fee_sharing_authority": {
   "disc": "12e99e27b9cf3a68",
-  "handler": "0x138ba"
+  "lddw": "0x12462",
+  "cmp": "jeq",
+  "stub": "0x125a2",
+  "handler": "0x138ba",
+  "handler_byte": "0x9c5d0"
  },
  "transfer_fee_sharing_authority": {
   "disc": "ca0a4bc8a422d260",
-  "handler": "0x138c7"
+  "lddw": "0x12466",
+  "cmp": "jeq",
+  "stub": "0x125ab",
+  "handler": "0x138c7",
+  "handler_byte": "0x9c638"
  },
  "update_fee_shares": {
   "disc": "bd0d8863bba4ed23",
-  "handler": "0x138d4"
+  "lddw": "0x1246a",
+  "cmp": "jeq",
+  "stub": "0x125b4",
+  "handler": "0x138d4",
+  "handler_byte": "0x9c6a0"
  },
  "update_fee_shares_v2": {
   "disc": "6ffb31064e4e6a12",
-  "handler": "0x1395a"
+  "lddw": "0x1246e",
+  "cmp": "jeq",
+  "stub": "0x125c2",
+  "handler": "0x1395a",
+  "handler_byte": "0x9cad0"
  },
  "admin_cto_sharing_config": {
   "disc": "3c64909c408ab625",
-  "handler": "0x139e4"
+  "lddw": "0x12472",
+  "cmp": "jeq",
+  "stub": "0x125d0",
+  "handler": "0x139e4",
+  "handler_byte": "0x9cf20"
  },
  "create_social_fee_pda": {
   "disc": "90e03bd34ef8cadc",
-  "handler": "0x13a95"
+  "lddw": "0x12476",
+  "cmp": "jeq",
+  "stub": "0x125de",
+  "handler": "0x13a95",
+  "handler_byte": "0x9d4a8"
  },
  "claim_social_fee_pda": {
   "disc": "e115fb85a11ec7e2",
-  "handler": "0x13b5d"
+  "lddw": "0x1247a",
+  "cmp": "jeq",
+  "stub": "0x125ec",
+  "handler": "0x13b5d",
+  "handler_byte": "0x9dae8"
  },
  "claim_social_fee_pda_v2": {
   "disc": "114df0863abc3595",
-  "handler": "0x13c64"
+  "lddw": "0x1247e",
+  "cmp": "jeq",
+  "stub": "0x125fa",
+  "handler": "0x13c64",
+  "handler_byte": "0x9e320"
  },
  "initialize_buyback": {
   "disc": "fa81eca0e3246786",
-  "handler": "0x13d6a"
+  "lddw": "0x12482",
+  "cmp": "jeq",
+  "stub": "0x12608",
+  "handler": "0x13d6a",
+  "handler_byte": "0x9eb50"
  },
  "sweep_buyback": {
   "disc": "8a21cc26cfa19fe2",
-  "handler": "0x13e01"
+  "lddw": "0x12486",
+  "cmp": "jeq",
+  "stub": "0x12616",
+  "handler": "0x13e01",
+  "handler_byte": "0x9f008"
  },
  "update_buyback_authority": {
   "disc": "426271ca7925db6b",
-  "handler": "0x13ea6"
+  "lddw": "0x1248a",
+  "cmp": "jeq",
+  "stub": "0x12624",
+  "handler": "0x13ea6",
+  "handler_byte": "0x9f530"
  },
  "update_buyback_claim_rate_limit": {
   "disc": "ba5f87beffc789aa",
-  "handler": "0x13f80"
+  "lddw": "0x1248e",
+  "cmp": "jeq",
+  "stub": "0x12632",
+  "handler": "0x13f80",
+  "handler_byte": "0x9fc00"
  },
  "create_donation_fee_pda": {
   "disc": "f48b10580eff7a1a",
-  "handler": "0x14044"
+  "lddw": "0x12492",
+  "cmp": "jeq",
+  "stub": "0x12640",
+  "handler": "0x14044",
+  "handler_byte": "0xa0220"
  },
  "crank_donation_fee_pda": {
   "disc": "dc0abda7a9111945",
-  "handler": "0x140b8"
+  "lddw": "0x12496",
+  "cmp": "jeq",
+  "stub": "0x1264e",
+  "handler": "0x140b8",
+  "handler_byte": "0xa05c0"
  },
  "withdraw": {
   "disc": "b712469c946da122",
-  "handler": "0x14121"
+  "lddw": "0x1249a",
+  "cmp": "jeq",
+  "stub": "0x1265c",
+  "handler": "0x14121",
+  "handler_byte": "0xa0908"
  }
 }

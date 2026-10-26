@@ -51,7 +51,7 @@ recipient.**
 | 4 | `!bonding_curve.complete` | BondingCurveComplete [pump code TBD] | curve `complete=false` (serialized offset 48) | [B] spec gate |
 | 5 | `amount > 0` | BuyZeroAmount [pump code TBD] | buy arg > 0 | [R] |
 | 6 | `amount <= real_token_reserves` unless `partial_fill` | NotEnoughTokensToBuy [pump code TBD] | curve real token reserves, or set partial | [R] |
-| 7 | fee-program CPI `get_fees` -> `Fees` | fee-program errors | valid `fee_config` (fees-owned, disc `8f34...`, len>=2512) + fee_program | [B] spec |
+| 7 | fee-program CPI `get_fees_with_quote_mint` -> `Fees` | fee-program errors | valid `fee_config` (fees-owned, disc `8f34...`, len>=2512) + fee_program | [B] spec |
 | 8 | rem[0] = `["bonding-curve-v2", mint]` under pump | InvalidBondingCurveV2 [pump code TBD] | pass the PDA | [B] spec gate |
 | 9 | rem[1] in `global.buyback_fee_recipients` (serialized Global **741..997**) | BuybackFeeRecipientNotAuthorized [pump code TBD] | seed the array with rem[1] | [B] spec gate + [B] 741 |
 | 10 | `quote + pf + cf <= max_sol_cost` | TooMuchSolRequired [pump code TBD] | slippage limit | [R] |
@@ -88,7 +88,7 @@ user base/quote ATAs, `creator_vault` + quote ATA, `sharing_config`
 | 4 | `!bonding_curve.complete` | BondingCurveComplete [pump code TBD] | complete=false | [R] |
 | 5 | `input > 0` | BuyZeroAmount [pump code TBD] | arg | [R] |
 | 6 | `input <= real_token_reserves` unless partial | NotEnoughTokensToBuy [pump code TBD] | reserves/partial | [R] |
-| 7 | fee-program `get_fees` CPI | fee errors | fee_config 2512+ | [B] spec |
+| 7 | fee-program `get_fees_with_quote_mint` CPI | fee errors | fee_config 2512+ | [B] spec |
 | 8 | buyback recipient membership in `global.buyback_fee_recipients` (741..997) | BuybackFeeRecipientNotAuthorized [pump code TBD] | seed the array, pass the named buyback account | [R] |
 | 9 | `quote + pf + cf <= max_sol_cost` | TooMuchSolRequired [pump code TBD] | slippage | [R] |
 
@@ -203,7 +203,7 @@ fees), fee_program.
 | 6 | exact: `available = amount - quote_transfer_fee > 0` | BuyNotEnoughQuoteTokensToCoverFees (6039) | enough quote; no fee-bearing edge | [R] |
 | 7 | `pool_quote.amount >= protocol_fees+creator_fees` | Overflow (6023) | pool quote vault >= accrued | [R] |
 | 8 | non-exact: `amount <= pool_base.amount` | BuyMoreBaseAmountThanPoolReserves (6016) | base vault; else use exact | [R] |
-| 9 | fees CPI `get_fees` (fees program, disc bytes `154,237,138,92,162,2,162,187`; accounts `[fee_config, pump_amm]`) | fee-program errors | valid fee_config (fees-owned, len>=2512) | [R] |
+| 9 | fees CPI `get_fees_with_quote_mint` (fees program, disc bytes `154,237,138,92,162,2,162,187`; accounts `[fee_config, pump_amm]`) | fee-program errors | valid fee_config (fees-owned, len>=2512) | [R] |
 | 10 | exact: estimate>0 (6039); out>=limit (6040); non-exact: `total<=limit` | BuyNotEnoughQuoteTokensToCoverFees / BuySlippageBelowMinBaseAmountOut / ExceededSlippage (6039/6040/6004) | slippage/limit | [R] |
 | 11 | transfer fees / buyback: `pool-v2` PDA + buyback owner + ATA; owner in `global_config.buyback_fee_recipients` (serialized **643..899**) | InvalidPoolV2 (6062), BuybackFeeRecipientMissing (6058), BuybackFeeRecipientNotAuthorized (6053) | pass remaining accounts; seed 643..899 | [B] sites, [R] order |
 
@@ -227,7 +227,7 @@ fee_config/fee_program.
 | 2 | pool len<287 -> rent/realloc | Rent/System | 287-byte pool | [R] |
 | 3 | `protocol_fee_recipient` membership | InvalidProtocolFeeRecipient (6013) | recipients | [R] |
 | 4 | `amount > 0` | ZeroBaseAmount (6001) | arg | [R] |
-| 5 | fees CPI `get_fees` | fee errors | fee_config 2512+ | [R] |
+| 5 | fees CPI `get_fees_with_quote_mint` | fee errors | fee_config 2512+ | [R] |
 | 6 | `pool_quote.amount - accrued >= quote - lp_fee` | InsufficientRealQuoteReserves (6063) | real quote reserves | [R] |
 | 7 | `quote - lp - protocol - creator >= limit` | ExceededSlippage (6004) | limit | [R] |
 | 8 | base transfer user->pool; quote payouts (pool PDA signer); buyback named/remaining checks | token errors; 6057/6058/6053 as buy | token accounts + buyback | [R] |
