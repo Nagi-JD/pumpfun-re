@@ -1,0 +1,2052 @@
+{
+ "admin_cto_sharing_config": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "new_admin",
+    "type": {
+     "option": "pubkey"
+    }
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "new_admin",
+    "off": 0,
+    "size": null,
+    "type": {
+     "option": "pubkey"
+    }
+   }
+  ],
+  "caps": [],
+  "frame_check": "variable-length arguments",
+  "gates": [
+   {
+    "imm": 0,
+    "op": "jeq",
+    "pc": "0x139ee"
+   },
+   {
+    "imm": 33,
+    "op": "jlt",
+    "pc": "0x139f5"
+   }
+  ],
+  "handler_pc": "0x139e4",
+  "insns": 171,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 7
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxb",
+    "pc": "0x139f0",
+    "width": 1
+   },
+   {
+    "off": 1,
+    "op": "ldxh",
+    "pc": "0x139fa",
+    "width": 2
+   },
+   {
+    "off": 3,
+    "op": "ldxw",
+    "pc": "0x139f9",
+    "width": 4
+   },
+   {
+    "off": 7,
+    "op": "ldxdw",
+    "pc": "0x139f6",
+    "width": 8
+   },
+   {
+    "off": 15,
+    "op": "ldxb",
+    "pc": "0x139f7",
+    "width": 1
+   },
+   {
+    "off": 16,
+    "op": "ldxdw",
+    "pc": "0x13a00",
+    "width": 8
+   },
+   {
+    "off": 24,
+    "op": "ldxdw",
+    "pc": "0x139ff",
+    "width": 8
+   },
+   {
+    "off": 32,
+    "op": "ldxb",
+    "pc": "0x139fd",
+    "width": 1
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 33
+   }
+  ]
+ },
+ "claim_social_fee_pda": {
+  "advances": [
+   {
+    "pc": "0x202a",
+    "store_off": 0
+   }
+  ],
+  "args_declared": [
+   {
+    "name": "user_id",
+    "type": "string"
+   },
+   {
+    "name": "platform",
+    "type": "u8"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "user_id",
+    "off": 0,
+    "size": null,
+    "type": "string"
+   },
+   {
+    "name": "platform",
+    "off": null,
+    "size": 1,
+    "type": "u8"
+   }
+  ],
+  "caps": [
+   {
+    "bytes": null,
+    "cap": 1048576,
+    "gate_pc": "0x202e",
+    "mul_pc": null,
+    "stride": null
+   }
+  ],
+  "frame_check": "variable-length arguments",
+  "gates": [
+   {
+    "imm": 4,
+    "op": "jlt",
+    "pc": "0x2024"
+   }
+  ],
+  "handler_pc": "0x13b5d",
+  "insns": 248,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "chain": [
+    "0x13b6e",
+    "0x1d14"
+   ],
+   "frame": "0x2022",
+   "insns": 247,
+   "kind": "helper",
+   "tail_reads": 0
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxw",
+    "pc": "0x2027",
+    "width": 4
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 4
+   }
+  ]
+ },
+ "claim_social_fee_pda_v2": {
+  "advances": [
+   {
+    "pc": "0x202a",
+    "store_off": 0
+   }
+  ],
+  "args_declared": [
+   {
+    "name": "user_id",
+    "type": "string"
+   },
+   {
+    "name": "platform",
+    "type": "u8"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "user_id",
+    "off": 0,
+    "size": null,
+    "type": "string"
+   },
+   {
+    "name": "platform",
+    "off": null,
+    "size": 1,
+    "type": "u8"
+   }
+  ],
+  "caps": [
+   {
+    "bytes": null,
+    "cap": 1048576,
+    "gate_pc": "0x202e",
+    "mul_pc": null,
+    "stride": null
+   }
+  ],
+  "frame_check": "variable-length arguments",
+  "gates": [
+   {
+    "imm": 4,
+    "op": "jlt",
+    "pc": "0x2024"
+   }
+  ],
+  "handler_pc": "0x13c64",
+  "insns": 249,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "chain": [
+    "0x13c75",
+    "0x1d14"
+   ],
+   "frame": "0x2022",
+   "insns": 247,
+   "kind": "helper",
+   "tail_reads": 0
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxw",
+    "pc": "0x2027",
+    "width": 4
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 4
+   }
+  ]
+ },
+ "crank_donation_fee_pda": {
+  "advances": [],
+  "args_declared": [],
+  "args_expected": [],
+  "caps": [],
+  "frame_check": "no arguments declared; reader not touched",
+  "gates": [],
+  "handler_pc": "0x140b8",
+  "insns": 104,
+  "len32": [],
+  "muls": [],
+  "reader": "none",
+  "reads": [],
+  "spans": []
+ },
+ "create_donation_fee_pda": {
+  "advances": [],
+  "args_declared": [],
+  "args_expected": [],
+  "caps": [],
+  "frame_check": "no arguments declared; reader not touched",
+  "gates": [],
+  "handler_pc": "0x14044",
+  "insns": 113,
+  "len32": [],
+  "muls": [],
+  "reader": "none",
+  "reads": [],
+  "spans": []
+ },
+ "create_fee_sharing_config": {
+  "advances": [],
+  "args_declared": [],
+  "args_expected": [],
+  "caps": [],
+  "frame_check": "no arguments declared; reader not touched",
+  "gates": [],
+  "handler_pc": "0x13810",
+  "insns": 168,
+  "len32": [],
+  "muls": [],
+  "reader": "none",
+  "reads": [],
+  "spans": []
+ },
+ "create_social_fee_pda": {
+  "advances": [
+   {
+    "pc": "0x202a",
+    "store_off": 0
+   }
+  ],
+  "args_declared": [
+   {
+    "name": "user_id",
+    "type": "string"
+   },
+   {
+    "name": "platform",
+    "type": "u8"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "user_id",
+    "off": 0,
+    "size": null,
+    "type": "string"
+   },
+   {
+    "name": "platform",
+    "off": null,
+    "size": 1,
+    "type": "u8"
+   }
+  ],
+  "caps": [
+   {
+    "bytes": null,
+    "cap": 1048576,
+    "gate_pc": "0x202e",
+    "mul_pc": null,
+    "stride": null
+   }
+  ],
+  "frame_check": "variable-length arguments",
+  "gates": [
+   {
+    "imm": 4,
+    "op": "jlt",
+    "pc": "0x2024"
+   }
+  ],
+  "handler_pc": "0x13a95",
+  "insns": 194,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "chain": [
+    "0x13aa6",
+    "0x1d14"
+   ],
+   "frame": "0x2022",
+   "insns": 247,
+   "kind": "helper",
+   "tail_reads": 1
+  },
+  "reads": [
+   {
+    "off": null,
+    "op": "ldxb",
+    "pc": "0x13ab1",
+    "width": 1
+   },
+   {
+    "off": 0,
+    "op": "ldxw",
+    "pc": "0x2027",
+    "width": 4
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 4
+   }
+  ]
+ },
+ "extend_fee_config": {
+  "advances": [],
+  "args_declared": [],
+  "args_expected": [],
+  "caps": [],
+  "frame_check": "no arguments declared; reader not touched",
+  "gates": [],
+  "handler_pc": "0x134a2",
+  "insns": 158,
+  "len32": [],
+  "muls": [],
+  "reader": "none",
+  "reads": [],
+  "spans": []
+ },
+ "get_fees": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "is_pump_pool",
+    "type": "bool"
+   },
+   {
+    "name": "market_cap_lamports",
+    "type": "u128"
+   },
+   {
+    "name": "trade_size_lamports",
+    "type": "u64"
+   },
+   {
+    "name": "is_new_quote_mint",
+    "type": {
+     "defined": {
+      "name": "OptionBool"
+     }
+    }
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "is_pump_pool",
+    "off": 0,
+    "size": 1,
+    "type": "bool"
+   },
+   {
+    "name": "market_cap_lamports",
+    "off": 1,
+    "size": 16,
+    "type": "u128"
+   },
+   {
+    "name": "trade_size_lamports",
+    "off": 17,
+    "size": 8,
+    "type": "u64"
+   },
+   {
+    "name": "is_new_quote_mint",
+    "off": 25,
+    "size": 1,
+    "type": {
+     "defined": {
+      "name": "OptionBool"
+     }
+    }
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [
+   "trade_size_lamports@17+8"
+  ],
+  "frame_check": "not loaded: trade_size_lamports@17+8",
+  "gates": [
+   {
+    "imm": 0,
+    "op": "jeq",
+    "pc": "0x136aa"
+   },
+   {
+    "imm": 17,
+    "op": "jlt",
+    "pc": "0x136c8"
+   },
+   {
+    "imm": 25,
+    "op": "jeq",
+    "pc": "0x136cf"
+   }
+  ],
+  "handler_pc": "0x136a0",
+  "insns": 184,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 6
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxb",
+    "pc": "0x136ac",
+    "width": 1
+   },
+   {
+    "off": 1,
+    "op": "ldxdw",
+    "pc": "0x136cd",
+    "width": 8
+   },
+   {
+    "off": 9,
+    "op": "ldxdw",
+    "pc": "0x136cc",
+    "width": 8
+   },
+   {
+    "off": 25,
+    "op": "ldxb",
+    "pc": "0x136d0",
+    "width": 1
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 17
+   },
+   {
+    "off": 25,
+    "width": 1
+   }
+  ]
+ },
+ "get_fees_with_quote_mint": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "is_pump_pool",
+    "type": "bool"
+   },
+   {
+    "name": "market_cap_lamports",
+    "type": "u128"
+   },
+   {
+    "name": "quote_mint",
+    "type": "pubkey"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "is_pump_pool",
+    "off": 0,
+    "size": 1,
+    "type": "bool"
+   },
+   {
+    "name": "market_cap_lamports",
+    "off": 1,
+    "size": 16,
+    "type": "u128"
+   },
+   {
+    "name": "quote_mint",
+    "off": 17,
+    "size": 32,
+    "type": "pubkey"
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [],
+  "frame_check": "all declared fields loaded",
+  "gates": [
+   {
+    "imm": 0,
+    "op": "jeq",
+    "pc": "0x1376d"
+   },
+   {
+    "imm": 17,
+    "op": "jlt",
+    "pc": "0x1378b"
+   }
+  ],
+  "handler_pc": "0x13763",
+  "insns": 164,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 6
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxb",
+    "pc": "0x1376f",
+    "width": 1
+   },
+   {
+    "off": 1,
+    "op": "ldxdw",
+    "pc": "0x13790",
+    "width": 8
+   },
+   {
+    "off": 9,
+    "op": "ldxdw",
+    "pc": "0x1378e",
+    "width": 8
+   },
+   {
+    "off": 17,
+    "op": "ldxw",
+    "pc": "0x13795",
+    "width": 4
+   },
+   {
+    "off": 21,
+    "op": "ldxh",
+    "pc": "0x13797",
+    "width": 2
+   },
+   {
+    "off": 23,
+    "op": "ldxdw",
+    "pc": "0x13792",
+    "width": 8
+   },
+   {
+    "off": 31,
+    "op": "ldxb",
+    "pc": "0x13793",
+    "width": 1
+   },
+   {
+    "off": 32,
+    "op": "ldxdw",
+    "pc": "0x1379b",
+    "width": 8
+   },
+   {
+    "off": 40,
+    "op": "ldxdw",
+    "pc": "0x1379d",
+    "width": 8
+   },
+   {
+    "off": 48,
+    "op": "ldxb",
+    "pc": "0x1379f",
+    "width": 1
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 49
+   }
+  ]
+ },
+ "initialize_buyback": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "index",
+    "type": "u8"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "index",
+    "off": 0,
+    "size": 1,
+    "type": "u8"
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [],
+  "frame_check": "all declared fields loaded",
+  "gates": [
+   {
+    "imm": 0,
+    "op": "jeq",
+    "pc": "0x13d74"
+   }
+  ],
+  "handler_pc": "0x13d6a",
+  "insns": 149,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 8
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxb",
+    "pc": "0x13d76",
+    "width": 1
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 1
+   }
+  ]
+ },
+ "initialize_fee_config": {
+  "advances": [],
+  "args_declared": [],
+  "args_expected": [],
+  "caps": [],
+  "frame_check": "no arguments declared; reader not touched",
+  "gates": [],
+  "handler_pc": "0x12d72",
+  "insns": 139,
+  "len32": [],
+  "muls": [],
+  "reader": "none",
+  "reads": [],
+  "spans": []
+ },
+ "initialize_fee_program_global": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "social_claim_authority",
+    "type": "pubkey"
+   },
+   {
+    "name": "disable_flags",
+    "type": "u8"
+   },
+   {
+    "name": "claim_rate_limit",
+    "type": "u64"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "social_claim_authority",
+    "off": 0,
+    "size": 32,
+    "type": "pubkey"
+   },
+   {
+    "name": "disable_flags",
+    "off": 32,
+    "size": 1,
+    "type": "u8"
+   },
+   {
+    "name": "claim_rate_limit",
+    "off": 33,
+    "size": 8,
+    "type": "u64"
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [],
+  "frame_check": "all declared fields loaded",
+  "gates": [
+   {
+    "imm": 32,
+    "op": "jlt",
+    "pc": "0x12e0b"
+   }
+  ],
+  "handler_pc": "0x12e01",
+  "insns": 197,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 6
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxw",
+    "pc": "0x12e1d",
+    "width": 4
+   },
+   {
+    "off": 4,
+    "op": "ldxh",
+    "pc": "0x12e1b",
+    "width": 2
+   },
+   {
+    "off": 6,
+    "op": "ldxdw",
+    "pc": "0x12e0d",
+    "width": 8
+   },
+   {
+    "off": 14,
+    "op": "ldxb",
+    "pc": "0x12e0e",
+    "width": 1
+   },
+   {
+    "off": 15,
+    "op": "ldxdw",
+    "pc": "0x12e21",
+    "width": 8
+   },
+   {
+    "off": 23,
+    "op": "ldxdw",
+    "pc": "0x12e20",
+    "width": 8
+   },
+   {
+    "off": 31,
+    "op": "ldxb",
+    "pc": "0x12e1f",
+    "width": 1
+   },
+   {
+    "off": 32,
+    "op": "ldxb",
+    "pc": "0x12e17",
+    "width": 1
+   },
+   {
+    "off": 33,
+    "op": "ldxdw",
+    "pc": "0x12e19",
+    "width": 8
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 41
+   }
+  ]
+ },
+ "revoke_fee_sharing_authority": {
+  "advances": [],
+  "args_declared": [],
+  "args_expected": [],
+  "caps": [],
+  "frame_check": "no arguments declared; reader not touched",
+  "gates": [],
+  "handler_pc": "0x138ba",
+  "insns": 12,
+  "len32": [],
+  "muls": [],
+  "reader": "none",
+  "reads": [],
+  "spans": []
+ },
+ "set_authority": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "new_authority",
+    "type": "pubkey"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "new_authority",
+    "off": 0,
+    "size": 32,
+    "type": "pubkey"
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [],
+  "frame_check": "all declared fields loaded",
+  "gates": [
+   {
+    "imm": 32,
+    "op": "jlt",
+    "pc": "0x130e8"
+   }
+  ],
+  "handler_pc": "0x130de",
+  "insns": 188,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 6
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxh",
+    "pc": "0x130ed",
+    "width": 2
+   },
+   {
+    "off": 2,
+    "op": "ldxb",
+    "pc": "0x130ef",
+    "width": 1
+   },
+   {
+    "off": 3,
+    "op": "ldxh",
+    "pc": "0x130f1",
+    "width": 2
+   },
+   {
+    "off": 5,
+    "op": "ldxb",
+    "pc": "0x130f2",
+    "width": 1
+   },
+   {
+    "off": 6,
+    "op": "ldxdw",
+    "pc": "0x130ea",
+    "width": 8
+   },
+   {
+    "off": 14,
+    "op": "ldxb",
+    "pc": "0x130eb",
+    "width": 1
+   },
+   {
+    "off": 15,
+    "op": "ldxdw",
+    "pc": "0x130fd",
+    "width": 8
+   },
+   {
+    "off": 23,
+    "op": "ldxdw",
+    "pc": "0x130fb",
+    "width": 8
+   },
+   {
+    "off": 31,
+    "op": "ldxb",
+    "pc": "0x130ff",
+    "width": 1
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 32
+   }
+  ]
+ },
+ "set_claim_rate_limit": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "claim_rate_limit",
+    "type": "u64"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "claim_rate_limit",
+    "off": 0,
+    "size": 8,
+    "type": "u64"
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [],
+  "frame_check": "all declared fields loaded",
+  "gates": [
+   {
+    "imm": 8,
+    "op": "jlt",
+    "pc": "0x1303e"
+   }
+  ],
+  "handler_pc": "0x13034",
+  "insns": 166,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 6
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxdw",
+    "pc": "0x13040",
+    "width": 8
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 8
+   }
+  ]
+ },
+ "set_disable_flags": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "disable_flags",
+    "type": "u8"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "disable_flags",
+    "off": 0,
+    "size": 1,
+    "type": "u8"
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [],
+  "frame_check": "all declared fields loaded",
+  "gates": [
+   {
+    "imm": 0,
+    "op": "jeq",
+    "pc": "0x12f94"
+   }
+  ],
+  "handler_pc": "0x12f8a",
+  "insns": 166,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 8
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxb",
+    "pc": "0x12f96",
+    "width": 1
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 1
+   }
+  ]
+ },
+ "set_exotic_flat_fees": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "exotic_flat_fees",
+    "type": {
+     "defined": {
+      "name": "Fees"
+     }
+    }
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "exotic_flat_fees",
+    "off": 0,
+    "size": 24,
+    "type": {
+     "defined": {
+      "name": "Fees"
+     }
+    }
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [],
+  "frame_check": "all declared fields loaded",
+  "gates": [
+   {
+    "imm": 8,
+    "op": "jlt",
+    "pc": "0x1354b"
+   }
+  ],
+  "handler_pc": "0x13541",
+  "insns": 173,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 6
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxdw",
+    "pc": "0x13550",
+    "width": 8
+   },
+   {
+    "off": 8,
+    "op": "ldxdw",
+    "pc": "0x13551",
+    "width": 8
+   },
+   {
+    "off": 16,
+    "op": "ldxdw",
+    "pc": "0x13552",
+    "width": 8
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 24
+   }
+  ]
+ },
+ "set_social_claim_authority": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "social_claim_authority",
+    "type": "pubkey"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "social_claim_authority",
+    "off": 0,
+    "size": 32,
+    "type": "pubkey"
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [],
+  "frame_check": "all declared fields loaded",
+  "gates": [
+   {
+    "imm": 32,
+    "op": "jlt",
+    "pc": "0x12ed4"
+   }
+  ],
+  "handler_pc": "0x12eca",
+  "insns": 188,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 6
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxh",
+    "pc": "0x12ed9",
+    "width": 2
+   },
+   {
+    "off": 2,
+    "op": "ldxb",
+    "pc": "0x12edb",
+    "width": 1
+   },
+   {
+    "off": 3,
+    "op": "ldxh",
+    "pc": "0x12edd",
+    "width": 2
+   },
+   {
+    "off": 5,
+    "op": "ldxb",
+    "pc": "0x12ede",
+    "width": 1
+   },
+   {
+    "off": 6,
+    "op": "ldxdw",
+    "pc": "0x12ed6",
+    "width": 8
+   },
+   {
+    "off": 14,
+    "op": "ldxb",
+    "pc": "0x12ed7",
+    "width": 1
+   },
+   {
+    "off": 15,
+    "op": "ldxdw",
+    "pc": "0x12ee9",
+    "width": 8
+   },
+   {
+    "off": 23,
+    "op": "ldxdw",
+    "pc": "0x12ee7",
+    "width": 8
+   },
+   {
+    "off": 31,
+    "op": "ldxb",
+    "pc": "0x12eeb",
+    "width": 1
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 32
+   }
+  ]
+ },
+ "sweep_buyback": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "index",
+    "type": "u8"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "index",
+    "off": 0,
+    "size": 1,
+    "type": "u8"
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [],
+  "frame_check": "all declared fields loaded",
+  "gates": [
+   {
+    "imm": 0,
+    "op": "jeq",
+    "pc": "0x13e0b"
+   }
+  ],
+  "handler_pc": "0x13e01",
+  "insns": 163,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 8
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxb",
+    "pc": "0x13e0d",
+    "width": 1
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 1
+   }
+  ]
+ },
+ "transfer_fee_sharing_authority": {
+  "advances": [],
+  "args_declared": [],
+  "args_expected": [],
+  "caps": [],
+  "frame_check": "no arguments declared; reader not touched",
+  "gates": [],
+  "handler_pc": "0x138c7",
+  "insns": 12,
+  "len32": [],
+  "muls": [],
+  "reader": "none",
+  "reads": [],
+  "spans": []
+ },
+ "update_admin": {
+  "advances": [],
+  "args_declared": [],
+  "args_expected": [],
+  "caps": [],
+  "frame_check": "no arguments declared; reader not touched",
+  "gates": [],
+  "handler_pc": "0x135f3",
+  "insns": 169,
+  "len32": [],
+  "muls": [],
+  "reader": "none",
+  "reads": [],
+  "spans": []
+ },
+ "update_buyback_authority": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "index",
+    "type": "u8"
+   },
+   {
+    "name": "new_authority",
+    "type": "pubkey"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "index",
+    "off": 0,
+    "size": 1,
+    "type": "u8"
+   },
+   {
+    "name": "new_authority",
+    "off": 1,
+    "size": 32,
+    "type": "pubkey"
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [],
+  "frame_check": "all declared fields loaded",
+  "gates": [
+   {
+    "imm": 0,
+    "op": "jeq",
+    "pc": "0x13eb0"
+   },
+   {
+    "imm": 33,
+    "op": "jlt",
+    "pc": "0x13eb1"
+   }
+  ],
+  "handler_pc": "0x13ea6",
+  "insns": 212,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 6
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxb",
+    "pc": "0x13eb3",
+    "width": 1
+   },
+   {
+    "off": 1,
+    "op": "ldxh",
+    "pc": "0x13eb8",
+    "width": 2
+   },
+   {
+    "off": 3,
+    "op": "ldxb",
+    "pc": "0x13eba",
+    "width": 1
+   },
+   {
+    "off": 4,
+    "op": "ldxh",
+    "pc": "0x13ebc",
+    "width": 2
+   },
+   {
+    "off": 6,
+    "op": "ldxb",
+    "pc": "0x13ebd",
+    "width": 1
+   },
+   {
+    "off": 7,
+    "op": "ldxdw",
+    "pc": "0x13eb5",
+    "width": 8
+   },
+   {
+    "off": 15,
+    "op": "ldxb",
+    "pc": "0x13eb6",
+    "width": 1
+   },
+   {
+    "off": 16,
+    "op": "ldxdw",
+    "pc": "0x13ec8",
+    "width": 8
+   },
+   {
+    "off": 24,
+    "op": "ldxdw",
+    "pc": "0x13ec6",
+    "width": 8
+   },
+   {
+    "off": 32,
+    "op": "ldxb",
+    "pc": "0x13eca",
+    "width": 1
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 33
+   }
+  ]
+ },
+ "update_buyback_claim_rate_limit": {
+  "advances": [],
+  "args_declared": [
+   {
+    "name": "index",
+    "type": "u8"
+   },
+   {
+    "name": "claim_rate_limit",
+    "type": "i64"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "index",
+    "off": 0,
+    "size": 1,
+    "type": "u8"
+   },
+   {
+    "name": "claim_rate_limit",
+    "off": 1,
+    "size": 8,
+    "type": "i64"
+   }
+  ],
+  "caps": [],
+  "fields_unloaded": [],
+  "frame_check": "all declared fields loaded",
+  "gates": [
+   {
+    "imm": 0,
+    "op": "jeq",
+    "pc": "0x13f8a"
+   },
+   {
+    "imm": 9,
+    "op": "jlt",
+    "pc": "0x13f8b"
+   }
+  ],
+  "handler_pc": "0x13f80",
+  "insns": 190,
+  "len32": [],
+  "muls": [],
+  "reader": {
+   "kind": "own",
+   "reg": 6
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxb",
+    "pc": "0x13f8d",
+    "width": 1
+   },
+   {
+    "off": 1,
+    "op": "ldxdw",
+    "pc": "0x13f8f",
+    "width": 8
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 9
+   }
+  ]
+ },
+ "update_fee_config": {
+  "advances": [
+   {
+    "pc": "0x1f9d",
+    "store_off": 0
+   }
+  ],
+  "args_declared": [
+   {
+    "name": "fee_tiers",
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "FeeTier"
+      }
+     }
+    }
+   },
+   {
+    "name": "flat_fees",
+    "type": {
+     "defined": {
+      "name": "Fees"
+     }
+    }
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "fee_tiers",
+    "off": 0,
+    "size": null,
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "FeeTier"
+      }
+     }
+    }
+   },
+   {
+    "name": "flat_fees",
+    "off": null,
+    "size": 24,
+    "type": {
+     "defined": {
+      "name": "Fees"
+     }
+    }
+   }
+  ],
+  "caps": [
+   {
+    "bytes": 4080,
+    "cap": 102,
+    "gate_pc": "0x1faa",
+    "mul_pc": "0x1fad",
+    "stride": 40
+   }
+  ],
+  "frame_check": "variable-length arguments",
+  "gates": [
+   {
+    "imm": 4,
+    "op": "jlt",
+    "pc": "0x1f97"
+   }
+  ],
+  "handler_pc": "0x1319e",
+  "insns": 195,
+  "len32": [],
+  "muls": [
+   {
+    "imm": 40,
+    "pc": "0x1fad"
+   }
+  ],
+  "reader": {
+   "chain": [
+    "0x131af"
+   ],
+   "frame": "0x1f95",
+   "insns": 133,
+   "kind": "helper",
+   "tail_reads": 3
+  },
+  "reads": [
+   {
+    "off": null,
+    "op": "ldxdw",
+    "pc": "0x131be",
+    "width": 8
+   },
+   {
+    "off": null,
+    "op": "ldxdw",
+    "pc": "0x131bf",
+    "width": 8
+   },
+   {
+    "off": null,
+    "op": "ldxdw",
+    "pc": "0x131c0",
+    "width": 8
+   },
+   {
+    "off": 0,
+    "op": "ldxw",
+    "pc": "0x1f9a",
+    "width": 4
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 4
+   }
+  ]
+ },
+ "update_fee_shares": {
+  "advances": [
+   {
+    "pc": "0x2132",
+    "store_off": 0
+   }
+  ],
+  "args_declared": [
+   {
+    "name": "shareholders",
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "Shareholder"
+      }
+     }
+    }
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "shareholders",
+    "off": 0,
+    "size": null,
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "Shareholder"
+      }
+     }
+    }
+   }
+  ],
+  "caps": [
+   {
+    "bytes": 4080,
+    "cap": 120,
+    "gate_pc": "0x2141",
+    "mul_pc": "0x2144",
+    "stride": 34
+   }
+  ],
+  "frame_check": "variable-length arguments",
+  "gates": [
+   {
+    "imm": 4,
+    "op": "jlt",
+    "pc": "0x212d"
+   }
+  ],
+  "handler_pc": "0x138d4",
+  "insns": 129,
+  "len32": [],
+  "muls": [
+   {
+    "imm": 34,
+    "pc": "0x2144"
+   }
+  ],
+  "reader": {
+   "chain": [
+    "0x138e5"
+   ],
+   "frame": "0x212b",
+   "insns": 147,
+   "kind": "helper",
+   "tail_reads": 0
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxw",
+    "pc": "0x212f",
+    "width": 4
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 4
+   }
+  ]
+ },
+ "update_fee_shares_v2": {
+  "advances": [
+   {
+    "pc": "0x2132",
+    "store_off": 0
+   }
+  ],
+  "args_declared": [
+   {
+    "name": "shareholders",
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "Shareholder"
+      }
+     }
+    }
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "shareholders",
+    "off": 0,
+    "size": null,
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "Shareholder"
+      }
+     }
+    }
+   }
+  ],
+  "caps": [
+   {
+    "bytes": 4080,
+    "cap": 120,
+    "gate_pc": "0x2141",
+    "mul_pc": "0x2144",
+    "stride": 34
+   }
+  ],
+  "frame_check": "variable-length arguments",
+  "gates": [
+   {
+    "imm": 4,
+    "op": "jlt",
+    "pc": "0x212d"
+   }
+  ],
+  "handler_pc": "0x1395a",
+  "insns": 134,
+  "len32": [],
+  "muls": [
+   {
+    "imm": 34,
+    "pc": "0x2144"
+   }
+  ],
+  "reader": {
+   "chain": [
+    "0x1396b"
+   ],
+   "frame": "0x212b",
+   "insns": 147,
+   "kind": "helper",
+   "tail_reads": 0
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxw",
+    "pc": "0x212f",
+    "width": 4
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 4
+   }
+  ]
+ },
+ "update_stable_fee_config": {
+  "advances": [
+   {
+    "pc": "0x1f9d",
+    "store_off": 0
+   }
+  ],
+  "args_declared": [
+   {
+    "name": "fee_tiers",
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "FeeTier"
+      }
+     }
+    }
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "fee_tiers",
+    "off": 0,
+    "size": null,
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "FeeTier"
+      }
+     }
+    }
+   }
+  ],
+  "caps": [
+   {
+    "bytes": 4080,
+    "cap": 102,
+    "gate_pc": "0x1faa",
+    "mul_pc": "0x1fad",
+    "stride": 40
+   }
+  ],
+  "frame_check": "variable-length arguments",
+  "gates": [
+   {
+    "imm": 4,
+    "op": "jlt",
+    "pc": "0x1f97"
+   }
+  ],
+  "handler_pc": "0x13329",
+  "insns": 179,
+  "len32": [],
+  "muls": [
+   {
+    "imm": 40,
+    "pc": "0x1fad"
+   }
+  ],
+  "reader": {
+   "chain": [
+    "0x1333a"
+   ],
+   "frame": "0x1f95",
+   "insns": 133,
+   "kind": "helper",
+   "tail_reads": 0
+  },
+  "reads": [
+   {
+    "off": 0,
+    "op": "ldxw",
+    "pc": "0x1f9a",
+    "width": 4
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 4
+   }
+  ]
+ },
+ "upsert_fee_tiers": {
+  "advances": [
+   {
+    "pc": "0x1f9d",
+    "store_off": 0
+   }
+  ],
+  "args_declared": [
+   {
+    "name": "fee_tiers",
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "FeeTier"
+      }
+     }
+    }
+   },
+   {
+    "name": "offset",
+    "type": "u8"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "fee_tiers",
+    "off": 0,
+    "size": null,
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "FeeTier"
+      }
+     }
+    }
+   },
+   {
+    "name": "offset",
+    "off": null,
+    "size": 1,
+    "type": "u8"
+   }
+  ],
+  "caps": [
+   {
+    "bytes": 4080,
+    "cap": 102,
+    "gate_pc": "0x1faa",
+    "mul_pc": "0x1fad",
+    "stride": 40
+   }
+  ],
+  "frame_check": "variable-length arguments",
+  "gates": [
+   {
+    "imm": 4,
+    "op": "jlt",
+    "pc": "0x1f97"
+   }
+  ],
+  "handler_pc": "0x13267",
+  "insns": 188,
+  "len32": [],
+  "muls": [
+   {
+    "imm": 40,
+    "pc": "0x1fad"
+   }
+  ],
+  "reader": {
+   "chain": [
+    "0x13278"
+   ],
+   "frame": "0x1f95",
+   "insns": 133,
+   "kind": "helper",
+   "tail_reads": 1
+  },
+  "reads": [
+   {
+    "off": null,
+    "op": "ldxb",
+    "pc": "0x13283",
+    "width": 1
+   },
+   {
+    "off": 0,
+    "op": "ldxw",
+    "pc": "0x1f9a",
+    "width": 4
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 4
+   }
+  ]
+ },
+ "upsert_stable_fee_tiers": {
+  "advances": [
+   {
+    "pc": "0x1f9d",
+    "store_off": 0
+   }
+  ],
+  "args_declared": [
+   {
+    "name": "fee_tiers",
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "FeeTier"
+      }
+     }
+    }
+   },
+   {
+    "name": "offset",
+    "type": "u8"
+   }
+  ],
+  "args_expected": [
+   {
+    "name": "fee_tiers",
+    "off": 0,
+    "size": null,
+    "type": {
+     "vec": {
+      "defined": {
+       "name": "FeeTier"
+      }
+     }
+    }
+   },
+   {
+    "name": "offset",
+    "off": null,
+    "size": 1,
+    "type": "u8"
+   }
+  ],
+  "caps": [
+   {
+    "bytes": 4080,
+    "cap": 102,
+    "gate_pc": "0x1faa",
+    "mul_pc": "0x1fad",
+    "stride": 40
+   }
+  ],
+  "frame_check": "variable-length arguments",
+  "gates": [
+   {
+    "imm": 4,
+    "op": "jlt",
+    "pc": "0x1f97"
+   }
+  ],
+  "handler_pc": "0x133e0",
+  "insns": 188,
+  "len32": [],
+  "muls": [
+   {
+    "imm": 40,
+    "pc": "0x1fad"
+   }
+  ],
+  "reader": {
+   "chain": [
+    "0x133f1"
+   ],
+   "frame": "0x1f95",
+   "insns": 133,
+   "kind": "helper",
+   "tail_reads": 1
+  },
+  "reads": [
+   {
+    "off": null,
+    "op": "ldxb",
+    "pc": "0x133fc",
+    "width": 1
+   },
+   {
+    "off": 0,
+    "op": "ldxw",
+    "pc": "0x1f9a",
+    "width": 4
+   }
+  ],
+  "spans": [
+   {
+    "off": 0,
+    "width": 4
+   }
+  ]
+ },
+ "withdraw": {
+  "advances": [],
+  "args_declared": [],
+  "args_expected": [],
+  "caps": [],
+  "frame_check": "no arguments declared; reader not touched",
+  "gates": [],
+  "handler_pc": "0x14121",
+  "insns": 137,
+  "len32": [],
+  "muls": [],
+  "reader": "none",
+  "reads": [],
+  "spans": []
+ }
+}
