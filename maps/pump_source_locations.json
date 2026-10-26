@@ -1,0 +1,2222 @@
+{
+ "program": "pump",
+ "binary": "evidence/original/pump/deployed.so",
+ "sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+ "text_insns": 215873,
+ "functions": 906,
+ "path_strings": 136,
+ "location_records": 89,
+ "plain_str_consts": 38,
+ "location_functions": 68,
+ "direct_refs": 0,
+ "direct_functions": 0,
+ "files": [
+  "library/core/src/fmt/mod.rs",
+  "library/core/src/fmt/num.rs",
+  "library/core/src/unicode/unicode_data.rs",
+  "programs/pump/src/admin_set_idl_authority.rs",
+  "programs/pump/src/create_v2.rs",
+  "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+  "programs/pump/src/creator/distribute_creator_fees.rs",
+  "programs/pump/src/creator/distribute_fee_to_holders.rs",
+  "programs/pump/src/creator/set_creator.rs",
+  "programs/pump/src/lib.rs",
+  "programs/pump/src/migrate_v2.rs",
+  "programs/pump/src/multi_hop_curve_swap.rs",
+  "programs/pump/src/quote_control/state.rs",
+  "programs/pump/src/sell.rs",
+  "programs/pump/src/token_incentives/volume_accumulator.rs",
+  "src/bpf_writer.rs",
+  "src/common.rs",
+  "src/de/mod.rs",
+  "src/encode.rs",
+  "src/generated/instructions/create_metadata_account_v3.rs",
+  "src/idl.rs",
+  "src/instruction.rs",
+  "src/lib.rs",
+  "src/ser/mod.rs",
+  "src/state.rs",
+  "src/v1.rs"
+ ],
+ "program_files": [
+  "programs/pump/src/admin_set_idl_authority.rs",
+  "programs/pump/src/create_v2.rs",
+  "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+  "programs/pump/src/creator/distribute_creator_fees.rs",
+  "programs/pump/src/creator/distribute_fee_to_holders.rs",
+  "programs/pump/src/creator/set_creator.rs",
+  "programs/pump/src/lib.rs",
+  "programs/pump/src/migrate_v2.rs",
+  "programs/pump/src/multi_hop_curve_swap.rs",
+  "programs/pump/src/quote_control/state.rs",
+  "programs/pump/src/sell.rs",
+  "programs/pump/src/token_incentives/volume_accumulator.rs"
+ ],
+ "runtime_files": [
+  "library/core/src/fmt/mod.rs",
+  "library/core/src/fmt/num.rs",
+  "library/core/src/unicode/unicode_data.rs",
+  "src/bpf_writer.rs",
+  "src/common.rs",
+  "src/de/mod.rs",
+  "src/encode.rs",
+  "src/generated/instructions/create_metadata_account_v3.rs",
+  "src/idl.rs",
+  "src/instruction.rs",
+  "src/lib.rs",
+  "src/ser/mod.rs",
+  "src/state.rs",
+  "src/v1.rs"
+ ],
+ "records": [
+  {
+   "addr": 1834328,
+   "file": "library/core/src/fmt/mod.rs",
+   "len": 27,
+   "line": 2406,
+   "col": 26
+  },
+  {
+   "addr": 1834248,
+   "file": "library/core/src/fmt/num.rs",
+   "len": 27,
+   "line": 105,
+   "col": 23
+  },
+  {
+   "addr": 1834784,
+   "file": "library/core/src/unicode/unicode_data.rs",
+   "len": 40,
+   "line": 80,
+   "col": 40
+  },
+  {
+   "addr": 1825240,
+   "file": "programs/pump/src/admin_set_idl_authority.rs",
+   "len": 44,
+   "line": 86,
+   "col": 13
+  },
+  {
+   "addr": 1825264,
+   "file": "programs/pump/src/admin_set_idl_authority.rs",
+   "len": 44,
+   "line": 101,
+   "col": 45
+  },
+  {
+   "addr": 1825328,
+   "file": "programs/pump/src/create_v2.rs",
+   "len": 30,
+   "line": 385,
+   "col": 29
+  },
+  {
+   "addr": 1825352,
+   "file": "programs/pump/src/create_v2.rs",
+   "len": 30,
+   "line": 426,
+   "col": 64
+  },
+  {
+   "addr": 1825464,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "len": 54,
+   "line": 342,
+   "col": 22
+  },
+  {
+   "addr": 1826712,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "len": 52,
+   "line": 217,
+   "col": 1
+  },
+  {
+   "addr": 1825488,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "len": 52,
+   "line": 327,
+   "col": 22
+  },
+  {
+   "addr": 1825512,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "len": 54,
+   "line": 114,
+   "col": 22
+  },
+  {
+   "addr": 1825536,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "len": 54,
+   "line": 121,
+   "col": 44
+  },
+  {
+   "addr": 1825560,
+   "file": "programs/pump/src/creator/set_creator.rs",
+   "len": 40,
+   "line": 63,
+   "col": 31
+  },
+  {
+   "addr": 1827032,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24,
+   "line": 83,
+   "col": 1
+  },
+  {
+   "addr": 1827056,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24,
+   "line": 84,
+   "col": 1
+  },
+  {
+   "addr": 1826432,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24,
+   "line": 1442,
+   "col": 62
+  },
+  {
+   "addr": 1826456,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24,
+   "line": 1443,
+   "col": 40
+  },
+  {
+   "addr": 1826480,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24,
+   "line": 1477,
+   "col": 42
+  },
+  {
+   "addr": 1826504,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24,
+   "line": 1478,
+   "col": 40
+  },
+  {
+   "addr": 1828640,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24,
+   "line": 1815,
+   "col": 1
+  },
+  {
+   "addr": 1826528,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24,
+   "line": 1939,
+   "col": 14
+  },
+  {
+   "addr": 1828664,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24,
+   "line": 2639,
+   "col": 1
+  },
+  {
+   "addr": 1825768,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "len": 31,
+   "line": 820,
+   "col": 43
+  },
+  {
+   "addr": 1825792,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "len": 41,
+   "line": 232,
+   "col": 32
+  },
+  {
+   "addr": 1826736,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "len": 40,
+   "line": 16,
+   "col": 1
+  },
+  {
+   "addr": 1825816,
+   "file": "programs/pump/src/sell.rs",
+   "len": 25,
+   "line": 76,
+   "col": 13
+  },
+  {
+   "addr": 1827008,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 19,
+   "col": 1
+  },
+  {
+   "addr": 1825944,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 53,
+   "col": 14
+  },
+  {
+   "addr": 1825968,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 78,
+   "col": 17
+  },
+  {
+   "addr": 1825992,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 108,
+   "col": 14
+  },
+  {
+   "addr": 1826016,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 136,
+   "col": 14
+  },
+  {
+   "addr": 1826064,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 164,
+   "col": 22
+  },
+  {
+   "addr": 1826040,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 170,
+   "col": 22
+  },
+  {
+   "addr": 1826112,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 186,
+   "col": 22
+  },
+  {
+   "addr": 1826088,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 192,
+   "col": 22
+  },
+  {
+   "addr": 1826136,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 317,
+   "col": 13
+  },
+  {
+   "addr": 1826160,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 331,
+   "col": 14
+  },
+  {
+   "addr": 1826184,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 346,
+   "col": 13
+  },
+  {
+   "addr": 1826280,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 376,
+   "col": 18
+  },
+  {
+   "addr": 1826256,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 381,
+   "col": 18
+  },
+  {
+   "addr": 1826208,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 390,
+   "col": 18
+  },
+  {
+   "addr": 1826232,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 397,
+   "col": 17
+  },
+  {
+   "addr": 1826304,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 425,
+   "col": 14
+  },
+  {
+   "addr": 1826328,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 429,
+   "col": 43
+  },
+  {
+   "addr": 1826408,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56,
+   "line": 436,
+   "col": 28
+  },
+  {
+   "addr": 1829928,
+   "file": "src/bpf_writer.rs",
+   "len": 17,
+   "line": 28,
+   "col": 9
+  },
+  {
+   "addr": 1829976,
+   "file": "src/common.rs",
+   "len": 13,
+   "line": 9,
+   "col": 32
+  },
+  {
+   "addr": 1829952,
+   "file": "src/common.rs",
+   "len": 13,
+   "line": 11,
+   "col": 21
+  },
+  {
+   "addr": 1824960,
+   "file": "src/de/mod.rs",
+   "len": 13,
+   "line": 161,
+   "col": 54
+  },
+  {
+   "addr": 1828960,
+   "file": "src/de/mod.rs",
+   "len": 13,
+   "line": 161,
+   "col": 54
+  },
+  {
+   "addr": 1833448,
+   "file": "src/encode.rs",
+   "len": 13,
+   "line": 431,
+   "col": 11
+  },
+  {
+   "addr": 1832968,
+   "file": "src/encode.rs",
+   "len": 13,
+   "line": 460,
+   "col": 9
+  },
+  {
+   "addr": 1832920,
+   "file": "src/encode.rs",
+   "len": 13,
+   "line": 464,
+   "col": 27
+  },
+  {
+   "addr": 1832944,
+   "file": "src/encode.rs",
+   "len": 13,
+   "line": 465,
+   "col": 16
+  },
+  {
+   "addr": 1829088,
+   "file": "src/generated/instructions/create_metadata_account_v3.rs",
+   "len": 56,
+   "line": 44,
+   "col": 47
+  },
+  {
+   "addr": 1831824,
+   "file": "src/idl.rs",
+   "len": 10,
+   "line": 61,
+   "col": 1
+  },
+  {
+   "addr": 1829544,
+   "file": "src/instruction.rs",
+   "len": 18,
+   "line": 201,
+   "col": 53
+  },
+  {
+   "addr": 1829568,
+   "file": "src/instruction.rs",
+   "len": 18,
+   "line": 205,
+   "col": 53
+  },
+  {
+   "addr": 1829200,
+   "file": "src/instruction.rs",
+   "len": 18,
+   "line": 1468,
+   "col": 43
+  },
+  {
+   "addr": 1829224,
+   "file": "src/instruction.rs",
+   "len": 18,
+   "line": 1497,
+   "col": 43
+  },
+  {
+   "addr": 1829248,
+   "file": "src/instruction.rs",
+   "len": 18,
+   "line": 1527,
+   "col": 43
+  },
+  {
+   "addr": 1829272,
+   "file": "src/instruction.rs",
+   "len": 18,
+   "line": 1556,
+   "col": 43
+  },
+  {
+   "addr": 1829296,
+   "file": "src/instruction.rs",
+   "len": 18,
+   "line": 1647,
+   "col": 43
+  },
+  {
+   "addr": 1832488,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 53,
+   "col": 59
+  },
+  {
+   "addr": 1832512,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 73,
+   "col": 25
+  },
+  {
+   "addr": 1832536,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 94,
+   "col": 19
+  },
+  {
+   "addr": 1831896,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 95,
+   "col": 10
+  },
+  {
+   "addr": 1831872,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 95,
+   "col": 11
+  },
+  {
+   "addr": 1831920,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 323,
+   "col": 5
+  },
+  {
+   "addr": 1831944,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 326,
+   "col": 5
+  },
+  {
+   "addr": 1831968,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 339,
+   "col": 5
+  },
+  {
+   "addr": 1831992,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 343,
+   "col": 5
+  },
+  {
+   "addr": 1832016,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 347,
+   "col": 5
+  },
+  {
+   "addr": 1832040,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 353,
+   "col": 5
+  },
+  {
+   "addr": 1832064,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 356,
+   "col": 5
+  },
+  {
+   "addr": 1832088,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 359,
+   "col": 5
+  },
+  {
+   "addr": 1832112,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 363,
+   "col": 5
+  },
+  {
+   "addr": 1832136,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 367,
+   "col": 5
+  },
+  {
+   "addr": 1832184,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 376,
+   "col": 5
+  },
+  {
+   "addr": 1832160,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 376,
+   "col": 15
+  },
+  {
+   "addr": 1832208,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 377,
+   "col": 5
+  },
+  {
+   "addr": 1832232,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 381,
+   "col": 5
+  },
+  {
+   "addr": 1832256,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 420,
+   "col": 9
+  },
+  {
+   "addr": 1832280,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 426,
+   "col": 13
+  },
+  {
+   "addr": 1833168,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 612,
+   "col": 32
+  },
+  {
+   "addr": 1832896,
+   "file": "src/ser/mod.rs",
+   "len": 14,
+   "line": 242,
+   "col": 9
+  },
+  {
+   "addr": 1829416,
+   "file": "src/state.rs",
+   "len": 12,
+   "line": 42,
+   "col": 19
+  },
+  {
+   "addr": 1829320,
+   "file": "src/state.rs",
+   "len": 12,
+   "line": 54,
+   "col": 19
+  },
+  {
+   "addr": 1831848,
+   "file": "src/v1.rs",
+   "len": 9,
+   "line": 14,
+   "col": 1
+  }
+ ],
+ "strings": [
+  {
+   "addr": 1833824,
+   "file": "library/alloc/src/fmt.rs",
+   "len": 24
+  },
+  {
+   "addr": 1833768,
+   "file": "library/alloc/src/raw_vec.rs",
+   "len": 28
+  },
+  {
+   "addr": 1834272,
+   "file": "library/core/src/fmt/mod.rs",
+   "len": 27
+  },
+  {
+   "addr": 1834352,
+   "file": "library/core/src/fmt/mod.rs",
+   "len": 27
+  },
+  {
+   "addr": 1834712,
+   "file": "library/core/src/str/mod.rs",
+   "len": 27
+  },
+  {
+   "addr": 1834808,
+   "file": "library/core/src/unicode/unicode_data.rs",
+   "len": 40
+  },
+  {
+   "addr": 1825288,
+   "file": "programs/pump/src/admin_set_idl_authority.rs",
+   "len": 44
+  },
+  {
+   "addr": 1825376,
+   "file": "programs/pump/src/create_v2.rs",
+   "len": 30
+  },
+  {
+   "addr": 1826608,
+   "file": "programs/pump/src/create_v2.rs",
+   "len": 30
+  },
+  {
+   "addr": 1825584,
+   "file": "programs/pump/src/creator/set_metaplex_creator.rs",
+   "len": 49
+  },
+  {
+   "addr": 1825640,
+   "file": "programs/pump/src/extend_account.rs",
+   "len": 35
+  },
+  {
+   "addr": 1826552,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24
+  },
+  {
+   "addr": 1827080,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24
+  },
+  {
+   "addr": 1828688,
+   "file": "programs/pump/src/lib.rs",
+   "len": 24
+  },
+  {
+   "addr": 1825728,
+   "file": "programs/pump/src/migrate.rs",
+   "len": 28
+  },
+  {
+   "addr": 1825840,
+   "file": "programs/pump/src/sell.rs",
+   "len": 25
+  },
+  {
+   "addr": 1826352,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56
+  },
+  {
+   "addr": 1826760,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "len": 56
+  },
+  {
+   "addr": 1830000,
+   "file": "src/common.rs",
+   "len": 13
+  },
+  {
+   "addr": 1824776,
+   "file": "src/de/mod.rs",
+   "len": 13
+  },
+  {
+   "addr": 1824984,
+   "file": "src/de/mod.rs",
+   "len": 13
+  },
+  {
+   "addr": 1825072,
+   "file": "src/de/mod.rs",
+   "len": 13
+  },
+  {
+   "addr": 1828984,
+   "file": "src/de/mod.rs",
+   "len": 13
+  },
+  {
+   "addr": 1832992,
+   "file": "src/encode.rs",
+   "len": 13
+  },
+  {
+   "addr": 1833472,
+   "file": "src/encode.rs",
+   "len": 13
+  },
+  {
+   "addr": 1829112,
+   "file": "src/generated/instructions/create_metadata_account_v3.rs",
+   "len": 56
+  },
+  {
+   "addr": 1830568,
+   "file": "src/idl.rs",
+   "len": 10
+  },
+  {
+   "addr": 1829592,
+   "file": "src/instruction.rs",
+   "len": 18
+  },
+  {
+   "addr": 1824632,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1832304,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1832560,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1832648,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1833128,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1833192,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1833248,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1833304,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1829344,
+   "file": "src/state.rs",
+   "len": 12
+  },
+  {
+   "addr": 1829440,
+   "file": "src/state.rs",
+   "len": 12
+  }
+ ],
+ "functions_records": {
+  "0x22eb": [
+   {
+    "pc": 9053,
+    "addr": 1824960,
+    "file": "src/de/mod.rs",
+    "line": 161,
+    "col": 54
+   }
+  ],
+  "0x30cf": [
+   {
+    "pc": 13205,
+    "addr": 1825328,
+    "file": "programs/pump/src/create_v2.rs",
+    "line": 385,
+    "col": 29
+   },
+   {
+    "pc": 12970,
+    "addr": 1825352,
+    "file": "programs/pump/src/create_v2.rs",
+    "line": 426,
+    "col": 64
+   }
+  ],
+  "0x5f4c": [
+   {
+    "pc": 25148,
+    "addr": 1825464,
+    "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+    "line": 342,
+    "col": 22
+   }
+  ],
+  "0x678a": [
+   {
+    "pc": 26792,
+    "addr": 1825488,
+    "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+    "line": 327,
+    "col": 22
+   }
+  ],
+  "0x68ab": [
+   {
+    "pc": 28091,
+    "addr": 1825512,
+    "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+    "line": 114,
+    "col": 22
+   },
+   {
+    "pc": 28096,
+    "addr": 1825536,
+    "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+    "line": 121,
+    "col": 44
+   }
+  ],
+  "0x71f8": [
+   {
+    "pc": 29259,
+    "addr": 1825560,
+    "file": "programs/pump/src/creator/set_creator.rs",
+    "line": 63,
+    "col": 31
+   }
+  ],
+  "0xaba6": [
+   {
+    "pc": 44232,
+    "addr": 1825768,
+    "file": "programs/pump/src/migrate_v2.rs",
+    "line": 820,
+    "col": 43
+   }
+  ],
+  "0xacfb": [
+   {
+    "pc": 44614,
+    "addr": 1825792,
+    "file": "programs/pump/src/multi_hop_curve_swap.rs",
+    "line": 232,
+    "col": 32
+   }
+  ],
+  "0xd9af": [
+   {
+    "pc": 56450,
+    "addr": 1825816,
+    "file": "programs/pump/src/sell.rs",
+    "line": 76,
+    "col": 13
+   }
+  ],
+  "0xea61": [
+   {
+    "pc": 60370,
+    "addr": 1826016,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 136,
+    "col": 14
+   }
+  ],
+  "0xf7b5": [
+   {
+    "pc": 63445,
+    "addr": 1826064,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 164,
+    "col": 22
+   },
+   {
+    "pc": 63427,
+    "addr": 1826040,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 170,
+    "col": 22
+   }
+  ],
+  "0xf7d8": [
+   {
+    "pc": 63480,
+    "addr": 1826112,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 186,
+    "col": 22
+   },
+   {
+    "pc": 63462,
+    "addr": 1826088,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 192,
+    "col": 22
+   }
+  ],
+  "0xf7fb": [
+   {
+    "pc": 63677,
+    "addr": 1825944,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 53,
+    "col": 14
+   },
+   {
+    "pc": 63701,
+    "addr": 1825968,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 78,
+    "col": 17
+   },
+   {
+    "pc": 63713,
+    "addr": 1825992,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 108,
+    "col": 14
+   },
+   {
+    "pc": 63696,
+    "addr": 1826328,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 429,
+    "col": 43
+   },
+   {
+    "pc": 63505,
+    "addr": 1826408,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 436,
+    "col": 28
+   }
+  ],
+  "0xf8e4": [
+   {
+    "pc": 64468,
+    "addr": 1826136,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 317,
+    "col": 13
+   },
+   {
+    "pc": 64484,
+    "addr": 1826160,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 331,
+    "col": 14
+   },
+   {
+    "pc": 64473,
+    "addr": 1826184,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 346,
+    "col": 13
+   },
+   {
+    "pc": 64490,
+    "addr": 1826280,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 376,
+    "col": 18
+   },
+   {
+    "pc": 64496,
+    "addr": 1826256,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 381,
+    "col": 18
+   },
+   {
+    "pc": 64502,
+    "addr": 1826208,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 390,
+    "col": 18
+   },
+   {
+    "pc": 64478,
+    "addr": 1826232,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 397,
+    "col": 17
+   },
+   {
+    "pc": 63832,
+    "addr": 1826408,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 436,
+    "col": 28
+   }
+  ],
+  "0xfbf9": [
+   {
+    "pc": 64531,
+    "addr": 1826304,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 425,
+    "col": 14
+   },
+   {
+    "pc": 64514,
+    "addr": 1826408,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 436,
+    "col": 28
+   }
+  ],
+  "0x101bf": [
+   {
+    "pc": 66048,
+    "addr": 1826528,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1939,
+    "col": 14
+   }
+  ],
+  "0x1124b": [
+   {
+    "pc": 70398,
+    "addr": 1827056,
+    "file": "programs/pump/src/lib.rs",
+    "line": 84,
+    "col": 1
+   },
+   {
+    "pc": 70502,
+    "addr": 1827056,
+    "file": "programs/pump/src/lib.rs",
+    "line": 84,
+    "col": 1
+   }
+  ],
+  "0x12da9": [
+   {
+    "pc": 77340,
+    "addr": 1826432,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1442,
+    "col": 62
+   },
+   {
+    "pc": 77233,
+    "addr": 1826456,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1443,
+    "col": 40
+   }
+  ],
+  "0x12e1f": [
+   {
+    "pc": 77485,
+    "addr": 1826432,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1442,
+    "col": 62
+   },
+   {
+    "pc": 77352,
+    "addr": 1826456,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1443,
+    "col": 40
+   }
+  ],
+  "0x12eb0": [
+   {
+    "pc": 77603,
+    "addr": 1826432,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1442,
+    "col": 62
+   },
+   {
+    "pc": 77496,
+    "addr": 1826456,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1443,
+    "col": 40
+   }
+  ],
+  "0x12f26": [
+   {
+    "pc": 77691,
+    "addr": 1826480,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1477,
+    "col": 42
+   },
+   {
+    "pc": 77615,
+    "addr": 1826504,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1478,
+    "col": 40
+   }
+  ],
+  "0x12f7e": [
+   {
+    "pc": 77779,
+    "addr": 1826480,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1477,
+    "col": 42
+   },
+   {
+    "pc": 77703,
+    "addr": 1826504,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1478,
+    "col": 40
+   }
+  ],
+  "0x12fd6": [
+   {
+    "pc": 77887,
+    "addr": 1826480,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1477,
+    "col": 42
+   },
+   {
+    "pc": 77792,
+    "addr": 1826504,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1478,
+    "col": 40
+   }
+  ],
+  "0x13409": [
+   {
+    "pc": 78895,
+    "addr": 1826528,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1939,
+    "col": 14
+   }
+  ],
+  "0x1437b": [
+   {
+    "pc": 82990,
+    "addr": 1826528,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1939,
+    "col": 14
+   }
+  ],
+  "0x189c0": [
+   {
+    "pc": 100853,
+    "addr": 1826712,
+    "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+    "line": 217,
+    "col": 1
+   }
+  ],
+  "0x1c8c6": [
+   {
+    "pc": 116939,
+    "addr": 1826736,
+    "file": "programs/pump/src/quote_control/state.rs",
+    "line": 16,
+    "col": 1
+   }
+  ],
+  "0x203df": [
+   {
+    "pc": 132068,
+    "addr": 1827008,
+    "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+    "line": 19,
+    "col": 1
+   }
+  ],
+  "0x21291": [
+   {
+    "pc": 135830,
+    "addr": 1827032,
+    "file": "programs/pump/src/lib.rs",
+    "line": 83,
+    "col": 1
+   }
+  ],
+  "0x22b3b": [
+   {
+    "pc": 142144,
+    "addr": 1827056,
+    "file": "programs/pump/src/lib.rs",
+    "line": 84,
+    "col": 1
+   }
+  ],
+  "0x22c2b": [
+   {
+    "pc": 142384,
+    "addr": 1827056,
+    "file": "programs/pump/src/lib.rs",
+    "line": 84,
+    "col": 1
+   }
+  ],
+  "0x2aafd": [
+   {
+    "pc": 175215,
+    "addr": 1825240,
+    "file": "programs/pump/src/admin_set_idl_authority.rs",
+    "line": 86,
+    "col": 13
+   },
+   {
+    "pc": 175555,
+    "addr": 1825264,
+    "file": "programs/pump/src/admin_set_idl_authority.rs",
+    "line": 101,
+    "col": 45
+   }
+  ],
+  "0x2c015": [
+   {
+    "pc": 180250,
+    "addr": 1828640,
+    "file": "programs/pump/src/lib.rs",
+    "line": 1815,
+    "col": 1
+   }
+  ],
+  "0x2c2b6": [
+   {
+    "pc": 181392,
+    "addr": 1828664,
+    "file": "programs/pump/src/lib.rs",
+    "line": 2639,
+    "col": 1
+   }
+  ],
+  "0x31384": [
+   {
+    "pc": 201697,
+    "addr": 1828960,
+    "file": "src/de/mod.rs",
+    "line": 161,
+    "col": 54
+   }
+  ],
+  "0x318c2": [
+   {
+    "pc": 203175,
+    "addr": 1829088,
+    "file": "src/generated/instructions/create_metadata_account_v3.rs",
+    "line": 44,
+    "col": 47
+   }
+  ],
+  "0x32421": [
+   {
+    "pc": 206033,
+    "addr": 1829200,
+    "file": "src/instruction.rs",
+    "line": 1468,
+    "col": 43
+   }
+  ],
+  "0x324d7": [
+   {
+    "pc": 206206,
+    "addr": 1829224,
+    "file": "src/instruction.rs",
+    "line": 1497,
+    "col": 43
+   }
+  ],
+  "0x32584": [
+   {
+    "pc": 206379,
+    "addr": 1829248,
+    "file": "src/instruction.rs",
+    "line": 1527,
+    "col": 43
+   }
+  ],
+  "0x32631": [
+   {
+    "pc": 206548,
+    "addr": 1829272,
+    "file": "src/instruction.rs",
+    "line": 1556,
+    "col": 43
+   }
+  ],
+  "0x326da": [
+   {
+    "pc": 206738,
+    "addr": 1829296,
+    "file": "src/instruction.rs",
+    "line": 1647,
+    "col": 43
+   }
+  ],
+  "0x32818": [
+   {
+    "pc": 206875,
+    "addr": 1829320,
+    "file": "src/state.rs",
+    "line": 54,
+    "col": 19
+   }
+  ],
+  "0x32bed": [
+   {
+    "pc": 207856,
+    "addr": 1829416,
+    "file": "src/state.rs",
+    "line": 42,
+    "col": 19
+   }
+  ],
+  "0x32f0d": [
+   {
+    "pc": 209229,
+    "addr": 1829544,
+    "file": "src/instruction.rs",
+    "line": 201,
+    "col": 53
+   },
+   {
+    "pc": 209210,
+    "addr": 1829568,
+    "file": "src/instruction.rs",
+    "line": 205,
+    "col": 53
+   }
+  ],
+  "0x336a9": [
+   {
+    "pc": 210634,
+    "addr": 1829928,
+    "file": "src/bpf_writer.rs",
+    "line": 28,
+    "col": 9
+   }
+  ],
+  "0x336cd": [
+   {
+    "pc": 210770,
+    "addr": 1829976,
+    "file": "src/common.rs",
+    "line": 9,
+    "col": 32
+   },
+   {
+    "pc": 210773,
+    "addr": 1829952,
+    "file": "src/common.rs",
+    "line": 11,
+    "col": 21
+   }
+  ],
+  "0x34059": [
+   {
+    "pc": 213086,
+    "addr": 1831824,
+    "file": "src/idl.rs",
+    "line": 61,
+    "col": 1
+   }
+  ],
+  "0x34118": [
+   {
+    "pc": 213284,
+    "addr": 1831848,
+    "file": "src/v1.rs",
+    "line": 14,
+    "col": 1
+   }
+  ],
+  "0x3415d": [
+   {
+    "pc": 213385,
+    "addr": 1831872,
+    "file": "src/lib.rs",
+    "line": 95,
+    "col": 11
+   },
+   {
+    "pc": 213388,
+    "addr": 1831896,
+    "file": "src/lib.rs",
+    "line": 95,
+    "col": 10
+   }
+  ],
+  "0x3418f": [
+   {
+    "pc": 213438,
+    "addr": 1831872,
+    "file": "src/lib.rs",
+    "line": 95,
+    "col": 11
+   },
+   {
+    "pc": 213441,
+    "addr": 1831896,
+    "file": "src/lib.rs",
+    "line": 95,
+    "col": 10
+   }
+  ],
+  "0x3421a": [
+   {
+    "pc": 213925,
+    "addr": 1831920,
+    "file": "src/lib.rs",
+    "line": 323,
+    "col": 5
+   },
+   {
+    "pc": 213928,
+    "addr": 1831944,
+    "file": "src/lib.rs",
+    "line": 326,
+    "col": 5
+   },
+   {
+    "pc": 213889,
+    "addr": 1831968,
+    "file": "src/lib.rs",
+    "line": 339,
+    "col": 5
+   },
+   {
+    "pc": 213892,
+    "addr": 1831992,
+    "file": "src/lib.rs",
+    "line": 343,
+    "col": 5
+   },
+   {
+    "pc": 213895,
+    "addr": 1832016,
+    "file": "src/lib.rs",
+    "line": 347,
+    "col": 5
+   },
+   {
+    "pc": 213898,
+    "addr": 1832040,
+    "file": "src/lib.rs",
+    "line": 353,
+    "col": 5
+   },
+   {
+    "pc": 213901,
+    "addr": 1832064,
+    "file": "src/lib.rs",
+    "line": 356,
+    "col": 5
+   },
+   {
+    "pc": 213904,
+    "addr": 1832088,
+    "file": "src/lib.rs",
+    "line": 359,
+    "col": 5
+   },
+   {
+    "pc": 213907,
+    "addr": 1832112,
+    "file": "src/lib.rs",
+    "line": 363,
+    "col": 5
+   },
+   {
+    "pc": 213910,
+    "addr": 1832136,
+    "file": "src/lib.rs",
+    "line": 367,
+    "col": 5
+   },
+   {
+    "pc": 213913,
+    "addr": 1832160,
+    "file": "src/lib.rs",
+    "line": 376,
+    "col": 15
+   },
+   {
+    "pc": 213916,
+    "addr": 1832184,
+    "file": "src/lib.rs",
+    "line": 376,
+    "col": 5
+   },
+   {
+    "pc": 213919,
+    "addr": 1832208,
+    "file": "src/lib.rs",
+    "line": 377,
+    "col": 5
+   },
+   {
+    "pc": 213922,
+    "addr": 1832232,
+    "file": "src/lib.rs",
+    "line": 381,
+    "col": 5
+   },
+   {
+    "pc": 213883,
+    "addr": 1832256,
+    "file": "src/lib.rs",
+    "line": 420,
+    "col": 9
+   },
+   {
+    "pc": 213886,
+    "addr": 1832280,
+    "file": "src/lib.rs",
+    "line": 426,
+    "col": 13
+   }
+  ],
+  "0x344b6": [
+   {
+    "pc": 214331,
+    "addr": 1832488,
+    "file": "src/lib.rs",
+    "line": 53,
+    "col": 59
+   },
+   {
+    "pc": 214264,
+    "addr": 1832512,
+    "file": "src/lib.rs",
+    "line": 73,
+    "col": 25
+   },
+   {
+    "pc": 214286,
+    "addr": 1832536,
+    "file": "src/lib.rs",
+    "line": 94,
+    "col": 19
+   }
+  ],
+  "0x3453e": [
+   {
+    "pc": 214346,
+    "addr": 1832512,
+    "file": "src/lib.rs",
+    "line": 73,
+    "col": 25
+   }
+  ],
+  "0x3454d": [
+   {
+    "pc": 214356,
+    "addr": 1832536,
+    "file": "src/lib.rs",
+    "line": 94,
+    "col": 19
+   }
+  ],
+  "0x34810": [
+   {
+    "pc": 215062,
+    "addr": 1832896,
+    "file": "src/ser/mod.rs",
+    "line": 242,
+    "col": 9
+   }
+  ],
+  "0x348d5": [
+   {
+    "pc": 215462,
+    "addr": 1832896,
+    "file": "src/ser/mod.rs",
+    "line": 242,
+    "col": 9
+   }
+  ],
+  "0x34fd7": [
+   {
+    "pc": 217072,
+    "addr": 1833168,
+    "file": "src/lib.rs",
+    "line": 612,
+    "col": 32
+   }
+  ],
+  "0x3503a": [
+   {
+    "pc": 217315,
+    "addr": 1832968,
+    "file": "src/encode.rs",
+    "line": 460,
+    "col": 9
+   },
+   {
+    "pc": 217249,
+    "addr": 1832920,
+    "file": "src/encode.rs",
+    "line": 464,
+    "col": 27
+   },
+   {
+    "pc": 217310,
+    "addr": 1832944,
+    "file": "src/encode.rs",
+    "line": 465,
+    "col": 16
+   }
+  ],
+  "0x35209": [
+   {
+    "pc": 217625,
+    "addr": 1833448,
+    "file": "src/encode.rs",
+    "line": 431,
+    "col": 11
+   }
+  ],
+  "0x35f5e": [
+   {
+    "pc": 221253,
+    "addr": 1834328,
+    "file": "library/core/src/fmt/mod.rs",
+    "line": 2406,
+    "col": 26
+   }
+  ],
+  "0x36467": [
+   {
+    "pc": 222336,
+    "addr": 1834248,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x36493": [
+   {
+    "pc": 222380,
+    "addr": 1834248,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x364bf": [
+   {
+    "pc": 222425,
+    "addr": 1834248,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x364ec": [
+   {
+    "pc": 222470,
+    "addr": 1834248,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x36519": [
+   {
+    "pc": 222513,
+    "addr": 1834248,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x36544": [
+   {
+    "pc": 222556,
+    "addr": 1834248,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x3656f": [
+   {
+    "pc": 222635,
+    "addr": 1834248,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x3664a": [
+   {
+    "pc": 222887,
+    "addr": 1834784,
+    "file": "library/core/src/unicode/unicode_data.rs",
+    "line": 80,
+    "col": 40
+   }
+  ]
+ },
+ "functions_direct": {},
+ "func_sizes": {
+  "0x22eb": 247,
+  "0x30cf": 678,
+  "0x5f4c": 738,
+  "0x678a": 276,
+  "0x68ab": 1767,
+  "0x71f8": 722,
+  "0xaba6": 287,
+  "0xacfb": 631,
+  "0xd9af": 1021,
+  "0xea61": 716,
+  "0xf7b5": 31,
+  "0xf7d8": 31,
+  "0xf7fb": 215,
+  "0xf8e4": 736,
+  "0xfbf9": 24,
+  "0x101bf": 249,
+  "0x1124b": 279,
+  "0x12da9": 115,
+  "0x12e1f": 142,
+  "0x12eb0": 115,
+  "0x12f26": 86,
+  "0x12f7e": 86,
+  "0x12fd6": 106,
+  "0x13409": 36,
+  "0x1437b": 166,
+  "0x189c0": 48,
+  "0x1c8c6": 268,
+  "0x203df": 204,
+  "0x21291": 393,
+  "0x22b3b": 142,
+  "0x22c2b": 176,
+  "0x2aafd": 680,
+  "0x2c015": 669,
+  "0x2c2b6": 468,
+  "0x31384": 232,
+  "0x318c2": 236,
+  "0x32421": 176,
+  "0x324d7": 167,
+  "0x32584": 167,
+  "0x32631": 162,
+  "0x326da": 184,
+  "0x32818": 87,
+  "0x32bed": 87,
+  "0x32f0d": 566,
+  "0x336a9": 35,
+  "0x336cd": 134,
+  "0x34059": 68,
+  "0x34118": 14,
+  "0x3415d": 47,
+  "0x3418f": 50,
+  "0x3421a": 386,
+  "0x344b6": 112,
+  "0x3453e": 13,
+  "0x3454d": 8,
+  "0x34810": 196,
+  "0x348d5": 1053,
+  "0x34fd7": 37,
+  "0x3503a": 177,
+  "0x35209": 68,
+  "0x35f5e": 231,
+  "0x36467": 42,
+  "0x36493": 42,
+  "0x364bf": 43,
+  "0x364ec": 43,
+  "0x36519": 41,
+  "0x36544": 41,
+  "0x3656f": 77,
+  "0x3664a": 90
+ },
+ "handler_files": {
+  "initialize": {
+   "entry": "0x2421b",
+   "reach": 64,
+   "program_files": {}
+  },
+  "update_global_authority": {
+   "entry": "0x24261",
+   "reach": 59,
+   "program_files": {}
+  },
+  "toggle_create_v2": {
+   "entry": "0x2430e",
+   "reach": 60,
+   "program_files": {}
+  },
+  "toggle_cashback_enabled": {
+   "entry": "0x243d8",
+   "reach": 60,
+   "program_files": {}
+  },
+  "update_holder_reward_config": {
+   "entry": "0x244a2",
+   "reach": 56,
+   "program_files": {}
+  },
+  "set_max_curve_depth": {
+   "entry": "0x24566",
+   "reach": 52,
+   "program_files": {}
+  },
+  "toggle_mayhem_mode": {
+   "entry": "0x245dc",
+   "reach": 60,
+   "program_files": {}
+  },
+  "update_creator_fee_config": {
+   "entry": "0x246a6",
+   "reach": 68,
+   "program_files": {}
+  },
+  "add_quote_mint": {
+   "entry": "0x24774",
+   "reach": 56,
+   "program_files": {}
+  },
+  "remove_quote_mint": {
+   "entry": "0x24826",
+   "reach": 55,
+   "program_files": {}
+  },
+  "set_virtual_quote_reserves": {
+   "entry": "0x248d8",
+   "reach": 52,
+   "program_files": {}
+  },
+  "set_params": {
+   "entry": "0x2494e",
+   "reach": 96,
+   "program_files": {}
+  },
+  "set_mayhem_virtual_params": {
+   "entry": "0x24ab5",
+   "reach": 62,
+   "program_files": {}
+  },
+  "set_reserved_fee_recipients": {
+   "entry": "0x24b5d",
+   "reach": 93,
+   "program_files": {}
+  },
+  "create": {
+   "entry": "0x24c1b",
+   "reach": 133,
+   "program_files": {
+    "programs/pump/src/lib.rs": 1
+   }
+  },
+  "create_v2": {
+   "entry": "0x24d15",
+   "reach": 165,
+   "program_files": {
+    "programs/pump/src/create_v2.rs": 2,
+    "programs/pump/src/lib.rs": 1
+   }
+  },
+  "buy_v2": {
+   "entry": "0x24ea2",
+   "reach": 179,
+   "program_files": {
+    "programs/pump/src/lib.rs": 9,
+    "programs/pump/src/token_incentives/volume_accumulator.rs": 2
+   }
+  },
+  "buy_exact_quote_in_v2": {
+   "entry": "0x24f6b",
+   "reach": 185,
+   "program_files": {
+    "programs/pump/src/lib.rs": 9,
+    "programs/pump/src/token_incentives/volume_accumulator.rs": 2
+   }
+  },
+  "sell_v2": {
+   "entry": "0x25034",
+   "reach": 171,
+   "program_files": {
+    "programs/pump/src/lib.rs": 9,
+    "programs/pump/src/token_incentives/volume_accumulator.rs": 2
+   }
+  },
+  "buy_v3": {
+   "entry": "0x250d9",
+   "reach": 156,
+   "program_files": {
+    "programs/pump/src/lib.rs": 4
+   }
+  },
+  "buy_exact_quote_in_v3": {
+   "entry": "0x25185",
+   "reach": 167,
+   "program_files": {
+    "programs/pump/src/lib.rs": 4
+   }
+  },
+  "sell_v3": {
+   "entry": "0x25231",
+   "reach": 155,
+   "program_files": {
+    "programs/pump/src/lib.rs": 5
+   }
+  },
+  "multi_hop_curve_swap": {
+   "entry": "0x252b8",
+   "reach": 144,
+   "program_files": {
+    "programs/pump/src/lib.rs": 1,
+    "programs/pump/src/multi_hop_curve_swap.rs": 1
+   }
+  },
+  "sweep_protocol_fee": {
+   "entry": "0x25376",
+   "reach": 116,
+   "program_files": {
+    "programs/pump/src/lib.rs": 2
+   }
+  },
+  "sweep_creator_fee": {
+   "entry": "0x25409",
+   "reach": 116,
+   "program_files": {
+    "programs/pump/src/lib.rs": 2
+   }
+  },
+  "buy": {
+   "entry": "0x2549c",
+   "reach": 166,
+   "program_files": {
+    "programs/pump/src/lib.rs": 3
+   }
+  },
+  "buy_exact_sol_in": {
+   "entry": "0x25579",
+   "reach": 163,
+   "program_files": {
+    "programs/pump/src/lib.rs": 3
+   }
+  },
+  "sell": {
+   "entry": "0x25656",
+   "reach": 143,
+   "program_files": {
+    "programs/pump/src/lib.rs": 3,
+    "programs/pump/src/sell.rs": 1
+   }
+  },
+  "migrate": {
+   "entry": "0x256fb",
+   "reach": 121,
+   "program_files": {}
+  },
+  "migrate_v2": {
+   "entry": "0x25749",
+   "reach": 132,
+   "program_files": {
+    "programs/pump/src/migrate_v2.rs": 1
+   }
+  },
+  "extend_account": {
+   "entry": "0x257cf",
+   "reach": 76,
+   "program_files": {}
+  },
+  "collect_creator_fee": {
+   "entry": "0x2586e",
+   "reach": 71,
+   "program_files": {}
+  },
+  "distribute_fee_to_holders": {
+   "entry": "0x258fa",
+   "reach": 98,
+   "program_files": {
+    "programs/pump/src/creator/distribute_fee_to_holders.rs": 2
+   }
+  },
+  "set_metaplex_creator": {
+   "entry": "0x259f2",
+   "reach": 58,
+   "program_files": {}
+  },
+  "set_creator": {
+   "entry": "0x25a82",
+   "reach": 74,
+   "program_files": {
+    "programs/pump/src/creator/set_creator.rs": 1
+   }
+  },
+  "admin_cto": {
+   "entry": "0x25b40",
+   "reach": 147,
+   "program_files": {}
+  },
+  "admin_update_token_incentives": {
+   "entry": "0x25c54",
+   "reach": 102,
+   "program_files": {
+    "programs/pump/src/token_incentives/volume_accumulator.rs": 10
+   }
+  },
+  "claim_token_incentives": {
+   "entry": "0x25d0e",
+   "reach": 99,
+   "program_files": {
+    "programs/pump/src/token_incentives/volume_accumulator.rs": 8
+   }
+  },
+  "claim_cashback": {
+   "entry": "0x25d99",
+   "reach": 77,
+   "program_files": {}
+  },
+  "claim_cashback_v2": {
+   "entry": "0x25e2a",
+   "reach": 92,
+   "program_files": {
+    "programs/pump/src/token_incentives/volume_accumulator.rs": 2
+   }
+  },
+  "init_user_volume_accumulator": {
+   "entry": "0x25ebc",
+   "reach": 81,
+   "program_files": {}
+  },
+  "close_user_volume_accumulator": {
+   "entry": "0x25f6d",
+   "reach": 51,
+   "program_files": {}
+  },
+  "sync_user_volume_accumulator": {
+   "entry": "0x25ff1",
+   "reach": 56,
+   "program_files": {}
+  },
+  "admin_set_idl_authority": {
+   "entry": "0x260a3",
+   "reach": 86,
+   "program_files": {
+    "programs/pump/src/admin_set_idl_authority.rs": 2
+   }
+  },
+  "migrate_bonding_curve_creator": {
+   "entry": "0x26118",
+   "reach": 63,
+   "program_files": {}
+  },
+  "get_minimum_distributable_fee": {
+   "entry": "0x261a8",
+   "reach": 52,
+   "program_files": {}
+  },
+  "distribute_creator_fees": {
+   "entry": "0x26225",
+   "reach": 84,
+   "program_files": {
+    "programs/pump/src/creator/distribute_creator_fees.rs": 2
+   }
+  },
+  "distribute_creator_fees_v2": {
+   "entry": "0x262dd",
+   "reach": 109,
+   "program_files": {
+    "programs/pump/src/creator/distribute_creator_fee_v2.rs": 1,
+    "programs/pump/src/creator/distribute_creator_fees.rs": 2
+   }
+  },
+  "initialize_quote_control": {
+   "entry": "0x264a2",
+   "reach": 64,
+   "program_files": {}
+  },
+  "set_quote_control_admin": {
+   "entry": "0x264e3",
+   "reach": 65,
+   "program_files": {}
+  },
+  "remove_quote_control_mint": {
+   "entry": "0x26667",
+   "reach": 68,
+   "program_files": {}
+  },
+  "set_quote_control_reserves_admin": {
+   "entry": "0x26728",
+   "reach": 65,
+   "program_files": {}
+  },
+  "set_quote_control_mint_reserves": {
+   "entry": "0x267e9",
+   "reach": 66,
+   "program_files": {}
+  }
+ }
+}
