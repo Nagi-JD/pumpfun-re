@@ -1,242 +1,306 @@
 {
-  "create_config": {
-    "discriminator": "c9cff3724b6f2fbd",
-    "lddw_pc": "0x1b7a5",
-    "cmp": "jeq",
-    "stub_pc": "0x1b863",
-    "handler_pc": "0x1c17f",
-    "handler_byte": "0xe0bf8"
-  },
-  "disable": {
-    "discriminator": "b9adbb5ad80feee9",
-    "lddw_pc": "0x1b7a9",
-    "cmp": "jeq",
-    "stub_pc": "0x1b871",
-    "handler_pc": "0x1c2a1",
-    "handler_byte": "0xe1508"
-  },
-  "update_admin": {
-    "discriminator": "a1b028d53cb8b3e4",
-    "lddw_pc": "0x1b7af",
-    "cmp": "jeq",
-    "stub_pc": "0x1b87f",
-    "handler_pc": "0x1c398",
-    "handler_byte": "0xe1cc0"
-  },
-  "update_fee_config": {
-    "discriminator": "68b867f258976b14",
-    "lddw_pc": "0x1b7b3",
-    "cmp": "jeq",
-    "stub_pc": "0x1b88d",
-    "handler_pc": "0x1c446",
-    "handler_byte": "0xe2230"
-  },
-  "create_pool": {
-    "discriminator": "e992d18ecf6840bc",
-    "lddw_pc": "0x1b7bb",
-    "cmp": "jeq",
-    "stub_pc": "0x1b8a9",
-    "handler_pc": "0x1c634",
-    "handler_byte": "0xe31a0"
-  },
-  "init_boost": {
-    "discriminator": "8ce9215e845ac28f",
-    "lddw_pc": "0x1b7bf",
-    "cmp": "jeq",
-    "stub_pc": "0x1b8b7",
-    "handler_pc": "0x1c7b3",
-    "handler_byte": "0xe3d98"
-  },
-  "set_boost_authority": {
-    "discriminator": "e3954c2a8227eacd",
-    "lddw_pc": "0x1b7c3",
-    "cmp": "jeq",
-    "stub_pc": "0x1b8c5",
-    "handler_pc": "0x1c839",
-    "handler_byte": "0xe41c8"
-  },
-  "boost_buy_and_burn": {
-    "discriminator": "694406af000723a2",
-    "lddw_pc": "0x1b7c7",
-    "cmp": "jeq",
-    "stub_pc": "0x1b8d3",
-    "handler_pc": "0x1c8e7",
-    "handler_byte": "0xe4738"
-  },
-  "set_reserved_fee_recipients": {
-    "discriminator": "6faca2e87259d58e",
-    "lddw_pc": "0x1b7cb",
-    "cmp": "jeq",
-    "stub_pc": "0x1b8e1",
-    "handler_pc": "0x1c98d",
-    "handler_byte": "0xe4c68"
-  },
-  "deposit": {
-    "discriminator": "f223c68952e1f2b6",
-    "lddw_pc": "0x1b7cf",
-    "cmp": "jeq",
-    "stub_pc": "0x1b8ef",
-    "handler_pc": "0x1ca4f",
-    "handler_byte": "0xe5278"
-  },
-  "withdraw": {
-    "discriminator": "b712469c946da122",
-    "lddw_pc": "0x1b7d3",
-    "cmp": "jeq",
-    "stub_pc": "0x1b8fd",
-    "handler_pc": "0x1caf6",
-    "handler_byte": "0xe57b0"
-  },
-  "admin_update_token_incentives": {
-    "discriminator": "d10b7357d5177ccc",
-    "lddw_pc": "0x1b7d7",
-    "cmp": "jeq",
-    "stub_pc": "0x1b90b",
-    "handler_pc": "0x1cb9d",
-    "handler_byte": "0xe5ce8"
-  },
-  "claim_token_incentives": {
-    "discriminator": "1004471ccc01281b",
-    "lddw_pc": "0x1b7db",
-    "cmp": "jeq",
-    "stub_pc": "0x1b919",
-    "handler_pc": "0x1cc57",
-    "handler_byte": "0xe62b8"
-  },
-  "init_user_volume_accumulator": {
-    "discriminator": "5e06ca73ff60e8b7",
-    "lddw_pc": "0x1b7df",
-    "cmp": "jeq",
-    "stub_pc": "0x1b927",
-    "handler_pc": "0x1cce2",
-    "handler_byte": "0xe6710"
-  },
-  "close_user_volume_accumulator": {
-    "discriminator": "f945a4da9667548a",
-    "lddw_pc": "0x1b7e3",
-    "cmp": "jeq",
-    "stub_pc": "0x1b935",
-    "handler_pc": "0x1cd93",
-    "handler_byte": "0xe6c98"
-  },
-  "sync_user_volume_accumulator": {
-    "discriminator": "561fc057a3574fee",
-    "lddw_pc": "0x1b7e7",
-    "cmp": "jeq",
-    "stub_pc": "0x1b943",
-    "handler_pc": "0x1ce17",
-    "handler_byte": "0xe70b8"
-  },
-  "buy": {
-    "discriminator": "66063d1201daebea",
-    "lddw_pc": "0x1b7eb",
-    "cmp": "jeq",
-    "stub_pc": "0x1b951",
-    "handler_pc": "0x1cec9",
-    "handler_byte": "0xe7648"
-  },
-  "buy_exact_quote_in": {
-    "discriminator": "c62e1552b4d9e870",
-    "lddw_pc": "0x1b7ef",
-    "cmp": "jeq",
-    "stub_pc": "0x1b95f",
-    "handler_pc": "0x1cfb1",
-    "handler_byte": "0xe7d88"
-  },
-  "sell": {
-    "discriminator": "33e685a4017f83ad",
-    "lddw_pc": "0x1b7f3",
-    "cmp": "jeq",
-    "stub_pc": "0x1b96d",
-    "handler_pc": "0x1d099",
-    "handler_byte": "0xe84c8"
-  },
-  "extend_account": {
-    "discriminator": "ea66c2cb96483ee5",
-    "lddw_pc": "0x1b80f",
-    "cmp": "jeq",
-    "stub_pc": "0x1b9cf",
-    "handler_pc": "0x1d47e",
-    "handler_byte": "0xea3f0"
-  },
-  "collect_coin_creator_fee": {
-    "discriminator": "a039592ab58b2b42",
-    "lddw_pc": "0x1b813",
-    "cmp": "jeq",
-    "stub_pc": "0x1b9dd",
-    "handler_pc": "0x1d51d",
-    "handler_byte": "0xea8e8"
-  },
-  "set_coin_creator": {
-    "discriminator": "d295802dbc3a4eaf",
-    "lddw_pc": "0x1b817",
-    "cmp": "jeq",
-    "stub_pc": "0x1b9eb",
-    "handler_pc": "0x1d56e",
-    "handler_byte": "0xeab70"
-  },
-  "toggle_mayhem_mode": {
-    "discriminator": "01096fd0641fffa3",
-    "lddw_pc": "0x1b81f",
-    "cmp": "jeq",
-    "stub_pc": "0x1ba07",
-    "handler_pc": "0x1d701",
-    "handler_byte": "0xeb808"
-  },
-  "toggle_boost": {
-    "discriminator": "75a1a04adf897663",
-    "lddw_pc": "0x1b823",
-    "cmp": "jeq",
-    "stub_pc": "0x1ba15",
-    "handler_pc": "0x1d7cc",
-    "handler_byte": "0xebe60"
-  },
-  "transfer_creator_fees_to_pump": {
-    "discriminator": "8b348655e4e56cf1",
-    "lddw_pc": "0x1b827",
-    "cmp": "jeq",
-    "stub_pc": "0x1ba23",
-    "handler_pc": "0x1d846",
-    "handler_byte": "0xec230"
-  },
-  "transfer_creator_fees_to_pump_v2": {
-    "discriminator": "01214eb921432c5c",
-    "lddw_pc": "0x1b82b",
-    "cmp": "jeq",
-    "stub_pc": "0x1ba31",
-    "handler_pc": "0x1d898",
-    "handler_byte": "0xec4c0"
-  },
-  "migrate_pool_coin_creator": {
-    "discriminator": "d0089f044aaf103a",
-    "lddw_pc": "0x1b82f",
-    "cmp": "jeq",
-    "stub_pc": "0x1ba3f",
-    "handler_pc": "0x1d8e7",
-    "handler_byte": "0xec738"
-  },
-  "toggle_cashback_enabled": {
-    "discriminator": "7367e0ffbd5956c3",
-    "lddw_pc": "0x1b833",
-    "cmp": "jeq",
-    "stub_pc": "0x1ba4d",
-    "handler_pc": "0x1d977",
-    "handler_byte": "0xecbb8"
-  },
-  "claim_cashback": {
-    "discriminator": "253a237ebe35e4c5",
-    "lddw_pc": "0x1b837",
-    "cmp": "jeq",
-    "stub_pc": "0x1ba5b",
-    "handler_pc": "0x1da42",
-    "handler_byte": "0xed210"
-  },
-  "update_buyback_config": {
-    "discriminator": "fbe0ab92a01a71e9",
-    "lddw_pc": "0x1b83b",
-    "cmp": "jeq",
-    "stub_pc": "0x1ba69",
-    "handler_pc": "0x1dacc",
-    "handler_byte": "0xed660"
-  }
+ "admin_cto_pool": {
+  "discriminator": "2d3da597680031bd",
+  "lddw_pc": "0x1b81b",
+  "cmp": "jeq",
+  "stub": "0x1b9f9",
+  "handler_pc": "0x1d5fe",
+  "handler_byte": "0xeaff0"
+ },
+ "admin_update_token_incentives": {
+  "discriminator": "d10b7357d5177ccc",
+  "lddw_pc": "0x1b7d7",
+  "cmp": "jeq",
+  "stub": "0x1b90b",
+  "handler_pc": "0x1cb9d",
+  "handler_byte": "0xe5ce8"
+ },
+ "boost_buy_and_burn": {
+  "discriminator": "694406af000723a2",
+  "lddw_pc": "0x1b7c7",
+  "cmp": "jeq",
+  "stub": "0x1b8d3",
+  "handler_pc": "0x1c8e7",
+  "handler_byte": "0xe4738"
+ },
+ "buy": {
+  "discriminator": "66063d1201daebea",
+  "lddw_pc": "0x1b7eb",
+  "cmp": "jeq",
+  "stub": "0x1b951",
+  "handler_pc": "0x1cec9",
+  "handler_byte": "0xe7648"
+ },
+ "buy_exact_quote_in": {
+  "discriminator": "c62e1552b4d9e870",
+  "lddw_pc": "0x1b7ef",
+  "cmp": "jeq",
+  "stub": "0x1b95f",
+  "handler_pc": "0x1cfb1",
+  "handler_byte": "0xe7d88"
+ },
+ "buy_exact_quote_in_v2": {
+  "discriminator": "c2ab1c46684d5b2f",
+  "lddw_pc": "0x1b7fb",
+  "cmp": "jeq",
+  "stub": "0x1b989",
+  "handler_pc": "0x1d1e2",
+  "handler_byte": "0xe8f10"
+ },
+ "buy_v2": {
+  "discriminator": "b817ee6167c5d33d",
+  "lddw_pc": "0x1b7f7",
+  "cmp": "jeq",
+  "stub": "0x1b97b",
+  "handler_pc": "0x1d15d",
+  "handler_byte": "0xe8ae8"
+ },
+ "claim_cashback": {
+  "discriminator": "253a237ebe35e4c5",
+  "lddw_pc": "0x1b837",
+  "cmp": "jeq",
+  "stub": "0x1ba5b",
+  "handler_pc": "0x1da42",
+  "handler_byte": "0xed210"
+ },
+ "claim_token_incentives": {
+  "discriminator": "1004471ccc01281b",
+  "lddw_pc": "0x1b7db",
+  "cmp": "jeq",
+  "stub": "0x1b919",
+  "handler_pc": "0x1cc57",
+  "handler_byte": "0xe62b8"
+ },
+ "close_user_volume_accumulator": {
+  "discriminator": "f945a4da9667548a",
+  "lddw_pc": "0x1b7e3",
+  "cmp": "jeq",
+  "stub": "0x1b935",
+  "handler_pc": "0x1cd93",
+  "handler_byte": "0xe6c98"
+ },
+ "collect_coin_creator_fee": {
+  "discriminator": "a039592ab58b2b42",
+  "lddw_pc": "0x1b813",
+  "cmp": "jeq",
+  "stub": "0x1b9dd",
+  "handler_pc": "0x1d51d",
+  "handler_byte": "0xea8e8"
+ },
+ "create_config": {
+  "discriminator": "c9cff3724b6f2fbd",
+  "lddw_pc": "0x1b7a5",
+  "cmp": "jeq",
+  "stub": "0x1b863",
+  "handler_pc": "0x1c17f",
+  "handler_byte": "0xe0bf8"
+ },
+ "create_pool": {
+  "discriminator": "e992d18ecf6840bc",
+  "lddw_pc": "0x1b7bb",
+  "cmp": "jeq",
+  "stub": "0x1b8a9",
+  "handler_pc": "0x1c634",
+  "handler_byte": "0xe31a0"
+ },
+ "deposit": {
+  "discriminator": "f223c68952e1f2b6",
+  "lddw_pc": "0x1b7cf",
+  "cmp": "jeq",
+  "stub": "0x1b8ef",
+  "handler_pc": "0x1ca4f",
+  "handler_byte": "0xe5278"
+ },
+ "disable": {
+  "discriminator": "b9adbb5ad80feee9",
+  "lddw_pc": "0x1b7a9",
+  "cmp": "jeq",
+  "stub": "0x1b871",
+  "handler_pc": "0x1c2a1",
+  "handler_byte": "0xe1508"
+ },
+ "extend_account": {
+  "discriminator": "ea66c2cb96483ee5",
+  "lddw_pc": "0x1b80f",
+  "cmp": "jeq",
+  "stub": "0x1b9cf",
+  "handler_pc": "0x1d47e",
+  "handler_byte": "0xea3f0"
+ },
+ "init_boost": {
+  "discriminator": "8ce9215e845ac28f",
+  "lddw_pc": "0x1b7bf",
+  "cmp": "jeq",
+  "stub": "0x1b8b7",
+  "handler_pc": "0x1c7b3",
+  "handler_byte": "0xe3d98"
+ },
+ "init_user_volume_accumulator": {
+  "discriminator": "5e06ca73ff60e8b7",
+  "lddw_pc": "0x1b7df",
+  "cmp": "jeq",
+  "stub": "0x1b927",
+  "handler_pc": "0x1cce2",
+  "handler_byte": "0xe6710"
+ },
+ "migrate_pool_coin_creator": {
+  "discriminator": "d0089f044aaf103a",
+  "lddw_pc": "0x1b82f",
+  "cmp": "jeq",
+  "stub": "0x1ba3f",
+  "handler_pc": "0x1d8e7",
+  "handler_byte": "0xec738"
+ },
+ "multi_hop_swap": {
+  "discriminator": "2b644913e9f66f94",
+  "lddw_pc": "0x1b803",
+  "cmp": "jeq",
+  "stub": "0x1b9a5",
+  "handler_pc": "0x1d2ec",
+  "handler_byte": "0xe9760"
+ },
+ "sell": {
+  "discriminator": "33e685a4017f83ad",
+  "lddw_pc": "0x1b7f3",
+  "cmp": "jeq",
+  "stub": "0x1b96d",
+  "handler_pc": "0x1d099",
+  "handler_byte": "0xe84c8"
+ },
+ "sell_v2": {
+  "discriminator": "5df6823ce7e940b2",
+  "lddw_pc": "0x1b7ff",
+  "cmp": "jeq",
+  "stub": "0x1b997",
+  "handler_pc": "0x1d267",
+  "handler_byte": "0xe9338"
+ },
+ "set_boost_authority": {
+  "discriminator": "e3954c2a8227eacd",
+  "lddw_pc": "0x1b7c3",
+  "cmp": "jeq",
+  "stub": "0x1b8c5",
+  "handler_pc": "0x1c839",
+  "handler_byte": "0xe41c8"
+ },
+ "set_coin_creator": {
+  "discriminator": "d295802dbc3a4eaf",
+  "lddw_pc": "0x1b817",
+  "cmp": "jeq",
+  "stub": "0x1b9eb",
+  "handler_pc": "0x1d56e",
+  "handler_byte": "0xeab70"
+ },
+ "set_reserved_fee_recipients": {
+  "discriminator": "6faca2e87259d58e",
+  "lddw_pc": "0x1b7cb",
+  "cmp": "jeq",
+  "stub": "0x1b8e1",
+  "handler_pc": "0x1c98d",
+  "handler_byte": "0xe4c68"
+ },
+ "sweep_creator_fee": {
+  "discriminator": "20f6bf3408c949ba",
+  "lddw_pc": "0x1b80b",
+  "cmp": "jeq",
+  "stub": "0x1b9c1",
+  "handler_pc": "0x1d3f8",
+  "handler_byte": "0xe9fc0"
+ },
+ "sweep_protocol_fee": {
+  "discriminator": "0830be07b644b7e5",
+  "lddw_pc": "0x1b807",
+  "cmp": "jeq",
+  "stub": "0x1b9b3",
+  "handler_pc": "0x1d372",
+  "handler_byte": "0xe9b90"
+ },
+ "sync_user_volume_accumulator": {
+  "discriminator": "561fc057a3574fee",
+  "lddw_pc": "0x1b7e7",
+  "cmp": "jeq",
+  "stub": "0x1b943",
+  "handler_pc": "0x1ce17",
+  "handler_byte": "0xe70b8"
+ },
+ "toggle_boost": {
+  "discriminator": "75a1a04adf897663",
+  "lddw_pc": "0x1b823",
+  "cmp": "jeq",
+  "stub": "0x1ba15",
+  "handler_pc": "0x1d7cc",
+  "handler_byte": "0xebe60"
+ },
+ "toggle_cashback_enabled": {
+  "discriminator": "7367e0ffbd5956c3",
+  "lddw_pc": "0x1b833",
+  "cmp": "jeq",
+  "stub": "0x1ba4d",
+  "handler_pc": "0x1d977",
+  "handler_byte": "0xecbb8"
+ },
+ "toggle_mayhem_mode": {
+  "discriminator": "01096fd0641fffa3",
+  "lddw_pc": "0x1b81f",
+  "cmp": "jeq",
+  "stub": "0x1ba07",
+  "handler_pc": "0x1d701",
+  "handler_byte": "0xeb808"
+ },
+ "transfer_creator_fees_to_pump": {
+  "discriminator": "8b348655e4e56cf1",
+  "lddw_pc": "0x1b827",
+  "cmp": "jeq",
+  "stub": "0x1ba23",
+  "handler_pc": "0x1d846",
+  "handler_byte": "0xec230"
+ },
+ "transfer_creator_fees_to_pump_v2": {
+  "discriminator": "01214eb921432c5c",
+  "lddw_pc": "0x1b82b",
+  "cmp": "jeq",
+  "stub": "0x1ba31",
+  "handler_pc": "0x1d898",
+  "handler_byte": "0xec4c0"
+ },
+ "update_admin": {
+  "discriminator": "a1b028d53cb8b3e4",
+  "lddw_pc": "0x1b7af",
+  "cmp": "jeq",
+  "stub": "0x1b87f",
+  "handler_pc": "0x1c398",
+  "handler_byte": "0xe1cc0"
+ },
+ "update_buyback_config": {
+  "discriminator": "fbe0ab92a01a71e9",
+  "lddw_pc": "0x1b83b",
+  "cmp": "jeq",
+  "stub": "0x1ba69",
+  "handler_pc": "0x1dacc",
+  "handler_byte": "0xed660"
+ },
+ "update_creator_fee_config": {
+  "discriminator": "3dafa0f9424288af",
+  "lddw_pc": "0x1b7b7",
+  "cmp": "jeq",
+  "stub": "0x1b89b",
+  "handler_pc": "0x1c565",
+  "handler_byte": "0xe2b28"
+ },
+ "update_fee_config": {
+  "discriminator": "68b867f258976b14",
+  "lddw_pc": "0x1b7b3",
+  "cmp": "jeq",
+  "stub": "0x1b88d",
+  "handler_pc": "0x1c446",
+  "handler_byte": "0xe2230"
+ },
+ "withdraw": {
+  "discriminator": "b712469c946da122",
+  "lddw_pc": "0x1b7d3",
+  "cmp": "jeq",
+  "stub": "0x1b8fd",
+  "handler_pc": "0x1caf6",
+  "handler_byte": "0xe57b0"
+ }
 }

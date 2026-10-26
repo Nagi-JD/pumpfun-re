@@ -5,12 +5,16 @@ Built with `tools/sbftool.py` + `tools/deep_map_all4.py` from
 Decoder stated 0-diff vs llvm-objdump in upstream docs.
 Scope: RE / behavioral structure only — no vuln claims, no exploit PoC.
 
-| Program | .text bytes | .text insns | functions | handlers mapped |
-|---|---:|---:|---:|---:|
-| pump | 1,792,208 | 215,873 | 1169 | 53/53 |
-| pump_amm | 1,162,040 | 139,524 | 831 | 30/31 |
-| pump_fees | 799,648 | 96,083 | 637 | 31/31 |
-| mayhem | 706,744 | 83,947 | 502 | 25/25 |
+| Program | .text insns | functions | instructions mapped |
+|---|---:|---:|---|
+| pump | 215,873 | 1169 | 53/53 |
+| pump_amm (PumpSwap) | 139,524 | 831 | 38/38 (IDL stale at 31; collaborator-found+verified) |
+| pump_fees | 96,083 | 637 | 31/31 |
+| mayhem | 83,947 | 502 | 25/25 (jeq+jne dispatch, collaborator-verified) |
+
+.text sizes (bytes): pump 1,792,208 · pump_amm 1,162,040 · pump_fees 799,648 · mayhem 706,744.
+
+Note: the `deep_map_all4.py` dispatcher pass below recovered 30 pump_amm handlers (all agree with the upstream 38/38 map in `maps/amm_handlers_full.json`); the 8 additional upstream-verified PumpSwap instructions are not re-listed here.
 
 ## SHA-256 of deployed.so
 
