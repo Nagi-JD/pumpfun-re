@@ -126,3 +126,12 @@ bump=255 (asserted canonical at runtime). Result:
   reads the buyback requirement from a source the stale IDL doesn't capture. Clearing it
   requires RE of buy @0x1cec9 around buy.rs:116 to find the expected buyback recipient
   account(s)/offset, then seeding+passing them. create_pool/deposit/withdraw remain byte-id.
+
+## UPDATE 5 — PumpSwap FULLY verified end-to-end
+Applied the reversed buyback gate (owner in GlobalConfig 8-key array @offset 643 confirmed;
+buyback_basis_points @899; remaining[0]=owner, remaining[1]=owner quote ATA for the
+creator_fee==0 path). Result — ALL pump_amm core instructions ok:true/true byte-identical:
+  create_pool / deposit / buy / sell / withdraw — AMM_FLOW_MATCH=true.
+Post buy+sell state byte-identical deployed-vs-recovered: pool_base=1002662277661,
+pool_quote=1003662528, pfr=14268, buyback=0. Verifies constant-product-with-fees swap pricing
+(swap + lp_fee + protocol_fee) end-to-end. No divergence, no further gate.
