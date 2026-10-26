@@ -1,33 +1,44 @@
-# pump.fun RE — two-agent coordination board
+# pump.fun RE — coordination board
 
-Goal (per @shawmakesmagic): reverse the 4 deployed pump.fun programs toward byte-identical
-rebuilds; reverse them for the USER privately (NO public PRs). Repo state: 0/4 core byte-identical;
-the wall is source STRUCTURE + compiler/dependency provenance, not behavior.
+Goal (2026-10-26): a **byte-for-byte identical** reconstruction of the four
+deployed pump.fun programs (`pump`, `pump_amm`/PumpSwap, `pump_fees`, `mayhem`). The single
+target repo is **Nagi-JD/pumpfun-re**, contributed via our fork **Shuai-Qing/pumpfun-re**.
 
-## Split of work (no overlap, edge preserved)
+## Contribution model (approved by the owner)
+- **Fork + PR.** Work on a branch in `Shuai-Qing/pumpfun-re`, then open a PR to
+  `upstream = Nagi-JD/pumpfun-re` (`master`). This is public, owner-approved — it is **not**
+  private/no-PR anymore.
+- **One repo only.** `lalalune/pumpfun-source` is **no longer a contribution target**: no PRs
+  and no branches there. Keep the local `pumpfun-source` clone ONLY as a local tooling/evidence
+  source — reuse `scripts/compare.py` + the byte-identity machinery and `evidence/original/*/deployed.so`
+  locally. The deliverable (byte-identical reconstruction + its build/compare pipeline) lands here,
+  in Nagi's repo.
 
-### DeepSeek — PRIVATE analysis (NO PRs): Mayhem + byte-structure
-Owns (hands results to the user, never PRs):
-- Finish Mayhem instruction map (8 unmapped) + per-handler specs.
-- Byte-structure change PROPOSALS for one pump_amm/pump_fees fn (Claude builds/measures).
-See DEEPSEEK_PROMPT.md. Reads public repo as reference only; output stays private.
+## Scope — RE / reconstruction ONLY
+- Reverse-engineering and byte-identical reconstruction only.
+- **NO vulnerability / bug-finding, no exploit, no armed PoC until the RE is complete.** Any
+  fuzzer stays coverage / behavioral-diff only, never "fuzzer as attack".
+- Honesty of evidence is a hard line (see `CONTRIBUTING.md`): cite instruction addresses
+  (sbftool) and/or executed differential-harness output; never claim a byte-identity or
+  behavioral match that was not mechanically produced.
 
-### Claude — PRIVATE behavioral verification + bug-finding (local)
-Owns: building each reconstruction, running the differential harness + fuzzer, finding
-reconstruction bugs. Tooling (sbftool, diffharness, ammharness, sbfcov fuzzer) stays private.
-- Produces: per-instruction MATCH/DIVERGE verdicts, and minimal FIX diffs for any bug.
-- Hands FIX diffs (not tooling) to the user → the user keeps them (no public PRs).
+## Toolchain / build-host status (blocker)
+Byte-identical builds need the SBF toolchain (Rust, solana platform-tools / cargo-build-sbf
+v1.44/v1.52/v1.54, llvm-objdump). It is **NOT installed and must not be installed on the current
+lab host**: disk is ~91% full and shared with other workloads. The critical path is a
+build host with disk headroom; until then only the toolchain-free RE (sbftool maps, specs,
+structural analysis) can proceed, and no byte-identical build can actually be produced yet.
 
 ## Status board
-| Program    | Mapped | Claude: built | Claude: behavioral verify            | DeepSeek: assigned |
-|------------|:------:|:-------------:|--------------------------------------|---------------------|
-| pump       | 53/53  | yes           | core trade loop verified; 3 bugs fixed | (open)            |
-| pump_amm   | 30/31  | yes           | create_pool/deposit/withdraw byte-id; buy/sell gated by Fees | (open) |
-| pump_fees  | 31/31  | building      | pending (get_fees / get_fees_with_quote_mint) | (open)       |
-| mayhem     | 25/25  | no            | pending (DeepSeek: map done+verified; handler specs) | DeepSeek (done) |
+| Program    | Mapped | Byte-identical build | Notes |
+|------------|:------:|:--------------------:|-------|
+| pump       | 53/53  | blocked (toolchain)  | core trade loop structurally mapped |
+| pump_amm   | 30/31  | blocked (toolchain)  | create_pool/deposit/withdraw behavior matched; buy/sell gated by Fees CPI |
+| pump_fees  | 31/31  | blocked (toolchain)  | structural map complete; build/compare pending host |
+| mayhem     | 25/25  | blocked (toolchain)  | instruction map verified; handler specs |
 
 ## Handshake
-- Claude maintains this file (source of truth for what's verified).
-- User relays: DeepSeek's PR links / findings → here; Claude's FIX diffs → DeepSeek.
-- Rule: DeepSeek never claims byte-identity without compare.py evidence; Claude never
-  claims behavioral match without an executed harness run.
+- This file is the source of truth for what is verified and what is assigned.
+- DeepSeek is the model for the analysis loop (budget rule). See `DEEPSEEK_PROMPT.md`.
+- Never claim byte-identity without `compare.py` SHA-256 evidence; never claim behavioral match
+  without an executed harness run.
