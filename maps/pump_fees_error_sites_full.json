@@ -1,0 +1,1241 @@
+{
+ "program": "pump_fees",
+ "sha256": "4f2955d0f6b40cc9ff7daa18ccad7d19119ba1249759f4e7e3bb691beee6b35e",
+ "insns": 96083,
+ "functions": 489,
+ "name_table": null,
+ "name_probe": {
+  "fn": 89760,
+  "abi": "r2ptr",
+  "base": 2000,
+  "entries": 4100,
+  "distinct": 68,
+  "fallback": "Deprecated",
+  "covers_observed": 28,
+  "sample": [
+   "ConstraintMut",
+   "ConstraintHasOne",
+   "ConstraintSigner",
+   "ConstraintRaw",
+   "ConstraintOwner",
+   "ConstraintRentExempt"
+  ]
+ },
+ "handlers": {
+  "admin_cto_sharing_config": 80356,
+  "claim_social_fee_pda": 80733,
+  "claim_social_fee_pda_v2": 80996,
+  "crank_donation_fee_pda": 82104,
+  "create_donation_fee_pda": 81988,
+  "create_fee_sharing_config": 79888,
+  "create_social_fee_pda": 80533,
+  "extend_fee_config": 79010,
+  "get_fees": 79520,
+  "get_fees_with_quote_mint": 79715,
+  "initialize_buyback": 81258,
+  "initialize_fee_config": 77170,
+  "initialize_fee_program_global": 77313,
+  "revoke_fee_sharing_authority": 80058,
+  "set_authority": 78046,
+  "set_claim_rate_limit": 77876,
+  "set_disable_flags": 77706,
+  "set_exotic_flat_fees": 79169,
+  "set_social_claim_authority": 77514,
+  "sweep_buyback": 81409,
+  "transfer_fee_sharing_authority": 80071,
+  "update_admin": 79347,
+  "update_buyback_authority": 81574,
+  "update_buyback_claim_rate_limit": 81792,
+  "update_fee_config": 78238,
+  "update_fee_shares": 80084,
+  "update_fee_shares_v2": 80218,
+  "update_stable_fee_config": 78633,
+  "upsert_fee_tiers": 78439,
+  "upsert_stable_fee_tiers": 78816,
+  "withdraw": 82209
+ },
+ "observed_codes": [
+  6001,
+  6002,
+  6003,
+  6004,
+  6005,
+  6006,
+  6007,
+  6008,
+  6010,
+  6011,
+  6012,
+  6013,
+  6014,
+  6016,
+  6017,
+  6018,
+  6020,
+  6022,
+  6023,
+  6024,
+  6026,
+  6028,
+  6029,
+  6030,
+  6031,
+  6033,
+  6034,
+  6036
+ ],
+ "sites": [
+  {
+   "pc": 13026,
+   "byte": 104208,
+   "code": 6001,
+   "name": null,
+   "func": 12926,
+   "file": "programs/pump-fees/src/instructions/admin/update_fee_program_global.rs",
+   "file_len": 70,
+   "line": 47,
+   "handlers": [
+    {
+     "handler": "set_authority",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16219,
+   "byte": 129752,
+   "code": 6001,
+   "name": null,
+   "func": 15972,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/admin_cto_sharing_config.rs",
+   "file_len": 75,
+   "line": 86,
+   "handlers": [
+    {
+     "handler": "admin_cto_sharing_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 32808,
+   "byte": 262464,
+   "code": 6002,
+   "name": null,
+   "func": 32727,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 383,
+   "handlers": [
+    {
+     "handler": "update_fee_config",
+     "depth": 2
+    },
+    {
+     "handler": "upsert_fee_tiers",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 33328,
+   "byte": 266624,
+   "code": 6002,
+   "name": null,
+   "func": 33247,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 436,
+   "handlers": [
+    {
+     "handler": "update_stable_fee_config",
+     "depth": 2
+    },
+    {
+     "handler": "upsert_stable_fee_tiers",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 33053,
+   "byte": 264424,
+   "code": 6003,
+   "name": null,
+   "func": 32727,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 405,
+   "handlers": [
+    {
+     "handler": "update_fee_config",
+     "depth": 2
+    },
+    {
+     "handler": "upsert_fee_tiers",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 33573,
+   "byte": 268584,
+   "code": 6003,
+   "name": null,
+   "func": 33247,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 458,
+   "handlers": [
+    {
+     "handler": "update_stable_fee_config",
+     "depth": 2
+    },
+    {
+     "handler": "upsert_stable_fee_tiers",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 32901,
+   "byte": 263208,
+   "code": 6004,
+   "name": null,
+   "func": 32727,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 385,
+   "handlers": [
+    {
+     "handler": "update_fee_config",
+     "depth": 2
+    },
+    {
+     "handler": "upsert_fee_tiers",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 33421,
+   "byte": 267368,
+   "code": 6004,
+   "name": null,
+   "func": 33247,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 438,
+   "handlers": [
+    {
+     "handler": "update_stable_fee_config",
+     "depth": 2
+    },
+    {
+     "handler": "upsert_stable_fee_tiers",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 33173,
+   "byte": 265384,
+   "code": 6005,
+   "name": null,
+   "func": 32727,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 418,
+   "handlers": [
+    {
+     "handler": "update_fee_config",
+     "depth": 2
+    },
+    {
+     "handler": "upsert_fee_tiers",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 33693,
+   "byte": 269544,
+   "code": 6005,
+   "name": null,
+   "func": 33247,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 471,
+   "handlers": [
+    {
+     "handler": "update_stable_fee_config",
+     "depth": 2
+    },
+    {
+     "handler": "upsert_stable_fee_tiers",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 32634,
+   "byte": 261072,
+   "code": 6006,
+   "name": null,
+   "func": 32571,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 365,
+   "handlers": [
+    {
+     "handler": "update_fee_config",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 32712,
+   "byte": 261696,
+   "code": 6006,
+   "name": null,
+   "func": 32649,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 372,
+   "handlers": [
+    {
+     "handler": "set_exotic_flat_fees",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 33113,
+   "byte": 264904,
+   "code": 6006,
+   "name": null,
+   "func": 32727,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 411,
+   "handlers": [
+    {
+     "handler": "update_fee_config",
+     "depth": 2
+    },
+    {
+     "handler": "upsert_fee_tiers",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 33633,
+   "byte": 269064,
+   "code": 6006,
+   "name": null,
+   "func": 33247,
+   "file": "programs/pump-fees/src/state.rs",
+   "file_len": 31,
+   "line": 464,
+   "handlers": [
+    {
+     "handler": "update_stable_fee_config",
+     "depth": 2
+    },
+    {
+     "handler": "upsert_stable_fee_tiers",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 21006,
+   "byte": 168048,
+   "code": 6007,
+   "name": null,
+   "func": 20490,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_donation_fee_pda.rs",
+   "file_len": 74,
+   "line": 192,
+   "handlers": [
+    {
+     "handler": "create_donation_fee_pda",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 21079,
+   "byte": 168632,
+   "code": 6007,
+   "name": null,
+   "func": 20490,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_donation_fee_pda.rs",
+   "file_len": 74,
+   "line": 197,
+   "handlers": [
+    {
+     "handler": "create_donation_fee_pda",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 21902,
+   "byte": 175216,
+   "code": 6007,
+   "name": null,
+   "func": 20490,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_donation_fee_pda.rs",
+   "file_len": 74,
+   "line": 204,
+   "handlers": [
+    {
+     "handler": "create_donation_fee_pda",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 21197,
+   "byte": 169576,
+   "code": 6008,
+   "name": null,
+   "func": 20490,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_donation_fee_pda.rs",
+   "file_len": 74,
+   "line": 148,
+   "handlers": [
+    {
+     "handler": "create_donation_fee_pda",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 21694,
+   "byte": 173552,
+   "code": 6008,
+   "name": null,
+   "func": 20490,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_donation_fee_pda.rs",
+   "file_len": 74,
+   "line": 152,
+   "handlers": [
+    {
+     "handler": "create_donation_fee_pda",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 21824,
+   "byte": 174592,
+   "code": 6008,
+   "name": null,
+   "func": 20490,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_donation_fee_pda.rs",
+   "file_len": 74,
+   "line": 156,
+   "handlers": [
+    {
+     "handler": "create_donation_fee_pda",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22089,
+   "byte": 176712,
+   "code": 6008,
+   "name": null,
+   "func": 20490,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_donation_fee_pda.rs",
+   "file_len": 74,
+   "line": 174,
+   "handlers": [
+    {
+     "handler": "create_donation_fee_pda",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22409,
+   "byte": 179272,
+   "code": 6008,
+   "name": null,
+   "func": 22215,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_fee_sharing_config.rs",
+   "file_len": 76,
+   "line": 273,
+   "handlers": [
+    {
+     "handler": "create_fee_sharing_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22506,
+   "byte": 180048,
+   "code": 6008,
+   "name": null,
+   "func": 22215,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_fee_sharing_config.rs",
+   "file_len": 76,
+   "line": 280,
+   "handlers": [
+    {
+     "handler": "create_fee_sharing_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22617,
+   "byte": 180936,
+   "code": 6008,
+   "name": null,
+   "func": 22215,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_fee_sharing_config.rs",
+   "file_len": 76,
+   "line": 297,
+   "handlers": [
+    {
+     "handler": "create_fee_sharing_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 25864,
+   "byte": 206912,
+   "code": 6010,
+   "name": null,
+   "func": 25721,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs",
+   "file_len": 68,
+   "line": 258,
+   "handlers": [
+    {
+     "handler": "update_fee_shares",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 28383,
+   "byte": 227064,
+   "code": 6010,
+   "name": null,
+   "func": 28240,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs",
+   "file_len": 71,
+   "line": 292,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25917,
+   "byte": 207336,
+   "code": 6011,
+   "name": null,
+   "func": 25721,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs",
+   "file_len": 68,
+   "line": 259,
+   "handlers": [
+    {
+     "handler": "update_fee_shares",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 28436,
+   "byte": 227488,
+   "code": 6011,
+   "name": null,
+   "func": 28240,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs",
+   "file_len": 71,
+   "line": 293,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 26220,
+   "byte": 209760,
+   "code": 6012,
+   "name": null,
+   "func": 25721,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs",
+   "file_len": 68,
+   "line": 292,
+   "handlers": [
+    {
+     "handler": "update_fee_shares",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 28741,
+   "byte": 229928,
+   "code": 6012,
+   "name": null,
+   "func": 28240,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs",
+   "file_len": 71,
+   "line": 326,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25325,
+   "byte": 202600,
+   "code": 6013,
+   "name": null,
+   "func": 24884,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs",
+   "file_len": 68,
+   "line": 186,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    },
+    {
+     "handler": "update_fee_shares",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 27908,
+   "byte": 223264,
+   "code": 6013,
+   "name": null,
+   "func": 27422,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs",
+   "file_len": 71,
+   "line": 237,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 27995,
+   "byte": 223960,
+   "code": 6013,
+   "name": null,
+   "func": 27422,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs",
+   "file_len": 71,
+   "line": 234,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 29180,
+   "byte": 233440,
+   "code": 6013,
+   "name": null,
+   "func": 28947,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/mod.rs",
+   "file_len": 54,
+   "line": 60,
+   "handlers": [
+    {
+     "handler": "update_fee_shares",
+     "depth": 2
+    },
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 26126,
+   "byte": 209008,
+   "code": 6014,
+   "name": null,
+   "func": 25721,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs",
+   "file_len": 68,
+   "line": 291,
+   "handlers": [
+    {
+     "handler": "update_fee_shares",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 28645,
+   "byte": 229160,
+   "code": 6014,
+   "name": null,
+   "func": 28240,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs",
+   "file_len": 71,
+   "line": 325,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 20801,
+   "byte": 166408,
+   "code": 6016,
+   "name": null,
+   "func": 20490,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_donation_fee_pda.rs",
+   "file_len": 74,
+   "line": 221,
+   "handlers": [
+    {
+     "handler": "create_donation_fee_pda",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22019,
+   "byte": 176152,
+   "code": 6016,
+   "name": null,
+   "func": 20490,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_donation_fee_pda.rs",
+   "file_len": 74,
+   "line": 213,
+   "handlers": [
+    {
+     "handler": "create_donation_fee_pda",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22381,
+   "byte": 179048,
+   "code": 6016,
+   "name": null,
+   "func": 22215,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_fee_sharing_config.rs",
+   "file_len": 76,
+   "line": 307,
+   "handlers": [
+    {
+     "handler": "create_fee_sharing_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23220,
+   "byte": 185760,
+   "code": 6016,
+   "name": null,
+   "func": 22215,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_fee_sharing_config.rs",
+   "file_len": 76,
+   "line": 302,
+   "handlers": [
+    {
+     "handler": "create_fee_sharing_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 29370,
+   "byte": 234960,
+   "code": 6016,
+   "name": null,
+   "func": 29262,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/mod.rs",
+   "file_len": 54,
+   "line": 97,
+   "handlers": [
+    {
+     "handler": "update_fee_shares",
+     "depth": 2
+    },
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25970,
+   "byte": 207760,
+   "code": 6017,
+   "name": null,
+   "func": 25721,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs",
+   "file_len": 68,
+   "line": 269,
+   "handlers": [
+    {
+     "handler": "update_fee_shares",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 28489,
+   "byte": 227912,
+   "code": 6017,
+   "name": null,
+   "func": 28240,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs",
+   "file_len": 71,
+   "line": 303,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 22200,
+   "byte": 177600,
+   "code": 6018,
+   "name": null,
+   "func": 20490,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_donation_fee_pda.rs",
+   "file_len": 74,
+   "line": 214,
+   "handlers": [
+    {
+     "handler": "create_donation_fee_pda",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 29400,
+   "byte": 235200,
+   "code": 6018,
+   "name": null,
+   "func": 29262,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/mod.rs",
+   "file_len": 54,
+   "line": 99,
+   "handlers": [
+    {
+     "handler": "update_fee_shares",
+     "depth": 2
+    },
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25353,
+   "byte": 202824,
+   "code": 6020,
+   "name": null,
+   "func": 24884,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs",
+   "file_len": 68,
+   "line": 188,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    },
+    {
+     "handler": "update_fee_shares",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 28023,
+   "byte": 224184,
+   "code": 6020,
+   "name": null,
+   "func": 27422,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs",
+   "file_len": 71,
+   "line": 239,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 23923,
+   "byte": 191384,
+   "code": 6022,
+   "name": null,
+   "func": 23763,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/create_social_fee_pda.rs",
+   "file_len": 72,
+   "line": 67,
+   "handlers": [
+    {
+     "handler": "create_social_fee_pda",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 82505,
+   "byte": 660040,
+   "code": 6023,
+   "name": null,
+   "func": 82455,
+   "file": "programs/pump-fees/src/lib.rs",
+   "file_len": 29,
+   "line": 183,
+   "handlers": [
+    {
+     "handler": "revoke_fee_sharing_authority",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 82570,
+   "byte": 660560,
+   "code": 6023,
+   "name": null,
+   "func": 82520,
+   "file": "programs/pump-fees/src/lib.rs",
+   "file_len": 29,
+   "line": 188,
+   "handlers": [
+    {
+     "handler": "transfer_fee_sharing_authority",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 24401,
+   "byte": 195208,
+   "code": 6024,
+   "name": null,
+   "func": 24175,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs",
+   "file_len": 68,
+   "line": 130,
+   "handlers": [
+    {
+     "handler": "update_fee_shares",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 26503,
+   "byte": 212024,
+   "code": 6024,
+   "name": null,
+   "func": 26426,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs",
+   "file_len": 71,
+   "line": 137,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 12178,
+   "byte": 97424,
+   "code": 6026,
+   "name": null,
+   "func": 12112,
+   "file": "programs/pump-fees/src/instructions/admin/update_buyback_authority.rs",
+   "file_len": 69,
+   "line": 36,
+   "handlers": [
+    {
+     "handler": "update_buyback_authority",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 12258,
+   "byte": 98064,
+   "code": 6026,
+   "name": null,
+   "func": 12199,
+   "file": "programs/pump-fees/src/instructions/admin/update_buyback_authority.rs",
+   "file_len": 69,
+   "line": 47,
+   "handlers": [
+    {
+     "handler": "update_buyback_claim_rate_limit",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 15081,
+   "byte": 120648,
+   "code": 6026,
+   "name": null,
+   "func": 15027,
+   "file": "programs/pump-fees/src/instructions/buyback/mod.rs",
+   "file_len": 50,
+   "line": 94,
+   "handlers": [
+    {
+     "handler": "initialize_buyback",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 15208,
+   "byte": 121664,
+   "code": 6026,
+   "name": null,
+   "func": 15102,
+   "file": "programs/pump-fees/src/instructions/buyback/mod.rs",
+   "file_len": 50,
+   "line": 109,
+   "handlers": [
+    {
+     "handler": "sweep_buyback",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 9659,
+   "byte": 77272,
+   "code": 6028,
+   "name": null,
+   "func": 9548,
+   "file": "programs/pump-fees/src/instructions/admin/extend_fee_config.rs",
+   "file_len": 62,
+   "line": 47,
+   "handlers": [
+    {
+     "handler": "extend_fee_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 9694,
+   "byte": 77552,
+   "code": 6028,
+   "name": null,
+   "func": 9548,
+   "file": "programs/pump-fees/src/instructions/admin/extend_fee_config.rs",
+   "file_len": 62,
+   "line": 52,
+   "handlers": [
+    {
+     "handler": "extend_fee_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 9788,
+   "byte": 78304,
+   "code": 6028,
+   "name": null,
+   "func": 9548,
+   "file": "programs/pump-fees/src/instructions/admin/extend_fee_config.rs",
+   "file_len": 62,
+   "line": 63,
+   "handlers": [
+    {
+     "handler": "extend_fee_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 9895,
+   "byte": 79160,
+   "code": 6028,
+   "name": null,
+   "func": 9548,
+   "file": "programs/pump-fees/src/instructions/admin/extend_fee_config.rs",
+   "file_len": 62,
+   "line": 40,
+   "handlers": [
+    {
+     "handler": "extend_fee_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 9951,
+   "byte": 79608,
+   "code": 6028,
+   "name": null,
+   "func": 9548,
+   "file": "programs/pump-fees/src/instructions/admin/extend_fee_config.rs",
+   "file_len": 62,
+   "line": 62,
+   "handlers": [
+    {
+     "handler": "extend_fee_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 30508,
+   "byte": 244064,
+   "code": 6029,
+   "name": null,
+   "func": 30398,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/mod.rs",
+   "file_len": 54,
+   "line": 299,
+   "handlers": [
+    {
+     "handler": "claim_social_fee_pda_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 30732,
+   "byte": 245856,
+   "code": 6030,
+   "name": null,
+   "func": 30398,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/mod.rs",
+   "file_len": 54,
+   "line": 306,
+   "handlers": [
+    {
+     "handler": "claim_social_fee_pda_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 24335,
+   "byte": 194680,
+   "code": 6031,
+   "name": null,
+   "func": 24175,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs",
+   "file_len": 68,
+   "line": 129,
+   "handlers": [
+    {
+     "handler": "update_fee_shares",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 29246,
+   "byte": 233968,
+   "code": 6033,
+   "name": null,
+   "func": 28947,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/mod.rs",
+   "file_len": 54,
+   "line": 83,
+   "handlers": [
+    {
+     "handler": "update_fee_shares",
+     "depth": 2
+    },
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 26736,
+   "byte": 213888,
+   "code": 6034,
+   "name": null,
+   "func": 26426,
+   "file": "programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs",
+   "file_len": 71,
+   "line": 152,
+   "handlers": [
+    {
+     "handler": "update_fee_shares_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 31340,
+   "byte": 250720,
+   "code": 6036,
+   "name": null,
+   "func": 31158,
+   "file": "programs/pump-fees/src/instructions/withdraw.rs",
+   "file_len": 47,
+   "line": 91,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 31792,
+   "byte": 254336,
+   "code": 6036,
+   "name": null,
+   "func": 31158,
+   "file": "programs/pump-fees/src/instructions/withdraw.rs",
+   "file_len": 47,
+   "line": 125,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 1
+    }
+   ]
+  }
+ ]
+}

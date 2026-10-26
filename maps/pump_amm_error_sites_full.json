@@ -1,0 +1,5607 @@
+{
+ "program": "pump_amm",
+ "sha256": "6a7ad34596d83b4c435b32f458a56e718e9f82eb4ad38e4316616d15d24d8ff7",
+ "insns": 139524,
+ "functions": 663,
+ "name_table": {
+  "fn": 63203,
+  "mode": "value",
+  "insns": 350,
+  "table": {
+   "0": {
+    "name": "FeeBasisPointsExceedsMaximum",
+    "at": 1167471,
+    "len": 28
+   },
+   "1": {
+    "name": "ZeroBaseAmount",
+    "at": 1167499,
+    "len": 14
+   },
+   "2": {
+    "name": "ZeroQuoteAmount",
+    "at": 1167513,
+    "len": 15
+   },
+   "3": {
+    "name": "TooLittlePoolTokenLiquidity",
+    "at": 1167528,
+    "len": 27
+   },
+   "4": {
+    "name": "ExceededSlippage",
+    "at": 1165832,
+    "len": 16
+   },
+   "5": {
+    "name": "InvalidAdmin",
+    "at": 1167555,
+    "len": 12
+   },
+   "6": {
+    "name": "UnsupportedBaseMint",
+    "at": 1167567,
+    "len": 19
+   },
+   "7": {
+    "name": "UnsupportedQuoteMint",
+    "at": 1167586,
+    "len": 20
+   },
+   "8": {
+    "name": "InvalidBaseMint",
+    "at": 1167606,
+    "len": 15
+   },
+   "9": {
+    "name": "InvalidQuoteMint",
+    "at": 1165912,
+    "len": 16
+   },
+   "10": {
+    "name": "InvalidLpMint",
+    "at": 1167621,
+    "len": 13
+   },
+   "11": {
+    "name": "AllProtocolFeeRecipientsShouldBeNonZero",
+    "at": 1167634,
+    "len": 39
+   },
+   "12": {
+    "name": "UnsortedNotUniqueProtocolFeeRecipients",
+    "at": 1167673,
+    "len": 38
+   },
+   "13": {
+    "name": "InvalidProtocolFeeRecipient",
+    "at": 1167711,
+    "len": 27
+   },
+   "14": {
+    "name": "InvalidPoolBaseTokenAccount",
+    "at": 1167738,
+    "len": 27
+   },
+   "15": {
+    "name": "InvalidPoolQuoteTokenAccount",
+    "at": 1167765,
+    "len": 28
+   },
+   "16": {
+    "name": "BuyMoreBaseAmountThanPoolReserves",
+    "at": 1167793,
+    "len": 33
+   },
+   "17": {
+    "name": "DisabledCreatePool",
+    "at": 1167826,
+    "len": 18
+   },
+   "18": {
+    "name": "DisabledDeposit",
+    "at": 1167844,
+    "len": 15
+   },
+   "19": {
+    "name": "DisabledWithdraw",
+    "at": 1165848,
+    "len": 16
+   },
+   "20": {
+    "name": "DisabledBuy",
+    "at": 1167859,
+    "len": 11
+   },
+   "21": {
+    "name": "DisabledSell",
+    "at": 1167870,
+    "len": 12
+   },
+   "22": {
+    "name": "SameMint",
+    "at": 1164774,
+    "len": 8
+   },
+   "23": {
+    "name": "Overflow",
+    "at": 1164718,
+    "len": 8
+   },
+   "24": {
+    "name": "Truncation",
+    "at": 1167882,
+    "len": 10
+   },
+   "25": {
+    "name": "DivisionByZero",
+    "at": 1167892,
+    "len": 14
+   },
+   "26": {
+    "name": "NewSizeLessThanCurrentSize",
+    "at": 1167906,
+    "len": 26
+   },
+   "27": {
+    "name": "AccountTypeNotSupported",
+    "at": 1167932,
+    "len": 23
+   },
+   "28": {
+    "name": "OnlyCanonicalPumpPoolsCanHaveCoinCreator",
+    "at": 1167955,
+    "len": 40
+   },
+   "29": {
+    "name": "InvalidAdminSetCoinCreatorAuthority",
+    "at": 1167995,
+    "len": 35
+   },
+   "30": {
+    "name": "StartTimeInThePast",
+    "at": 1168030,
+    "len": 18
+   },
+   "31": {
+    "name": "EndTimeInThePast",
+    "at": 1165720,
+    "len": 16
+   },
+   "32": {
+    "name": "EndTimeBeforeStartTime",
+    "at": 1168048,
+    "len": 22
+   },
+   "33": {
+    "name": "TimeRangeTooLarge",
+    "at": 1168070,
+    "len": 17
+   },
+   "34": {
+    "name": "EndTimeBeforeCurrentDay",
+    "at": 1168087,
+    "len": 23
+   },
+   "35": {
+    "name": "SupplyUpdateForFinishedRange",
+    "at": 1168110,
+    "len": 28
+   },
+   "36": {
+    "name": "DayIndexAfterEndIndex",
+    "at": 1168138,
+    "len": 21
+   },
+   "37": {
+    "name": "DayInActiveRange",
+    "at": 1165800,
+    "len": 16
+   },
+   "38": {
+    "name": "InvalidIncentiveMint",
+    "at": 1168159,
+    "len": 20
+   },
+   "39": {
+    "name": "BuyNotEnoughQuoteTokensToCoverFees",
+    "at": 1168179,
+    "len": 34
+   },
+   "40": {
+    "name": "BuySlippageBelowMinBaseAmountOut",
+    "at": 1162736,
+    "len": 32
+   },
+   "41": {
+    "name": "MayhemModeDisabled",
+    "at": 1168213,
+    "len": 18
+   },
+   "42": {
+    "name": "OnlyPumpPoolsMayhemMode",
+    "at": 1168231,
+    "len": 23
+   },
+   "43": {
+    "name": "MayhemModeInDesiredState",
+    "at": 1168254,
+    "len": 24
+   },
+   "44": {
+    "name": "NotEnoughRemainingAccounts",
+    "at": 1168278,
+    "len": 26
+   },
+   "45": {
+    "name": "InvalidSharingConfigBaseMint",
+    "at": 1168304,
+    "len": 28
+   },
+   "46": {
+    "name": "InvalidSharingConfigCoinCreator",
+    "at": 1168332,
+    "len": 31
+   },
+   "47": {
+    "name": "CoinCreatorMigratedToSharingConfig",
+    "at": 1168363,
+    "len": 34
+   },
+   "48": {
+    "name": "CreatorVaultMigratedToSharingConfig",
+    "at": 1168397,
+    "len": 35
+   },
+   "49": {
+    "name": "CashbackNotEnabled",
+    "at": 1168432,
+    "len": 18
+   },
+   "50": {
+    "name": "OnlyPumpPoolsCashback",
+    "at": 1168450,
+    "len": 21
+   },
+   "51": {
+    "name": "CashbackNotInDesiredState",
+    "at": 1168471,
+    "len": 25
+   },
+   "52": {
+    "name": "TokensInVaultLessThanCashbackEarned",
+    "at": 1168496,
+    "len": 35
+   },
+   "53": {
+    "name": "BuybackFeeRecipientNotAuthorized",
+    "at": 1162768,
+    "len": 32
+   },
+   "54": {
+    "name": "AllBuybackFeeRecipientsShouldBeNonZero",
+    "at": 1168531,
+    "len": 38
+   },
+   "55": {
+    "name": "NotUniqueBuybackFeeRecipients",
+    "at": 1168569,
+    "len": 29
+   },
+   "56": {
+    "name": "BuybackBasisPointsOutOfRange",
+    "at": 1168598,
+    "len": 28
+   },
+   "57": {
+    "name": "WrongBuybackFeeRecipientsCount",
+    "at": 1168626,
+    "len": 30
+   },
+   "58": {
+    "name": "BuybackFeeRecipientMissing",
+    "at": 1168656,
+    "len": 26
+   },
+   "59": {
+    "name": "MissingCashbackAccounts",
+    "at": 1168682,
+    "len": 23
+   },
+   "60": {
+    "name": "InvalidCashbackAccumulator",
+    "at": 1168705,
+    "len": 26
+   },
+   "61": {
+    "name": "InvalidCashbackAccumulatorAta",
+    "at": 1168731,
+    "len": 29
+   },
+   "62": {
+    "name": "InvalidPoolV2",
+    "at": 1168760,
+    "len": 13
+   },
+   "63": {
+    "name": "InsufficientRealQuoteReserves",
+    "at": 1168773,
+    "len": 29
+   },
+   "64": {
+    "name": "BoostPoolLiquidityUnsupported",
+    "at": 1168802,
+    "len": 29
+   },
+   "65": {
+    "name": "PoolCannotBoost",
+    "at": 1168831,
+    "len": 15
+   },
+   "66": {
+    "name": "BoostDisabled",
+    "at": 1168846,
+    "len": 13
+   },
+   "67": {
+    "name": "SeedLockViolation",
+    "at": 1168859,
+    "len": 17
+   },
+   "68": {
+    "name": "CreatorFeeNotConfigurable",
+    "at": 1168876,
+    "len": 25
+   },
+   "69": {
+    "name": "CreatorFeeBpsOutOfRange",
+    "at": 1168901,
+    "len": 23
+   },
+   "70": {
+    "name": "CreatorFeeNotEditable",
+    "at": 1168924,
+    "len": 21
+   },
+   "71": {
+    "name": "CreatorFeeNotAllowedForCashbackCoin",
+    "at": 1168945,
+    "len": 35
+   },
+   "72": {
+    "name": "SharingConfigNotActive",
+    "at": 1168980,
+    "len": 22
+   },
+   "73": {
+    "name": "NotAuthorized",
+    "at": 1169002,
+    "len": 13
+   },
+   "74": {
+    "name": "HolderRewardCreatorImmutable",
+    "at": 1169015,
+    "len": 28
+   },
+   "75": {
+    "name": "CtoNotAllowedForMayhemPool",
+    "at": 1169043,
+    "len": 26
+   },
+   "76": {
+    "name": "InvalidHolderRewardCoinCreator",
+    "at": 1169069,
+    "len": 30
+   },
+   "77": {
+    "name": "CreatorFeeNotConfigurableForQuote",
+    "at": 1169099,
+    "len": 33
+   },
+   "78": {
+    "name": "OnlyPumpPools",
+    "at": 1169132,
+    "len": 13
+   },
+   "79": {
+    "name": "CashbackCoinNotSupported",
+    "at": 1169145,
+    "len": 24
+   },
+   "80": {
+    "name": "MayhemPoolNotSupported",
+    "at": 1169169,
+    "len": 22
+   },
+   "81": {
+    "name": "CreatorFeesNotSwept",
+    "at": 1169191,
+    "len": 19
+   },
+   "82": {
+    "name": "FeeTiersEmpty",
+    "at": 1169210,
+    "len": 13
+   },
+   "83": {
+    "name": "FeeConfigTooShort",
+    "at": 1169223,
+    "len": 17
+   },
+   "84": {
+    "name": "MultiHopDiscontinuousPath",
+    "at": 1169240,
+    "len": 25
+   },
+   "85": {
+    "name": "MultiHopCurveRunMismatch",
+    "at": 1169265,
+    "len": 24
+   },
+   "86": {
+    "name": "MultiHopMixedDirection",
+    "at": 1169289,
+    "len": 22
+   },
+   "87": {
+    "name": "SelfTransferNotAllowed",
+    "at": 1169311,
+    "len": 22
+   },
+   "88": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "89": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "90": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "91": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "92": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "93": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "94": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "95": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "96": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "97": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "98": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "99": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "100": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "101": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "102": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "103": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "104": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "105": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "106": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "107": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "108": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "109": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "110": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "111": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "112": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "113": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "114": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "115": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "116": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "117": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "118": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "119": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "120": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "121": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "122": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "123": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "124": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "125": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "126": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "127": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "128": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "129": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "130": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "131": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "132": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "133": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "134": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "135": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "136": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "137": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "138": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "139": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "140": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "141": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "142": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "143": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "144": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "145": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "146": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "147": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "148": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "149": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "150": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "151": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "152": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "153": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "154": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "155": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "156": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "157": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "158": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "159": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "160": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "161": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "162": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "163": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "164": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "165": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "166": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "167": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "168": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "169": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "170": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "171": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "172": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "173": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "174": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "175": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "176": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "177": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "178": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "179": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "180": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "181": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "182": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "183": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "184": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "185": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "186": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "187": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "188": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "189": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "190": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "191": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "192": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "193": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "194": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "195": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "196": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "197": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "198": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   },
+   "199": {
+    "name": "QuoteMintNotWritable",
+    "at": 1169333,
+    "len": 20
+   }
+  },
+  "entries": 89,
+  "covered": [
+   6000,
+   6001,
+   6002,
+   6003,
+   6004,
+   6005,
+   6006,
+   6007,
+   6009,
+   6011,
+   6012,
+   6013,
+   6016,
+   6017,
+   6018,
+   6019,
+   6020,
+   6021,
+   6022,
+   6023,
+   6024,
+   6025,
+   6027,
+   6028,
+   6030,
+   6031,
+   6032,
+   6033,
+   6034,
+   6035,
+   6036,
+   6037,
+   6039,
+   6040,
+   6041,
+   6042,
+   6043,
+   6044,
+   6048,
+   6049,
+   6050,
+   6051,
+   6053,
+   6054,
+   6055,
+   6056,
+   6057,
+   6058,
+   6059,
+   6060,
+   6061,
+   6062,
+   6063,
+   6065,
+   6066,
+   6067,
+   6068,
+   6069,
+   6071,
+   6074,
+   6075,
+   6076,
+   6077,
+   6078,
+   6079,
+   6080,
+   6081,
+   6082,
+   6083,
+   6084,
+   6085,
+   6086,
+   6087,
+   6088
+  ],
+  "covered_observed": 74,
+  "errors": []
+ },
+ "name_probe": null,
+ "handlers": {
+  "admin_cto_pool": 120318,
+  "admin_update_token_incentives": 117661,
+  "boost_buy_and_burn": 116967,
+  "buy": 118473,
+  "buy_exact_quote_in": 118705,
+  "buy_exact_quote_in_v2": 119266,
+  "buy_v2": 119133,
+  "claim_cashback": 121410,
+  "claim_token_incentives": 117847,
+  "close_user_volume_accumulator": 118163,
+  "collect_coin_creator_fee": 120093,
+  "create_config": 115071,
+  "create_pool": 116276,
+  "deposit": 117327,
+  "disable": 115361,
+  "extend_account": 119934,
+  "init_boost": 116659,
+  "init_user_volume_accumulator": 117986,
+  "migrate_pool_coin_creator": 121063,
+  "multi_hop_swap": 119532,
+  "sell": 118937,
+  "sell_v2": 119399,
+  "set_boost_authority": 116793,
+  "set_coin_creator": 120174,
+  "set_reserved_fee_recipients": 117133,
+  "sweep_creator_fee": 119800,
+  "sweep_protocol_fee": 119666,
+  "sync_user_volume_accumulator": 118295,
+  "toggle_boost": 120780,
+  "toggle_cashback_enabled": 121207,
+  "toggle_mayhem_mode": 120577,
+  "transfer_creator_fees_to_pump": 120902,
+  "transfer_creator_fees_to_pump_v2": 120984,
+  "update_admin": 115608,
+  "update_buyback_config": 121548,
+  "update_creator_fee_config": 116069,
+  "update_fee_config": 115782,
+  "withdraw": 117494
+ },
+ "observed_codes": [
+  6000,
+  6001,
+  6002,
+  6003,
+  6004,
+  6005,
+  6006,
+  6007,
+  6009,
+  6011,
+  6012,
+  6013,
+  6016,
+  6017,
+  6018,
+  6019,
+  6020,
+  6021,
+  6022,
+  6023,
+  6024,
+  6025,
+  6027,
+  6028,
+  6030,
+  6031,
+  6032,
+  6033,
+  6034,
+  6035,
+  6036,
+  6037,
+  6039,
+  6040,
+  6041,
+  6042,
+  6043,
+  6044,
+  6048,
+  6049,
+  6050,
+  6051,
+  6053,
+  6054,
+  6055,
+  6056,
+  6057,
+  6058,
+  6059,
+  6060,
+  6061,
+  6062,
+  6063,
+  6065,
+  6066,
+  6067,
+  6068,
+  6069,
+  6071,
+  6074,
+  6075,
+  6076,
+  6077,
+  6078,
+  6079,
+  6080,
+  6081,
+  6082,
+  6083,
+  6084,
+  6085,
+  6086,
+  6087,
+  6088
+ ],
+ "sites": [
+  {
+   "pc": 49917,
+   "byte": 399336,
+   "code": 6000,
+   "name": "FeeBasisPointsExceedsMaximum",
+   "func": 49862,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 220,
+   "handlers": [
+    {
+     "handler": "create_config",
+     "depth": 2
+    },
+    {
+     "handler": "update_fee_config",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 49994,
+   "byte": 399952,
+   "code": 6000,
+   "name": "FeeBasisPointsExceedsMaximum",
+   "func": 49939,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 230,
+   "handlers": [
+    {
+     "handler": "create_config",
+     "depth": 2
+    },
+    {
+     "handler": "update_fee_config",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 50071,
+   "byte": 400568,
+   "code": 6000,
+   "name": "FeeBasisPointsExceedsMaximum",
+   "func": 50016,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 243,
+   "handlers": [
+    {
+     "handler": "create_config",
+     "depth": 2
+    },
+    {
+     "handler": "update_fee_config",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 16847,
+   "byte": 134776,
+   "code": 6001,
+   "name": "ZeroBaseAmount",
+   "func": 16347,
+   "file": "programs/pump-amm/src/instructions/boost.rs",
+   "file_len": 43,
+   "line": 273,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23009,
+   "byte": 184072,
+   "code": 6001,
+   "name": "ZeroBaseAmount",
+   "func": 22348,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 198,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 28518,
+   "byte": 228144,
+   "code": 6001,
+   "name": "ZeroBaseAmount",
+   "func": 28374,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 326,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 30012,
+   "byte": 240096,
+   "code": 6001,
+   "name": "ZeroBaseAmount",
+   "func": 29876,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 636,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 31924,
+   "byte": 255392,
+   "code": 6001,
+   "name": "ZeroBaseAmount",
+   "func": 31608,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 274,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 34479,
+   "byte": 275832,
+   "code": 6001,
+   "name": "ZeroBaseAmount",
+   "func": 33089,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 642,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 37932,
+   "byte": 303456,
+   "code": 6001,
+   "name": "ZeroBaseAmount",
+   "func": 37738,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 110,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 42741,
+   "byte": 341928,
+   "code": 6001,
+   "name": "ZeroBaseAmount",
+   "func": 42602,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 671,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 43471,
+   "byte": 347768,
+   "code": 6001,
+   "name": "ZeroBaseAmount",
+   "func": 43332,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 752,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 44461,
+   "byte": 355688,
+   "code": 6001,
+   "name": "ZeroBaseAmount",
+   "func": 44258,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 876,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16666,
+   "byte": 133328,
+   "code": 6002,
+   "name": "ZeroQuoteAmount",
+   "func": 16347,
+   "file": "programs/pump-amm/src/instructions/boost.rs",
+   "file_len": 43,
+   "line": 250,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16743,
+   "byte": 133944,
+   "code": 6002,
+   "name": "ZeroQuoteAmount",
+   "func": 16347,
+   "file": "programs/pump-amm/src/instructions/boost.rs",
+   "file_len": 43,
+   "line": 255,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23067,
+   "byte": 184536,
+   "code": 6002,
+   "name": "ZeroQuoteAmount",
+   "func": 22348,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 199,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 28640,
+   "byte": 229120,
+   "code": 6002,
+   "name": "ZeroQuoteAmount",
+   "func": 28374,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 327,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 30134,
+   "byte": 241072,
+   "code": 6002,
+   "name": "ZeroQuoteAmount",
+   "func": 29876,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 638,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 32664,
+   "byte": 261312,
+   "code": 6002,
+   "name": "ZeroQuoteAmount",
+   "func": 31608,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 273,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 34254,
+   "byte": 274032,
+   "code": 6002,
+   "name": "ZeroQuoteAmount",
+   "func": 33089,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 712,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 42863,
+   "byte": 342904,
+   "code": 6002,
+   "name": "ZeroQuoteAmount",
+   "func": 42602,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 672,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 43593,
+   "byte": 348744,
+   "code": 6002,
+   "name": "ZeroQuoteAmount",
+   "func": 43332,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 753,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 17105,
+   "byte": 136840,
+   "code": 6003,
+   "name": "TooLittlePoolTokenLiquidity",
+   "func": 16347,
+   "file": "programs/pump-amm/src/instructions/boost.rs",
+   "file_len": 43,
+   "line": 280,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23678,
+   "byte": 189424,
+   "code": 6003,
+   "name": "TooLittlePoolTokenLiquidity",
+   "func": 23628,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 290,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 30734,
+   "byte": 245872,
+   "code": 6003,
+   "name": "TooLittlePoolTokenLiquidity",
+   "func": 29876,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 781,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 34330,
+   "byte": 274640,
+   "code": 6003,
+   "name": "TooLittlePoolTokenLiquidity",
+   "func": 33089,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 643,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 43768,
+   "byte": 350144,
+   "code": 6003,
+   "name": "TooLittlePoolTokenLiquidity",
+   "func": 43332,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 821,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16812,
+   "byte": 134496,
+   "code": 6004,
+   "name": "ExceededSlippage",
+   "func": 16347,
+   "file": "programs/pump-amm/src/instructions/boost.rs",
+   "file_len": 43,
+   "line": 274,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 24661,
+   "byte": 197288,
+   "code": 6004,
+   "name": "ExceededSlippage",
+   "func": 24423,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 79,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 24922,
+   "byte": 199376,
+   "code": 6004,
+   "name": "ExceededSlippage",
+   "func": 24423,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 100,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 26090,
+   "byte": 208720,
+   "code": 6004,
+   "name": "ExceededSlippage",
+   "func": 25834,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 86,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 26349,
+   "byte": 210792,
+   "code": 6004,
+   "name": "ExceededSlippage",
+   "func": 25834,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 107,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 28864,
+   "byte": 230912,
+   "code": 6004,
+   "name": "ExceededSlippage",
+   "func": 28374,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 405,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 32734,
+   "byte": 261872,
+   "code": 6004,
+   "name": "ExceededSlippage",
+   "func": 31608,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 389,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 38170,
+   "byte": 305360,
+   "code": 6004,
+   "name": "ExceededSlippage",
+   "func": 37738,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 189,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 43020,
+   "byte": 344160,
+   "code": 6004,
+   "name": "ExceededSlippage",
+   "func": 42602,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 706,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 44615,
+   "byte": 356920,
+   "code": 6004,
+   "name": "ExceededSlippage",
+   "func": 44258,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 906,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 14141,
+   "byte": 113128,
+   "code": 6005,
+   "name": "InvalidAdmin",
+   "func": 14072,
+   "file": "programs/pump-amm/src/instructions/admin/toggle_boost.rs",
+   "file_len": 56,
+   "line": 14,
+   "handlers": [
+    {
+     "handler": "toggle_boost",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 50449,
+   "byte": 403592,
+   "code": 6005,
+   "name": "InvalidAdmin",
+   "func": 50385,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 297,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 50534,
+   "byte": 404272,
+   "code": 6005,
+   "name": "InvalidAdmin",
+   "func": 50385,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 292,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 23199,
+   "byte": 185592,
+   "code": 6006,
+   "name": "UnsupportedBaseMint",
+   "func": 22348,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 201,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23233,
+   "byte": 185864,
+   "code": 6007,
+   "name": "UnsupportedQuoteMint",
+   "func": 22348,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 215,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 59556,
+   "byte": 476448,
+   "code": 6007,
+   "name": "UnsupportedQuoteMint",
+   "func": 59429,
+   "file": "programs/pump-amm/src/utils/transfer_fee.rs",
+   "file_len": 43,
+   "line": 32,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 2
+    },
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "deposit",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 40713,
+   "byte": 325704,
+   "code": 6009,
+   "name": "InvalidQuoteMint",
+   "func": 40507,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 146,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 13556,
+   "byte": 108448,
+   "code": 6011,
+   "name": "AllProtocolFeeRecipientsShouldBeNonZero",
+   "func": 12839,
+   "file": "programs/pump-amm/src/instructions/admin/set_reserved_fee_recipients.rs",
+   "file_len": 71,
+   "line": 60,
+   "handlers": [
+    {
+     "handler": "set_reserved_fee_recipients",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 50342,
+   "byte": 402736,
+   "code": 6011,
+   "name": "AllProtocolFeeRecipientsShouldBeNonZero",
+   "func": 50093,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 256,
+   "handlers": [
+    {
+     "handler": "create_config",
+     "depth": 2
+    },
+    {
+     "handler": "update_fee_config",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 50372,
+   "byte": 402976,
+   "code": 6012,
+   "name": "UnsortedNotUniqueProtocolFeeRecipients",
+   "func": 50093,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 263,
+   "handlers": [
+    {
+     "handler": "create_config",
+     "depth": 2
+    },
+    {
+     "handler": "update_fee_config",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 45684,
+   "byte": 365472,
+   "code": 6013,
+   "name": "InvalidProtocolFeeRecipient",
+   "func": 45505,
+   "file": "programs/pump-amm/src/instructions/swap/mod.rs",
+   "file_len": 46,
+   "line": 164,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    },
+    {
+     "handler": "sweep_creator_fee",
+     "depth": 2
+    },
+    {
+     "handler": "sweep_protocol_fee",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 45846,
+   "byte": 366768,
+   "code": 6013,
+   "name": "InvalidProtocolFeeRecipient",
+   "func": 45697,
+   "file": "programs/pump-amm/src/instructions/sweep_fees.rs",
+   "file_len": 48,
+   "line": 91,
+   "handlers": [
+    {
+     "handler": "sweep_creator_fee",
+     "depth": 1
+    },
+    {
+     "handler": "sweep_protocol_fee",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 9118,
+   "byte": 72944,
+   "code": 6016,
+   "name": "BuyMoreBaseAmountThanPoolReserves",
+   "func": 9017,
+   "file": "programs/pump-amm/src/curve/constant_product.rs",
+   "file_len": 47,
+   "line": 21,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 22956,
+   "byte": 183648,
+   "code": 6017,
+   "name": "DisabledCreatePool",
+   "func": 22348,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 193,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 24613,
+   "byte": 196904,
+   "code": 6018,
+   "name": "DisabledDeposit",
+   "func": 24423,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 56,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 26026,
+   "byte": 208208,
+   "code": 6019,
+   "name": "DisabledWithdraw",
+   "func": 25834,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 57,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16444,
+   "byte": 131552,
+   "code": 6020,
+   "name": "DisabledBuy",
+   "func": 16347,
+   "file": "programs/pump-amm/src/instructions/boost.rs",
+   "file_len": 43,
+   "line": 240,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 28610,
+   "byte": 228880,
+   "code": 6020,
+   "name": "DisabledBuy",
+   "func": 28374,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 317,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 30104,
+   "byte": 240832,
+   "code": 6020,
+   "name": "DisabledBuy",
+   "func": 29876,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 625,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 33359,
+   "byte": 266872,
+   "code": 6020,
+   "name": "DisabledBuy",
+   "func": 33089,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 469,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 42833,
+   "byte": 342664,
+   "code": 6020,
+   "name": "DisabledBuy",
+   "func": 42602,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 660,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 43563,
+   "byte": 348504,
+   "code": 6020,
+   "name": "DisabledBuy",
+   "func": 43332,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 740,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 33244,
+   "byte": 265952,
+   "code": 6021,
+   "name": "DisabledSell",
+   "func": 33089,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 474,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 37902,
+   "byte": 303216,
+   "code": 6021,
+   "name": "DisabledSell",
+   "func": 37738,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 101,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 44431,
+   "byte": 355448,
+   "code": 6021,
+   "name": "DisabledSell",
+   "func": 44258,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 865,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23259,
+   "byte": 186072,
+   "code": 6022,
+   "name": "SameMint",
+   "func": 22348,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 217,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 9646,
+   "byte": 77168,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 9569,
+   "file": "programs/pump-amm/src/curve/fees.rs",
+   "file_len": 35,
+   "line": 19,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    },
+    {
+     "handler": "withdraw",
+     "depth": 2
+    },
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 9733,
+   "byte": 77864,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 9569,
+   "file": "programs/pump-amm/src/curve/fees.rs",
+   "file_len": 35,
+   "line": 17,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    },
+    {
+     "handler": "withdraw",
+     "depth": 2
+    },
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 17858,
+   "byte": 142864,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 17808,
+   "file": "programs/pump-amm/src/instructions/boost.rs",
+   "file_len": 43,
+   "line": 258,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 20109,
+   "byte": 160872,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 19893,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "transfer_creator_fees_to_pump",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 20140,
+   "byte": 161120,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 19893,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "transfer_creator_fees_to_pump",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 21796,
+   "byte": 174368,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 20922,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "transfer_creator_fees_to_pump_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 21827,
+   "byte": 174616,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 20922,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "transfer_creator_fees_to_pump_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 25429,
+   "byte": 203432,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 25379,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 99,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25494,
+   "byte": 203952,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 25444,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 143,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25559,
+   "byte": 204472,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 25509,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 152,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25624,
+   "byte": 204992,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 25574,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 154,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25754,
+   "byte": 206032,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 25704,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 160,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 25819,
+   "byte": 206552,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 25769,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 162,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 26849,
+   "byte": 214792,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 26799,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 106,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 26914,
+   "byte": 215312,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 26864,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 150,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 26979,
+   "byte": 215832,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 26929,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 160,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 27044,
+   "byte": 216352,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 26994,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 162,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 27174,
+   "byte": 217392,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 27124,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 170,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 28114,
+   "byte": 224912,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 27189,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 98,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 28188,
+   "byte": 225504,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 27189,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 98,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 29666,
+   "byte": 237328,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 29616,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 387,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 29731,
+   "byte": 237848,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 29681,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 391,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 29796,
+   "byte": 238368,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 29746,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 395,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 29861,
+   "byte": 238888,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 29811,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 404,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 35078,
+   "byte": 280624,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 35028,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 579,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 35143,
+   "byte": 281144,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 35093,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 586,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 35275,
+   "byte": 282200,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 35225,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 636,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 35340,
+   "byte": 282720,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 35290,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 671,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 35405,
+   "byte": 283240,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 35355,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 718,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 37532,
+   "byte": 300256,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 35624,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 928,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 38936,
+   "byte": 311488,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 38886,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 167,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 39001,
+   "byte": 312008,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 38951,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 179,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 39066,
+   "byte": 312528,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 39016,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 183,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 39131,
+   "byte": 313048,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 39081,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 196,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 40149,
+   "byte": 321192,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 39146,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 502,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 40218,
+   "byte": 321744,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 39146,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 502,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 40986,
+   "byte": 327888,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 40931,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 241,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 41048,
+   "byte": 328384,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 40931,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 241,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 41110,
+   "byte": 328880,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 40931,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 241,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 41303,
+   "byte": 330424,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 41139,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 294,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 41331,
+   "byte": 330648,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 41139,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 283,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 41425,
+   "byte": 331400,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 41365,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 302,
+   "handlers": [
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 41777,
+   "byte": 334216,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 41692,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 376,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 41867,
+   "byte": 334936,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 41692,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 385,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 42119,
+   "byte": 336952,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 41998,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 515,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 45046,
+   "byte": 360368,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 44996,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 913,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 46919,
+   "byte": 375352,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 46775,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "claim_cashback",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 46950,
+   "byte": 375600,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 46775,
+   "file": null,
+   "file_len": null,
+   "line": null,
+   "handlers": [
+    {
+     "handler": "claim_cashback",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 55179,
+   "byte": 441432,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 55117,
+   "file": "programs/pump-amm/src/state/pool.rs",
+   "file_len": 35,
+   "line": 408,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 3
+    },
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "deposit",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 55259,
+   "byte": 442072,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 55194,
+   "file": "programs/pump-amm/src/state/pool.rs",
+   "file_len": 35,
+   "line": 417,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 2
+    },
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "deposit",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 55352,
+   "byte": 442816,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 55274,
+   "file": "programs/pump-amm/src/state/pool.rs",
+   "file_len": 35,
+   "line": 426,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    },
+    {
+     "handler": "withdraw",
+     "depth": 2
+    },
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 3
+    },
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "init_boost",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 55487,
+   "byte": 443896,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 55397,
+   "file": "programs/pump-amm/src/state/pool.rs",
+   "file_len": 35,
+   "line": 439,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 2
+    },
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 55518,
+   "byte": 444144,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 55397,
+   "file": "programs/pump-amm/src/state/pool.rs",
+   "file_len": 35,
+   "line": 440,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 2
+    },
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 55652,
+   "byte": 445216,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 55533,
+   "file": "programs/pump-amm/src/state/pool.rs",
+   "file_len": 35,
+   "line": 462,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 55752,
+   "byte": 446016,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 55533,
+   "file": "programs/pump-amm/src/state/pool.rs",
+   "file_len": 35,
+   "line": 458,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 55782,
+   "byte": 446256,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 55533,
+   "file": "programs/pump-amm/src/state/pool.rs",
+   "file_len": 35,
+   "line": 465,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 55816,
+   "byte": 446528,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 55533,
+   "file": "programs/pump-amm/src/state/pool.rs",
+   "file_len": 35,
+   "line": 469,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 55922,
+   "byte": 447376,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 55845,
+   "file": "programs/pump-amm/src/state/pool.rs",
+   "file_len": 35,
+   "line": 484,
+   "handlers": [
+    {
+     "handler": "sweep_creator_fee",
+     "depth": 2
+    },
+    {
+     "handler": "sweep_protocol_fee",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 59665,
+   "byte": 477320,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 59593,
+   "file": "programs/pump-amm/src/utils/transfer_fee.rs",
+   "file_len": 43,
+   "line": 49,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 3
+    },
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "sell",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 59745,
+   "byte": 477960,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 59680,
+   "file": "programs/pump-amm/src/utils/transfer_fee.rs",
+   "file_len": 43,
+   "line": 57,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 2
+    },
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 59831,
+   "byte": 478648,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 59760,
+   "file": "programs/pump-amm/src/utils/transfer_fee.rs",
+   "file_len": 43,
+   "line": 67,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "deposit",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 91838,
+   "byte": 734704,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 91788,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 409,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 94859,
+   "byte": 758872,
+   "code": 6023,
+   "name": "Overflow",
+   "func": 94809,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 941,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 9148,
+   "byte": 73184,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 9017,
+   "file": "programs/pump-amm/src/curve/constant_product.rs",
+   "file_len": 47,
+   "line": 24,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 9299,
+   "byte": 74392,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 9166,
+   "file": "programs/pump-amm/src/curve/constant_product.rs",
+   "file_len": 47,
+   "line": 47,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 9465,
+   "byte": 75720,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 9332,
+   "file": "programs/pump-amm/src/curve/constant_product.rs",
+   "file_len": 47,
+   "line": 87,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 9849,
+   "byte": 78792,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 9778,
+   "file": "programs/pump-amm/src/curve/fees.rs",
+   "file_len": 35,
+   "line": 32,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy",
+     "depth": 4
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 4
+    },
+    {
+     "handler": "sell",
+     "depth": 4
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 15843,
+   "byte": 126744,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 15771,
+   "file": "programs/pump-amm/src/instructions/boost.rs",
+   "file_len": 43,
+   "line": 22,
+   "handlers": [
+    {
+     "handler": "init_boost",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 23761,
+   "byte": 190088,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 23693,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 339,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 24521,
+   "byte": 196168,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 24423,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 77,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 25364,
+   "byte": 202912,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 25314,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 91,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 26054,
+   "byte": 208432,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 25834,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 84,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 26784,
+   "byte": 214272,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 26734,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 98,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 27109,
+   "byte": 216872,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 27059,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 166,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56081,
+   "byte": 448648,
+   "code": 6024,
+   "name": "Truncation",
+   "func": 55937,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "file_len": 49,
+   "line": 104,
+   "handlers": [
+    {
+     "handler": "claim_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 9267,
+   "byte": 74136,
+   "code": 6025,
+   "name": "DivisionByZero",
+   "func": 9166,
+   "file": "programs/pump-amm/src/curve/constant_product.rs",
+   "file_len": 47,
+   "line": 45,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 9433,
+   "byte": 75464,
+   "code": 6025,
+   "name": "DivisionByZero",
+   "func": 9332,
+   "file": "programs/pump-amm/src/curve/constant_product.rs",
+   "file_len": 47,
+   "line": 85,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 9552,
+   "byte": 76416,
+   "code": 6025,
+   "name": "DivisionByZero",
+   "func": 9480,
+   "file": "programs/pump-amm/src/curve/constant_product.rs",
+   "file_len": 47,
+   "line": 112,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 9765,
+   "byte": 78120,
+   "code": 6025,
+   "name": "DivisionByZero",
+   "func": 9569,
+   "file": "programs/pump-amm/src/curve/fees.rs",
+   "file_len": 35,
+   "line": 21,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    },
+    {
+     "handler": "withdraw",
+     "depth": 2
+    },
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 25689,
+   "byte": 205512,
+   "code": 6025,
+   "name": "DivisionByZero",
+   "func": 25639,
+   "file": "programs/pump-amm/src/instructions/liquidity/deposit.rs",
+   "file_len": 55,
+   "line": 156,
+   "handlers": [
+    {
+     "handler": "deposit",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 55100,
+   "byte": 440800,
+   "code": 6025,
+   "name": "DivisionByZero",
+   "func": 55024,
+   "file": "programs/pump-amm/src/state/pool.rs",
+   "file_len": 35,
+   "line": 386,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "sell",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 4
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 4
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 23858,
+   "byte": 190864,
+   "code": 6027,
+   "name": "AccountTypeNotSupported",
+   "func": 23780,
+   "file": "programs/pump-amm/src/instructions/extend_account.rs",
+   "file_len": 52,
+   "line": 91,
+   "handlers": [
+    {
+     "handler": "extend_account",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 24042,
+   "byte": 192336,
+   "code": 6027,
+   "name": "AccountTypeNotSupported",
+   "func": 23780,
+   "file": "programs/pump-amm/src/instructions/extend_account.rs",
+   "file_len": 52,
+   "line": 114,
+   "handlers": [
+    {
+     "handler": "extend_account",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 31582,
+   "byte": 252656,
+   "code": 6027,
+   "name": "AccountTypeNotSupported",
+   "func": 31514,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 239,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 32966,
+   "byte": 263728,
+   "code": 6027,
+   "name": "AccountTypeNotSupported",
+   "func": 32865,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 414,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 35753,
+   "byte": 286024,
+   "code": 6027,
+   "name": "AccountTypeNotSupported",
+   "func": 35624,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 838,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 40650,
+   "byte": 325200,
+   "code": 6027,
+   "name": "AccountTypeNotSupported",
+   "func": 40507,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 138,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 10620,
+   "byte": 84960,
+   "code": 6028,
+   "name": "OnlyCanonicalPumpPoolsCanHaveCoinCreator",
+   "func": 10532,
+   "file": "programs/pump-amm/src/instructions/admin/admin_cto_pool.rs",
+   "file_len": 58,
+   "line": 64,
+   "handlers": [
+    {
+     "handler": "admin_cto_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 19053,
+   "byte": 152424,
+   "code": 6028,
+   "name": "OnlyCanonicalPumpPoolsCanHaveCoinCreator",
+   "func": 18939,
+   "file": "programs/pump-amm/src/instructions/coin_creator/set_coin_creator.rs",
+   "file_len": 67,
+   "line": 63,
+   "handlers": [
+    {
+     "handler": "set_coin_creator",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22907,
+   "byte": 183256,
+   "code": 6028,
+   "name": "OnlyCanonicalPumpPoolsCanHaveCoinCreator",
+   "func": 22348,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 279,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 56855,
+   "byte": 454840,
+   "code": 6030,
+   "name": "StartTimeInThePast",
+   "func": 56164,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "file_len": 49,
+   "line": 313,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56346,
+   "byte": 450768,
+   "code": 6031,
+   "name": "EndTimeInThePast",
+   "func": 56164,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "file_len": 49,
+   "line": 327,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56495,
+   "byte": 451960,
+   "code": 6032,
+   "name": "EndTimeBeforeStartTime",
+   "func": 56164,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "file_len": 49,
+   "line": 329,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56626,
+   "byte": 453008,
+   "code": 6033,
+   "name": "TimeRangeTooLarge",
+   "func": 56164,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "file_len": 49,
+   "line": 331,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56894,
+   "byte": 455152,
+   "code": 6034,
+   "name": "EndTimeBeforeCurrentDay",
+   "func": 56164,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "file_len": 49,
+   "line": 352,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56412,
+   "byte": 451296,
+   "code": 6035,
+   "name": "SupplyUpdateForFinishedRange",
+   "func": 56164,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "file_len": 49,
+   "line": 251,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56536,
+   "byte": 452288,
+   "code": 6036,
+   "name": "DayIndexAfterEndIndex",
+   "func": 56164,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "file_len": 49,
+   "line": 263,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56689,
+   "byte": 453512,
+   "code": 6036,
+   "name": "DayIndexAfterEndIndex",
+   "func": 56164,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "file_len": 49,
+   "line": 291,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 56759,
+   "byte": 454072,
+   "code": 6037,
+   "name": "DayInActiveRange",
+   "func": 56164,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "file_len": 49,
+   "line": 292,
+   "handlers": [
+    {
+     "handler": "admin_update_token_incentives",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 30257,
+   "byte": 242056,
+   "code": 6039,
+   "name": "BuyNotEnoughQuoteTokensToCoverFees",
+   "func": 29876,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 646,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 30440,
+   "byte": 243520,
+   "code": 6039,
+   "name": "BuyNotEnoughQuoteTokensToCoverFees",
+   "func": 29876,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 700,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 41617,
+   "byte": 332936,
+   "code": 6039,
+   "name": "BuyNotEnoughQuoteTokensToCoverFees",
+   "func": 41440,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 328,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 43815,
+   "byte": 350520,
+   "code": 6039,
+   "name": "BuyNotEnoughQuoteTokensToCoverFees",
+   "func": 43332,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 770,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 30519,
+   "byte": 244152,
+   "code": 6040,
+   "name": "BuySlippageBelowMinBaseAmountOut",
+   "func": 29876,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 733,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 30651,
+   "byte": 245208,
+   "code": 6040,
+   "name": "BuySlippageBelowMinBaseAmountOut",
+   "func": 29876,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 754,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 30695,
+   "byte": 245560,
+   "code": 6040,
+   "name": "BuySlippageBelowMinBaseAmountOut",
+   "func": 29876,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 776,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 41664,
+   "byte": 333312,
+   "code": 6040,
+   "name": "BuySlippageBelowMinBaseAmountOut",
+   "func": 41440,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 346,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 43865,
+   "byte": 350920,
+   "code": 6040,
+   "name": "BuySlippageBelowMinBaseAmountOut",
+   "func": 43332,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 804,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 43896,
+   "byte": 351168,
+   "code": 6040,
+   "name": "BuySlippageBelowMinBaseAmountOut",
+   "func": 43332,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 816,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 23159,
+   "byte": 185272,
+   "code": 6041,
+   "name": "MayhemModeDisabled",
+   "func": 22348,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 171,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22502,
+   "byte": 180016,
+   "code": 6042,
+   "name": "OnlyPumpPoolsMayhemMode",
+   "func": 22348,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 177,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 14239,
+   "byte": 113912,
+   "code": 6043,
+   "name": "MayhemModeInDesiredState",
+   "func": 14176,
+   "file": "programs/pump-amm/src/instructions/admin/toggle_mayhem_mode.rs",
+   "file_len": 62,
+   "line": 17,
+   "handlers": [
+    {
+     "handler": "toggle_mayhem_mode",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 13519,
+   "byte": 108152,
+   "code": 6044,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 12839,
+   "file": "programs/pump-amm/src/instructions/admin/set_reserved_fee_recipients.rs",
+   "file_len": 71,
+   "line": 40,
+   "handlers": [
+    {
+     "handler": "set_reserved_fee_recipients",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 31982,
+   "byte": 255856,
+   "code": 6044,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 31608,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 278,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 32850,
+   "byte": 262800,
+   "code": 6044,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 32800,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 307,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 18045,
+   "byte": 144360,
+   "code": 6048,
+   "name": "CreatorVaultMigratedToSharingConfig",
+   "func": 17873,
+   "file": "programs/pump-amm/src/instructions/coin_creator/collect_coin_creator_fee.rs",
+   "file_len": 75,
+   "line": 68,
+   "handlers": [
+    {
+     "handler": "collect_coin_creator_fee",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22608,
+   "byte": 180864,
+   "code": 6049,
+   "name": "CashbackNotEnabled",
+   "func": 22348,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 183,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 22537,
+   "byte": 180296,
+   "code": 6050,
+   "name": "OnlyPumpPoolsCashback",
+   "func": 22348,
+   "file": "programs/pump-amm/src/instructions/create_pool.rs",
+   "file_len": 49,
+   "line": 189,
+   "handlers": [
+    {
+     "handler": "create_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 14049,
+   "byte": 112392,
+   "code": 6051,
+   "name": "CashbackNotInDesiredState",
+   "func": 13986,
+   "file": "programs/pump-amm/src/instructions/admin/toggle_cashback_enabled.rs",
+   "file_len": 67,
+   "line": 21,
+   "handlers": [
+    {
+     "handler": "toggle_cashback_enabled",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 50800,
+   "byte": 406400,
+   "code": 6053,
+   "name": "BuybackFeeRecipientNotAuthorized",
+   "func": 50637,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 336,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "sell",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 50862,
+   "byte": 406896,
+   "code": 6053,
+   "name": "BuybackFeeRecipientNotAuthorized",
+   "func": 50637,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 321,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "sell",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 50914,
+   "byte": 407312,
+   "code": 6053,
+   "name": "BuybackFeeRecipientNotAuthorized",
+   "func": 50637,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 326,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "sell",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 51325,
+   "byte": 410600,
+   "code": 6054,
+   "name": "AllBuybackFeeRecipientsShouldBeNonZero",
+   "func": 50927,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 347,
+   "handlers": [
+    {
+     "handler": "update_buyback_config",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 51154,
+   "byte": 409232,
+   "code": 6055,
+   "name": "NotUniqueBuybackFeeRecipients",
+   "func": 50927,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 357,
+   "handlers": [
+    {
+     "handler": "update_buyback_config",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 50622,
+   "byte": 404976,
+   "code": 6056,
+   "name": "BuybackBasisPointsOutOfRange",
+   "func": 50568,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "file_len": 44,
+   "line": 306,
+   "handlers": [
+    {
+     "handler": "update_buyback_config",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 14763,
+   "byte": 118104,
+   "code": 6057,
+   "name": "WrongBuybackFeeRecipientsCount",
+   "func": 14610,
+   "file": "programs/pump-amm/src/instructions/admin/update_buyback_config.rs",
+   "file_len": 65,
+   "line": 40,
+   "handlers": [
+    {
+     "handler": "update_buyback_config",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 28282,
+   "byte": 226256,
+   "code": 6058,
+   "name": "BuybackFeeRecipientMissing",
+   "func": 28202,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 116,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 28354,
+   "byte": 226832,
+   "code": 6058,
+   "name": "BuybackFeeRecipientMissing",
+   "func": 28202,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 121,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 27371,
+   "byte": 218968,
+   "code": 6059,
+   "name": "MissingCashbackAccounts",
+   "func": 27189,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 44,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 39224,
+   "byte": 313792,
+   "code": 6059,
+   "name": "MissingCashbackAccounts",
+   "func": 39146,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 378,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 39380,
+   "byte": 315040,
+   "code": 6059,
+   "name": "MissingCashbackAccounts",
+   "func": 39146,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 383,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 39434,
+   "byte": 315472,
+   "code": 6060,
+   "name": "InvalidCashbackAccumulator",
+   "func": 39146,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 392,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 39489,
+   "byte": 315912,
+   "code": 6060,
+   "name": "InvalidCashbackAccumulator",
+   "func": 39146,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 395,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 39539,
+   "byte": 316312,
+   "code": 6060,
+   "name": "InvalidCashbackAccumulator",
+   "func": 39146,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 444,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 39794,
+   "byte": 318352,
+   "code": 6060,
+   "name": "InvalidCashbackAccumulator",
+   "func": 39146,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 448,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 27342,
+   "byte": 218736,
+   "code": 6061,
+   "name": "InvalidCashbackAccumulatorAta",
+   "func": 27189,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 54,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 27461,
+   "byte": 219688,
+   "code": 6061,
+   "name": "InvalidCashbackAccumulatorAta",
+   "func": 27189,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "file_len": 46,
+   "line": 57,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 39995,
+   "byte": 319960,
+   "code": 6061,
+   "name": "InvalidCashbackAccumulatorAta",
+   "func": 39146,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 464,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 40180,
+   "byte": 321440,
+   "code": 6061,
+   "name": "InvalidCashbackAccumulatorAta",
+   "func": 39146,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 467,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 40395,
+   "byte": 323160,
+   "code": 6062,
+   "name": "InvalidPoolV2",
+   "func": 40274,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 520,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 40423,
+   "byte": 323384,
+   "code": 6062,
+   "name": "InvalidPoolV2",
+   "func": 40274,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 526,
+   "handlers": [
+    {
+     "handler": "buy",
+     "depth": 2
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 2
+    },
+    {
+     "handler": "sell",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 38044,
+   "byte": 304352,
+   "code": 6063,
+   "name": "InsufficientRealQuoteReserves",
+   "func": 37738,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "file_len": 47,
+   "line": 171,
+   "handlers": [
+    {
+     "handler": "sell",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 41832,
+   "byte": 334656,
+   "code": 6063,
+   "name": "InsufficientRealQuoteReserves",
+   "func": 41692,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 377,
+   "handlers": [
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 16497,
+   "byte": 131976,
+   "code": 6065,
+   "name": "PoolCannotBoost",
+   "func": 16347,
+   "file": "programs/pump-amm/src/instructions/boost.rs",
+   "file_len": 43,
+   "line": 245,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 16636,
+   "byte": 133088,
+   "code": 6066,
+   "name": "BoostDisabled",
+   "func": 16347,
+   "file": "programs/pump-amm/src/instructions/boost.rs",
+   "file_len": 43,
+   "line": 238,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 25926,
+   "byte": 207408,
+   "code": 6067,
+   "name": "SeedLockViolation",
+   "func": 25834,
+   "file": "programs/pump-amm/src/instructions/liquidity/withdraw.rs",
+   "file_len": 56,
+   "line": 62,
+   "handlers": [
+    {
+     "handler": "withdraw",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 11265,
+   "byte": 90120,
+   "code": 6068,
+   "name": "CreatorFeeNotConfigurable",
+   "func": 10532,
+   "file": "programs/pump-amm/src/instructions/admin/admin_cto_pool.rs",
+   "file_len": 58,
+   "line": 107,
+   "handlers": [
+    {
+     "handler": "admin_cto_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 10977,
+   "byte": 87816,
+   "code": 6069,
+   "name": "CreatorFeeBpsOutOfRange",
+   "func": 10532,
+   "file": "programs/pump-amm/src/instructions/admin/admin_cto_pool.rs",
+   "file_len": 58,
+   "line": 111,
+   "handlers": [
+    {
+     "handler": "admin_cto_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 10907,
+   "byte": 87256,
+   "code": 6071,
+   "name": "CreatorFeeNotAllowedForCashbackCoin",
+   "func": 10532,
+   "file": "programs/pump-amm/src/instructions/admin/admin_cto_pool.rs",
+   "file_len": 58,
+   "line": 103,
+   "handlers": [
+    {
+     "handler": "admin_cto_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 10775,
+   "byte": 86200,
+   "code": 6074,
+   "name": "HolderRewardCreatorImmutable",
+   "func": 10532,
+   "file": "programs/pump-amm/src/instructions/admin/admin_cto_pool.rs",
+   "file_len": 58,
+   "line": 77,
+   "handlers": [
+    {
+     "handler": "admin_cto_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18456,
+   "byte": 147648,
+   "code": 6074,
+   "name": "HolderRewardCreatorImmutable",
+   "func": 18376,
+   "file": "programs/pump-amm/src/instructions/coin_creator/migrate_pool_coin_creator.rs",
+   "file_len": 76,
+   "line": 52,
+   "handlers": [
+    {
+     "handler": "migrate_pool_coin_creator",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 10747,
+   "byte": 85976,
+   "code": 6075,
+   "name": "CtoNotAllowedForMayhemPool",
+   "func": 10532,
+   "file": "programs/pump-amm/src/instructions/admin/admin_cto_pool.rs",
+   "file_len": 58,
+   "line": 68,
+   "handlers": [
+    {
+     "handler": "admin_cto_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 10840,
+   "byte": 86720,
+   "code": 6076,
+   "name": "InvalidHolderRewardCoinCreator",
+   "func": 10532,
+   "file": "programs/pump-amm/src/instructions/admin/admin_cto_pool.rs",
+   "file_len": 58,
+   "line": 83,
+   "handlers": [
+    {
+     "handler": "admin_cto_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 10946,
+   "byte": 87568,
+   "code": 6077,
+   "name": "CreatorFeeNotConfigurableForQuote",
+   "func": 10532,
+   "file": "programs/pump-amm/src/instructions/admin/admin_cto_pool.rs",
+   "file_len": 58,
+   "line": 99,
+   "handlers": [
+    {
+     "handler": "admin_cto_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 33272,
+   "byte": 266176,
+   "code": 6078,
+   "name": "OnlyPumpPools",
+   "func": 33089,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 119,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 33412,
+   "byte": 267296,
+   "code": 6079,
+   "name": "CashbackCoinNotSupported",
+   "func": 33089,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 120,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 40492,
+   "byte": 323936,
+   "code": 6079,
+   "name": "CashbackCoinNotSupported",
+   "func": 40439,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 103,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 2
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 2
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 33644,
+   "byte": 269152,
+   "code": 6080,
+   "name": "MayhemPoolNotSupported",
+   "func": 33089,
+   "file": "programs/pump-amm/src/instructions/swap/trade_v2.rs",
+   "file_len": 51,
+   "line": 124,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 11007,
+   "byte": 88056,
+   "code": 6081,
+   "name": "CreatorFeesNotSwept",
+   "func": 10532,
+   "file": "programs/pump-amm/src/instructions/admin/admin_cto_pool.rs",
+   "file_len": 58,
+   "line": 121,
+   "handlers": [
+    {
+     "handler": "admin_cto_pool",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 18484,
+   "byte": 147872,
+   "code": 6081,
+   "name": "CreatorFeesNotSwept",
+   "func": 18376,
+   "file": "programs/pump-amm/src/instructions/coin_creator/migrate_pool_coin_creator.rs",
+   "file_len": 76,
+   "line": 59,
+   "handlers": [
+    {
+     "handler": "migrate_pool_coin_creator",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 10236,
+   "byte": 81888,
+   "code": 6082,
+   "name": "FeeTiersEmpty",
+   "func": 10150,
+   "file": "programs/pump-amm/src/curve/fees.rs",
+   "file_len": 35,
+   "line": 160,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 4
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 4
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 4
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 5
+    }
+   ]
+  },
+  {
+   "pc": 10362,
+   "byte": 82896,
+   "code": 6083,
+   "name": "FeeConfigTooShort",
+   "func": 10257,
+   "file": "programs/pump-amm/src/curve/fees.rs",
+   "file_len": 35,
+   "line": 184,
+   "handlers": [
+    {
+     "handler": "buy_exact_quote_in_v2",
+     "depth": 3
+    },
+    {
+     "handler": "buy_v2",
+     "depth": 3
+    },
+    {
+     "handler": "sell_v2",
+     "depth": 3
+    },
+    {
+     "handler": "multi_hop_swap",
+     "depth": 4
+    }
+   ]
+  },
+  {
+   "pc": 32060,
+   "byte": 256480,
+   "code": 6084,
+   "name": "MultiHopDiscontinuousPath",
+   "func": 31608,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 300,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 32112,
+   "byte": 256896,
+   "code": 6084,
+   "name": "MultiHopDiscontinuousPath",
+   "func": 31608,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 251,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 35508,
+   "byte": 284064,
+   "code": 6084,
+   "name": "MultiHopDiscontinuousPath",
+   "func": 35420,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 777,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 37606,
+   "byte": 300848,
+   "code": 6085,
+   "name": "MultiHopCurveRunMismatch",
+   "func": 35624,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 929,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 37697,
+   "byte": 301576,
+   "code": 6085,
+   "name": "MultiHopCurveRunMismatch",
+   "func": 35624,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 936,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 2
+    }
+   ]
+  },
+  {
+   "pc": 32699,
+   "byte": 261592,
+   "code": 6086,
+   "name": "MultiHopMixedDirection",
+   "func": 31608,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "file_len": 57,
+   "line": 295,
+   "handlers": [
+    {
+     "handler": "multi_hop_swap",
+     "depth": 1
+    }
+   ]
+  },
+  {
+   "pc": 57092,
+   "byte": 456736,
+   "code": 6087,
+   "name": "SelfTransferNotAllowed",
+   "func": 57025,
+   "file": "programs/pump-amm/src/utils/token.rs",
+   "file_len": 36,
+   "line": 21,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 3
+    },
+    {
+     "handler": "buy",
+     "depth": 3
+    },
+    {
+     "handler": "buy_exact_quote_in",
+     "depth": 3
+    },
+    {
+     "handler": "claim_token_incentives",
+     "depth": 3
+    },
+    {
+     "handler": "collect_coin_creator_fee",
+     "depth": 3
+    },
+    {
+     "handler": "create_pool",
+     "depth": 3
+    }
+   ]
+  },
+  {
+   "pc": 17619,
+   "byte": 140952,
+   "code": 6088,
+   "name": "QuoteMintNotWritable",
+   "func": 16347,
+   "file": "programs/pump-amm/src/instructions/boost.rs",
+   "file_len": 43,
+   "line": 403,
+   "handlers": [
+    {
+     "handler": "boost_buy_and_burn",
+     "depth": 1
+    }
+   ]
+  }
+ ]
+}
