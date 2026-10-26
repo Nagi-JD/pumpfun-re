@@ -1,3 +1,11 @@
+> **[VERIFIED 2026-10-26]** There is NO PumpError enum revision mismatch. The recovered
+> lib.rs enum matches the deployed binary exactly: index 3=TooLittleSolReceived(6003),
+> 4=MintDoesNotMatchBondingCurve(6004), 5=BondingCurveComplete(6005), 10=AccountTypeNotSupported(6010),
+> 22=SellZeroAmount(6022) — all confirmed by enumerating the recovered enum AND the deployed
+> PumpError::name() table + raise-site counts. Any 'different revision / 6010-vs-6022 shift'
+> statement below is SUPERSEDED and wrong. (The admin_cto guard-SET difference is a separate,
+> real divergence — not about the error enum.)
+
 # Error-code catalogs (deployed programs)
 
 Private analysis for the user. Tags: **[B]** = the code immediate and raise site are present in
@@ -373,6 +381,6 @@ errors, not program enums).
 - Pump: the observed code set is 98 values; the verified names are the cluster-spec ones
   (creator cluster table in `spec/08`, trade codes 6003/6005/6022, 6000). The remaining
   names are source-enum candidates and should be confirmed by triggering the gate (the
-  source enum is a different revision; e.g. 6004/6005 and 6010/6022 shift).
+  source enum MATCHES the binary here (no shift) — see verified note above.
 - `error_catalogs.md` lists raise *sites*, not every branch: a code may be emitted from
   several gates (e.g. 6024 Overflow in the pump has 98 sites).

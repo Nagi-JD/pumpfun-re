@@ -1,3 +1,11 @@
+> **[VERIFIED 2026-10-26]** There is NO PumpError enum revision mismatch. The recovered
+> lib.rs enum matches the deployed binary exactly: index 3=TooLittleSolReceived(6003),
+> 4=MintDoesNotMatchBondingCurve(6004), 5=BondingCurveComplete(6005), 10=AccountTypeNotSupported(6010),
+> 22=SellZeroAmount(6022) — all confirmed by enumerating the recovered enum AND the deployed
+> PumpError::name() table + raise-site counts. Any 'different revision / 6010-vs-6022 shift'
+> statement below is SUPERSEDED and wrong. (The admin_cto guard-SET difference is a separate,
+> real divergence — not about the error enum.)
+
 # pump error map - binary-grounded code -> name -> raise site
 
 Generated from the deployed `pump` program only. No reconstruction-enum numbers are used

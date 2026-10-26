@@ -1,3 +1,11 @@
+> **[VERIFIED 2026-10-26]** There is NO PumpError enum revision mismatch. The recovered
+> lib.rs enum matches the deployed binary exactly: index 3=TooLittleSolReceived(6003),
+> 4=MintDoesNotMatchBondingCurve(6004), 5=BondingCurveComplete(6005), 10=AccountTypeNotSupported(6010),
+> 22=SellZeroAmount(6022) — all confirmed by enumerating the recovered enum AND the deployed
+> PumpError::name() table + raise-site counts. Any 'different revision / 6010-vs-6022 shift'
+> statement below is SUPERSEDED and wrong. (The admin_cto guard-SET difference is a separate,
+> real divergence — not about the error enum.)
+
 # Trade-handler gate catalogs (ordered preconditions)
 
 Private analysis for the user. Tags: **[B]** = confirmed in the deployed bytecode;
@@ -22,7 +30,7 @@ Handler/stub addresses are `sbftool` pc units (instruction indices), matching
 **Pump error codes - do not trust the reconstructed enum for this capture.** Only
 `NotAuthorized=6000` (admin spec), `TooLittleSolReceived=6003`, and
 `MintDoesNotMatchBondingCurve=6005` are binary-verified; `AccountTypeNotSupported=6022` is
-verified from `spec/06-sell.md`. The reconstructed `PumpError` enum is a different revision
+verified from `spec/06-sell.md`. NOTE (superseded): the reconstructed `PumpError` enum actually MATCHES the deployed binary
 (e.g. it places `AccountTypeNotSupported` at 6010), so other pump gate codes below are marked
 "pump code TBD": the error **name** is the reliable handle and the harness should record the
 actual AnchorError code. AMM codes 6000..6088 are verified `.text` immediates.
