@@ -1,0 +1,15 @@
+# secrets — never commit
+.rpc
+*.key
+*.pem
+.env
+# large / rebuildable binaries (deployed .so are public on-chain; recovered .so are built from source)
+*.so
+# rust build output
+target/
+**/target/
+# python
+__pycache__/
+*.pyc
+# nested reference clone of lalalune/pumpfun-source
+ref/

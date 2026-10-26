@@ -1,0 +1,7 @@
+[package]
+name = "diffharness"
+version = "0.1.0"
+edition = "2021"
+[dependencies]
+litesvm = "0.6.1"
+solana-sdk = "2.1"
