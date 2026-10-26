@@ -24,7 +24,7 @@ reconstruction bugs. Tooling (sbftool, diffharness, ammharness, sbfcov fuzzer) s
 | pump       | 53/53  | yes           | core trade loop verified; 3 bugs fixed | (open)            |
 | pump_amm   | 30/31  | yes           | create_pool/deposit/withdraw byte-id; buy/sell gated by Fees | (open) |
 | pump_fees  | 31/31  | building      | pending (get_fees / get_fees_with_quote_mint) | (open)       |
-| mayhem     | 8/16   | no            | pending                               | (open)             |
+| mayhem     | 25/25  | no            | pending (DeepSeek: map done+verified; handler specs) | DeepSeek (done) |
 
 ## Handshake
 - Claude maintains this file (source of truth for what's verified).

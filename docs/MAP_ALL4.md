@@ -7,7 +7,7 @@ Built with sbftool.py from evidence/original/*/deployed.so. Decoder 0-diff vs ll
 | pump | 215,873 | 1169 | 53/53 |
 | pump_amm (PumpSwap) | 139,524 | 831 | 30/31 |
 | pump_fees | 96,083 | 637 | 31/31 |
-| mayhem | 83,947 | 502 | 8/16 (name-guess limited) |
+| mayhem | 83,947 | 502 | 25/25 (jeq+jne dispatch, collaborator-verified) |
 
 Handler tables saved: handlers.json (pump), amm_handlers.json (PumpSwap).
 Key handlers:
