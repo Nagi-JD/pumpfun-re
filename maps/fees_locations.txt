@@ -1,0 +1,172 @@
+# Location records=63  plain &str consts=20  functions referencing a Location=50
+library/core/src/fmt/mod.rs: 1 location(s)
+   2406:26
+library/core/src/fmt/num.rs: 1 location(s)
+   105:23
+library/core/src/unicode/unicode_data.rs: 1 location(s)
+   80:40
+programs/pump-fees/src/common/mod.rs: 3 location(s)
+   21:48 21:56 33:56
+programs/pump-fees/src/instructions/admin/update_fee_config.rs: 2 location(s)
+   7:1 16:1
+programs/pump-fees/src/instructions/admin/upsert_fee_tiers.rs: 2 location(s)
+   6:1 15:1
+programs/pump-fees/src/instructions/fee_sharing/admin_cto_sharing_config.rs: 1 location(s)
+   53:1
+programs/pump-fees/src/instructions/fee_sharing/claim_social_fee_pda.rs: 1 location(s)
+   100:1
+programs/pump-fees/src/instructions/fee_sharing/create_fee_sharing_config.rs: 2 location(s)
+   37:1 119:1
+programs/pump-fees/src/instructions/fee_sharing/create_social_fee_pda.rs: 1 location(s)
+   36:1
+programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs: 2 location(s)
+   114:1 228:55
+programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs: 2 location(s)
+   236:18 278:55
+programs/pump-fees/src/lib.rs: 2 location(s)
+   27:1 28:1
+programs/pump-fees/src/state.rs: 8 location(s)
+   50:1 67:32 113:1 135:1 154:1 398:19 398:33 451:19
+src/bpf_writer.rs: 1 location(s)
+   28:9
+src/common.rs: 2 location(s)
+   9:32 11:21
+src/de/mod.rs: 1 location(s)
+   161:54
+src/encode.rs: 4 location(s)
+   431:11 460:9 464:27 465:16
+src/instruction.rs: 1 location(s)
+   1647:43
+src/lib.rs: 22 location(s)
+   73:25 94:19 95:10 95:11 323:5 326:5 339:5 343:5 347:5 353:5 356:5 359:5 363:5 367:5 376:5 376:15 377:5 381:5 420:9 426:13 429:35 612:32
+src/ser/mod.rs: 1 location(s)
+   242:9
+src/state.rs: 2 location(s)
+   54:19 151:19
+
+fn @ 0x2022 (byte 0x10110, 247 insns):
+   lddw 0x2094 -> src/de/mod.rs:161:54
+fn @ 0x250d (byte 0x12868, 60 insns):
+   lddw 0x251e -> programs/pump-fees/src/common/mod.rs:21:56
+   lddw 0x2549 -> programs/pump-fees/src/common/mod.rs:21:48
+fn @ 0x3afe (byte 0x1d7f0, 848 insns):
+   lddw 0x3e61 -> programs/pump-fees/src/state.rs:67:32
+fn @ 0x500a (byte 0x28050, 1641 insns):
+   lddw 0x508f -> programs/pump-fees/src/common/mod.rs:33:56
+fn @ 0x6134 (byte 0x309a0, 597 insns):
+   lddw 0x6379 -> programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs:228:55
+fn @ 0x673a (byte 0x339d0, 974 insns):
+   lddw 0x67be -> programs/pump-fees/src/common/mod.rs:33:56
+fn @ 0x6b1e (byte 0x358f0, 786 insns):
+   lddw 0x6e02 -> programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs:278:55
+   lddw 0x6e44 -> programs/pump-fees/src/instructions/fee_sharing/update_fee_shares_v2.rs:236:18
+fn @ 0x7fd7 (byte 0x3feb8, 485 insns):
+   lddw 0x8073 -> programs/pump-fees/src/state.rs:398:19
+   lddw 0x80db -> programs/pump-fees/src/state.rs:398:33
+fn @ 0x81df (byte 0x40ef8, 485 insns):
+   lddw 0x827b -> programs/pump-fees/src/state.rs:451:19
+fn @ 0xa4f0 (byte 0x52780, 103 insns):
+   lddw 0xa55e -> programs/pump-fees/src/instructions/admin/update_fee_config.rs:7:1
+fn @ 0xa561 (byte 0x52b08, 103 insns):
+   lddw 0xa5cf -> programs/pump-fees/src/instructions/admin/update_fee_config.rs:16:1
+fn @ 0xa802 (byte 0x54010, 115 insns):
+   lddw 0xa87c -> programs/pump-fees/src/instructions/admin/upsert_fee_tiers.rs:6:1
+fn @ 0xa87f (byte 0x543f8, 115 insns):
+   lddw 0xa8f9 -> programs/pump-fees/src/instructions/admin/upsert_fee_tiers.rs:15:1
+fn @ 0xbd36 (byte 0x5e9b0, 237 insns):
+   lddw 0xbe28 -> programs/pump-fees/src/instructions/fee_sharing/admin_cto_sharing_config.rs:53:1
+fn @ 0xc64d (byte 0x63268, 48 insns):
+   lddw 0xc682 -> programs/pump-fees/src/instructions/fee_sharing/claim_social_fee_pda.rs:100:1
+fn @ 0xd8a5 (byte 0x6c528, 176 insns):
+   lddw 0xd8aa -> programs/pump-fees/src/instructions/fee_sharing/create_fee_sharing_config.rs:37:1
+fn @ 0xe41c (byte 0x720e0, 172 insns):
+   lddw 0xe4cf -> programs/pump-fees/src/instructions/fee_sharing/create_fee_sharing_config.rs:119:1
+fn @ 0xec2c (byte 0x76160, 132 insns):
+   lddw 0xecb7 -> programs/pump-fees/src/instructions/fee_sharing/create_social_fee_pda.rs:36:1
+fn @ 0xf498 (byte 0x7a4c0, 136 insns):
+   lddw 0xf527 -> programs/pump-fees/src/instructions/fee_sharing/update_fee_shares.rs:114:1
+fn @ 0x102e5 (byte 0x81728, 125 insns):
+   lddw 0x102ea -> programs/pump-fees/src/state.rs:50:1
+fn @ 0x103c1 (byte 0x81e08, 108 insns):
+   lddw 0x103c6 -> programs/pump-fees/src/state.rs:113:1
+fn @ 0x1048c (byte 0x82460, 220 insns):
+   lddw 0x10491 -> programs/pump-fees/src/state.rs:135:1
+fn @ 0x105c5 (byte 0x82e28, 149 insns):
+   lddw 0x105ca -> programs/pump-fees/src/state.rs:154:1
+fn @ 0x106b7 (byte 0x835b8, 177 insns):
+   lddw 0x106bc -> programs/pump-fees/src/lib.rs:27:1
+fn @ 0x107c7 (byte 0x83e38, 493 insns):
+   lddw 0x107cc -> programs/pump-fees/src/lib.rs:27:1
+fn @ 0x11951 (byte 0x8ca88, 361 insns):
+   lddw 0x11956 -> programs/pump-fees/src/lib.rs:28:1
+fn @ 0x151ad (byte 0xa8d68, 184 insns):
+   lddw 0x15265 -> src/instruction.rs:1647:43
+fn @ 0x1526b (byte 0xa9358, 87 insns):
+   lddw 0x1526e -> src/state.rs:54:19
+fn @ 0x152c4 (byte 0xa9620, 149 insns):
+   lddw 0x152c7 -> src/state.rs:151:19
+fn @ 0x15991 (byte 0xacc88, 35 insns):
+   lddw 0x159b2 -> src/bpf_writer.rs:28:9
+fn @ 0x159b5 (byte 0xacda8, 134 insns):
+   lddw 0x15a3a -> src/common.rs:9:32
+   lddw 0x15a3d -> src/common.rs:11:21
+fn @ 0x16254 (byte 0xb12a0, 47 insns):
+   lddw 0x16280 -> src/lib.rs:95:11
+   lddw 0x16283 -> src/lib.rs:95:10
+fn @ 0x16286 (byte 0xb1430, 50 insns):
+   lddw 0x162b5 -> src/lib.rs:95:11
+   lddw 0x162b8 -> src/lib.rs:95:10
+fn @ 0x1630f (byte 0xb1878, 386 insns):
+   lddw 0x1635e -> src/lib.rs:429:35
+   lddw 0x16470 -> src/lib.rs:420:9
+   lddw 0x16473 -> src/lib.rs:426:13
+   lddw 0x16476 -> src/lib.rs:339:5
+   lddw 0x16479 -> src/lib.rs:343:5
+   lddw 0x1647c -> src/lib.rs:347:5
+   lddw 0x1647f -> src/lib.rs:353:5
+   lddw 0x16482 -> src/lib.rs:356:5
+   lddw 0x16485 -> src/lib.rs:359:5
+   lddw 0x16488 -> src/lib.rs:363:5
+   lddw 0x1648b -> src/lib.rs:367:5
+   lddw 0x1648e -> src/lib.rs:376:15
+   lddw 0x16491 -> src/lib.rs:376:5
+   lddw 0x16494 -> src/lib.rs:377:5
+   lddw 0x16497 -> src/lib.rs:381:5
+   lddw 0x1649a -> src/lib.rs:323:5
+   lddw 0x1649d -> src/lib.rs:326:5
+fn @ 0x16520 (byte 0xb2900, 13 insns):
+   lddw 0x1652c -> src/lib.rs:73:25
+fn @ 0x1652f (byte 0xb2978, 8 insns):
+   lddw 0x16536 -> src/lib.rs:94:19
+fn @ 0x167f2 (byte 0xb3f90, 196 insns):
+   lddw 0x167f8 -> src/ser/mod.rs:242:9
+fn @ 0x168b7 (byte 0xb45b8, 1053 insns):
+   lddw 0x16988 -> src/ser/mod.rs:242:9
+fn @ 0x16f53 (byte 0xb7a98, 37 insns):
+   lddw 0x16f6c -> src/lib.rs:612:32
+fn @ 0x16fb6 (byte 0xb7db0, 177 insns):
+   lddw 0x1701d -> src/encode.rs:464:27
+   lddw 0x1705a -> src/encode.rs:465:16
+   lddw 0x1705f -> src/encode.rs:460:9
+fn @ 0x17185 (byte 0xb8c28, 68 insns):
+   lddw 0x17195 -> src/encode.rs:431:11
+fn @ 0x17d5f (byte 0xbeaf8, 231 insns):
+   lddw 0x17e46 -> library/core/src/fmt/mod.rs:2406:26
+fn @ 0x1828c (byte 0xc1460, 42 insns):
+   lddw 0x182a5 -> library/core/src/fmt/num.rs:105:23
+fn @ 0x182b8 (byte 0xc15c0, 42 insns):
+   lddw 0x182d1 -> library/core/src/fmt/num.rs:105:23
+fn @ 0x182e4 (byte 0xc1720, 43 insns):
+   lddw 0x182fe -> library/core/src/fmt/num.rs:105:23
+fn @ 0x18311 (byte 0xc1888, 43 insns):
+   lddw 0x1832b -> library/core/src/fmt/num.rs:105:23
+fn @ 0x1833e (byte 0xc19f0, 41 insns):
+   lddw 0x18356 -> library/core/src/fmt/num.rs:105:23
+fn @ 0x18369 (byte 0xc1b48, 41 insns):
+   lddw 0x18381 -> library/core/src/fmt/num.rs:105:23
+fn @ 0x18394 (byte 0xc1ca0, 77 insns):
+   lddw 0x183d0 -> library/core/src/fmt/num.rs:105:23
+fn @ 0x18461 (byte 0xc2308, 90 insns):
+   lddw 0x184be -> library/core/src/unicode/unicode_data.rs:80:40
+json -> maps/fees_locations.json
+md -> maps/fees_function_table.md
