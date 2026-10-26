@@ -1,0 +1,8249 @@
+{
+ "names": {
+  "0": "NotAuthorized",
+  "1": "AlreadyInitialized",
+  "2": "TooMuchSolRequired",
+  "3": "TooLittleSolReceived",
+  "4": "MintDoesNotMatchBondingCurve",
+  "5": "BondingCurveComplete",
+  "6": "BondingCurveNotComplete",
+  "7": "NotInitialized",
+  "8": "WithdrawTooFrequent",
+  "9": "NewSizeShouldBeGreaterThanCurrentSize",
+  "10": "AccountTypeNotSupported",
+  "11": "InitialRealTokenReservesShouldBeLessThanTokenTotalSupply",
+  "12": "InitialVirtualTokenReservesShouldBeGreaterThanInitialRealTokenReserves",
+  "13": "FeeBasisPointsGreaterThanMaximum",
+  "14": "AllZerosWithdrawAuthority",
+  "15": "PoolMigrationFeeShouldBeLessThanFinalRealSolReserves",
+  "16": "PoolMigrationFeeShouldBeGreaterThanCreatorFeePlusMaxMigrateFees",
+  "17": "DisabledWithdraw",
+  "18": "DisabledMigrate",
+  "19": "InvalidCreator",
+  "20": "BuyZeroAmount",
+  "21": "NotEnoughTokensToBuy",
+  "22": "SellZeroAmount",
+  "23": "NotEnoughTokensToSell",
+  "24": "Overflow",
+  "25": "Truncation",
+  "26": "DivisionByZero",
+  "27": "NotEnoughRemainingAccounts",
+  "28": "AllFeeRecipientsShouldBeNonZero",
+  "29": "UnsortedNotUniqueFeeRecipients",
+  "30": "CreatorShouldNotBeZero",
+  "31": "StartTimeInThePast",
+  "32": "EndTimeInThePast",
+  "33": "EndTimeBeforeStartTime",
+  "34": "TimeRangeTooLarge",
+  "35": "EndTimeBeforeCurrentDay",
+  "36": "SupplyUpdateForFinishedRange",
+  "37": "DayIndexAfterEndIndex",
+  "38": "DayInActiveRange",
+  "39": "InvalidIncentiveMint",
+  "40": "BuyNotEnoughSolToCoverRent",
+  "41": "BuyNotEnoughSolToCoverFees",
+  "42": "BuySlippageBelowMinTokensOut",
+  "43": "NameTooLong",
+  "44": "SymbolTooLong",
+  "45": "UriTooLong",
+  "46": "CreateV2Disabled",
+  "47": "CpitializeMayhemFailed",
+  "48": "MayhemModeDisabled",
+  "49": "CreatorMigratedToSharingConfig",
+  "50": "UnableToDistributeCreatorVaultMigratedToSharingConfig",
+  "51": "SharingConfigNotActive",
+  "52": "UnableToDistributeCreatorFeesToExecutableRecipient",
+  "53": "BondingCurveAndSharingConfigCreatorMismatch",
+  "54": "ShareholdersAndRemainingAccountsMismatch",
+  "55": "InvalidShareBps",
+  "56": "CashbackNotEnabled",
+  "57": "BuybackFeeRecipientNotAuthorized",
+  "58": "AllBuybackFeeRecipientsShouldBeNonZero",
+  "59": "NotUniqueBuybackFeeRecipients",
+  "60": "BuybackBasisPointsOutOfRange",
+  "61": "WrongBuybackFeeRecipientsCount",
+  "62": "BuybackFeeRecipientMissing",
+  "63": "UnsupportedQuoteMint",
+  "64": "InvalidQuoteTokenProgram",
+  "65": "InvalidAssociatedQuoteBondingCurve",
+  "66": "QuoteMintWhitelistFull",
+  "67": "QuoteMintAlreadyWhitelisted",
+  "68": "QuoteMintNotWhitelisted",
+  "69": "QuoteMintNotEligibleForWhitelist",
+  "70": "UnableToDistributeCreatorFeesToUninitializedAccount",
+  "71": "MayhemModeQuoteMintNotAllowed",
+  "72": "MissingCashbackAccounts",
+  "73": "InvalidCashbackAccumulator",
+  "74": "InvalidBondingCurveV2",
+  "75": "InvalidQuoteControl",
+  "76": "InvalidCashbackRecipient",
+  "77": "CreatorFeeNotConfigurable",
+  "78": "CreatorFeeBpsOutOfRange",
+  "79": "CreatorFeeNotEditable",
+  "80": "CreatorFeeNotAllowedForCashbackCoin",
+  "81": "BondingCurveAlreadyMigrated",
+  "82": "CashbackDeprecated",
+  "83": "HolderRewardCreatorImmutable",
+  "84": "HolderRewardDisabled",
+  "85": "HolderRewardRecipientsMismatch",
+  "86": "HolderRewardsRentFloor",
+  "87": "HolderRewardTokenAccountMissing",
+  "88": "CtoNotAllowedForMayhemCoin",
+  "89": "CtoNewCreatorRequired",
+  "90": "CtoNewCreatorNotAllowed",
+  "91": "CreatorFeeNotConfigurableForQuote",
+  "92": "CtoCreatorAccountNotWritable",
+  "93": "CtoSharedVaultFrozen",
+  "94": "CashbackCoinNotSupported",
+  "95": "CreatorFeesNotSwept",
+  "96": "FeeTiersEmpty",
+  "97": "FeeConfigTooShort",
+  "98": "MultiHopDiscontinuousPath",
+  "99": "InvalidQuoteBondingCurve",
+  "100": "QuoteBondingCurveNotEligible",
+  "101": "QuotePoolAccountsRequired",
+  "102": "QuotePoolNotFound",
+  "103": "InvalidQuotePool",
+  "104": "QuoteReservesOutOfRange",
+  "105": "CurveDepthExceeded",
+  "106": "MultiHopHopFeesMismatch",
+  "107": "QuoteCurveAwaitingMigration",
+  "108": "MultiHopMayhemCurveNotSupported",
+  "109": "QuoteChainAccountsRequired",
+  "110": "QuoteMintNotWritable"
+ },
+ "paths": [
+  [
+   1796059,
+   "programs/pump/src/admin_set_idl_authority.rs"
+  ],
+  [
+   1796130,
+   "programs/pump/src/buy.rs"
+  ],
+  [
+   1796167,
+   "programs/pump/src/buy_v2.rs"
+  ],
+  [
+   1796215,
+   "programs/pump/src/create_v2.rs"
+  ],
+  [
+   1796300,
+   "programs/pump/src/creator/admin_cto.rs"
+  ],
+  [
+   1796567,
+   "programs/pump/src/creator/collect_creator_fee.rs"
+  ],
+  [
+   1796760,
+   "programs/pump/src/creator/distribute_creator_fee_v2.rs"
+  ],
+  [
+   1797111,
+   "programs/pump/src/creator/distribute_creator_fees.rs"
+  ],
+  [
+   1797163,
+   "programs/pump/src/creator/distribute_fee_to_holders.rs"
+  ],
+  [
+   1797217,
+   "programs/pump/src/creator/migrate_bonding_curve_creator.rs"
+  ],
+  [
+   1797275,
+   "programs/pump/src/creator/set_creator.rs"
+  ],
+  [
+   1797377,
+   "programs/pump/src/creator/set_metaplex_creator.rs"
+  ],
+  [
+   1797492,
+   "programs/pump/src/extend_account.rs"
+  ],
+  [
+   1797527,
+   "programs/pump/src/fee_recipient.rs"
+  ],
+  [
+   1797577,
+   "programs/pump/src/migrate.rs"
+  ],
+  [
+   1797760,
+   "programs/pump/src/migrate_v2.rs"
+  ],
+  [
+   1797791,
+   "programs/pump/src/multi_hop_curve_swap.rs"
+  ],
+  [
+   1797846,
+   "programs/pump/src/pump_quote.rs"
+  ],
+  [
+   1797877,
+   "programs/pump/src/quote_control/state.rs"
+  ],
+  [
+   1797917,
+   "programs/pump/src/quote_control/update_quote_control_mints.rs"
+  ],
+  [
+   1797978,
+   "programs/pump/src/sell.rs"
+  ],
+  [
+   1798026,
+   "programs/pump/src/sell_v2.rs"
+  ],
+  [
+   1798054,
+   "programs/pump/src/set_reserved_fee_recipients.rs"
+  ],
+  [
+   1798126,
+   "programs/pump/src/sweep_fees.rs"
+  ],
+  [
+   1798244,
+   "programs/pump/src/token_incentives/claim_token_incentives.rs"
+  ],
+  [
+   1798378,
+   "programs/pump/src/token_incentives/volume_accumulator.rs"
+  ],
+  [
+   1798715,
+   "programs/pump/src/trade_v3.rs"
+  ],
+  [
+   1798744,
+   "programs/pump/src/util/constant_product.rs"
+  ],
+  [
+   1798786,
+   "programs/pump/src/util/fee.rs"
+  ],
+  [
+   1798815,
+   "programs/pump/src/util/transfer_fee.rs"
+  ],
+  [
+   1798853,
+   "programs/pump/src/lib.rs"
+  ],
+  [
+   1800360,
+   "programs/pump/src/quote_control/initialize_quote_control.rs"
+  ],
+  [
+   1800509,
+   "programs/pump/src/token_incentives/init_user_volume_accumulator.rs"
+  ]
+ ],
+ "sites": [
+  {
+   "pc": 10640,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 10530,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 81,
+   "ctx": [],
+   "callers": [
+    47127,
+    59090,
+    59134,
+    65216,
+    161863,
+    161917,
+    161949,
+    161996,
+    162043,
+    163927,
+    163983,
+    164016,
+    164064,
+    164112,
+    166334,
+    166391,
+    166424,
+    166472,
+    166520
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0xe654",
+    "0xe654",
+    "0xfe38",
+    "0x27737",
+    "0x27737",
+    "0x27737",
+    "0x27737",
+    "0x27737",
+    "0x27f22",
+    "0x27f22",
+    "0x27f22",
+    "0x27f22",
+    "0x27f22",
+    "0x288a1",
+    "0x288a1",
+    "0x288a1",
+    "0x288a1",
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 10864,
+   "code": 6004,
+   "disc": 4,
+   "name": "MintDoesNotMatchBondingCurve",
+   "func": 10530,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 88,
+   "ctx": [],
+   "callers": [
+    47127,
+    59090,
+    59134,
+    65216,
+    161863,
+    161917,
+    161949,
+    161996,
+    162043,
+    163927,
+    163983,
+    164016,
+    164064,
+    164112,
+    166334,
+    166391,
+    166424,
+    166472,
+    166520
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0xe654",
+    "0xe654",
+    "0xfe38",
+    "0x27737",
+    "0x27737",
+    "0x27737",
+    "0x27737",
+    "0x27737",
+    "0x27f22",
+    "0x27f22",
+    "0x27f22",
+    "0x27f22",
+    "0x27f22",
+    "0x288a1",
+    "0x288a1",
+    "0x288a1",
+    "0x288a1",
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 11409,
+   "code": 6004,
+   "disc": 4,
+   "name": "MintDoesNotMatchBondingCurve",
+   "func": 11290,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 116,
+   "ctx": [],
+   "callers": [
+    65293,
+    161891,
+    163956,
+    166364
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xfe38",
+    "0x27737",
+    "0x27f22",
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 11539,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 11290,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 109,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    65293,
+    161891,
+    163956,
+    166364
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xfe38",
+    "0x27737",
+    "0x27f22",
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 11590,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 11290,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 121,
+   "ctx": [
+    "programs/pump/src/buy_v2.rsbuybuy_exact_quote_inprograms/pump/src/create_v2.rsqu",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    65293,
+    161891,
+    163956,
+    166364
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xfe38",
+    "0x27737",
+    "0x27f22",
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 11689,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 11639,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 465,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    162263
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27737"
+   ]
+  },
+  {
+   "pc": 11754,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 11704,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 469,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    162283
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27737"
+   ]
+  },
+  {
+   "pc": 11819,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 11769,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 881,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    164419
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 11884,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 11834,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 927,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    164629
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 11967,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 11899,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 949,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    164705,
+    164759,
+    165205
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22",
+    "0x27f22",
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 12045,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 11995,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 959,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    164659
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 12110,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 12060,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 983,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    165192
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 12175,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 12125,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 995,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    164832
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 12301,
+   "code": 6075,
+   "disc": 75,
+   "name": "InvalidQuoteControl",
+   "func": 12190,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 348,
+   "ctx": [],
+   "callers": [
+    17329
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x3cf8"
+   ]
+  },
+  {
+   "pc": 12352,
+   "code": 6063,
+   "disc": 63,
+   "name": "UnsupportedQuoteMint",
+   "func": 12190,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 345,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    17329
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x3cf8"
+   ]
+  },
+  {
+   "pc": 12416,
+   "code": 6075,
+   "disc": 75,
+   "name": "InvalidQuoteControl",
+   "func": 12190,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 353,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    17329
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x3cf8"
+   ]
+  },
+  {
+   "pc": 12599,
+   "code": 6100,
+   "disc": 100,
+   "name": "QuoteBondingCurveNotEligible",
+   "func": 12495,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 395,
+   "ctx": [],
+   "callers": [
+    17362
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x3cf8"
+   ]
+  },
+  {
+   "pc": 13029,
+   "code": 6107,
+   "disc": 107,
+   "name": "QuoteCurveAwaitingMigration",
+   "func": 12495,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 466,
+   "ctx": [],
+   "callers": [
+    17362
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x3cf8"
+   ]
+  },
+  {
+   "pc": 13057,
+   "code": 6101,
+   "disc": 101,
+   "name": "QuotePoolAccountsRequired",
+   "func": 12495,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 493,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    17362
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x3cf8"
+   ]
+  },
+  {
+   "pc": 13153,
+   "code": 6063,
+   "disc": 63,
+   "name": "UnsupportedQuoteMint",
+   "func": 12495,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 390,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    17362
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x3cf8"
+   ]
+  },
+  {
+   "pc": 13186,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 12495,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 473,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    17362
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x3cf8"
+   ]
+  },
+  {
+   "pc": 13258,
+   "code": 6109,
+   "disc": 109,
+   "name": "QuoteChainAccountsRequired",
+   "func": 13208,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 412,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    12758
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x30cf"
+   ]
+  },
+  {
+   "pc": 13364,
+   "code": 6099,
+   "disc": 99,
+   "name": "InvalidQuoteBondingCurve",
+   "func": 13273,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 442,
+   "ctx": [],
+   "callers": [
+    12518,
+    12768
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x30cf",
+    "0x30cf"
+   ]
+  },
+  {
+   "pc": 13503,
+   "code": 6099,
+   "disc": 99,
+   "name": "InvalidQuoteBondingCurve",
+   "func": 13273,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 437,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    12518,
+    12768
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x30cf",
+    "0x30cf"
+   ]
+  },
+  {
+   "pc": 13574,
+   "code": 6099,
+   "disc": 99,
+   "name": "InvalidQuoteBondingCurve",
+   "func": 13273,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 449,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    12518,
+    12768
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x30cf",
+    "0x30cf"
+   ]
+  },
+  {
+   "pc": 13683,
+   "code": 6063,
+   "disc": 63,
+   "name": "UnsupportedQuoteMint",
+   "func": 13603,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 528,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    17409
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x3cf8"
+   ]
+  },
+  {
+   "pc": 13944,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 13801,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 586,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    13801
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x35e9"
+   ]
+  },
+  {
+   "pc": 14016,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 13801,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 588,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    13801
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x35e9"
+   ]
+  },
+  {
+   "pc": 15702,
+   "code": 6082,
+   "disc": 82,
+   "name": "CashbackDeprecated",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 716,
+   "ctx": [
+    "holder-rewardsprograms/pump/src/creator/admin_cto.rsNo canonical pump pool for t"
+   ],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 15792,
+   "code": 6077,
+   "disc": 77,
+   "name": "CreatorFeeNotConfigurable",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 774,
+   "ctx": [],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 15841,
+   "code": 6030,
+   "disc": 30,
+   "name": "CreatorShouldNotBeZero",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 732,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 15940,
+   "code": 6046,
+   "disc": 46,
+   "name": "CreateV2Disabled",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 738,
+   "ctx": [],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 16001,
+   "code": 6084,
+   "disc": 84,
+   "name": "HolderRewardDisabled",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 719,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 16202,
+   "code": 6065,
+   "disc": 65,
+   "name": "InvalidAssociatedQuoteBondingCurve",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 258,
+   "ctx": [],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 16249,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 198,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 16383,
+   "code": 6078,
+   "disc": 78,
+   "name": "CreatorFeeBpsOutOfRange",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 778,
+   "ctx": [],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 16460,
+   "code": 6064,
+   "disc": 64,
+   "name": "InvalidQuoteTokenProgram",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 205,
+   "ctx": [],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 16668,
+   "code": 6043,
+   "disc": 43,
+   "name": "NameTooLong",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 541,
+   "ctx": [],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 16715,
+   "code": 6071,
+   "disc": 71,
+   "name": "MayhemModeQuoteMintNotAllowed",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 758,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 16774,
+   "code": 6064,
+   "disc": 64,
+   "name": "InvalidQuoteTokenProgram",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 210,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 16869,
+   "code": 6048,
+   "disc": 48,
+   "name": "MayhemModeDisabled",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 709,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 16908,
+   "code": 6044,
+   "disc": 44,
+   "name": "SymbolTooLong",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 547,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 16943,
+   "code": 6045,
+   "disc": 45,
+   "name": "UriTooLong",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 553,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re",
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 17226,
+   "code": 6063,
+   "disc": 63,
+   "name": "UnsupportedQuoteMint",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 220,
+   "ctx": [
+    "__event_authorityanchor:idlprograms/pump/src/buy.rsbonding-curveprograms/pump/sr"
+   ],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 17279,
+   "code": 6063,
+   "disc": 63,
+   "name": "UnsupportedQuoteMint",
+   "func": 15608,
+   "name_at": null,
+   "file": "programs/pump/src/create_v2.rs",
+   "file_ptr": 1796215,
+   "line": 243,
+   "ctx": [
+    "programs/pump/src/create_v2.rsquote-controlpool-authoritymint-authorityholder-re"
+   ],
+   "callers": [
+    151127
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24d1d"
+   ]
+  },
+  {
+   "pc": 18004,
+   "code": 6083,
+   "disc": 83,
+   "name": "HolderRewardCreatorImmutable",
+   "func": 17730,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 289,
+   "ctx": [],
+   "callers": [
+    154616
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25b48"
+   ]
+  },
+  {
+   "pc": 18060,
+   "code": 6090,
+   "disc": 90,
+   "name": "CtoNewCreatorNotAllowed",
+   "func": 17730,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 298,
+   "ctx": [
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv"
+   ],
+   "callers": [
+    154616
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25b48"
+   ]
+  },
+  {
+   "pc": 18205,
+   "code": 6089,
+   "disc": 89,
+   "name": "CtoNewCreatorRequired",
+   "func": 17730,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 306,
+   "ctx": [],
+   "callers": [
+    154616
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25b48"
+   ]
+  },
+  {
+   "pc": 18258,
+   "code": 6084,
+   "disc": 84,
+   "name": "HolderRewardDisabled",
+   "func": 17730,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 296,
+   "ctx": [
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv"
+   ],
+   "callers": [
+    154616
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25b48"
+   ]
+  },
+  {
+   "pc": 18304,
+   "code": 6091,
+   "disc": 91,
+   "name": "CreatorFeeNotConfigurableForQuote",
+   "func": 17730,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 326,
+   "ctx": [
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv"
+   ],
+   "callers": [
+    154616
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25b48"
+   ]
+  },
+  {
+   "pc": 18334,
+   "code": 6019,
+   "disc": 19,
+   "name": "InvalidCreator",
+   "func": 17730,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 312,
+   "ctx": [
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv",
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv"
+   ],
+   "callers": [
+    154616
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25b48"
+   ]
+  },
+  {
+   "pc": 18360,
+   "code": 6030,
+   "disc": 30,
+   "name": "CreatorShouldNotBeZero",
+   "func": 17730,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 307,
+   "ctx": [
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv",
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv"
+   ],
+   "callers": [
+    154616
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25b48"
+   ]
+  },
+  {
+   "pc": 18432,
+   "code": 6080,
+   "disc": 80,
+   "name": "CreatorFeeNotAllowedForCashbackCoin",
+   "func": 17730,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 330,
+   "ctx": [
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv"
+   ],
+   "callers": [
+    154616
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25b48"
+   ]
+  },
+  {
+   "pc": 18463,
+   "code": 6078,
+   "disc": 78,
+   "name": "CreatorFeeBpsOutOfRange",
+   "func": 17730,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 338,
+   "ctx": [
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv"
+   ],
+   "callers": [
+    154616
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25b48"
+   ]
+  },
+  {
+   "pc": 18489,
+   "code": 6077,
+   "disc": 77,
+   "name": "CreatorFeeNotConfigurable",
+   "func": 17730,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 334,
+   "ctx": [
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv",
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv"
+   ],
+   "callers": [
+    154616
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25b48"
+   ]
+  },
+  {
+   "pc": 18628,
+   "code": 6095,
+   "disc": 95,
+   "name": "CreatorFeesNotSwept",
+   "func": 17730,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 410,
+   "ctx": [],
+   "callers": [
+    154616
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25b48"
+   ]
+  },
+  {
+   "pc": 18816,
+   "code": 6093,
+   "disc": 93,
+   "name": "CtoSharedVaultFrozen",
+   "func": 18662,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 719,
+   "ctx": [
+    "creator-vaultprograms/pump/src/creator/collect_creator_fee.rsNo creator fee to c"
+   ],
+   "callers": [
+    18662
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x48e6"
+   ]
+  },
+  {
+   "pc": 18939,
+   "code": 6093,
+   "disc": 93,
+   "name": "CtoSharedVaultFrozen",
+   "func": 18662,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 660,
+   "ctx": [
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv"
+   ],
+   "callers": [
+    18662
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x48e6"
+   ]
+  },
+  {
+   "pc": 20547,
+   "code": 6088,
+   "disc": 88,
+   "name": "CtoNotAllowedForMayhemCoin",
+   "func": 20169,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 284,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    20169
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x4ec9"
+   ]
+  },
+  {
+   "pc": 20578,
+   "code": 6092,
+   "disc": 92,
+   "name": "CtoCreatorAccountNotWritable",
+   "func": 20169,
+   "name_at": null,
+   "file": "programs/pump/src/creator/admin_cto.rs",
+   "file_ptr": 1796300,
+   "line": 556,
+   "ctx": [
+    "programs/pump/src/creator/admin_cto.rsNo canonical pump pool for this mint; curv",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    20169
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x4ec9"
+   ]
+  },
+  {
+   "pc": 21357,
+   "code": 6050,
+   "disc": 50,
+   "name": "UnableToDistributeCreatorVaultMigratedToSharingConfig",
+   "func": 21339,
+   "name_at": null,
+   "file": "programs/pump/src/creator/collect_creator_fee.rs",
+   "file_ptr": 1796567,
+   "line": 103,
+   "ctx": [],
+   "callers": [
+    21339
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x535b"
+   ]
+  },
+  {
+   "pc": 22232,
+   "code": 6050,
+   "disc": 50,
+   "name": "UnableToDistributeCreatorVaultMigratedToSharingConfig",
+   "func": 22214,
+   "name_at": null,
+   "file": "programs/pump/src/creator/collect_creator_fee.rs",
+   "file_ptr": 1796567,
+   "line": 198,
+   "ctx": [],
+   "callers": [
+    22214
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x56c6"
+   ]
+  },
+  {
+   "pc": 22730,
+   "code": 6054,
+   "disc": 54,
+   "name": "ShareholdersAndRemainingAccountsMismatch",
+   "func": 22647,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 101,
+   "ctx": [],
+   "callers": [
+    22647
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5877"
+   ]
+  },
+  {
+   "pc": 22810,
+   "code": 6054,
+   "disc": 54,
+   "name": "ShareholdersAndRemainingAccountsMismatch",
+   "func": 22647,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 112,
+   "ctx": [],
+   "callers": [
+    22647
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5877"
+   ]
+  },
+  {
+   "pc": 22922,
+   "code": 6052,
+   "disc": 52,
+   "name": "UnableToDistributeCreatorFeesToExecutableRecipient",
+   "func": 22881,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 125,
+   "ctx": [],
+   "callers": [
+    22881
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5961"
+   ]
+  },
+  {
+   "pc": 23068,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 22881,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 152,
+   "ctx": [],
+   "callers": [
+    22881
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5961"
+   ]
+  },
+  {
+   "pc": 23121,
+   "code": 6055,
+   "disc": 55,
+   "name": "InvalidShareBps",
+   "func": 22881,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 163,
+   "ctx": [
+    "programs/pump/src/creator/distribute_creator_fee_v2.rsUnable to distribute to . "
+   ],
+   "callers": [
+    22881
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5961"
+   ]
+  },
+  {
+   "pc": 23197,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 22881,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 168,
+   "ctx": [
+    "programs/pump/src/creator/distribute_creator_fee_v2.rsUnable to distribute to . "
+   ],
+   "callers": [
+    22881
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5961"
+   ]
+  },
+  {
+   "pc": 23284,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 22881,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 149,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    22881
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5961"
+   ]
+  },
+  {
+   "pc": 23312,
+   "code": 6070,
+   "disc": 70,
+   "name": "UnableToDistributeCreatorFeesToUninitializedAccount",
+   "func": 22881,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 173,
+   "ctx": [
+    "programs/pump/src/creator/distribute_creator_fee_v2.rsUnable to distribute to . ",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    22881
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5961"
+   ]
+  },
+  {
+   "pc": 23378,
+   "code": 6095,
+   "disc": 95,
+   "name": "CreatorFeesNotSwept",
+   "func": 23332,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 213,
+   "ctx": [],
+   "callers": [
+    156499
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x262e5"
+   ]
+  },
+  {
+   "pc": 23440,
+   "code": 6051,
+   "disc": 51,
+   "name": "SharingConfigNotActive",
+   "func": 23332,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 205,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor",
+    "programs/pump/src/creator/distribute_creator_fee_v2.rsUnable to distribute to . "
+   ],
+   "callers": [
+    156499
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x262e5"
+   ]
+  },
+  {
+   "pc": 24974,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 24417,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 346,
+   "ctx": [],
+   "callers": [
+    24417
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5f61"
+   ]
+  },
+  {
+   "pc": 25066,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 24417,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 340,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    24417
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5f61"
+   ]
+  },
+  {
+   "pc": 25094,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 24417,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+   "file_ptr": 1796760,
+   "line": 378,
+   "ctx": [
+    "programs/pump/src/creator/distribute_creator_fee_v2.rsUnable to distribute to . ",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    24417
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5f61"
+   ]
+  },
+  {
+   "pc": 25335,
+   "code": 6054,
+   "disc": 54,
+   "name": "ShareholdersAndRemainingAccountsMismatch",
+   "func": 25151,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_ptr": 1797111,
+   "line": 103,
+   "ctx": [],
+   "callers": [
+    23615,
+    25799,
+    26031
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x5b24",
+    "0x64a6",
+    "0x6508"
+   ]
+  },
+  {
+   "pc": 25447,
+   "code": 6052,
+   "disc": 52,
+   "name": "UnableToDistributeCreatorFeesToExecutableRecipient",
+   "func": 25406,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_ptr": 1797111,
+   "line": 116,
+   "ctx": [],
+   "callers": [
+    25406
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x633e"
+   ]
+  },
+  {
+   "pc": 25610,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 25406,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_ptr": 1797111,
+   "line": 158,
+   "ctx": [],
+   "callers": [
+    25406
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x633e"
+   ]
+  },
+  {
+   "pc": 25638,
+   "code": 6055,
+   "disc": 55,
+   "name": "InvalidShareBps",
+   "func": 25406,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_ptr": 1797111,
+   "line": 148,
+   "ctx": [
+    "programs/pump/src/creator/distribute_creator_fees.rsprograms/pump/src/creator/di"
+   ],
+   "callers": [
+    25406
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x633e"
+   ]
+  },
+  {
+   "pc": 25725,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 25406,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_ptr": 1797111,
+   "line": 143,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    25406
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x633e"
+   ]
+  },
+  {
+   "pc": 25753,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 25406,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_ptr": 1797111,
+   "line": 165,
+   "ctx": [
+    "programs/pump/src/creator/distribute_creator_fees.rsprograms/pump/src/creator/di",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    25406
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x633e"
+   ]
+  },
+  {
+   "pc": 25910,
+   "code": 6095,
+   "disc": 95,
+   "name": "CreatorFeesNotSwept",
+   "func": 25864,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_ptr": 1797111,
+   "line": 249,
+   "ctx": [],
+   "callers": [
+    156247
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2622c"
+   ]
+  },
+  {
+   "pc": 25972,
+   "code": 6051,
+   "disc": 51,
+   "name": "SharingConfigNotActive",
+   "func": 25864,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_ptr": 1797111,
+   "line": 241,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor",
+    "programs/pump/src/creator/distribute_creator_fees.rsprograms/pump/src/creator/di"
+   ],
+   "callers": [
+    156247
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2622c"
+   ]
+  },
+  {
+   "pc": 26733,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 26526,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_ptr": 1797111,
+   "line": 325,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    26526
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x679e"
+   ]
+  },
+  {
+   "pc": 26761,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 26526,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+   "file_ptr": 1797111,
+   "line": 343,
+   "ctx": [
+    "programs/pump/src/creator/distribute_creator_fees.rsprograms/pump/src/creator/di",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    26526
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x679e"
+   ]
+  },
+  {
+   "pc": 26854,
+   "code": 6085,
+   "disc": 85,
+   "name": "HolderRewardRecipientsMismatch",
+   "func": 26795,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "file_ptr": 1797163,
+   "line": 82,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    154021
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25902"
+   ]
+  },
+  {
+   "pc": 27914,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 27710,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "file_ptr": 1797163,
+   "line": 157,
+   "ctx": [],
+   "callers": [
+    27710
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x6c3e"
+   ]
+  },
+  {
+   "pc": 27967,
+   "code": 6087,
+   "disc": 87,
+   "name": "HolderRewardTokenAccountMissing",
+   "func": 27710,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "file_ptr": 1797163,
+   "line": 120,
+   "ctx": [
+    "programs/pump/src/creator/distribute_fee_to_holders.rsprograms/pump/src/creator/"
+   ],
+   "callers": [
+    27710
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x6c3e"
+   ]
+  },
+  {
+   "pc": 28020,
+   "code": 6085,
+   "disc": 85,
+   "name": "HolderRewardRecipientsMismatch",
+   "func": 27710,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "file_ptr": 1797163,
+   "line": 122,
+   "ctx": [
+    "programs/pump/src/creator/distribute_fee_to_holders.rsprograms/pump/src/creator/"
+   ],
+   "callers": [
+    27710
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x6c3e"
+   ]
+  },
+  {
+   "pc": 28247,
+   "code": 6086,
+   "disc": 86,
+   "name": "HolderRewardsRentFloor",
+   "func": 27710,
+   "name_at": null,
+   "file": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+   "file_ptr": 1797163,
+   "line": 164,
+   "ctx": [],
+   "callers": [
+    27710
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x6c3e"
+   ]
+  },
+  {
+   "pc": 28689,
+   "code": 6083,
+   "disc": 83,
+   "name": "HolderRewardCreatorImmutable",
+   "func": 28609,
+   "name_at": null,
+   "file": "programs/pump/src/creator/migrate_bonding_curve_creator.rs",
+   "file_ptr": 1797217,
+   "line": 46,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    155981
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2611f"
+   ]
+  },
+  {
+   "pc": 28717,
+   "code": 6095,
+   "disc": 95,
+   "name": "CreatorFeesNotSwept",
+   "func": 28609,
+   "name_at": null,
+   "file": "programs/pump/src/creator/migrate_bonding_curve_creator.rs",
+   "file_ptr": 1797217,
+   "line": 53,
+   "ctx": [
+    "programs/pump/src/creator/migrate_bonding_curve_creator.rsprograms/pump/src/crea",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    155981
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2611f"
+   ]
+  },
+  {
+   "pc": 30569,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 30491,
+   "name_at": null,
+   "file": "programs/pump/src/extend_account.rs",
+   "file_ptr": 1797492,
+   "line": 84,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    153603
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x257d6"
+   ]
+  },
+  {
+   "pc": 30752,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 30742,
+   "name_at": null,
+   "file": "programs/pump/src/extend_account.rs",
+   "file_ptr": 1797492,
+   "line": 107,
+   "ctx": [],
+   "callers": [
+    30742
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x7816"
+   ]
+  },
+  {
+   "pc": 31648,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 31423,
+   "name_at": null,
+   "file": "programs/pump/src/extend_account.rs",
+   "file_ptr": 1797492,
+   "line": 141,
+   "ctx": [],
+   "callers": [
+    31423
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x7abf"
+   ]
+  },
+  {
+   "pc": 31868,
+   "code": 6000,
+   "disc": 0,
+   "name": "NotAuthorized",
+   "func": 31663,
+   "name_at": null,
+   "file": "programs/pump/src/fee_recipient.rs",
+   "file_ptr": 1797527,
+   "line": 35,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    58827,
+    161767,
+    163548,
+    166236,
+    170023,
+    171708,
+    173357
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe502",
+    "0x27737",
+    "0x27ec6",
+    "0x288a1",
+    "0x29807",
+    "0x29e9c",
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 31896,
+   "code": 6000,
+   "disc": 0,
+   "name": "NotAuthorized",
+   "func": 31663,
+   "name_at": null,
+   "file": "programs/pump/src/fee_recipient.rs",
+   "file_ptr": 1797527,
+   "line": 19,
+   "ctx": [
+    "programs/pump/src/fee_recipient.rsfee_recipients[]programs/pump/src/migrate.rsBo",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    58827,
+    161767,
+    163548,
+    166236,
+    170023,
+    171708,
+    173357
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe502",
+    "0x27737",
+    "0x27ec6",
+    "0x288a1",
+    "0x29807",
+    "0x29e9c",
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 32209,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 31914,
+   "name_at": null,
+   "file": "programs/pump/src/fee_recipient.rs",
+   "file_ptr": 1797527,
+   "line": 47,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    158975
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x26cf8"
+   ]
+  },
+  {
+   "pc": 32244,
+   "code": 6028,
+   "disc": 28,
+   "name": "AllFeeRecipientsShouldBeNonZero",
+   "func": 31914,
+   "name_at": null,
+   "file": "programs/pump/src/fee_recipient.rs",
+   "file_ptr": 1797527,
+   "line": 60,
+   "ctx": [
+    "programs/pump/src/fee_recipient.rsfee_recipients[]programs/pump/src/migrate.rsBo",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    158975
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x26cf8"
+   ]
+  },
+  {
+   "pc": 32523,
+   "code": 6029,
+   "disc": 29,
+   "name": "UnsortedNotUniqueFeeRecipients",
+   "func": 31914,
+   "name_at": null,
+   "file": "programs/pump/src/fee_recipient.rs",
+   "file_ptr": 1797527,
+   "line": 78,
+   "ctx": [],
+   "callers": [
+    158975
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x26cf8"
+   ]
+  },
+  {
+   "pc": 32718,
+   "code": 6006,
+   "disc": 6,
+   "name": "BondingCurveNotComplete",
+   "func": 32622,
+   "name_at": null,
+   "file": "programs/pump/src/migrate.rs",
+   "file_ptr": 1797577,
+   "line": 251,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    153394
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25702"
+   ]
+  },
+  {
+   "pc": 33352,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 33302,
+   "name_at": null,
+   "file": "programs/pump/src/migrate.rs",
+   "file_ptr": 1797577,
+   "line": 280,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    32918
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x8083"
+   ]
+  },
+  {
+   "pc": 33417,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 33367,
+   "name_at": null,
+   "file": "programs/pump/src/migrate.rs",
+   "file_ptr": 1797577,
+   "line": 282,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    32926
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x8083"
+   ]
+  },
+  {
+   "pc": 35910,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 35828,
+   "name_at": null,
+   "file": "programs/pump/src/migrate.rs",
+   "file_ptr": 1797577,
+   "line": 527,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    32955
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x8083"
+   ]
+  },
+  {
+   "pc": 37874,
+   "code": 6006,
+   "disc": 6,
+   "name": "BondingCurveNotComplete",
+   "func": 37649,
+   "name_at": null,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_ptr": 1797760,
+   "line": 249,
+   "ctx": [],
+   "callers": [
+    153472
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25750"
+   ]
+  },
+  {
+   "pc": 38516,
+   "code": 6110,
+   "disc": 110,
+   "name": "QuoteMintNotWritable",
+   "func": 38128,
+   "name_at": null,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_ptr": 1797760,
+   "line": 335,
+   "ctx": [],
+   "callers": [
+    38128
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x94f0"
+   ]
+  },
+  {
+   "pc": 38810,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 38760,
+   "name_at": null,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_ptr": 1797760,
+   "line": 309,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    38148
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x94f0"
+   ]
+  },
+  {
+   "pc": 38875,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 38825,
+   "name_at": null,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_ptr": 1797760,
+   "line": 313,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    38163
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x94f0"
+   ]
+  },
+  {
+   "pc": 38940,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 38890,
+   "name_at": null,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_ptr": 1797760,
+   "line": 326,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    38206
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x94f0"
+   ]
+  },
+  {
+   "pc": 42264,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 42188,
+   "name_at": null,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_ptr": 1797760,
+   "line": 658,
+   "ctx": [],
+   "callers": [
+    38229
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x94f0"
+   ]
+  },
+  {
+   "pc": 43373,
+   "code": 6063,
+   "disc": 63,
+   "name": "UnsupportedQuoteMint",
+   "func": 42317,
+   "name_at": null,
+   "file": "programs/pump/src/migrate_v2.rs",
+   "file_ptr": 1797760,
+   "line": 747,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    42317
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xa54d"
+   ]
+  },
+  {
+   "pc": 44404,
+   "code": 6020,
+   "disc": 20,
+   "name": "BuyZeroAmount",
+   "func": 44283,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 208,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    152337
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x252c0"
+   ]
+  },
+  {
+   "pc": 44438,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 44283,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 214,
+   "ctx": [
+    "programs/pump/src/multi_hop_curve_swap.rsmulti_hop_swapprograms/pump/src/pump_qu",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    152337
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x252c0"
+   ]
+  },
+  {
+   "pc": 44466,
+   "code": 6106,
+   "disc": 106,
+   "name": "MultiHopHopFeesMismatch",
+   "func": 44283,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 218,
+   "ctx": [
+    "programs/pump/src/multi_hop_curve_swap.rsmulti_hop_swapprograms/pump/src/pump_qu",
+    "programs/pump/src/multi_hop_curve_swap.rsmulti_hop_swapprograms/pump/src/pump_qu"
+   ],
+   "callers": [
+    152337
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x252c0"
+   ]
+  },
+  {
+   "pc": 44576,
+   "code": 6098,
+   "disc": 98,
+   "name": "MultiHopDiscontinuousPath",
+   "func": 44283,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 262,
+   "ctx": [],
+   "callers": [
+    152337
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x252c0"
+   ]
+  },
+  {
+   "pc": 44985,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 44935,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 259,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    44893
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xaebc"
+   ]
+  },
+  {
+   "pc": 45076,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 45000,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 295,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    48075
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 45362,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 45272,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 359,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    45272
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb0d8"
+   ]
+  },
+  {
+   "pc": 46813,
+   "code": 6108,
+   "disc": 108,
+   "name": "MultiHopMayhemCurveNotSupported",
+   "func": 46710,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 484,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    44679
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xacfb"
+   ]
+  },
+  {
+   "pc": 47350,
+   "code": 6098,
+   "disc": 98,
+   "name": "MultiHopDiscontinuousPath",
+   "func": 46862,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 546,
+   "ctx": [],
+   "callers": [
+    46862
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 47688,
+   "code": 6022,
+   "disc": 22,
+   "name": "SellZeroAmount",
+   "func": 46862,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 686,
+   "ctx": [],
+   "callers": [
+    46862
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 47855,
+   "code": 6021,
+   "disc": 21,
+   "name": "NotEnoughTokensToBuy",
+   "func": 46862,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 599,
+   "ctx": [],
+   "callers": [
+    46862
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 47984,
+   "code": 6020,
+   "disc": 20,
+   "name": "BuyZeroAmount",
+   "func": 46862,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 590,
+   "ctx": [],
+   "callers": [
+    46862
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 49083,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 49033,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 571,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47516
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 49148,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 49098,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 589,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47788
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 49213,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 49163,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 624,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    48014
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 49278,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 49228,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 673,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47524
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 49343,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 49293,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 692,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47636
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 49408,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 49358,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 736,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    48120
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 49473,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 49423,
+   "name_at": null,
+   "file": "programs/pump/src/multi_hop_curve_swap.rs",
+   "file_ptr": 1797791,
+   "line": 744,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47956
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e"
+   ]
+  },
+  {
+   "pc": 49575,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 49488,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 61,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    12541
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x30cf"
+   ]
+  },
+  {
+   "pc": 49606,
+   "code": 6105,
+   "disc": 105,
+   "name": "CurveDepthExceeded",
+   "func": 49488,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 62,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    12541
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x30cf"
+   ]
+  },
+  {
+   "pc": 49756,
+   "code": 6100,
+   "disc": 100,
+   "name": "QuoteBondingCurveNotEligible",
+   "func": 49628,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 90,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    12809
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x30cf"
+   ]
+  },
+  {
+   "pc": 49847,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 49769,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 104,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    50991
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc728"
+   ]
+  },
+  {
+   "pc": 49900,
+   "code": 6026,
+   "disc": 26,
+   "name": "DivisionByZero",
+   "func": 49769,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 106,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    50991
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc728"
+   ]
+  },
+  {
+   "pc": 50068,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 49917,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 117,
+   "ctx": [],
+   "callers": [
+    51017
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc728"
+   ]
+  },
+  {
+   "pc": 50122,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 49917,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 119,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    51017
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc728"
+   ]
+  },
+  {
+   "pc": 50175,
+   "code": 6026,
+   "disc": 26,
+   "name": "DivisionByZero",
+   "func": 49917,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 121,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    51017
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc728"
+   ]
+  },
+  {
+   "pc": 50207,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 49917,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 122,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    51017
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc728"
+   ]
+  },
+  {
+   "pc": 50350,
+   "code": 6026,
+   "disc": 26,
+   "name": "DivisionByZero",
+   "func": 50222,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 131,
+   "ctx": [],
+   "callers": [
+    50527,
+    50550,
+    50818
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc554",
+    "0xc554",
+    "0xc554"
+   ]
+  },
+  {
+   "pc": 50403,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 50222,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 134,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    50527,
+    50550,
+    50818
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc554",
+    "0xc554",
+    "0xc554"
+   ]
+  },
+  {
+   "pc": 50446,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 50222,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 137,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    50527,
+    50550,
+    50818
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc554",
+    "0xc554",
+    "0xc554"
+   ]
+  },
+  {
+   "pc": 50499,
+   "code": 6026,
+   "disc": 26,
+   "name": "DivisionByZero",
+   "func": 50222,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 139,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    50527,
+    50550,
+    50818
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc554",
+    "0xc554",
+    "0xc554"
+   ]
+  },
+  {
+   "pc": 50667,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 50516,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 199,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    51003
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc728"
+   ]
+  },
+  {
+   "pc": 50767,
+   "code": 6026,
+   "disc": 26,
+   "name": "DivisionByZero",
+   "func": 50516,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 201,
+   "ctx": [],
+   "callers": [
+    51003
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc728"
+   ]
+  },
+  {
+   "pc": 50904,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 50854,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 212,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    50796
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc554"
+   ]
+  },
+  {
+   "pc": 50969,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 50919,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 222,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    50836
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc554"
+   ]
+  },
+  {
+   "pc": 51081,
+   "code": 6104,
+   "disc": 104,
+   "name": "QuoteReservesOutOfRange",
+   "func": 50984,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 241,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    12628
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x30cf"
+   ]
+  },
+  {
+   "pc": 51182,
+   "code": 6103,
+   "disc": 103,
+   "name": "InvalidQuotePool",
+   "func": 51102,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 279,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    51890
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xca47"
+   ]
+  },
+  {
+   "pc": 51210,
+   "code": 6103,
+   "disc": 103,
+   "name": "InvalidQuotePool",
+   "func": 51102,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 280,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    51890
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xca47"
+   ]
+  },
+  {
+   "pc": 51374,
+   "code": 6103,
+   "disc": 103,
+   "name": "InvalidQuotePool",
+   "func": 51307,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 307,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    51231,
+    51252
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xc79e",
+    "0xc79e"
+   ]
+  },
+  {
+   "pc": 51456,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 51391,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 334,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    52163
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xca47"
+   ]
+  },
+  {
+   "pc": 51569,
+   "code": 6103,
+   "disc": 103,
+   "name": "InvalidQuotePool",
+   "func": 51473,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 365,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    52143,
+    52154
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xca47",
+    "0xca47"
+   ]
+  },
+  {
+   "pc": 51624,
+   "code": 6103,
+   "disc": 103,
+   "name": "InvalidQuotePool",
+   "func": 51473,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 366,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    52143,
+    52154
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xca47",
+    "0xca47"
+   ]
+  },
+  {
+   "pc": 51668,
+   "code": 6103,
+   "disc": 103,
+   "name": "InvalidQuotePool",
+   "func": 51473,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 371,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    52143,
+    52154
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xca47",
+    "0xca47"
+   ]
+  },
+  {
+   "pc": 51728,
+   "code": 6103,
+   "disc": 103,
+   "name": "InvalidQuotePool",
+   "func": 51473,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 372,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    52143,
+    52154
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xca47",
+    "0xca47"
+   ]
+  },
+  {
+   "pc": 51765,
+   "code": 6103,
+   "disc": 103,
+   "name": "InvalidQuotePool",
+   "func": 51473,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 378,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    52143,
+    52154
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xca47",
+    "0xca47"
+   ]
+  },
+  {
+   "pc": 51846,
+   "code": 6102,
+   "disc": 102,
+   "name": "QuotePoolNotFound",
+   "func": 51783,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 407,
+   "ctx": [],
+   "callers": [
+    52258
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xcbd6"
+   ]
+  },
+  {
+   "pc": 51987,
+   "code": 6103,
+   "disc": 103,
+   "name": "InvalidQuotePool",
+   "func": 51783,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 406,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    52258
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xcbd6"
+   ]
+  },
+  {
+   "pc": 52042,
+   "code": 6103,
+   "disc": 103,
+   "name": "InvalidQuotePool",
+   "func": 51783,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 410,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    52258
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xcbd6"
+   ]
+  },
+  {
+   "pc": 52106,
+   "code": 6103,
+   "disc": 103,
+   "name": "InvalidQuotePool",
+   "func": 51783,
+   "name_at": null,
+   "file": "programs/pump/src/pump_quote.rs",
+   "file_ptr": 1797846,
+   "line": 415,
+   "ctx": [
+    "programs/pump/src/pump_quote.rsprograms/pump/src/quote_control/state.rsprograms/"
+   ],
+   "callers": [
+    52258
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xcbd6"
+   ]
+  },
+  {
+   "pc": 53612,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 53539,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 52,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    54459,
+    54569
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xd43c",
+    "0xd515"
+   ]
+  },
+  {
+   "pc": 53724,
+   "code": 6069,
+   "disc": 69,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 53627,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 67,
+   "ctx": [],
+   "callers": [
+    54557
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xd515"
+   ]
+  },
+  {
+   "pc": 53804,
+   "code": 6069,
+   "disc": 69,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 53627,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 72,
+   "ctx": [],
+   "callers": [
+    54557
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xd515"
+   ]
+  },
+  {
+   "pc": 53884,
+   "code": 6067,
+   "disc": 67,
+   "name": "QuoteMintAlreadyWhitelisted",
+   "func": 53627,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 77,
+   "ctx": [],
+   "callers": [
+    54557
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xd515"
+   ]
+  },
+  {
+   "pc": 53996,
+   "code": 6069,
+   "disc": 69,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 53627,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 62,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    54557
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xd515"
+   ]
+  },
+  {
+   "pc": 54043,
+   "code": 6066,
+   "disc": 66,
+   "name": "QuoteMintWhitelistFull",
+   "func": 53627,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 82,
+   "ctx": [
+    "programs/pump/src/quote_control/state.rsprograms/pump/src/quote_control/update_q",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    54557
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xd515"
+   ]
+  },
+  {
+   "pc": 54138,
+   "code": 6068,
+   "disc": 68,
+   "name": "QuoteMintNotWhitelisted",
+   "func": 54063,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 99,
+   "ctx": [],
+   "callers": [
+    55347
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xd82c"
+   ]
+  },
+  {
+   "pc": 54200,
+   "code": 6069,
+   "disc": 69,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 54063,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 92,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor",
+    "programs/pump/src/quote_control/state.rsprograms/pump/src/quote_control/update_q"
+   ],
+   "callers": [
+    55347
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xd82c"
+   ]
+  },
+  {
+   "pc": 54311,
+   "code": 6068,
+   "disc": 68,
+   "name": "QuoteMintNotWhitelisted",
+   "func": 54245,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 113,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    52733
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xcdf5"
+   ]
+  },
+  {
+   "pc": 54414,
+   "code": 6075,
+   "disc": 75,
+   "name": "InvalidQuoteControl",
+   "func": 54332,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 145,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    12476,
+    49696
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x30ad",
+    "0xc1dc"
+   ]
+  },
+  {
+   "pc": 54442,
+   "code": 6075,
+   "disc": 75,
+   "name": "InvalidQuoteControl",
+   "func": 54332,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 146,
+   "ctx": [
+    "programs/pump/src/quote_control/state.rsprograms/pump/src/quote_control/update_q"
+   ],
+   "callers": [
+    12476,
+    49696
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x30ad",
+    "0xc1dc"
+   ]
+  },
+  {
+   "pc": 54532,
+   "code": 6075,
+   "disc": 75,
+   "name": "InvalidQuoteControl",
+   "func": 54332,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/state.rs",
+   "file_ptr": 1797877,
+   "line": 158,
+   "ctx": [],
+   "callers": [
+    12476,
+    49696
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x30ad",
+    "0xc1dc"
+   ]
+  },
+  {
+   "pc": 54637,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 54585,
+   "name_at": null,
+   "file": "programs/pump/src/quote_control/update_quote_control_mints.rs",
+   "file_ptr": 1797917,
+   "line": 71,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    54585
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xd539"
+   ]
+  },
+  {
+   "pc": 55867,
+   "code": 6073,
+   "disc": 73,
+   "name": "InvalidCashbackAccumulator",
+   "func": 55727,
+   "name_at": null,
+   "file": "programs/pump/src/sell.rs",
+   "file_ptr": 1797978,
+   "line": 33,
+   "ctx": [],
+   "callers": [
+    173931
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 55896,
+   "code": 6072,
+   "disc": 72,
+   "name": "MissingCashbackAccounts",
+   "func": 55727,
+   "name_at": null,
+   "file": "programs/pump/src/sell.rs",
+   "file_ptr": 1797978,
+   "line": 23,
+   "ctx": [
+    "programs/pump/src/sell.rsuser_volume_accumulatorprograms/pump/src/sell_v2.rsprog"
+   ],
+   "callers": [
+    173931
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 55992,
+   "code": 6073,
+   "disc": 73,
+   "name": "InvalidCashbackAccumulator",
+   "func": 55727,
+   "name_at": null,
+   "file": "programs/pump/src/sell.rs",
+   "file_ptr": 1797978,
+   "line": 81,
+   "ctx": [],
+   "callers": [
+    173931
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 56338,
+   "code": 6073,
+   "disc": 73,
+   "name": "InvalidCashbackAccumulator",
+   "func": 56245,
+   "name_at": null,
+   "file": "programs/pump/src/sell.rs",
+   "file_ptr": 1797978,
+   "line": 85,
+   "ctx": [],
+   "callers": [
+    56245
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xdbb5"
+   ]
+  },
+  {
+   "pc": 56606,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 56245,
+   "name_at": null,
+   "file": "programs/pump/src/sell.rs",
+   "file_ptr": 1797978,
+   "line": 102,
+   "ctx": [],
+   "callers": [
+    56245
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xdbb5"
+   ]
+  },
+  {
+   "pc": 56658,
+   "code": 6074,
+   "disc": 74,
+   "name": "InvalidBondingCurveV2",
+   "func": 56245,
+   "name_at": null,
+   "file": "programs/pump/src/sell.rs",
+   "file_ptr": 1797978,
+   "line": 107,
+   "ctx": [
+    "programs/pump/src/sell.rsuser_volume_accumulatorprograms/pump/src/sell_v2.rsprog"
+   ],
+   "callers": [
+    56245
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xdbb5"
+   ]
+  },
+  {
+   "pc": 56700,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 56245,
+   "name_at": null,
+   "file": "programs/pump/src/sell.rs",
+   "file_ptr": 1797978,
+   "line": 102,
+   "ctx": [
+    "programs/pump/src/sell.rsuser_volume_accumulatorprograms/pump/src/sell_v2.rsprog"
+   ],
+   "callers": [
+    56245
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xdbb5"
+   ]
+  },
+  {
+   "pc": 56779,
+   "code": 6074,
+   "disc": 74,
+   "name": "InvalidBondingCurveV2",
+   "func": 56245,
+   "name_at": null,
+   "file": "programs/pump/src/sell.rs",
+   "file_ptr": 1797978,
+   "line": 114,
+   "ctx": [
+    "bonding-curve-v2DisabledWithdrawhost unreachableinvalid filenamerange end index "
+   ],
+   "callers": [
+    56245
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xdbb5"
+   ]
+  },
+  {
+   "pc": 56913,
+   "code": 6074,
+   "disc": 74,
+   "name": "InvalidBondingCurveV2",
+   "func": 56795,
+   "name_at": null,
+   "file": "programs/pump/src/sell.rs",
+   "file_ptr": 1797978,
+   "line": 133,
+   "ctx": [],
+   "callers": [
+    170608,
+    172616,
+    173834
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29807",
+    "0x29e9c",
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 56941,
+   "code": 6074,
+   "disc": 74,
+   "name": "InvalidBondingCurveV2",
+   "func": 56795,
+   "name_at": null,
+   "file": "programs/pump/src/sell.rs",
+   "file_ptr": 1797978,
+   "line": 126,
+   "ctx": [
+    "programs/pump/src/sell.rsuser_volume_accumulatorprograms/pump/src/sell_v2.rsprog"
+   ],
+   "callers": [
+    170608,
+    172616,
+    173834
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29807",
+    "0x29e9c",
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 57032,
+   "code": 6062,
+   "disc": 62,
+   "name": "BuybackFeeRecipientMissing",
+   "func": 56957,
+   "name_at": null,
+   "file": "programs/pump/src/sell.rs",
+   "file_ptr": 1797978,
+   "line": 145,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    170037,
+    171722,
+    173946
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29807",
+    "0x29e9c",
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 57101,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 57051,
+   "name_at": null,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_ptr": 1798026,
+   "line": 341,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    166708
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 57166,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 57116,
+   "name_at": null,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_ptr": 1798026,
+   "line": 366,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    166766
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 57231,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 57181,
+   "name_at": null,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_ptr": 1798026,
+   "line": 368,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    166781
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 57296,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 57246,
+   "name_at": null,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_ptr": 1798026,
+   "line": 386,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    166909
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 57991,
+   "code": 6027,
+   "disc": 27,
+   "name": "NotEnoughRemainingAccounts",
+   "func": 57311,
+   "name_at": null,
+   "file": "programs/pump/src/set_reserved_fee_recipients.rs",
+   "file_ptr": 1798054,
+   "line": 40,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    150444
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24b65"
+   ]
+  },
+  {
+   "pc": 58028,
+   "code": 6028,
+   "disc": 28,
+   "name": "AllFeeRecipientsShouldBeNonZero",
+   "func": 57311,
+   "name_at": null,
+   "file": "programs/pump/src/set_reserved_fee_recipients.rs",
+   "file_ptr": 1798054,
+   "line": 60,
+   "ctx": [
+    "programs/pump/src/set_reserved_fee_recipients.rsreserved_fee_recipients[programs",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    150444
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24b65"
+   ]
+  },
+  {
+   "pc": 58611,
+   "code": 6061,
+   "disc": 61,
+   "name": "WrongBuybackFeeRecipientsCount",
+   "func": 58458,
+   "name_at": null,
+   "file": "programs/pump/src/set_reserved_fee_recipients.rs",
+   "file_ptr": 1798054,
+   "line": 121,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    156696
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x263de"
+   ]
+  },
+  {
+   "pc": 58788,
+   "code": 6000,
+   "disc": 0,
+   "name": "NotAuthorized",
+   "func": 58626,
+   "name_at": null,
+   "file": "programs/pump/src/sweep_fees.rs",
+   "file_ptr": 1798126,
+   "line": 123,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    152495,
+    152642
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2537d",
+    "0x25410"
+   ]
+  },
+  {
+   "pc": 61004,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 60883,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_ptr": 1798244,
+   "line": 252,
+   "ctx": [],
+   "callers": [
+    60883
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xedd3"
+   ]
+  },
+  {
+   "pc": 61187,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 60883,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_ptr": 1798244,
+   "line": 252,
+   "ctx": [
+    "__event_authorityanchor:idlprograms/pump/src/buy.rsbonding-curveprograms/pump/sr"
+   ],
+   "callers": [
+    60883
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xedd3"
+   ]
+  },
+  {
+   "pc": 61463,
+   "code": 6064,
+   "disc": 64,
+   "name": "InvalidQuoteTokenProgram",
+   "func": 61354,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_ptr": 1798244,
+   "line": 305,
+   "ctx": [],
+   "callers": [
+    61354
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xefaa"
+   ]
+  },
+  {
+   "pc": 61516,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 61354,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_ptr": 1798244,
+   "line": 310,
+   "ctx": [
+    "programs/pump/src/token_incentives/claim_token_incentives.rsNo changes in accumu"
+   ],
+   "callers": [
+    61354
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xefaa"
+   ]
+  },
+  {
+   "pc": 61835,
+   "code": 6076,
+   "disc": 76,
+   "name": "InvalidCashbackRecipient",
+   "func": 61354,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_ptr": 1798244,
+   "line": 342,
+   "ctx": [],
+   "callers": [
+    61354
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xefaa"
+   ]
+  },
+  {
+   "pc": 62140,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 61871,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+   "file_ptr": 1798244,
+   "line": 333,
+   "ctx": [],
+   "callers": [
+    61871
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xf1af"
+   ]
+  },
+  {
+   "pc": 63634,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 63483,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_ptr": 1798378,
+   "line": 103,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    60031
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xea61"
+   ]
+  },
+  {
+   "pc": 63898,
+   "code": 6032,
+   "disc": 32,
+   "name": "EndTimeInThePast",
+   "func": 63716,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_ptr": 1798378,
+   "line": 369,
+   "ctx": [
+    "SVM is 64-bitprograms/pump/src/trade_v3.rsprograms/pump/src/util/constant_produc"
+   ],
+   "callers": [
+    59649
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe8d5"
+   ]
+  },
+  {
+   "pc": 63964,
+   "code": 6036,
+   "disc": 36,
+   "name": "SupplyUpdateForFinishedRange",
+   "func": 63716,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_ptr": 1798378,
+   "line": 297,
+   "ctx": [
+    "programs/pump/src/token_incentives/volume_accumulator.rsUnexpected overflowOverf"
+   ],
+   "callers": [
+    59649
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe8d5"
+   ]
+  },
+  {
+   "pc": 64047,
+   "code": 6033,
+   "disc": 33,
+   "name": "EndTimeBeforeStartTime",
+   "func": 63716,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_ptr": 1798378,
+   "line": 371,
+   "ctx": [],
+   "callers": [
+    59649
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe8d5"
+   ]
+  },
+  {
+   "pc": 64088,
+   "code": 6037,
+   "disc": 37,
+   "name": "DayIndexAfterEndIndex",
+   "func": 63716,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_ptr": 1798378,
+   "line": 309,
+   "ctx": [
+    "programs/pump/src/token_incentives/volume_accumulator.rsUnexpected overflowOverf"
+   ],
+   "callers": [
+    59649
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe8d5"
+   ]
+  },
+  {
+   "pc": 64178,
+   "code": 6034,
+   "disc": 34,
+   "name": "TimeRangeTooLarge",
+   "func": 63716,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_ptr": 1798378,
+   "line": 373,
+   "ctx": [],
+   "callers": [
+    59649
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe8d5"
+   ]
+  },
+  {
+   "pc": 64241,
+   "code": 6037,
+   "disc": 37,
+   "name": "DayIndexAfterEndIndex",
+   "func": 63716,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_ptr": 1798378,
+   "line": 337,
+   "ctx": [
+    "programs/pump/src/token_incentives/volume_accumulator.rsUnexpected overflowOverf"
+   ],
+   "callers": [
+    59649
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe8d5"
+   ]
+  },
+  {
+   "pc": 64311,
+   "code": 6038,
+   "disc": 38,
+   "name": "DayInActiveRange",
+   "func": 63716,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_ptr": 1798378,
+   "line": 338,
+   "ctx": [
+    "programs/pump/src/token_incentives/volume_accumulator.rsUnexpected overflowOverf"
+   ],
+   "callers": [
+    59649
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe8d5"
+   ]
+  },
+  {
+   "pc": 64407,
+   "code": 6031,
+   "disc": 31,
+   "name": "StartTimeInThePast",
+   "func": 63716,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_ptr": 1798378,
+   "line": 359,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    59649
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe8d5"
+   ]
+  },
+  {
+   "pc": 64446,
+   "code": 6035,
+   "disc": 35,
+   "name": "EndTimeBeforeCurrentDay",
+   "func": 63716,
+   "name_at": null,
+   "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+   "file_ptr": 1798378,
+   "line": 394,
+   "ctx": [
+    "programs/pump/src/token_incentives/volume_accumulator.rsUnexpected overflowOverf",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    59649
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe8d5"
+   ]
+  },
+  {
+   "pc": 64615,
+   "code": 6005,
+   "disc": 5,
+   "name": "BondingCurveComplete",
+   "func": 64534,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 149,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    46748,
+    167818,
+    168277,
+    169259
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb676",
+    "0x28f74",
+    "0x2913f",
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 64643,
+   "code": 6094,
+   "disc": 94,
+   "name": "CashbackCoinNotSupported",
+   "func": 64534,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 150,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    46748,
+    167818,
+    168277,
+    169259
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb676",
+    "0x28f74",
+    "0x2913f",
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 64739,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 64658,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 172,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47285,
+    65313
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0xfe38"
+   ]
+  },
+  {
+   "pc": 64885,
+   "code": 6004,
+   "disc": 4,
+   "name": "MintDoesNotMatchBondingCurve",
+   "func": 64658,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 180,
+   "ctx": [],
+   "callers": [
+    47285,
+    65313
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0xfe38"
+   ]
+  },
+  {
+   "pc": 65666,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 65599,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 285,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    45142,
+    66067,
+    66079,
+    168881
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xafc8",
+    "0x101bf",
+    "0x101bf",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 65734,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 65681,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 294,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47607,
+    47651,
+    67186,
+    169463
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0xb70e",
+    "0x10611",
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 65914,
+   "code": 6041,
+   "disc": 41,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 65753,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 317,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47562,
+    67149,
+    168488
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x10611",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 65959,
+   "code": 6042,
+   "disc": 42,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 65753,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 326,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47562,
+    67149,
+    168488
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x10611",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 66185,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 65983,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 371,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    67348,
+    67402,
+    67446,
+    168121,
+    168676,
+    168813,
+    168966
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x106f5",
+    "0x106f5",
+    "0x106f5",
+    "0x28f74",
+    "0x2913f",
+    "0x2913f",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 66218,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 65983,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 375,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    67348,
+    67402,
+    67446,
+    168121,
+    168676,
+    168813,
+    168966
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x106f5",
+    "0x106f5",
+    "0x106f5",
+    "0x28f74",
+    "0x2913f",
+    "0x2913f",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 66298,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 66248,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 382,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    66105
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x101bf"
+   ]
+  },
+  {
+   "pc": 66373,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 66313,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 390,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    67359,
+    67643,
+    168140,
+    168179,
+    168703,
+    168869,
+    169006
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x106f5",
+    "0x10780",
+    "0x28f74",
+    "0x28f74",
+    "0x2913f",
+    "0x2913f",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 66528,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 66388,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 442,
+   "ctx": [],
+   "callers": [
+    48771,
+    69323
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x10c43"
+   ]
+  },
+  {
+   "pc": 66581,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 66388,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 446,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/"
+   ],
+   "callers": [
+    48771,
+    69323
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x10c43"
+   ]
+  },
+  {
+   "pc": 66687,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 66597,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 494,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    45182,
+    168067,
+    168921
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xafc8",
+    "0x28f74",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 66740,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 66597,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 498,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/"
+   ],
+   "callers": [
+    45182,
+    168067,
+    168921
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xafc8",
+    "0x28f74",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 66801,
+   "code": 6021,
+   "disc": 21,
+   "name": "NotEnoughTokensToBuy",
+   "func": 66597,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 506,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/"
+   ],
+   "callers": [
+    45182,
+    168067,
+    168921
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xafc8",
+    "0x28f74",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 66835,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 66597,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 502,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/"
+   ],
+   "callers": [
+    45182,
+    168067,
+    168921
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xafc8",
+    "0x28f74",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 66888,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 66597,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 507,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/"
+   ],
+   "callers": [
+    45182,
+    168067,
+    168921
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xafc8",
+    "0x28f74",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 67012,
+   "code": 6021,
+   "disc": 21,
+   "name": "NotEnoughTokensToBuy",
+   "func": 66911,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 518,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    168080
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x28f74"
+   ]
+  },
+  {
+   "pc": 67049,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 66911,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 526,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    168080
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x28f74"
+   ]
+  },
+  {
+   "pc": 67299,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 67225,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 591,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    67197,
+    67381
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x10611",
+    "0x106f5"
+   ]
+  },
+  {
+   "pc": 67705,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 67456,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 691,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    168216,
+    169194
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x28f74",
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 67936,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 67886,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 721,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    67770
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x10780"
+   ]
+  },
+  {
+   "pc": 68001,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 67951,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 767,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    67870
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x10780"
+   ]
+  },
+  {
+   "pc": 68066,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 68016,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 811,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    168024
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x28f74"
+   ]
+  },
+  {
+   "pc": 68131,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 68081,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 904,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    168580
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 68196,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 68146,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 911,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    168521
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 68261,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 68211,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 930,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    168753
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 68326,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 68276,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 970,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    169230
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 68391,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 68341,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 997,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    168859
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2913f"
+   ]
+  },
+  {
+   "pc": 69574,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 69524,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 1140,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    169437
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 69639,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 69589,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 1155,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    169484
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 69787,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 69654,
+   "name_at": null,
+   "file": "programs/pump/src/util/constant_product.rs",
+   "file_ptr": 1798744,
+   "line": 17,
+   "ctx": [],
+   "callers": [
+    67242,
+    82205
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x10699",
+    "0x14107"
+   ]
+  },
+  {
+   "pc": 69874,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 69654,
+   "name_at": null,
+   "file": "programs/pump/src/util/constant_product.rs",
+   "file_ptr": 1798744,
+   "line": 13,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    67242,
+    82205
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x10699",
+    "0x14107"
+   ]
+  },
+  {
+   "pc": 69908,
+   "code": 6026,
+   "disc": 26,
+   "name": "DivisionByZero",
+   "func": 69654,
+   "name_at": null,
+   "file": "programs/pump/src/util/constant_product.rs",
+   "file_ptr": 1798744,
+   "line": 19,
+   "ctx": [
+    "programs/pump/src/util/constant_product.rsprograms/pump/src/util/fee.rsprograms/",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    67242,
+    82205
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x10699",
+    "0x14107"
+   ]
+  },
+  {
+   "pc": 69998,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 69921,
+   "name_at": null,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_ptr": 1798786,
+   "line": 17,
+   "ctx": [],
+   "callers": [
+    66930,
+    70144
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x1055f",
+    "0x111f2"
+   ]
+  },
+  {
+   "pc": 70085,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 69921,
+   "name_at": null,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_ptr": 1798786,
+   "line": 15,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    66930,
+    70144
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x1055f",
+    "0x111f2"
+   ]
+  },
+  {
+   "pc": 70117,
+   "code": 6026,
+   "disc": 26,
+   "name": "DivisionByZero",
+   "func": 69921,
+   "name_at": null,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_ptr": 1798786,
+   "line": 19,
+   "ctx": [
+    "programs/pump/src/util/fee.rsprograms/pump/src/util/transfer_fee.rsprograms/pump",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    66930,
+    70144
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x1055f",
+    "0x111f2"
+   ]
+  },
+  {
+   "pc": 70201,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 70130,
+   "name_at": null,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_ptr": 1798786,
+   "line": 34,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    65808,
+    65817,
+    70439,
+    70464,
+    70777,
+    70800,
+    164449,
+    164473,
+    164667,
+    164692,
+    171972,
+    171996,
+    172199,
+    172223
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x100d9",
+    "0x100d9",
+    "0x11258",
+    "0x11258",
+    "0x113d9",
+    "0x113d9",
+    "0x27f22",
+    "0x27f22",
+    "0x27f22",
+    "0x27f22",
+    "0x29e9c",
+    "0x29e9c",
+    "0x29e9c",
+    "0x29e9c"
+   ]
+  },
+  {
+   "pc": 70591,
+   "code": 6096,
+   "disc": 96,
+   "name": "FeeTiersEmpty",
+   "func": 70505,
+   "name_at": null,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_ptr": 1798786,
+   "line": 162,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    70754
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x113d9"
+   ]
+  },
+  {
+   "pc": 70733,
+   "code": 6097,
+   "disc": 97,
+   "name": "FeeConfigTooShort",
+   "func": 70617,
+   "name_at": null,
+   "file": "programs/pump/src/util/fee.rs",
+   "file_ptr": 1798786,
+   "line": 183,
+   "ctx": [],
+   "callers": [
+    45113,
+    47543,
+    47583,
+    65584
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xafc8",
+    "0xb70e",
+    "0xb70e",
+    "0xffe2"
+   ]
+  },
+  {
+   "pc": 76192,
+   "code": 6063,
+   "disc": 63,
+   "name": "UnsupportedQuoteMint",
+   "func": 76065,
+   "name_at": null,
+   "file": "programs/pump/src/util/transfer_fee.rs",
+   "file_ptr": 1798815,
+   "line": 31,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    38352,
+    46889,
+    65416,
+    162104,
+    164173,
+    166805
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x94f0",
+    "0xb70e",
+    "0xfe38",
+    "0x27737",
+    "0x27f22",
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 76301,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 76229,
+   "name_at": null,
+   "file": "programs/pump/src/util/transfer_fee.rs",
+   "file_ptr": 1798815,
+   "line": 48,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    76320
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x12a1c"
+   ]
+  },
+  {
+   "pc": 76381,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 76316,
+   "name_at": null,
+   "file": "programs/pump/src/util/transfer_fee.rs",
+   "file_ptr": 1798815,
+   "line": 56,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47507,
+    47626,
+    47934,
+    47945,
+    67851,
+    67860,
+    163053,
+    164283,
+    165574,
+    166845,
+    167522,
+    168440,
+    169473,
+    169716
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0xb70e",
+    "0xb70e",
+    "0xb70e",
+    "0x10780",
+    "0x10780",
+    "0x27737",
+    "0x27f22",
+    "0x27f22",
+    "0x288a1",
+    "0x288a1",
+    "0x2913f",
+    "0x29515",
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 76467,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 76396,
+   "name_at": null,
+   "file": "programs/pump/src/util/transfer_fee.rs",
+   "file_ptr": 1798815,
+   "line": 66,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    11904,
+    66096,
+    162273
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2e7b",
+    "0x101bf",
+    "0x27737"
+   ]
+  },
+  {
+   "pc": 77944,
+   "code": 6060,
+   "disc": 60,
+   "name": "BuybackBasisPointsOutOfRange",
+   "func": 77890,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1870,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    58467
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe45a"
+   ]
+  },
+  {
+   "pc": 78112,
+   "code": 6062,
+   "disc": 62,
+   "name": "BuybackFeeRecipientMissing",
+   "func": 77959,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1879,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    57010,
+    64720,
+    64943,
+    161787,
+    163568,
+    166256
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xde7d",
+    "0xfc92",
+    "0xfc92",
+    "0x27737",
+    "0x27ec6",
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 78161,
+   "code": 6057,
+   "disc": 57,
+   "name": "BuybackFeeRecipientNotAuthorized",
+   "func": 77959,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1884,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at ",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    57010,
+    64720,
+    64943,
+    161787,
+    163568,
+    166256
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xde7d",
+    "0xfc92",
+    "0xfc92",
+    "0x27737",
+    "0x27ec6",
+    "0x288a1"
+   ]
+  },
+  {
+   "pc": 78401,
+   "code": 6059,
+   "disc": 59,
+   "name": "NotUniqueBuybackFeeRecipients",
+   "func": 78174,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1905,
+   "ctx": [],
+   "callers": [
+    58554
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe45a"
+   ]
+  },
+  {
+   "pc": 78572,
+   "code": 6058,
+   "disc": 58,
+   "name": "AllBuybackFeeRecipientsShouldBeNonZero",
+   "func": 78174,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1895,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    58554
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xe45a"
+   ]
+  },
+  {
+   "pc": 78980,
+   "code": 6066,
+   "disc": 66,
+   "name": "QuoteMintWhitelistFull",
+   "func": 78898,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1971,
+   "ctx": [],
+   "callers": [
+    149431
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2477c"
+   ]
+  },
+  {
+   "pc": 79033,
+   "code": 6069,
+   "disc": 69,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 78898,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1955,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at "
+   ],
+   "callers": [
+    149431
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2477c"
+   ]
+  },
+  {
+   "pc": 79147,
+   "code": 6069,
+   "disc": 69,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 78898,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1950,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    149431
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2477c"
+   ]
+  },
+  {
+   "pc": 79194,
+   "code": 6067,
+   "disc": 67,
+   "name": "QuoteMintAlreadyWhitelisted",
+   "func": 78898,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1960,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at ",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    149431
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2477c"
+   ]
+  },
+  {
+   "pc": 79299,
+   "code": 6068,
+   "disc": 68,
+   "name": "QuoteMintNotWhitelisted",
+   "func": 79237,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1986,
+   "ctx": [],
+   "callers": [
+    149609
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2482e"
+   ]
+  },
+  {
+   "pc": 79361,
+   "code": 6069,
+   "disc": 69,
+   "name": "QuoteMintNotEligibleForWhitelist",
+   "func": 79237,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1975,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor",
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at "
+   ],
+   "callers": [
+    149609
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2482e"
+   ]
+  },
+  {
+   "pc": 82021,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 81934,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2428,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    45013,
+    162253,
+    164647,
+    168014,
+    168691,
+    170198,
+    172141
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xafc8",
+    "0x27737",
+    "0x27f22",
+    "0x28f74",
+    "0x2913f",
+    "0x29807",
+    "0x29e9c"
+   ]
+  },
+  {
+   "pc": 82070,
+   "code": 6026,
+   "disc": 26,
+   "name": "DivisionByZero",
+   "func": 81934,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2430,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at "
+   ],
+   "callers": [
+    45013,
+    162253,
+    164647,
+    168014,
+    168691,
+    170198,
+    172141
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xafc8",
+    "0x27737",
+    "0x27f22",
+    "0x28f74",
+    "0x2913f",
+    "0x29807",
+    "0x29e9c"
+   ]
+  },
+  {
+   "pc": 82166,
+   "code": 6026,
+   "disc": 26,
+   "name": "DivisionByZero",
+   "func": 82087,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2454,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47485,
+    166699,
+    169426,
+    173529
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x288a1",
+    "0x29515",
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 82285,
+   "code": 6026,
+   "disc": 26,
+   "name": "DivisionByZero",
+   "func": 82207,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2481,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47468,
+    65541,
+    70372
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0xffe2",
+    "0x11258"
+   ]
+  },
+  {
+   "pc": 82384,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 82302,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2496,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    48143,
+    67470,
+    162438,
+    164860
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x10780",
+    "0x27737",
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 82457,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 82302,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2501,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at "
+   ],
+   "callers": [
+    48143,
+    67470,
+    162438,
+    164860
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x10780",
+    "0x27737",
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 82510,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 82302,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2506,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at "
+   ],
+   "callers": [
+    48143,
+    67470,
+    162438,
+    164860
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x10780",
+    "0x27737",
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 82541,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 82302,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2511,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at "
+   ],
+   "callers": [
+    48143,
+    67470,
+    162438,
+    164860
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x10780",
+    "0x27737",
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 82644,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 82556,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2525,
+   "ctx": [],
+   "callers": [
+    47748,
+    166919,
+    169530
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x288a1",
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 82736,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 82556,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2520,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47748,
+    166919,
+    169530
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x288a1",
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 82766,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 82556,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2530,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at ",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47748,
+    166919,
+    169530
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x288a1",
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 82798,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 82556,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2535,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at ",
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at "
+   ],
+   "callers": [
+    47748,
+    166919,
+    169530
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0x288a1",
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 82930,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 82811,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2550,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47895,
+    47917,
+    67604,
+    67623,
+    169642
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0xb70e",
+    "0x10780",
+    "0x10780",
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 82962,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 82811,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2554,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at ",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    47895,
+    47917,
+    67604,
+    67623,
+    169642
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0xb70e",
+    "0xb70e",
+    "0x10780",
+    "0x10780",
+    "0x29515"
+   ]
+  },
+  {
+   "pc": 83055,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 82993,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 2562,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    31331
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x7a4a"
+   ]
+  },
+  {
+   "pc": 88201,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 88151,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 498,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    162393
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27737"
+   ]
+  },
+  {
+   "pc": 88266,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 88216,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 500,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    162359
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27737"
+   ]
+  },
+  {
+   "pc": 158446,
+   "code": 6000,
+   "disc": 0,
+   "name": "NotAuthorized",
+   "func": 158384,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 114,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    148352
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24316"
+   ]
+  },
+  {
+   "pc": 158530,
+   "code": 6000,
+   "disc": 0,
+   "name": "NotAuthorized",
+   "func": 158468,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 121,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    148554
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x243e0"
+   ]
+  },
+  {
+   "pc": 158614,
+   "code": 6000,
+   "disc": 0,
+   "name": "NotAuthorized",
+   "func": 158552,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 149,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    149070
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x245e4"
+   ]
+  },
+  {
+   "pc": 159102,
+   "code": 6012,
+   "disc": 12,
+   "name": "InitialVirtualTokenReservesShouldBeGreaterThanInitialRealTokenReserves",
+   "func": 158968,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 228,
+   "ctx": [],
+   "callers": [
+    150109
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24956"
+   ]
+  },
+  {
+   "pc": 159186,
+   "code": 6013,
+   "disc": 13,
+   "name": "FeeBasisPointsGreaterThanMaximum",
+   "func": 158968,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 278,
+   "ctx": [],
+   "callers": [
+    150109
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24956"
+   ]
+  },
+  {
+   "pc": 159217,
+   "code": 6013,
+   "disc": 13,
+   "name": "FeeBasisPointsGreaterThanMaximum",
+   "func": 158968,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 242,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at "
+   ],
+   "callers": [
+    150109
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24956"
+   ]
+  },
+  {
+   "pc": 159311,
+   "code": 6011,
+   "disc": 11,
+   "name": "InitialRealTokenReservesShouldBeLessThanTokenTotalSupply",
+   "func": 158968,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 222,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    150109
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24956"
+   ]
+  },
+  {
+   "pc": 159349,
+   "code": 6014,
+   "disc": 14,
+   "name": "AllZerosWithdrawAuthority",
+   "func": 158968,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 249,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at ",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    150109
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24956"
+   ]
+  },
+  {
+   "pc": 159405,
+   "code": 6015,
+   "disc": 15,
+   "name": "PoolMigrationFeeShouldBeLessThanFinalRealSolReserves",
+   "func": 158968,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 270,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at "
+   ],
+   "callers": [
+    150109
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24956"
+   ]
+  },
+  {
+   "pc": 159721,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 159671,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 268,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    159383
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x26cf8"
+   ]
+  },
+  {
+   "pc": 160753,
+   "code": 6030,
+   "disc": 30,
+   "name": "CreatorShouldNotBeZero",
+   "func": 160212,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 334,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor",
+    "mint-authorityholder-rewardsprograms/pump/src/creator/admin_cto.rsNo canonical p"
+   ],
+   "callers": [
+    160212
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x271d4"
+   ]
+  },
+  {
+   "pc": 161713,
+   "code": 6005,
+   "disc": 5,
+   "name": "BondingCurveComplete",
+   "func": 161591,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 345,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    151276
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24eaa"
+   ]
+  },
+  {
+   "pc": 161744,
+   "code": 6020,
+   "disc": 20,
+   "name": "BuyZeroAmount",
+   "func": 161591,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 354,
+   "ctx": [
+    "programs/pump/src/buy_v2.rsbuybuy_exact_quote_inprograms/pump/src/create_v2.rsqu",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    151276
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24eaa"
+   ]
+  },
+  {
+   "pc": 162139,
+   "code": 6021,
+   "disc": 21,
+   "name": "NotEnoughTokensToBuy",
+   "func": 161591,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 356,
+   "ctx": [],
+   "callers": [
+    151276
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24eaa"
+   ]
+  },
+  {
+   "pc": 162235,
+   "code": 6063,
+   "disc": 63,
+   "name": "UnsupportedQuoteMint",
+   "func": 161591,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 369,
+   "ctx": [],
+   "callers": [
+    151276
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24eaa"
+   ]
+  },
+  {
+   "pc": 162416,
+   "code": 6002,
+   "disc": 2,
+   "name": "TooMuchSolRequired",
+   "func": 161591,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 494,
+   "ctx": [],
+   "callers": [
+    151276
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x24eaa"
+   ]
+  },
+  {
+   "pc": 163659,
+   "code": 6020,
+   "disc": 20,
+   "name": "BuyZeroAmount",
+   "func": 163618,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 769,
+   "ctx": [],
+   "callers": [
+    163618
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 163752,
+   "code": 6005,
+   "disc": 5,
+   "name": "BondingCurveComplete",
+   "func": 163618,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 767,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    163618
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 163782,
+   "code": 6041,
+   "disc": 41,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 163618,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 771,
+   "ctx": [
+    "programs/pump/src/buy_v2.rsbuybuy_exact_quote_inprograms/pump/src/create_v2.rsqu",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    163618
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 164265,
+   "code": 6063,
+   "disc": 63,
+   "name": "UnsupportedQuoteMint",
+   "func": 163618,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 780,
+   "ctx": [],
+   "callers": [
+    163618
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 164348,
+   "code": 6041,
+   "disc": 41,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 163618,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 873,
+   "ctx": [],
+   "callers": [
+    163618
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 164550,
+   "code": 6041,
+   "disc": 41,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 163618,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 907,
+   "ctx": [],
+   "callers": [
+    163618
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 164604,
+   "code": 6042,
+   "disc": 42,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 163618,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 921,
+   "ctx": [
+    "programs/pump/src/buy_v2.rsbuybuy_exact_quote_inprograms/pump/src/create_v2.rsqu"
+   ],
+   "callers": [
+    163618
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 164733,
+   "code": 6002,
+   "disc": 2,
+   "name": "TooMuchSolRequired",
+   "func": 163618,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 967,
+   "ctx": [],
+   "callers": [
+    163618
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 164792,
+   "code": 6042,
+   "disc": 42,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 163618,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 986,
+   "ctx": [
+    "programs/pump/src/buy_v2.rsbuybuy_exact_quote_inprograms/pump/src/create_v2.rsqu"
+   ],
+   "callers": [
+    163618
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 165139,
+   "code": 6042,
+   "disc": 42,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 163618,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 979,
+   "ctx": [],
+   "callers": [
+    163618
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 165171,
+   "code": 6021,
+   "disc": 21,
+   "name": "NotEnoughTokensToBuy",
+   "func": 163618,
+   "name_at": null,
+   "file": "programs/pump/src/buy_v2.rs",
+   "file_ptr": 1796167,
+   "line": 997,
+   "ctx": [
+    "programs/pump/src/buy_v2.rsbuybuy_exact_quote_inprograms/pump/src/create_v2.rsqu"
+   ],
+   "callers": [
+    163618
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x27f22"
+   ]
+  },
+  {
+   "pc": 166126,
+   "code": 6005,
+   "disc": 5,
+   "name": "BondingCurveComplete",
+   "func": 166049,
+   "name_at": null,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_ptr": 1798026,
+   "line": 243,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    151670
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2503c"
+   ]
+  },
+  {
+   "pc": 166213,
+   "code": 6022,
+   "disc": 22,
+   "name": "SellZeroAmount",
+   "func": 166049,
+   "name_at": null,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_ptr": 1798026,
+   "line": 245,
+   "ctx": [],
+   "callers": [
+    151670
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2503c"
+   ]
+  },
+  {
+   "pc": 166591,
+   "code": 6023,
+   "disc": 23,
+   "name": "NotEnoughTokensToSell",
+   "func": 166049,
+   "name_at": null,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_ptr": 1798026,
+   "line": 247,
+   "ctx": [],
+   "callers": [
+    151670
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2503c"
+   ]
+  },
+  {
+   "pc": 166685,
+   "code": 6063,
+   "disc": 63,
+   "name": "UnsupportedQuoteMint",
+   "func": 166049,
+   "name_at": null,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_ptr": 1798026,
+   "line": 260,
+   "ctx": [],
+   "callers": [
+    151670
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2503c"
+   ]
+  },
+  {
+   "pc": 166871,
+   "code": 6003,
+   "disc": 3,
+   "name": "TooLittleSolReceived",
+   "func": 166049,
+   "name_at": null,
+   "file": "programs/pump/src/sell_v2.rs",
+   "file_ptr": 1798026,
+   "line": 379,
+   "ctx": [],
+   "callers": [
+    151670
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2503c"
+   ]
+  },
+  {
+   "pc": 167936,
+   "code": 6020,
+   "disc": 20,
+   "name": "BuyZeroAmount",
+   "func": 167796,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 801,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    151846
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x250e1"
+   ]
+  },
+  {
+   "pc": 167981,
+   "code": 6021,
+   "disc": 21,
+   "name": "NotEnoughTokensToBuy",
+   "func": 167796,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 802,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    151846
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x250e1"
+   ]
+  },
+  {
+   "pc": 168166,
+   "code": 6002,
+   "disc": 2,
+   "name": "TooMuchSolRequired",
+   "func": 167796,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 842,
+   "ctx": [],
+   "callers": [
+    151846
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x250e1"
+   ]
+  },
+  {
+   "pc": 168373,
+   "code": 6020,
+   "disc": 20,
+   "name": "BuyZeroAmount",
+   "func": 168255,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 881,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    152018
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2518d"
+   ]
+  },
+  {
+   "pc": 168407,
+   "code": 6041,
+   "disc": 41,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 168255,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 882,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    152018
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2518d"
+   ]
+  },
+  {
+   "pc": 168544,
+   "code": 6041,
+   "disc": 41,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 168255,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 891,
+   "ctx": [],
+   "callers": [
+    152018
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2518d"
+   ]
+  },
+  {
+   "pc": 168652,
+   "code": 6021,
+   "disc": 21,
+   "name": "NotEnoughTokensToBuy",
+   "func": 168255,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 926,
+   "ctx": [],
+   "callers": [
+    152018
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2518d"
+   ]
+  },
+  {
+   "pc": 168733,
+   "code": 6042,
+   "disc": 42,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 168255,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 1001,
+   "ctx": [],
+   "callers": [
+    152018
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2518d"
+   ]
+  },
+  {
+   "pc": 168840,
+   "code": 6042,
+   "disc": 42,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 168255,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 993,
+   "ctx": [],
+   "callers": [
+    152018
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2518d"
+   ]
+  },
+  {
+   "pc": 168994,
+   "code": 6002,
+   "disc": 2,
+   "name": "TooMuchSolRequired",
+   "func": 168255,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 935,
+   "ctx": [],
+   "callers": [
+    152018
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2518d"
+   ]
+  },
+  {
+   "pc": 169119,
+   "code": 6042,
+   "disc": 42,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 168255,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 971,
+   "ctx": [],
+   "callers": [
+    152018
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2518d"
+   ]
+  },
+  {
+   "pc": 169347,
+   "code": 6022,
+   "disc": 22,
+   "name": "SellZeroAmount",
+   "func": 169237,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 1126,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    152181
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25239"
+   ]
+  },
+  {
+   "pc": 169391,
+   "code": 6023,
+   "disc": 23,
+   "name": "NotEnoughTokensToSell",
+   "func": 169237,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 1127,
+   "ctx": [
+    "programs/pump/src/trade_v3.rsprograms/pump/src/util/constant_product.rsprograms/",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    152181
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25239"
+   ]
+  },
+  {
+   "pc": 169506,
+   "code": 6003,
+   "disc": 3,
+   "name": "TooLittleSolReceived",
+   "func": 169237,
+   "name_at": null,
+   "file": "programs/pump/src/trade_v3.rs",
+   "file_ptr": 1798715,
+   "line": 1148,
+   "ctx": [],
+   "callers": [
+    152181
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25239"
+   ]
+  },
+  {
+   "pc": 170074,
+   "code": 6021,
+   "disc": 21,
+   "name": "NotEnoughTokensToBuy",
+   "func": 169991,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 619,
+   "ctx": [],
+   "callers": [
+    152849
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x254a4"
+   ]
+  },
+  {
+   "pc": 170143,
+   "code": 6005,
+   "disc": 5,
+   "name": "BondingCurveComplete",
+   "func": 169991,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 608,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor",
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at "
+   ],
+   "callers": [
+    152849
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x254a4"
+   ]
+  },
+  {
+   "pc": 170176,
+   "code": 6020,
+   "disc": 20,
+   "name": "BuyZeroAmount",
+   "func": 169991,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 617,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at ",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    152849
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x254a4"
+   ]
+  },
+  {
+   "pc": 170314,
+   "code": 6002,
+   "disc": 2,
+   "name": "TooMuchSolRequired",
+   "func": 169991,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 654,
+   "ctx": [],
+   "callers": [
+    152849
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x254a4"
+   ]
+  },
+  {
+   "pc": 170670,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 169991,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 747,
+   "ctx": [],
+   "callers": [
+    152849
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x254a4"
+   ]
+  },
+  {
+   "pc": 171109,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 169991,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 747,
+   "ctx": [
+    "__event_authorityanchor:idlprograms/pump/src/buy.rsbonding-curveprograms/pump/sr"
+   ],
+   "callers": [
+    152849
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x254a4"
+   ]
+  },
+  {
+   "pc": 171401,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 171351,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 629,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    170209
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29807"
+   ]
+  },
+  {
+   "pc": 171466,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 171416,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 674,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    170346
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29807"
+   ]
+  },
+  {
+   "pc": 171531,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 171481,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 679,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    170356
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29807"
+   ]
+  },
+  {
+   "pc": 171596,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 171546,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 684,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    170393
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29807"
+   ]
+  },
+  {
+   "pc": 171661,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 171611,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 689,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    170387
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29807"
+   ]
+  },
+  {
+   "pc": 171808,
+   "code": 6005,
+   "disc": 5,
+   "name": "BondingCurveComplete",
+   "func": 171676,
+   "name_at": null,
+   "file": "programs/pump/src/buy.rs",
+   "file_ptr": 1796130,
+   "line": 53,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    153070
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25581"
+   ]
+  },
+  {
+   "pc": 171841,
+   "code": 6020,
+   "disc": 20,
+   "name": "BuyZeroAmount",
+   "func": 171676,
+   "name_at": null,
+   "file": "programs/pump/src/buy.rs",
+   "file_ptr": 1796130,
+   "line": 57,
+   "ctx": [
+    "programs/pump/src/buy.rsbonding-curveprograms/pump/src/buy_v2.rsbuybuy_exact_quo",
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    153070
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25581"
+   ]
+  },
+  {
+   "pc": 171873,
+   "code": 6041,
+   "disc": 41,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 171676,
+   "name_at": null,
+   "file": "programs/pump/src/buy.rs",
+   "file_ptr": 1796130,
+   "line": 59,
+   "ctx": [
+    "programs/pump/src/buy.rsbonding-curveprograms/pump/src/buy_v2.rsbuybuy_exact_quo",
+    "programs/pump/src/buy.rsbonding-curveprograms/pump/src/buy_v2.rsbuybuy_exact_quo"
+   ],
+   "callers": [
+    153070
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25581"
+   ]
+  },
+  {
+   "pc": 172060,
+   "code": 6041,
+   "disc": 41,
+   "name": "BuyNotEnoughSolToCoverFees",
+   "func": 171676,
+   "name_at": null,
+   "file": "programs/pump/src/buy.rs",
+   "file_ptr": 1796130,
+   "line": 92,
+   "ctx": [],
+   "callers": [
+    153070
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25581"
+   ]
+  },
+  {
+   "pc": 172094,
+   "code": 6042,
+   "disc": 42,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 171676,
+   "name_at": null,
+   "file": "programs/pump/src/buy.rs",
+   "file_ptr": 1796130,
+   "line": 110,
+   "ctx": [
+    "programs/pump/src/buy.rsbonding-curveprograms/pump/src/buy_v2.rsbuybuy_exact_quo"
+   ],
+   "callers": [
+    153070
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25581"
+   ]
+  },
+  {
+   "pc": 172170,
+   "code": 6042,
+   "disc": 42,
+   "name": "BuySlippageBelowMinTokensOut",
+   "func": 171676,
+   "name_at": null,
+   "file": "programs/pump/src/buy.rs",
+   "file_ptr": 1796130,
+   "line": 143,
+   "ctx": [],
+   "callers": [
+    153070
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25581"
+   ]
+  },
+  {
+   "pc": 172282,
+   "code": 6021,
+   "disc": 21,
+   "name": "NotEnoughTokensToBuy",
+   "func": 171676,
+   "name_at": null,
+   "file": "programs/pump/src/buy.rs",
+   "file_ptr": 1796130,
+   "line": 151,
+   "ctx": [],
+   "callers": [
+    153070
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25581"
+   ]
+  },
+  {
+   "pc": 172666,
+   "code": 6002,
+   "disc": 2,
+   "name": "TooMuchSolRequired",
+   "func": 171676,
+   "name_at": null,
+   "file": "programs/pump/src/buy.rs",
+   "file_ptr": 1796130,
+   "line": 133,
+   "ctx": [],
+   "callers": [
+    153070
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25581"
+   ]
+  },
+  {
+   "pc": 172778,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 171676,
+   "name_at": null,
+   "file": "programs/pump/src/buy.rs",
+   "file_ptr": 1796130,
+   "line": 232,
+   "ctx": [],
+   "callers": [
+    153070
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25581"
+   ]
+  },
+  {
+   "pc": 172823,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 171676,
+   "name_at": null,
+   "file": "programs/pump/src/buy.rs",
+   "file_ptr": 1796130,
+   "line": 232,
+   "ctx": [
+    "programs/pump/src/buy.rsbonding-curveprograms/pump/src/buy_v2.rsbuybuy_exact_quo"
+   ],
+   "callers": [
+    153070
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x25581"
+   ]
+  },
+  {
+   "pc": 173418,
+   "code": 6005,
+   "disc": 5,
+   "name": "BondingCurveComplete",
+   "func": 173329,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 968,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    153240
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2565e"
+   ]
+  },
+  {
+   "pc": 173504,
+   "code": 6022,
+   "disc": 22,
+   "name": "SellZeroAmount",
+   "func": 173329,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 970,
+   "ctx": [],
+   "callers": [
+    153240
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2565e"
+   ]
+  },
+  {
+   "pc": 173551,
+   "code": 6023,
+   "disc": 23,
+   "name": "NotEnoughTokensToSell",
+   "func": 173329,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 972,
+   "ctx": [
+    "programs/pump/src/lib.rsbuyback_fee never exceeds protocol_feebuyback fee is at "
+   ],
+   "callers": [
+    153240
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2565e"
+   ]
+  },
+  {
+   "pc": 173698,
+   "code": 6003,
+   "disc": 3,
+   "name": "TooLittleSolReceived",
+   "func": 173329,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1012,
+   "ctx": [],
+   "callers": [
+    153240
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2565e"
+   ]
+  },
+  {
+   "pc": 174440,
+   "code": 6025,
+   "disc": 25,
+   "name": "Truncation",
+   "func": 174390,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 981,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    173575
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 174505,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 174455,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1007,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    173642
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 174570,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 174520,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1009,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    173652
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 174635,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 174585,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1022,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    173676
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 174700,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 174650,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1027,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    173727
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 174765,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 174715,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1032,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    173738
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 174830,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 174780,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 1037,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    173749
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2a511"
+   ]
+  },
+  {
+   "pc": 174930,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 174845,
+   "name_at": null,
+   "file": "programs/pump/src/admin_set_idl_authority.rs",
+   "file_ptr": 1796059,
+   "line": 72,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    155891
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x260ab"
+   ]
+  },
+  {
+   "pc": 175272,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 174964,
+   "name_at": null,
+   "file": "programs/pump/src/admin_set_idl_authority.rs",
+   "file_ptr": 1796059,
+   "line": 79,
+   "ctx": [],
+   "callers": [
+    174964
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2ab74"
+   ]
+  },
+  {
+   "pc": 175323,
+   "code": 6010,
+   "disc": 10,
+   "name": "AccountTypeNotSupported",
+   "func": 174964,
+   "name_at": null,
+   "file": "programs/pump/src/admin_set_idl_authority.rs",
+   "file_ptr": 1796059,
+   "line": 90,
+   "ctx": [
+    "programs/pump/src/admin_set_idl_authority.rs__event_authorityanchor:idlprograms/"
+   ],
+   "callers": [
+    174964
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x2ab74"
+   ]
+  },
+  {
+   "pc": 192209,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 192159,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 664,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    170282
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29807"
+   ]
+  },
+  {
+   "pc": 192274,
+   "code": 6024,
+   "disc": 24,
+   "name": "Overflow",
+   "func": 192224,
+   "name_at": null,
+   "file": "programs/pump/src/lib.rs",
+   "file_ptr": 1798853,
+   "line": 666,
+   "ctx": [
+    "a Display implementation returned an error unexpectedly/home/runner/work/platfor"
+   ],
+   "callers": [
+    170332
+   ],
+   "caller_handlers": [],
+   "caller_funcs": [
+    "0x29807"
+   ]
+  }
+ ]
+}

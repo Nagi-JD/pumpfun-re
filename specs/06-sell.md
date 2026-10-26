@@ -4,6 +4,12 @@ Target: `evidence/original/pump/deployed.so` (deployed Pump.fun program).
 Tooling: `sbftool.py func/dis/callers/field` over `.text`.
 Recovered source cross-checked: `programs/pump/src/{legacy_sell,sell_v2,trade,trade_types}.rs`, `lib.rs`.
 
+> **Error-code correction (binary `PumpError::name()` table, see `pump_error_map.md`):**
+> the deployed binary maps **6004** `MintDoesNotMatchBondingCurve`, **6005**
+> `BondingCurveComplete`, **6010** `AccountTypeNotSupported`, and **6022**
+> `SellZeroAmount`. The `6005`/`6022` variant attributions in this file came from the
+> recovered source enum order and are superseded by the binary name table.
+
 ## Dispatch architecture (all three handlers)
 
 Each Anchor instruction entry is a thin **trampoline** that (1) `sol_log_`s

@@ -1,9 +1,11 @@
 > **[Claude verification note — byte-identity tier is speculative]** The structure proposals
 > here are HYPOTHESES for closing per-function byte gaps (the Shaw byte-identity end-goal; still
-> 0/4 for everyone). They are NOT verified. Caveat on Entry 2: the cited wrapper sizes
-> (toggle_mayhem_mode 197/196 insns) did NOT reconcile with sbftool's function recovery, which
-> delineates a 7-insn dispatch stub at 0x1d701 and a separate ~338-insn body — likely a
-> function-boundary definition difference. The ONLY valid test of any proposal is to apply it,
+> 0/4 for everyone). They are NOT verified. Caveat on Entry 2 (now resolved): the cited 197/196
+> is the pass-index WINDOW count, not one function. It is a 7-insn log prologue at pc 0x1d701
+> (byte 0xeb808) + a separate 190-insn body at pc 0x1d709 (byte 0xeb848): 7+190 = 197. The
+> recovered side is 7 at 0x13c36 (0x9e1b0) + 189 at 0x13c3e (0x9e1f0): 7+189 = 196. There is no
+> ~338-insn body for this handler; a 338 count merges the 190-insn body with the following
+> functions (0x1d7cc stub + 0x1d7d4 109-insn body + ...). The ONLY valid test of any proposal is to apply it,
 > rebuild with the pinned recipe, and measure whether that function's compiled bytes move toward
 > the original (compare.py). Until that build experiment runs, treat every entry as unproven.
 
@@ -258,9 +260,26 @@ Handler identity: `update`-style admin wrapper; deployed pc `0x1d701` (byte `0xe
 `_ZN18pump_amm_recovered9__private8__global18toggle_mayhem_mode...`; both log
 `Instruction: ToggleMayhemMode`.
 
+## Function boundary (resolved, sbftool)
+
+| part | deployed (first..last insn pc; bytes) | recovered (first..last insn pc; bytes) |
+|---|---|---|
+| log prologue / dispatch stub | `0x1d701`..`0x1d708` (7 insns), `0xeb808..0xeb848` | `0x13c36`..`0x13c3d` (7 insns), `0x9e1b0..0x9e1f0` |
+| handler body | `0x1d709`..`0x1d7cb` (190 insns), `0xeb848..0xebe60` | `0x13c3e`..`0x13cff` (189 insns), `0x9e1f0..0x9e800` |
+| pass-index window (stub+body) | `0xeb808..0xebe60`, **197 insns** | `0x9e1b0..0x9e800`, **196 insns** |
+
+Ranges are first..last instruction starts; a 16-byte `lddw` occupies a second pc slot that
+is not a separate instruction (e.g. `0x1d707` in the deployed prologue, `0x13c3c` in the
+recovered prologue). The prologue is 7/7; the delta is entirely in the body (`0x1d725` / `0x13c5a`). The body
+is 190 vs 189, NOT 338. `sbftool.func_body(0x1d709)` returns 190 insns ending at `0x1d7cb`;
+the next function is a new 7-insn prologue at `0x1d7cc` and a 109-insn body at `0x1d7d4`
+(bytes `0xebe60` and `0xebea0`). A 338-insn "body" is those adjacent functions merged,
+not this handler.
+
 ## Observed delta (normalized)
 
-- deployed **197** instructions, recovered **196**.
+- deployed **197** window instructions (**7** prologue + **190** body), recovered **196**
+  (**7** + **189**); body-only delta is 190 vs 189 (one instruction).
 - Normalized similarity `0.95165`; after ignoring rodata/call immediates and the
   branch displacements that shift by the added/removed instruction, the **only**
   instruction-sequence delta is again at the error-path setup:
@@ -287,7 +306,8 @@ specializes the callee and bakes the constant in. Apply the same source-structur
 1. **S1 (primary)**: route the account-exit/serialization error mapping through an
    `#[inline(never)]` helper whose `kind` is kept opaque (`black_box`), so the constant is
    materialized at the call site (`mov r1, 0x14; mov r2, r6`) and the specialized clone is
-   not selected. Expect 197 instructions and the caller-side pair restored.
+   not selected. Expect 197 window instructions (7 prologue + 190 body; body-only 190/190)
+   and the caller-side pair restored.
 2. **S3 (parallel, no source edit)**: rebuild unchanged source with LLVM function
    specialization disabled; if the caller regains `mov r1, 0x14`, record the wall as
    compiler provenance rather than source structure.
@@ -297,7 +317,7 @@ specializes the callee and bakes the constant in. Apply the same source-structur
 ## Measurement
 
 Re-run the pass-index for this window; success = `toggle_mayhem_mode` moves from
-"no normalized match" to "normalized correspondence only" (197/197), with the raw
+"no normalized match" to "normalized correspondence only" (window 197/197; body 190/190), with the raw
 common-extent differing bytes reduced to relocation-only. Re-run the AMM differential
 suite (the behavior is unchanged: same 6043 `MayhemModeInDesiredState` guard, same store
 to `mayhem_mode_enabled` at serialized 417). Because this is the same class as Entry 1,

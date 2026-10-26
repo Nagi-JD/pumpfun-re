@@ -6,12 +6,16 @@ code/name attribution is not independently verified for this capture.
 
 Method: every instruction immediate in `[6000, 6120]` was scanned in each ELF and grouped by
 code; sites are `sbftool` pc units (vaddr/8). Custom codes are `6000 + enum discriminant`.
-The **name** comes from the program's recovered enum / official IDL; where the cluster
-specs binary-verified a name it is used verbatim. The pump enum is a different revision
-from the capture (known conflict: `AccountTypeNotSupported` is 6022 in the deployed per
-`spec/06`, while the reconstructed enum would place it at 6010), so pump names not in the
-verified set are marked **(source-enum candidate)**. Codes outside a program's enum range
-were ignored (they are other immediates, not that program's error codes).
+For **pump**, the name is now resolved from the deployed binary's `PumpError::name()` table
+(pc `0x2bd95`) rather than the recovered enum; see `pump_error_map.md` for the full
+code -> name -> site map. The earlier revision-conflict claim was wrong: the binary puts
+`AccountTypeNotSupported` at **6010** (not 6022), `SellZeroAmount` at **6022**,
+`MintDoesNotMatchBondingCurve` at **6004**, and `BondingCurveComplete` at **6005**. The
+pump rows below are corrected accordingly. For non-pump programs the name still comes from
+the recovered enum / official IDL; where a cluster spec binary-verified a name it is used
+verbatim, and unverified names are marked **(source-enum candidate)**. Codes outside a
+program's enum range were ignored (they are other immediates, not that program's error
+codes).
 
 Anchor built-in codes are listed per program as a summary (they are account/constraint
 errors, not program enums).
@@ -22,106 +26,107 @@ errors, not program enums).
 
 | code | name | sites (first 4) | tag |
 |---:|---|---|---|
-| 6000 | `NotAuthorized` | 0x7c7c 0x7c98 0xe5a4 0x26aee | [B]/[R] verified |
-| 6002 | `TooMuchSolRequired` | 0x27a70 0x2837d 0x290e6 0x29422 | [B] site / [partial] name (source-enum candidate) |
-| 6003 | `TooLittleSolReceived` | 0x28bd7 0x29622 0x2a682 | [B]/[R] verified |
-| 6004 | `?` | 0x2a70 0x2c91 0xfd75 | [B] site / [partial] unresolved (source candidate conflicts with verified 6005/6022) |
-| 6005 | `MintDoesNotMatchBondingCurve` | 0xfc67 0x277b1 0x27fa8 0x288ee | [B]/[R] verified |
-| 6006 | `BondingCurveNotComplete` | 0x7fce 0x93f2 0x34f58 | [B] site / [partial] name (source-enum candidate) |
-| 6010 | `?` | 0x2990 0x2d13 0x2d46 0x7769 | [B] site / [partial] unresolved (source candidate conflicts with verified 6005/6022) |
-| 6011 | `InitialRealTokenReservesShouldBeLessThanTokenTotalSupply` | 0x26e4f 0x338bc | [B] site / [partial] name (source-enum candidate) |
-| 6012 | `InitialVirtualTokenReservesShouldBeGreaterThanInitialRealTokenReserves` | 0x26d7e | [B] site / [partial] name (source-enum candidate) |
-| 6013 | `FeeBasisPointsGreaterThanMaximum` | 0x26dd2 0x26df1 | [B] site / [partial] name (source-enum candidate) |
-| 6014 | `AllZerosWithdrawAuthority` | 0x26e75 | [B] site / [partial] name (source-enum candidate) |
-| 6015 | `PoolMigrationFeeShouldBeLessThanFinalRealSolReserves` | 0x26ead | [B] site / [partial] name (source-enum candidate) |
-| 6018 | `DisabledMigrate` | 0x338b5 | [B] site / [partial] name (source-enum candidate) |
-| 6019 | `InvalidCreator` | 0x479e | [B]/[R] verified |
-| 6020 | `BuyZeroAmount` | 0xad74 0xbb70 0x277d0 0x27f4b | [B] site / [partial] name (source-enum candidate) |
-| 6021 | `NotEnoughTokensToBuy` | 0xbaef 0x104f1 0x105c4 0x2795b | [B] site / [partial] name (source-enum candidate) |
-| 6022 | `AccountTypeNotSupported` | 0xba48 0x28945 0x29583 0x2a5c0 | [B]/[R] verified |
-| 6023 | `NotEnoughTokensToSell` | 0x28abf 0x295af 0x2a5ef | [B] site / [partial] name (source-enum candidate) |
-| 6024 | `Overflow` | 0x2dea 0x2ebf 0x2f8f 0x3382 | [B] site / [partial] name (source-enum candidate) |
-| 6025 | `Truncation` | 0x2da9 0x2e2b 0x2e6c 0x2f0d | [B] site / [partial] name (source-enum candidate) |
-| 6026 | `DivisionByZero` | 0xc2ec 0xc3ff 0xc4ae 0xc543 | [B] site / [partial] name (source-enum candidate) |
-| 6027 | `NotEnoughRemainingAccounts` | 0x3f79 0x5a1c 0x5af4 0x618e | [B] site / [partial] name (source-enum candidate) |
-| 6028 | `AllFeeRecipientsShouldBeNonZero` | 0x7df4 0xe2ac | [B] site / [partial] name (source-enum candidate) |
-| 6029 | `UnsortedNotUniqueFeeRecipients` | 0x7f0b | [B] site / [partial] name (source-enum candidate) |
-| 6030 | `CreatorShouldNotBeZero` | 0x3de1 0x47b8 0x273f1 | [B]/[R] verified |
-| 6031 | `StartTimeInThePast` | 0xfb97 | [B] site / [partial] name (source-enum candidate) |
-| 6032 | `EndTimeInThePast` | 0xf99a 0x34f31 | [B] site / [partial] name (source-enum candidate) |
-| 6033 | `EndTimeBeforeStartTime` | 0xfa2f | [B] site / [partial] name (source-enum candidate) |
-| 6034 | `TimeRangeTooLarge` | 0xfab2 | [B] site / [partial] name (source-enum candidate) |
-| 6035 | `EndTimeBeforeCurrentDay` | 0xfbbe | [B] site / [partial] name (source-enum candidate) |
-| 6036 | `SupplyUpdateForFinishedRange` | 0xf9dc | [B] site / [partial] name (source-enum candidate) |
-| 6037 | `DayIndexAfterEndIndex` | 0xfa58 0xfaf1 | [B] site / [partial] name (source-enum candidate) |
-| 6038 | `DayInActiveRange` | 0xfb37 | [B] site / [partial] name (source-enum candidate) |
-| 6041 | `BuyNotEnoughSolToCoverFees` | 0x1017a 0x27fc6 0x281fc 0x282c6 | [B] site / [partial] name (source-enum candidate) |
-| 6042 | `BuySlippageBelowMinTokensOut` | 0x101a7 0x282fc 0x283b8 0x28513 | [B] site / [partial] name (source-enum candidate) |
-| 6043 | `NameTooLong` | 0x411c | [B] site / [partial] name (source-enum candidate) |
-| 6044 | `SymbolTooLong` | 0x420c | [B] site / [partial] name (source-enum candidate) |
-| 6045 | `UriTooLong` | 0x422f 0x346d0 | [B] site / [partial] name (source-enum candidate) |
-| 6046 | `CreateV2Disabled` | 0x3e44 | [B] site / [partial] name (source-enum candidate) |
-| 6048 | `MayhemModeDisabled` | 0x41e5 | [B] site / [partial] name (source-enum candidate) |
-| 6050 | `UnableToDistributeCreatorVaultMigratedToSharingConfig` | 0x536d 0x56d8 | [B] site / [partial] name (source-enum candidate) |
-| 6051 | `SharingConfigNotActive` | 0x5b90 0x6574 | [B] site / [partial] name (source-enum candidate) |
-| 6052 | `UnableToDistributeCreatorFeesToExecutableRecipient` | 0x598a 0x6367 | [B] site / [partial] name (source-enum candidate) |
-| 6054 | `ShareholdersAndRemainingAccountsMismatch` | 0x58ca 0x591a 0x62f7 | [B] site / [partial] name (source-enum candidate) |
-| 6055 | `InvalidShareBps` | 0x5a51 0x6426 | [B] site / [partial] name (source-enum candidate) |
-| 6057 | `BuybackFeeRecipientNotAuthorized` | 0x13151 | [B] site / [partial] name (source-enum candidate) |
-| 6058 | `AllBuybackFeeRecipientsShouldBeNonZero` | 0x132ec | [B] site / [partial] name (source-enum candidate) |
-| 6059 | `NotUniqueBuybackFeeRecipients` | 0x13241 | [B] site / [partial] name (source-enum candidate) |
-| 6060 | `BuybackBasisPointsOutOfRange` | 0x13078 | [B] site / [partial] name (source-enum candidate) |
-| 6061 | `WrongBuybackFeeRecipientsCount` | 0xe4f3 | [B] site / [partial] name (source-enum candidate) |
-| 6062 | `BuybackFeeRecipientMissing` | 0xdec8 0x13120 | [B] site / [partial] name (source-enum candidate) |
-| 6063 | `UnsupportedQuoteMint` | 0x3040 0x3361 0x3573 0x434a | [B] site / [partial] name (source-enum candidate) |
-| 6064 | `InvalidQuoteTokenProgram` | 0x404c 0x4186 0xf017 | [B] site / [partial] name (source-enum candidate) |
-| 6065 | `InvalidAssociatedQuoteBondingCurve` | 0x3f4a | [B] site / [partial] name (source-enum candidate) |
-| 6066 | `QuoteMintWhitelistFull` | 0xd31b 0x13484 | [B] site / [partial] name (source-enum candidate) |
-| 6067 | `QuoteMintAlreadyWhitelisted` | 0xd27c 0x1355a | [B] site / [partial] name (source-enum candidate) |
-| 6068 | `QuoteMintNotWhitelisted` | 0xd37a 0xd427 0x135c3 | [B] site / [partial] name (source-enum candidate) |
-| 6069 | `QuoteMintNotEligibleForWhitelist` | 0xd1dc 0xd22c 0xd2ec 0xd3b8 | [B] site / [partial] name (source-enum candidate) |
-| 6070 | `UnableToDistributeCreatorFeesToUninitializedAccount` | 0x5b10 | [B] site / [partial] name (source-enum candidate) |
-| 6071 | `MayhemModeQuoteMintNotAllowed` | 0x414b | [B] site / [partial] name (source-enum candidate) |
-| 6072 | `MissingCashbackAccounts` | 0xda58 | [B] site / [partial] name (source-enum candidate) |
-| 6073 | `InvalidCashbackAccumulator` | 0xda3b 0xdab8 0xdc12 | [B] site / [partial] name (source-enum candidate) |
-| 6074 | `InvalidBondingCurveV2` | 0xdd52 0xddcb 0xde51 0xde6d | [B] site / [partial] name (source-enum candidate) |
-| 6075 | `InvalidQuoteControl` | 0x300d 0x3080 0xd48e 0xd4aa | [B] site / [partial] name (source-enum candidate) |
-| 6076 | `InvalidCashbackRecipient` | 0xf18b | [B] site / [partial] name (source-enum candidate) |
-| 6077 | `CreatorFeeNotConfigurable` | 0x3db0 0x4839 | [B]/[R] verified |
-| 6078 | `CreatorFeeBpsOutOfRange` | 0x3fff 0x481f 0x344ad | [B]/[R] verified |
-| 6080 | `CreatorFeeNotAllowedForCashbackCoin` | 0x4800 | [B]/[R] verified |
-| 6081 | `BondingCurveAlreadyMigrated` | 0x23917 | [B] site / [partial] name (source-enum candidate) |
-| 6082 | `CashbackDeprecated` | 0x3d56 | [B] site / [partial] name (source-enum candidate) |
-| 6083 | `HolderRewardCreatorImmutable` | 0x4654 0x7011 | [B]/[R] verified |
-| 6084 | `HolderRewardDisabled` | 0x3e81 0x4752 | [B]/[R] verified |
-| 6085 | `HolderRewardRecipientsMismatch` | 0x68e6 0x6d74 | [B]/[R] verified |
-| 6086 | `HolderRewardsRentFloor` | 0x6e57 | [B] site / [partial] name (source-enum candidate) |
-| 6087 | `HolderRewardTokenAccountMissing` | 0x6d3f | [B] site / [partial] name (source-enum candidate) |
-| 6088 | `CtoNotAllowedForMayhemCoin` | 0x5043 | [B]/[R] verified |
-| 6089 | `CtoNewCreatorRequired` | 0x471d | [B]/[R] verified |
-| 6090 | `CtoNewCreatorNotAllowed` | 0x468c | [B]/[R] verified |
-| 6091 | `CreatorFeeNotConfigurableForQuote` | 0x4780 | [B]/[R] verified |
-| 6092 | `CtoCreatorAccountNotWritable` | 0x5062 | [B]/[R] verified |
-| 6093 | `CtoSharedVaultFrozen` | 0x4980 0x49fb | [B] site / [partial] name (source-enum candidate) |
-| 6094 | `CashbackCoinNotSupported` | 0xfc83 | [B] site / [partial] name (source-enum candidate) |
-| 6095 | `CreatorFeesNotSwept` | 0x48c4 0x5b52 0x6536 0x702d | [B]/[R] verified |
-| 6096 | `FeeTiersEmpty` | 0x113bf | [B] site / [partial] name (source-enum candidate) |
-| 6097 | `FeeConfigTooShort` | 0x1144d | [B] site / [partial] name (source-enum candidate) |
-| 6098 | `MultiHopDiscontinuousPath` | 0xae20 0xb8f6 | [B] site / [partial] name (source-enum candidate) |
-| 6099 | `InvalidQuoteBondingCurve` | 0x3434 0x34bf 0x3506 | [B] site / [partial] name (source-enum candidate) |
-| 6100 | `QuoteBondingCurveNotEligible` | 0x3137 0xc25c | [B] site / [partial] name (source-enum candidate) |
-| 6101 | `QuotePoolAccountsRequired` | 0x3301 | [B] site / [partial] name (source-enum candidate) |
-| 6102 | `QuotePoolNotFound` | 0xca86 | [B] site / [partial] name (source-enum candidate) |
-| 6103 | `InvalidQuotePool` | 0xc7ee 0xc80a 0xc8ae 0xc971 | [B] site / [partial] name (source-enum candidate) |
-| 6104 | `QuoteReservesOutOfRange` | 0xc789 | [B] site / [partial] name (source-enum candidate) |
-| 6105 | `CurveDepthExceeded` | 0xc1c6 | [B] site / [partial] name (source-enum candidate) |
-| 6106 | `MultiHopHopFeesMismatch` | 0xadb2 | [B] site / [partial] name (source-enum candidate) |
-| 6107 | `QuoteCurveAwaitingMigration` | 0x32e5 | [B] site / [partial] name (source-enum candidate) |
-| 6108 | `MultiHopMayhemCurveNotSupported` | 0xb6dd | [B] site / [partial] name (source-enum candidate) |
-| 6109 | `QuoteChainAccountsRequired` | 0x33ca | [B] site / [partial] name (source-enum candidate) |
-| 6110 | `QuoteMintNotWritable` | 0x9674 | [B] site / [partial] name (source-enum candidate) |
+| 6000 | `NotAuthorized` | 0x7c7c 0x7c98 0xe5a4 0x26aee | [B] name-table + site |
+| 6002 | `TooMuchSolRequired` | 0x27a70 0x2837d 0x290e6 0x29422 | [B] name-table + site |
+| 6003 | `TooLittleSolReceived` | 0x28bd7 0x29622 0x2a682 | [B] name-table + site |
+| 6004 | `MintDoesNotMatchBondingCurve` | 0x2a70 0x2c91 0xfd75 | [B] name-table (`0x1b820b/28`) + site |
+| 6005 | `BondingCurveComplete` | 0xfc67 0x277b1 0x27fa8 0x288ee | [B] name-table (`0x1b8227/20`) + site |
+| 6006 | `BondingCurveNotComplete` | 0x7fce 0x93f2 | [B] name-table + site (0x34f58 is a call imm, not a store) |
+| 6010 | `AccountTypeNotSupported` | 0x2990 0x2d13 0x2d46 0x7769 | [B] name-table (`0x1b8298/23`) + site |
+| 6011 | `InitialRealTokenReservesShouldBeLessThanTokenTotalSupply` | 0x26e4f | [B] name-table + site (0x338bc is a call imm, not a store) |
+| 6012 | `InitialVirtualTokenReservesShouldBeGreaterThanInitialRealTokenReserves` | 0x26d7e | [B] name-table + site |
+| 6013 | `FeeBasisPointsGreaterThanMaximum` | 0x26dd2 0x26df1 | [B] name-table + site |
+| 6014 | `AllZerosWithdrawAuthority` | 0x26e75 | [B] name-table + site |
+| 6015 | `PoolMigrationFeeShouldBeLessThanFinalRealSolReserves` | 0x26ead | [B] name-table + site |
+| 6018 | `DisabledMigrate` | (no stw site in pump; 0x338b5 is a call imm) | [B] name-table; unraised here |
+| 6019 | `InvalidCreator` | 0x479e | [B] name-table + site |
+| 6020 | `BuyZeroAmount` | 0xad74 0xbb70 0x277d0 0x27f4b | [B] name-table + site |
+| 6021 | `NotEnoughTokensToBuy` | 0xbaef 0x104f1 0x105c4 0x2795b | [B] name-table + site |
+| 6022 | `SellZeroAmount` | 0xba48 0x28945 0x29583 0x2a5c0 | [B] name-table (`0x1b83f7/14`) + site |
+| 6023 | `NotEnoughTokensToSell` | 0x28abf 0x295af 0x2a5ef | [B] name-table + site |
+| 6024 | `Overflow` | 0x2dea 0x2ebf 0x2f8f 0x3382 | [B] name-table + site |
+| 6025 | `Truncation` | 0x2da9 0x2e2b 0x2e6c 0x2f0d | [B] name-table + site |
+| 6026 | `DivisionByZero` | 0xc2ec 0xc3ff 0xc4ae 0xc543 | [B] name-table + site |
+| 6027 | `NotEnoughRemainingAccounts` | 0x3f79 0x5a1c 0x5af4 0x618e | [B] name-table + site |
+| 6028 | `AllFeeRecipientsShouldBeNonZero` | 0x7df4 0xe2ac | [B] name-table + site |
+| 6029 | `UnsortedNotUniqueFeeRecipients` | 0x7f0b | [B] name-table + site |
+| 6030 | `CreatorShouldNotBeZero` | 0x3de1 0x47b8 0x273f1 | [B] name-table + site |
+| 6031 | `StartTimeInThePast` | 0xfb97 | [B] name-table + site |
+| 6032 | `EndTimeInThePast` | 0xf99a | [B] name-table + site (0x34f31 is a call imm, not a store) |
+| 6033 | `EndTimeBeforeStartTime` | 0xfa2f | [B] name-table + site |
+| 6034 | `TimeRangeTooLarge` | 0xfab2 | [B] name-table + site |
+| 6035 | `EndTimeBeforeCurrentDay` | 0xfbbe | [B] name-table + site |
+| 6036 | `SupplyUpdateForFinishedRange` | 0xf9dc | [B] name-table + site |
+| 6037 | `DayIndexAfterEndIndex` | 0xfa58 0xfaf1 | [B] name-table + site |
+| 6038 | `DayInActiveRange` | 0xfb37 | [B] name-table + site |
+| 6041 | `BuyNotEnoughSolToCoverFees` | 0x1017a 0x27fc6 0x281fc 0x282c6 | [B] name-table + site |
+| 6042 | `BuySlippageBelowMinTokensOut` | 0x101a7 0x282fc 0x283b8 0x28513 | [B] name-table + site |
+| 6043 | `NameTooLong` | 0x411c | [B] name-table + site |
+| 6044 | `SymbolTooLong` | 0x420c | [B] name-table + site |
+| 6045 | `UriTooLong` | 0x422f | [B] name-table + site (0x346d0 is a call imm, not a store) |
+| 6046 | `CreateV2Disabled` | 0x3e44 | [B] name-table + site |
+| 6048 | `MayhemModeDisabled` | 0x41e5 | [B] name-table + site |
+| 6050 | `UnableToDistributeCreatorVaultMigratedToSharingConfig` | 0x536d 0x56d8 | [B] name-table + site |
+| 6051 | `SharingConfigNotActive` | 0x5b90 0x6574 | [B] name-table + site |
+| 6052 | `UnableToDistributeCreatorFeesToExecutableRecipient` | 0x598a 0x6367 | [B] name-table + site |
+| 6054 | `ShareholdersAndRemainingAccountsMismatch` | 0x58ca 0x591a 0x62f7 | [B] name-table + site |
+| 6055 | `InvalidShareBps` | 0x5a51 0x6426 | [B] name-table + site |
+| 6057 | `BuybackFeeRecipientNotAuthorized` | 0x13151 | [B] name-table + site |
+| 6058 | `AllBuybackFeeRecipientsShouldBeNonZero` | 0x132ec | [B] name-table + site |
+| 6059 | `NotUniqueBuybackFeeRecipients` | 0x13241 | [B] name-table + site |
+| 6060 | `BuybackBasisPointsOutOfRange` | 0x13078 | [B] name-table + site |
+| 6061 | `WrongBuybackFeeRecipientsCount` | 0xe4f3 | [B] name-table + site |
+| 6062 | `BuybackFeeRecipientMissing` | 0xdec8 0x13120 | [B] name-table + site |
+| 6063 | `UnsupportedQuoteMint` | 0x3040 0x3361 0x3573 0x434a | [B] name-table + site |
+| 6064 | `InvalidQuoteTokenProgram` | 0x404c 0x4186 0xf017 | [B] name-table + site |
+| 6065 | `InvalidAssociatedQuoteBondingCurve` | 0x3f4a | [B] name-table + site |
+| 6066 | `QuoteMintWhitelistFull` | 0xd31b 0x13484 | [B] name-table + site |
+| 6067 | `QuoteMintAlreadyWhitelisted` | 0xd27c 0x1355a | [B] name-table + site |
+| 6068 | `QuoteMintNotWhitelisted` | 0xd37a 0xd427 0x135c3 | [B] name-table + site |
+| 6069 | `QuoteMintNotEligibleForWhitelist` | 0xd1dc 0xd22c 0xd2ec 0xd3b8 | [B] name-table + site |
+| 6070 | `UnableToDistributeCreatorFeesToUninitializedAccount` | 0x5b10 | [B] name-table + site |
+| 6071 | `MayhemModeQuoteMintNotAllowed` | 0x414b | [B] name-table + site |
+| 6072 | `MissingCashbackAccounts` | 0xda58 | [B] name-table + site |
+| 6073 | `InvalidCashbackAccumulator` | 0xda3b 0xdab8 0xdc12 | [B] name-table + site |
+| 6074 | `InvalidBondingCurveV2` | 0xdd52 0xddcb 0xde51 0xde6d | [B] name-table + site |
+| 6075 | `InvalidQuoteControl` | 0x300d 0x3080 0xd48e 0xd4aa | [B] name-table + site |
+| 6076 | `InvalidCashbackRecipient` | 0xf18b | [B] name-table + site |
+| 6077 | `CreatorFeeNotConfigurable` | 0x3db0 0x4839 | [B] name-table + site |
+| 6078 | `CreatorFeeBpsOutOfRange` | 0x3fff 0x481f | [B] name-table + site (0x344ad is a call imm, not a store) |
+| 6080 | `CreatorFeeNotAllowedForCashbackCoin` | 0x4800 | [B] name-table + site |
+| 6081 | `BondingCurveAlreadyMigrated` | (no stw site in pump; 0x23917 is a call imm) | [B] name-table; unraised here |
+| 6082 | `CashbackDeprecated` | 0x3d56 | [B] name-table + site |
+| 6083 | `HolderRewardCreatorImmutable` | 0x4654 0x7011 | [B] name-table + site |
+| 6084 | `HolderRewardDisabled` | 0x3e81 0x4752 | [B] name-table + site |
+| 6085 | `HolderRewardRecipientsMismatch` | 0x68e6 0x6d74 | [B] name-table + site |
+| 6086 | `HolderRewardsRentFloor` | 0x6e57 | [B] name-table + site |
+| 6087 | `HolderRewardTokenAccountMissing` | 0x6d3f | [B] name-table + site |
+| 6088 | `CtoNotAllowedForMayhemCoin` | 0x5043 | [B] name-table + site |
+| 6089 | `CtoNewCreatorRequired` | 0x471d | [B] name-table + site |
+| 6090 | `CtoNewCreatorNotAllowed` | 0x468c | [B] name-table + site |
+| 6091 | `CreatorFeeNotConfigurableForQuote` | 0x4780 | [B] name-table + site |
+| 6092 | `CtoCreatorAccountNotWritable` | 0x5062 | [B] name-table + site |
+| 6093 | `CtoSharedVaultFrozen` | 0x4980 0x49fb | [B] name-table + site |
+| 6094 | `CashbackCoinNotSupported` | 0xfc83 | [B] name-table + site |
+| 6095 | `CreatorFeesNotSwept` | 0x48c4 0x5b52 0x6536 0x702d | [B] name-table + site |
+| 6096 | `FeeTiersEmpty` | 0x113bf | [B] name-table + site |
+| 6097 | `FeeConfigTooShort` | 0x1144d | [B] name-table + site |
+| 6098 | `MultiHopDiscontinuousPath` | 0xae20 0xb8f6 | [B] name-table + site |
+| 6099 | `InvalidQuoteBondingCurve` | 0x3434 0x34bf 0x3506 | [B] name-table + site |
+| 6100 | `QuoteBondingCurveNotEligible` | 0x3137 0xc25c | [B] name-table + site |
+| 6101 | `QuotePoolAccountsRequired` | 0x3301 | [B] name-table + site |
+| 6102 | `QuotePoolNotFound` | 0xca86 | [B] name-table + site |
+| 6103 | `InvalidQuotePool` | 0xc7ee 0xc80a 0xc8ae 0xc971 | [B] name-table + site |
+| 6104 | `QuoteReservesOutOfRange` | 0xc789 | [B] name-table + site |
+| 6105 | `CurveDepthExceeded` | 0xc1c6 | [B] name-table + site |
+| 6106 | `MultiHopHopFeesMismatch` | 0xadb2 | [B] name-table + site |
+| 6107 | `QuoteCurveAwaitingMigration` | 0x32e5 | [B] name-table + site |
+| 6108 | `MultiHopMayhemCurveNotSupported` | 0xb6dd | [B] name-table + site |
+| 6109 | `QuoteChainAccountsRequired` | 0x33ca | [B] name-table + site |
+| 6110 | `QuoteMintNotWritable` | 0x9674 | [B] name-table + site |
 
-- In the enum but no direct immediate isolated: 6001 AlreadyInitialized, 6007 NotInitialized, 6008 WithdrawTooFrequent, 6009 NewSizeShouldBeGreaterThanCurrentSize, 6016 PoolMigrationFeeShouldBeGreaterThanCreatorFeePlusMaxMigrateFees, 6017 DisabledWithdraw, 6039 InvalidIncentiveMint, 6040 BuyNotEnoughSolToCoverRent, 6047 CpitializeMayhemFailed, 6049 CreatorMigratedToSharingConfig, 6053 BondingCurveAndSharingConfigCreatorMismatch, 6056 CashbackNotEnabled, 6079 CreatorFeeNotEditable.
+- In the enum but no `stw` site in pump (15): 6001 AlreadyInitialized, 6007 NotInitialized, 6008 WithdrawTooFrequent, 6009 NewSizeShouldBeGreaterThanCurrentSize, 6016 PoolMigrationFeeShouldBeGreaterThanCreatorFeePlusMaxMigrateFees, 6017 DisabledWithdraw, 6018 DisabledMigrate, 6039 InvalidIncentiveMint, 6040 BuyNotEnoughSolToCoverRent, 6047 CpitializeMayhemFailed, 6049 CreatorMigratedToSharingConfig, 6053 BondingCurveAndSharingConfigCreatorMismatch, 6056 CashbackNotEnabled, 6079 CreatorFeeNotEditable, 6081 BondingCurveAlreadyMigrated.
+- Full `stw`-only site list (366 rows), the binary name table, and the correction rationale: `pump_error_map.md`.
 
 ### Anchor built-in codes observed
 
