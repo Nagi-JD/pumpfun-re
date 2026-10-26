@@ -1,3 +1,12 @@
+> **[Claude verification note — byte-identity tier is speculative]** The structure proposals
+> here are HYPOTHESES for closing per-function byte gaps (the Shaw byte-identity end-goal; still
+> 0/4 for everyone). They are NOT verified. Caveat on Entry 2: the cited wrapper sizes
+> (toggle_mayhem_mode 197/196 insns) did NOT reconcile with sbftool's function recovery, which
+> delineates a 7-insn dispatch stub at 0x1d701 and a separate ~338-insn body — likely a
+> function-boundary definition difference. The ONLY valid test of any proposal is to apply it,
+> rebuild with the pinned recipe, and measure whether that function's compiled bytes move toward
+> the original (compare.py). Until that build experiment runs, treat every entry as unproven.
+
 # Byte-structure proposal - `pump_amm::update_buyback_config` wrapper
 
 Goal: move the recovered build's compiled bytes toward the deployed bytes for **one** function
@@ -232,3 +241,78 @@ candidate-side "no normalized match" rows.
   8 excess bytes (first diff +0x2c, last +0x65a).
 - Decoder/reproduction: `python sbftool.py dis <so> <pc>`; normalization script logic is
   described in Sec.2 (replace call immediates; classify rodata `lddw`; keep branch offsets).
+
+---
+
+# Entry 2 - `pump_amm::toggle_mayhem_mode` wrapper (same constant-class delta)
+
+The pass-index marks this wrapper "no normalized match" on both sides:
+
+| side | window | bytes | status |
+|---|---|---:|---|
+| deployed | `[0xeb808, 0xebe60)` | 1624 | no normalized match |
+| recovered | `[0x9e1b0, 0x9e800)` | 1616 | no normalized match |
+
+Handler identity: `update`-style admin wrapper; deployed pc `0x1d701` (byte `0xeb808`,
+`amm_handlers.json`); recovered symbol
+`_ZN18pump_amm_recovered9__private8__global18toggle_mayhem_mode...`; both log
+`Instruction: ToggleMayhemMode`.
+
+## Observed delta (normalized)
+
+- deployed **197** instructions, recovered **196**.
+- Normalized similarity `0.95165`; after ignoring rodata/call immediates and the
+  branch displacements that shift by the added/removed instruction, the **only**
+  instruction-sequence delta is again at the error-path setup:
+
+```
+original  [33] pc 0x1d725 (byte 0xeb928): mov64 r1, 0x14
+          [34] pc 0x1d726 (byte 0xeb930): mov64 r2, r6
+          [35] pc 0x1d727 (byte 0xeb938): call 0x109f
+recovered [33] pc 0x13c5a (byte 0x9e2d0): mov64 r1, r6
+          [34] pc 0x13c5b (byte 0x9e2d8): call 0x1105
+```
+
+The recovered callee `0x1105` materializes `r1 = 0x14` internally, exactly like
+`update_buyback_config` (`structure_proposals` Entry 1). All other deltas are rodata
+pointers (`0x11ea3e` vs `0x10e345`, `0x122298` vs `0x112cf0`, `0x1b...`/`0x10...`) and
+branch offsets shifted by one instruction - i.e. layout, not logic.
+
+## Proposal
+
+This is a **second instance of the same class** as Entry 1: a constant (0x14 = 20) that the
+original passes as an argument to the shared error constructor, while the recovered build
+specializes the callee and bakes the constant in. Apply the same source-structure lever:
+
+1. **S1 (primary)**: route the account-exit/serialization error mapping through an
+   `#[inline(never)]` helper whose `kind` is kept opaque (`black_box`), so the constant is
+   materialized at the call site (`mov r1, 0x14; mov r2, r6`) and the specialized clone is
+   not selected. Expect 197 instructions and the caller-side pair restored.
+2. **S3 (parallel, no source edit)**: rebuild unchanged source with LLVM function
+   specialization disabled; if the caller regains `mov r1, 0x14`, record the wall as
+   compiler provenance rather than source structure.
+3. Do **not** touch item order or split the handler body: the prologue/log/try_accounts/exit
+   skeleton already normalizes; only the error-path constant placement differs.
+
+## Measurement
+
+Re-run the pass-index for this window; success = `toggle_mayhem_mode` moves from
+"no normalized match" to "normalized correspondence only" (197/197), with the raw
+common-extent differing bytes reduced to relocation-only. Re-run the AMM differential
+suite (the behavior is unchanged: same 6043 `MayhemModeInDesiredState` guard, same store
+to `mayhem_mode_enabled` at serialized 417). Because this is the same class as Entry 1,
+fixing both with one shared helper is preferable; check the other 8-byte-delta wrappers
+(`toggle_cashback_enabled`, `update_max_*`, `reset_*`, `set_boost_authority` if its delta
+reduces to the same pattern) for the same error-path clone before editing each one.
+
+## Evidence index
+
+- `repro/pump_amm/formatter-restoration-v144/inventory/after/all-window-dispositions.tsv`
+  rows `original 0xeb808 0xebe60 1624 ... no normalized match` and
+  `candidate 0x9e1b0 0x9e800 1616 ... no normalized match ... toggle_mayhem_mode`.
+- `residual-ledger.json.gz` same windows; normalization = relocation/call immediates only.
+- Dispatcher: `toggle_mayhem_mode` handler pc `0x1d701` (byte `0xeb808`).
+- Delta: original `0x1d725` (`mov r1,0x14`) / `0x1d726` (`mov r2,r6`) / call `0x109f`;
+  recovered `0x13c5a` (`mov r1,r6`) / call `0x1105`; callee `0x1105` has `mov r1,0x14` at
+  `0x1124`.
+- Raw metric: 1624 vs 1616 bytes, 8 excess bytes (one instruction).
