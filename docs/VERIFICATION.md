@@ -135,3 +135,16 @@ creator_fee==0 path). Result — ALL pump_amm core instructions ok:true/true byt
 Post buy+sell state byte-identical deployed-vs-recovered: pool_base=1002662277661,
 pool_quote=1003662528, pfr=14268, buyback=0. Verifies constant-product-with-fees swap pricing
 (swap + lp_fee + protocol_fee) end-to-end. No divergence, no further gate.
+
+## UPDATE 6 — Mayhem: reconstruction built but INCOMPLETE (key handler missing)
+Built mayhem_recovered.so with v1.52 (0 errors, 668,632 B). Structural: recovered 71,875
+insns / 461 fns vs deployed 83,947 / 502 (~86%). buy/sell/initialize_global_params dispatch
+present, BUT:
+- initialize_mayhem_state (disc 9dbd5e485545cc2d) is ABSENT from the recovered binary entirely
+  (not a lddw, not raw bytes) while the deployed binary HAS it. The recovered Mayhem does NOT
+  implement the one handler that matters most — the pump create_v2 CPI target. ~41 functions /
+  12k insns short overall.
+Conclusion: Mayhem is mapped (25/25) and specced (25), but the RECONSTRUCTION is incomplete;
+it cannot be behaviorally verified end-to-end vs deployed until initialize_mayhem_state (and the
+other missing handlers) are reconstructed. This corroborates why pump's create_v2 Mayhem branch
+was always stubbed/partial. [verified by disc presence check on both binaries]
