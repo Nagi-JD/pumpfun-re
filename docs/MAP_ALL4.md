@@ -5,16 +5,29 @@ Built with `tools/sbftool.py` + `tools/deep_map_all4.py` from
 Decoder stated 0-diff vs llvm-objdump in upstream docs.
 Scope: RE / behavioral structure only — no vuln claims, no exploit PoC.
 
-| Program | .text insns | functions | instructions mapped |
-|---|---:|---:|---|
-| pump | 215,873 | 1169 | 53/53 |
-| pump_amm (PumpSwap) | 139,524 | 831 | 38/38 (IDL stale at 31; collaborator-found+verified) |
-| pump_fees | 96,083 | 637 | 31/31 |
-| mayhem | 83,947 | 502 | 25/25 (jeq+jne dispatch, collaborator-verified) |
+> **Correction (S1b).** The `handler_pc` / `stub_pc` / discriminator columns below
+> re-verify and stand. The **per-handler body metrics** that
+> `maps/dispositions.json` / `docs/HANDLER_DISPOSITIONS.md` used to report
+> (`func_insns: 3..7`, `relative_callees: 0`, `syscalls: {}`, `has_cpi: false`,
+> `calls_transfer_fee_helper: false` for all 139 handlers) were an artifact of
+> syscall call-site relocations being mistaken for function starts. Real bodies
+> are 12–399 insns with 111/139 handlers doing CPI. Details, fix and
+> before/after table: `docs/analysis/S1b_handler_bodies.md`; regenerated
+> dispositions: `maps/*_bodies.json` + `docs/HANDLER_DISPOSITIONS.md`.
 
-.text sizes (bytes): pump 1,792,208 · pump_amm 1,162,040 · pump_fees 799,648 · mayhem 706,744.
+| Program | .text bytes | .text insns | functions | instructions mapped |
+|---|---:|---:|---:|---|
+| pump | 1,792,208 | 215,873 | 905 | 53/53 |
+| pump_amm (PumpSwap) | 1,162,040 | 139,524 | 662 | 38/38 (IDL stale at 31; collaborator-found+verified) |
+| pump_fees | 799,648 | 96,083 | 488 | 31/31 |
+| mayhem | 706,744 | 83,947 | 373 | 25/25 (jeq+jne dispatch, collaborator-verified) |
 
-Note: the `deep_map_all4.py` dispatcher pass below recovered 30 pump_amm handlers (all agree with the upstream 38/38 map in `maps/amm_handlers_full.json`); the 8 additional upstream-verified PumpSwap instructions are not re-listed here.
+(`functions` = internal call targets + entry after the S1b relocation-aware fix; before it the
+syscall-site artifact inflated these to 1169 / 831 / 637 / 502.)
+
+Note: the `deep_map_all4.py` dispatcher pass below recovered 30 pump_amm handlers (all agree with
+the upstream 38/38 map in `maps/amm_handlers_full.json`); the 8 additional upstream-verified
+PumpSwap instructions are not re-listed here.
 
 ## SHA-256 of deployed.so
 
@@ -233,8 +246,10 @@ Unmapped: `admin_set_coin_creator`
 
 - `maps/*_handlers.json` — compact name→handler_pc
 - `maps/*_handlers_full.json` — disc/cmp/stub/handler
-- `maps/dispositions.json` — per-handler size/syscalls/errors/xfer-fee
+- `maps/*_bodies.json` — measured per-handler bodies (insns, callees, syscalls, CPI, helper reach)
+- `maps/dispositions.json` — per-handler size/syscalls/errors/xfer-fee (SUPERSEDED body metrics, see S1b)
 - `maps/program_summaries.json` — program-level stats
-- `docs/HANDLER_DISPOSITIONS.md` — narrative
+- `docs/HANDLER_DISPOSITIONS.md` — narrative (regenerated from `*_bodies.json`)
+- `docs/analysis/S1b_handler_bodies.md` — the function-start artifact, fix and before/after
 - `docs/analysis/B*_notes.md` — B-unit address notes
 

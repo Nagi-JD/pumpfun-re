@@ -1,0 +1,1346 @@
+{
+ "source_elf": "maps",
+ "handler_map": "amm_handlers_full.json",
+ "watch_pcs": [],
+ "handlers": [
+  {
+   "name": "admin_update_token_incentives",
+   "handler_pc": "0x1cb9d",
+   "body_pc": "0x1cb9d",
+   "body_insns": 184,
+   "direct_callees": 6,
+   "callgraph_nodes": 120,
+   "backedges": 4,
+   "syscalls": {
+    "sol_log_": [
+     "0x1cba5"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0x2ca6",
+     "0xff14"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x2d91",
+     "0x1cba5"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "boost_buy_and_burn",
+   "handler_pc": "0x1c8e7",
+   "body_pc": "0x1c8e7",
+   "body_insns": 164,
+   "direct_callees": 6,
+   "callgraph_nodes": 150,
+   "backedges": 2,
+   "syscalls": {
+    "sol_log_": [
+     "0x1c8ef"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0x4011",
+     "0xe531",
+     "0xe9d0",
+     "0x1eedb"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1c8ef"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "buy",
+   "handler_pc": "0x1cec9",
+   "body_pc": "0x1cec9",
+   "body_insns": 227,
+   "direct_callees": 8,
+   "callgraph_nodes": 229,
+   "backedges": 3,
+   "syscalls": {
+    "sol_log_": [
+     "0x1ced1"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0x2697",
+     "0x6b1c",
+     "0xb011",
+     "0xdf5d",
+     "0xe185",
+     "0xe433",
+     "0xe531",
+     "0x15f52",
+     "0x186bf",
+     "0x1896e",
+     "0x1b6da",
+     "0x20512"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_get_return_data": [
+     "0x210d6"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1ced1"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_memset_": [
+     "0x2128a"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "buy_exact_quote_in",
+   "handler_pc": "0x1cfb1",
+   "body_pc": "0x1cfb1",
+   "body_insns": 227,
+   "direct_callees": 8,
+   "callgraph_nodes": 226,
+   "backedges": 3,
+   "syscalls": {
+    "sol_log_": [
+     "0x1cfb9"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0x2697",
+     "0x6b1c",
+     "0x74e1",
+     "0xb011",
+     "0xdf5d",
+     "0xe185",
+     "0xe433",
+     "0xe531",
+     "0x15f52",
+     "0x186bf",
+     "0x1896e",
+     "0x1b6da",
+     "0x20512"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_get_return_data": [
+     "0x210d6"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1cfb9"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_memset_": [
+     "0x2128a"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "claim_cashback",
+   "handler_pc": "0x1da42",
+   "body_pc": "0x1da42",
+   "body_insns": 137,
+   "direct_callees": 4,
+   "callgraph_nodes": 89,
+   "backedges": 2,
+   "syscalls": {
+    "sol_log_": [
+     "0x1da49"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0xb7c6",
+     "0xe4a0",
+     "0xe531",
+     "0x198df"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1da49"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "claim_token_incentives",
+   "handler_pc": "0x1cc57",
+   "body_pc": "0x1cc57",
+   "body_insns": 138,
+   "direct_callees": 4,
+   "callgraph_nodes": 121,
+   "backedges": 2,
+   "syscalls": {
+    "sol_log_": [
+     "0x1cc5e"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0xb4dc",
+     "0xe531",
+     "0x190ca",
+     "0x1962a"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0xb54b",
+     "0x1cc5e"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "close_user_volume_accumulator",
+   "handler_pc": "0x1cd93",
+   "body_pc": "0x1cd93",
+   "body_insns": 131,
+   "direct_callees": 4,
+   "callgraph_nodes": 56,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1cd9a"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0xb924",
+     "0x19d4c",
+     "0x19f05"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1cd9a"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memset_": [
+     "0x2128a"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "collect_coin_creator_fee",
+   "handler_pc": "0x1d51d",
+   "body_pc": "0x1d51d",
+   "body_insns": 80,
+   "direct_callees": 5,
+   "callgraph_nodes": 76,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1d524"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x46cf",
+     "0xe531",
+     "0x1215c"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x4603",
+     "0x1d524"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "create_config",
+   "handler_pc": "0x1c17f",
+   "body_pc": "0x1c17f",
+   "body_insns": 285,
+   "direct_callees": 13,
+   "callgraph_nodes": 109,
+   "backedges": 5,
+   "syscalls": {
+    "sol_log_": [
+     "0x1c187"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x1c38",
+     "0x2e49",
+     "0x10227",
+     "0x104de"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1c187"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "create_pool",
+   "handler_pc": "0x1c634",
+   "body_pc": "0x1c634",
+   "body_insns": 377,
+   "direct_callees": 11,
+   "callgraph_nodes": 178,
+   "backedges": 7,
+   "syscalls": {
+    "sol_log_": [
+     "0x1c63c"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0xe531",
+     "0xe62e",
+     "0xe7fc",
+     "0x13c8d",
+     "0x14026",
+     "0x143c8",
+     "0x145e0",
+     "0x14891"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1c63c"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "deposit",
+   "handler_pc": "0x1ca4f",
+   "body_pc": "0x1ca4f",
+   "body_insns": 165,
+   "direct_callees": 6,
+   "callgraph_nodes": 143,
+   "backedges": 2,
+   "syscalls": {
+    "sol_log_": [
+     "0x1ca57"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0xe531",
+     "0xe62e"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1ca57"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "disable",
+   "handler_pc": "0x1c2a1",
+   "body_pc": "0x1c2a1",
+   "body_insns": 241,
+   "direct_callees": 9,
+   "callgraph_nodes": 73,
+   "backedges": 9,
+   "syscalls": {
+    "sol_log_": [
+     "0x1c2a9"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x2fb6",
+     "0x1085f"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1c2a9"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "extend_account",
+   "handler_pc": "0x1d47e",
+   "body_pc": "0x1d47e",
+   "body_insns": 158,
+   "direct_callees": 3,
+   "callgraph_nodes": 75,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1d485"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x1c38",
+     "0x5de0",
+     "0x14da1"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x5d6e",
+     "0x1d485"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memset_": [
+     "0x2128a"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "init_boost",
+   "handler_pc": "0x1c7b3",
+   "body_pc": "0x1c7b3",
+   "body_insns": 133,
+   "direct_callees": 4,
+   "callgraph_nodes": 139,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1c7ba"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0x3e40",
+     "0xe531",
+     "0x1181c"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1c7ba"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "init_user_volume_accumulator",
+   "handler_pc": "0x1cce2",
+   "body_pc": "0x1cce2",
+   "body_insns": 174,
+   "direct_callees": 5,
+   "callgraph_nodes": 90,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1cce9"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x1c38",
+     "0xba95",
+     "0x19f74",
+     "0x1a2c6"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1cce9"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "migrate_pool_coin_creator",
+   "handler_pc": "0x1d8e7",
+   "body_pc": "0x1d8e7",
+   "body_insns": 140,
+   "direct_callees": 5,
+   "callgraph_nodes": 77,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1d8ee"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48f2",
+     "0x125c6"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1d8ee"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "sell",
+   "handler_pc": "0x1d099",
+   "body_pc": "0x1d099",
+   "body_insns": 193,
+   "direct_callees": 6,
+   "callgraph_nodes": 216,
+   "backedges": 2,
+   "syscalls": {
+    "sol_log_": [
+     "0x1d0a1"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0x2697",
+     "0xb011",
+     "0xe185",
+     "0xe30e",
+     "0xe433",
+     "0xe531",
+     "0x186bf",
+     "0x1896e",
+     "0x1b6da",
+     "0x20512"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_get_return_data": [
+     "0x210d6"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1d0a1"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_memset_": [
+     "0x2128a"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "set_boost_authority",
+   "handler_pc": "0x1c839",
+   "body_pc": "0x1c839",
+   "body_insns": 171,
+   "direct_callees": 5,
+   "callgraph_nodes": 91,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1c840"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x3132",
+     "0x3c8a",
+     "0x10a02"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1c840"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_memset_": [
+     "0x2128a"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "set_coin_creator",
+   "handler_pc": "0x1d56e",
+   "body_pc": "0x1d56e",
+   "body_insns": 140,
+   "direct_callees": 5,
+   "callgraph_nodes": 92,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1d575"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x4b64",
+     "0x128b6"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x4a39",
+     "0x1d575"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "set_reserved_fee_recipients",
+   "handler_pc": "0x1c98d",
+   "body_pc": "0x1c98d",
+   "body_insns": 190,
+   "direct_callees": 7,
+   "callgraph_nodes": 90,
+   "backedges": 2,
+   "syscalls": {
+    "sol_log_": [
+     "0x1c995"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x3595",
+     "0x10bfc"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1c995"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "sync_user_volume_accumulator",
+   "handler_pc": "0x1ce17",
+   "body_pc": "0x1ce17",
+   "body_insns": 175,
+   "direct_callees": 5,
+   "callgraph_nodes": 61,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1ce1e"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0xbc08",
+     "0x1a639"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0xbbe1",
+     "0x1ce1e"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "toggle_boost",
+   "handler_pc": "0x1d7cc",
+   "body_pc": "0x1d7cc",
+   "body_insns": 116,
+   "direct_callees": 8,
+   "callgraph_nodes": 60,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1d7d4"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "sol_log_": [
+     "0x1d7d4"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ]
+   },
+   "has_cpi": false,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "toggle_cashback_enabled",
+   "handler_pc": "0x1d977",
+   "body_pc": "0x1d977",
+   "body_insns": 197,
+   "direct_callees": 9,
+   "callgraph_nodes": 63,
+   "backedges": 5,
+   "syscalls": {
+    "sol_log_": [
+     "0x1d97f"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x1085f"
+    ],
+    "sol_log_": [
+     "0x1d97f"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": false,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "toggle_mayhem_mode",
+   "handler_pc": "0x1d701",
+   "body_pc": "0x1d701",
+   "body_insns": 197,
+   "direct_callees": 9,
+   "callgraph_nodes": 63,
+   "backedges": 5,
+   "syscalls": {
+    "sol_log_": [
+     "0x1d709"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x1085f"
+    ],
+    "sol_log_": [
+     "0x1d709"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": false,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "transfer_creator_fees_to_pump",
+   "handler_pc": "0x1d846",
+   "body_pc": "0x1d846",
+   "body_insns": 81,
+   "direct_callees": 5,
+   "callgraph_nodes": 98,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1d84d"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0x4ddc",
+     "0x12b1a"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x4f19",
+     "0x1d84d"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "transfer_creator_fees_to_pump_v2",
+   "handler_pc": "0x1d898",
+   "body_pc": "0x1d898",
+   "body_insns": 78,
+   "direct_callees": 5,
+   "callgraph_nodes": 102,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1d89f"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0x534f",
+     "0x12fed"
+    ],
+    "sol_get_rent_sysvar": [
+     "0x20dec"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x55ae",
+     "0x1d89f"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "update_admin",
+   "handler_pc": "0x1c398",
+   "body_pc": "0x1c398",
+   "body_insns": 171,
+   "direct_callees": 5,
+   "callgraph_nodes": 70,
+   "backedges": 0,
+   "syscalls": {
+    "sol_log_": [
+     "0x1c39f"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x3824",
+     "0x10eae"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1c39f"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "update_buyback_config",
+   "handler_pc": "0x1dacc",
+   "body_pc": "0x1dacc",
+   "body_insns": 199,
+   "direct_callees": 9,
+   "callgraph_nodes": 70,
+   "backedges": 2,
+   "syscalls": {
+    "sol_log_": [
+     "0x1dad4"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x1085f"
+    ],
+    "sol_log_": [
+     "0x1dad4"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": false,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "update_fee_config",
+   "handler_pc": "0x1c446",
+   "body_pc": "0x1c446",
+   "body_insns": 282,
+   "direct_callees": 13,
+   "callgraph_nodes": 82,
+   "backedges": 5,
+   "syscalls": {
+    "sol_log_": [
+     "0x1c44e"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x3b9d",
+     "0x1085f"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1c44e"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  },
+  {
+   "name": "withdraw",
+   "handler_pc": "0x1caf6",
+   "body_pc": "0x1caf6",
+   "body_insns": 165,
+   "direct_callees": 6,
+   "callgraph_nodes": 145,
+   "backedges": 2,
+   "syscalls": {
+    "sol_log_": [
+     "0x1cafe"
+    ]
+   },
+   "syscall_sites_total": 1,
+   "syscalls_transitive": {
+    "abort": [
+     "0x48a",
+     "0x1c38",
+     "0xe433",
+     "0xe531",
+     "0xe71f"
+    ],
+    "sol_get_clock_sysvar": [
+     "0x20dcf"
+    ],
+    "sol_invoke_signed_rust": [
+     "0x210ab"
+    ],
+    "sol_log_": [
+     "0x1cafe"
+    ],
+    "sol_log_data": [
+     "0x20d50"
+    ],
+    "sol_memcpy_": [
+     "0x2054e"
+    ],
+    "sol_try_find_program_address": [
+     "0x21c1b"
+    ]
+   },
+   "has_cpi": true,
+   "has_log": true,
+   "watch_reach": {}
+  }
+ ],
+ "note": "body metrics = recursive-descent CFG from handler entry (handler_bodies.py); calls opaque; syscalls_transitive = union over internal call closure (depth<=6)"
+}
