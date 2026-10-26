@@ -22,9 +22,9 @@ reconstruction bugs. Tooling (sbftool, diffharness, ammharness, sbfcov fuzzer) s
 | Program    | Mapped | Claude: built | Claude: behavioral verify            | DeepSeek: assigned |
 |------------|:------:|:-------------:|--------------------------------------|---------------------|
 | pump       | 53/53  | yes           | core trade loop verified; 3 bugs fixed | (open)            |
-| pump_amm   | 30/31  | yes           | create_pool/deposit/withdraw byte-id; buy/sell gated by Fees | (open) |
+| pump_amm   | 38/38  | yes           | create/deposit/withdraw byte-id; swap fee-gate cleared, buyback-gate next | DeepSeek: 38 specs |
 | pump_fees  | 31/31  | building      | pending (get_fees / get_fees_with_quote_mint) | (open)       |
-| mayhem     | 25/25  | no            | pending (DeepSeek: map done+verified; handler specs) | DeepSeek (done) |
+| mayhem     | 25/25  | no            | pending (DeepSeek: map done+verified; handler specs) | DeepSeek: specs (batch 2) |
 
 ## Handshake
 - Claude maintains this file (source of truth for what's verified).

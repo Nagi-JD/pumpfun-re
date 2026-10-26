@@ -5,7 +5,7 @@ Built with sbftool.py from evidence/original/*/deployed.so. Decoder 0-diff vs ll
 | Program | .text insns | functions | instructions mapped |
 |---|---:|---:|---|
 | pump | 215,873 | 1169 | 53/53 |
-| pump_amm (PumpSwap) | 139,524 | 831 | 30/31 |
+| pump_amm (PumpSwap) | 139,524 | 831 | 38/38 (IDL stale at 31; collaborator-found+verified) |
 | pump_fees | 96,083 | 637 | 31/31 |
 | mayhem | 83,947 | 502 | 25/25 (jeq+jne dispatch, collaborator-verified) |
 
