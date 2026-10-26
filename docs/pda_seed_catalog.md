@@ -1,9 +1,9 @@
 # PDA / seed catalog (deployed programs)
 
-Read-only analysis of the captured `deployed.so` files. **[B]** = the seed literal
+Measured on the captured `deployed.so` files. **[B]** = the seed literal
 bytes, the `lddw`+`R_BPF_64_RELATIVE` site, the length immediates and the syscall
 site are all in the deployed ELF; the seed *role* (which account the PDA is) is a
-reading of the account resolution around the call. No behavioral MATCH is claimed.
+reading of the account resolution around the call.
 
 Method. `sbftool` decodes `.text` but not `.rel.dyn`; the loader here applies it
 (`R_BPF_64_32` -> syscall name, `R_BPF_64_RELATIVE` -> the `lddw` whose low 32 bits
@@ -18,7 +18,7 @@ Recognition therefore does not depend on the C ABI argument order, and a slot sh
 that does not fit is rejected rather than guessed.
 
 Program ids are recovered when the derivation loads a 32-byte constant; the base58
-value is given so the owning program is identified, not assumed.
+value is given so the owning program is identified.
 
 | program | insns | functions | derivation sites | seed vectors recovered | handlers |
 |---|---:|---:|---:|---:|---:|
@@ -78,7 +78,7 @@ program deriving another program's PDA needs its id as a seed):
 ### Derivation call sites and seed vectors
 
 `{32B}` = a seed byte string whose address is a frame slot (a pubkey or an
-account field); the length is measured, not assumed.
+account field); the length is measured.
 
 | # | syscall | via | insn | byte | fn | seeds | program id | handlers reaching |
 |---:|---|---|---:|---:|---:|---|---|---:|
@@ -352,7 +352,7 @@ collapse the dynamic ones to their length.
 ### Derivation call sites and seed vectors
 
 `{32B}` = a seed byte string whose address is a frame slot (a pubkey or an
-account field); the length is measured, not assumed.
+account field); the length is measured.
 
 | # | syscall | via | insn | byte | fn | seeds | program id | handlers reaching |
 |---:|---|---|---:|---:|---:|---|---|---:|
@@ -497,7 +497,7 @@ collapse the dynamic ones to their length.
 ### Derivation call sites and seed vectors
 
 `{32B}` = a seed byte string whose address is a frame slot (a pubkey or an
-account field); the length is measured, not assumed.
+account field); the length is measured.
 
 | # | syscall | via | insn | byte | fn | seeds | program id | handlers reaching |
 |---:|---|---|---:|---:|---:|---|---|---:|
@@ -631,7 +631,7 @@ collapse the dynamic ones to their length.
 ### Derivation call sites and seed vectors
 
 `{32B}` = a seed byte string whose address is a frame slot (a pubkey or an
-account field); the length is measured, not assumed.
+account field); the length is measured.
 
 | # | syscall | via | insn | byte | fn | seeds | program id | handlers reaching |
 |---:|---|---|---:|---:|---:|---|---|---:|

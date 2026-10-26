@@ -1,6 +1,6 @@
 # PDA / seed findings (deployed binaries + on-chain round-trip)
 
-Read-only RE of the four captured programs (`evidence/original/{pump,pump_amm,pump_fees,mayhem}/deployed.so`).
+Measured on the four captured programs (`evidence/original/{pump,pump_amm,pump_fees,mayhem}/deployed.so`).
 Tags: **[B]** = the seed literal bytes, the `lddw` + `R_BPF_64_RELATIVE` site, the length
 immediates, the count immediate and the syscall site are all in the deployed ELF.
 **[C]** = additionally closed against mainnet state with `tools/pda_derive_check.py`.
@@ -11,7 +11,7 @@ Tool: `tools/pda_catalog.py`.
 ## 1. What this adds to upstream/master
 
 Upstream records seed prefixes inside its per-instruction account lists, tagged `[R]` (from the
-read-only reconstruction): `docs/gate_catalogs.md` gives `` `bonding_curve` (`["bonding-curve",
+reconstruction): `docs/gate_catalogs.md` gives `` `bonding_curve` (`["bonding-curve",
 mint]`) `` for the pump trade handlers, and `specs-fees` / `specs-mayhem` name the fee and mayhem
 PDAs in the same style.
 

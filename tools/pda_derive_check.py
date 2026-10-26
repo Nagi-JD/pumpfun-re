@@ -7,7 +7,7 @@ what it is. This turns "the binary builds these seeds" into "these seeds produce
 the account the program actually uses" for the checks that can be closed without
 a mint or a creator key.
 
-Read-only: no transaction is built or sent.
+Uses RPC account reads (getAccountInfo).
 """
 import hashlib
 import json

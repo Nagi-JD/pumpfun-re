@@ -14,7 +14,7 @@ registers (r1..r5) are abstract-interpreted back to ("frame offset", "rodata VA"
 "immediate") and the seed array is the `(base, n)` pair whose `n` 16-byte slots
 all decode as `(literal-with-length | frame-pointer-with-length)`.
 
-Read-only: opens the captured `deployed.so` files, never writes them.
+Input: the captured `deployed.so` files.
 
 Usage:
   pda_catalog.py json OUT.json
@@ -560,10 +560,10 @@ def md_report(cat):
     A = L.append
     A('# PDA / seed catalog (deployed programs)')
     A('')
-    A('Read-only analysis of the captured `deployed.so` files. **[B]** = the seed literal')
+    A('Measured on the captured `deployed.so` files. **[B]** = the seed literal')
     A('bytes, the `lddw`+`R_BPF_64_RELATIVE` site, the length immediates and the syscall')
     A('site are all in the deployed ELF; the seed *role* (which account the PDA is) is a')
-    A('reading of the account resolution around the call. No behavioral MATCH is claimed.')
+    A('reading of the account resolution around the call.')
     A('')
     A('Method. `sbftool` decodes `.text` but not `.rel.dyn`; the loader here applies it')
     A('(`R_BPF_64_32` -> syscall name, `R_BPF_64_RELATIVE` -> the `lddw` whose low 32 bits')
@@ -578,7 +578,7 @@ def md_report(cat):
     A('that does not fit is rejected rather than guessed.')
     A('')
     A('Program ids are recovered when the derivation loads a 32-byte constant; the base58')
-    A('value is given so the owning program is identified, not assumed.')
+    A('value is given so the owning program is identified.')
     A('')
     A('| program | insns | functions | derivation sites | seed vectors recovered | handlers |')
     A('|---|---:|---:|---:|---:|---:|')
@@ -625,7 +625,7 @@ def md_report(cat):
         A('### Derivation call sites and seed vectors')
         A('')
         A('`{32B}` = a seed byte string whose address is a frame slot (a pubkey or an')
-        A('account field); the length is measured, not assumed.')
+        A('account field); the length is measured.')
         A('')
         A('| # | syscall | via | insn | byte | fn | seeds | program id | handlers reaching |')
         A('|---:|---|---|---:|---:|---:|---|---|---:|')
