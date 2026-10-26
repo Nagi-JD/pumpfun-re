@@ -1,0 +1,202 @@
+{
+  "update_admin": {
+    "discriminator": "a1b028d53cb8b3e4",
+    "lddw_pc": "0xfb24",
+    "cmp": "jeq",
+    "stub_pc": "0xfbbc",
+    "handler_pc": "0xfe93",
+    "handler_byte": "0x7f498"
+  },
+  "extend_account": {
+    "discriminator": "ea66c2cb96483ee5",
+    "lddw_pc": "0xfb27",
+    "cmp": "jne",
+    "stub_pc": "0xfb2a",
+    "handler_pc": "0x1001c",
+    "handler_byte": "0x800e0"
+  },
+  "update_max_stable_per_sweep": {
+    "discriminator": "804b4c8b7dc46f67",
+    "lddw_pc": "0xfb39",
+    "cmp": "jeq",
+    "stub_pc": "0xfbc0",
+    "handler_pc": "0xfd50",
+    "handler_byte": "0x7ea80"
+  },
+  "withdraw_admin": {
+    "discriminator": "1e1b87bc899eda6b",
+    "lddw_pc": "0xfb3c",
+    "cmp": "jne",
+    "stub_pc": "0xfb3f",
+    "handler_pc": "0xfd90",
+    "handler_byte": "0x7ec80"
+  },
+  "reset_state": {
+    "discriminator": "9176742a28db948b",
+    "lddw_pc": "0xfb46",
+    "cmp": "jeq",
+    "stub_pc": "0xfbd4",
+    "handler_pc": "0xfef1",
+    "handler_byte": "0x7f788"
+  },
+  "update_max_sol_per_sweep": {
+    "discriminator": "22ada705c885e192",
+    "lddw_pc": "0xfb49",
+    "cmp": "jeq",
+    "stub_pc": "0xfbec",
+    "handler_pc": "0xfd10",
+    "handler_byte": "0x7e880"
+  },
+  "sweep_fees": {
+    "discriminator": "afe1624776422294",
+    "lddw_pc": "0xfb4c",
+    "cmp": "jne",
+    "stub_pc": "0xfb4f",
+    "handler_pc": "0xfc96",
+    "handler_byte": "0x7e4b0"
+  },
+  "initialize_mayhem_state": {
+    "discriminator": "9dbd5e485545cc2d",
+    "lddw_pc": "0xfb59",
+    "cmp": "jeq",
+    "stub_pc": "0xfbf0",
+    "handler_pc": "0x101de",
+    "handler_byte": "0x80ef0"
+  },
+  "reset_sol_deployed": {
+    "discriminator": "b0ad9da2f0bcc439",
+    "lddw_pc": "0xfb5c",
+    "cmp": "jne",
+    "stub_pc": "0xfb5f",
+    "handler_pc": "0xff2d",
+    "handler_byte": "0x7f968"
+  },
+  "reset_stable_deployed": {
+    "discriminator": "bf2530b70f5489cb",
+    "lddw_pc": "0xfb63",
+    "cmp": "jeq",
+    "stub_pc": "0xfbcc",
+    "handler_pc": "0xff59",
+    "handler_byte": "0x7fac8"
+  },
+  "sell_pump_swap": {
+    "discriminator": "10c691f0ee6589cb",
+    "lddw_pc": "0xfb66",
+    "cmp": "jeq",
+    "stub_pc": "0xfbe4",
+    "handler_pc": "0x103b7",
+    "handler_byte": "0x81db8"
+  },
+  "initialize_global_params": {
+    "discriminator": "0d127fea3b28ccda",
+    "lddw_pc": "0xfb69",
+    "cmp": "jne",
+    "stub_pc": "0xfb6c",
+    "handler_pc": "0xfbfc",
+    "handler_byte": "0x7dfe0"
+  },
+  "buy_pump_swap": {
+    "discriminator": "de939d076c089151",
+    "lddw_pc": "0xfb70",
+    "cmp": "jeq",
+    "stub_pc": "0xfbd0",
+    "handler_pc": "0x1041f",
+    "handler_byte": "0x820f8"
+  },
+  "withdraw_quote_admin": {
+    "discriminator": "cc712a30723af859",
+    "lddw_pc": "0xfb73",
+    "cmp": "jeq",
+    "stub_pc": "0xfbe8",
+    "handler_pc": "0xfde2",
+    "handler_byte": "0x7ef10"
+  },
+  "update_trader": {
+    "discriminator": "c9cf63406556af60",
+    "lddw_pc": "0xfb76",
+    "cmp": "jne",
+    "stub_pc": "0xfb79",
+    "handler_pc": "0xfe35",
+    "handler_byte": "0x7f1a8"
+  },
+  "sell": {
+    "discriminator": "33e685a4017f83ad",
+    "lddw_pc": "0xfb7d",
+    "cmp": "jeq",
+    "stub_pc": "0xfbdc",
+    "handler_pc": "0x10217",
+    "handler_byte": "0x810b8"
+  },
+  "sell_v2": {
+    "discriminator": "5df6823ce7e940b2",
+    "lddw_pc": "0xfb80",
+    "cmp": "jeq",
+    "stub_pc": "0xfbf4",
+    "handler_pc": "0x102e7",
+    "handler_byte": "0x81738"
+  },
+  "initialize_fee_recipient": {
+    "discriminator": "da578ec8cec516c8",
+    "lddw_pc": "0xfb83",
+    "cmp": "jne",
+    "stub_pc": "0xfb86",
+    "handler_pc": "0xfc41",
+    "handler_byte": "0x7e208"
+  },
+  "buy_v2": {
+    "discriminator": "b817ee6167c5d33d",
+    "lddw_pc": "0xfb8a",
+    "cmp": "jeq",
+    "stub_pc": "0xfbe0",
+    "handler_pc": "0x1034f",
+    "handler_byte": "0x81a78"
+  },
+  "resume_trading": {
+    "discriminator": "922ed456459f1e41",
+    "lddw_pc": "0xfb8d",
+    "cmp": "jeq",
+    "stub_pc": "0xfbf8",
+    "handler_pc": "0xff85",
+    "handler_byte": "0x7fc28"
+  },
+  "burn_tokens": {
+    "discriminator": "4c0f33fee5d77942",
+    "lddw_pc": "0xfb90",
+    "cmp": "jne",
+    "stub_pc": "0xfb93",
+    "handler_pc": "0xffe1",
+    "handler_byte": "0x7ff08"
+  },
+  "sweep_fees_admin": {
+    "discriminator": "4c93c5e16f9c75e7",
+    "lddw_pc": "0xfb97",
+    "cmp": "jeq",
+    "stub_pc": "0xfbc4",
+    "handler_pc": "0xfcd3",
+    "handler_byte": "0x7e698"
+  },
+  "buy": {
+    "discriminator": "66063d1201daebea",
+    "lddw_pc": "0xfb9a",
+    "cmp": "jne",
+    "stub_pc": "0xfb9d",
+    "handler_pc": "0x1027f",
+    "handler_byte": "0x813f8"
+  },
+  "stop_trading": {
+    "discriminator": "7fb06a3bf27a726f",
+    "lddw_pc": "0xfba1",
+    "cmp": "jeq",
+    "stub_pc": "0xfbc8",
+    "handler_pc": "0xffb3",
+    "handler_byte": "0x7fd98"
+  },
+  "update_global_params": {
+    "discriminator": "9224de6c59e2f97e",
+    "lddw_pc": "0xfba4",
+    "cmp": "jne",
+    "stub_pc": "0xfba7",
+    "handler_pc": "0x1004b",
+    "handler_byte": "0x80258"
+  }
+}

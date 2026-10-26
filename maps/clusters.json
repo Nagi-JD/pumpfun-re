@@ -1,77 +1,122 @@
 {
-"01-admin-config": [
-"initialize",
-"update_global_authority",
-"toggle_create_v2",
-"toggle_cashback_enabled",
-"set_max_curve_depth",
-"toggle_mayhem_mode"
-],
-"02-config": [
-"update_holder_reward_config",
-"update_creator_fee_config",
-"set_params",
-"set_virtual_quote_reserves",
-"set_reserved_fee_recipients"
-],
-"03-quote-control": [
-"add_quote_mint",
-"remove_quote_mint",
-"initialize_quote_control",
-"set_quote_control_admin",
-"remove_quote_control_mint",
-"set_quote_control_reserves_admin",
-"set_quote_control_mint_reserves"
-],
-"04-creation": [
-"create",
-"create_v2",
-"set_mayhem_virtual_params"
-],
-"05-buy": [
-"buy",
-"buy_v2",
-"buy_v3",
-"buy_exact_quote_in_v2",
-"buy_exact_quote_in_v3",
-"buy_exact_sol_in"
-],
-"06-sell": [
-"sell",
-"sell_v2",
-"sell_v3"
-],
-"07-route-migrate": [
-"multi_hop_curve_swap",
-"migrate",
-"migrate_v2",
-"extend_account"
-],
-"08-creator": [
-"collect_creator_fee",
-"distribute_fee_to_holders",
-"set_metaplex_creator",
-"set_creator",
-"admin_cto",
-"migrate_bonding_curve_creator"
-],
-"09-fees-sweep": [
-"sweep_protocol_fee",
-"sweep_creator_fee",
-"get_minimum_distributable_fee",
-"distribute_creator_fees",
-"distribute_creator_fees_v2"
-],
-"10-incentives": [
-"admin_update_token_incentives",
-"claim_token_incentives",
-"claim_cashback",
-"claim_cashback_v2"
-],
-"11-volacc-idl": [
-"init_user_volume_accumulator",
-"close_user_volume_accumulator",
-"sync_user_volume_accumulator",
-"admin_set_idl_authority"
-]
+  "match_reconstruction": [
+    "01_admin_config",
+    "02_config",
+    "03_quote_control",
+    "06_sell",
+    "09_fees_sweep",
+    "11_volume_idl"
+  ],
+  "behavioral_gaps": {
+    "B1_transfer_fee": {
+      "status": "module drafted in recovered-fixes/transfer_fee.rs; wiring+harness blocked",
+      "helper_pc": "0x12a1c",
+      "affected": [
+        "buy_v2",
+        "buy_exact_quote_in_v2",
+        "buy_v3",
+        "buy_exact_quote_in_v3",
+        "migrate_v2"
+      ],
+      "sell_v2_uses_xfer": false
+    },
+    "B2_create_v2_mayhem": {
+      "create_v2_handler": {
+        "discriminator": "d6904cec5f8b31b4",
+        "lddw_pc": "0x2373b",
+        "cmp": "jeq",
+        "stub_pc": "0x238d5",
+        "handler_pc": "0x24d15",
+        "handler_byte": "0x1268a8"
+      },
+      "mayhem_init_handler": {
+        "discriminator": "9dbd5e485545cc2d",
+        "lddw_pc": "0xfb59",
+        "cmp": "jeq",
+        "stub_pc": "0xfbf0",
+        "handler_pc": "0x101de",
+        "handler_byte": "0x80ef0"
+      }
+    },
+    "B3_v3_quote_route": {
+      "note": "replace USDC hardcode with quote_control whitelist"
+    },
+    "B4_multi_hop": {
+      "handler": {
+        "discriminator": "e19a7516d756f667",
+        "lddw_pc": "0x23757",
+        "cmp": "jeq",
+        "stub_pc": "0x23937",
+        "handler_pc": "0x252b8",
+        "handler_byte": "0x1295c0"
+      }
+    },
+    "B5_set_mayhem_virtual_params": {
+      "handler": {
+        "discriminator": "3da9bcbf99952a61",
+        "lddw_pc": "0x2372f",
+        "cmp": "jeq",
+        "stub_pc": "0x238ab",
+        "handler_pc": "0x24ab5",
+        "handler_byte": "0x1255a8"
+      }
+    },
+    "B6_token_incentives": {
+      "admin": {
+        "discriminator": "d10b7357d5177ccc",
+        "lddw_pc": "0x23793",
+        "cmp": "jeq",
+        "stub_pc": "0x23a09",
+        "handler_pc": "0x25c54",
+        "handler_byte": "0x12e2a0"
+      },
+      "claim": {
+        "discriminator": "1004471ccc01281b",
+        "lddw_pc": "0x23797",
+        "cmp": "jeq",
+        "stub_pc": "0x23a17",
+        "handler_pc": "0x25d0e",
+        "handler_byte": "0x12e870"
+      }
+    },
+    "B7_fees_amm_diff": {
+      "get_fees": {
+        "discriminator": "e7257e55cf5b3f34",
+        "lddw_pc": "0x12456",
+        "cmp": "jeq",
+        "stub_pc": "0x12578",
+        "handler_pc": "0x136a0",
+        "handler_byte": "0x9b500"
+      },
+      "get_fees_with_quote_mint": {
+        "discriminator": "9aed8a5ca202a2bb",
+        "lddw_pc": "0x1245a",
+        "cmp": "jeq",
+        "stub_pc": "0x12586",
+        "handler_pc": "0x13763",
+        "handler_byte": "0x9bb18"
+      },
+      "amm_buy": {
+        "discriminator": "66063d1201daebea",
+        "lddw_pc": "0x1b7eb",
+        "cmp": "jeq",
+        "stub_pc": "0x1b951",
+        "handler_pc": "0x1cec9",
+        "handler_byte": "0xe7648"
+      },
+      "amm_sell": {
+        "discriminator": "33e685a4017f83ad",
+        "lddw_pc": "0x1b7f3",
+        "cmp": "jeq",
+        "stub_pc": "0x1b96d",
+        "handler_pc": "0x1d099",
+        "handler_byte": "0xe84c8"
+      }
+    }
+  },
+  "toolchain_blocked": [
+    "byte-identical compare.py builds",
+    "LiteSVM differential harness execution",
+    "cargo-build-sbf / platform-tools install"
+  ]
 }

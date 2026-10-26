@@ -1,0 +1,507 @@
+{
+  "pump": {
+    "program": "pump",
+    "so": "/opt/data/lab-pumpfun/pumpfun-source/evidence/original/pump/deployed.so",
+    "sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+    "text_bytes": 1792208,
+    "insns": 215873,
+    "functions": 1169,
+    "handlers_mapped": 53,
+    "handlers_expected": 53,
+    "unmapped": [],
+    "transfer_fee_helper_pc": "0x12a1c",
+    "baked_source_paths": [
+      "programs/pump/src/admin_set_idl_authority.rs",
+      "programs/pump/src/buy.rs",
+      "programs/pump/src/buy_v2.rs",
+      "programs/pump/src/create_v2.rs",
+      "programs/pump/src/creator/admin_cto.rs",
+      "programs/pump/src/creator/collect_creator_fee.rs",
+      "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+      "programs/pump/src/creator/distribute_creator_fees.rs",
+      "programs/pump/src/creator/distribute_fee_to_holders.rs",
+      "programs/pump/src/creator/migrate_bonding_curve_creator.rs",
+      "programs/pump/src/creator/set_creator.rs",
+      "programs/pump/src/creator/set_metaplex_creator.rs",
+      "programs/pump/src/extend_account.rs",
+      "programs/pump/src/fee_recipient.rs",
+      "programs/pump/src/lib.rs",
+      "programs/pump/src/migrate.rs",
+      "programs/pump/src/migrate_v2.rs",
+      "programs/pump/src/multi_hop_curve_swap.rs",
+      "programs/pump/src/pump_quote.rs",
+      "programs/pump/src/quote_control/initialize_quote_control.rs",
+      "programs/pump/src/quote_control/state.rs",
+      "programs/pump/src/quote_control/update_quote_control_mints.rs",
+      "programs/pump/src/sell.rs",
+      "programs/pump/src/sell_v2.rs",
+      "programs/pump/src/set_reserved_fee_recipients.rs",
+      "programs/pump/src/sweep_fees.rs",
+      "programs/pump/src/token_incentives/claim_token_incentives.rs",
+      "programs/pump/src/token_incentives/init_user_volume_accumulator.rs",
+      "programs/pump/src/token_incentives/volume_accumulator.rs",
+      "programs/pump/src/trade_v3.rs",
+      "programs/pump/src/util/constant_product.rs",
+      "programs/pump/src/util/fee.rs",
+      "programs/pump/src/util/transfer_fee.rs"
+    ],
+    "instruction_log_strings": [
+      "Instruction: IdlCreateAccountInstruction: IdlResizeAccountdata_len should always be >= the current account spaceInstruction: IdlCloseAccountInstruction: IdlCreateBufferInstruction: IdlWriteInstruction: IdlSetAuthorityInstruction: IdlSetBufferInstruction: InitializeInstruction: UpdateGlobalAuthorityInstruction: ToggleCreateV2Instruction: ToggleCashbackEnabledInstruction: UpdateHolderRewardConfigInstruction: SetMaxCurveDepthInstruction: ToggleMayhemModeInstruction: UpdateCreatorFeeConfigInstruction: AddQuoteMintInstruction: RemoveQuoteMintInstruction: SetVirtualQuoteReservesInstruction: SetParamsInstruction: SetMayhemVirtualParamsInstruction: SetReservedFeeRecipientsInstruction: CreateInstruction: CreateV2Instruction: BuyV2Instruction: BuyExactQuoteInV2Instruction: SellV2Instruction: BuyV3Instruction: BuyExactQuoteInV3Instruction: SellV3Instruction: MultiHopCurveSwapInstruction: SweepProtocolFeeInstruction: SweepCreatorFeeInstruction: BuyExactSolInInstruction: SellInstruction: MigrateInstruction: MigrateV2Instruction: ExtendAccountInstruction: CollectCreatorFeeInstruction: DistributeFeeToHoldersInstruction: SetMetaplexCreatorInstruction: SetCreatorInstruction: AdminCtoInstruction: AdminUpdateTokenIncentivesInstruction: ClaimTokenIncentivesInstruction: ClaimCashbackInstruction: ClaimCashbackV2Instruction: InitUserVolumeAccumulatorInstruction: CloseUserVolumeAccumulatorInstruction: SyncUserVolumeAccumulatorInstruction: AdminSetIdlAuthorityInstruction: MigrateBondingCurveCreatorInstruction: GetMinimumDistributableFeeInstruction: DistributeCreatorFeesInstruction: DistributeCreatorFeesV2Instruction: InitializeQuoteControlInstruction: SetQuoteControlAdminInstruction: RemoveQuoteControlMintInstruction: SetQuoteControlReservesAdminInstruction: SetQuoteControlMintReservesNotAuthorizedAlreadyInitializedTooMuchSolRequiredTooLittleSolReceivedMintDoesNotMatchBondingCurveBondingCurveCompleteBondingCurveNotCompleteNotInitializedWithdrawTooFrequentNewSizeShouldBeGreaterThanCurrentSizeAccountTypeNotSupportedInitialRealTokenReservesShouldBeLessThanTokenTotalSupplyInitialVirtualTokenReservesShouldBeGreaterThanInitialRealTokenReservesAllZerosWithdrawAuthorityPoolMigrationFeeShouldBeLessThanFinalRealSolReservesPoolMigrationFeeShouldBeGreaterThanCreatorFeePlusMaxMigrateFeesDisabledMigrateInvalidCreatorBuyZeroAmountNotEnoughTokensToBuySellZeroAmountNotEnoughTokensToSellTruncationDivisionByZeroNotEnoughRemainingAccountsAllFeeRecipientsShouldBeNonZeroUnsortedNotUniqueFeeRecipientsCreatorShouldNotBeZeroStartTimeInThePastEndTimeBeforeStartTimeTimeRangeTooLargeEndTimeBeforeCurrentDaySupplyUpdateForFinishedRangeDayIndexAfterEndIndexInvalidIncentiveMintBuyNotEnoughSolToCoverRentBuyNotEnoughSolToCoverFeesBuySlippageBelowMinTokensOutNameTooLongSymbolTooLongUriTooLongCpitializeMayhemFailedMayhemModeDisabledCreatorMigratedToSharingConfigUnableToDistributeCreatorVaultMigratedToSharingConfigSharingConfigNotActiveUnableToDistributeCreatorFeesToExecutableRecipientBondingCurveAndSharingConfigCreatorMismatchShareholdersAndRemainingAccountsMismatchInvalidShareBpsCashbackNotEnabledAllBuybackFeeRecipientsShouldBeNonZeroNotUniqueBuybackFeeRecipientsBuybackBasisPointsOutOfRangeWrongBuybackFeeRecipientsCountBuybackFeeRecipientMissingUnsupportedQuoteMintInvalidQuoteTokenProgramInvalidAssociatedQuoteBondingCurveQuoteMintWhitelistFullQuoteMintAlreadyWhitelistedQuoteMintNotWhitelistedUnableToDistributeCreatorFeesToUninitializedAccountMayhemModeQuoteMintNotAllowedMissingCashbackAccountsInvalidCashbackAccumulatorInvalidBondingCurveV2InvalidQuoteControlInvalidCashbackRecipientCreatorFeeNotConfigurableCreatorFeeBpsOutOfRangeCreatorFeeNotEditableCreatorFeeNotAllowedForCashbackCoinBondingCurveAlreadyMigratedCashbackDeprecatedHolderRewardCreatorImmutableHolderRewardDisabledHolderRewardRecipientsMismatchHolderRewardsRentFloorHolderRewardTokenAccountMissingCtoNotAllowedForMayhemCoinCtoNewCreatorRequiredCtoNewCreatorNotAllowedCreatorFeeNotConfigurableForQuoteCtoCreatorAccountNotWritableCtoSharedVaultFrozenCashbackCoinNotSupportedCreatorFeesNotSweptFeeTiersEmptyFeeConfigTooShortMultiHopDiscontinuousPathInvalidQuoteBondingCurveQuoteBondingCurveNotEligibleQuotePoolAccountsRequiredQuotePoolNotFoundQuoteReservesOutOfRangeCurveDepthExceededMultiHopHopFeesMismatchQuoteCurveAwaitingMigrationMultiHopMayhemCurveNotSupportedQuoteChainAccountsRequiredQuoteMintNotWritableThe given account is not authorized to execute this instruction.The program is already initialized.slippage: Too much SOL required to buy the given amount of tokens.slippage: Too little SOL received to sell the given amount of tokens.The mint does not match the bonding curve.The bonding curve has completed and liquidity migrated to raydium.The bonding curve has not completed.The program is not initialized.Withdraw too frequentnew_size should be > current_sizeAccount type not supportedinitial_real_token_reserves should be less than token_total_supplyinitial_virtual_token_reserves should be greater than initial_real_token_reservesfee_basis_points greater than maximumWithdraw authority cannot be set to System Program IDpool_migration_fee should be less than final_real_sol_reservespool_migration_fee should be greater than creator_fee + MAX_MIGRATE_FEESMigrate instruction is disabledInvalid creator pubkeyBuy zero amountNot enough tokens to buyNot enough tokens to sellNot enough remaining accountsAll fee recipients should be non-zeroUnsorted or not unique fee recipientsCreator should not be zeroBuy: Not enough SOL to cover for rent exemption.Buy: Not enough SOL to cover for fees.Slippage: Would buy less tokens than expected min_tokens_outcreator has been migrated to sharing configcreator_vault has been migrated to sharing config, use pump:distribute_creator_fees insteadSharing config is not activeThe recipient account is executable, so it cannot receive lamports, remove it from the team firstBonding curve creator does not match sharing configRemaining accounts do not match shareholders, make sure to pass exactly the same pubkeys in the same orderCashback is not enabledBuyback fee recipient not authorizedbuyback_basis_points must be <= 10_000buyback fee recipients require exactly 8 remaining accounts (or none)Unsupported quote mintCreate v2: quote token program must be SPL Token or Token-2022Create v2: associated quote bonding curve address does not match derivationQuote mint whitelist is fullQuote mint is already whitelistedQuote mint is not in the whitelistQuote mint cannot be added or removed via whitelist (default or native SOL mint)Unable to distribute creator fees to uninitialized accountMayhem mode quote mint not allowedCashback trade is missing the required remaining accountsCashback user_volume_accumulator account is invalidbonding_curve_v2 remaining account is missing or invalidquote_control remaining account does not match derivation or is uninitializedCashback recipient token account is not owned by userConfigurable creator fees are disabledCreator fee basis points must be between 1 and the configured maximumCreator fee is not editable for this bonding curveCreator fee cannot be configured for a cashback coinBonding curve has already migratedCashback coins can no longer be createdThe creator of a holder-reward coin cannot be changedHolder-reward amounts and recipient accounts do not matchThe holder-rewards PDA cannot be left below its rent-exempt minimumA holder-rewards token account is required on a token quoteCTO is not allowed on a mayhem-mode coinnew_creator is required unless converting to holder rewardsnew_creator must be omitted when converting to holder rewardsCreator fee is not configurable on a SOL or whitelisted quote; the fee schedule appliescurrent_creator must be passed writable so the outgoing creator can be paidA frozen sharing-config vault account holds a balance; thaw it before the holder conversionv3 trades do not support cashback coins; use the v2 instructionscreator_fee must be swept before the creator changes or the vault is distributedThe fee config tier table is emptyThe fee config account is shorter than its initialize sizemulti-hop: a hop's input mint is neither side of its bonding curveQuote bonding curve remaining account does not match derivation or is uninitializedQuote bonding curve is not eligible as a quote: mayhem mode, or the chain's depth-0 root is quoted in a mint no list admitsA quote-chain bonding curve has migrated: its pool and vault remaining accounts are requiredQuote pool remaining account is not an initialized pump-amm poolQuote pool or vault remaining accounts do not match derivation or are invalidDerived quote reserves are zeroThe new curve's depth (quote coin depth plus one) exceeds Global.max_curve_depth or the program's cap of 5multi-hop: hop_fees must carry one flag byte per curve hop using only the protocol and creator bitsA quote-chain coin's curve is complete but not yet migrated; retry once migrate_v2 creates its poolmulti-hop: mayhem-mode curves are not routable; use the v2 instructionsThe quote coin is nested: a bonding curve remaining account is required for every coin on its quote chain down to the depth-0 rootquote_mint must be writable for a quote with a Token-2022 transfer fee: its withheld fees are harvested to the mintmpl_token_metadataassociated_usersol_destinationbufferidltoIdlAccount",
+      "Instruction: UpdateBuybackConfigAn owner constraint was violated"
+    ],
+    "largest_functions": [
+      {
+        "pc": "0x19eea",
+        "insns": 2952
+      },
+      {
+        "pc": "0x1ab5e",
+        "insns": 2865
+      },
+      {
+        "pc": "0x16caf",
+        "insns": 2855
+      },
+      {
+        "pc": "0x1486f",
+        "insns": 2814
+      },
+      {
+        "pc": "0x2ae70",
+        "insns": 2736
+      },
+      {
+        "pc": "0x1cc55",
+        "insns": 2712
+      },
+      {
+        "pc": "0x27f22",
+        "insns": 2372
+      },
+      {
+        "pc": "0xb70e",
+        "insns": 2142
+      },
+      {
+        "pc": "0x27737",
+        "insns": 1896
+      },
+      {
+        "pc": "0x3cf8",
+        "insns": 1859
+      },
+      {
+        "pc": "0x158d9",
+        "insns": 1810
+      },
+      {
+        "pc": "0x2dcfe",
+        "insns": 1773
+      },
+      {
+        "pc": "0x288a1",
+        "insns": 1714
+      },
+      {
+        "pc": "0x160c7",
+        "insns": 1687
+      },
+      {
+        "pc": "0x204af",
+        "insns": 1664
+      },
+      {
+        "pc": "0x29e9c",
+        "insns": 1602
+      },
+      {
+        "pc": "0x2cea5",
+        "insns": 1461
+      },
+      {
+        "pc": "0x2e8a4",
+        "insns": 1366
+      },
+      {
+        "pc": "0x271d4",
+        "insns": 1351
+      },
+      {
+        "pc": "0x29807",
+        "insns": 1323
+      },
+      {
+        "pc": "0x1e99f",
+        "insns": 1242
+      },
+      {
+        "pc": "0x4a1e",
+        "insns": 1192
+      },
+      {
+        "pc": "0x1ddbe",
+        "insns": 1094
+      },
+      {
+        "pc": "0xa54d",
+        "insns": 1084
+      },
+      {
+        "pc": "0x348d5",
+        "insns": 1053
+      }
+    ]
+  },
+  "pump_amm": {
+    "program": "pump_amm",
+    "so": "/opt/data/lab-pumpfun/pumpfun-source/evidence/original/pump_amm/deployed.so",
+    "sha256": "6a7ad34596d83b4c435b32f458a56e718e9f82eb4ad38e4316616d15d24d8ff7",
+    "text_bytes": 1162040,
+    "insns": 139524,
+    "functions": 831,
+    "handlers_mapped": 30,
+    "handlers_expected": 31,
+    "unmapped": [
+      "admin_set_coin_creator"
+    ],
+    "transfer_fee_helper_pc": null,
+    "baked_source_paths": [],
+    "instruction_log_strings": [
+      "Instruction: UpdateBuybackConfigAn owner constraint was violated"
+    ],
+    "largest_functions": [
+      {
+        "pc": "0xea7f",
+        "insns": 2223
+      },
+      {
+        "pc": "0x155fb",
+        "insns": 2097
+      },
+      {
+        "pc": "0x134d5",
+        "insns": 1904
+      },
+      {
+        "pc": "0x8bee",
+        "insns": 1893
+      },
+      {
+        "pc": "0x8141",
+        "insns": 1893
+      },
+      {
+        "pc": "0x17f52",
+        "insns": 1700
+      },
+      {
+        "pc": "0x74e1",
+        "insns": 1527
+      },
+      {
+        "pc": "0x174e4",
+        "insns": 1369
+      },
+      {
+        "pc": "0x4011",
+        "insns": 1353
+      },
+      {
+        "pc": "0x11afa",
+        "insns": 1254
+      },
+      {
+        "pc": "0x11286",
+        "insns": 1249
+      },
+      {
+        "pc": "0x190ca",
+        "insns": 1242
+      },
+      {
+        "pc": "0x574c",
+        "insns": 1229
+      },
+      {
+        "pc": "0x6ed6",
+        "insns": 1214
+      },
+      {
+        "pc": "0x12fed",
+        "insns": 1178
+      },
+      {
+        "pc": "0x7b78",
+        "insns": 1145
+      },
+      {
+        "pc": "0x936a",
+        "insns": 1125
+      },
+      {
+        "pc": "0x166cd",
+        "insns": 1109
+      },
+      {
+        "pc": "0x98ea",
+        "insns": 1075
+      },
+      {
+        "pc": "0x1508c",
+        "insns": 1069
+      },
+      {
+        "pc": "0x21571",
+        "insns": 1053
+      },
+      {
+        "pc": "0x12b1a",
+        "insns": 1048
+      },
+      {
+        "pc": "0x1215c",
+        "insns": 947
+      },
+      {
+        "pc": "0xfaf0",
+        "insns": 931
+      },
+      {
+        "pc": "0x198df",
+        "insns": 917
+      }
+    ]
+  },
+  "pump_fees": {
+    "program": "pump_fees",
+    "so": "/opt/data/lab-pumpfun/pumpfun-source/evidence/original/pump_fees/deployed.so",
+    "sha256": "4f2955d0f6b40cc9ff7daa18ccad7d19119ba1249759f4e7e3bb691beee6b35e",
+    "text_bytes": 799648,
+    "insns": 96083,
+    "functions": 637,
+    "handlers_mapped": 31,
+    "handlers_expected": 31,
+    "unmapped": [],
+    "transfer_fee_helper_pc": null,
+    "baked_source_paths": [],
+    "instruction_log_strings": [],
+    "largest_functions": [
+      {
+        "pc": "0xf52a",
+        "insns": 2034
+      },
+      {
+        "pc": "0xecd1",
+        "insns": 1904
+      },
+      {
+        "pc": "0x503d",
+        "insns": 1592
+      },
+      {
+        "pc": "0xd974",
+        "insns": 1298
+      },
+      {
+        "pc": "0xc79d",
+        "insns": 1291
+      },
+      {
+        "pc": "0x436d",
+        "insns": 1208
+      },
+      {
+        "pc": "0xc131",
+        "insns": 1199
+      },
+      {
+        "pc": "0xb4fa",
+        "insns": 1125
+      },
+      {
+        "pc": "0xcffc",
+        "insns": 1072
+      },
+      {
+        "pc": "0x168b7",
+        "insns": 1053
+      },
+      {
+        "pc": "0x58b4",
+        "insns": 1045
+      },
+      {
+        "pc": "0xfe47",
+        "insns": 967
+      },
+      {
+        "pc": "0x6777",
+        "insns": 919
+      },
+      {
+        "pc": "0x8932",
+        "insns": 917
+      },
+      {
+        "pc": "0xab73",
+        "insns": 879
+      },
+      {
+        "pc": "0xd511",
+        "insns": 811
+      },
+      {
+        "pc": "0x7a5c",
+        "insns": 808
+      },
+      {
+        "pc": "0xdf93",
+        "insns": 771
+      },
+      {
+        "pc": "0xe91b",
+        "insns": 770
+      },
+      {
+        "pc": "0xe537",
+        "insns": 760
+      },
+      {
+        "pc": "0x9392",
+        "insns": 752
+      },
+      {
+        "pc": "0x96eb",
+        "insns": 744
+      },
+      {
+        "pc": "0xaf0d",
+        "insns": 743
+      },
+      {
+        "pc": "0xba35",
+        "insns": 733
+      },
+      {
+        "pc": "0x48bd",
+        "insns": 712
+      }
+    ]
+  },
+  "mayhem": {
+    "program": "mayhem",
+    "so": "/opt/data/lab-pumpfun/pumpfun-source/evidence/original/mayhem/deployed.so",
+    "sha256": "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199bdb",
+    "text_bytes": 706744,
+    "insns": 83947,
+    "functions": 502,
+    "handlers_mapped": 25,
+    "handlers_expected": 25,
+    "unmapped": [],
+    "transfer_fee_helper_pc": null,
+    "baked_source_paths": [],
+    "instruction_log_strings": [],
+    "largest_functions": [
+      {
+        "pc": "0x449c",
+        "insns": 2244
+      },
+      {
+        "pc": "0x4db7",
+        "insns": 2176
+      },
+      {
+        "pc": "0x2ecd",
+        "insns": 1847
+      },
+      {
+        "pc": "0x3781",
+        "insns": 1653
+      },
+      {
+        "pc": "0x3e44",
+        "insns": 1556
+      },
+      {
+        "pc": "0x8c6f",
+        "insns": 1263
+      },
+      {
+        "pc": "0x9993",
+        "insns": 1216
+      },
+      {
+        "pc": "0x29cc",
+        "insns": 1181
+      },
+      {
+        "pc": "0x137ea",
+        "insns": 1141
+      },
+      {
+        "pc": "0x11215",
+        "insns": 1118
+      },
+      {
+        "pc": "0xb8db",
+        "insns": 1081
+      },
+      {
+        "pc": "0x1193a",
+        "insns": 1077
+      },
+      {
+        "pc": "0xc368",
+        "insns": 1052
+      },
+      {
+        "pc": "0x25b2",
+        "insns": 969
+      },
+      {
+        "pc": "0x21c9",
+        "insns": 926
+      },
+      {
+        "pc": "0xa4bf",
+        "insns": 902
+      },
+      {
+        "pc": "0xade1",
+        "insns": 862
+      },
+      {
+        "pc": "0x14144",
+        "insns": 821
+      },
+      {
+        "pc": "0xf2e4",
+        "insns": 787
+      },
+      {
+        "pc": "0xf837",
+        "insns": 719
+      },
+      {
+        "pc": "0x1098d",
+        "insns": 717
+      },
+      {
+        "pc": "0x10f33",
+        "insns": 711
+      },
+      {
+        "pc": "0x10c6e",
+        "insns": 689
+      },
+      {
+        "pc": "0x11673",
+        "insns": 685
+      },
+      {
+        "pc": "0x6992",
+        "insns": 652
+      }
+    ]
+  }
+}
