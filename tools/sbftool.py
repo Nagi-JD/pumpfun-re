@@ -78,6 +78,7 @@ class Prog:
         self.code = b[self.toff:self.toff+self.tsize]
         self._decode()
         self._syms()
+        self._relocs()
         self._funcs()
 
     def _decode(self):
@@ -136,14 +137,51 @@ class Prog:
         h ^= n; h ^= h>>16; h=(h*0x85ebca6b)&0xffffffff; h^=h>>13; h=(h*0xc2b2ae35)&0xffffffff; h^=h>>16
         return h
 
+    def _relocs(self):
+        """Resolve .rel.dyn: R_BPF_64_32 call sites -> syscall/symbol name.
+
+        The deployed .so keeps the unapplied relocation (call imm = -1); the loader
+        patches it at load time. Without this, every syscall call site looks like a
+        call to itself and _funcs() turns it into a bogus function start, truncating
+        the enclosing function to its prologue."""
+        self.call_sym = {}      # pc -> syscall name
+        self.data_ptr = {}      # pc -> True (lddw of an internal va, R_BPF_64_RELATIVE)
+        ds = self.sec.get('.dynsym'); dss = self.sec.get('.dynstr')
+        if not ds or not dss:
+            return
+        names = []
+        vals = []
+        for k in range(ds[5] // 24):
+            stn, info, other, shndx, val, sz = struct.unpack_from('<IBBHQQ', self.b, ds[4] + k * 24)
+            names.append(self.b[dss[4] + stn:self.b.index(b'\0', dss[4] + stn)].decode('latin1'))
+            vals.append(val)
+        self.dynsym = list(zip(names, vals))
+        for sname in ('.rel.dyn', '.rela.dyn'):
+            sec = self.sec.get(sname)
+            if not sec:
+                continue
+            ent = 24 if sname.endswith('a.dyn') else 16
+            for k in range(sec[5] // ent):
+                off, info = struct.unpack_from('<QQ', self.b, sec[4] + k * ent)
+                typ, sy = info % (2 ** 32), info >> 32
+                pc = off // 8                  # text vaddr == 8 * insn index
+                if typ == 10:                  # R_BPF_64_32
+                    self.call_sym[pc] = names[sy] if sy < len(names) else '?'
+                elif typ == 8:                 # R_BPF_64_RELATIVE
+                    self.data_ptr[pc] = True
+
     def _funcs(self):
-        """Function starts = call targets + first insn. Each function spans to the
-        next start or the insn after its last reachable exit."""
+        """Function starts = internal call targets + first insn. Each function spans to the
+        next start or the insn after its last reachable exit. Syscall call sites are
+        excluded: their on-disk imm is -1, which would make pc+1+imm == pc a fake start."""
         starts = {self.base}
         for pc, ins in self.ins.items():
             if ins.op == 0x85:                   # relative call in sBPF v1
+                if pc in getattr(self, 'call_sym', {}):
+                    continue                     # syscall site, not a function
                 tgt = pc + 1 + ins.imm
-                if tgt in self.ins: starts.add(tgt)
+                if tgt in self.ins:
+                    starts.add(tgt)
         self.starts = sorted(starts)
         self.func_of = {}
         for a, b in zip(self.starts, self.starts[1:] + [self.base + len(self.order)]):
@@ -235,7 +273,10 @@ def main():
             if pc in p.ins:
                 i = p.ins[pc]; extra = ''
                 if i.op == 0x85:
-                    t = pc + 1 + i.imm; extra = f'   -> {hex(t)} {p.name.get(t," ")}'.rstrip()
+                    if pc in getattr(p, 'call_sym', {}):
+                        extra = f'   -> syscall {p.call_sym[pc]}'
+                    else:
+                        t = pc + 1 + i.imm; extra = f'   -> {hex(t)} {p.name.get(t," ")}'.rstrip()
                 print(f'{pc:>8x}: {i!r}{extra}')
     elif cmd == 'func':
         start = p.func_start(ival(sys.argv[3]))
