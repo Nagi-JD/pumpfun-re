@@ -1,0 +1,389 @@
+{
+ "program": "mayhem",
+ "binary": "evidence/original/mayhem/deployed.so",
+ "sha256": "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199bdb",
+ "text_insns": 83947,
+ "functions": 374,
+ "path_strings": 85,
+ "location_records": 0,
+ "plain_str_consts": 0,
+ "location_functions": 0,
+ "direct_refs": 32,
+ "direct_functions": 29,
+ "files": [
+  "programs/mayhem-program/src/instructions/admin.rs",
+  "programs/mayhem-program/src/instructions/burn.rs",
+  "programs/mayhem-program/src/instructions/extend_account.rs",
+  "programs/mayhem-program/src/instructions/fee_recipients.rs",
+  "programs/mayhem-program/src/instructions/pump_amm_interface.rs",
+  "programs/mayhem-program/src/instructions/pump_interface.rs",
+  "programs/mayhem-program/src/instructions/pump_interface_v2.rs",
+  "programs/mayhem-program/src/lib.rs",
+  "programs/mayhem-program/src/state.rs",
+  "src/lib.rs"
+ ],
+ "program_files": [
+  "programs/mayhem-program/src/instructions/admin.rs",
+  "programs/mayhem-program/src/instructions/burn.rs",
+  "programs/mayhem-program/src/instructions/extend_account.rs",
+  "programs/mayhem-program/src/instructions/fee_recipients.rs",
+  "programs/mayhem-program/src/instructions/pump_amm_interface.rs",
+  "programs/mayhem-program/src/instructions/pump_interface.rs",
+  "programs/mayhem-program/src/instructions/pump_interface_v2.rs",
+  "programs/mayhem-program/src/lib.rs",
+  "programs/mayhem-program/src/state.rs"
+ ],
+ "runtime_files": [
+  "src/lib.rs"
+ ],
+ "records": [],
+ "strings": [],
+ "functions_records": {},
+ "functions_direct": {
+  "0x1b13": [
+   {
+    "pc": 6976,
+    "addr": 709828,
+    "file": "programs/mayhem-program/src/instructions/burn.rs",
+    "len": 78,
+    "kind": "path+message",
+    "len_store": 6981
+   },
+   {
+    "pc": 7020,
+    "addr": 709828,
+    "file": "programs/mayhem-program/src/instructions/burn.rs",
+    "len": 48,
+    "kind": "path",
+    "len_store": 7026
+   }
+  ],
+  "0x1de2": [
+   {
+    "pc": 7720,
+    "addr": 709985,
+    "file": "programs/mayhem-program/src/instructions/extend_account.rs",
+    "len": 58,
+    "kind": "path",
+    "len_store": 7726
+   },
+   {
+    "pc": 7998,
+    "addr": 709985,
+    "file": "programs/mayhem-program/src/instructions/extend_account.rs",
+    "len": 58,
+    "kind": "path",
+    "len_store": 8004
+   }
+  ],
+  "0x1ff8": [
+   {
+    "pc": 8248,
+    "addr": 710043,
+    "file": "programs/mayhem-program/src/instructions/fee_recipients.rs",
+    "len": 58,
+    "kind": "path",
+    "len_store": 8254
+   }
+  ],
+  "0x206a": [
+   {
+    "pc": 8336,
+    "addr": 710043,
+    "file": "programs/mayhem-program/src/instructions/fee_recipients.rs",
+    "len": 58,
+    "kind": "path",
+    "len_store": 8342
+   }
+  ],
+  "0x21c9": [
+   {
+    "pc": 8714,
+    "addr": 710043,
+    "file": "programs/mayhem-program/src/instructions/fee_recipients.rs",
+    "len": 58,
+    "kind": "path",
+    "len_store": 8720
+   }
+  ],
+  "0x25b2": [
+   {
+    "pc": 9714,
+    "addr": 710043,
+    "file": "programs/mayhem-program/src/instructions/fee_recipients.rs",
+    "len": 58,
+    "kind": "path",
+    "len_store": 9720
+   }
+  ],
+  "0x2e8d": [
+   {
+    "pc": 11954,
+    "addr": 710114,
+    "file": "programs/mayhem-program/src/instructions/pump_amm_interface.rs",
+    "len": 62,
+    "kind": "path",
+    "len_store": 11960
+   }
+  ],
+  "0x3741": [
+   {
+    "pc": 14182,
+    "addr": 710114,
+    "file": "programs/mayhem-program/src/instructions/pump_amm_interface.rs",
+    "len": 62,
+    "kind": "path",
+    "len_store": 14188
+   }
+  ],
+  "0x3781": [
+   {
+    "pc": 15567,
+    "addr": 710176,
+    "file": "programs/mayhem-program/src/instructions/pump_interface.rs",
+    "len": 58,
+    "kind": "path",
+    "len_store": 15573
+   }
+  ],
+  "0x3e44": [
+   {
+    "pc": 17203,
+    "addr": 710176,
+    "file": "programs/mayhem-program/src/instructions/pump_interface.rs",
+    "len": 58,
+    "kind": "path",
+    "len_store": 17209
+   }
+  ],
+  "0x449c": [
+   {
+    "pc": 19470,
+    "addr": 710234,
+    "file": "programs/mayhem-program/src/instructions/pump_interface_v2.rs",
+    "len": 61,
+    "kind": "path",
+    "len_store": 19476
+   }
+  ],
+  "0x4db7": [
+   {
+    "pc": 21734,
+    "addr": 710234,
+    "file": "programs/mayhem-program/src/instructions/pump_interface_v2.rs",
+    "len": 61,
+    "kind": "path",
+    "len_store": 21740
+   }
+  ],
+  "0x568d": [
+   {
+    "pc": 22217,
+    "addr": 710295,
+    "file": "programs/mayhem-program/src/state.rs",
+    "len": 36,
+    "kind": "path",
+    "len_store": 22223
+   }
+  ],
+  "0x56ed": [
+   {
+    "pc": 22313,
+    "addr": 710295,
+    "file": "programs/mayhem-program/src/state.rs",
+    "len": 36,
+    "kind": "path",
+    "len_store": 22319
+   }
+  ],
+  "0x582d": [
+   {
+    "pc": 22610,
+    "addr": 710295,
+    "file": "programs/mayhem-program/src/state.rs",
+    "len": 36,
+    "kind": "path",
+    "len_store": 22616
+   }
+  ],
+  "0x5870": [
+   {
+    "pc": 22680,
+    "addr": 710295,
+    "file": "programs/mayhem-program/src/state.rs",
+    "len": 36,
+    "kind": "path",
+    "len_store": 22686
+   }
+  ],
+  "0x58b3": [
+   {
+    "pc": 22943,
+    "addr": 710295,
+    "file": "programs/mayhem-program/src/state.rs",
+    "len": 36,
+    "kind": "path",
+    "len_store": 22949
+   },
+   {
+    "pc": 22996,
+    "addr": 710295,
+    "file": "programs/mayhem-program/src/state.rs",
+    "len": 36,
+    "kind": "path",
+    "len_store": 23002
+   }
+  ],
+  "0x5ba3": [
+   {
+    "pc": 23498,
+    "addr": 710295,
+    "file": "programs/mayhem-program/src/state.rs",
+    "len": 36,
+    "kind": "path",
+    "len_store": 23504
+   }
+  ],
+  "0x5c38": [
+   {
+    "pc": 23672,
+    "addr": 710295,
+    "file": "programs/mayhem-program/src/state.rs",
+    "len": 36,
+    "kind": "path",
+    "len_store": 23678
+   }
+  ],
+  "0x61c3": [
+   {
+    "pc": 25087,
+    "addr": 711452,
+    "file": "programs/mayhem-program/src/instructions/admin.rs",
+    "len": 49,
+    "kind": "path",
+    "len_store": 25093
+   }
+  ],
+  "0x79af": [
+   {
+    "pc": 31202,
+    "addr": 710043,
+    "file": "programs/mayhem-program/src/instructions/fee_recipients.rs",
+    "len": 58,
+    "kind": "path",
+    "len_store": 31208
+   }
+  ],
+  "0x7e40": [
+   {
+    "pc": 32380,
+    "addr": 710043,
+    "file": "programs/mayhem-program/src/instructions/fee_recipients.rs",
+    "len": 58,
+    "kind": "path",
+    "len_store": 32386
+   }
+  ],
+  "0xcedf": [
+   {
+    "pc": 53010,
+    "addr": 710295,
+    "file": "programs/mayhem-program/src/state.rs",
+    "len": 36,
+    "kind": "path",
+    "len_store": 53016
+   }
+  ],
+  "0xd11f": [
+   {
+    "pc": 53586,
+    "addr": 710295,
+    "file": "programs/mayhem-program/src/state.rs",
+    "len": 36,
+    "kind": "path",
+    "len_store": 53592
+   }
+  ],
+  "0xd849": [
+   {
+    "pc": 55429,
+    "addr": 710295,
+    "file": "programs/mayhem-program/src/state.rs",
+    "len": 36,
+    "kind": "path",
+    "len_store": 55435
+   }
+  ],
+  "0xdbd5": [
+   {
+    "pc": 56328,
+    "addr": 712461,
+    "file": "programs/mayhem-program/src/lib.rs",
+    "len": 34,
+    "kind": "path",
+    "len_store": 56334
+   }
+  ],
+  "0xe895": [
+   {
+    "pc": 59592,
+    "addr": 712461,
+    "file": "programs/mayhem-program/src/lib.rs",
+    "len": 34,
+    "kind": "path",
+    "len_store": 59598
+   }
+  ],
+  "0x10821": [
+   {
+    "pc": 67666,
+    "addr": 713420,
+    "file": "src/lib.rs",
+    "len": 10,
+    "kind": "path",
+    "len_store": 67672
+   }
+  ],
+  "0x11d6f": [
+   {
+    "pc": 73120,
+    "addr": 713420,
+    "file": "src/lib.rs",
+    "len": 10,
+    "kind": "path",
+    "len_store": 73126
+   }
+  ]
+ },
+ "func_sizes": {
+  "0x1b13": 667,
+  "0x1de2": 503,
+  "0x1ff8": 102,
+  "0x206a": 319,
+  "0x21c9": 950,
+  "0x25b2": 997,
+  "0x2e8d": 56,
+  "0x3741": 56,
+  "0x3781": 1691,
+  "0x3e44": 1584,
+  "0x449c": 2286,
+  "0x4db7": 2218,
+  "0x568d": 87,
+  "0x56ed": 87,
+  "0x582d": 59,
+  "0x5870": 59,
+  "0x58b3": 295,
+  "0x5ba3": 132,
+  "0x5c38": 142,
+  "0x61c3": 565,
+  "0x79af": 108,
+  "0x7e40": 585,
+  "0xcedf": 108,
+  "0xd11f": 108,
+  "0xd849": 610,
+  "0xdbd5": 108,
+  "0xe895": 108,
+  "0x10821": 70,
+  "0x11d6f": 70
+ }
+}

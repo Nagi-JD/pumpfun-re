@@ -1,0 +1,1669 @@
+{
+ "program": "pump_amm",
+ "binary": "evidence/original/pump_amm/deployed.so",
+ "sha256": "6a7ad34596d83b4c435b32f458a56e718e9f82eb4ad38e4316616d15d24d8ff7",
+ "text_insns": 139524,
+ "functions": 663,
+ "path_strings": 123,
+ "location_records": 72,
+ "plain_str_consts": 28,
+ "location_functions": 46,
+ "direct_refs": 0,
+ "direct_functions": 0,
+ "files": [
+  "library/core/src/escape.rs",
+  "library/core/src/fmt/mod.rs",
+  "library/core/src/fmt/num.rs",
+  "library/core/src/unicode/unicode_data.rs",
+  "programs/pump-amm/src/instructions/extend_account.rs",
+  "programs/pump-amm/src/instructions/swap/buy.rs",
+  "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+  "programs/pump-amm/src/instructions/swap/sell.rs",
+  "programs/pump-amm/src/lib.rs",
+  "programs/pump-amm/src/state/global_config.rs",
+  "programs/pump-amm/src/state/volume_accumulator.rs",
+  "src/bpf_writer.rs",
+  "src/common.rs",
+  "src/de/mod.rs",
+  "src/encode.rs",
+  "src/lib.rs",
+  "src/ser/mod.rs",
+  "src/state.rs"
+ ],
+ "program_files": [
+  "programs/pump-amm/src/instructions/extend_account.rs",
+  "programs/pump-amm/src/instructions/swap/buy.rs",
+  "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+  "programs/pump-amm/src/instructions/swap/sell.rs",
+  "programs/pump-amm/src/lib.rs",
+  "programs/pump-amm/src/state/global_config.rs",
+  "programs/pump-amm/src/state/volume_accumulator.rs"
+ ],
+ "runtime_files": [
+  "library/core/src/escape.rs",
+  "library/core/src/fmt/mod.rs",
+  "library/core/src/fmt/num.rs",
+  "library/core/src/unicode/unicode_data.rs",
+  "src/bpf_writer.rs",
+  "src/common.rs",
+  "src/de/mod.rs",
+  "src/encode.rs",
+  "src/lib.rs",
+  "src/ser/mod.rs",
+  "src/state.rs"
+ ],
+ "records": [
+  {
+   "addr": 1196568,
+   "file": "library/core/src/escape.rs",
+   "len": 26,
+   "line": 56,
+   "col": 11
+  },
+  {
+   "addr": 1196064,
+   "file": "library/core/src/fmt/mod.rs",
+   "len": 27,
+   "line": 2406,
+   "col": 26
+  },
+  {
+   "addr": 1195984,
+   "file": "library/core/src/fmt/num.rs",
+   "len": 27,
+   "line": 105,
+   "col": 23
+  },
+  {
+   "addr": 1196520,
+   "file": "library/core/src/unicode/unicode_data.rs",
+   "len": 40,
+   "line": 80,
+   "col": 40
+  },
+  {
+   "addr": 1196544,
+   "file": "library/core/src/unicode/unicode_data.rs",
+   "len": 40,
+   "line": 92,
+   "col": 22
+  },
+  {
+   "addr": 1188888,
+   "file": "programs/pump-amm/src/instructions/extend_account.rs",
+   "len": 52,
+   "line": 96,
+   "col": 57
+  },
+  {
+   "addr": 1190432,
+   "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+   "len": 46,
+   "line": 233,
+   "col": 1
+  },
+  {
+   "addr": 1188912,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 233,
+   "col": 17
+  },
+  {
+   "addr": 1188936,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 315,
+   "col": 28
+  },
+  {
+   "addr": 1188960,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 344,
+   "col": 32
+  },
+  {
+   "addr": 1188984,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 353,
+   "col": 40
+  },
+  {
+   "addr": 1189008,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 359,
+   "col": 34
+  },
+  {
+   "addr": 1189032,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 363,
+   "col": 41
+  },
+  {
+   "addr": 1189056,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 369,
+   "col": 32
+  },
+  {
+   "addr": 1189080,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 772,
+   "col": 20
+  },
+  {
+   "addr": 1189128,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 773,
+   "col": 10
+  },
+  {
+   "addr": 1189104,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 775,
+   "col": 10
+  },
+  {
+   "addr": 1189152,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 814,
+   "col": 45
+  },
+  {
+   "addr": 1189176,
+   "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+   "len": 57,
+   "line": 815,
+   "col": 58
+  },
+  {
+   "addr": 1189200,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "len": 47,
+   "line": 439,
+   "col": 13
+  },
+  {
+   "addr": 1190784,
+   "file": "programs/pump-amm/src/lib.rs",
+   "len": 28,
+   "line": 22,
+   "col": 1
+  },
+  {
+   "addr": 1190808,
+   "file": "programs/pump-amm/src/lib.rs",
+   "len": 28,
+   "line": 23,
+   "col": 1
+  },
+  {
+   "addr": 1189336,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "len": 44,
+   "line": 388,
+   "col": 45
+  },
+  {
+   "addr": 1190704,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 25,
+   "col": 1
+  },
+  {
+   "addr": 1189360,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 54,
+   "col": 14
+  },
+  {
+   "addr": 1189384,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 79,
+   "col": 17
+  },
+  {
+   "addr": 1189408,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 109,
+   "col": 14
+  },
+  {
+   "addr": 1189432,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 137,
+   "col": 14
+  },
+  {
+   "addr": 1189456,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 271,
+   "col": 13
+  },
+  {
+   "addr": 1189480,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 285,
+   "col": 14
+  },
+  {
+   "addr": 1189504,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 300,
+   "col": 13
+  },
+  {
+   "addr": 1189600,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 334,
+   "col": 18
+  },
+  {
+   "addr": 1189576,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 339,
+   "col": 18
+  },
+  {
+   "addr": 1189528,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 348,
+   "col": 18
+  },
+  {
+   "addr": 1189552,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 359,
+   "col": 17
+  },
+  {
+   "addr": 1189624,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 387,
+   "col": 14
+  },
+  {
+   "addr": 1189648,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 391,
+   "col": 43
+  },
+  {
+   "addr": 1189672,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 393,
+   "col": 14
+  },
+  {
+   "addr": 1189696,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49,
+   "line": 398,
+   "col": 28
+  },
+  {
+   "addr": 1191736,
+   "file": "src/bpf_writer.rs",
+   "len": 17,
+   "line": 28,
+   "col": 9
+  },
+  {
+   "addr": 1191784,
+   "file": "src/common.rs",
+   "len": 13,
+   "line": 9,
+   "col": 32
+  },
+  {
+   "addr": 1191760,
+   "file": "src/common.rs",
+   "len": 13,
+   "line": 11,
+   "col": 21
+  },
+  {
+   "addr": 1188456,
+   "file": "src/de/mod.rs",
+   "len": 13,
+   "line": 161,
+   "col": 54
+  },
+  {
+   "addr": 1191168,
+   "file": "src/de/mod.rs",
+   "len": 13,
+   "line": 161,
+   "col": 54
+  },
+  {
+   "addr": 1195152,
+   "file": "src/encode.rs",
+   "len": 13,
+   "line": 431,
+   "col": 11
+  },
+  {
+   "addr": 1194672,
+   "file": "src/encode.rs",
+   "len": 13,
+   "line": 460,
+   "col": 9
+  },
+  {
+   "addr": 1194624,
+   "file": "src/encode.rs",
+   "len": 13,
+   "line": 464,
+   "col": 27
+  },
+  {
+   "addr": 1194648,
+   "file": "src/encode.rs",
+   "len": 13,
+   "line": 465,
+   "col": 16
+  },
+  {
+   "addr": 1194192,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 53,
+   "col": 59
+  },
+  {
+   "addr": 1194216,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 73,
+   "col": 25
+  },
+  {
+   "addr": 1194240,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 94,
+   "col": 19
+  },
+  {
+   "addr": 1193600,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 95,
+   "col": 10
+  },
+  {
+   "addr": 1193576,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 95,
+   "col": 11
+  },
+  {
+   "addr": 1193624,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 323,
+   "col": 5
+  },
+  {
+   "addr": 1193648,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 326,
+   "col": 5
+  },
+  {
+   "addr": 1193672,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 339,
+   "col": 5
+  },
+  {
+   "addr": 1193696,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 343,
+   "col": 5
+  },
+  {
+   "addr": 1193720,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 347,
+   "col": 5
+  },
+  {
+   "addr": 1193744,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 353,
+   "col": 5
+  },
+  {
+   "addr": 1193768,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 356,
+   "col": 5
+  },
+  {
+   "addr": 1193792,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 359,
+   "col": 5
+  },
+  {
+   "addr": 1193816,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 363,
+   "col": 5
+  },
+  {
+   "addr": 1193840,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 367,
+   "col": 5
+  },
+  {
+   "addr": 1193888,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 376,
+   "col": 5
+  },
+  {
+   "addr": 1193864,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 376,
+   "col": 15
+  },
+  {
+   "addr": 1193912,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 377,
+   "col": 5
+  },
+  {
+   "addr": 1193936,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 381,
+   "col": 5
+  },
+  {
+   "addr": 1193960,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 420,
+   "col": 9
+  },
+  {
+   "addr": 1193984,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 426,
+   "col": 13
+  },
+  {
+   "addr": 1194872,
+   "file": "src/lib.rs",
+   "len": 10,
+   "line": 612,
+   "col": 32
+  },
+  {
+   "addr": 1194600,
+   "file": "src/ser/mod.rs",
+   "len": 14,
+   "line": 242,
+   "col": 9
+  },
+  {
+   "addr": 1191400,
+   "file": "src/state.rs",
+   "len": 12,
+   "line": 54,
+   "col": 19
+  }
+ ],
+ "strings": [
+  {
+   "addr": 1195528,
+   "file": "library/alloc/src/fmt.rs",
+   "len": 24
+  },
+  {
+   "addr": 1195472,
+   "file": "library/alloc/src/raw_vec.rs",
+   "len": 28
+  },
+  {
+   "addr": 1196592,
+   "file": "library/core/src/escape.rs",
+   "len": 26
+  },
+  {
+   "addr": 1196008,
+   "file": "library/core/src/fmt/mod.rs",
+   "len": 27
+  },
+  {
+   "addr": 1196088,
+   "file": "library/core/src/fmt/mod.rs",
+   "len": 27
+  },
+  {
+   "addr": 1196448,
+   "file": "library/core/src/str/mod.rs",
+   "len": 27
+  },
+  {
+   "addr": 1188784,
+   "file": "programs/pump-amm/src/instructions/coin_creator/set_coin_creator.rs",
+   "len": 67
+  },
+  {
+   "addr": 1189224,
+   "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+   "len": 47
+  },
+  {
+   "addr": 1190832,
+   "file": "programs/pump-amm/src/lib.rs",
+   "len": 28
+  },
+  {
+   "addr": 1189280,
+   "file": "programs/pump-amm/src/state/global_config.rs",
+   "len": 44
+  },
+  {
+   "addr": 1190456,
+   "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+   "len": 49
+  },
+  {
+   "addr": 1190728,
+   "file": "programs/pump-amm/src/utils/math.rs",
+   "len": 35
+  },
+  {
+   "addr": 1189720,
+   "file": "programs/pump-amm/src/utils/token.rs",
+   "len": 36
+  },
+  {
+   "addr": 1191808,
+   "file": "src/common.rs",
+   "len": 13
+  },
+  {
+   "addr": 1188272,
+   "file": "src/de/mod.rs",
+   "len": 13
+  },
+  {
+   "addr": 1188480,
+   "file": "src/de/mod.rs",
+   "len": 13
+  },
+  {
+   "addr": 1188600,
+   "file": "src/de/mod.rs",
+   "len": 13
+  },
+  {
+   "addr": 1191192,
+   "file": "src/de/mod.rs",
+   "len": 13
+  },
+  {
+   "addr": 1194696,
+   "file": "src/encode.rs",
+   "len": 13
+  },
+  {
+   "addr": 1195176,
+   "file": "src/encode.rs",
+   "len": 13
+  },
+  {
+   "addr": 1194008,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1194264,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1194352,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1194832,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1194896,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1194952,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1195008,
+   "file": "src/lib.rs",
+   "len": 10
+  },
+  {
+   "addr": 1191424,
+   "file": "src/state.rs",
+   "len": 12
+  }
+ ],
+ "functions_records": {
+  "0x1e26": [
+   {
+    "pc": 7832,
+    "addr": 1188456,
+    "file": "src/de/mod.rs",
+    "line": 161,
+    "col": 54
+   }
+  ],
+  "0x268b": [
+   {
+    "pc": 10087,
+    "addr": 1190808,
+    "file": "programs/pump-amm/src/lib.rs",
+    "line": 23,
+    "col": 1
+   },
+   {
+    "pc": 10147,
+    "addr": 1190808,
+    "file": "programs/pump-amm/src/lib.rs",
+    "line": 23,
+    "col": 1
+   }
+  ],
+  "0x5ce4": [
+   {
+    "pc": 23840,
+    "addr": 1188888,
+    "file": "programs/pump-amm/src/instructions/extend_account.rs",
+    "line": 96,
+    "col": 57
+   }
+  ],
+  "0x7b1a": [
+   {
+    "pc": 31605,
+    "addr": 1188912,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 233,
+    "col": 17
+   }
+  ],
+  "0x7b78": [
+   {
+    "pc": 32240,
+    "addr": 1188936,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 315,
+    "col": 28
+   },
+   {
+    "pc": 32518,
+    "addr": 1188960,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 344,
+    "col": 32
+   },
+   {
+    "pc": 32289,
+    "addr": 1188984,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 353,
+    "col": 40
+   },
+   {
+    "pc": 32792,
+    "addr": 1189008,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 359,
+    "col": 34
+   },
+   {
+    "pc": 32797,
+    "addr": 1189008,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 359,
+    "col": 34
+   },
+   {
+    "pc": 32357,
+    "addr": 1189032,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 363,
+    "col": 41
+   },
+   {
+    "pc": 32550,
+    "addr": 1189056,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 369,
+    "col": 32
+   }
+  ],
+  "0x8a5c": [
+   {
+    "pc": 35570,
+    "addr": 1189080,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 772,
+    "col": 20
+   },
+   {
+    "pc": 35527,
+    "addr": 1189128,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 773,
+    "col": 10
+   },
+   {
+    "pc": 35574,
+    "addr": 1189104,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 775,
+    "col": 10
+   }
+  ],
+  "0x8b28": [
+   {
+    "pc": 37733,
+    "addr": 1189152,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 814,
+    "col": 45
+   },
+   {
+    "pc": 35685,
+    "addr": 1189176,
+    "file": "programs/pump-amm/src/instructions/swap/multi_hop_swap.rs",
+    "line": 815,
+    "col": 58
+   }
+  ],
+  "0x98ea": [
+   {
+    "pc": 39762,
+    "addr": 1189200,
+    "file": "programs/pump-amm/src/instructions/swap/sell.rs",
+    "line": 439,
+    "col": 13
+   }
+  ],
+  "0xa0b3": [
+   {
+    "pc": 41356,
+    "addr": 1189336,
+    "file": "programs/pump-amm/src/state/global_config.rs",
+    "line": 388,
+    "col": 45
+   }
+  ],
+  "0xb4ae": [
+   {
+    "pc": 46405,
+    "addr": 1189432,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 137,
+    "col": 14
+   }
+  ],
+  "0xc99b": [
+   {
+    "pc": 51643,
+    "addr": 1189336,
+    "file": "programs/pump-amm/src/state/global_config.rs",
+    "line": 388,
+    "col": 45
+   }
+  ],
+  "0xd8ed": [
+   {
+    "pc": 55836,
+    "addr": 1189336,
+    "file": "programs/pump-amm/src/state/global_config.rs",
+    "line": 388,
+    "col": 45
+   }
+  ],
+  "0xda81": [
+   {
+    "pc": 56124,
+    "addr": 1189360,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 54,
+    "col": 14
+   },
+   {
+    "pc": 56149,
+    "addr": 1189384,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 79,
+    "col": 17
+   },
+   {
+    "pc": 56161,
+    "addr": 1189408,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 109,
+    "col": 14
+   },
+   {
+    "pc": 56144,
+    "addr": 1189648,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 391,
+    "col": 43
+   },
+   {
+    "pc": 56155,
+    "addr": 1189672,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 393,
+    "col": 14
+   },
+   {
+    "pc": 55949,
+    "addr": 1189696,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 398,
+    "col": 28
+   }
+  ],
+  "0xdb64": [
+   {
+    "pc": 56916,
+    "addr": 1189456,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 271,
+    "col": 13
+   },
+   {
+    "pc": 56932,
+    "addr": 1189480,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 285,
+    "col": 14
+   },
+   {
+    "pc": 56921,
+    "addr": 1189504,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 300,
+    "col": 13
+   },
+   {
+    "pc": 56938,
+    "addr": 1189600,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 334,
+    "col": 18
+   },
+   {
+    "pc": 56944,
+    "addr": 1189576,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 339,
+    "col": 18
+   },
+   {
+    "pc": 56950,
+    "addr": 1189528,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 348,
+    "col": 18
+   },
+   {
+    "pc": 56926,
+    "addr": 1189552,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 359,
+    "col": 17
+   },
+   {
+    "pc": 56280,
+    "addr": 1189696,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 398,
+    "col": 28
+   }
+  ],
+  "0xde79": [
+   {
+    "pc": 56979,
+    "addr": 1189624,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 387,
+    "col": 14
+   },
+   {
+    "pc": 56962,
+    "addr": 1189696,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 398,
+    "col": 28
+   }
+  ],
+  "0x16393": [
+   {
+    "pc": 91785,
+    "addr": 1190432,
+    "file": "programs/pump-amm/src/instructions/swap/buy.rs",
+    "line": 233,
+    "col": 1
+   }
+  ],
+  "0x1aa4d": [
+   {
+    "pc": 109138,
+    "addr": 1190704,
+    "file": "programs/pump-amm/src/state/volume_accumulator.rs",
+    "line": 25,
+    "col": 1
+   }
+  ],
+  "0x1ae64": [
+   {
+    "pc": 110185,
+    "addr": 1190784,
+    "file": "programs/pump-amm/src/lib.rs",
+    "line": 22,
+    "col": 1
+   }
+  ],
+  "0x1b096": [
+   {
+    "pc": 110750,
+    "addr": 1190784,
+    "file": "programs/pump-amm/src/lib.rs",
+    "line": 22,
+    "col": 1
+   },
+   {
+    "pc": 110782,
+    "addr": 1190784,
+    "file": "programs/pump-amm/src/lib.rs",
+    "line": 22,
+    "col": 1
+   }
+  ],
+  "0x1b415": [
+   {
+    "pc": 111642,
+    "addr": 1190808,
+    "file": "programs/pump-amm/src/lib.rs",
+    "line": 23,
+    "col": 1
+   }
+  ],
+  "0x1b505": [
+   {
+    "pc": 111882,
+    "addr": 1190808,
+    "file": "programs/pump-amm/src/lib.rs",
+    "line": 23,
+    "col": 1
+   }
+  ],
+  "0x1f301": [
+   {
+    "pc": 127838,
+    "addr": 1191168,
+    "file": "src/de/mod.rs",
+    "line": 161,
+    "col": 54
+   }
+  ],
+  "0x2003a": [
+   {
+    "pc": 131133,
+    "addr": 1191400,
+    "file": "src/state.rs",
+    "line": 54,
+    "col": 19
+   }
+  ],
+  "0x2053a": [
+   {
+    "pc": 132443,
+    "addr": 1191736,
+    "file": "src/bpf_writer.rs",
+    "line": 28,
+    "col": 9
+   }
+  ],
+  "0x2055e": [
+   {
+    "pc": 132579,
+    "addr": 1191784,
+    "file": "src/common.rs",
+    "line": 9,
+    "col": 32
+   },
+   {
+    "pc": 132582,
+    "addr": 1191760,
+    "file": "src/common.rs",
+    "line": 11,
+    "col": 21
+   }
+  ],
+  "0x20dfd": [
+   {
+    "pc": 134697,
+    "addr": 1193576,
+    "file": "src/lib.rs",
+    "line": 95,
+    "col": 11
+   },
+   {
+    "pc": 134700,
+    "addr": 1193600,
+    "file": "src/lib.rs",
+    "line": 95,
+    "col": 10
+   }
+  ],
+  "0x20e2f": [
+   {
+    "pc": 134750,
+    "addr": 1193576,
+    "file": "src/lib.rs",
+    "line": 95,
+    "col": 11
+   },
+   {
+    "pc": 134753,
+    "addr": 1193600,
+    "file": "src/lib.rs",
+    "line": 95,
+    "col": 10
+   }
+  ],
+  "0x20eb8": [
+   {
+    "pc": 135235,
+    "addr": 1193624,
+    "file": "src/lib.rs",
+    "line": 323,
+    "col": 5
+   },
+   {
+    "pc": 135238,
+    "addr": 1193648,
+    "file": "src/lib.rs",
+    "line": 326,
+    "col": 5
+   },
+   {
+    "pc": 135199,
+    "addr": 1193672,
+    "file": "src/lib.rs",
+    "line": 339,
+    "col": 5
+   },
+   {
+    "pc": 135202,
+    "addr": 1193696,
+    "file": "src/lib.rs",
+    "line": 343,
+    "col": 5
+   },
+   {
+    "pc": 135205,
+    "addr": 1193720,
+    "file": "src/lib.rs",
+    "line": 347,
+    "col": 5
+   },
+   {
+    "pc": 135208,
+    "addr": 1193744,
+    "file": "src/lib.rs",
+    "line": 353,
+    "col": 5
+   },
+   {
+    "pc": 135211,
+    "addr": 1193768,
+    "file": "src/lib.rs",
+    "line": 356,
+    "col": 5
+   },
+   {
+    "pc": 135214,
+    "addr": 1193792,
+    "file": "src/lib.rs",
+    "line": 359,
+    "col": 5
+   },
+   {
+    "pc": 135217,
+    "addr": 1193816,
+    "file": "src/lib.rs",
+    "line": 363,
+    "col": 5
+   },
+   {
+    "pc": 135220,
+    "addr": 1193840,
+    "file": "src/lib.rs",
+    "line": 367,
+    "col": 5
+   },
+   {
+    "pc": 135223,
+    "addr": 1193864,
+    "file": "src/lib.rs",
+    "line": 376,
+    "col": 15
+   },
+   {
+    "pc": 135226,
+    "addr": 1193888,
+    "file": "src/lib.rs",
+    "line": 376,
+    "col": 5
+   },
+   {
+    "pc": 135229,
+    "addr": 1193912,
+    "file": "src/lib.rs",
+    "line": 377,
+    "col": 5
+   },
+   {
+    "pc": 135232,
+    "addr": 1193936,
+    "file": "src/lib.rs",
+    "line": 381,
+    "col": 5
+   },
+   {
+    "pc": 135193,
+    "addr": 1193960,
+    "file": "src/lib.rs",
+    "line": 420,
+    "col": 9
+   },
+   {
+    "pc": 135196,
+    "addr": 1193984,
+    "file": "src/lib.rs",
+    "line": 426,
+    "col": 13
+   }
+  ],
+  "0x21152": [
+   {
+    "pc": 135639,
+    "addr": 1194192,
+    "file": "src/lib.rs",
+    "line": 53,
+    "col": 59
+   },
+   {
+    "pc": 135572,
+    "addr": 1194216,
+    "file": "src/lib.rs",
+    "line": 73,
+    "col": 25
+   },
+   {
+    "pc": 135594,
+    "addr": 1194240,
+    "file": "src/lib.rs",
+    "line": 94,
+    "col": 19
+   }
+  ],
+  "0x211da": [
+   {
+    "pc": 135654,
+    "addr": 1194216,
+    "file": "src/lib.rs",
+    "line": 73,
+    "col": 25
+   }
+  ],
+  "0x211e9": [
+   {
+    "pc": 135664,
+    "addr": 1194240,
+    "file": "src/lib.rs",
+    "line": 94,
+    "col": 19
+   }
+  ],
+  "0x214ac": [
+   {
+    "pc": 136370,
+    "addr": 1194600,
+    "file": "src/ser/mod.rs",
+    "line": 242,
+    "col": 9
+   }
+  ],
+  "0x21571": [
+   {
+    "pc": 136770,
+    "addr": 1194600,
+    "file": "src/ser/mod.rs",
+    "line": 242,
+    "col": 9
+   }
+  ],
+  "0x21c0d": [
+   {
+    "pc": 138278,
+    "addr": 1194872,
+    "file": "src/lib.rs",
+    "line": 612,
+    "col": 32
+   }
+  ],
+  "0x21c70": [
+   {
+    "pc": 138521,
+    "addr": 1194672,
+    "file": "src/encode.rs",
+    "line": 460,
+    "col": 9
+   },
+   {
+    "pc": 138455,
+    "addr": 1194624,
+    "file": "src/encode.rs",
+    "line": 464,
+    "col": 27
+   },
+   {
+    "pc": 138516,
+    "addr": 1194648,
+    "file": "src/encode.rs",
+    "line": 465,
+    "col": 16
+   }
+  ],
+  "0x21e3f": [
+   {
+    "pc": 138831,
+    "addr": 1195152,
+    "file": "src/encode.rs",
+    "line": 431,
+    "col": 11
+   }
+  ],
+  "0x223a4": [
+   {
+    "pc": 140465,
+    "addr": 1196568,
+    "file": "library/core/src/escape.rs",
+    "line": 56,
+    "col": 11
+   }
+  ],
+  "0x22b8e": [
+   {
+    "pc": 142453,
+    "addr": 1196064,
+    "file": "library/core/src/fmt/mod.rs",
+    "line": 2406,
+    "col": 26
+   }
+  ],
+  "0x230b8": [
+   {
+    "pc": 143569,
+    "addr": 1195984,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x230e4": [
+   {
+    "pc": 143613,
+    "addr": 1195984,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x23110": [
+   {
+    "pc": 143658,
+    "addr": 1195984,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x2313d": [
+   {
+    "pc": 143703,
+    "addr": 1195984,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x2316a": [
+   {
+    "pc": 143746,
+    "addr": 1195984,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x23195": [
+   {
+    "pc": 143789,
+    "addr": 1195984,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x231c0": [
+   {
+    "pc": 143868,
+    "addr": 1195984,
+    "file": "library/core/src/fmt/num.rs",
+    "line": 105,
+    "col": 23
+   }
+  ],
+  "0x2329b": [
+   {
+    "pc": 144120,
+    "addr": 1196520,
+    "file": "library/core/src/unicode/unicode_data.rs",
+    "line": 80,
+    "col": 40
+   },
+   {
+    "pc": 144115,
+    "addr": 1196544,
+    "file": "library/core/src/unicode/unicode_data.rs",
+    "line": 92,
+    "col": 22
+   }
+  ]
+ },
+ "functions_direct": {},
+ "func_sizes": {
+  "0x1e26": 270,
+  "0x268b": 274,
+  "0x5ce4": 617,
+  "0x7b1a": 84,
+  "0x7b78": 1145,
+  "0x8a5c": 147,
+  "0x8b28": 2083,
+  "0x98ea": 1075,
+  "0xa0b3": 210,
+  "0xb4ae": 497,
+  "0xc99b": 36,
+  "0xd8ed": 288,
+  "0xda81": 209,
+  "0xdb64": 736,
+  "0xde79": 24,
+  "0x16393": 751,
+  "0x1aa4d": 184,
+  "0x1ae64": 190,
+  "0x1b096": 36,
+  "0x1b415": 142,
+  "0x1b505": 176,
+  "0x1f301": 232,
+  "0x2003a": 87,
+  "0x2053a": 35,
+  "0x2055e": 134,
+  "0x20dfd": 47,
+  "0x20e2f": 50,
+  "0x20eb8": 386,
+  "0x21152": 112,
+  "0x211da": 13,
+  "0x211e9": 8,
+  "0x214ac": 196,
+  "0x21571": 1053,
+  "0x21c0d": 37,
+  "0x21c70": 177,
+  "0x21e3f": 68,
+  "0x223a4": 277,
+  "0x22b8e": 231,
+  "0x230b8": 42,
+  "0x230e4": 42,
+  "0x23110": 43,
+  "0x2313d": 43,
+  "0x2316a": 41,
+  "0x23195": 41,
+  "0x231c0": 77,
+  "0x2329b": 90
+ },
+ "handler_files": {
+  "create_config": {
+   "entry": "0x1c17f",
+   "reach": 109,
+   "program_files": {}
+  },
+  "disable": {
+   "entry": "0x1c2a1",
+   "reach": 98,
+   "program_files": {}
+  },
+  "update_admin": {
+   "entry": "0x1c398",
+   "reach": 70,
+   "program_files": {}
+  },
+  "update_fee_config": {
+   "entry": "0x1c446",
+   "reach": 87,
+   "program_files": {}
+  },
+  "create_pool": {
+   "entry": "0x1c634",
+   "reach": 164,
+   "program_files": {}
+  },
+  "init_boost": {
+   "entry": "0x1c7b3",
+   "reach": 108,
+   "program_files": {}
+  },
+  "set_boost_authority": {
+   "entry": "0x1c839",
+   "reach": 79,
+   "program_files": {}
+  },
+  "boost_buy_and_burn": {
+   "entry": "0x1c8e7",
+   "reach": 122,
+   "program_files": {
+    "programs/pump-amm/src/instructions/swap/buy.rs": 1
+   }
+  },
+  "set_reserved_fee_recipients": {
+   "entry": "0x1c98d",
+   "reach": 103,
+   "program_files": {}
+  },
+  "deposit": {
+   "entry": "0x1ca4f",
+   "reach": 115,
+   "program_files": {}
+  },
+  "withdraw": {
+   "entry": "0x1caf6",
+   "reach": 113,
+   "program_files": {}
+  },
+  "admin_update_token_incentives": {
+   "entry": "0x1cb9d",
+   "reach": 109,
+   "program_files": {
+    "programs/pump-amm/src/state/volume_accumulator.rs": 10
+   }
+  },
+  "claim_token_incentives": {
+   "entry": "0x1cc57",
+   "reach": 106,
+   "program_files": {
+    "programs/pump-amm/src/state/volume_accumulator.rs": 9
+   }
+  },
+  "init_user_volume_accumulator": {
+   "entry": "0x1cce2",
+   "reach": 88,
+   "program_files": {}
+  },
+  "close_user_volume_accumulator": {
+   "entry": "0x1cd93",
+   "reach": 60,
+   "program_files": {}
+  },
+  "sync_user_volume_accumulator": {
+   "entry": "0x1ce17",
+   "reach": 65,
+   "program_files": {}
+  },
+  "buy": {
+   "entry": "0x1cec9",
+   "reach": 204,
+   "program_files": {
+    "programs/pump-amm/src/instructions/swap/buy.rs": 1,
+    "programs/pump-amm/src/lib.rs": 2,
+    "programs/pump-amm/src/state/global_config.rs": 1
+   }
+  },
+  "buy_exact_quote_in": {
+   "entry": "0x1cfb1",
+   "reach": 203,
+   "program_files": {
+    "programs/pump-amm/src/instructions/swap/buy.rs": 1,
+    "programs/pump-amm/src/lib.rs": 2,
+    "programs/pump-amm/src/state/global_config.rs": 1
+   }
+  },
+  "sell": {
+   "entry": "0x1d099",
+   "reach": 171,
+   "program_files": {
+    "programs/pump-amm/src/instructions/swap/sell.rs": 1,
+    "programs/pump-amm/src/lib.rs": 2,
+    "programs/pump-amm/src/state/global_config.rs": 1
+   }
+  },
+  "extend_account": {
+   "entry": "0x1d47e",
+   "reach": 83,
+   "program_files": {
+    "programs/pump-amm/src/instructions/extend_account.rs": 1
+   }
+  },
+  "collect_coin_creator_fee": {
+   "entry": "0x1d51d",
+   "reach": 71,
+   "program_files": {}
+  },
+  "set_coin_creator": {
+   "entry": "0x1d56e",
+   "reach": 72,
+   "program_files": {}
+  },
+  "toggle_mayhem_mode": {
+   "entry": "0x1d701",
+   "reach": 84,
+   "program_files": {}
+  },
+  "toggle_boost": {
+   "entry": "0x1d7cc",
+   "reach": 80,
+   "program_files": {}
+  },
+  "transfer_creator_fees_to_pump": {
+   "entry": "0x1d846",
+   "reach": 81,
+   "program_files": {}
+  },
+  "transfer_creator_fees_to_pump_v2": {
+   "entry": "0x1d898",
+   "reach": 85,
+   "program_files": {}
+  },
+  "migrate_pool_coin_creator": {
+   "entry": "0x1d8e7",
+   "reach": 71,
+   "program_files": {}
+  },
+  "toggle_cashback_enabled": {
+   "entry": "0x1d977",
+   "reach": 84,
+   "program_files": {}
+  },
+  "claim_cashback": {
+   "entry": "0x1da42",
+   "reach": 74,
+   "program_files": {}
+  },
+  "update_buyback_config": {
+   "entry": "0x1dacc",
+   "reach": 86,
+   "program_files": {}
+  }
+ }
+}
