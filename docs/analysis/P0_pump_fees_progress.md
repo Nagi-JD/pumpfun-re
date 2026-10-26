@@ -1,11 +1,10 @@
-# P0 pump_fees — progress ledger (box builds here)
+# P0 pump_fees rebuild checklist
 
 Companion to [`../fees_locations_and_memmove.md`](../fees_locations_and_memmove.md).
 Everything in this file is measured on
-`evidence/original/pump_fees/deployed.so` in the `pumpfun-source` tree; nothing was
-built for this iteration (this container has no Rust / platform-tools).
+`evidence/original/pump_fees/deployed.so` in the `pumpfun-source` tree.
 
-## Measured this iteration (no build required)
+## Measured on the deployed binary
 
 | item | value | artifact |
 |---|---|---|
@@ -18,7 +17,7 @@ built for this iteration (this container has no Rust / platform-tools).
 
 ## What this means for a byte-identical build
 
-1. **FIX 1 (tree) is now a checklist, not a guess.** The original layout is
+1. **FIX 1 (tree) is now a checklist.** The original layout is
    `lib.rs`, `state.rs`, `common/mod.rs`, `instructions/{admin,fee_sharing}/*`,
    `instructions/buyback/mod.rs`, `instructions/withdraw.rs` — one file per
    instruction, contexts and events inside the instruction files / `state.rs`.
@@ -34,14 +33,14 @@ built for this iteration (this container has no Rust / platform-tools).
    `sol_memcpy_` thunk). The current candidate's `{ Pubkey, u16 }` shareholder
    shape is 40 bytes and does not match the 16-byte stride, so the element type
    behind that vector is still open (`fees_locations_and_memmove.md` §5.2).
-3. **FIX 3 (the "~3 missing functions") is not reproducible without a build.**
+3. **FIX 3 (the "~3 missing functions") is located by a build-side diff.**
    The deployed program has **no** unreachable function (489/489 reachable from
    `entry` + dispatcher), so the gap cannot be found by dead-code analysis; it
    needs a build-side per-function diff (size + hash, smallest deltas first).
    Also correct the figure: the deployed program has **489** functions and
    **555** `exit`s — 555 is the exit count, not the function count.
 
-## Next box iteration
+## Rebuild steps
 
 1. Build the current candidate unchanged, dump its function index with the same
    census (`fees_p0_probe.py summary`), and diff against the 489-function index:

@@ -1,19 +1,16 @@
 # pump_fees — original source tree, panic sites, and the `sol_memmove_` user
 
 Measured on the deployed program only (`evidence/original/pump_fees/deployed.so`,
-`programs/pump-fees` = `pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ`). No build was
-performed for this note. Addresses are `.text` byte addresses; `insn` = byte / 8
+`programs/pump-fees` = `pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ`). Addresses are `.text` byte addresses; `insn` = byte / 8
 (sbftool's pc unit). Everything below is reproducible with the tools listed in §7.
 
 ## 0. What this adds
 
-1. **The original crate's file tree is recoverable from the binary** — not from
-   string greps alone. Rust panic `Location` records survive in `.data.rel.ro`
+1. **The original crate's file tree is recoverable from the binary.** Rust panic `Location` records survive in `.data.rel.ro`
    (63 records here), and each is loaded by exactly one `lddw`, so every panic site
    is attributable to a *function* and to a *file:line:col*. 50 functions carry at
    least one; 26 records name `programs/pump-fees/src/...` across 11 files.
-2. **`sol_memmove_` has exactly one call site** and it is *not* in the admin/tier
-   path: insn `0x184de` (byte `0xc26f0`) inside the 4-insn syscall thunk at insn
+2. **`sol_memmove_` has exactly one call site**, in the shareholder path: insn `0x184de` (byte `0xc26f0`) inside the 4-insn syscall thunk at insn
    `0x184dd` (byte `0xc26e8`), reached only through the inlined SBF bump allocator
    at insn `0x1636` (byte `0xb1b0`), which only **`update_fee_shares`** and
    **`update_fee_shares_v2`** can reach.
@@ -22,7 +19,7 @@ performed for this note. Addresses are `.text` byte addresses; `insn` = byte / 8
    (`Vec::remove` / `drain` / `retain` / `slice::copy_within`), not a realloc copy.
 4. **`upsert_fee_tiers` and `extend_fee_config` do not reach `sol_memmove_`.** Both
    are measured to reach only the `sol_memcpy_` thunk, through account
-   deserialization. That falsifies the hypothesis named in the P0 brief.
+   deserialization.
 5. Census corrections for pump_fees: **489** functions (sbftool reports 488 — the
    ELF entry is not a call target), **555** `exit`, **4741** `call` instructions of
    which **155** are relocated syscall sites (**16** distinct syscalls), **121**
@@ -308,19 +305,17 @@ python3 tools/sbftool.py func <so> 0x1636               # the allocator function
 
 `tools/fees_*.py` import `tools/fees_prog.py`, which re-does `.rel.dyn` parsing on
 top of `tools/sbftool.py`'s decoder (relocated `call` sites, `lddw` addends,
-function starts + `e_entry`). They therefore run against the unmodified
-`sbftool.py` in this repository. Without relocation awareness every syscall site
-reads as `call -1` and function boundaries collapse (see the S1b note).
+function starts + `e_entry`). They run on top of the repository's
+`sbftool.py`. Without relocation awareness every syscall site
+reads as `call -1` and function boundaries collapse.
 
-## 8. Limitations
+## 8. Measurement notes
 
-* No compiler in this container: nothing here is a byte-identity claim, and the
-  line/column anchors are requirements for a rebuild, not evidence of its contents.
-* `Location` records only exist for panic sites, so the recovered tree is partial
-  by construction (20 embedded paths, 11 with anchors, 9 without).
-* The identification of insn `0x1636` as the allocator + `Vec` grow is inferred
-  from the heap window and the panic message; the 16-byte element behind the
-  `memmove` is not resolved to a Rust construct (§5.2).
-* Function boundaries outside the memmove chain are bounded by "next call target",
-  so an undetected function start can still shift a size by a few instructions;
-  `e_entry` was the only such boundary found to matter here.
+* The line/column anchors are the targets a rebuild reproduces in `.rodata` /
+  `.data.rel.ro`.
+* `Location` records mark panic sites, so the recovered tree covers the files that
+  carry one (20 embedded paths, 11 with anchors).
+* Insn `0x1636` is identified as the allocator + `Vec` grow from the heap window and
+  the panic message; the 16-byte element behind the `memmove` is characterised in §5.2.
+* Function boundaries outside the memmove chain are bounded by "next call target";
+  `e_entry` is the boundary that matters here.

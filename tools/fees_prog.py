@@ -62,8 +62,8 @@ def relocs(p):
 
 
 def handler_table(root=None):
-    """name -> handler entry insn, reading either the S1 map (`fees_handlers.json`,
-    keys `handler`) or the S1b map (`fees_handlers_full.json`, key `handler_pc`)."""
+    """name -> handler entry insn, reading either `maps/fees_handlers.json`
+    (keys `handler`) or `maps/fees_handlers_full.json` (key `handler_pc`)."""
     root = root or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     for name in ('fees_handlers_full.json', 'fees_handlers.json'):
         path = os.path.join(root, 'maps', name)
