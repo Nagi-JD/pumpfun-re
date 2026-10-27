@@ -4,16 +4,20 @@ Reverse-engineering research for the four deployed pump.fun programs
 (`pump`, `pump_amm`/PumpSwap, `pump_fees`, `mayhem`). Everything here is derived
 from **public on-chain bytecode** — the deployed programs are public; their Rust
 source is not. This repo collects an independent sBPF analyzer, a full structural
-map of all four programs, per-handler behavioral specs, buildable behavioral
-reconstructions, and a differential test harness + coverage-guided fuzzer that
-verify reconstructions against the deployed binaries.
+map of all four programs, per-handler behavioral specs, differential test
+harnesses + a coverage-guided fuzzer that verify reconstructions against the
+deployed binaries, and byte-identity research that builds on the public
+reconstruction in [lalalune/pumpfun-source] (MIT).
 
-> **Honest status.** This is a **behavioral** reverse-engineering effort, not a
-> byte-identical rebuild. Whole-file byte-identity of the deployed programs is an
-> open problem (the original source structure is lost and cannot be uniquely
-> recovered from a stripped binary). What this repo proves is *behavioral*
-> equivalence on the paths actually exercised — and it measures that coverage
-> rather than assuming it.
+> **Honest status.** Two tracks.
+> **Behavioral:** reconstructions verified against the deployed binaries by
+> executed differential tests on the paths actually exercised (with measured
+> coverage, not assumed).
+> **Byte-identity:** we start from lalalune's latest published checkpoints and
+> push their function-level match counts further, measured with *their* window
+> metric (normalized function windows + raw byte-exact bodies). **No core program
+> is byte-identical as a whole ELF yet** — matched function windows are not
+> whole-file equality, and normalized matches do not prove identical bytes.
 
 ## What's here
 
@@ -52,19 +56,37 @@ The harnesses are Rust + [LiteSVM]. Each loads the **deployed** `.so` and a
 identical seeded state, and compares results byte-for-byte. See each
 `harness/*/src/main.rs` for the exact flow and `docs/VERIFICATION.md` for results.
 
-## Current verified state (summary)
+## Current verified state — behavioral
 
 - **pump**: core trade loop (create / buy / sell / v3 / SPL+Token-2022 quote) verified
-  behaviorally against the deployed binary; several real reconstruction bugs found
-  and fixed via the harness/fuzzer (see `recovered-fixes/`).
-- **pump_amm (PumpSwap)**: `create_pool` / `deposit` / `withdraw` byte-identical in
-  behavior (incl. the constant-product sqrt-k LP math); `buy`/`sell` reach an
-  identical terminal state at a shared external fee-program gate.
-- **pump_fees**: structural map complete (31/31); differential verification in progress.
-- **mayhem**: partial map; pending.
+  behaviorally against the deployed binary; real reconstruction bugs found and fixed
+  via the harness (e.g. the missing `admin_cto` 6095 guard; see `recovered-fixes/`).
+- **pump_amm (PumpSwap)**: full flow verified; differential fuzzer 1,262 runs, 0 real
+  divergences.
+- **pump_fees**: **31/31 handlers** match the deployed binary on executed paths, with
+  handler bodies reached for all 31 (`harness/feesharness`, oracle = exact rebuild of
+  lalalune's Fees checkpoint; `update_fee_shares_v2` and `crank_donation_fee_pda` on
+  in-body rejection paths only).
+- **mayhem**: `initialize_mayhem_state` reconstructed; `create_v2(is_mayhem_mode=true)`
+  end-to-end differential gives byte-identical account state on both sides.
 
-Byte-identity of the deployed binaries: **not achieved and not the goal of this
-repo** — this is behavioral RE with measured coverage.
+## Current state — byte-identity race (27 Oct 2026)
+
+Function windows matched (their window metric) vs lalalune's latest published
+checkpoint for each program:
+
+| Program | lalalune published | Ours | Main levers |
+|---|---:|---:|---|
+| PumpSwap | 599 / 785 (125 exact) | **648 / 785** (128 exact) | native Linux build (+18), `error!` closures on deployed lines with deployed paths (+31) |
+| Fees | 578 / 585 (198 exact) | in progress | block-order fix found via MIR (`let needs_create = …; if needs_create {`, window 243184): 577→578 on the previous checkpoint, being stacked on the new one |
+| Pump | 712 / 1035 (Round23) | in progress | same closure/line method (+39 on the previous checkpoint: 528→567) |
+| Mayhem | 429 / 441 (100 exact) | 429 | no gain yet; native Linux does not help here |
+
+These results come from local research branches (patch + build recipe + measure
+JSON per packet). Whole-ELF byte-identity of the four core programs: **not achieved
+by anyone yet** (lalalune's Donation Relay, a separate program, is whole-ELF exact).
+
+[lalalune/pumpfun-source]: https://github.com/lalalune/pumpfun-source
 
 ## Contributing
 
