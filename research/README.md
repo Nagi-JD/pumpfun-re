@@ -25,3 +25,16 @@ case, including three error cases the previous source did not reproduce.
 
 Each packet has a RESULT file (before/after counts), the patch, the build script and the
 measure JSON. Deployed `.so` files are not committed (public on-chain).
+
+## Notes
+- `pump-r23-race/` (packet 1) still has the old `migrate`/`migrate_v2` quote computation
+  (`real_quote_reserves - fee`, without `post_complete_quote_in`). That is the behavioral bug
+  fixed and execution-verified in `pump-r23-race-2/`. Packet 1 is kept for history only.
+- These sources reconstruct the **deployed** program's behavior, including its quirks. Example:
+  the deployed pump binary never raises `DisabledMigrate` (it exists only in the error-name
+  table, no raise site), so `migrate` does not check `global.enable_migrate`; adding that check
+  would diverge from the deployed program.
+- Open lead: `token_incentives/volume_accumulator.rs` (unchanged from the upstream
+  reconstruction) appears to keep `current_sol_volume` across incentive seasons when the user's
+  last update predates `global.start_time` and `now` is already past it. Whether the deployed
+  program over-accrues this way has not been verified by execution yet.
