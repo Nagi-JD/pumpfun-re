@@ -15,5 +15,24 @@
       163920,
       13800
     ]
-  ]
+  ],
+  "closed_windows_matched": {
+    "76384": true,
+    "137280": true,
+    "249264": true
+  },
+  "open_windows_matched": {
+    "120816": false,
+    "147944": false,
+    "163920": false
+  },
+  "raw_lost_vs_prior_note": "compare unmatched set and gains",
+  "gained_vs_579": [
+    76384,
+    137280,
+    249264
+  ],
+  "symbols_sha256": "ca9e6a933d1406743689f7bad609ce6b5e95ea91c064e0233cbd4db100afb335",
+  "candidate_sha256": "7fdeefd6a7f36e1d312b7429f826fe4c5118440a059ee3fb49399b8799d3fc3d",
+  "build": "native from source, platform-tools v1.44 cargo rustc, strip v1.52, materialized fees-extend-integration"
 }
