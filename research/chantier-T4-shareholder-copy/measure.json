@@ -1,0 +1,77 @@
+{
+ "before": {
+  "note": "chantier-T4-whitelist-resync (#25) baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1000,
+  "matched": 789,
+  "exact": 138,
+  "unmatched": 246,
+  "call_consistent_original": 681
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1000,
+  "matched": 790,
+  "exact": 138,
+  "unmatched": 245,
+  "call_consistent_original": 682
+ },
+ "gained_matched": [
+  "0xcf18"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "clone_window": {
+  "symbol": "_ZN67_$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$core..clone..Clone$GT$5clone17h981bad13a3d6d2f6E",
+  "deployed_start": "0xcf18",
+  "deployed_size": 336,
+  "deployed_callers": [
+   "0x2d920",
+   "0x32840"
+  ],
+  "deployed_call_targets": {
+   "0x1b3610": "memcpy",
+   "0x1ab198": "alloc::raw_vec::handle_error"
+  }
+ },
+ "artifacts": {
+  "candidate_sha256": "3aa5b81f4d295c4f418150ad11d74b8f1c11f48c5196c8963ee2b4db160ced8a",
+  "symbols_sha256": "555414e5a72e1a0142fb605719b305d9226a19b4e533f7d91a99a6f5a67abd75"
+ },
+ "variants": {
+  "copy_only_t4_ordered_ld": {
+   "note": "Copy derive, no ordered-ld placement; clone lands at 0x15a070",
+   "matched": 790,
+   "exact": 138,
+   "candidate_sha256": "414d3a9578188be58a89be8fe97294394d5cda2a0071037249d8fd8fb6e98a88"
+  },
+  "copy_plus_ordered_ld_patch": {
+   "note": "this packet; clone placed at deployed slot 0xcf18",
+   "matched": 790,
+   "exact": 138,
+   "candidate_sha256": "3aa5b81f4d295c4f418150ad11d74b8f1c11f48c5196c8963ee2b4db160ced8a",
+   "symbols_sha256": "555414e5a72e1a0142fb605719b305d9226a19b4e533f7d91a99a6f5a67abd75"
+  }
+ },
+ "drift_solver_before": {
+  "call_only_raw_fail": 220,
+  "potential_if_delta0": 358,
+  "intervals_nonzero": 74,
+  "root": {
+   "dep_left": "0xce88",
+   "dep_right": "0xd068",
+   "delta": -336
+  }
+ },
+ "drift_solver_after": {
+  "call_only_raw_fail": 221,
+  "potential_if_delta0": 359,
+  "intervals_nonzero": 75,
+  "root": {
+   "dep_left": "0xe9e8",
+   "dep_right": "0xef40",
+   "delta": -1240
+  }
+ }
+}

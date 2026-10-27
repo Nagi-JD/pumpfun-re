@@ -1,0 +1,11 @@
+--- a/programs/pump/src/trade_types.rs	2026-10-28 00:21:52.980795525 +0100
++++ b/programs/pump/src/trade_types.rs	2026-10-28 00:21:52.980795525 +0100
+@@ -405,7 +405,7 @@
+     pub creator_fee_unclaimed: u64,
+     pub unparsed_trailing_field: u64,
+ }
+-#[derive(AnchorSerialize, AnchorDeserialize, Clone)]
++#[derive(AnchorSerialize, AnchorDeserialize, Clone, Copy)]
+ pub struct Shareholder {
+     pub address: Pubkey,
+     pub share_bps: u16,

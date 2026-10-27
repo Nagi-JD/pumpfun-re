@@ -1,0 +1,18 @@
+--- a/ordered.ld	2026-10-28 00:20:03.140795525 +0100
++++ b/ordered.ld	2026-10-28 00:24:54.964795525 +0100
+@@ -94,6 +94,7 @@
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN4core5error5Error7provide17h6683774cb5fae57cE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN4core5error5Error7type_id17h36e6c1da5ef82298E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN51_$LT$u64$u20$as$u20$borsh..de..BorshDeserialize$GT$18deserialize_reader17hd3984b02b29adca9E")
++    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN67_$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$core..clone..Clone$GT$5clone17h981bad13a3d6d2f6E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN52_$LT$bool$u20$as$u20$borsh..de..BorshDeserialize$GT$18deserialize_reader17h4eed3c796f6c7b2dE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN53_$LT$core..fmt..Error$u20$as$u20$core..fmt..Debug$GT$3fmt17hfe6c72a5f6b9117dE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN58_$LT$alloc..string..String$u20$as$u20$core..fmt..Write$GT$10write_char17hde85ebe9d0efc980E")
+@@ -866,7 +867,6 @@
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN4core3ptr77drop_in_place$LT$core..result..Result$LT$bool$C$std..io..error..Error$GT$$GT$17h7bfac70429d03070E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN5alloc3vec16Vec$LT$T$C$A$GT$17extend_from_slice17h583cbefd437dfae1E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$8grow_one17hab14726a1cd124dcE")
+-    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN67_$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$core..clone..Clone$GT$5clone17h981bad13a3d6d2f6E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN68_$LT$solana_pubkey..Pubkey$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hc6aad4b2735d10c7E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN76_$LT$core..option..Option$LT$T$GT$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17h0fe93a6d06b7bbb6E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN76_$LT$core..option..Option$LT$T$GT$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17h78e34fad52ec1a86E")
