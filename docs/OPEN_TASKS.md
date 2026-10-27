@@ -26,6 +26,8 @@ Pump's raw gap. Normalized-window gains per-site are exhausted on all four progr
 root-cause analysis, the drift solver, and every ruled-out lever are in
 [`docs/WHOLE_ELF_FRONTIER.md`](WHOLE_ELF_FRONTIER.md) — read it before touching raw.
 
+**Byte-for-byte chantier — claimable tasks T0–T7: [`docs/CHANTIER.md`](CHANTIER.md).**
+
 ## How it works here (read first)
 - `research/README.md` — what each existing packet did and how it was measured.
 - `research/pump-r23-race-2/`, `research/amm-race-2/`, `research/fees-progid-579-raw/` — worked
