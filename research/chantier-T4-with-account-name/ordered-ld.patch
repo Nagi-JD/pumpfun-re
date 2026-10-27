@@ -1,0 +1,18 @@
+--- a/ordered.ld
++++ b/ordered.ld
+@@ -22,6 +22,7 @@
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang5error5Error11with_values17h970a193ad8f6c231E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang5error5Error17with_account_name17h59075a468837db10E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang5error5Error17with_account_name17hb6c5748ba3896f3aE")
++    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang5error5Error17with_account_name17h30477c9019bd71fbE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang8accounts12account_info93_$LT$impl$u20$anchor_lang..Accounts$LT$B$GT$$u20$for$u20$solana_account_info..AccountInfo$GT$12try_accounts17h12cb3b8bbdd7c180E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang8accounts17interface_account25InterfaceAccount$LT$T$GT$18try_from_unchecked17h51f5881bc5834e4bE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang8accounts17interface_account25InterfaceAccount$LT$T$GT$18try_from_unchecked17h99628cea0a8c85cbE")
+@@ -96,6 +97,7 @@
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN53_$LT$core..fmt..Error$u20$as$u20$core..fmt..Debug$GT$3fmt17hfe6c72a5f6b9117dE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN58_$LT$alloc..string..String$u20$as$u20$core..fmt..Write$GT$10write_char17hde85ebe9d0efc980E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN58_$LT$alloc..string..String$u20$as$u20$core..fmt..Write$GT$9write_str17h3c31393c25b00ee9E")
++    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN5alloc3fmt6format17hc906f15c7f1c58e2E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN5alloc5alloc15exchange_malloc17h17d7e4e4140eecb8E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN5alloc6string6String4push17h4caf904cbb1af86dE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN5alloc7raw_vec11finish_grow17h72952a24371b83d3E")
