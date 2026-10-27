@@ -14,7 +14,7 @@ open wall, bounded by the lost original source — do not claim it.
 |---|---:|---:|---|
 | Pump | 738 / 1035 (145 raw) | **786 / 1035** (137 raw) | lead **+48** normalized; raw behind (whole-ELF, see below) |
 | PumpSwap | 651 / 785 (148 raw) | **681 / 785** (148 raw) | lead **+30**; raw tie |
-| Fees | 582 / 585 (200 raw) | 582 / 585 (200 raw) | tie; the 3 hard windows are confirmed whole-ELF, not per-site |
+| Fees | 582 / 585 (200 raw) | 582 / 585 (200 raw) | tie; native byte-identical repro in `research/fees-extend-stack-582/` (PR #13). The 3 hard windows (sweep_buyback reg-alloc, crank/create_donation wrapper codegen) are confirmed whole-ELF, not per-site |
 | Mayhem | 432 / 441 (100 raw) | 429 / 441 | behind **−3** (whole-ELF, same wall) |
 
 **Per-site ceiling reached; the whole-ELF / raw wall is confirmed by measurement.** A block-reorder
