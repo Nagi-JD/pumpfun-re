@@ -1,0 +1,36 @@
+--- parent/programs/pump-fees/src/instructions/admin/extend_fee_config.rs
++++ recovered/programs/pump-fees/src/instructions/admin/extend_fee_config.rs
+@@ -36,7 +36,7 @@
+ 
+ 
+ pub fn execute(ctx: Context<ExtendFeeConfig>) -> Result<()> {
+-    let info = &ctx.accounts.fee_config;
++    let expected; let info = &ctx.accounts.fee_config;
+     require_keys_eq!(*info.owner, ID, FeeError::InvalidFeeConfigAccount);
+ 
+ 
+@@ -49,18 +49,18 @@
+ 
+ 
+ 
+-    require!(data[..8] == [143,52,146,187,219,123,76,155], FeeError::InvalidFeeConfigAccount);
++    require!(data.starts_with(<crate::types::FeeConfig as anchor_lang::Discriminator>::DISCRIMINATOR), FeeError::InvalidFeeConfigAccount);
+ 
+ 
+-    let bump = [data[8]];
+-    let config_program = ctx.accounts.config_program_id.key();
++    let bump_value = data[8];
++    
+ 
+ 
+ 
+ 
+-    let expected_result = Pubkey::create_program_address(&[b"fee_config", config_program.as_ref(), &bump], ctx.program_id);
+-    require!(expected_result.is_ok(), FeeError::InvalidFeeConfigAccount);
+-    require_keys_eq!(expected_result.clone().unwrap(), info.key(), FeeError::InvalidFeeConfigAccount);
++    expected = Pubkey::create_program_address(&[b"fee_config", ctx.accounts.config_program_id.key().as_ref(), &[bump_value]], ctx.program_id)
++        .map_err(|_| error!(FeeError::InvalidFeeConfigAccount))?;
++    require_keys_eq!(expected, info.key(), FeeError::InvalidFeeConfigAccount);
+     drop(data);
+     let current_size = info.data_len(); let new_size = 4097usize;
+     if current_size == new_size { msg!("Fee config account already has the correct size"); return Ok(()); } if current_size > new_size { msg!("Fee config account already has more than {} bytes: {}", new_size, current_size); return Ok(()); }

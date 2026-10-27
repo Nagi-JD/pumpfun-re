@@ -1,0 +1,25 @@
+{
+  "normalized_matches": 582,
+  "raw_matches": 200,
+  "raw_lost": [],
+  "gained_original": [
+    76384
+  ],
+  "unchanged_compiled_functions": 585,
+  "rodata_bytes": 21079,
+  "counts": {
+    "original_matched_calls": 4437,
+    "original_matched_code_pointers": 63,
+    "original_matched_data_pointers": 2075,
+    "original_data_fields": 379,
+    "unchanged_parent_calls": 4538,
+    "unchanged_parent_pointers": 2182
+  },
+  "remaining_original_functions": [
+    120816,
+    147944,
+    163920
+  ],
+  "whole_elf_equal": false,
+  "whole_capture_equal": false
+}
