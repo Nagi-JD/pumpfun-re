@@ -10,12 +10,19 @@ open wall, bounded by the lost original source — do not claim it.
 
 ## Current standing (vs lalalune's latest checkpoints)
 
-| Program | Theirs | Here | Status |
+| Program | Theirs (Round36, 27 Oct) | Here (verified) | Status |
 |---|---:|---:|---|
-| Pump | 733 / 1035 | 761 (on their prev Round23) | re-stacking on Round34 |
-| PumpSwap | 643 / 785 | 657 (on their prev 599) | re-stacking on their 643 |
-| Fees | 582 / 585 (200 raw) | 579 / 585 (198 raw) | behind by 3 hard windows |
-| Mayhem | 432 / 441 | 432 (parity) | 9 remaining are whole-function codegen — hard wall |
+| Pump | 738 / 1035 (145 raw) | **786 / 1035** (137 raw) | lead **+48** normalized; raw behind (whole-ELF, see below) |
+| PumpSwap | 651 / 785 (148 raw) | **681 / 785** (148 raw) | lead **+30**; raw tie |
+| Fees | 582 / 585 (200 raw) | 582 / 585 (200 raw) | tie; the 3 hard windows are confirmed whole-ELF, not per-site |
+| Mayhem | 432 / 441 (100 raw) | 429 / 441 | behind **−3** (whole-ELF, same wall) |
+
+**Per-site ceiling reached; the whole-ELF / raw wall is confirmed by measurement.** A block-reorder
+experiment (reordering a 118-function size-identical run to the deployed internal order via `ordered.ld`)
+**regressed** raw 137→128: a function's position is the cumulative sum of all preceding function sizes, so
+symbol-order alone cannot place a callee at its deployed offset. Do not re-attempt order-only reorder for
+raw — it is the open whole-function-layout problem (bounded by lost source), the same wall as Mayhem's 9 and
+Pump's raw gap. Normalized-window gains per-site are exhausted on all four programs.
 
 ## How it works here (read first)
 - `research/README.md` — what each existing packet did and how it was measured.

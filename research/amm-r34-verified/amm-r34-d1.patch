@@ -1,0 +1,307 @@
+--- a/src/instructions/liquidity/deposit.rs
++++ b/src/instructions/liquidity/deposit.rs
+@@ -15,11 +15,88 @@
+     require_gte!(base_limit, base_amount, PumpAmmError::ExceededSlippage);
+     let quote_amount = u64::try_from(crate::curve::fees::ceil_div(
+         (quote_reserve as u128) * (amount as u128), old_supply as u128,
+-    )?).map_err(|_| error!(PumpAmmError::Truncation))?;
++    )?).map_err(|_| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Truncation))?;
+     let fee_data = crate::utils::transfer_fee::from_mint(&a.quote_mint.to_account_info())?;
+     let quote_transfer_amount = crate::utils::transfer_fee::amount_before_fee(&fee_data, quote_amount)?;
+     let quote_transfer_fee = quote_transfer_amount.checked_sub(quote_amount)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++error!(PumpAmmError::Overflow))?;
+     require_gte!(quote_limit, quote_transfer_amount, PumpAmmError::ExceededSlippage);
+     let base_program = if *a.base_mint.to_account_info().owner == anchor_spl::token::ID {
+         a.token_program.as_ref()
+@@ -40,15 +117,47 @@
+     crate::utils::token::mint_to_pool(&a.token_2022_program, &a.lp_mint,
+         &a.user_pool_token_account, amount, &a.pool)?;
+     a.pool.lp_supply = a.pool.lp_supply.checked_add(amount)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     if a.pool.can_boost() {
+         let effective_virtual = liquidity_effective_virtual(&a.pool)?;
+         let virtual_reserve = u128::try_from(effective_virtual)
+-            .map_err(|_| error!(PumpAmmError::Overflow))?;
++            .map_err(|_| 
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+         let change = virtual_reserve.checked_mul(amount as u128)
+             .ok_or_else(|| error!(PumpAmmError::Overflow))?
+-            .checked_div(old_supply as u128).ok_or_else(|| error!(PumpAmmError::DivisionByZero))?;
+-        let change = i128::try_from(change).map_err(|_| error!(PumpAmmError::Overflow))?;
++            .checked_div(old_supply as u128).ok_or_else(|| 
++error!(PumpAmmError::DivisionByZero))?;
++        let change = i128::try_from(change).map_err(|_| 
++
++
++error!(PumpAmmError::Overflow))?;
+         a.pool.virtual_quote_reserves = a.pool.virtual_quote_reserves.checked_add(change)
+             .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+     }
+--- a/src/instructions/swap/multi_hop_swap.rs
++++ b/src/instructions/swap/multi_hop_swap.rs
+@@ -566,12 +566,24 @@
+     } else {
+         quote_transfer_fee(&h.quote_mint.to_account_info(), amount, false)?
+     };
+-    let received = amount.checked_sub(input_tf).ok_or_else(|| error!(PumpAmmError::Overflow))?;
++    let received = amount.checked_sub(input_tf).ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let b = if sell {
+         h.pool_base_token_account
+             .amount
+             .checked_sub(amount)
+-            .ok_or_else(|| error!(PumpAmmError::Overflow))?
++            .ok_or_else(|| 
++
++error!(PumpAmmError::Overflow))?
+     } else {
+         h.pool_base_token_account.amount
+     };
+@@ -581,7 +593,47 @@
+         h.pool_quote_token_account
+             .amount
+             .checked_sub(received)
+-            .ok_or_else(|| error!(PumpAmmError::Overflow))?
++            .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?
+     };
+     let old_virtual = h.pool.virtual_quote_reserves;
+     let (real_quote_reserves, q) = crate::instructions::swap::trade_v2::quote_reserves(&h.pool, raw_q)?;
+@@ -589,10 +641,81 @@
+         .pool
+         .protocol_fees
+         .checked_add(h.pool.creator_fees)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let can_boost = old_virtual
+         .checked_add(old_accrued as i128)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?
+         != 0;
+     // Fee selection uses the reserves before the already-completed input transfer.
+     let fee_quote = if sell {

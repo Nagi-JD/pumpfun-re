@@ -1,0 +1,53 @@
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -617,7 +617,7 @@
+   &a.global,&a.bonding_curve,&a.mint,&a.fee_config,&a.fee_program,a.program.as_ref(),if exact{input}else{pre_quote}
+  )?;if a.user.key()==a.global.whitelist_pda{(0,0,0,0)}else{values}};
+  let cb=if c.creator==Pubkey::default(){0}else{creator_fee_bps};
+- let raw_quote=if exact{let total_bps=protocol_fee_bps.checked_add(cb).ok_or(PumpError::Overflow)?;let denominator=10000u128+total_bps as u128;u64::try_from(input as u128*10000/denominator).map_err(|_|
++ let raw_quote=if exact{let total_bps=protocol_fee_bps.checked_add(cb).ok_or(PumpError::Overflow)?;let denominator=10000u128+total_bps as u128;u64::try_from(core::hint::black_box(input as u128*10000/denominator)).map_err(|_|
+ 
+ 
+ 
+--- a/programs/pump/src/trade_v3.rs
++++ b/programs/pump/src/trade_v3.rs
+@@ -997,7 +997,7 @@
+ error!(PumpError::Truncation))?}else{0};
+     let post_active=crossing && post_base>0;
+     let post_quote=if post_active{estimated_post_quote}else{0};
+-    let post_fee_quote=if crossing{u64::try_from(sub(available,first_cost)? as u128*10000/(10000u128+fees.protocol_fee_bps as u128+creator_bps as u128)).map_err(|_|
++    let post_fee_quote=if crossing{u64::try_from(core::hint::black_box(sub(available,first_cost)? as u128*10000/(10000u128+fees.protocol_fee_bps as u128+creator_bps as u128))).map_err(|_|
+ 
+ 
+ 
+--- a/programs/pump/src/buy_v2.rs
++++ b/programs/pump/src/buy_v2.rs
+@@ -927,10 +927,7 @@
+ error!(PumpError::Truncation))?,1)?};
+  let fq=if exact && computed<=c.real_token_reserves{raw_quote}else{quote};let pf=if exact{ceil_fee(fq,protocol_fee_bps)?}else{initial_protocol_fee};let cf=if exact{ceil_fee(fq,cb)?}else{initial_creator_fee};
+  let quote_transfer_fee=if !exact{pre_quote_transfer_fee}else if native{0}else{crate::trade::quote_transfer_fee(&a.quote_mint.to_account_info(),quote,true)?};
+- let gross_quote=(quote).checked_add(quote_transfer_fee).ok_or_else(||
+-
+-
+-
++ let quote=if computed>c.real_token_reserves && partial{u64::try_from(core::hint::black_box(c.real_token_reserves as u128*c.virtual_quote_reserves as u128/(c.virtual_token_reserves as u128-c.real_token_reserves as u128)+1)).map_err(|_|
+ 
+ 
+ 
+@@ -959,6 +956,7 @@
+ 
+ 
+ 
++error!(PumpError::Truncation))?}else if computed>c.real_token_reserves{u64::try_from(core::hint::black_box(computed as u128*c.virtual_quote_reserves as u128/(c.virtual_token_reserves as u128-computed as u128)+1)).map_err(|_|
+ 
+ 
+ 
+@@ -982,6 +980,8 @@
+ 
+ 
+ 
++error!(PumpError::Truncation))?}else{quote};
++ let gross_quote=(quote).checked_add(quote_transfer_fee).ok_or_else(||
+ 
+ 
+ 

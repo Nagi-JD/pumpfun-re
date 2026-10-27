@@ -77,10 +77,20 @@ checkpoint for each program:
 
 | Program | lalalune published | Ours | Main levers |
 |---|---:|---:|---|
-| PumpSwap | 643 / 785 (148 raw) | **654 / 785** (148 raw) | base path-prefix remap reproduces their 643 exactly, then `error!` closures placed on deployed lines in withdraw + legacy_sell (+11); raw parity (148) |
-| Fees | 578 / 585 (198 exact) | **579 / 585** (141 exact, native build) | block-order fix found via MIR (`let needs_create = …; if needs_create {`, window 243184), stacked on their newest checkpoint with no loss. Their 198 raw-exact needs their container paths + `ordered.ld`; a native build of their unchanged source gives 141, so raw is compared native-vs-native |
-| Pump | 733 / 1035 (Round34, 137 raw) | **782 / 1035 (137 raw)** | per-site `error!` closures placed on deployed lines (no hardcoded-location macro); `migrate`/`migrate_v2` quote fix, verified by execution. A host-triple `rustc` shim makes the native Linux build byte-identical to their macOS artifact, so raw matches too (137) |
-| Mayhem | 429 / 441 (100 exact) | 429 | no gain yet; native Linux does not help here |
+| PumpSwap | 651 / 785 (148 raw) | **681 / 785** (148 raw) | base path-prefix remap reproduces their 643 exactly, then `error!` closures placed on deployed lines (+11 → 654); then a verified d1→d2→f2→g3 chain (+27): +13 error-closures across deposit/amm_hop, +5 `require!`/`Source` line moves, +4 `pool.rs` declaration reorder, +5 out-of-line `checked_sub3`/`checked_add3` constructor bodies → 681, re-measured on the canonical profile at every step with zero raw loss and zero matched loss |
+| Fees | 582 / 585 (200 exact) | **582 / 585** (200 exact, byte-identical) | reproduced their newest `fees-extend-integration` checkpoint byte-for-byte — `symbols.so` + stripped `candidate.so` sha256-identical to their `result.json`; parity, not a lead. 3 windows remain: 120816 Sweep (near-miss +3 instrs), 147944 Crank (missing code), 163920 CreateDonation (extra PDA-verify region) |
+| Pump | 738 / 1035 (Round36, 145 raw) | **786 / 1035 (137 raw)** | per-site `error!` closures placed on deployed lines (no hardcoded-location macro); `migrate`/`migrate_v2` quote fix, verified by execution; +4 trade-body windows (0x176d8/0x178e0 partial-fill quote, 0x87ca0 post-fee, 0x14eab8 legacy raw-quote) restored via `black_box` anti-folding barriers, re-measured on the canonical s7clean profile with zero raw loss. A host-triple `rustc` shim makes the native Linux build byte-identical to their macOS artifact, so raw matches too (137) |
+| Mayhem | 432 / 441 (100 exact) | 429 | lalalune's Round-36 Mayhem reached 432; we hold 429 (parity base), **−3 behind**. The 9 remaining windows are whole-function codegen divergences (whole-ELF class), not reachable by localized source edits |
+
+**Honest standing vs lalalune (27 Oct 2026).** We lead PumpSwap (**+30**) and Pump's
+normalized windows (**+48**), and tie Fees (582/200, both 3 unmatched). They lead Pump's
+raw-byte-exact count (**145 vs our 137**) and Mayhem (**432 vs our 429**). Regaining Pump
+raw is a link-order / whole-ELF problem. A measured block-reorder attempt (reordering a
+118-function size-identical run to the deployed internal order) **regressed** raw 137→128:
+a function's position is the cumulative sum of all preceding function sizes, so symbol-order
+alone cannot place a callee at its deployed offset. This is the same unsolved
+whole-function-layout wall as Mayhem's 9 remaining windows — not cracked by anyone (their
+raw edge is incidental alignment, not a solution).
 
 Every result has a packet in [`research/`](research/README.md) (patch + build recipe +
 measure JSON). Whole-ELF byte-identity of the four core programs: **not achieved

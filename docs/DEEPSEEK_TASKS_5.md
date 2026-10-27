@@ -1,4 +1,4 @@
-# DeepSeek — task set 5 (2026-10-26). While Cédric finishes the pump_fees sharing lot.
+# DeepSeek — task set 5 (2026-10-26). While Shuai-Qing finishes the pump_fees sharing lot.
 
 **This set = the OPEN/HIGH findings of `fidelity_audit.md` (F1, F2, F3) first, then two
 follow-ons.** Do F1/F2/F3 in that priority. They are the only confirmed real divergences /
@@ -15,7 +15,7 @@ the binary before merge. Rules: cite the instruction ADDRESS for every structura
 Account surface + arg-frames + CPI graph (discs verified) + error raise-sites + handler anatomy +
 PDA/seeds + source-ref maps + panic-Location recovery + discriminators + gate/event catalogs, for
 all 4 programs (`maps/`, `docs/`). pump_fees is behaviorally verified for OUR 19 handlers
-(19/19 byte-identical on executed paths, VERIFICATION.md); Cédric owns the 12 sharing handlers.
+(19/19 byte-identical on executed paths, VERIFICATION.md); Shuai-Qing owns the 12 sharing handlers.
 
 ---
 

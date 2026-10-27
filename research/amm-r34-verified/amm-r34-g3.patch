@@ -1,0 +1,434 @@
+--- a/src/instructions/swap/mod.rs
++++ b/src/instructions/swap/mod.rs
+@@ -57,3 +57,354 @@
+     }
+     Ok(())
+ }
++
++#[inline(never)]
++pub(crate) fn checked_sub3(a: u64, b: u64, c: u64, d: u64) -> Result<u64> {
++    let v = a.checked_sub(b).ok_or_else(overflow_a)?;
++    let v = v.checked_add(c).ok_or_else(overflow_b)?;
++    v.checked_add(d).ok_or_else(overflow_c)
++}
++#[inline(never)]
++pub(crate) fn checked_add3(a: u64, b: u64, c: u64) -> Result<u64> {
++    let v = a.checked_add(b).ok_or_else(overflow_d)?;
++    v.checked_add(c).ok_or_else(overflow_e)
++}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++#[inline(never)]
++fn overflow_a() -> anchor_lang::error::Error {
++error!(PumpAmmError::Overflow)
++}
++#[inline(never)]
++fn overflow_b() -> anchor_lang::error::Error {
++error!(PumpAmmError::Overflow)
++}
++#[inline(never)]
++fn overflow_c() -> anchor_lang::error::Error {
++error!(PumpAmmError::Overflow)
++}
++
++
++
++
++
++#[inline(never)]
++fn overflow_d() -> anchor_lang::error::Error {
++error!(PumpAmmError::Overflow)
++}
++
++#[inline(never)]
++fn overflow_e() -> anchor_lang::error::Error {
++error!(PumpAmmError::Overflow)
++}
+\ No newline at end of file
+--- a/src/instructions/swap/multi_hop_swap.rs
++++ b/src/instructions/swap/multi_hop_swap.rs
+@@ -369,39 +369,17 @@
+             let output = result.amount_out;
+             let buyback = result.buyback_fee;
+             if !input_native {
+-                let expected = source_before
+-                    .checked_sub(current)
+-                    .and_then(|v| {
+-                        v.checked_add(if source.key() == destination.key() {
+-                            output
+-                        } else {
+-                            0
+-                        })
+-                    })
+-                    .and_then(|v| {
+-                        v.checked_add(if source.key() == a.buyback_fee_recipient.key() {
+-                            buyback
+-                        } else {
+-                            0
+-                        })
+-                    })
+-                    .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++                let a1 = if source.key() == destination.key() { output } else { 0 };
++                let a2 = if source.key() == a.buyback_fee_recipient.key() { buyback } else { 0 };
++                let expected = super::checked_sub3(source_before, current, a1, a2)?;
+                 require_eq!(
+                     token_amount(&source)?, expected,
+                     PumpAmmError::MultiHopCurveRunMismatch
+                 );
+             }
+             if !output_native && source.key() != destination.key() {
+-                let expected = before
+-                    .checked_add(output)
+-                    .and_then(|v| {
+-                        v.checked_add(if destination.key() == a.buyback_fee_recipient.key() {
+-                            buyback
+-                        } else {
+-                            0
+-                        })
+-                    })
+-                    .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++                let a3 = if destination.key() == a.buyback_fee_recipient.key() { buyback } else { 0 };
++                let expected = super::checked_add3(before, output, a3)?;
+                 require_eq!(
+                     token_amount(&destination)?, expected,
+                     PumpAmmError::MultiHopCurveRunMismatch
+@@ -570,6 +548,28 @@
+ 
+ 
+ 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+ 
+ 
+ 
