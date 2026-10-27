@@ -22,7 +22,9 @@ experiment (reordering a 118-function size-identical run to the deployed interna
 **regressed** raw 137→128: a function's position is the cumulative sum of all preceding function sizes, so
 symbol-order alone cannot place a callee at its deployed offset. Do not re-attempt order-only reorder for
 raw — it is the open whole-function-layout problem (bounded by lost source), the same wall as Mayhem's 9 and
-Pump's raw gap. Normalized-window gains per-site are exhausted on all four programs.
+Pump's raw gap. Normalized-window gains per-site are exhausted on all four programs. Full
+root-cause analysis, the drift solver, and every ruled-out lever are in
+[`docs/WHOLE_ELF_FRONTIER.md`](WHOLE_ELF_FRONTIER.md) — read it before touching raw.
 
 ## How it works here (read first)
 - `research/README.md` — what each existing packet did and how it was measured.
