@@ -1,0 +1,10 @@
+--- a/ordered.ld
++++ b/ordered.ld
+@@ -43,6 +43,7 @@
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang8accounts7account16Account$LT$T$GT$24exit_with_expected_owner17h90bf063c9fd3bf6fE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang8accounts7account16Account$LT$T$GT$24exit_with_expected_owner17h231f51052e4a617dE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang8accounts7account16Account$LT$T$GT$24exit_with_expected_owner17h558d33b381c01100E")
++    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang8accounts7account16Account$LT$T$GT$6reload17ha439d9f0fcaaf0c0E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang8accounts7account16Account$LT$T$GT$8try_from17h135ae0621b32827bE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang8accounts7account16Account$LT$T$GT$8try_from17hf3a571d582151c6bE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN11anchor_lang8accounts7account16Account$LT$T$GT$8try_from17h9831b2a277f79d49E")
