@@ -79,7 +79,7 @@ checkpoint for each program:
 |---|---:|---:|---|
 | PumpSwap | 599 / 785 (125 exact) | **657 / 785** (128 exact) | native Linux build (+18), `error!` closures on deployed lines with deployed paths (+40) |
 | Fees | 578 / 585 (198 exact) | **579 / 585** (141 exact, native build) | block-order fix found via MIR (`let needs_create = …; if needs_create {`, window 243184), stacked on their newest checkpoint with no loss. Their 198 raw-exact needs their container paths + `ordered.ld`; a native build of their unchanged source gives 141, so raw is compared native-vs-native |
-| Pump | 712 / 1035 (Round23) | **761 / 1035** | per-site `error!` closures placed on deployed lines (no hardcoded-location macro); `migrate`/`migrate_v2` quote fix, verified by execution |
+| Pump | 733 / 1035 (Round34, 137 raw) | **782 / 1035 (137 raw)** | per-site `error!` closures placed on deployed lines (no hardcoded-location macro); `migrate`/`migrate_v2` quote fix, verified by execution. A host-triple `rustc` shim makes the native Linux build byte-identical to their macOS artifact, so raw matches too (137) |
 | Mayhem | 429 / 441 (100 exact) | 429 | no gain yet; native Linux does not help here |
 
 Every result has a packet in [`research/`](research/README.md) (patch + build recipe +
