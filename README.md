@@ -78,7 +78,7 @@ checkpoint for each program:
 | Program | lalalune published | Ours | Main levers |
 |---|---:|---:|---|
 | PumpSwap | 599 / 785 (125 exact) | **648 / 785** (128 exact) | native Linux build (+18), `error!` closures on deployed lines with deployed paths (+31) |
-| Fees | 578 / 585 (198 exact) | in progress | block-order fix found via MIR (`let needs_create = …; if needs_create {`, window 243184): 577→578 on the previous checkpoint, being stacked on the new one |
+| Fees | 578 / 585 (198 exact) | **579 / 585** (141 exact, native build) | block-order fix found via MIR (`let needs_create = …; if needs_create {`, window 243184), stacked on their newest checkpoint with no loss. Their 198 raw-exact needs their container paths + `ordered.ld`; a native build of their unchanged source gives 141, so raw is compared native-vs-native |
 | Pump | 712 / 1035 (Round23) | in progress | same closure/line method (+39 on the previous checkpoint: 528→567) |
 | Mayhem | 429 / 441 (100 exact) | 429 | no gain yet; native Linux does not help here |
 
