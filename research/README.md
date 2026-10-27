@@ -34,7 +34,11 @@ measure JSON. Deployed `.so` files are not committed (public on-chain).
   the deployed pump binary never raises `DisabledMigrate` (it exists only in the error-name
   table, no raise site), so `migrate` does not check `global.enable_migrate`; adding that check
   would diverge from the deployed program.
-- Open lead: `token_incentives/volume_accumulator.rs` (unchanged from the upstream
-  reconstruction) appears to keep `current_sol_volume` across incentive seasons when the user's
-  last update predates `global.start_time` and `now` is already past it. Whether the deployed
-  program over-accrues this way has not been verified by execution yet.
+- `token_incentives/volume_accumulator.rs` (unchanged from the upstream reconstruction): a local
+  LiteSVM check against the deployed program confirms `current_sol_volume` carries across
+  incentive seasons (the season-change reset clears `total_claimed_tokens` but not the volume),
+  and the reconstruction reproduces this byte-for-byte. It is **latent**: in every path exercised,
+  a new season's per-day `sol_volumes` stayed 0 (legacy `buy` wrote no volume; the only writer
+  seen, claim, adds 0), so nothing accrued. Not shown reachable; buy_v2/v3, sell and the AMM's own
+  volume accounts were not exercised, and whether pump.fun ever runs consecutive seasons is unknown.
+  Treated as a latent observation, not a confirmed exploit.
