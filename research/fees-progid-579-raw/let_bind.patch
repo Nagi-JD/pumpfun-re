@@ -1,0 +1,13 @@
+diff --git a/programs/pump-fees/src/instructions/fee_sharing/mod.rs b/programs/pump-fees/src/instructions/fee_sharing/mod.rs
+index c9765ef..c3601c4 100644
+--- a/programs/pump-fees/src/instructions/fee_sharing/mod.rs
++++ b/programs/pump-fees/src/instructions/fee_sharing/mod.rs
+@@ -271,7 +271,7 @@ pub fn admit_associated_token_account<'info>(
+         &wallet.key(), mint, token_program,
+     );
+     require_keys_eq!(associated_account.key(), expected, anchor_lang::error::ErrorCode::ConstraintSeeds);
+-    if associated_account.owner == &anchor_lang::system_program::ID {
++    let needs_create = associated_account.owner == &anchor_lang::system_program::ID; if needs_create {
+ 
+ 
+ 

@@ -77,13 +77,13 @@ checkpoint for each program:
 
 | Program | lalalune published | Ours | Main levers |
 |---|---:|---:|---|
-| PumpSwap | 599 / 785 (125 exact) | **648 / 785** (128 exact) | native Linux build (+18), `error!` closures on deployed lines with deployed paths (+31) |
+| PumpSwap | 599 / 785 (125 exact) | **657 / 785** (128 exact) | native Linux build (+18), `error!` closures on deployed lines with deployed paths (+40) |
 | Fees | 578 / 585 (198 exact) | **579 / 585** (141 exact, native build) | block-order fix found via MIR (`let needs_create = …; if needs_create {`, window 243184), stacked on their newest checkpoint with no loss. Their 198 raw-exact needs their container paths + `ordered.ld`; a native build of their unchanged source gives 141, so raw is compared native-vs-native |
-| Pump | 712 / 1035 (Round23) | in progress | same closure/line method (+39 on the previous checkpoint: 528→567) |
+| Pump | 712 / 1035 (Round23) | **761 / 1035** | per-site `error!` closures placed on deployed lines (no hardcoded-location macro); `migrate`/`migrate_v2` quote fix, verified by execution |
 | Mayhem | 429 / 441 (100 exact) | 429 | no gain yet; native Linux does not help here |
 
-These results come from local research branches (patch + build recipe + measure
-JSON per packet). Whole-ELF byte-identity of the four core programs: **not achieved
+Every result has a packet in [`research/`](research/README.md) (patch + build recipe +
+measure JSON). Whole-ELF byte-identity of the four core programs: **not achieved
 by anyone yet** (lalalune's Donation Relay, a separate program, is whole-ELF exact).
 
 [lalalune/pumpfun-source]: https://github.com/lalalune/pumpfun-source

@@ -1,0 +1,107 @@
+deployed 7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d
+BEFORE /home/nagi/pumpround23/out/final-candidate.so a016b22ec5926d456f28d7b532c829a0a78787471a338717d65ad66edb9bd6e8
+BEFORE_uD /home/nagi/pumpround23/out/uD-candidate.so cc45426ef8817265ad23947621800a4893c72fd89481a75cdf7184cb9d125fb6
+AFTER /home/nagi/pumpround23/out/uF-candidate.so e53249d6e8dae49f122e591d77654f52f5e2443c1ceb4c6dea8a805a47169cd1
+IDL BondingCurve fields: [('virtual_token_reserves', 'u64'), ('virtual_quote_reserves', 'u64'), ('real_token_reserves', 'u64'), ('real_quote_reserves', 'u64'), ('token_total_supply', 'u64'), ('complete', 'bool'), ('creator', 'pubkey'), ('is_mayhem_mode', 'bool'), ('is_cashback_coin', 'bool'), ('quote_mint', 'pubkey'), ('creator_fee_bps', 'u64'), ('can_edit_creator_fee', 'bool'), ('is_holder_reward', 'bool'), ('creator_fee', 'u64'), ('protocol_fees', 'u64'), ('depth', 'u8'), ('initial_virtual_quote_reserves', 'u64'), ('post_complete_base_out', 'u64'), ('post_complete_quote_in', 'u64')]
+IDL account offsets: {'virtual_token_reserves': 8, 'virtual_quote_reserves': 16, 'real_token_reserves': 24, 'real_quote_reserves': 32, 'token_total_supply': 40, 'complete': 48, 'creator': 49, 'is_mayhem_mode': 81, 'is_cashback_coin': 82, 'quote_mint': 83, 'creator_fee_bps': 115, 'can_edit_creator_fee': 123, 'is_holder_reward': 124, 'creator_fee': 125, 'protocol_fees': 133, 'depth': 141, 'initial_virtual_quote_reserves': 142, 'post_complete_base_out': 150, 'post_complete_quote_in': 158} end 166
+saved curve len 166 lamports 85666197055
+  saved real_token_reserves 0
+  saved real_quote_reserves 85005359063
+  saved post_complete_base_out 0
+  saved post_complete_quote_in 0
+saved global pool_migration_fee@146 15000001
+
+######## migrate ########
+
+=== migrate | post=0 ===
+  DEPLOYED   error=None
+  BEFORE     error=None
+  BEFORE_uD  error=None
+  AFTER      error=None
+  DEPLOYED vs BEFORE    : mismatched_fields=[]
+  DEPLOYED vs BEFORE_uD : mismatched_fields=[]
+  DEPLOYED vs AFTER     : mismatched_fields=[]
+  pool_quote_token_account: DEPLOYED={'lamports': 67407893053, 'token_amount': 67405853773} | BEFORE={'lamports': 67407893053, 'token_amount': 67405853773} | BEFORE_uD={'lamports': 67407893053, 'token_amount': 67405853773} | AFTER={'lamports': 67407893053, 'token_amount': 67405853773}
+  pool_base_token_account: DEPLOYED={'lamports': 2039280, 'token_amount': 206900000000000} | BEFORE={'lamports': 2039280, 'token_amount': 206900000000000} | BEFORE_uD={'lamports': 2039280, 'token_amount': 206900000000000} | AFTER={'lamports': 2039280, 'token_amount': 206900000000000}
+  bonding_curve: DEPLOYED={'lamports': 660837992, 'token_amount': None} | BEFORE={'lamports': 660837992, 'token_amount': None} | BEFORE_uD={'lamports': 660837992, 'token_amount': None} | AFTER={'lamports': 660837992, 'token_amount': None}
+  pool_authority_wsol_account: DEPLOYED=None | BEFORE=None | BEFORE_uD=None | AFTER=None
+
+=== migrate | post=12345 ===
+  DEPLOYED   error=None
+  BEFORE     error=None
+  BEFORE_uD  error=None
+  AFTER      error=None
+  DEPLOYED vs BEFORE    : mismatched_fields=['after', 'events', 'inner']
+  DEPLOYED vs BEFORE_uD : mismatched_fields=['after', 'events', 'inner']
+  DEPLOYED vs AFTER     : mismatched_fields=[]
+  pool_quote_token_account: DEPLOYED={'lamports': 67407902843, 'token_amount': 67405863563} | BEFORE={'lamports': 67407893053, 'token_amount': 67405853773} | BEFORE_uD={'lamports': 67407893053, 'token_amount': 67405853773} | AFTER={'lamports': 67407902843, 'token_amount': 67405863563}
+  pool_base_token_account: DEPLOYED={'lamports': 2039280, 'token_amount': 206900000000000} | BEFORE={'lamports': 2039280, 'token_amount': 206900000000000} | BEFORE_uD={'lamports': 2039280, 'token_amount': 206900000000000} | AFTER={'lamports': 2039280, 'token_amount': 206900000000000}
+  bonding_curve: DEPLOYED={'lamports': 660825647, 'token_amount': None} | BEFORE={'lamports': 660837992, 'token_amount': None} | BEFORE_uD={'lamports': 660837992, 'token_amount': None} | AFTER={'lamports': 660825647, 'token_amount': None}
+  pool_authority_wsol_account: DEPLOYED=None | BEFORE=None | BEFORE_uD=None | AFTER=None
+  first differing inner ix #22:
+    DEPLOYED {"instruction": {"programIdIndex": 21, "accounts": [[18], 10, 23, 11, 27, 17, 8, 7, 4, 5, 9, 3, 14, 20, 19, 19, 24, 28, 21], "data": [[70], 233, 146, 209, 142, 207, 104, 64, 188, 0, 0, 0, 8, 1, 169, 44, 188, 0, 0, 79, 38, 210, 201, 19, 0, 0, 0, 237, 50, 52, 178, 118, 212, 206, 218, 87, 213, 155, 173, 20, 251, 175, 90, 119, 60, 15, 49, 140, 153, 157, 227, 166, 13, 83, 197, 165, 179, 76, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, "stackHeight": 2}
+    BEFORE   {"instruction": {"programIdIndex": 21, "accounts": [[18], 10, 23, 11, 27, 17, 8, 7, 4, 5, 9, 3, 14, 20, 19, 19, 24, 28, 21], "data": [[70], 233, 146, 209, 142, 207, 104, 64, 188, 0, 0, 0, 8, 1, 169, 44, 188, 0, 0, 22, 246, 209, 201, 19, 0, 0, 0, 237, 50, 52, 178, 118, 212, 206, 218, 87, 213, 155, 173, 20, 251, 175, 90, 119, 60, 15, 49, 140, 153, 157, 227, 166, 13, 83, 197, 165, 179, 76, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, "stackHeight": 2}
+
+=== migrate | post=1e9 (+lamports) ===
+  DEPLOYED   error=None
+  BEFORE     error=None
+  BEFORE_uD  error=None
+  AFTER      error=None
+  DEPLOYED vs BEFORE    : mismatched_fields=['after', 'events', 'inner']
+  DEPLOYED vs BEFORE_uD : mismatched_fields=['after', 'events', 'inner']
+  DEPLOYED vs AFTER     : mismatched_fields=[]
+  pool_quote_token_account: DEPLOYED={'lamports': 68200993053, 'token_amount': 68198953773} | BEFORE={'lamports': 67407893053, 'token_amount': 67405853773} | BEFORE_uD={'lamports': 67407893053, 'token_amount': 67405853773} | AFTER={'lamports': 68200993053, 'token_amount': 68198953773}
+  pool_base_token_account: DEPLOYED={'lamports': 2039280, 'token_amount': 206900000000000} | BEFORE={'lamports': 2039280, 'token_amount': 206900000000000} | BEFORE_uD={'lamports': 2039280, 'token_amount': 206900000000000} | AFTER={'lamports': 2039280, 'token_amount': 206900000000000}
+  bonding_curve: DEPLOYED={'lamports': 660837992, 'token_amount': None} | BEFORE={'lamports': 1660837992, 'token_amount': None} | BEFORE_uD={'lamports': 1660837992, 'token_amount': None} | AFTER={'lamports': 660837992, 'token_amount': None}
+  pool_authority_wsol_account: DEPLOYED=None | BEFORE=None | BEFORE_uD=None | AFTER=None
+  first differing inner ix #22:
+    DEPLOYED {"instruction": {"programIdIndex": 21, "accounts": [[18], 10, 23, 11, 27, 17, 8, 7, 4, 5, 9, 3, 14, 20, 19, 19, 24, 28, 21], "data": [[70], 233, 146, 209, 142, 207, 104, 64, 188, 0, 0, 0, 8, 1, 169, 44, 188, 0, 0, 22, 192, 108, 5, 20, 0, 0, 0, 237, 50, 52, 178, 118, 212, 206, 218, 87, 213, 155, 173, 20, 251, 175, 90, 119, 60, 15, 49, 140, 153, 157, 227, 166, 13, 83, 197, 165, 179, 76, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, "stackHeight": 2}
+    BEFORE   {"instruction": {"programIdIndex": 21, "accounts": [[18], 10, 23, 11, 27, 17, 8, 7, 4, 5, 9, 3, 14, 20, 19, 19, 24, 28, 21], "data": [[70], 233, 146, 209, 142, 207, 104, 64, 188, 0, 0, 0, 8, 1, 169, 44, 188, 0, 0, 22, 246, 209, 201, 19, 0, 0, 0, 237, 50, 52, 178, 118, 212, 206, 218, 87, 213, 155, 173, 20, 251, 175, 90, 119, 60, 15, 49, 140, 153, 157, 227, 166, 13, 83, 197, 165, 179, 76, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, "stackHeight": 2}
+
+=== migrate | post=u64max (overflow) ===
+  DEPLOYED   error=TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))
+  BEFORE     error=None
+  BEFORE_uD  error=None
+  AFTER      error=TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))
+  DEPLOYED vs BEFORE    : mismatched_fields=['error', 'after', 'events', 'inner', 'return']
+  DEPLOYED vs BEFORE_uD : mismatched_fields=['error', 'after', 'events', 'inner', 'return']
+  DEPLOYED vs AFTER     : mismatched_fields=[]
+  pool_quote_token_account: DEPLOYED=None | BEFORE={'lamports': 67407893053, 'token_amount': 67405853773} | BEFORE_uD={'lamports': 67407893053, 'token_amount': 67405853773} | AFTER=None
+  pool_base_token_account: DEPLOYED=None | BEFORE={'lamports': 2039280, 'token_amount': 206900000000000} | BEFORE_uD={'lamports': 2039280, 'token_amount': 206900000000000} | AFTER=None
+  bonding_curve: DEPLOYED={'lamports': 85666197055, 'token_amount': None} | BEFORE={'lamports': 660837992, 'token_amount': None} | BEFORE_uD={'lamports': 660837992, 'token_amount': None} | AFTER={'lamports': 85666197055, 'token_amount': None}
+  pool_authority_wsol_account: DEPLOYED=None | BEFORE=None | BEFORE_uD=None | AFTER=None
+  inner count 21 50
+  DEPLOYED err logs: ['Program log: AnchorError thrown in programs/pump/src/migrate.rs:280. Error Code: Overflow. Error Number: 6024. Error Message: Overflow.', 'Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0x1788']
+  AFTER err logs: ['Program log: AnchorError thrown in programs/pump/src/migrate.rs:280. Error Code: Overflow. Error Number: 6024. Error Message: Overflow.', 'Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0x1788']
+
+=== migrate | post=2^64-rq (rq=85005359063, overflow by 0) ===
+  DEPLOYED   error=TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))
+  BEFORE     error=None
+  BEFORE_uD  error=None
+  AFTER      error=TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))
+  DEPLOYED vs BEFORE    : mismatched_fields=['error', 'after', 'events', 'inner', 'return']
+  DEPLOYED vs BEFORE_uD : mismatched_fields=['error', 'after', 'events', 'inner', 'return']
+  DEPLOYED vs AFTER     : mismatched_fields=[]
+  pool_quote_token_account: DEPLOYED=None | BEFORE={'lamports': 67407893053, 'token_amount': 67405853773} | BEFORE_uD={'lamports': 67407893053, 'token_amount': 67405853773} | AFTER=None
+  pool_base_token_account: DEPLOYED=None | BEFORE={'lamports': 2039280, 'token_amount': 206900000000000} | BEFORE_uD={'lamports': 2039280, 'token_amount': 206900000000000} | AFTER=None
+  bonding_curve: DEPLOYED={'lamports': 85666197055, 'token_amount': None} | BEFORE={'lamports': 660837992, 'token_amount': None} | BEFORE_uD={'lamports': 660837992, 'token_amount': None} | AFTER={'lamports': 85666197055, 'token_amount': None}
+  pool_authority_wsol_account: DEPLOYED=None | BEFORE=None | BEFORE_uD=None | AFTER=None
+  inner count 21 50
+  DEPLOYED err logs: ['Program log: AnchorError thrown in programs/pump/src/migrate.rs:280. Error Code: Overflow. Error Number: 6024. Error Message: Overflow.', 'Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0x1788']
+  AFTER err logs: ['Program log: AnchorError thrown in programs/pump/src/migrate.rs:280. Error Code: Overflow. Error Number: 6024. Error Message: Overflow.', 'Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0x1788']
+
+=== migrate | post=2^64-1-rq (sum=u64max, fee sub ok) ===
+  DEPLOYED   error=TransactionErrorInstructionError((1, Fieldless(ArithmeticOverflow)))
+  BEFORE     error=None
+  BEFORE_uD  error=None
+  AFTER      error=TransactionErrorInstructionError((1, Fieldless(ArithmeticOverflow)))
+  DEPLOYED vs BEFORE    : mismatched_fields=['error', 'after', 'events', 'inner', 'return']
+  DEPLOYED vs BEFORE_uD : mismatched_fields=['error', 'after', 'events', 'inner', 'return']
+  DEPLOYED vs AFTER     : mismatched_fields=[]
+  pool_quote_token_account: DEPLOYED=None | BEFORE={'lamports': 67407893053, 'token_amount': 67405853773} | BEFORE_uD={'lamports': 67407893053, 'token_amount': 67405853773} | AFTER=None
+  pool_base_token_account: DEPLOYED=None | BEFORE={'lamports': 2039280, 'token_amount': 206900000000000} | BEFORE_uD={'lamports': 2039280, 'token_amount': 206900000000000} | AFTER=None
+  bonding_curve: DEPLOYED={'lamports': 85666197055, 'token_amount': None} | BEFORE={'lamports': 660837992, 'token_amount': None} | BEFORE_uD={'lamports': 660837992, 'token_amount': None} | AFTER={'lamports': 85666197055, 'token_amount': None}
+  pool_authority_wsol_account: DEPLOYED=None | BEFORE=None | BEFORE_uD=None | AFTER=None
+  inner count 21 50
+  DEPLOYED err logs: ['Program log: ProgramError occurred. Error Code: ArithmeticOverflow. Error Number: 103079215104. Error Message: Program arithmetic overflowed.', 'Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: Program arithmetic overflowed']
+  AFTER err logs: ['Program log: ProgramError occurred. Error Code: ArithmeticOverflow. Error Number: 103079215104. Error Message: Program arithmetic overflowed.', 'Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: Program arithmetic overflowed']

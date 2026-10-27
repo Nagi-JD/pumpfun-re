@@ -1,0 +1,1 @@
+--remap-path-prefix=src/=programs/pump/src/ --remap-path-prefix=src/trade.rs=programs/pump/src/trade_v3.rs --remap-path-prefix=src/multi_hop_curve.rs=programs/pump/src/multi_hop_curve_swap.rs --remap-path-prefix=src/trade_types.rs=programs/pump/src/pump_quote.rs

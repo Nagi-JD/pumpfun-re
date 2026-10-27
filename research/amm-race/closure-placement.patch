@@ -1,0 +1,2234 @@
+diff -ruN u0/programs/pump-amm/src/boost_burn.rs u1/programs/pump-amm/src/boost_burn.rs
+--- u0/programs/pump-amm/src/boost_burn.rs	2026-10-27 14:42:01.000000000 +0100
++++ u1/programs/pump-amm/src/boost_burn.rs	2026-10-27 14:51:05.266885133 +0100
+@@ -48,7 +48,214 @@
+     let old_quote = a.pool_quote_token_account.amount;
+     let fees = a.pool.protocol_fees.checked_add(a.pool.creator_fees).ok_or_else(|| error!(PumpAmmError::Overflow))?;
+     old_quote.checked_sub(fees).ok_or_else(|| error!(PumpAmmError::Overflow))?;
+-    let q = u64::try_from(a.pool.virtual_quote_reserves.checked_add(old_quote as i128).ok_or_else(|| error!(PumpAmmError::Overflow))?).map_err(|_| error!(PumpAmmError::Overflow))?;
++    let q = u64::try_from(a.pool.virtual_quote_reserves.checked_add(old_quote as i128).ok_or_else(|| error!(PumpAmmError::Overflow))?).map_err(|_| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let adjusted = net.checked_sub(1).ok_or(PumpAmmError::Overflow)? as u128;
+     let denominator = (q as u128).checked_add(adjusted).ok_or(PumpAmmError::Overflow)?;
+     let burned = u64::try_from((old_base as u128).checked_mul(adjusted).ok_or(PumpAmmError::Overflow)?.checked_div(denominator).ok_or_else(|| error!(PumpAmmError::DivisionByZero))?).map_err(|_| error!(PumpAmmError::Truncation))?;
+diff -ruN u0/programs/pump-amm/src/instructions/liquidity/deposit.rs u1/programs/pump-amm/src/instructions/liquidity/deposit.rs
+--- u0/programs/pump-amm/src/instructions/liquidity/deposit.rs	2026-10-27 14:42:01.000000000 +0100
++++ u1/programs/pump-amm/src/instructions/liquidity/deposit.rs	2026-10-27 14:51:03.071888971 +0100
+@@ -15,11 +15,88 @@
+     require_gte!(base_limit, base_amount, PumpAmmError::ExceededSlippage);
+     let quote_amount = u64::try_from(crate::curve::fees::ceil_div(
+         (quote_reserve as u128) * (amount as u128), old_supply as u128,
+-    )?).map_err(|_| error!(PumpAmmError::Truncation))?;
++    )?).map_err(|_| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Truncation))?;
+     let fee_data = crate::utils::transfer_fee::from_mint(&a.quote_mint.to_account_info())?;
+     let quote_transfer_amount = crate::utils::transfer_fee::amount_before_fee(&fee_data, quote_amount)?;
+     let quote_transfer_fee = quote_transfer_amount.checked_sub(quote_amount)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++error!(PumpAmmError::Overflow))?;
+     require_gte!(quote_limit, quote_transfer_amount, PumpAmmError::ExceededSlippage);
+     let base_program = if *a.base_mint.to_account_info().owner == anchor_spl::token::ID {
+         a.token_program.as_ref()
+@@ -40,15 +117,47 @@
+     crate::utils::token::mint_to_pool(&a.token_2022_program, &a.lp_mint,
+         &a.user_pool_token_account, amount, &a.pool)?;
+     a.pool.lp_supply = a.pool.lp_supply.checked_add(amount)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     if a.pool.can_boost() {
+         let effective_virtual = liquidity_effective_virtual(&a.pool)?;
+         let virtual_reserve = u128::try_from(effective_virtual)
+-            .map_err(|_| error!(PumpAmmError::Overflow))?;
++            .map_err(|_| 
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+         let change = virtual_reserve.checked_mul(amount as u128)
+             .ok_or_else(|| error!(PumpAmmError::Overflow))?
+-            .checked_div(old_supply as u128).ok_or_else(|| error!(PumpAmmError::DivisionByZero))?;
+-        let change = i128::try_from(change).map_err(|_| error!(PumpAmmError::Overflow))?;
++            .checked_div(old_supply as u128).ok_or_else(|| 
++error!(PumpAmmError::DivisionByZero))?;
++        let change = i128::try_from(change).map_err(|_| 
++
++
++error!(PumpAmmError::Overflow))?;
+         a.pool.virtual_quote_reserves = a.pool.virtual_quote_reserves.checked_add(change)
+             .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+     }
+diff -ruN u0/programs/pump-amm/src/instructions/liquidity/withdraw.rs u1/programs/pump-amm/src/instructions/liquidity/withdraw.rs
+--- u0/programs/pump-amm/src/instructions/liquidity/withdraw.rs	2026-10-27 14:42:01.000000000 +0100
++++ u1/programs/pump-amm/src/instructions/liquidity/withdraw.rs	2026-10-27 14:51:03.384863706 +0100
+@@ -16,11 +16,94 @@
+     require_gte!(base_amount, base_limit, PumpAmmError::ExceededSlippage);
+     let quote_amount = u64::try_from(crate::curve::constant_product::liquidity_floor_ratio(
+         quote_reserve, amount, old_supply,
+-    )?).map_err(|_| error!(PumpAmmError::Truncation))?;
++    )?).map_err(|_| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Truncation))?;
+     let fee_data = crate::utils::transfer_fee::from_mint(&a.quote_mint.to_account_info())?;
+     let quote_received = crate::utils::transfer_fee::amount_after_fee(&fee_data, quote_amount)?;
+     let quote_transfer_fee = quote_amount.checked_sub(quote_received)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++error!(PumpAmmError::Overflow))?;
+     require_gte!(quote_received, quote_limit, PumpAmmError::ExceededSlippage);
+     let base_program = if *a.base_mint.to_account_info().owner == anchor_spl::token::ID {
+         a.token_program.as_ref()
+@@ -39,17 +122,52 @@
+     crate::utils::token::burn_from_user(&a.token_2022_program, &a.lp_mint,
+         &a.user_pool_token_account, a.user.as_ref(), amount)?;
+     a.pool.lp_supply = a.pool.lp_supply.checked_sub(amount)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     if a.pool.can_boost() {
+         let effective_virtual = liquidity_effective_virtual(&a.pool)?;
+         let virtual_reserve = u128::try_from(effective_virtual)
+-            .map_err(|_| error!(PumpAmmError::Overflow))?;
++            .map_err(|_| 
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+         let change = crate::curve::fees::ceil_div(
+             virtual_reserve.checked_mul(amount as u128)
+-                .ok_or_else(|| error!(PumpAmmError::Overflow))?,
++                .ok_or_else(|| 
++
++
++error!(PumpAmmError::Overflow))?,
+             old_supply as u128,
+         )?;
+-        let change = u64::try_from(change).map_err(|_| error!(PumpAmmError::Truncation))?;
++        let change = u64::try_from(change).map_err(|_| 
++error!(PumpAmmError::Truncation))?;
+         let change = i128::from(change);
+         a.pool.virtual_quote_reserves = a.pool.virtual_quote_reserves.checked_sub(change)
+             .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+diff -ruN u0/programs/pump-amm/src/instructions/swap/mod.rs u1/programs/pump-amm/src/instructions/swap/mod.rs
+--- u0/programs/pump-amm/src/instructions/swap/mod.rs	2026-10-27 14:42:01.000000000 +0100
++++ u1/programs/pump-amm/src/instructions/swap/mod.rs	2026-10-27 14:51:57.058895834 +0100
+@@ -1,2 +1,4 @@
++#[path = "trade_v2_ix.rs"]
+ pub mod trade_v2;
++#[path = "sell_ix.rs"]
+ pub mod sell;
+diff -ruN u0/programs/pump-amm/src/instructions/swap/sell.rs u1/programs/pump-amm/src/instructions/swap/sell.rs
+--- u0/programs/pump-amm/src/instructions/swap/sell.rs	2026-10-27 14:42:01.000000000 +0100
++++ u1/programs/pump-amm/src/instructions/swap/sell.rs	1970-01-01 01:00:00.000000000 +0100
+@@ -1,12 +0,0 @@
+-use crate::*;
+-
+-pub(crate) fn validate_pool_v2(
+-    remaining_accounts: &[AccountInfo<'_>],
+-    base_mint: &Pubkey,
+-    index: usize,
+-) -> Result<()> {
+-    require!(index < remaining_accounts.len(), PumpAmmError::InvalidPoolV2);
+-    let expected = Pubkey::find_program_address(&[b"pool-v2", base_mint.as_ref()], &crate::ID).0;
+-    require!(remaining_accounts[index].key() == expected, PumpAmmError::InvalidPoolV2);
+-    Ok(())
+-}
+diff -ruN u0/programs/pump-amm/src/instructions/swap/sell_ix.rs u1/programs/pump-amm/src/instructions/swap/sell_ix.rs
+--- u0/programs/pump-amm/src/instructions/swap/sell_ix.rs	1970-01-01 01:00:00.000000000 +0100
++++ u1/programs/pump-amm/src/instructions/swap/sell_ix.rs	2026-10-27 14:51:02.900796113 +0100
+@@ -0,0 +1,12 @@
++use crate::*;
++
++pub(crate) fn validate_pool_v2(
++    remaining_accounts: &[AccountInfo<'_>],
++    base_mint: &Pubkey,
++    index: usize,
++) -> Result<()> {
++    require!(index < remaining_accounts.len(), PumpAmmError::InvalidPoolV2);
++    let expected = Pubkey::find_program_address(&[b"pool-v2", base_mint.as_ref()], &crate::ID).0;
++    require!(remaining_accounts[index].key() == expected, PumpAmmError::InvalidPoolV2);
++    Ok(())
++}
+diff -ruN u0/programs/pump-amm/src/instructions/swap/trade_v2.rs u1/programs/pump-amm/src/instructions/swap/trade_v2.rs
+--- u0/programs/pump-amm/src/instructions/swap/trade_v2.rs	2026-10-27 14:42:01.000000000 +0100
++++ u1/programs/pump-amm/src/instructions/swap/trade_v2.rs	1970-01-01 01:00:00.000000000 +0100
+@@ -1,301 +0,0 @@
+-use crate::*;
+-use crate::curve::fees::AppliedFees;
+-use crate::utils::transfer_fee::{self, TransferFeeData};
+-
+-#[inline(never)]
+-pub fn validate_cashback_coin(is_cashback_coin: u8) -> Result<()> {
+-    require!(is_cashback_coin == 0, PumpAmmError::CashbackCoinNotSupported);
+-    Ok(())
+-}
+-
+-#[inline(never)]
+-pub fn validate_buyback_token_account(
+-    global_config: &GlobalConfig,
+-    token_account: &AccountInfo,
+-    quote_mint: &Pubkey,
+-    token_program: &Pubkey,
+-) -> Result<()> {
+-    require_keys_eq!(*token_account.owner, *token_program, PumpAmmError::AccountTypeNotSupported);
+-    let owner = {
+-        let data = token_account.try_borrow_data()?;
+-        let mut data_slice = data.as_ref();
+-        let state = TokenAccount::try_deserialize(&mut data_slice)?;
+-        require_keys_eq!(state.mint, *quote_mint, PumpAmmError::InvalidQuoteMint);
+-        state.owner
+-    };
+-    global_config.validate_buyback_recipient(&owner, &token_account.key(), quote_mint, token_program)
+-}
+-
+-#[inline(never)]
+-pub fn quote_reserves(pool: &Pool, raw_quote_reserves: u64) -> Result<(u64, u64)> {
+-    let available = pool.available_quote_reserves(raw_quote_reserves)?;
+-    let effective = pool.effective_quote_reserves(raw_quote_reserves)?;
+-    Ok((available, effective))
+-}
+-
+-pub struct BuyResult {
+-    pub fees: AppliedFees,
+-    pub base_amount_out: u64,
+-    pub quote_amount_in: u64,
+-    pub user_quote_amount_in: u64,
+-    pub buyback_fee: u64,
+-    pub pool_quote_amount_in: u64,
+-    pub quote_transfer_fee: u64,
+-}
+-
+-#[inline(never)]
+-fn total_quote(amounts: &[u64; 4]) -> Result<u64> {
+-    amounts.iter().try_fold(0u64, |total, amount| {
+-        total.checked_add(*amount).ok_or_else(|| error!(PumpAmmError::Overflow))
+-    })
+-}
+-
+-#[inline(never)]
+-pub fn calculate_buy_result(
+-    buyback_basis_points: u64,
+-    is_mayhem_mode: u8,
+-    quote_transfer_fee: &TransferFeeData,
+-    base_amount_out: u64,
+-    quote_amount_in: u64,
+-    fees: &AppliedFees,
+-) -> Result<BuyResult> {
+-    let user_quote_amount_in = total_quote(&[
+-        quote_amount_in, fees.lp_fee, fees.protocol_fee, fees.creator_fee,
+-    ])?;
+-    let buyback_fee = if is_mayhem_mode == 0 {
+-        let buyback_fee = u64::try_from(
+-            (fees.protocol_fee as u128) * (buyback_basis_points as u128) / 10_000,
+-        ).expect("buyback fee is at most protocol_fee");
+-        fees.protocol_fee.checked_sub(buyback_fee)
+-            .expect("buyback_fee never exceeds protocol_fee");
+-        buyback_fee
+-    } else { 0 };
+-    let net_pool_quote = user_quote_amount_in.checked_sub(buyback_fee)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+-    let pool_quote_amount_in = transfer_fee::amount_before_fee(quote_transfer_fee, net_pool_quote)?;
+-    let quote_transfer_fee = pool_quote_amount_in.checked_sub(net_pool_quote)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+-    Ok(BuyResult {
+-        fees: fees.clone(),
+-        base_amount_out,
+-        quote_amount_in,
+-        user_quote_amount_in,
+-        buyback_fee,
+-        pool_quote_amount_in,
+-        quote_transfer_fee,
+-    })
+-}
+-
+-impl BuyResult {
+-    pub fn total_user_quote(&self) -> Result<u64> {
+-        self.pool_quote_amount_in.checked_add(self.buyback_fee)
+-            .ok_or_else(|| error!(PumpAmmError::Overflow))
+-    }
+-}
+-
+-pub struct BuyPreviewContext<'a, 'info> {
+-    pub pool: &'a Box<Account<'info, Pool>>,
+-    pub global_config: &'a Box<Account<'info, GlobalConfig>>,
+-    pub quote_transfer_fee: &'a TransferFeeData,
+-    pub fees: &'a AppliedFees,
+-}
+-
+-#[inline(never)]
+-pub fn preview_total_quote(context: BuyPreviewContext, quote_amount_in: u64) -> Result<u64> {
+-    let global_config = context.global_config.as_ref();
+-    let pool = context.pool.as_ref();
+-    let quote_transfer_fee = context.quote_transfer_fee;
+-    let result = {
+-        let fees = context.fees.clone();
+-        calculate_buy_result(
+-            global_config.buyback_basis_points,
+-            pool.is_mayhem_mode as u8,
+-            quote_transfer_fee,
+-            0,
+-            quote_amount_in,
+-            &fees,
+-        )
+-    }?;
+-    result.total_user_quote()
+-}
+-
+-/// Returns the quote after LP fees and the quote paid to the seller.
+-#[inline(never)]
+-pub fn calculate_sell_quote(
+-    quote_amount_out: u64,
+-    fees: &AppliedFees,
+-    real_quote_reserves: u64,
+-) -> Result<(u64, u64)> {
+-    let quote_amount_out_without_lp_fee = quote_amount_out.checked_sub(fees.lp_fee)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+-    require_gte!(real_quote_reserves, quote_amount_out_without_lp_fee,
+-        PumpAmmError::InsufficientRealQuoteReserves);
+-    let user_quote_amount_out = quote_amount_out_without_lp_fee.checked_sub(fees.creator_fee)
+-        .and_then(|amount| amount.checked_sub(fees.protocol_fee))
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+-    Ok((quote_amount_out_without_lp_fee, user_quote_amount_out))
+-}
+-
+-pub struct TradeEventContext<'a, 'info> {
+-    pub pool: &'a Account<'info, Pool>,
+-    pub global_config: &'a GlobalConfig,
+-    pub user_volume_accumulator: &'a UserVolumeAccumulator,
+-    pub base_supply: u64,
+-    pub user: Pubkey,
+-    pub user_base_token_account: Pubkey,
+-    pub user_quote_token_account: Pubkey,
+-}
+-
+-#[inline(never)]
+-pub fn create_sell_event(
+-    context: TradeEventContext,
+-    base_amount: u64,
+-    limit: u64,
+-    user_base_reserves: u64,
+-    user_quote_reserves: u64,
+-    b: u64,
+-    raw_quote_reserves: u64,
+-    curve_quote: u64,
+-    selected: &AppliedFees,
+-    quote_without_lp_fee: u64,
+-    total_quote: u64,
+-    old_virtual: i128,
+-    buyback_received: u64,
+-    quote_transfer_fee: u64,
+-) -> Result<crate::trade::SellEvent> {
+-    let pool = context.pool;
+-    let global_config = context.global_config;
+-    let base_supply = context.base_supply;
+-    let timestamp = Clock::get()?.unix_timestamp;
+-        let event = crate::trade::SellEvent {
+-            timestamp,
+-            base_amount_in: base_amount,
+-            min_quote_amount_out: limit,
+-            user_base_token_reserves: user_base_reserves,
+-            user_quote_token_reserves: user_quote_reserves,
+-            pool_base_token_reserves: b,
+-            pool_quote_token_reserves: raw_quote_reserves,
+-            quote_amount_out: curve_quote,
+-            lp_fee_basis_points: selected.lp_fee_bps,
+-            lp_fee: selected.lp_fee,
+-            protocol_fee_basis_points: selected.protocol_fee_bps,
+-            protocol_fee: selected.protocol_fee,
+-            quote_amount_out_without_lp_fee: quote_without_lp_fee,
+-            user_quote_amount_out: total_quote,
+-            pool: pool.key(),
+-            protocol_fee_recipient: Pubkey::default(),
+-            protocol_fee_recipient_token_account: Pubkey::default(),
+-            coin_creator: pool.coin_creator,
+-            coin_creator_fee_basis_points: selected.creator_fee_bps,
+-            coin_creator_fee: selected.creator_fee,
+-            cashback_fee_basis_points: 0,
+-            cashback: 0,
+-            buyback_fee: buyback_received,
+-            virtual_quote_reserves: old_virtual,
+-            user: context.user,
+-            user_base_token_account: context.user_base_token_account,
+-            user_quote_token_account: context.user_quote_token_account,
+-            holder_rewards_bps: if pool.is_holder_reward { selected.creator_fee_bps } else { 0 },
+-            holder_rewards: if pool.is_holder_reward { selected.creator_fee } else { 0 },
+-            buyback_fee_basis_points: if pool.is_mayhem_mode { 0 } else { global_config.buyback_basis_points },
+-            base_supply: if pool.is_mayhem_mode {1_000_000_000_000_000} else {base_supply},
+-            can_boost: pool.can_boost(),
+-            creator_fee_unclaimed: pool.creator_fees,
+-            quote_transfer_fee,
+-        };
+-    Ok(event)
+-}
+-
+-#[inline(never)]
+-pub fn create_buy_event(
+-    context: TradeEventContext,
+-    result: &BuyResult,
+-    max_quote_amount_in: u64,
+-    min_base_amount_out: u64,
+-    quote_amount_in: u64,
+-    user_quote_amount_in: u64,
+-    user_base_reserves: u64,
+-    user_quote_reserves: u64,
+-    b: u64,
+-    raw_quote_reserves: u64,
+-    old_virtual: i128,
+-    buyback_received: u64,
+-    ix_name: &str,
+-) -> Result<crate::trade::BuyEvent> {
+-    let pool = context.pool;
+-    let global_config = context.global_config;
+-    let base_supply = context.base_supply;
+-    let volume = context.user_volume_accumulator;
+-    let quote_with_lp_fee = result.quote_amount_in.checked_add(result.fees.lp_fee)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+-    let total_unclaimed_tokens = volume.total_unclaimed_tokens;
+-    let total_claimed_tokens = volume.total_claimed_tokens;
+-    let current_sol_volume = volume.current_sol_volume;
+-    let last_update_timestamp = volume.last_update_timestamp;
+-    let timestamp = Clock::get()?.unix_timestamp;
+-        let event = crate::trade::BuyEvent {
+-            timestamp,
+-            base_amount_out: result.base_amount_out,
+-            max_quote_amount_in,
+-            user_base_token_reserves: user_base_reserves,
+-            user_quote_token_reserves: user_quote_reserves,
+-            pool_base_token_reserves: b,
+-            pool_quote_token_reserves: raw_quote_reserves,
+-            quote_amount_in,
+-            lp_fee_basis_points: result.fees.lp_fee_bps,
+-            lp_fee: result.fees.lp_fee,
+-            protocol_fee_basis_points: result.fees.protocol_fee_bps,
+-            protocol_fee: result.fees.protocol_fee,
+-            quote_amount_in_with_lp_fee: quote_with_lp_fee,
+-            user_quote_amount_in,
+-            pool: pool.key(),
+-            user: context.user,
+-            user_base_token_account: context.user_base_token_account,
+-            user_quote_token_account: context.user_quote_token_account,
+-            protocol_fee_recipient: Pubkey::default(),
+-            protocol_fee_recipient_token_account: Pubkey::default(),
+-            coin_creator: pool.coin_creator,
+-            coin_creator_fee_basis_points: result.fees.creator_fee_bps,
+-            coin_creator_fee: result.fees.creator_fee,
+-            holder_rewards_bps: if pool.is_holder_reward { result.fees.creator_fee_bps } else { 0 },
+-            holder_rewards: if pool.is_holder_reward { result.fees.creator_fee } else { 0 },
+-            track_volume: false,
+-            total_unclaimed_tokens,
+-            total_claimed_tokens,
+-            current_sol_volume,
+-            last_update_timestamp,
+-            min_base_amount_out,
+-            ix_name: ix_name.to_string(),
+-            cashback_fee_basis_points: 0,
+-            cashback: 0,
+-            buyback_fee_basis_points: if pool.is_mayhem_mode { 0 } else { global_config.buyback_basis_points },
+-            base_supply: if pool.is_mayhem_mode { 1_000_000_000_000_000 } else { base_supply },
+-            buyback_fee: buyback_received,
+-            virtual_quote_reserves: old_virtual,
+-            can_boost: pool.can_boost(),
+-            creator_fee_unclaimed: pool.creator_fees,
+-            quote_transfer_fee: result.quote_transfer_fee,
+-        };
+-    Ok(event)
+-}
+-
+-/// Initial exact-input quote and its fee amounts, before buyback/transfer-fee preview.
+-#[inline(never)]
+-pub fn estimate_buy_quote(pool: &Pool, selected: &AppliedFees, available: u64) -> Result<(u64, AppliedFees)> {
+-    let creator_bps = if pool.coin_creator == Pubkey::default() { 0 } else { selected.creator_fee_bps };
+-    let fee_bps = selected.lp_fee_bps.saturating_add(selected.protocol_fee_bps).saturating_add(creator_bps);
+-    let estimate = if fee_bps == 0 { available } else {
+-        // The denominator is at least 10_000, so this quotient is <= available.
+-        ((available as u128) * 10_000 / ((fee_bps as u128) + 10_000)) as u64
+-    };
+-    require_gt!(estimate, 0, PumpAmmError::BuyNotEnoughQuoteTokensToCoverFees);
+-    let lp_fee = crate::curve::fees::fee(estimate, selected.lp_fee_bps)?;
+-    let protocol_fee = crate::curve::fees::fee(estimate, selected.protocol_fee_bps)?;
+-    let creator_fee = crate::curve::fees::fee(estimate, creator_bps)?;
+-    let required = total_quote(&[estimate, lp_fee, protocol_fee, creator_fee])?;
+-    let quote = estimate.checked_sub(required.saturating_sub(available))
+-        .ok_or(PumpAmmError::BuyNotEnoughQuoteTokensToCoverFees)?;
+-    require_gt!(quote, 0, PumpAmmError::BuySlippageBelowMinBaseAmountOut);
+-    Ok((quote, AppliedFees { lp_fee_bps: selected.lp_fee_bps, protocol_fee_bps: selected.protocol_fee_bps,
+-        creator_fee_bps: selected.creator_fee_bps, lp_fee, protocol_fee, creator_fee }))
+-}
+diff -ruN u0/programs/pump-amm/src/instructions/swap/trade_v2_ix.rs u1/programs/pump-amm/src/instructions/swap/trade_v2_ix.rs
+--- u0/programs/pump-amm/src/instructions/swap/trade_v2_ix.rs	1970-01-01 01:00:00.000000000 +0100
++++ u1/programs/pump-amm/src/instructions/swap/trade_v2_ix.rs	2026-10-27 14:51:02.900796113 +0100
+@@ -0,0 +1,301 @@
++use crate::*;
++use crate::curve::fees::AppliedFees;
++use crate::utils::transfer_fee::{self, TransferFeeData};
++
++#[inline(never)]
++pub fn validate_cashback_coin(is_cashback_coin: u8) -> Result<()> {
++    require!(is_cashback_coin == 0, PumpAmmError::CashbackCoinNotSupported);
++    Ok(())
++}
++
++#[inline(never)]
++pub fn validate_buyback_token_account(
++    global_config: &GlobalConfig,
++    token_account: &AccountInfo,
++    quote_mint: &Pubkey,
++    token_program: &Pubkey,
++) -> Result<()> {
++    require_keys_eq!(*token_account.owner, *token_program, PumpAmmError::AccountTypeNotSupported);
++    let owner = {
++        let data = token_account.try_borrow_data()?;
++        let mut data_slice = data.as_ref();
++        let state = TokenAccount::try_deserialize(&mut data_slice)?;
++        require_keys_eq!(state.mint, *quote_mint, PumpAmmError::InvalidQuoteMint);
++        state.owner
++    };
++    global_config.validate_buyback_recipient(&owner, &token_account.key(), quote_mint, token_program)
++}
++
++#[inline(never)]
++pub fn quote_reserves(pool: &Pool, raw_quote_reserves: u64) -> Result<(u64, u64)> {
++    let available = pool.available_quote_reserves(raw_quote_reserves)?;
++    let effective = pool.effective_quote_reserves(raw_quote_reserves)?;
++    Ok((available, effective))
++}
++
++pub struct BuyResult {
++    pub fees: AppliedFees,
++    pub base_amount_out: u64,
++    pub quote_amount_in: u64,
++    pub user_quote_amount_in: u64,
++    pub buyback_fee: u64,
++    pub pool_quote_amount_in: u64,
++    pub quote_transfer_fee: u64,
++}
++
++#[inline(never)]
++fn total_quote(amounts: &[u64; 4]) -> Result<u64> {
++    amounts.iter().try_fold(0u64, |total, amount| {
++        total.checked_add(*amount).ok_or_else(|| error!(PumpAmmError::Overflow))
++    })
++}
++
++#[inline(never)]
++pub fn calculate_buy_result(
++    buyback_basis_points: u64,
++    is_mayhem_mode: u8,
++    quote_transfer_fee: &TransferFeeData,
++    base_amount_out: u64,
++    quote_amount_in: u64,
++    fees: &AppliedFees,
++) -> Result<BuyResult> {
++    let user_quote_amount_in = total_quote(&[
++        quote_amount_in, fees.lp_fee, fees.protocol_fee, fees.creator_fee,
++    ])?;
++    let buyback_fee = if is_mayhem_mode == 0 {
++        let buyback_fee = u64::try_from(
++            (fees.protocol_fee as u128) * (buyback_basis_points as u128) / 10_000,
++        ).expect("buyback fee is at most protocol_fee");
++        fees.protocol_fee.checked_sub(buyback_fee)
++            .expect("buyback_fee never exceeds protocol_fee");
++        buyback_fee
++    } else { 0 };
++    let net_pool_quote = user_quote_amount_in.checked_sub(buyback_fee)
++        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++    let pool_quote_amount_in = transfer_fee::amount_before_fee(quote_transfer_fee, net_pool_quote)?;
++    let quote_transfer_fee = pool_quote_amount_in.checked_sub(net_pool_quote)
++        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++    Ok(BuyResult {
++        fees: fees.clone(),
++        base_amount_out,
++        quote_amount_in,
++        user_quote_amount_in,
++        buyback_fee,
++        pool_quote_amount_in,
++        quote_transfer_fee,
++    })
++}
++
++impl BuyResult {
++    pub fn total_user_quote(&self) -> Result<u64> {
++        self.pool_quote_amount_in.checked_add(self.buyback_fee)
++            .ok_or_else(|| error!(PumpAmmError::Overflow))
++    }
++}
++
++pub struct BuyPreviewContext<'a, 'info> {
++    pub pool: &'a Box<Account<'info, Pool>>,
++    pub global_config: &'a Box<Account<'info, GlobalConfig>>,
++    pub quote_transfer_fee: &'a TransferFeeData,
++    pub fees: &'a AppliedFees,
++}
++
++#[inline(never)]
++pub fn preview_total_quote(context: BuyPreviewContext, quote_amount_in: u64) -> Result<u64> {
++    let global_config = context.global_config.as_ref();
++    let pool = context.pool.as_ref();
++    let quote_transfer_fee = context.quote_transfer_fee;
++    let result = {
++        let fees = context.fees.clone();
++        calculate_buy_result(
++            global_config.buyback_basis_points,
++            pool.is_mayhem_mode as u8,
++            quote_transfer_fee,
++            0,
++            quote_amount_in,
++            &fees,
++        )
++    }?;
++    result.total_user_quote()
++}
++
++/// Returns the quote after LP fees and the quote paid to the seller.
++#[inline(never)]
++pub fn calculate_sell_quote(
++    quote_amount_out: u64,
++    fees: &AppliedFees,
++    real_quote_reserves: u64,
++) -> Result<(u64, u64)> {
++    let quote_amount_out_without_lp_fee = quote_amount_out.checked_sub(fees.lp_fee)
++        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++    require_gte!(real_quote_reserves, quote_amount_out_without_lp_fee,
++        PumpAmmError::InsufficientRealQuoteReserves);
++    let user_quote_amount_out = quote_amount_out_without_lp_fee.checked_sub(fees.creator_fee)
++        .and_then(|amount| amount.checked_sub(fees.protocol_fee))
++        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++    Ok((quote_amount_out_without_lp_fee, user_quote_amount_out))
++}
++
++pub struct TradeEventContext<'a, 'info> {
++    pub pool: &'a Account<'info, Pool>,
++    pub global_config: &'a GlobalConfig,
++    pub user_volume_accumulator: &'a UserVolumeAccumulator,
++    pub base_supply: u64,
++    pub user: Pubkey,
++    pub user_base_token_account: Pubkey,
++    pub user_quote_token_account: Pubkey,
++}
++
++#[inline(never)]
++pub fn create_sell_event(
++    context: TradeEventContext,
++    base_amount: u64,
++    limit: u64,
++    user_base_reserves: u64,
++    user_quote_reserves: u64,
++    b: u64,
++    raw_quote_reserves: u64,
++    curve_quote: u64,
++    selected: &AppliedFees,
++    quote_without_lp_fee: u64,
++    total_quote: u64,
++    old_virtual: i128,
++    buyback_received: u64,
++    quote_transfer_fee: u64,
++) -> Result<crate::trade::SellEvent> {
++    let pool = context.pool;
++    let global_config = context.global_config;
++    let base_supply = context.base_supply;
++    let timestamp = Clock::get()?.unix_timestamp;
++        let event = crate::trade::SellEvent {
++            timestamp,
++            base_amount_in: base_amount,
++            min_quote_amount_out: limit,
++            user_base_token_reserves: user_base_reserves,
++            user_quote_token_reserves: user_quote_reserves,
++            pool_base_token_reserves: b,
++            pool_quote_token_reserves: raw_quote_reserves,
++            quote_amount_out: curve_quote,
++            lp_fee_basis_points: selected.lp_fee_bps,
++            lp_fee: selected.lp_fee,
++            protocol_fee_basis_points: selected.protocol_fee_bps,
++            protocol_fee: selected.protocol_fee,
++            quote_amount_out_without_lp_fee: quote_without_lp_fee,
++            user_quote_amount_out: total_quote,
++            pool: pool.key(),
++            protocol_fee_recipient: Pubkey::default(),
++            protocol_fee_recipient_token_account: Pubkey::default(),
++            coin_creator: pool.coin_creator,
++            coin_creator_fee_basis_points: selected.creator_fee_bps,
++            coin_creator_fee: selected.creator_fee,
++            cashback_fee_basis_points: 0,
++            cashback: 0,
++            buyback_fee: buyback_received,
++            virtual_quote_reserves: old_virtual,
++            user: context.user,
++            user_base_token_account: context.user_base_token_account,
++            user_quote_token_account: context.user_quote_token_account,
++            holder_rewards_bps: if pool.is_holder_reward { selected.creator_fee_bps } else { 0 },
++            holder_rewards: if pool.is_holder_reward { selected.creator_fee } else { 0 },
++            buyback_fee_basis_points: if pool.is_mayhem_mode { 0 } else { global_config.buyback_basis_points },
++            base_supply: if pool.is_mayhem_mode {1_000_000_000_000_000} else {base_supply},
++            can_boost: pool.can_boost(),
++            creator_fee_unclaimed: pool.creator_fees,
++            quote_transfer_fee,
++        };
++    Ok(event)
++}
++
++#[inline(never)]
++pub fn create_buy_event(
++    context: TradeEventContext,
++    result: &BuyResult,
++    max_quote_amount_in: u64,
++    min_base_amount_out: u64,
++    quote_amount_in: u64,
++    user_quote_amount_in: u64,
++    user_base_reserves: u64,
++    user_quote_reserves: u64,
++    b: u64,
++    raw_quote_reserves: u64,
++    old_virtual: i128,
++    buyback_received: u64,
++    ix_name: &str,
++) -> Result<crate::trade::BuyEvent> {
++    let pool = context.pool;
++    let global_config = context.global_config;
++    let base_supply = context.base_supply;
++    let volume = context.user_volume_accumulator;
++    let quote_with_lp_fee = result.quote_amount_in.checked_add(result.fees.lp_fee)
++        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++    let total_unclaimed_tokens = volume.total_unclaimed_tokens;
++    let total_claimed_tokens = volume.total_claimed_tokens;
++    let current_sol_volume = volume.current_sol_volume;
++    let last_update_timestamp = volume.last_update_timestamp;
++    let timestamp = Clock::get()?.unix_timestamp;
++        let event = crate::trade::BuyEvent {
++            timestamp,
++            base_amount_out: result.base_amount_out,
++            max_quote_amount_in,
++            user_base_token_reserves: user_base_reserves,
++            user_quote_token_reserves: user_quote_reserves,
++            pool_base_token_reserves: b,
++            pool_quote_token_reserves: raw_quote_reserves,
++            quote_amount_in,
++            lp_fee_basis_points: result.fees.lp_fee_bps,
++            lp_fee: result.fees.lp_fee,
++            protocol_fee_basis_points: result.fees.protocol_fee_bps,
++            protocol_fee: result.fees.protocol_fee,
++            quote_amount_in_with_lp_fee: quote_with_lp_fee,
++            user_quote_amount_in,
++            pool: pool.key(),
++            user: context.user,
++            user_base_token_account: context.user_base_token_account,
++            user_quote_token_account: context.user_quote_token_account,
++            protocol_fee_recipient: Pubkey::default(),
++            protocol_fee_recipient_token_account: Pubkey::default(),
++            coin_creator: pool.coin_creator,
++            coin_creator_fee_basis_points: result.fees.creator_fee_bps,
++            coin_creator_fee: result.fees.creator_fee,
++            holder_rewards_bps: if pool.is_holder_reward { result.fees.creator_fee_bps } else { 0 },
++            holder_rewards: if pool.is_holder_reward { result.fees.creator_fee } else { 0 },
++            track_volume: false,
++            total_unclaimed_tokens,
++            total_claimed_tokens,
++            current_sol_volume,
++            last_update_timestamp,
++            min_base_amount_out,
++            ix_name: ix_name.to_string(),
++            cashback_fee_basis_points: 0,
++            cashback: 0,
++            buyback_fee_basis_points: if pool.is_mayhem_mode { 0 } else { global_config.buyback_basis_points },
++            base_supply: if pool.is_mayhem_mode { 1_000_000_000_000_000 } else { base_supply },
++            buyback_fee: buyback_received,
++            virtual_quote_reserves: old_virtual,
++            can_boost: pool.can_boost(),
++            creator_fee_unclaimed: pool.creator_fees,
++            quote_transfer_fee: result.quote_transfer_fee,
++        };
++    Ok(event)
++}
++
++/// Initial exact-input quote and its fee amounts, before buyback/transfer-fee preview.
++#[inline(never)]
++pub fn estimate_buy_quote(pool: &Pool, selected: &AppliedFees, available: u64) -> Result<(u64, AppliedFees)> {
++    let creator_bps = if pool.coin_creator == Pubkey::default() { 0 } else { selected.creator_fee_bps };
++    let fee_bps = selected.lp_fee_bps.saturating_add(selected.protocol_fee_bps).saturating_add(creator_bps);
++    let estimate = if fee_bps == 0 { available } else {
++        // The denominator is at least 10_000, so this quotient is <= available.
++        ((available as u128) * 10_000 / ((fee_bps as u128) + 10_000)) as u64
++    };
++    require_gt!(estimate, 0, PumpAmmError::BuyNotEnoughQuoteTokensToCoverFees);
++    let lp_fee = crate::curve::fees::fee(estimate, selected.lp_fee_bps)?;
++    let protocol_fee = crate::curve::fees::fee(estimate, selected.protocol_fee_bps)?;
++    let creator_fee = crate::curve::fees::fee(estimate, creator_bps)?;
++    let required = total_quote(&[estimate, lp_fee, protocol_fee, creator_fee])?;
++    let quote = estimate.checked_sub(required.saturating_sub(available))
++        .ok_or(PumpAmmError::BuyNotEnoughQuoteTokensToCoverFees)?;
++    require_gt!(quote, 0, PumpAmmError::BuySlippageBelowMinBaseAmountOut);
++    Ok((quote, AppliedFees { lp_fee_bps: selected.lp_fee_bps, protocol_fee_bps: selected.protocol_fee_bps,
++        creator_fee_bps: selected.creator_fee_bps, lp_fee, protocol_fee, creator_fee }))
++}
+diff -ruN u0/programs/pump-amm/src/legacy_buy.rs u1/programs/pump-amm/src/legacy_buy.rs
+--- u0/programs/pump-amm/src/legacy_buy.rs	2026-10-27 14:42:01.000000000 +0100
++++ u1/programs/pump-amm/src/legacy_buy.rs	2026-10-27 14:51:03.802163358 +0100
+@@ -141,15 +141,267 @@
+         .pool
+         .protocol_fees
+         .checked_add(a.pool.creator_fees)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let can_boost = old_virtual
+         .checked_add(old_accrued as i128)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?
++        .ok_or_else(|| 
++error!(PumpAmmError::Overflow))?
+         != 0;
+     a.pool_quote_token_account
+         .amount
+         .checked_sub(old_accrued)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let q = u64::try_from(
+         (a.pool_quote_token_account.amount as i128)
+             .checked_add(old_virtual)
+diff -ruN u0/programs/pump-amm/src/legacy_sell.rs u1/programs/pump-amm/src/legacy_sell.rs
+--- u0/programs/pump-amm/src/legacy_sell.rs	2026-10-27 14:42:01.000000000 +0100
++++ u1/programs/pump-amm/src/legacy_sell.rs	2026-10-27 14:51:04.327960918 +0100
+@@ -151,17 +151,49 @@
+     }
+     let quote_less_lp = quote
+         .checked_sub(lp_fee)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let old_accrued = a
+         .pool
+         .protocol_fees
+         .checked_add(a.pool.creator_fees)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let real_quote = a
+         .pool_quote_token_account
+         .amount
+         .checked_sub(old_accrued)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     require_gte!(
+         real_quote,
+         quote_less_lp,
+diff -ruN u0/programs/pump-amm/src/multi_hop.rs u1/programs/pump-amm/src/multi_hop.rs
+--- u0/programs/pump-amm/src/multi_hop.rs	2026-10-27 14:42:01.000000000 +0100
++++ u1/programs/pump-amm/src/multi_hop.rs	2026-10-27 14:51:04.782817539 +0100
+@@ -515,12 +515,75 @@
+     } else {
+         quote_transfer_fee(&h.quote_mint.to_account_info(), amount, false)?
+     };
+-    let received = amount.checked_sub(input_tf).ok_or_else(|| error!(PumpAmmError::Overflow))?;
++    let received = amount.checked_sub(input_tf).ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let b = if sell {
+         h.pool_base_token_account
+             .amount
+             .checked_sub(amount)
+-            .ok_or_else(|| error!(PumpAmmError::Overflow))?
++            .ok_or_else(|| 
++
++error!(PumpAmmError::Overflow))?
+     } else {
+         h.pool_base_token_account.amount
+     };
+@@ -530,7 +593,47 @@
+         h.pool_quote_token_account
+             .amount
+             .checked_sub(received)
+-            .ok_or_else(|| error!(PumpAmmError::Overflow))?
++            .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?
+     };
+     let old_virtual = h.pool.virtual_quote_reserves;
+     let (real_quote_reserves, q) = crate::instructions::swap::trade_v2::quote_reserves(&h.pool, raw_q)?;
+@@ -538,10 +641,81 @@
+         .pool
+         .protocol_fees
+         .checked_add(h.pool.creator_fees)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let can_boost = old_virtual
+         .checked_add(old_accrued as i128)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?
+         != 0;
+     // Fee selection uses the reserves before the already-completed input transfer.
+     let fee_quote = if sell {
+diff -ruN u0/programs/pump-amm/src/trade.rs u1/programs/pump-amm/src/trade.rs
+--- u0/programs/pump-amm/src/trade.rs	2026-10-27 14:42:01.000000000 +0100
++++ u1/programs/pump-amm/src/trade.rs	2026-10-27 14:51:05.108311267 +0100
+@@ -404,7 +404,513 @@
+     let quote_received = transfer_fee::amount_after_fee(&quote_fee_data, total_quote)?;
+     require_gte!(quote_received, limit, PumpAmmError::ExceededSlippage);
+     let quote_transfer_fee = total_quote.checked_sub(quote_received)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+ 
+     crate::utils::token::transfer_checked(
+         a.base_token_program.as_ref(), &a.base_mint, &a.user_base_token_account,

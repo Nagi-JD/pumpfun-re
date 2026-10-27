@@ -1,0 +1,1 @@
+--remap-path-prefix=programs/pump/src/distribution.rs=programs/pump/src/creator/distribute_creator_fees.rs

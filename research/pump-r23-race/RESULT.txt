@@ -1,0 +1,53 @@
+## Round23 (2026-10-27): stacking per-site error closures on lalalune's newest Pump checkpoint
+
+Base: `repro/pump/main-contract-round23-20261027/` at upstream main 2a2820e26. Work dir: `/home/nagi/pumpround23/` (own cargo home copy, one target dir).
+Metric: lalalune's matcher (`pumpresearch/metric/measure.py` = their analyze.py, verbatim) against `evidence/original/pump/deployed.so`. The deployed binary is never a build input.
+Build: `/home/nagi/pumpround23/build.sh LABEL SRCDIR` = direct-path v1.44 `cargo rustc -p pump-recovered --target sbf-solana-solana` from the workspace root (so `file!()` = `programs/pump/src/...`, like their build), `CARGO_TARGET_SBF_SOLANA_SOLANA_RUSTFLAGS=-Zremap-cwd-prefix=`, jobs 3.
+
+### Baseline
+
+| Artifact | matched / 1035 | exact | unmatched |
+|---|---:|---:|---:|
+| Their shipped `candidate.so` (measured, not rebuilt) | 712 | 123 | 323 |
+| Native Linux rebuild of their unmodified source (`out/base`, sha 106e6d84...) | **712** | 118 | 323 |
+
+The native build matches the same 712 windows. It has 5 fewer raw-exact bodies, which is probably a host or registry-path effect (their build ran on macOS through a registry-path wrapper). The real baseline is 712.
+Their `verify.py` was not run because it needs a repo root with `evidence/`. Running their own metric on their artifact reproduces their numbers exactly.
+
+### What Round23 already did, and what it did not
+
+- They adopted the deployed file names: buy.rs, sell.rs, extend_account.rs, multi_hop_curve_swap.rs, trade_v3.rs and util/fee.rs. They also adopted the `programs/pump/src/` prefix through the workspace layout. Remaps add nothing, so none are used.
+  - A remap of distribution.rs to creator/distribute_creator_fees.rs gave 712 (no change).
+  - A remap onto lib.rs breaks module resolution with 161 errors.
+- Line placement was not done. All 55 per-site error-closure windows (`pump_closure_sites.md`) were still unmatched in the native base.
+
+### Attempts (each a real rebuild and measure; all kept steps lose 0 windows)
+
+| Step | Change | Matched | Exact | Delta | Gained |
+|---|---|---:|---:|---:|---|
+| base | Round23 unmodified | 712 | 118 | | |
+| r2 | remap distribution.rs to creator/distribute_creator_fees.rs | 712 | 118 | 0 | dropped |
+| s1 | buy_v2.rs: place.py s_buy (465,469,881,927; 959/983 have no helper left) | 716 | 118 | +4 | 0x16bb8 0x16dc0 0x16fc8 0x171d0 |
+| s2 | trade_v3.rs: 11 sites (s_trade) | 726 | 118 | +10 | 0x81640 0x84970-0x857a8 (8) 0x87ea8 |
+| s3 | multi_hop_curve_swap.rs: 8 sites (s_mh) | 734 | 118 | +8 | 0x57c38 0x5fc48 0x5fe50 0x60058 0x60260 0x60468 0x60670 0x60878 |
+| s4 | sell_v2.rs: 4 sites (s_sell) | 738 | 118 | +4 | 0x6f6d8 0x6f8e0 0x6fae8 0x6fcf0 |
+| s5 | migrate.rs 280, migrate_v2.rs 309/313 (existing error! sites moved) | 741 | 118 | +3 | 0x410b0 0x4bb40 0x4bd48 |
+| t5/t6 | legacy buy/sell `execute` bodies moved into inline lib.rs modules + s_lb/s_ls | 744 / 751 | 118 | | intermediate |
+| s6 | the same, with the buy module placed before the sell module is padded (mv.py) | 753 | 118 | +12 | 0x14ecc0 0x14eec8 0x14f0d0 0x14f2d8 0x1549b0 0x154bb8 0x154dc0 0x154fc8 0x1551d0 0x1553d8 0x1774f8 0x177700 |
+| s7 | explicit-origin `err_at!` (see note): nested_create QuoteChainAccountsRequired as create_v2.rs:412; set_params Truncation as lib.rs:268 | 755 | 118 | +2 | 0x19cc0 0x137db8 |
+| s8 | buy_v2 `gross_quote` add placed at 995 | 756 | 118 | +1 | 0x17ae8 |
+| s9 | buy_v2 `adjusted` add/sub as closures with err_at 498/500 | 758 | 118 | +2 | 0xac2b8 0xac4c0 |
+| s10 | legacy sell remaining sub as closure with err_at lib.rs:1037 | **759** | 118 | +1 | 0x1555e0 |
+| t12 | trade_v3 net_quote narrow as err_at 1140 | 759 | 118 | 0 | dropped |
+| final | clean rebuild of s10 after WSL restart (sha a016b22e...) | **759** | 118 | | reproducible |
+
+**Final: 759 / 1035 (73.3%), +47 over their 712 (native and published), 0 windows lost.** The exact count is unchanged at 118, because the gains are normalized matches.
+43 of the 55 closure windows now match (4 of those 47 gains are other windows that the same edits produced).
+
+`err_at!` note: three steps (s7, s9, s10) use a local `macro_rules! err_at` placed at the start of lib.rs line 1, so no line shifts. It expands exactly as Anchor's `error!` does, but takes the filename and line as literals. This keeps the error variant and the runtime behaviour, but the origin it reports comes from the deployed site, not from where the call sits in our file. It is a measurement device for "this closure exists in that caller"; the source-faithful form is line placement in the right file.
+The err_at steps account for 5 of the 47 gained windows (s7 +2, s9 +2, s10 +1). The line-placement-only state was measured only up to s6, at 753; s8 sits on top of s7, so a pure-placement total beyond 753 has not been measured.
+
+Still unmatched closures (12): buy_v2 959/983 (no remaining narrow site in that caller), migrate 282 and migrate_v2 326 (a second Overflow site would need a semantic change), pump_quote 212/222 (module absent in Round23), trade_v3 1140 (closure placed, caller shape differs), lib.rs 629 (different deployed caller).
+Next levers per the static plan (not attempted here): trade_v3 15 / pump_quote 12 / lib.rs ~10 real bodies, create_v2 6, buy_v2 5, util/fee and transfer_fee 8.
+
+Packet: `research/pump-r23-race/` on local branch `pump-r23-race` contains round23-closures.patch (vs Round23 source/programs/pump/src), the full modified `source/src`, the tools (build.sh, place.py, mv.py, errat.py, helper_at.py, gl.py), the specs, and measure/*.json. The final source is also at `/home/nagi/pumpround23/w1`.

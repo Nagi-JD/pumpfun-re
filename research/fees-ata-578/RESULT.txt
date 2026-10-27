@@ -1,0 +1,7 @@
+Base: research/fees-sharing-slice-recovery (upstream e57657de), stripped sha 39b8fc90...8cae, 577/585.
+Change: let_bind.patch (fee_sharing/mod.rs line 274, single line, no line-number shift):
+  let needs_create = associated_account.owner == &anchor_lang::system_program::ID; if needs_create {
+Result (their window metric): matched 577->578 (gained window 243184 admit_associated_token_account),
+  unique_pairs 430->431, equal_locations 181->182, unequal_locations 0, equal_edges 3870->3900,
+  raw 143->143, nothing lost. Window 40472 still matched. Candidate stripped sha ceef8217...
+Built natively: platform-tools v1.44 direct cargo rustc (build.sh), strip with v1.52 llvm-objcopy.
