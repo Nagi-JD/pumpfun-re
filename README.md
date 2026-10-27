@@ -77,7 +77,7 @@ checkpoint for each program:
 
 | Program | lalalune published | Ours | Main levers |
 |---|---:|---:|---|
-| PumpSwap | 599 / 785 (125 exact) | **657 / 785** (128 exact) | native Linux build (+18), `error!` closures on deployed lines with deployed paths (+40) |
+| PumpSwap | 643 / 785 (148 raw) | **654 / 785** (148 raw) | base path-prefix remap reproduces their 643 exactly, then `error!` closures placed on deployed lines in withdraw + legacy_sell (+11); raw parity (148) |
 | Fees | 578 / 585 (198 exact) | **579 / 585** (141 exact, native build) | block-order fix found via MIR (`let needs_create = …; if needs_create {`, window 243184), stacked on their newest checkpoint with no loss. Their 198 raw-exact needs their container paths + `ordered.ld`; a native build of their unchanged source gives 141, so raw is compared native-vs-native |
 | Pump | 733 / 1035 (Round34, 137 raw) | **782 / 1035 (137 raw)** | per-site `error!` closures placed on deployed lines (no hardcoded-location macro); `migrate`/`migrate_v2` quote fix, verified by execution. A host-triple `rustc` shim makes the native Linux build byte-identical to their macOS artifact, so raw matches too (137) |
 | Mayhem | 429 / 441 (100 exact) | 429 | no gain yet; native Linux does not help here |

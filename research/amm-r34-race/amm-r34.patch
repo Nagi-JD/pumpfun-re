@@ -1,0 +1,393 @@
+diff -ruN a/src/instructions/liquidity/withdraw.rs b/src/instructions/liquidity/withdraw.rs
+--- a/src/instructions/liquidity/withdraw.rs	2026-10-27 17:35:28.000000000 +0100
++++ b/src/instructions/liquidity/withdraw.rs	2026-10-27 18:26:06.707843520 +0100
+@@ -16,11 +16,94 @@
+     require_gte!(base_amount, base_limit, PumpAmmError::ExceededSlippage);
+     let quote_amount = u64::try_from(crate::curve::constant_product::liquidity_floor_ratio(
+         quote_reserve, amount, old_supply,
+-    )?).map_err(|_| error!(PumpAmmError::Truncation))?;
++    )?).map_err(|_| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Truncation))?;
+     let fee_data = crate::utils::transfer_fee::from_mint(&a.quote_mint.to_account_info())?;
+     let quote_received = crate::utils::transfer_fee::amount_after_fee(&fee_data, quote_amount)?;
+     let quote_transfer_fee = quote_amount.checked_sub(quote_received)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++error!(PumpAmmError::Overflow))?;
+     require_gte!(quote_received, quote_limit, PumpAmmError::ExceededSlippage);
+     let base_program = if *a.base_mint.to_account_info().owner == anchor_spl::token::ID {
+         a.token_program.as_ref()
+@@ -39,20 +122,52 @@
+     crate::utils::token::burn_from_user(&a.token_2022_program, &a.lp_mint,
+         &a.user_pool_token_account, a.user.as_ref(), amount)?;
+     a.pool.lp_supply = a.pool.lp_supply.checked_sub(amount)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     if a.pool.can_boost() {
+         let effective_virtual = liquidity_effective_virtual(&a.pool)?;
+         let virtual_reserve = u128::try_from(effective_virtual)
+-            .map_err(|_| error!(PumpAmmError::Overflow))?;
++            .map_err(|_| 
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+         let change = crate::curve::fees::ceil_div(
+-            virtual_reserve.checked_mul(amount as u128)
+-                .ok_or_else(|| error!(PumpAmmError::Overflow))?,
++            virtual_reserve.checked_mul(amount as u128).ok_or_else(|| error!(PumpAmmError::Overflow))?,
+             old_supply as u128,
+         )?;
+-        let change = u64::try_from(change).map_err(|_| error!(PumpAmmError::Truncation))?;
++        let change = u64::try_from(change).map_err(|_| 
++error!(PumpAmmError::Truncation))?;
+         let change = i128::from(change);
+         a.pool.virtual_quote_reserves = a.pool.virtual_quote_reserves.checked_sub(change)
+-            .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++            .ok_or_else(|| 
++error!(PumpAmmError::Overflow))?;
+     }
+     let event = WithdrawEvent {
+         timestamp: Clock::get()?.unix_timestamp,
+diff -ruN a/src/instructions/swap/buy.rs b/src/instructions/swap/buy.rs
+--- a/src/instructions/swap/buy.rs	2026-10-27 17:35:28.000000000 +0100
++++ b/src/instructions/swap/buy.rs	1970-01-01 01:00:00.000000000 +0100
+@@ -1,47 +0,0 @@
+-use anchor_lang::prelude::*;
+-
+-#[event]
+-#[derive(Clone)]
+-pub struct BuyEvent {
+-    pub timestamp: i64,
+-    pub base_amount_out: u64,
+-    pub max_quote_amount_in: u64,
+-    pub user_base_token_reserves: u64,
+-    pub user_quote_token_reserves: u64,
+-    pub pool_base_token_reserves: u64,
+-    pub pool_quote_token_reserves: u64,
+-    pub quote_amount_in: u64,
+-    pub lp_fee_basis_points: u64,
+-    pub lp_fee: u64,
+-    pub protocol_fee_basis_points: u64,
+-    pub protocol_fee: u64,
+-    pub quote_amount_in_with_lp_fee: u64,
+-    pub user_quote_amount_in: u64,
+-    pub pool: Pubkey,
+-    pub user: Pubkey,
+-    pub user_base_token_account: Pubkey,
+-    pub user_quote_token_account: Pubkey,
+-    pub protocol_fee_recipient: Pubkey,
+-    pub protocol_fee_recipient_token_account: Pubkey,
+-    pub coin_creator: Pubkey,
+-    pub coin_creator_fee_basis_points: u64,
+-    pub coin_creator_fee: u64,
+-    pub track_volume: bool,
+-    pub total_unclaimed_tokens: u64,
+-    pub total_claimed_tokens: u64,
+-    pub current_sol_volume: u64,
+-    pub last_update_timestamp: i64,
+-    pub min_base_amount_out: u64,
+-    pub ix_name: String,
+-    pub cashback_fee_basis_points: u64,
+-    pub cashback: u64,
+-    pub buyback_fee_basis_points: u64,
+-    pub buyback_fee: u64,
+-    pub virtual_quote_reserves: i128,
+-    pub can_boost: bool,
+-    pub base_supply: u64,
+-    pub holder_rewards_bps: u64,
+-    pub holder_rewards: u64,
+-    pub creator_fee_unclaimed: u64,
+-    pub quote_transfer_fee: u64,
+-}
+diff -ruN a/src/instructions/swap/buy_ix.rs b/src/instructions/swap/buy_ix.rs
+--- a/src/instructions/swap/buy_ix.rs	1970-01-01 01:00:00.000000000 +0100
++++ b/src/instructions/swap/buy_ix.rs	2026-10-27 17:35:28.000000000 +0100
+@@ -0,0 +1,47 @@
++use anchor_lang::prelude::*;
++
++#[event]
++#[derive(Clone)]
++pub struct BuyEvent {
++    pub timestamp: i64,
++    pub base_amount_out: u64,
++    pub max_quote_amount_in: u64,
++    pub user_base_token_reserves: u64,
++    pub user_quote_token_reserves: u64,
++    pub pool_base_token_reserves: u64,
++    pub pool_quote_token_reserves: u64,
++    pub quote_amount_in: u64,
++    pub lp_fee_basis_points: u64,
++    pub lp_fee: u64,
++    pub protocol_fee_basis_points: u64,
++    pub protocol_fee: u64,
++    pub quote_amount_in_with_lp_fee: u64,
++    pub user_quote_amount_in: u64,
++    pub pool: Pubkey,
++    pub user: Pubkey,
++    pub user_base_token_account: Pubkey,
++    pub user_quote_token_account: Pubkey,
++    pub protocol_fee_recipient: Pubkey,
++    pub protocol_fee_recipient_token_account: Pubkey,
++    pub coin_creator: Pubkey,
++    pub coin_creator_fee_basis_points: u64,
++    pub coin_creator_fee: u64,
++    pub track_volume: bool,
++    pub total_unclaimed_tokens: u64,
++    pub total_claimed_tokens: u64,
++    pub current_sol_volume: u64,
++    pub last_update_timestamp: i64,
++    pub min_base_amount_out: u64,
++    pub ix_name: String,
++    pub cashback_fee_basis_points: u64,
++    pub cashback: u64,
++    pub buyback_fee_basis_points: u64,
++    pub buyback_fee: u64,
++    pub virtual_quote_reserves: i128,
++    pub can_boost: bool,
++    pub base_supply: u64,
++    pub holder_rewards_bps: u64,
++    pub holder_rewards: u64,
++    pub creator_fee_unclaimed: u64,
++    pub quote_transfer_fee: u64,
++}
+diff -ruN a/src/instructions/swap/mod.rs b/src/instructions/swap/mod.rs
+--- a/src/instructions/swap/mod.rs	2026-10-27 17:35:28.000000000 +0100
++++ b/src/instructions/swap/mod.rs	2026-10-27 18:20:04.857191851 +0100
+@@ -1,5 +1,7 @@
+ pub mod trade_v2;
++#[path = "sell_ix.rs"]
+ pub mod sell;
++#[path = "buy_ix.rs"]
+ pub mod buy;
+ 
+ use anchor_lang::prelude::*;
+diff -ruN a/src/instructions/swap/sell.rs b/src/instructions/swap/sell.rs
+--- a/src/instructions/swap/sell.rs	2026-10-27 17:35:28.000000000 +0100
++++ b/src/instructions/swap/sell.rs	1970-01-01 01:00:00.000000000 +0100
+@@ -1,12 +0,0 @@
+-use crate::*;
+-
+-pub(crate) fn validate_pool_v2(
+-    remaining_accounts: &[AccountInfo<'_>],
+-    base_mint: &Pubkey,
+-    index: usize,
+-) -> Result<()> {
+-    require!(index < remaining_accounts.len(), PumpAmmError::InvalidPoolV2);
+-    let expected = Pubkey::find_program_address(&[b"pool-v2", base_mint.as_ref()], &crate::ID).0;
+-    require!(remaining_accounts[index].key() == expected, PumpAmmError::InvalidPoolV2);
+-    Ok(())
+-}
+diff -ruN a/src/instructions/swap/sell_ix.rs b/src/instructions/swap/sell_ix.rs
+--- a/src/instructions/swap/sell_ix.rs	1970-01-01 01:00:00.000000000 +0100
++++ b/src/instructions/swap/sell_ix.rs	2026-10-27 17:35:28.000000000 +0100
+@@ -0,0 +1,12 @@
++use crate::*;
++
++pub(crate) fn validate_pool_v2(
++    remaining_accounts: &[AccountInfo<'_>],
++    base_mint: &Pubkey,
++    index: usize,
++) -> Result<()> {
++    require!(index < remaining_accounts.len(), PumpAmmError::InvalidPoolV2);
++    let expected = Pubkey::find_program_address(&[b"pool-v2", base_mint.as_ref()], &crate::ID).0;
++    require!(remaining_accounts[index].key() == expected, PumpAmmError::InvalidPoolV2);
++    Ok(())
++}
+diff -ruN a/src/legacy_sell.rs b/src/legacy_sell.rs
+--- a/src/legacy_sell.rs	2026-10-27 17:35:28.000000000 +0100
++++ b/src/legacy_sell.rs	2026-10-27 18:28:01.698705664 +0100
+@@ -102,7 +102,30 @@
+     let q = u64::try_from(
+         (a.pool_quote_token_account.amount as i128)
+             .checked_add(old_virtual)
+-            .ok_or_else(|| error!(PumpAmmError::Overflow))?,
++            .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?,
+     )
+     .map_err(|_| error!(PumpAmmError::Overflow))?;
+     // Legacy pricing uses the requested gross base input, including for Token-2022.
+@@ -128,17 +151,36 @@
+     }
+     let quote_less_lp = quote
+         .checked_sub(lp_fee)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let old_accrued = a
+         .pool
+         .protocol_fees
+         .checked_add(a.pool.creator_fees)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let real_quote = a
+         .pool_quote_token_account
+         .amount
+-        .checked_sub(old_accrued)
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .checked_sub(old_accrued).ok_or_else(|| error!(PumpAmmError::Overflow))?;
+     require_gte!(
+         real_quote,
+         quote_less_lp,
+@@ -147,7 +189,11 @@
+     let total = quote_less_lp
+         .checked_sub(creator_fee)
+         .and_then(|n| n.checked_sub(protocol_fee))
+-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++        .ok_or_else(|| 
++
++
++
++error!(PumpAmmError::Overflow))?;
+     let quote_transfer_fee = quote_transfer_fee(&a.quote_mint.to_account_info(), total, false)?;
+     require_gte!(
+         total.checked_sub(quote_transfer_fee).ok_or(PumpAmmError::Overflow)?,
