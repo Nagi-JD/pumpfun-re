@@ -1,0 +1,126 @@
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -514,18 +514,18 @@
+ 
+ 
+ 
+-impl Global {
+-    pub fn add_quote_mint(&mut self,quote_mint:Pubkey)->Result<()>{
+-     require_keys_neq!(quote_mint,Pubkey::default(),PumpError::QuoteMintNotEligibleForWhitelist);
+-     require_keys_neq!(quote_mint,anchor_spl::token::spl_token::native_mint::ID,PumpError::QuoteMintNotEligibleForWhitelist);
+-     require_eq!(self.whitelisted_quote_mints.contains(&quote_mint),false,PumpError::QuoteMintAlreadyWhitelisted);
+-     let slot=self.whitelisted_quote_mints.iter_mut().find(|key|**key==Pubkey::default()).ok_or_else(||error!(PumpError::QuoteMintWhitelistFull))?;*slot=quote_mint;Ok(())
+-        }
+-    pub fn remove_quote_mint(&mut self,quote_mint:Pubkey)->Result<()>{
+-     require_keys_neq!(quote_mint,Pubkey::default(),PumpError::QuoteMintNotEligibleForWhitelist);
+-     let slot=self.whitelisted_quote_mints.iter_mut().find(|key|**key==quote_mint).ok_or_else(||error!(PumpError::QuoteMintNotWhitelisted))?;*slot=Pubkey::default();Ok(())
+-        }
+-}
++impl Global {}
++
++
++
++
++
++
++
++
++
++
++
+ 
+ 
+ 
+@@ -1871,26 +1871,6 @@
+   self.buyback_basis_points=value;
+   Ok(())
+  }
+- #[inline(never)]
+- pub fn set_buyback_fee_recipients(&mut self,recipients:[Pubkey;8])->Result<()>{
+-  require!(recipients.iter().all(|key|*key!=Pubkey::default()),PumpError::AllBuybackFeeRecipientsShouldBeNonZero);
+-  for left in 0..8 {for right in left+1..8 {require_keys_neq!(recipients[left],recipients[right],PumpError::NotUniqueBuybackFeeRecipients);}}
+-  self.buyback_fee_recipients=recipients;
+-  Ok(())
+- }
+-}
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+ 
+ 
+ 
+@@ -1909,7 +1889,10 @@
+ 
+ 
+ 
++ #[inline(never)]
++ pub fn set_buyback_fee_recipients(&mut self,recipients:[Pubkey;8])->Result<()>{
+ 
++  require!(recipients.iter().all(|key|*key!=Pubkey::default()),PumpError::AllBuybackFeeRecipientsShouldBeNonZero);
+ 
+ 
+ 
+@@ -1919,6 +1902,11 @@
+ 
+ 
+ 
++  for left in 0..8 {for right in left+1..8 {require_neq!(recipients[left],recipients[right],PumpError::NotUniqueBuybackFeeRecipients);}}
++  self.buyback_fee_recipients=recipients;
++  Ok(())
++ }
++}
+ 
+ 
+ 
+@@ -1956,15 +1944,20 @@
+ 
+ 
+ 
++impl Global {
++    pub fn add_quote_mint(&mut self,quote_mint:Pubkey)->Result<()>{
+ 
++     require_keys_neq!(quote_mint,Pubkey::default(),PumpError::QuoteMintNotEligibleForWhitelist);
+ 
+ 
+ 
+ 
++     require_keys_neq!(quote_mint,anchor_spl::token::spl_token::native_mint::ID,PumpError::QuoteMintNotEligibleForWhitelist);
+ 
+ 
+ 
+ 
++     require_eq!(self.whitelisted_quote_mints.contains(&quote_mint),false,PumpError::QuoteMintAlreadyWhitelisted);
+ 
+ 
+ 
+@@ -1975,7 +1968,11 @@
+ 
+ 
+ 
++     for slot in self.whitelisted_quote_mints.iter_mut(){if *slot==Pubkey::default(){*slot=quote_mint;return Ok(());}} err!(PumpError::QuoteMintWhitelistFull)
++        }
++    pub fn remove_quote_mint(&mut self,quote_mint:Pubkey)->Result<()>{
+ 
++     require_keys_neq!(quote_mint,Pubkey::default(),PumpError::QuoteMintNotEligibleForWhitelist);
+ 
+ 
+ 
+@@ -1986,6 +1983,9 @@
+ 
+ 
+ 
++     for slot in self.whitelisted_quote_mints.iter_mut(){if *slot==quote_mint{*slot=Pubkey::default();return Ok(());}} err!(PumpError::QuoteMintNotWhitelisted)
++        }
++}
+ 
+ 
+ 
