@@ -1,0 +1,26 @@
+--- a/ordered.ld
++++ b/ordered.ld
+@@ -118,6 +118,7 @@
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN66_$LT$pump_recovered..Pk7$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hbecec53556d1b43aE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN69_$LT$$u5b$T$u3b$$u20$N$u5d$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hf206673b5b68afddE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN69_$LT$$u5b$T$u3b$$u20$N$u5d$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hca62fd82e87e5e22E")
++    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN66_$LT$pump_recovered..Pk8$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17h4d76d758b2eba544E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN69_$LT$$u5b$T$u3b$$u20$N$u5d$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hca1151e50f19e79eE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN69_$LT$alloc..string..String$u20$as$u20$borsh..de..BorshDeserialize$GT$18deserialize_reader17h8c7481e3b03eeff8E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN69_$LT$solana_pubkey..Pubkey$u20$as$u20$borsh..de..BorshDeserialize$GT$18deserialize_reader17hcb99d41a4b1ec10fE")
+@@ -422,6 +423,7 @@
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN78_$LT$pump_recovered..trade_types..TradeEvent$u20$as$u20$anchor_lang..Event$GT$4data17h0c8ebee0fbdbe6a4E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN81_$LT$pump_recovered..trade_types..CompleteEvent$u20$as$u20$anchor_lang..Event$GT$4data17hfbf7997fb958427cE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN82_$LT$pump_recovered..trade..PostCompleteBuyEvent$u20$as$u20$anchor_lang..Event$GT$4data17h90e671e8b838c96bE")
++    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN81_$LT$pump_recovered..set_params..SetParamsEvent$u20$as$u20$anchor_lang..Event$GT$4data17h5db509fee3433e88E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN133_$LT$pump_recovered..global_init..Initialize$u20$as$u20$anchor_lang..Accounts$LT$pump_recovered..global_init..InitializeBumps$GT$$GT$12try_accounts17ha0ab74253ea36c91E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN133_$LT$pump_recovered..global_init..Initialize$u20$as$u20$anchor_lang..Accounts$LT$pump_recovered..global_init..InitializeBumps$GT$$GT$12try_accounts28_$u7b$$u7b$closure$u7d$$u7d$17h0e40929e3e2a645bE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN109_$LT$pump_recovered..AdminGlobal$u20$as$u20$anchor_lang..Accounts$LT$pump_recovered..AdminGlobalBumps$GT$$GT$12try_accounts17h1ad3e5cc743c35ccE")
+@@ -952,7 +954,6 @@
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN177_$LT$pump_recovered..mayhem_virtual_params..SetMayhemVirtualParams$u20$as$u20$anchor_lang..Accounts$LT$pump_recovered..mayhem_virtual_params..SetMayhemVirtualParamsBumps$GT$$GT$12try_accounts17hc474864dbf6df029E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN129_$LT$pump_recovered..migrate_v2..MigrateV2$u20$as$u20$anchor_lang..Accounts$LT$pump_recovered..migrate_v2..MigrateV2Bumps$GT$$GT$12try_accounts17hf1ca05352772391cE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN74_$LT$pump_recovered..create..CreateEvent$u20$as$u20$core..clone..Clone$GT$5clone17h446e635e03721f59E")
+-    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN81_$LT$pump_recovered..set_params..SetParamsEvent$u20$as$u20$anchor_lang..Event$GT$4data17h5db509fee3433e88E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN157_$LT$pump_recovered..distribution..DistributeCreatorFees$u20$as$u20$anchor_lang..Accounts$LT$pump_recovered..distribution..DistributeCreatorFeesBumps$GT$$GT$12try_accounts17h48325183be4a6a0bE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN161_$LT$pump_recovered..distribution..DistributeCreatorFeesV2$u20$as$u20$anchor_lang..Accounts$LT$pump_recovered..distribution..DistributeCreatorFeesV2Bumps$GT$$GT$12try_accounts17h414a0cae092db0c2E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN78_$LT$pump_recovered..trade_types..TradeEvent$u20$as$u20$core..clone..Clone$GT$5clone17h362d2ef739c8fa8fE")

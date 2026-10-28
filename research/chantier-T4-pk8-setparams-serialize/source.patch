@@ -1,0 +1,49 @@
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -1191,3 +1191,28 @@
+         ]))
+     }
+ }
++#[derive(Copy, Clone)]
++pub struct Pk8(pub [Pubkey; 8]);
++impl borsh::BorshSerialize for Pk8 {
++    #[inline(never)]
++    fn serialize<W: borsh::maybestd::io::Write>(&self, writer: &mut W) -> borsh::maybestd::io::Result<()> {
++        for pk in &self.0 {
++            borsh::BorshSerialize::serialize(pk, writer)?;
++        }
++        Ok(())
++    }
++}
++impl borsh::BorshDeserialize for Pk8 {
++    fn deserialize_reader<R: borsh::maybestd::io::Read>(reader: &mut R) -> borsh::maybestd::io::Result<Self> {
++        Ok(Pk8([
++            <Pubkey as borsh::BorshDeserialize>::deserialize_reader(reader)?,
++            <Pubkey as borsh::BorshDeserialize>::deserialize_reader(reader)?,
++            <Pubkey as borsh::BorshDeserialize>::deserialize_reader(reader)?,
++            <Pubkey as borsh::BorshDeserialize>::deserialize_reader(reader)?,
++            <Pubkey as borsh::BorshDeserialize>::deserialize_reader(reader)?,
++            <Pubkey as borsh::BorshDeserialize>::deserialize_reader(reader)?,
++            <Pubkey as borsh::BorshDeserialize>::deserialize_reader(reader)?,
++            <Pubkey as borsh::BorshDeserialize>::deserialize_reader(reader)?,
++        ]))
++    }
++}
+--- a/programs/pump/src/set_params.rs
++++ b/programs/pump/src/set_params.rs
+@@ -8,7 +8,7 @@
+ }
+ #[event]
+ #[derive(Clone)]
+-pub struct SetParamsEvent{pub initial_virtual_token_reserves:u64,pub initial_virtual_sol_reserves:u64,pub initial_real_token_reserves:u64,pub final_real_sol_reserves:u64,pub token_total_supply:u64,pub fee_basis_points:u64,pub withdraw_authority:Pubkey,pub enable_migrate:bool,pub pool_migration_fee:u64,pub creator_fee_basis_points:u64,pub fee_recipients:[Pubkey;8],pub timestamp:i64,pub set_creator_authority:Pubkey,pub admin_set_creator_authority:Pubkey}
++pub struct SetParamsEvent{pub initial_virtual_token_reserves:u64,pub initial_virtual_sol_reserves:u64,pub initial_real_token_reserves:u64,pub final_real_sol_reserves:u64,pub token_total_supply:u64,pub fee_basis_points:u64,pub withdraw_authority:Pubkey,pub enable_migrate:bool,pub pool_migration_fee:u64,pub creator_fee_basis_points:u64,pub fee_recipients:crate::Pk8,pub timestamp:i64,pub set_creator_authority:Pubkey,pub admin_set_creator_authority:Pubkey}
+ pub fn execute(ctx:Context<SetParams>,initial_virtual_token_reserves:u64,initial_virtual_sol_reserves:u64,initial_real_token_reserves:u64,token_total_supply:u64,fee_basis_points:u64,withdraw_authority:Pubkey,enable_migrate:bool,pool_migration_fee:u64,creator_fee_basis_points:u64,set_creator_authority:Pubkey,admin_set_creator_authority:Pubkey)->Result<()>{
+  require_gte!(ctx.remaining_accounts.len(),8,PumpError::NotEnoughRemainingAccounts);
+  let rent=Rent::get()?;let mut recipients=[Pubkey::default();8];
+@@ -35,5 +35,5 @@
+  g.set_creator_authority=set_creator_authority;
+  g.admin_set_creator_authority=admin_set_creator_authority;
+  g.fee_recipient=recipients[0];g.fee_recipients.copy_from_slice(&recipients[1..]);
+- let event=SetParamsEvent{initial_virtual_token_reserves,initial_virtual_sol_reserves,initial_real_token_reserves,token_total_supply,fee_basis_points,withdraw_authority,enable_migrate,pool_migration_fee,creator_fee_basis_points,set_creator_authority,admin_set_creator_authority,final_real_sol_reserves,fee_recipients:recipients,timestamp:Clock::get()?.unix_timestamp};emit!(event.clone());emit_cpi!(event);Ok(())
++ let event=SetParamsEvent{initial_virtual_token_reserves,initial_virtual_sol_reserves,initial_real_token_reserves,token_total_supply,fee_basis_points,withdraw_authority,enable_migrate,pool_migration_fee,creator_fee_basis_points,set_creator_authority,admin_set_creator_authority,final_real_sol_reserves,fee_recipients:crate::Pk8(recipients),timestamp:Clock::get()?.unix_timestamp};emit!(event.clone());emit_cpi!(event);Ok(())
+ }
