@@ -1,0 +1,10 @@
+--- a/ordered.ld
++++ b/ordered.ld
+@@ -115,6 +115,7 @@
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$8grow_one17h547b5d2406f80634E")
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN60_$LT$alloc..string..String$u20$as$u20$core..fmt..Display$GT$3fmt17hc501bcb5ea40ee00E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN63_$LT$solana_pubkey..PubkeyError$u20$as$u20$core..fmt..Debug$GT$3fmt17hb15d6373b97b0d65E")
++    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN66_$LT$pump_recovered..Pk7$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hbecec53556d1b43aE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN69_$LT$$u5b$T$u3b$$u20$N$u5d$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hf206673b5b68afddE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN69_$LT$$u5b$T$u3b$$u20$N$u5d$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hca62fd82e87e5e22E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN69_$LT$$u5b$T$u3b$$u20$N$u5d$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hca1151e50f19e79eE")

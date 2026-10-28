@@ -1,0 +1,92 @@
+{
+  "before": {
+    "note": "chantier-T4-shareholder-copy (#26) baseline",
+    "original_windows": 1035,
+    "candidate_windows": 1000,
+    "matched": 790,
+    "exact": 138,
+    "unmatched": 245,
+    "call_consistent_original": 682
+  },
+  "after": {
+    "original_windows": 1035,
+    "candidate_windows": 1001,
+    "matched": 791,
+    "exact": 139,
+    "unmatched": 244,
+    "call_consistent_original": 683
+  },
+  "gained_matched": [
+    "0xea68"
+  ],
+  "lost_matched": [],
+  "gained_raw": [
+    "0xea68"
+  ],
+  "lost_raw": [],
+  "serialize_window": {
+    "symbol": "_ZN66_$LT$pump_recovered..Pk7$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hbecec53556d1b43aE",
+    "deployed_start": "0xea68",
+    "deployed_size": 1240,
+    "deployed_callers": [
+      "0x719c8",
+      "0x71c90"
+    ],
+    "caller_handler": "0x6fef8 __global::set_reserved_fee_recipients",
+    "deployed_call_targets": {
+      "0xded0": "alloc::raw_vec::RawVec::reserve (x7)"
+    }
+  },
+  "artifacts": {
+    "candidate_sha256": "43912acb109f6e915329cfe830bb23e0bcc6d27e6d08ebd95829b5d0f7c8898b",
+    "symbols_sha256": "cce37ebcddff394b14a576c581c52f3ae424f9ed9800295d47a5e2256161a5cf"
+  },
+  "variants": {
+    "pk7_no_placement": {
+      "note": "Pk7 newtype + inline(never) BorshSerialize; lands at 0x193770 without ordered-ld",
+      "matched": 791,
+      "exact": 138,
+      "candidate_sha256": "c83101d92de99e26e43a4e423d2c3e58b41e524f87d6e53f3453c89c25935310",
+      "symbols_sha256": "a8a7bd791e3424009d4aae94222a4ed1b68049ebea83a5e5e92573d740933600"
+    },
+    "pk7_plus_ordered_ld_patch": {
+      "note": "this packet; Pk7::serialize placed at deployed slot 0xea68",
+      "matched": 791,
+      "exact": 139,
+      "candidate_sha256": "43912acb109f6e915329cfe830bb23e0bcc6d27e6d08ebd95829b5d0f7c8898b",
+      "symbols_sha256": "cce37ebcddff394b14a576c581c52f3ae424f9ed9800295d47a5e2256161a5cf"
+    }
+  },
+  "drift_solver_before": {
+    "original_windows": 1035,
+    "candidate_windows": 1000,
+    "matched": 790,
+    "exact": 138,
+    "call_only_raw_fail": 221,
+    "potential_if_delta0": 359,
+    "unique_pairs": 788,
+    "intervals_nonzero": 75
+  },
+  "drift_solver_after": {
+    "original_windows": 1035,
+    "candidate_windows": 1001,
+    "matched": 791,
+    "exact": 139,
+    "call_only_raw_fail": 221,
+    "potential_if_delta0": 360,
+    "unique_pairs": 789,
+    "intervals_nonzero": 90
+  },
+  "next_root": {
+    "dep_left": "0xefc8",
+    "dep_right": "0xf6c0",
+    "delta": -1424,
+    "unmatched_dep": [
+      {
+        "start": "0xf130",
+        "size": 1424,
+        "names": []
+      }
+    ]
+  }
+}
