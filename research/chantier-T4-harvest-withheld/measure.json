@@ -1,0 +1,172 @@
+{
+ "before": {
+  "note": "chantier-T4-transfer-with-seed (#29) baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1004,
+  "matched": 794,
+  "exact": 148,
+  "unmatched": 241,
+  "call_consistent_original": 686
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1008,
+  "matched": 798,
+  "exact": 161,
+  "unmatched": 237,
+  "call_consistent_original": 690
+ },
+ "gained_matched": [
+  "0x95610",
+  "0x184e38",
+  "0x18fc98",
+  "0x1905a8"
+ ],
+ "lost_matched": [],
+ "gained_raw": [
+  "0x17ddb0",
+  "0x17df20",
+  "0x17f948",
+  "0x186760",
+  "0x1891d8",
+  "0x189340",
+  "0x189488",
+  "0x1895e8",
+  "0x18e878",
+  "0x18e9c0",
+  "0x18eb28",
+  "0x18ec88",
+  "0x18fc98"
+ ],
+ "lost_raw": [],
+ "placed": {
+  "pump_recovered::migrate_v2::harvest_withheld": {
+   "symbol": "_ZN14pump_recovered10migrate_v216harvest_withheld17hd13246a377082940E",
+   "deployed_start": "0x95610",
+   "candidate_start": "0x56f68",
+   "size": 1480,
+   "placed_before": "trade::quote_payments::transfer_native h5f18ae913c082bd0 (deployed 0x95bd8, candidate 0x57530)",
+   "deployed_callers": [
+    "0x4b068 in 0x49888 (migrate_v2, programs/pump/src/migrate_v2.rs)"
+   ]
+  },
+  "anchor_spl::token_2022_extensions::transfer_fee::harvest_withheld_tokens_to_mint": {
+   "symbol": "_ZN10anchor_spl21token_2022_extensions12transfer_fee31harvest_withheld_tokens_to_mint17hc91da26ce2a822abE",
+   "deployed_start": "0x184e38",
+   "candidate_start": "0x115158",
+   "size": 2664,
+   "placed_after": "token_metadata_update_authority (deployed 0x184a60, candidate 0x114d80)",
+   "next": "transfer_hook_initialize (deployed 0x1858a0, candidate 0x115bc0)"
+  },
+  "spl_token_2022::extension::transfer_fee::instruction::TransferFeeInstruction::pack": {
+   "symbol": "_ZN14spl_token_20229extension12transfer_fee11instruction22TransferFeeInstruction4pack17h76088c49f144eab6E",
+   "deployed_start": "0x18fc98",
+   "candidate_start": "0x11ffb8",
+   "size": 2320,
+   "placed_after": "metadata_pointer::instruction::initialize (deployed 0x18f7a8, candidate 0x11fac8)"
+  },
+  "spl_token_2022::extension::transfer_fee::instruction::harvest_withheld_tokens_to_mint": {
+   "symbol": "_ZN14spl_token_20229extension12transfer_fee11instruction31harvest_withheld_tokens_to_mint17h9df957f235c92181E",
+   "deployed_start": "0x1905a8",
+   "candidate_start": "0x1208c8",
+   "size": 1104,
+   "next": "transfer_hook::instruction::initialize (deployed 0x1909f8, candidate 0x120d18)"
+  }
+ },
+ "artifacts": {
+  "candidate_sha256": "b19d4c722b3a13281ee0aaca73f210eddab5b29fb1f3b8e8aa8fa2075fb1d6f2",
+  "symbols_sha256": "6c7c1e1ac73db0e31ea7de9826dbd39c1db92f73a73f9a5ff89b11b26aeaed6b"
+ },
+ "variants": {
+  "baseline_pr29": {
+   "candidate_sha256": "31162d65ed5a56fb60c2beaa62b754b758516411b7b07149c96616bf578f8ae2",
+   "original_windows": 1035,
+   "candidate_windows": 1004,
+   "matched": 794,
+   "exact": 148,
+   "unmatched": 241,
+   "call_consistent_original": 686
+  },
+  "harvest_pr29_ordered_ld": {
+   "candidate_sha256": "c730d31e5af5e4c023389c3fd7eda81217a499c82827d1076c73425ddacc7e37",
+   "original_windows": 1035,
+   "candidate_windows": 1008,
+   "matched": 798,
+   "exact": 148,
+   "unmatched": 237,
+   "call_consistent_original": 690
+  },
+  "harvest_placed": {
+   "candidate_sha256": "b19d4c722b3a13281ee0aaca73f210eddab5b29fb1f3b8e8aa8fa2075fb1d6f2",
+   "original_windows": 1035,
+   "candidate_windows": 1008,
+   "matched": 798,
+   "exact": 161,
+   "unmatched": 237,
+   "call_consistent_original": 690
+  }
+ },
+ "drift_solver_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1004,
+  "matched": 794,
+  "exact": 148,
+  "call_only_raw_fail": 215,
+  "potential_if_delta0": 363,
+  "unique_pairs": 793,
+  "intervals_nonzero": 86
+ },
+ "drift_solver_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1008,
+  "matched": 798,
+  "exact": 161,
+  "call_only_raw_fail": 205,
+  "potential_if_delta0": 366,
+  "unique_pairs": 797,
+  "intervals_nonzero": 84
+ },
+ "next_roots": [
+  {
+   "dep_left": "0x17c548",
+   "dep_right": "0x17cae8",
+   "cand_left": "0x10cb00",
+   "cand_right": "0x10ce08",
+   "delta": -664,
+   "gap_dep": 664,
+   "gap_cand": 0,
+   "unmatched_dep": [
+    {
+     "start": "0x17c850",
+     "size": 664,
+     "names": []
+    }
+   ],
+   "unmatched_cand": [],
+   "spoiled_call_only": 167
+  },
+  {
+   "dep_left": "0x17bc38",
+   "dep_right": "0x17c3d8",
+   "cand_left": "0x10c980",
+   "cand_right": "0x10c990",
+   "delta": -1936,
+   "gap_dep": 1936,
+   "gap_cand": 0,
+   "unmatched_dep": [
+    {
+     "start": "0x17bc48",
+     "size": 1192,
+     "names": []
+    },
+    {
+     "start": "0x17c0f0",
+     "size": 744,
+     "names": []
+    }
+   ],
+   "unmatched_cand": [],
+   "spoiled_call_only": 165
+  }
+ ]
+}

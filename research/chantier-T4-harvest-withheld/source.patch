@@ -1,0 +1,16 @@
+--- a/programs/pump/src/migrate_v2.rs
++++ b/programs/pump/src/migrate_v2.rs
+@@ -328,7 +328,7 @@
+  call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&base_mint,false,false),(&wsol,false,false),(&lp,false,true),(&tmpb,false,true),(&tmpq,false,true),(&ulp,false,true),(&pb,false,true),(&pq,false,true),(&sys,false,false),(&t22,false,false),(&tok,false,false),(&qt,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],data,&[pas])?;
+  if !mayhem && (ctx.remaining_accounts.len()==2 || crate::migrate::native_payments::boost_enabled(&cfg)) { require!(ctx.remaining_accounts.len()==2,PumpError::NotEnoughRemainingAccounts); let boost=&ctx.remaining_accounts[0];let vault=&ctx.remaining_accounts[1]; let initial_balance=pa.lamports();let boost_rent=Rent::get()?; let funding=boost_rent.minimum_balance(quote_account_size(&wsol)?); crate::migrate::native_payments::transfer_native(a.system_program.as_ref(),&a.user,&a.pool_authority,funding)?; call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&base_mint,false,false),(&wsol,false,false),(&pb,false,true),(&pq,false,true),(boost,false,false),(vault,false,true),(&qt,false,false),(&sys,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],vec![140,233,33,94,132,90,194,143],&[pas])?; let after_balance=pa.lamports(); refund_pool_authority(a,ctx.bumps.pool_authority,&user,after_balance.saturating_sub(initial_balance))?; crate::migrate::native_payments::transfer_native(a.system_program.as_ref(),&a.user,&a.pool_authority,initial_balance.saturating_sub(after_balance))?; }
+  call(&tok,&[(&tmpb,false,true),(&wa,false,true),(&pa,true,false)],vec![9],&[pas])?;
+- if !quote_preexisting{if quote_extensions(&wsol)?.contains(&1){if !wsol.is_writable{return err!(MigrateV2Error::QuoteMintNotWritable)}call(&qt,&[(&wsol,false,true),(&tmpq,false,true)],vec![26,4],&[])?;}
++ if !quote_preexisting{if quote_extensions(&wsol)?.contains(&1){if !wsol.is_writable{return err!(MigrateV2Error::QuoteMintNotWritable)}harvest_withheld(&qt,&wsol,&tmpq)?;}
+  call(&qt,&[(&tmpq,false,true),(&wa,false,true),(&pa,true,false)],vec![9],&[pas])?;}
+  let burn_amount=amount(&ulp)?;anchor_spl::token_2022::burn(CpiContext::new_with_signer(t22.clone(),anchor_spl::token_2022::Burn{mint:lp.clone(),from:ulp.clone(),authority:pa.clone()},&[pas]),burn_amount)?;call(&t22,&[(&ulp,false,true),(&wa,false,true),(&pa,true,false)],vec![9],&[pas])?;
+  refund_pool_authority(a,ctx.bumps.pool_authority,&wa,pa.lamports())?;
+@@ -352,3 +352,4 @@
+  let mint=a.base_mint.key();let bump=[bump];let signer_seeds:&[&[&[u8]];1]=&[&[b"pool-authority",mint.as_ref(),&bump]];
+  crate::migrate::transfer_native(a.system_program.as_ref(),&a.pool_authority,destination,amount,signer_seeds)
+ }
++#[inline(never)] fn harvest_withheld<'info>(token_program:&AccountInfo<'info>,mint:&AccountInfo<'info>,source:&AccountInfo<'info>)->Result<()>{anchor_spl::token_2022_extensions::harvest_withheld_tokens_to_mint(CpiContext::new(token_program.clone(),anchor_spl::token_2022_extensions::HarvestWithheldTokensToMint{token_program_id:token_program.clone(),mint:mint.clone()}),vec![source.clone()])}

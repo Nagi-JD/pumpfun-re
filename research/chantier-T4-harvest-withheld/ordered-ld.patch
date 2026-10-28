@@ -1,0 +1,27 @@
+--- a/ordered.ld
++++ b/ordered.ld
+@@ -225,6 +225,7 @@
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered6buy_v215token_transfers21transfer_curve_tokens17h2b2ff8b55eeab524E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered7sell_v220user_token_transfers20transfer_user_tokens17ha94e9c22d9c99cf6E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered7sell_v221quote_token_transfers21transfer_quote_tokens17h89c25becab11d8aaE")
++    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered10migrate_v216harvest_withheld17hd13246a377082940E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered5trade14quote_payments15transfer_native17h5f18ae913c082bd0E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered5trade14quote_payments15transfer_native17h407271d78724f40eE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered5trade14quote_payments15transfer_native17hc7fac06ff038418dE")
+@@ -478,6 +479,7 @@
+     *libanchor_spl-74900cf87b02a8b9.rlib:anchor_spl-74900cf87b02a8b9.anchor_spl.c9b69b8a05f5747c-cgu.0.rcgu.o(".text._ZN10anchor_spl21token_2022_extensions16non_transferable32non_transferable_mint_initialize17hfbdba17d64a64060E")
+     *libanchor_spl-74900cf87b02a8b9.rlib:anchor_spl-74900cf87b02a8b9.anchor_spl.c9b69b8a05f5747c-cgu.0.rcgu.o(".text._ZN10anchor_spl21token_2022_extensions14token_metadata25token_metadata_initialize17h6081758ace839a94E")
+     *libanchor_spl-74900cf87b02a8b9.rlib:anchor_spl-74900cf87b02a8b9.anchor_spl.c9b69b8a05f5747c-cgu.0.rcgu.o(".text._ZN10anchor_spl21token_2022_extensions14token_metadata31token_metadata_update_authority17h661e6c58c172d60bE")
++    *libanchor_spl-74900cf87b02a8b9.rlib:anchor_spl-74900cf87b02a8b9.anchor_spl.c9b69b8a05f5747c-cgu.0.rcgu.o(".text._ZN10anchor_spl21token_2022_extensions12transfer_fee31harvest_withheld_tokens_to_mint17hc91da26ce2a822abE")
+     *libanchor_spl-74900cf87b02a8b9.rlib:anchor_spl-74900cf87b02a8b9.anchor_spl.c9b69b8a05f5747c-cgu.0.rcgu.o(".text._ZN10anchor_spl21token_2022_extensions13transfer_hook24transfer_hook_initialize17h83f19b1f7cb2b122E")
+     *libanchor_spl-74900cf87b02a8b9.rlib:anchor_spl-74900cf87b02a8b9.anchor_spl.c9b69b8a05f5747c-cgu.0.rcgu.o(".text._ZN93_$LT$anchor_spl..token_interface..TokenAccount$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17hb39bd10713dbb5ceE")
+     *libanchor_spl-74900cf87b02a8b9.rlib:anchor_spl-74900cf87b02a8b9.anchor_spl.c9b69b8a05f5747c-cgu.0.rcgu.o(".text._ZN85_$LT$anchor_spl..token_interface..Mint$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17h47844e3f97f1601bE")
+@@ -534,6 +536,8 @@
+     *libspl_token_2022-161d8cd465fbc77e.rlib:spl_token_2022-161d8cd465fbc77e.spl_token_2022.3a5802a4f4547b45-cgu.0.rcgu.o(".text._ZN14spl_token_20229extension20group_member_pointer11instruction10initialize17hc1e85965f5ae41dbE")
+     *libspl_token_2022-161d8cd465fbc77e.rlib:spl_token_2022-161d8cd465fbc77e.spl_token_2022.3a5802a4f4547b45-cgu.0.rcgu.o(".text._ZN14spl_token_20229extension13group_pointer11instruction10initialize17hd0de606a9acae0f6E")
+     *libspl_token_2022-161d8cd465fbc77e.rlib:spl_token_2022-161d8cd465fbc77e.spl_token_2022.3a5802a4f4547b45-cgu.0.rcgu.o(".text._ZN14spl_token_20229extension16metadata_pointer11instruction10initialize17h0a11981d51c0b15cE")
++    *libspl_token_2022-161d8cd465fbc77e.rlib:spl_token_2022-161d8cd465fbc77e.spl_token_2022.3a5802a4f4547b45-cgu.0.rcgu.o(".text._ZN14spl_token_20229extension12transfer_fee11instruction22TransferFeeInstruction4pack17h76088c49f144eab6E")
++    *libspl_token_2022-161d8cd465fbc77e.rlib:spl_token_2022-161d8cd465fbc77e.spl_token_2022.3a5802a4f4547b45-cgu.0.rcgu.o(".text._ZN14spl_token_20229extension12transfer_fee11instruction31harvest_withheld_tokens_to_mint17h9df957f235c92181E")
+     *libspl_token_2022-161d8cd465fbc77e.rlib:spl_token_2022-161d8cd465fbc77e.spl_token_2022.3a5802a4f4547b45-cgu.0.rcgu.o(".text._ZN14spl_token_20229extension13transfer_hook11instruction10initialize17hc7c112aa465551e4E")
+     *libspl_token_2022-161d8cd465fbc77e.rlib:spl_token_2022-161d8cd465fbc77e.spl_token_2022.3a5802a4f4547b45-cgu.0.rcgu.o(".text._ZN14spl_token_20229extension23adjust_len_for_multisig17h2fc0e96c231bb23cE")
+     *libspl_token_2022-161d8cd465fbc77e.rlib:spl_token_2022-161d8cd465fbc77e.spl_token_2022.3a5802a4f4547b45-cgu.0.rcgu.o(".text._ZN14spl_token_20229extension13ExtensionType21try_get_total_tlv_len17h02b31adba2c0e014E")
