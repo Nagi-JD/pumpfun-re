@@ -1,0 +1,87 @@
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -607,7 +607,7 @@
+  let c=&a.bonding_curve;
+  crate::legacy_sell::fee_recipient::validate_fee_recipient(&a.fee_recipient,&a.global,&a.bonding_curve)?;
+  let rem=ctx.remaining_accounts;
+- let bb=rem.get(1).ok_or_else(||error!(PumpError::BuybackFeeRecipientMissing))?;require_keys_neq!(*bb.key,Pubkey::default(),PumpError::BuybackFeeRecipientMissing);require!(a.global.buyback_fee_recipients.contains(bb.key),PumpError::BuybackFeeRecipientNotAuthorized);
++ let bb=rem.get(1).ok_or_else(||error!(PumpError::BuybackFeeRecipientMissing))?;a.global.validate_buyback_fee_recipient(*bb.key)?;
+  require!(!c.complete,PumpError::BondingCurveComplete);
+  if exact{require_gt!(limit,0,PumpError::BuyZeroAmount);require_gt!(input,0,PumpError::BuyNotEnoughSolToCoverFees);}else{require_gt!(input,0,PumpError::BuyZeroAmount);}
+  if !exact{if !partial{require_gte!(c.real_token_reserves,input,PumpError::NotEnoughTokensToBuy);}}
+@@ -1030,7 +1030,7 @@
+  let v2=rem.get(index).ok_or_else(||error!(PumpError::InvalidBondingCurveV2))?;require!(v2.key()==Pubkey::find_program_address(&[b"bonding-curve-v2",a.mint.key().as_ref()],&crate::ID).0,PumpError::InvalidBondingCurveV2);
+  let bbps=if c.is_mayhem_mode{0}else{a.global.buyback_basis_points};
+  let cashback_coin=c.is_cashback_coin; if cf!=0 && !cashback_coin {crate::legacy_buy::native_payments::ensure_rent_exempt(&a.system_program,&a.user,&a.creator_vault)?;} if cf!=0 {if cashback_coin{a.bonding_curve.sub_lamports(cf)?;rem[0].add_lamports(cf)?;let mut d=rem[0].try_borrow_mut_data()?;let n=u64::from_le_bytes(d[74..82].try_into().unwrap());d[74..82].copy_from_slice(&(n).checked_add(cf).ok_or_else(||error!(PumpError::Overflow))?.to_le_bytes());}else{crate::trade::quote_payments::move_native(&a.bonding_curve,&a.creator_vault,cf)?;}}
+- let bb=rem.get(index+1).ok_or_else(||error!(PumpError::BuybackFeeRecipientMissing))?;require!(a.global.buyback_fee_recipients.contains(bb.key),PumpError::BuybackFeeRecipientNotAuthorized);
++ let bb=rem.get(index+1).ok_or_else(||error!(PumpError::BuybackFeeRecipientMissing))?;a.global.validate_buyback_fee_recipient(*bb.key)?;
+  if output!=0 {crate::trade::quote_payments::transfer_native_unchecked(&a.bonding_curve,&a.user,output)?;}
+  let (bf,protocol_fee)=crate::buy_v2::recipient_payments::split_protocol_fee(&a.global,pf,c.is_mayhem_mode);
+  if bf!=0 {crate::trade::quote_payments::move_native(&a.bonding_curve,&bb,bf)?;}
+@@ -1874,16 +1874,16 @@
+ 
+ 
+ 
++ #[inline(never)]
++ pub fn validate_buyback_fee_recipient(&self,buyback_fee_recipient:Pubkey)->Result<()>{
++  require_keys_neq!(buyback_fee_recipient,Pubkey::default(),PumpError::BuybackFeeRecipientMissing);
+ 
+ 
+ 
+ 
+-
+-
+-
+-
+-
+-
++  require!(self.buyback_fee_recipients.contains(&buyback_fee_recipient),PumpError::BuybackFeeRecipientNotAuthorized);
++  Ok(())
++ }
+ 
+ 
+ 
+--- a/programs/pump/src/trade_v3.rs
++++ b/programs/pump/src/trade_v3.rs
+@@ -119,7 +119,7 @@
+     let (quote_decimals,quote_fee)=check_quote(a)?;
+     let is_sol=quote_decimals.is_none();
+     require_gte!(a.associated_base_user.amount,amount,PumpError::NotEnoughTokensToSell);
+-    if is_sol{require_keys_neq!(a.buyback_fee_recipient.key(),Pubkey::default(),PumpError::BuybackFeeRecipientMissing);require!(a.global.buyback_fee_recipients.contains(&a.buyback_fee_recipient.key()),PumpError::BuybackFeeRecipientNotAuthorized);}
++    if is_sol{a.global.validate_buyback_fee_recipient(a.buyback_fee_recipient.key())?;}
+     let curve=&a.bonding_curve;
+     let quote=narrow(crate::sell_quote(curve,amount)?)?;
+     let (fees,creator_bps)=if a.user.key()==a.global.whitelist_pda {
+@@ -1230,7 +1230,7 @@
+   let token=TokenAccount::try_deserialize(&mut &info.try_borrow_data()?[..])?;
+   require_keys_eq!(token.mint,a.quote_mint.key(),PumpError::MintDoesNotMatchBondingCurve);
+   if role==1{require_keys_eq!(token.owner,a.user.key(),PumpError::AccountTypeNotSupported)}
+-  if role==2{require_keys_neq!(token.owner,Pubkey::default(),PumpError::BuybackFeeRecipientMissing);require!(a.global.buyback_fee_recipients.contains(&token.owner),PumpError::BuybackFeeRecipientNotAuthorized)}
++  if role==2{a.global.validate_buyback_fee_recipient(token.owner)?}
+   if role!=1 {
+    let authority=if role==0{a.bonding_curve.key()}else{token.owner};
+    let expected=anchor_spl::associated_token::get_associated_token_address_with_program_id(&authority,&a.quote_mint.key(),&a.quote_token_program.key());
+--- a/programs/pump/src/buy_v2.rs
++++ b/programs/pump/src/buy_v2.rs
+@@ -186,8 +186,8 @@
+   require_gte!(a.bonding_curve.real_token_reserves,input,PumpError::NotEnoughTokensToBuy);
+  }
+  crate::legacy_sell::fee_recipient::validate_fee_recipient(&a.fee_recipient,&a.global,&a.bonding_curve)?;
+- require_keys_neq!(a.buyback_fee_recipient.key(),Pubkey::default(),PumpError::BuybackFeeRecipientMissing);
+- require!(a.global.buyback_fee_recipients.contains(&a.buyback_fee_recipient.key()),PumpError::BuybackFeeRecipientNotAuthorized);
++ a.global.validate_buyback_fee_recipient(a.buyback_fee_recipient.key())?;
++
+  if a.user_volume_accumulator.user==Pubkey::default(){a.user_volume_accumulator.user=a.user.key();}
+  if a.bonding_curve.quote_mint!=Pubkey::default(){
+     admit_associated_token_account(a.associated_quote_bonding_curve.as_ref(),&a.bonding_curve.to_account_info(),&a.quote_mint.key(),&a.quote_token_program.key(),a.user.as_ref(),&a.quote_mint.to_account_info(),false,a.system_program.as_ref(),a.quote_token_program.as_ref())?;
+--- a/programs/pump/src/sell_v2.rs
++++ b/programs/pump/src/sell_v2.rs
+@@ -81,7 +81,7 @@
+ let c=&a.bonding_curve;let native=c.quote_mint==Pubkey::default();
+  require!(!c.complete,PumpError::BondingCurveComplete);require_gt!(amount,0,PumpError::SellZeroAmount);require_gte!(a.associated_base_user.amount,amount,PumpError::NotEnoughTokensToSell);
+  crate::legacy_sell::fee_recipient::validate_fee_recipient(&a.fee_recipient,&a.global,&a.bonding_curve)?;
+- let bb=&a.buyback_fee_recipient;require_keys_neq!(*bb.key,Pubkey::default(),PumpError::BuybackFeeRecipientMissing);require!(a.global.buyback_fee_recipients.contains(bb.key),PumpError::BuybackFeeRecipientNotAuthorized);
++ let bb=&a.buyback_fee_recipient;a.global.validate_buyback_fee_recipient(*bb.key)?;
+  if a.user_volume_accumulator.user==Pubkey::default(){a.user_volume_accumulator.user=a.user.key();}
+  if a.bonding_curve.quote_mint!=Pubkey::default(){
+   crate::buy_v2::admit_associated_token_account(a.associated_quote_bonding_curve.as_ref(),&a.bonding_curve.to_account_info(),&a.quote_mint.key(),&a.quote_token_program.key(),a.user.as_ref(),&a.quote_mint.to_account_info(),false,a.system_program.as_ref(),a.quote_token_program.as_ref())?;
