@@ -1,0 +1,11 @@
+--- a/ordered.ld
++++ b/ordered.ld
+@@ -252,7 +252,7 @@
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered11trade_types16historical_curve9decode_v617h426bad00a972ae4fE")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered11trade_types16historical_curve9decode_v717hbe0bf7bfa4aa2474E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered11trade_types16historical_curve9decode_v817hb00e4440e2ef7301E")
+-    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered11trade_types27reserved_bonding_curve_fees17h83c07b61f71f7d8cE")
++    *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered27reserved_bonding_curve_fees17hd83b9f3e25fa6497E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN14pump_recovered21mayhem_virtual_params59_$LT$impl$u20$pump_recovered..trade_types..BondingCurve$GT$27sync_virtual_quote_reserves17h6db0cae26ce5c181E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN157_$LT$pump_recovered..idl_authority..AdminSetIdlAuthority$u20$as$u20$anchor_lang..Accounts$LT$pump_recovered..idl_authority..AdminSetIdlAuthorityBumps$GT$$GT$12try_accounts17hf77da24693f5d0b2E")
+     *pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o(".text._ZN95_$LT$pump_recovered..idl_authority..AdminSetIdlAuthorityEvent$u20$as$u20$anchor_lang..Event$GT$4data17hd888641e4cdf817aE")
