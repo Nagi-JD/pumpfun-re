@@ -1,0 +1,10 @@
+--- a/ordered.ld
++++ b/ordered.ld
+@@ -347,6 +347,7 @@
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered10collect_v221transfer_vault_tokens17h165d8b0624ff856aE")
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered9admin_cto9pay_token17hb569898f923aed12E")
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered22transfer_fee_recovered15post_fee_amount17h60434eba5405e318E")
++    *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered22transfer_fee_recovered14pre_fee_amount17hb8432ed84dfb1570E")
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered15legacy_buy_exec3add17h05d1ae0eddec35f0E")
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered15legacy_buy_exec3sub17hdce2fe16da57637eE")
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered15legacy_buy_exec6narrow17hc9707416590fc65bE")
