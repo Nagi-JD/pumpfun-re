@@ -70,27 +70,31 @@ identical seeded state, and compares results byte-for-byte. See each
 - **mayhem**: `initialize_mayhem_state` reconstructed; `create_v2(is_mayhem_mode=true)`
   end-to-end differential gives byte-identical account state on both sides.
 
-## Current state — byte-identity race (27 Oct 2026)
+## Current state — byte-identity race (28 Oct 2026)
 
 Function windows matched (their window metric) vs lalalune's latest published
 checkpoint for each program:
 
 | Program | lalalune published | Ours | Main levers |
 |---|---:|---:|---|
-| PumpSwap | 651 / 785 (148 raw) | **681 / 785** (148 raw) | base path-prefix remap reproduces their 643 exactly, then `error!` closures placed on deployed lines (+11 → 654); then a verified d1→d2→f2→g3 chain (+27): +13 error-closures across deposit/amm_hop, +5 `require!`/`Source` line moves, +4 `pool.rs` declaration reorder, +5 out-of-line `checked_sub3`/`checked_add3` constructor bodies → 681, re-measured on the canonical profile at every step with zero raw loss and zero matched loss |
-| Fees | 582 / 585 (200 exact) | **582 / 585** (200 exact, byte-identical) | reproduced their newest `fees-extend-integration` checkpoint byte-for-byte — `symbols.so` + stripped `candidate.so` sha256-identical to their `result.json`; parity, not a lead. 3 windows remain: 120816 Sweep (near-miss +3 instrs), 147944 Crank (missing code), 163920 CreateDonation (extra PDA-verify region) |
-| Pump | 738 / 1035 (Round36, 145 raw) | **786 / 1035 (137 raw)** | per-site `error!` closures placed on deployed lines (no hardcoded-location macro); `migrate`/`migrate_v2` quote fix, verified by execution; +4 trade-body windows (0x176d8/0x178e0 partial-fill quote, 0x87ca0 post-fee, 0x14eab8 legacy raw-quote) restored via `black_box` anti-folding barriers, re-measured on the canonical s7clean profile with zero raw loss. A host-triple `rustc` shim makes the native Linux build byte-identical to their macOS artifact, so raw matches too (137) |
-| Mayhem | 432 / 441 (100 exact) | 429 | lalalune's Round-36 Mayhem reached 432; we hold 429 (parity base), **−3 behind**. The 9 remaining windows are whole-function codegen divergences (whole-ELF class), not reachable by localized source edits |
+| PumpSwap | 660 / 785 (159 raw) | **681 / 785** (148 raw) | base path-prefix remap reproduces their 643 exactly, then `error!` closures placed on deployed lines (+11 → 654); then a verified d1→d2→f2→g3 chain (+27): +13 error-closures across deposit/amm_hop, +5 `require!`/`Source` line moves, +4 `pool.rs` declaration reorder, +5 out-of-line `checked_sub3`/`checked_add3` constructor bodies → 681, re-measured on the canonical profile at every step with zero raw loss and zero matched loss |
+| Fees | **585 / 585 (whole-ELF)** | 582 / 585 (200 exact) | lalalune reached **full whole-ELF byte-identity** (585/585, 28 Oct) via Anchor-wrapper + handler-noalias source reconstruction (see `docs/WRAPPER_RECONSTRUCTION.md`). We hold 582/200 (their prior checkpoint, reproduced byte-for-byte); the 3 remaining (Sweep reg-alloc, Crank/CreateDonation wrappers) are now known-reconstructable by their method |
+| Pump | 823 / 1035 (203 raw) | **802 / 1035 (161 raw)** | per-site `error!` closures on deployed lines; `migrate` quote fix (execution-verified); +4 trade-body windows via `black_box`; then a verified **chantier** chain (#22–#32) of function-size reconstructions (`with_account_name`/`Pk7`/`Pk8` out-of-line bodies, typed CPI wrappers, signer-seed inlining) → **786→802, raw 137→161**, measured monotonic with zero loss at every step. lalalune's Round-37 pump (823/203) is now ahead; closing it = the chantier (`docs/CHANTIER.md`) |
+| Mayhem | 438 / 441 (141 raw) | 429 | lalalune advanced to 438/141; we hold 429, **−9 behind**. Remaining windows are whole-function codegen — now known-reconstructable by the wrapper/noalias method (`docs/WRAPPER_RECONSTRUCTION.md`) |
 
-**Honest standing vs lalalune (27 Oct 2026).** We lead PumpSwap (**+30**) and Pump's
-normalized windows (**+48**), and tie Fees (582/200, both 3 unmatched). They lead Pump's
-raw-byte-exact count (**145 vs our 137**) and Mayhem (**432 vs our 429**). Regaining Pump
-raw is a link-order / whole-ELF problem. A measured block-reorder attempt (reordering a
-118-function size-identical run to the deployed internal order) **regressed** raw 137→128:
-a function's position is the cumulative sum of all preceding function sizes, so symbol-order
-alone cannot place a callee at its deployed offset. This is the same unsolved
-whole-function-layout wall as Mayhem's 9 remaining windows — not cracked by anyone (their
-raw edge is incidental alignment, not a solution).
+**Honest standing vs lalalune (28 Oct 2026).** lalalune pushed hard overnight and now leads
+Pump (823/203 vs our 802/161), Mayhem (438/141 vs 429), and **finished Fees at full whole-ELF
+byte-identity (585/585)** — the first core program made bit-for-bit identical. We still lead
+**PumpSwap normalized (681 vs 660)**; they lead PumpSwap raw (159 vs 148). Our overnight
+**chantier** chain reconstructed function-size drift to take Pump 786→**802 / raw 137→161**
+(verified, zero loss), closing most of the gap their new raw opened.
+
+The key reversal: our earlier verdict that the raw/whole-ELF wall was unreachable was **wrong**.
+lalalune's Fees whole-ELF proves it is source-reconstructable — the Anchor wrapper is a
+deterministic function of (macro version)×(field order)×(field type)×(constraints), and
+handler-body regalloc divergences are fixed by wrapper-type/noalias source form, not flags.
+Method extracted in [`docs/WRAPPER_RECONSTRUCTION.md`](docs/WRAPPER_RECONSTRUCTION.md); the
+byte-for-byte plan is the task board [`docs/CHANTIER.md`](docs/CHANTIER.md).
 
 Every result has a packet in [`research/`](research/README.md) (patch + build recipe +
 measure JSON). Whole-ELF byte-identity of the four core programs: **not achieved

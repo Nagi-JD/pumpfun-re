@@ -4,8 +4,9 @@ Objectif : **byte-for-byte (whole-ELF)** sur les programmes core, en commençant
 Le per-site est épuisé ; ce qui reste est la reconstruction de la **structure source**, source de
 dérive par source de dérive. Contexte complet : [`WHOLE_ELF_FRONTIER.md`](WHOLE_ELF_FRONTIER.md).
 
-**Base de mesure (pump, profil s7clean) :** 786 normalized / **137 raw** / 1035.
-**Cible de la course :** dépasser le raw de lalalune (**145**).
+**Base de mesure (pump, profil s7p) :** **802 normalized / 161 raw** / 1035 (après la chaîne
+vérifiée #22–#32, mergée le 28 oct — partie de 786/137).
+**Cible de la course :** rattraper lalalune, désormais à **823 / 203 raw** (Round-37, 28 oct).
 
 ## Règles (toutes les tâches)
 
@@ -117,13 +118,15 @@ Plafond estimé par ordre seul ≈ +100 raw ; 333 fenêtres exigent T5 (data/rel
 
 | Tâche | Statut | Owner | Raw avant → après |
 |---|---|---|---|
-| T0 solveur | open | — | — |
-| T1 with_values | open | — | 137 → ? |
-| T2 drift map | blocked (T0) | — | — |
-| T3 wrappers | open | — | — |
-| T4 tailles | blocked (T2) | — | — |
+| T0 solveur | **merged** (#22) | Shuai-Qing | — |
+| T1 with_values | superseded | — | (root is `with_account_name`, addressed by #24) |
+| T2 drift map | **merged** (#23) | Shuai-Qing | — |
+| T3 wrappers | open (method ready) | — | — |
+| T4 tailles | **merged #24–#32** | Shuai-Qing | 137 → **161** |
 | T5 data/reloc | open | — | — |
-| T6 ordre | blocked (T1–T5) | — | — |
+| T6 layout (relayout+anchor vendored) | open | — | — |
 | T7 PumpSwap | blocked (pump) | — | — |
+
+Next: **T6 infra** (relayout.py + vendored Anchor 0.31.2 `#[used]` macro — we already have it from Fees) is the enabler for T3/T5; a measured "wire vendored macro into pump" experiment is in flight.
 
 Pour claimer : ouvre une issue `chantier: T<n> <titre>` puis une PR avec le packet mesuré.
