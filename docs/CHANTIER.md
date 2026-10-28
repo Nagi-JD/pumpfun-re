@@ -59,11 +59,20 @@ classer chaque source : `monomorph` / `wrapper Anchor` / `taille de fonction sou
 
 ## T3 — Wrappers Anchor (`try_accounts` / `try_deserialize`)
 
+> **MÉTHODE PROUVÉE : [`docs/WRAPPER_RECONSTRUCTION.md`](WRAPPER_RECONSTRUCTION.md)** — lalalune a
+> atteint le whole-ELF Fees (585/585) en reconstruisant exactement ces wrappers. **Notre verdict
+> « whole-ELF, non éditable » était faux** : le wrapper est une fonction déterministe de
+> (version macro Anchor) × (ordre des champs) × (type des champs) × (contraintes). On reconstruit le
+> `#[derive(Accounts)]` struct, jamais l'ELF.
+
 Les gros gateurs (≈154 fenêtres chacun) : `LegacyBuy::try_accounts` (8128 B), `Create::try_accounts`
 (6672 / 6464 B), `Initialize::try_accounts` (5896 B), `IdlAccount::try_deserialize` / `Global::try_deserialize`
-(728 B). Le wrapper est généré depuis le `#[derive(Accounts)]` struct.
-Pour chaque wrapper : diff déployé vs candidat (ordre des comptes, contraintes `seeds`/`has_one`/`owner`/
-`mut`, types `Account`/`UncheckedAccount`), reconstruire le struct exact, mesurer.
+(728 B). Recette : diff généré vs désassemblage → attribuer chaque écart à {ordre, type, contrainte,
+version macro} → changer ce construct exact → rebuild → re-diff. **Deux leviers clés** :
+- **champ `AccountInfo` possédé** (vs emprunté) → décale les offsets du `exit`/parser généré ;
+- **`&UncheckedAccount` (pas `&AccountInfo`) passé aux helpers** → tue la divergence regalloc par
+  noalias dans les corps de handler (`let x: &AccountInfo = x.as_ref();`).
+
 **Un sous-claim par instruction.** **Effort :** L chacun.
 
 ## T4 — Tailles de fonctions source (Δ résiduels)
@@ -80,11 +89,20 @@ ont une adresse = cumul des enregistrements précédents. Énumérer les enregis
 mapper chacun à son origine source, reproduire **ordre + taille** (ordre des strings, dédup, tables).
 **Livrable :** carte data + patch. **Effort :** L. Débloque les fenêtres raw-fail à diff `lddw`.
 
-## T6 — Levier d'ordre (uniquement après T1–T5)
+## T6 — Couche de layout whole-ELF (après T1–T5)
 
-Une fois Δ≈0, générer `ordered.ld` depuis l'ordre déployé (comme s7clean) pour placer fonctions et data
-à leur offset. **Inutile tant que Δ≠0** (mesuré : reorder seul = −9 raw).
-**Effort :** S.
+> Pas « juste un reorder ». Le whole-ELF Fees de lalalune a nécessité une **couche de layout**
+> complète (voir [`WRAPPER_RECONSTRUCTION.md`](WRAPPER_RECONSTRUCTION.md) §d). À porter sur pump :
+> 1. `ordered.ld` appliqué via un **wrapper de linker** autour de `rust-lld` (on l'a déjà sur s7clean) ;
+> 2. **`relayout.py`** — régénère `ordered.ld` après **chaque** changement source (bind par nom /
+>    identité de contenu / graphe d'appels) ; chaque edit = un re-bind. ← **à construire** ;
+> 3. **macro `anchor-attribute-program` vendored avec `#[used]`, Anchor 0.32.1** — les crates stock
+>    crates.io ne reproduisent pas les bytes de wrapper. ← **prérequis dur, à vérifier/vendorer** ;
+> 4. **padding par lignes blanches** pour préserver les numéros de ligne (ils alimentent les records
+>    `.rodata` Source/Location → load-bearing) ;
+> 5. **`--gc-sections`** pour supprimer tout helper candidat-only non appelé (égalise le compte de fenêtres).
+>
+> Reorder seul, tant que Δ≠0, est **inutile** (mesuré : −9 raw). **Effort :** L.
 
 ## T7 — Porter sur PumpSwap (après succès pump)
 
