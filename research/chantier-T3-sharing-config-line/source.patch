@@ -1,0 +1,60 @@
+--- a/programs/pump/src/distribution.rs
++++ b/programs/pump/src/distribution.rs
+@@ -7,23 +7,23 @@
+ impl Owner for SharingConfig{fn owner()->Pubkey{FEES}}
+ impl Discriminator for SharingConfig{const DISCRIMINATOR:&'static[u8]=&[216,74,9,0,56,140,93,75];}
+ impl AccountSerialize for SharingConfig{}
+-impl AccountDeserialize for SharingConfig {
+-    fn try_deserialize(buf: &mut &[u8]) -> Result<Self> {
+-        if buf.len() < Self::DISCRIMINATOR.len() {
+-            return Err(anchor_lang::error::ErrorCode::AccountDiscriminatorNotFound.into());
+-        }
+-        let given_disc = &buf[..Self::DISCRIMINATOR.len()];
+-        if Self::DISCRIMINATOR != given_disc {
+-            return Err(error!(anchor_lang::error::ErrorCode::AccountDiscriminatorMismatch).with_account_name("SharingConfig"));
+-        }
+-        Self::try_deserialize_unchecked(buf)
+-    }
+-    fn try_deserialize_unchecked(buf: &mut &[u8]) -> Result<Self> {
+-        let mut data: &[u8] = &buf[Self::DISCRIMINATOR.len()..];
+-        AnchorDeserialize::deserialize(&mut data)
+-            .map_err(|_| anchor_lang::error::ErrorCode::AccountDidNotDeserialize.into())
+-    }
+-}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+ // Legacy curve layouts omit trailing fields. Keep this read-only view separate from trade state.
+ #[derive(Clone)]pub struct DistributionCurve{pub creator:Pubkey,pub quote_mint:Pubkey}
+ impl Owner for DistributionCurve{fn owner()->Pubkey{crate::ID}}
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -79,10 +79,10 @@
+ 
+ 
+ 
+-
+-
+-
+-
++impl AccountDeserialize for distribution::SharingConfig { fn try_deserialize(buf: &mut &[u8]) -> Result<Self> {
++if buf.len() < Self::DISCRIMINATOR.len() { return Err(anchor_lang::error::ErrorCode::AccountDiscriminatorNotFound.into()); } let given_disc = &buf[..Self::DISCRIMINATOR.len()];
++if Self::DISCRIMINATOR != given_disc { return Err(error!(anchor_lang::error::ErrorCode::AccountDiscriminatorMismatch).with_account_name("SharingConfig")); }
++Self::try_deserialize_unchecked(buf) } fn try_deserialize_unchecked(buf: &mut &[u8]) -> Result<Self> { let mut data: &[u8] = &buf[Self::DISCRIMINATOR.len()..]; AnchorDeserialize::deserialize(&mut data) .map_err(|_| anchor_lang::error::ErrorCode::AccountDidNotDeserialize.into()) } }
+ 
+ 
+ 
