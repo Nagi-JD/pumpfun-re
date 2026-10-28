@@ -1,0 +1,48 @@
+{
+ "before": {
+  "note": "chantier-T3-legacy-buy-payments baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1040,
+  "matched": 888,
+  "exact": 162,
+  "unmatched": 147,
+  "call_consistent_original": 817
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1042,
+  "matched": 890,
+  "exact": 162,
+  "unmatched": 145,
+  "call_consistent_original": 819
+ },
+ "gained_matched": [
+  "0x95f38",
+  "0x96280"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1040,
+  "matched": 888,
+  "exact": 162,
+  "call_only_raw_fail": 232,
+  "potential_if_delta0": 394,
+  "unique_pairs": 887,
+  "intervals_nonzero": 128
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1042,
+  "matched": 890,
+  "exact": 162,
+  "call_only_raw_fail": 234,
+  "potential_if_delta0": 396,
+  "unique_pairs": 889,
+  "intervals_nonzero": 130
+ },
+ "candidate_sha256": "e308790de6e769912b88eb5e4484eb38b5b9875ff95c3b3053cd693cc66d72f3",
+ "symbols_sha256": "db5f2025a078686e29ea4816479665cc6f03b05582129a94437f07c5731380d8"
+}
