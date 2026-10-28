@@ -1,0 +1,64 @@
+--- a/programs/pump/src/sell_v2.rs
++++ b/programs/pump/src/sell_v2.rs
+@@ -5,6 +5,30 @@
+ use crate::trade_types::{TradeEvent,BondingCurve};
+ use crate::legacy_sell::{LegacyFeeConfig,LegacyFeesProgram};
+ const WSOL:Pubkey=anchor_lang::solana_program::pubkey!("So11111111111111111111111111111111111111112");
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+ #[derive(Accounts)]
+ pub struct SellV2<'info>{
+  #[account(seeds=[b"global"],bump)]pub global:Box<Account<'info,Global>>,
+@@ -72,30 +96,6 @@
+ 
+ 
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+ 
+ 
+ 
