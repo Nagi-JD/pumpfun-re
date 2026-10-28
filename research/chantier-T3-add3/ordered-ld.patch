@@ -1,0 +1,10 @@
+--- a/ordered.ld
++++ b/ordered.ld
+@@ -313,6 +313,7 @@
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered5trade18quote_fee_snapshot28_$u7b$$u7b$closure$u7d$$u7d$17hda83fb3bbf22c1d6E")
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered5trade18quote_fee_snapshot28_$u7b$$u7b$closure$u7d$$u7d$17h371fa209bf4e0e97E")
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered5trade8v3_check14validate_trade17h5756f4ff2761d156E")
++    *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered5trade8v3_check4add317h55b51c61ea093c99E")
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered5trade4sell28_$u7b$$u7b$closure$u7d$$u7d$17h9ee7da74121a706eE")
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered5trade8v3_check3add17he28c7b958fb86102E")
+     *pump_recovered.pump_recovered.7e6f3912f6d83f89-cgu.0.rcgu.o(".text._ZN14pump_recovered5trade4sell28_$u7b$$u7b$closure$u7d$$u7d$17h8c0e926708481293E")

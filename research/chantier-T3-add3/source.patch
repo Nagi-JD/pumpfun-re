@@ -1,0 +1,53 @@
+--- a/programs/pump/src/trade_v3.rs
++++ b/programs/pump/src/trade_v3.rs
+@@ -101,7 +101,7 @@
+     Ok(tiers.iter().rev().find(|t|t.market_cap_lamports_threshold<=cap).unwrap_or(first).fees.clone())
+ }
+ #[path="v3_check.rs"] mod v3_check;
+-pub use v3_check::validate_trade; use v3_check::add;
++pub use v3_check::validate_trade; use v3_check::{add,add3};
+ 
+ 
+ 
+@@ -902,7 +902,7 @@
+ 
+ 
+ error!(PumpError::Truncation))?
+-    }else{0}; let post_protocol=if crossing{fee(post_quote,fees.protocol_fee_bps)?}else{0}; let post_creator=if crossing{fee(post_quote,creator_bps)?}else{0}; let (buyback_fee,retained)=v3_buyback_split(protocol_fee,buyback_bps); let (post_buyback,post_retained)=v3_buyback_split(post_protocol,buyback_bps); let transfer_base=add(amount,post_base)?; let total_buyback=add(buyback_fee,post_buyback)?; let first_cost=add(add(quote,protocol_fee)?,creator_fee)?; let user_output=add(first_cost,add(add(post_quote,post_protocol)?,post_creator)?)?; let net_pool_quote=sub(user_output,total_buyback)?; let buyback_received=if is_sol{buyback_fee}else{sub(buyback_fee,quote_fee_for_amount(&quote_fee,buyback_fee,false)?)?}; let quote_transfer_fee=if is_sol{0}else{quote_fee_for_amount(&quote_fee,net_pool_quote,true)?}; let pool_quote=add(net_pool_quote,quote_transfer_fee)?; require_gte!(max_sol_cost,add(pool_quote,total_buyback)?,PumpError::TooMuchSolRequired); let next_base=sub(curve.virtual_token_reserves,amount)?; let next_quote=add(curve.virtual_quote_reserves,quote)?; let next_real_base=sub(curve.real_token_reserves,amount)?; let next_real_quote=add(curve.real_quote_reserves,quote)?; let next_creator=add(add(curve.creator_fee,creator_fee)?,post_creator)?; let next_protocol=add(add(curve.protocol_fees,retained)?,post_retained)?; let mint_key=a.base_mint.key();let bump=[ctx.bumps.bonding_curve]; let seeds:&[&[u8]]=&[b"bonding-curve",mint_key.as_ref(),&bump]; token_interface::transfer_checked(CpiContext::new_with_signer(a.base_token_program.to_account_info(),TransferChecked{ from:a.associated_base_bonding_curve.to_account_info(),mint:a.base_mint.to_account_info(),to:a.associated_base_user.to_account_info(),authority:a.bonding_curve.to_account_info()
++    }else{0}; let post_protocol=if crossing{fee(post_quote,fees.protocol_fee_bps)?}else{0}; let post_creator=if crossing{fee(post_quote,creator_bps)?}else{0}; let (buyback_fee,retained)=v3_buyback_split(protocol_fee,buyback_bps); let (post_buyback,post_retained)=v3_buyback_split(post_protocol,buyback_bps); let transfer_base=add(amount,post_base)?; let total_buyback=add(buyback_fee,post_buyback)?; let first_cost=add3(quote,protocol_fee,creator_fee)?; let user_output=add(first_cost,add3(post_quote,post_protocol,post_creator)?)?; let net_pool_quote=sub(user_output,total_buyback)?; let buyback_received=if is_sol{buyback_fee}else{sub(buyback_fee,quote_fee_for_amount(&quote_fee,buyback_fee,false)?)?}; let quote_transfer_fee=if is_sol{0}else{quote_fee_for_amount(&quote_fee,net_pool_quote,true)?}; let pool_quote=add(net_pool_quote,quote_transfer_fee)?; require_gte!(max_sol_cost,add(pool_quote,total_buyback)?,PumpError::TooMuchSolRequired); let next_base=sub(curve.virtual_token_reserves,amount)?; let next_quote=add(curve.virtual_quote_reserves,quote)?; let next_real_base=sub(curve.real_token_reserves,amount)?; let next_real_quote=add(curve.real_quote_reserves,quote)?; let next_creator=add3(curve.creator_fee,creator_fee,post_creator)?; let next_protocol=add3(curve.protocol_fees,retained,post_retained)?; let mint_key=a.base_mint.key();let bump=[ctx.bumps.bonding_curve]; let seeds:&[&[u8]]=&[b"bonding-curve",mint_key.as_ref(),&bump]; token_interface::transfer_checked(CpiContext::new_with_signer(a.base_token_program.to_account_info(),TransferChecked{ from:a.associated_base_bonding_curve.to_account_info(),mint:a.base_mint.to_account_info(),to:a.associated_base_user.to_account_info(),authority:a.bonding_curve.to_account_info()
+     },&[seeds]),transfer_base,a.base_mint.decimals)?; user_quote_payments::transfer_from_user( is_sol,a.system_program.as_ref(),&a.user,a.bonding_curve.as_ref(), if is_sol{user_output}else{pool_quote},&a.quote_token_program, quote_decimals.unwrap_or_default(),a.quote_mint.as_ref().as_ref(), if is_sol{None}else{Some(a.associated_quote_user.as_ref())}, if is_sol{None}else{Some(a.associated_quote_bonding_curve.as_ref())}, )?; if let Some(decimals)=quote_decimals { if total_buyback!=0 { token_interface::transfer_checked(CpiContext::new(a.quote_token_program.to_account_info(),TransferChecked{from:a.associated_quote_user.to_account_info(),mint:a.quote_mint.to_account_info(),to:a.buyback_fee_recipient.to_account_info(),authority:a.user.to_account_info()}),total_buyback,decimals)?; } }else{  a.bonding_curve.sub_lamports(total_buyback)?;a.buyback_fee_recipient.add_lamports(total_buyback)?; } let curve=&mut a.bonding_curve; curve.virtual_token_reserves=next_base;curve.virtual_quote_reserves=next_quote; curve.real_token_reserves=next_real_base;curve.real_quote_reserves=next_real_quote; curve.creator_fee=next_creator;curve.protocol_fees=next_protocol; if crossing{curve.post_complete_base_out=post_base;curve.post_complete_quote_in=post_quote;} if a.user.key()==a.global.whitelist_pda{a.associated_base_bonding_curve.reload()?;a.associated_base_user.reload()?;let quote_mint=a.bonding_curve.quote_mint;a.bonding_curve.sync_virtual_quote_reserves(a.associated_base_bonding_curve.amount,a.associated_base_user.amount,&quote_mint)?;} let curve=&a.bonding_curve; let event=TradeEvent{ mint:a.base_mint.key(),sol_amount:if is_sol{quote}else{0},token_amount:amount,is_buy:true,user:a.user.key(),timestamp:Clock::get()?.unix_timestamp, virtual_sol_reserves:if is_sol{curve.virtual_quote_reserves}else{0},virtual_token_reserves:next_base,real_sol_reserves:if is_sol{next_real_quote}else{0},real_token_reserves:next_real_base, fee_recipient:Pubkey::default(),fee_basis_points:fees.protocol_fee_bps,fee:protocol_fee,creator:curve.creator,creator_fee_basis_points:fees.creator_fee_bps,creator_fee, track_volume:false,total_unclaimed_tokens:0,total_claimed_tokens:0,current_sol_volume:0,last_update_timestamp:0,ix_name:"buy".into(),mayhem_mode:curve.is_mayhem_mode, cashback_fee_basis_points:0,cashback:0,buyback_fee_basis_points:buyback_bps,buyback_fee:buyback_received,shareholders:vec![],quote_mint:curve.quote_mint, quote_amount:quote,virtual_quote_reserves:curve.virtual_quote_reserves,real_quote_reserves:next_real_quote,holder_rewards_bps:if curve.is_holder_reward{fees.creator_fee_bps}else{0},holder_rewards:if curve.is_holder_reward{creator_fee}else{0},creator_fee_unclaimed:next_creator, unparsed_trailing_field:quote_transfer_fee, }; let completion=if next_real_base==0 { a.bonding_curve.complete=true; Some(crate::trade_types::CompleteEvent{user:a.user.key(),mint:a.base_mint.key(),bonding_curve:a.bonding_curve.key(),timestamp:Clock::get()?.unix_timestamp,quote_mint:a.bonding_curve.quote_mint})
+     }else{None}; let post_event=if crossing{Some(PostCompleteBuyEvent{user:a.user.key(),mint:a.base_mint.key(),bonding_curve:a.bonding_curve.key(),quote_mint:a.bonding_curve.quote_mint,timestamp:Clock::get()?.unix_timestamp,base_out:post_base,quote_in:post_quote,fee_basis_points:fees.protocol_fee_bps,fee:post_protocol,creator_fee_basis_points:fees.creator_fee_bps,creator_fee:post_creator,buyback_fee:post_buyback,pool_base_reserves_before:pool_base_before,pool_quote_reserves_before:pool_quote_before,pool_base_reserves_after:sub(pool_base_before,post_base)?,pool_quote_reserves_after:add(pool_quote_before,post_quote)?})}else{None}; emit!(event.clone());emit_cpi!(event); if let Some(completion)=completion {emit!(completion.clone());emit_cpi!(completion);} if let Some(post_event)=post_event{emit!(post_event.clone());emit_cpi!(post_event);} Ok(())
+ } 
+@@ -1144,7 +1144,7 @@
+     let (post_buyback,post_retained)=v3_buyback_split(post_protocol,buyback_bps);
+     let transfer_base=add(amount,post_base)?;
+     if !(exceeds && (curve.is_mayhem_mode || is_fee_exempt) && partial_fill){require_gte!(transfer_base,min_tokens_out,PumpError::BuySlippageBelowMinTokensOut);};
+-    let user_output=add(first_cost,add(add(post_quote,post_protocol)?,post_creator)?)?;
++    let user_output=add(first_cost,add3(post_quote,post_protocol,post_creator)?)?;
+ 
+     let next_base=(curve.virtual_token_reserves).checked_sub(amount).ok_or_else(||
+ 
+@@ -1156,8 +1156,8 @@
+     let next_quote=add(curve.virtual_quote_reserves,quote)?;
+     let next_real_base=sub(curve.real_token_reserves,amount)?;
+     let next_real_quote=add(curve.real_quote_reserves,quote)?;
+-    let next_creator=add(add(curve.creator_fee,creator_fee)?,post_creator)?;
+-    let next_protocol=add(add(curve.protocol_fees,retained)?,post_retained)?;
++    let next_creator=add3(curve.creator_fee,creator_fee,post_creator)?;
++    let next_protocol=add3(curve.protocol_fees,retained,post_retained)?;
+     let total_buyback=add(buyback_fee,post_buyback)?;
+     let net_pool_quote=sub(user_output,total_buyback)?;
+     // Main-event buyback_fee reports the net of the first-fill buyback only; any
+--- a/programs/pump/src/v3_check.rs
++++ b/programs/pump/src/v3_check.rs
+@@ -281,8 +281,8 @@
+ 
+ 
+ 
+-
+-
++#[inline(never)] pub(super)
++fn add3(a:u64,b:u64,c:u64)->Result<u64>{a.checked_add(b).and_then(|s|s.checked_add(c)).ok_or_else(||error!(PumpError::Overflow))}
+ 
+ 
+ 
