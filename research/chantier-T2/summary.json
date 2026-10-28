@@ -1,0 +1,27 @@
+{
+ "unique_pairs": 784,
+ "intervals_nonzero": 77,
+ "data_reloc_windows": 431,
+ "by_class": {
+  "anchor_wrapper": {
+   "intervals": 6,
+   "spoiled_call_only": 591,
+   "abs_delta": 63288
+  },
+  "monomorph": {
+   "intervals": 30,
+   "spoiled_call_only": 2123,
+   "abs_delta": 189792
+  },
+  "order_island": {
+   "intervals": 24,
+   "spoiled_call_only": 1594,
+   "abs_delta": 25975960
+  },
+  "source_fn_size": {
+   "intervals": 17,
+   "spoiled_call_only": 1156,
+   "abs_delta": 156184
+  }
+ }
+}
