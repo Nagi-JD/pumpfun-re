@@ -59,7 +59,7 @@ distinctes avec des lignes différentes.
 
 | # | Cause | Fenêtres | Levier source |
 |---|---|---:|---|
-| **R1** | `Location.line`/`col` déployés ≠ source compacte de l'oracle | ~62 | re-ligner le fichier : blank-lines **dans** les closures / entre items, en préservant les lignes des autres sites |
+| **R1** | `Location.line`/`col` déployés ≠ source compacte de l'oracle | ~45-55 | re-ligner le fichier : blank-lines **dans** les closures / entre items, en préservant les lignes des autres sites |
 | **R2** | slots de frame / lifetime de temporaires / ordre de blocs | ~14 | bindings nommés, tuples, `let` de slice, `&UncheckedAccount` (noalias), fusion/défusion de helpers, ordre `if` |
 | **R3** | layout `GlobalConfig` (ordre mémoire ≠ ordre wire) | 4 | réordonner la déclaration + `AnchorSerialize` manuel, cf. §6 |
 | **R4** | inlining / clonage de corps (deux copies `quote_for_sell`, `select_and_apply`, gros handlers) | ~20 | dupliquer la logique au bon endroit, `#[inline(never)]`, séparer les helpers |
