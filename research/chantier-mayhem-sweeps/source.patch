@@ -1,0 +1,285 @@
+--- a/programs/mayhem/src/instructions/fee_recipients.rs	1970-01-01 01:00:00.000000000 +0100
++++ b/programs/mayhem/src/instructions/fee_recipients.rs	2026-10-28 13:08:17.288056704 +0100
+@@ -10,8 +10,8 @@
+ 
+ 
+ 
+-
+-
++#[event(discriminator = [218,130,134,253,101,109,149,152])]
++pub struct SweepEvent { pub amount: u64, pub timestamp: i64 }
+ 
+ 
+ 
+@@ -49,18 +49,18 @@
+ 
+ 
+ 
+-
+-
+         let last = if native {self.field_10}else{self.field_34} as i64;
+-        let interval = global_params.field_10 as i64;
+-        if last != 0 && interval != 0 {
++        let flag = &native;
++
+ 
++        if last != 0 && global_params.field_10 as i64 != 0 {
++            let interval = global_params.field_10 as i64;
+             let next_time =    last + interval;
+ 
+ 
+             require!(current_time >= next_time, crate::MayhemError::SweepFeeRateLimit);
+         }
+-        if native {self.field_10=current_time as u64;}else{self.field_34=current_time as u64;}
++        if *flag {self.field_10=current_time as u64;}else{self.field_34=current_time as u64;}
+         Ok(())
+     }
+ }
+@@ -202,6 +202,13 @@
+ 
+ 
+ 
++fn sweepable(total: u64, amount: u64, limit: u64) -> u64 {
++    if total == limit { return 0; }
++    if total + amount >= limit {
++        return limit - total;
++    }
++    amount
++}
+ 
+ 
+ 
+@@ -254,11 +261,55 @@
+ 
+ 
+ 
++impl<'info> crate::SweepFees<'info> {
++    fn sweep(&self, remaining_accounts: &'info [AccountInfo<'info>], native: bool, global_params: &Account<'info, GlobalParams>) -> Result<u64> {
+ 
++        let limit = if native { global_params.max_sol_per_sweep } else { global_params.max_stable_per_sweep };
++        let mut total = 0u64; let trader: &AccountInfo<'info> = self.trader.as_ref(); let trader_quote_ata: &AccountInfo<'info> = self.trader_quote_ata.as_ref(); let token_program: &AccountInfo<'info> = self.token_program.as_ref();
++        for pair in remaining_accounts.chunks_exact(2) {
++            let mut recipient = Account::<FeeRecipient>::try_from(&pair[0])?;
++            let ata = InterfaceAccount::<TokenAccount>::try_from(&pair[1])?;
++            recipient.validate_sweep(global_params, native)?;
++            let index = &[recipient.index]; let seeds: &[&[u8]] = &[b"fee-recipient", index, &[recipient.bump]];
++            let mut amount = sweepable(total, ata.amount, limit);
++            if amount > 0 { anchor_spl::token::transfer(CpiContext::new_with_signer(token_program.key(), anchor_spl::token::Transfer { from: ata.to_account_info(), to: trader_quote_ata.to_account_info(), authority: recipient.to_account_info() }, &[seeds]), amount)?;
++                total = total.checked_add(amount)                                 .unwrap();
++            }
++            let mut lamports = 0;
++            if native {
++
++                lamports = recipient.get_lamports();
++                let rent = Rent::get()?;
++                let space = pair[0].data_len();
++                lamports -= rent.minimum_balance(space);
++                lamports = sweepable(total, lamports, limit);
++            }
++
++
++            if lamports > 0 {
++                **recipient.to_account_info().try_borrow_mut_lamports()? -= lamports;
++                **trader.to_account_info().try_borrow_mut_lamports()? += lamports;
++
++
++                amount = amount.checked_add(lamports)
++                    .unwrap();
++                total = total.checked_add(lamports)                                 .unwrap();
++            }
+ 
+ 
+ 
+ 
++            if native {
++                recipient.field_18 += amount;
++            } else {
++
++                recipient.field_26 += amount;
++            }
++            recipient.exit(&crate::ID)?;
++        }
++        Ok(total)
++    }
++}
+ 
+ 
+ 
+@@ -286,25 +337,49 @@
+ 
+ 
+ 
++impl<'info> crate::SweepFeesAdmin<'info> {
++    fn sweep(&self, remaining_accounts: &'info [AccountInfo<'info>]) -> Result<u64> {
++        let native = self.quote_mint.key() == anchor_spl::token::spl_token::native_mint::ID;
++        let mut total = 0u64; let admin: &AccountInfo<'info> = self.admin.as_ref(); let admin_quote_ata: &AccountInfo<'info> = self.admin_quote_ata.as_ref(); let token_program: &AccountInfo<'info> = self.token_program.as_ref();
++        for pair in remaining_accounts.chunks_exact(2) {
++            let mut recipient = Account::<FeeRecipient>::try_from(&pair[0])?;
++            let ata = InterfaceAccount::<TokenAccount>::try_from(&pair[1])?;
++            let index = &[recipient.index]; let seeds: &[&[u8]] = &[b"fee-recipient", index, &[recipient.bump]];
++            let mut amount = ata.amount;
++            if amount > 0 {
++                anchor_spl::token::transfer(CpiContext::new_with_signer(token_program.key(), anchor_spl::token::Transfer { from: ata.to_account_info(), to: admin_quote_ata.to_account_info(), authority: recipient.to_account_info() }, &[seeds]), amount)?;
+ 
+ 
++                total = total.checked_add(amount)                                 .unwrap();
++            }
++            let mut lamports = 0;
++            if native {
+ 
++                lamports =          recipient.get_lamports() - Rent::get()?.minimum_balance(pair[0].data_len());
++            }
+ 
++            if lamports > 0 {
++                **recipient.to_account_info().try_borrow_mut_lamports()? -= lamports;
++                **admin.to_account_info().try_borrow_mut_lamports()? += lamports;
+ 
+ 
++                amount = amount.checked_add(lamports)
++                    .unwrap();
++                total = total.checked_add(lamports)                                 .unwrap();
++            }
+ 
+ 
+ 
+ 
+-impl FeeRecipient {
+-    #[inline(always)]
+-    pub fn record_trader_sweep(&mut self, amount:u64, native:bool) {
+-        if native {
+-                self.field_18 += amount;
+-        } else {
++            if native {
++                recipient.field_18 += amount;
++            } else {
+ 
+-                self.field_26 += amount;
++                recipient.field_26 += amount;
++            }
++            recipient.exit(&crate::ID)?;
+         }
++        Ok(total)
+     }
+ }
+ 
+@@ -319,6 +394,15 @@
+ 
+ 
+ 
++pub(crate) fn sweep_fees_admin<'info>(ctx: Context<'info, crate::SweepFeesAdmin<'info>>) -> Result<()> {
++    let accounts = &*ctx.accounts;
++    require!(ctx.remaining_accounts.len() == 16, crate::MayhemError::AccountTypeNotSupported);
++    let amount = accounts.sweep(ctx.remaining_accounts)?;
++    let event = SweepEvent { amount, timestamp: Clock::get()?.unix_timestamp };
++    emit!(event);
++    emit_cpi!(event);
++    Ok(())
++}
+ 
+ 
+ 
+@@ -342,40 +426,12 @@
+ 
+ 
+ 
++pub(crate) fn sweep_fees<'info>(ctx: Context<'info, crate::SweepFees<'info>>) -> Result<()> {
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-impl FeeRecipient {
+-    #[inline(always)]
+-    pub fn record_admin_sweep(&mut self, amount:u64, native:bool) {
+-        if native {
+-                self.field_18 += amount;
+-        } else {
+-
+-                self.field_26 += amount;
+-        }
+-    }
++    require!(ctx.remaining_accounts.len() == 16, crate::MayhemError::AccountTypeNotSupported);
++    let native = ctx.accounts.quote_mint.key() == anchor_spl::token::spl_token::native_mint::ID; let amount = ctx.accounts.sweep(ctx.remaining_accounts, native, &ctx.accounts.global_params)?;
++    let event = SweepEvent { amount, timestamp: Clock::get()?.unix_timestamp };
++    emit!(event);
++    emit_cpi!(event);
++    Ok(())
+ }
+--- a/programs/mayhem/src/lib.rs	1970-01-01 01:00:00.000000000 +0100
++++ b/programs/mayhem/src/lib.rs	2026-10-28 13:08:17.288056704 +0100
+@@ -34,13 +34,10 @@
+         instructions::burn::handler(ctx)
+     }
+     pub fn sweep_fees<'info>(ctx: Context<'info, SweepFees<'info>>) -> Result<()> {
+-        let limit = if ctx.accounts.quote_mint.key() == anchor_spl::token::spl_token::native_mint::ID { ctx.accounts.global_params.max_sol_per_sweep } else { ctx.accounts.global_params.max_stable_per_sweep };
+-        let amount = sweep_remaining(ctx.remaining_accounts, &ctx.accounts.trader.to_account_info(), &ctx.accounts.trader_quote_ata.to_account_info(), &ctx.accounts.token_program.to_account_info(), ctx.accounts.quote_mint.key(), limit, false, &ctx.accounts.global_params)?;
+-        let event = SweepEvent { amount, timestamp: Clock::get()?.unix_timestamp }; emit!(event); emit_cpi!(event); Ok(())
++        instructions::fee_recipients::sweep_fees(ctx)
+     }
+     pub fn sweep_fees_admin<'info>(ctx: Context<'info, SweepFeesAdmin<'info>>) -> Result<()> {
+-        let amount = sweep_remaining(ctx.remaining_accounts, &ctx.accounts.admin.to_account_info(), &ctx.accounts.admin_quote_ata.to_account_info(), &ctx.accounts.token_program.to_account_info(), ctx.accounts.quote_mint.key(), u64::MAX, true, &ctx.accounts.global_params)?;
+-        let event = SweepEvent { amount, timestamp: Clock::get()?.unix_timestamp }; emit!(event); emit_cpi!(event); Ok(())
++        instructions::fee_recipients::sweep_fees_admin(ctx)
+     }
+     pub fn withdraw_quote_admin(ctx: Context<WithdrawQuoteAdmin>, amount: u64) -> Result<()> {
+         ctx.accounts.global_params.validate_quote_withdraw()?;
+@@ -422,38 +419,6 @@
+     pub system_program: Program<'info,System>,
+ }
+ 
+-#[event(discriminator = [218,130,134,253,101,109,149,152])]
+-pub struct SweepEvent { pub amount: u64, pub timestamp: i64 }
+-fn sweep_remaining<'info>(remaining: &'info [AccountInfo<'info>], destination: &AccountInfo<'info>, destination_ata: &AccountInfo<'info>, token: &AccountInfo<'info>, mint: Pubkey, limit: u64, admin: bool, global_params: &GlobalParams) -> Result<u64> {
+-    require_eq!(remaining.len(),16,MayhemError::AccountTypeNotSupported);
+-    let rent = Rent::get()?;
+-    let mut total = 0u64;
+-    for pair in remaining.chunks_exact(2) {
+-        let mut recipient=Account::<FeeRecipient>::try_from(&pair[0])?;
+-        let ata=InterfaceAccount::<TokenAccount>::try_from(&pair[1])?; if !admin {recipient.validate_sweep(global_params, mint == anchor_spl::token::spl_token::native_mint::ID)?;}
+-        let before_total=total;
+-        let available = limit - total;
+-        let token_amount = ata.amount.min(available);
+-        if token_amount > 0 {
+-            let index=[recipient.index];let bump=[recipient.bump];let seeds: &[&[u8]]=&[b"fee-recipient", &index, &bump];
+-            anchor_spl::token::transfer(CpiContext::new_with_signer(*token.key, anchor_spl::token::Transfer { from: ata.to_account_info(), to: destination_ata.clone(), authority: recipient.to_account_info() }, &[seeds]),token_amount)?;
+-            total += token_amount;
+-        }
+-        if mint == anchor_spl::token::spl_token::native_mint::ID {
+-            let account = recipient.to_account_info();
+-            let amount = (account.lamports() - rent.minimum_balance(account.data_len())).min(limit-total);
+-            **account.try_borrow_mut_lamports()? -= amount;
+-            **destination.try_borrow_mut_lamports()? += amount;
+-            total += amount;
+-        }
+-        let amount = total - before_total;
+-        if admin { recipient.record_admin_sweep(amount, mint == anchor_spl::token::spl_token::native_mint::ID); } else { recipient.record_trader_sweep(amount, mint == anchor_spl::token::spl_token::native_mint::ID); }
+-
+-
+-        recipient.exit(&ID)?;
+-    }
+-    Ok(total)
+-}
+ 
+ #[derive(Accounts)]
+ pub struct SweepFees<'info> {
