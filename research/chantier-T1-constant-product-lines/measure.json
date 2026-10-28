@@ -1,0 +1,47 @@
+{
+ "before": {
+  "note": "chantier-T3-control-account baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1045,
+  "matched": 892,
+  "exact": 162,
+  "unmatched": 143,
+  "call_consistent_original": 819
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1045,
+  "matched": 893,
+  "exact": 162,
+  "unmatched": 142,
+  "call_consistent_original": 821
+ },
+ "gained_matched": [
+  "0x880b0"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1045,
+  "matched": 892,
+  "exact": 162,
+  "call_only_raw_fail": 236,
+  "potential_if_delta0": 398,
+  "unique_pairs": 891,
+  "intervals_nonzero": 132
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1045,
+  "matched": 893,
+  "exact": 162,
+  "call_only_raw_fail": 236,
+  "potential_if_delta0": 398,
+  "unique_pairs": 892,
+  "intervals_nonzero": 133
+ },
+ "candidate_sha256": "d37303deb66741617937fe7c63923a9f8a45db71fef16c9a9bbb775e52adf225",
+ "symbols_sha256": "a12ee3ea8976a00aac9d6010e94d4d923e23d071ea034c942e127e4782a7b966"
+}
