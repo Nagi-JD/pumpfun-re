@@ -1,0 +1,18 @@
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -130,7 +130,7 @@
+ 
+     pub fn set_reserved_fee_recipients(ctx:Context<AdminReadonly>,whitelist_pda:Pubkey)->Result<()>{
+      require_gte!(ctx.remaining_accounts.len(),8,PumpError::NotEnoughRemainingAccounts);
+-     for (index,account) in ctx.remaining_accounts.iter().take(8).enumerate(){require_keys_neq!(account.key(),Pubkey::default(),PumpError::AllFeeRecipientsShouldBeNonZero);if account.executable{return Err(error!(anchor_lang::error::ErrorCode::ConstraintExecutable).with_account_name(format!("reserved_fee_recipients[{}]",index)));}if !Rent::get()?.is_exempt(account.lamports(),account.data_len()){return Err(error!(anchor_lang::error::ErrorCode::ConstraintRentExempt).with_account_name(format!("reserved_fee_recipients[{}]",index)));}}
++     let rent=Rent::get()?;for (index,account) in ctx.remaining_accounts.iter().take(8).enumerate(){require_keys_neq!(account.key(),Pubkey::default(),PumpError::AllFeeRecipientsShouldBeNonZero);if account.executable{return Err(anchor_lang::error::Error::from(anchor_lang::error::ErrorCode::ConstraintExecutable).with_account_name(format!("reserved_fee_recipients[{}]",index)));}if !rent.is_exempt(account.lamports(),account.try_data_len()?){crate::cold_path();return Err(anchor_lang::error::Error::from(anchor_lang::error::ErrorCode::ConstraintRentExempt).with_account_name(format!("reserved_fee_recipients[{}]",index)));}}
+      let first=ctx.remaining_accounts[0].key();let rest=core::array::from_fn(|i|ctx.remaining_accounts[i+1].key());
+      ctx.accounts.global.whitelist_pda=whitelist_pda;ctx.accounts.global.reserved_fee_recipient=first;ctx.accounts.global.reserved_fee_recipients=rest;
+      let event=ReservedFeeRecipientsEvent{timestamp:Clock::get()?.unix_timestamp,reserved_fee_recipient:first,reserved_fee_recipients:rest};emit!(event.clone());emit_cpi!(event);Ok(())
+@@ -1163,3 +1163,6 @@
+     }
+ 
+ }
++#[cold]
++#[inline(never)]
++fn cold_path() {}

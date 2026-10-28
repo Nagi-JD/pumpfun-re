@@ -1,0 +1,70 @@
+{
+ "before_s7p": {
+  "original_windows": 1035,
+  "candidate_windows": 997,
+  "matched": 786,
+  "exact": 137,
+  "unmatched": 249,
+  "call_consistent_original": 678
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 999,
+  "matched": 788,
+  "exact": 138,
+  "unmatched": 247,
+  "call_consistent_original": 680
+ },
+ "gained_matched": [
+  "0x2bc0",
+  "0xd300"
+ ],
+ "lost_matched": [],
+ "gained_raw": [
+  "0xd240"
+ ],
+ "lost_raw": [],
+ "variants": {
+  "t6a_constraint_form_only": {
+   "matched": 786,
+   "exact": 137,
+   "candidate_sha256": "60025733eab228aa89a25b81344e02acbd49f4b9683a447f1e490d36d7e4da38"
+  },
+  "cold_marker_stock_ordered_ld": {
+   "matched": 788,
+   "exact": 137,
+   "candidate_sha256": "17c781f4df80b4d86afcd6abe7624c77d81e12b619ea5573ebaded00a6c9910b"
+  },
+  "cold_marker_on_s7p_body_with_ordered_ld": {
+   "matched": 788,
+   "exact": 138,
+   "candidate_sha256": "2a5980851621dc65d227a924c3f5d4e4dec2cc200a44fe094d93bb34551b092c"
+  },
+  "final_constraint_form_cold_marker_ordered_ld": {
+   "matched": 788,
+   "exact": 138,
+   "candidate_sha256": "ec3f7295a9ef5ad47244c1bf747c02142fe2e22e40a62063ee3630703a0484cd",
+   "symbols_sha256": "df0f4534a4ac124ed713c2db5b4f8f64bd88c7f36bdecee5f9b413a1506d0219"
+  }
+ },
+ "drift_solver_after": {
+  "call_only_raw_fail": 219,
+  "potential_if_delta0": 357,
+  "intervals_nonzero": 75,
+  "root": {
+   "dep_left": "0x6e78",
+   "dep_right": "0x7b40",
+   "delta": -688
+  }
+ },
+ "drift_solver_before": {
+  "call_only_raw_fail": 218,
+  "potential_if_delta0": 355,
+  "intervals_nonzero": 77,
+  "root": {
+   "dep_left": "0x2930",
+   "dep_right": "0x2ca8",
+   "delta": -232
+  }
+ }
+}
