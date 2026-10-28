@@ -1,0 +1,47 @@
+{
+ "before": {
+  "note": "chantier-T3-legacy-buy baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 812,
+  "exact": 161,
+  "unmatched": 223,
+  "call_consistent_original": 702
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 813,
+  "exact": 161,
+  "unmatched": 222,
+  "call_consistent_original": 702
+ },
+ "gained_matched": [
+  "0xfdf20"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 812,
+  "exact": 161,
+  "call_only_raw_fail": 205,
+  "potential_if_delta0": 366,
+  "unique_pairs": 811,
+  "intervals_nonzero": 88
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 813,
+  "exact": 161,
+  "call_only_raw_fail": 205,
+  "potential_if_delta0": 366,
+  "unique_pairs": 812,
+  "intervals_nonzero": 88
+ },
+ "candidate_sha256": "1ce9df3a268c600b11341d1ae8822b5d34e4f92cb27cd246f85edb73bab7513c",
+ "symbols_sha256": "3cd921aa5d8853feb111ad7a62a406333512173199558695e653cef169bf3afd"
+}

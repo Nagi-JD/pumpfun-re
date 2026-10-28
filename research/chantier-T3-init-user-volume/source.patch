@@ -1,0 +1,48 @@
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -461,16 +461,16 @@
+ #[account]
+ #[derive(Default)]
+ pub struct UserVolumeAccumulator{pub user:Pubkey,pub needs_claim:bool,pub total_unclaimed_tokens:u64,pub total_claimed_tokens:u64,pub current_sol_volume:u64,pub last_update_timestamp:i64,pub has_total_claimed_tokens:bool,pub cashback_earned:u64,pub total_cashback_claimed:u64,pub stable_cashback_earned:u64,pub total_stable_cashback_claimed:u64}
+-#[event_cpi]
+-#[derive(Accounts)]
+-pub struct InitUserVolume<'info>{
+- #[account(mut)] pub payer:Signer<'info>,
+- /// CHECK: any user may be funded by the payer.
+- pub user:AccountInfo<'info>,
+- #[account(init_if_needed,payer=payer,space=137,seeds=[b"user_volume_accumulator",user.key().as_ref()],bump)]
+- pub user_volume_accumulator:Account<'info,UserVolumeAccumulator>,
+- pub system_program:Program<'info,System>,
+-}
++include!("token_incentives/init_user_volume_accumulator.rs");
++
++
++
++
++
++
++
++
++
+ #[event_cpi]
+ #[derive(Accounts)]
+ pub struct CloseUserVolume<'info>{
+--- a/programs/pump/src/token_incentives/init_user_volume_accumulator.rs
++++ b/programs/pump/src/token_incentives/init_user_volume_accumulator.rs
+@@ -0,0 +1,16 @@
++
++
++
++
++
++
++#[event_cpi]
++#[derive(Accounts)]
++pub struct InitUserVolume<'info>{
++ #[account(mut)] pub payer:Signer<'info>,
++ /// CHECK: any user may be funded by the payer.
++ pub user:AccountInfo<'info>,
++ #[account(init_if_needed,payer=payer,space=137,seeds=[b"user_volume_accumulator",user.key().as_ref()],bump)]
++ pub user_volume_accumulator:Account<'info,UserVolumeAccumulator>,
++ pub system_program:Program<'info,System>,
++}
