@@ -1,0 +1,62 @@
+--- a/programs/pump/src/fee_cpi.rs
++++ b/programs/pump/src/fee_cpi.rs
+@@ -4,15 +4,15 @@
+ use crate::trade_types::{BondingCurve, Fees};
+ use anchor_spl::token_interface::Mint;
+ 
+-/// Checked normal-buy quote calculation precedes the fee CPI.
+-pub fn buy_quote(curve: &BondingCurve, amount: u64) -> Result<u64> {
+-    let denominator = curve.virtual_token_reserves.checked_sub(amount)
+-        .ok_or_else(|| error!(crate::PumpError::Overflow))?;
+-    require!(denominator != 0, crate::PumpError::DivisionByZero);
+-    let quote = u128::from(amount) * u128::from(curve.virtual_quote_reserves)
+-        / u128::from(denominator) + 1;
+-    u64::try_from(quote).map_err(|_| error!(crate::PumpError::Truncation))
+-}
++// buy_quote lives in lib.rs (the bonding-curve math region); re-exported for the legacy callers.
++pub use crate::buy_quote;
++
++
++
++
++
++
++
+ 
+ /// Shared fee query and accounting. Account clones are created here before
+ /// the fallible market-cap calculation, as in the original outer helper.
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -612,7 +612,7 @@
+  if exact{require_gt!(limit,0,PumpError::BuyZeroAmount);require_gt!(input,0,PumpError::BuyNotEnoughSolToCoverFees);}else{require_gt!(input,0,PumpError::BuyZeroAmount);}
+  if !exact{if !partial{require_gte!(c.real_token_reserves,input,PumpError::NotEnoughTokensToBuy);}}
+  if !exact && partial{require_gt!(input.min(c.real_token_reserves),0,PumpError::BuyZeroAmount);}
+- let pre_quote=if exact{0}else{crate::legacy_sell::fee_cpi::buy_quote(c,input.min(c.real_token_reserves))?};
++ let pre_quote=if exact{0}else{u64::try_from(crate::legacy_sell::fee_cpi::buy_quote(c,input.min(c.real_token_reserves))?).map_err(|_|error!(PumpError::Truncation))?};
+  let (initial_protocol_fee,initial_creator_fee,protocol_fee_bps,creator_fee_bps)={let values=crate::legacy_sell::fee_cpi::trade_fees(
+   &a.global,&a.bonding_curve,&a.mint,&a.fee_config,&a.fee_program,a.program.as_ref(),if exact{input}else{pre_quote}
+  )?;if a.user.key()==a.global.whitelist_pda{(0,0,0,0)}else{values}};
+@@ -2421,15 +2421,15 @@
+ 
+ 
+ 
++/// Checked normal-buy quote calculation precedes the fee CPI.
++#[inline(never)]
++pub fn buy_quote(curve: &trade_types::BondingCurve, amount: u64) -> Result<u128> {
++    let numerator = u128::from(amount) * u128::from(curve.virtual_quote_reserves); let denominator = u128::from(curve.virtual_token_reserves).checked_sub(u128::from(amount))
++        .ok_or_else(|| error!(crate::PumpError::Overflow))?;
+ 
+-
+-
+-
+-
+-
+-
+-
+-
++    require!(denominator != 0, crate::PumpError::DivisionByZero);
++    Ok(numerator / denominator + 1)
++}
+ 
+ 
+ 
