@@ -1,0 +1,209 @@
+--- /home/tc147/pumpwork/u2/programs/pump-amm/src/multi_hop.rs	2026-10-28 17:05:23.303159920 +0100
++++ /home/tc147/pumpwork/u4b/programs/pump-amm/src/multi_hop.rs	2026-10-28 18:05:26.599855250 +0100
+@@ -316,13 +316,7 @@
+                 );
+             }
+             if !output_native && source.key() != destination.key() {
+-                let expected = before .checked_add(output) .and_then(|v| { v.checked_add(if destination.key() == a.buyback_fee_recipient.key() {
+-                            buyback
+-                        } else {
+-                            0
+-                        })
+-                    })
+-                    .ok_or_else(|| error!(PumpAmmError::Overflow))?;
++                let expected = expected_destination(before, output, buyback, destination.key() == a.buyback_fee_recipient.key())?;
+                 require_eq!(
+                     token_amount(&destination)?, expected,
+                     PumpAmmError::MultiHopCurveRunMismatch
+@@ -576,6 +570,12 @@
+ 
+ 
+ 
++
++
++
++
++
++
+ error!(PumpAmmError::Overflow))?;
+     let b = if sell {
+         h.pool_base_token_account
+@@ -865,108 +865,9 @@
+         Pubkey::default()
+     };
+     if sell {
+-        emit_event(
+-            a,
+-            SellEvent {
+-                timestamp: Clock::get()?.unix_timestamp,
+-                base_amount_in: base_amount,
+-                min_quote_amount_out: minimum,
+-                user_base_token_reserves: user_base_balance,
+-                user_quote_token_reserves: user_quote_balance,
+-                pool_base_token_reserves: b,
+-                pool_quote_token_reserves: raw_q,
+-                quote_amount_out: curve_quote,
+-                lp_fee_basis_points: selected.lp_fee_bps,
+-                lp_fee,
+-                protocol_fee_basis_points: selected.protocol_fee_bps,
+-                protocol_fee,
+-                quote_amount_out_without_lp_fee: curve_quote - lp_fee,
+-                user_quote_amount_out: total_quote,
+-                pool: h.pool.key(),
+-                user: a.user.key(),
+-                user_base_token_account: user_base,
+-                user_quote_token_account: user_quote,
+-                protocol_fee_recipient: Pubkey::default(),
+-                protocol_fee_recipient_token_account: Pubkey::default(),
+-                coin_creator: h.pool.coin_creator,
+-                coin_creator_fee_basis_points: selected.creator_fee_bps,
+-                coin_creator_fee: creator_fee,
+-                cashback_fee_basis_points: 0,
+-                cashback: 0,
+-                buyback_fee_basis_points: buyback_bps,
+-                buyback_fee: buyback_received,
+-                virtual_quote_reserves: old_virtual,
+-                can_boost,
+-                base_supply: h.base_mint.supply,
+-                holder_rewards_bps: if h.pool.is_holder_reward {
+-                    selected.creator_fee_bps
+-                } else {
+-                    0
+-                },
+-                holder_rewards: if h.pool.is_holder_reward {
+-                    creator_fee
+-                } else {
+-                    0
+-                },
+-                creator_fee_unclaimed: h.pool.creator_fees,
+-                quote_transfer_fee,
+-            },
+-        )?;
++emit_event( a, SellEvent { timestamp: Clock::get()?.unix_timestamp, base_amount_in: base_amount, min_quote_amount_out: minimum, user_base_token_reserves: user_base_balance, user_quote_token_reserves: user_quote_balance, pool_base_token_reserves: b, pool_quote_token_reserves: raw_q, quote_amount_out: curve_quote, lp_fee_basis_points: selected.lp_fee_bps, lp_fee, protocol_fee_basis_points: selected.protocol_fee_bps, protocol_fee, quote_amount_out_without_lp_fee: curve_quote - lp_fee, user_quote_amount_out: total_quote, pool: h.pool.key(), user: a.user.key(), user_base_token_account: user_base, user_quote_token_account: user_quote, protocol_fee_recipient: Pubkey::default(), protocol_fee_recipient_token_account: Pubkey::default(), coin_creator: h.pool.coin_creator, coin_creator_fee_basis_points: selected.creator_fee_bps, coin_creator_fee: creator_fee, cashback_fee_basis_points: 0, cashback: 0, buyback_fee_basis_points: buyback_bps, buyback_fee: buyback_received, virtual_quote_reserves: old_virtual, can_boost, base_supply: h.base_mint.supply, holder_rewards_bps: if h.pool.is_holder_reward { selected.creator_fee_bps } else { 0 }, holder_rewards: if h.pool.is_holder_reward { creator_fee } else { 0 }, creator_fee_unclaimed: h.pool.creator_fees, quote_transfer_fee, }, )?;
+     } else {
+-        emit_event(
+-            a,
+-            BuyEvent {
+-                timestamp: Clock::get()?.unix_timestamp,
+-                base_amount_out: base_amount,
+-                max_quote_amount_in: amount,
+-                user_base_token_reserves: user_base_balance,
+-                user_quote_token_reserves: user_quote_balance,
+-                pool_base_token_reserves: b,
+-                pool_quote_token_reserves: raw_q,
+-                quote_amount_in: amount,
+-                lp_fee_basis_points: selected.lp_fee_bps,
+-                lp_fee,
+-                protocol_fee_basis_points: selected.protocol_fee_bps,
+-                protocol_fee,
+-                quote_amount_in_with_lp_fee: curve_quote + lp_fee,
+-                user_quote_amount_in: curve_quote,
+-                pool: h.pool.key(),
+-                user: a.user.key(),
+-                user_base_token_account: user_base,
+-                user_quote_token_account: user_quote,
+-                protocol_fee_recipient: Pubkey::default(),
+-                protocol_fee_recipient_token_account: Pubkey::default(),
+-                coin_creator: h.pool.coin_creator,
+-                coin_creator_fee_basis_points: selected.creator_fee_bps,
+-                coin_creator_fee: creator_fee,
+-                track_volume: false,
+-                total_unclaimed_tokens: a.user_volume_accumulator.total_unclaimed_tokens,
+-                total_claimed_tokens: a.user_volume_accumulator.total_claimed_tokens,
+-                current_sol_volume: a.user_volume_accumulator.current_sol_volume,
+-                last_update_timestamp: a.user_volume_accumulator.last_update_timestamp,
+-                min_base_amount_out: minimum,
+-                ix_name: "multi_hop_swap".into(),
+-                cashback_fee_basis_points: 0,
+-                cashback: 0,
+-                buyback_fee_basis_points: buyback_bps,
+-                buyback_fee: buyback_received,
+-                virtual_quote_reserves: old_virtual,
+-                can_boost,
+-                base_supply: h.base_mint.supply,
+-                holder_rewards_bps: if h.pool.is_holder_reward {
+-                    selected.creator_fee_bps
+-                } else {
+-                    0
+-                },
+-                holder_rewards: if h.pool.is_holder_reward {
+-                    creator_fee
+-                } else {
+-                    0
+-                },
+-                creator_fee_unclaimed: h.pool.creator_fees,
+-                quote_transfer_fee,
+-            },
+-        )?;
++emit_event( a, BuyEvent { timestamp: Clock::get()?.unix_timestamp, base_amount_out: base_amount, max_quote_amount_in: amount, user_base_token_reserves: user_base_balance, user_quote_token_reserves: user_quote_balance, pool_base_token_reserves: b, pool_quote_token_reserves: raw_q, quote_amount_in: amount, lp_fee_basis_points: selected.lp_fee_bps, lp_fee, protocol_fee_basis_points: selected.protocol_fee_bps, protocol_fee, quote_amount_in_with_lp_fee: curve_quote + lp_fee, user_quote_amount_in: curve_quote, pool: h.pool.key(), user: a.user.key(), user_base_token_account: user_base, user_quote_token_account: user_quote, protocol_fee_recipient: Pubkey::default(), protocol_fee_recipient_token_account: Pubkey::default(), coin_creator: h.pool.coin_creator, coin_creator_fee_basis_points: selected.creator_fee_bps, coin_creator_fee: creator_fee, track_volume: false, total_unclaimed_tokens: a.user_volume_accumulator.total_unclaimed_tokens, total_claimed_tokens: a.user_volume_accumulator.total_claimed_tokens, current_sol_volume: a.user_volume_accumulator.current_sol_volume, last_update_timestamp: a.user_volume_accumulator.last_update_timestamp, min_base_amount_out: minimum, ix_name: "multi_hop_swap".into(), cashback_fee_basis_points: 0, cashback: 0, buyback_fee_basis_points: buyback_bps, buyback_fee: buyback_received, virtual_quote_reserves: old_virtual, can_boost, base_supply: h.base_mint.supply, holder_rewards_bps: if h.pool.is_holder_reward { selected.creator_fee_bps } else { 0 }, holder_rewards: if h.pool.is_holder_reward { creator_fee } else { 0 }, creator_fee_unclaimed: h.pool.creator_fees, quote_transfer_fee, }, )?;
+     }
+     Ok(output)
+ }
+@@ -976,3 +877,66 @@
+     let (_, data) = get_return_data().unwrap();
+     T::try_from_slice(&data).unwrap()
+ }
++
++
++#[inline(always)]
++fn expected_destination(before: u64, output: u64, buyback: u64, dest_is_buyback: bool) -> Result<u64> {
++    before
++        .checked_add(output)
++        .and_then(|v| v.checked_add(if dest_is_buyback {
++            buyback
++        } else {
++            0
++        }))
++        .ok_or_else(||
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++error!(PumpAmmError::Overflow))
++}
+\ No newline at end of file
