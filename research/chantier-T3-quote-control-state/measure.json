@@ -1,0 +1,47 @@
+{
+ "before": {
+  "note": "chantier-T3-mayhem-params baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 881,
+  "exact": 162,
+  "unmatched": 154,
+  "call_consistent_original": 813
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 882,
+  "exact": 162,
+  "unmatched": 153,
+  "call_consistent_original": 814
+ },
+ "gained_matched": [
+  "0x68bd8"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 881,
+  "exact": 162,
+  "call_only_raw_fail": 229,
+  "potential_if_delta0": 391,
+  "unique_pairs": 880,
+  "intervals_nonzero": 125
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 882,
+  "exact": 162,
+  "call_only_raw_fail": 229,
+  "potential_if_delta0": 391,
+  "unique_pairs": 881,
+  "intervals_nonzero": 126
+ },
+ "candidate_sha256": "4684fae3bcd76b9d9a3c51189d78722ee5ede9eef56780c20ec3344cc49924ff",
+ "symbols_sha256": "a049a2e4867ebcba44a16e5b96a5a4f7e458cfdaa9bdd6096e27b1364036067f"
+}
