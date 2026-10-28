@@ -1,0 +1,140 @@
+{
+ "before": {
+  "note": "chantier-T4-pk8-setparams-serialize (#28) baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1002,
+  "matched": 793,
+  "exact": 140,
+  "unmatched": 242,
+  "call_consistent_original": 685
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1004,
+  "matched": 794,
+  "exact": 148,
+  "unmatched": 241,
+  "call_consistent_original": 686
+ },
+ "gained_matched": [
+  "0x19e3b0"
+ ],
+ "lost_matched": [],
+ "gained_raw": [
+  "0x194998",
+  "0x194ae0",
+  "0x197508",
+  "0x198fe8",
+  "0x1991e0",
+  "0x19a758",
+  "0x19a8a0",
+  "0x19b4e0"
+ ],
+ "lost_raw": [],
+ "drop_window": {
+  "symbol": "_ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$3$u5d$$GT$17hf6805be87556f7fcE",
+  "crate": "anchor_lang",
+  "deployed_start": "0x199db8",
+  "deployed_size": 616,
+  "candidate_start": "0x128348",
+  "candidate_size": 616,
+  "deployed_neighbours": {
+   "before": "0x199bf8 drop_in_place<[AccountInfo; 2]> (448 B)",
+   "after": "0x19a020 drop_in_place<Vec<AccountInfo>> (360 B)"
+  },
+  "candidate_neighbours": {
+   "before": "0x128188 drop_in_place<[AccountInfo; 2]> (448 B)",
+   "after": "0x1285b0 drop_in_place<Vec<AccountInfo>> (360 B)"
+  },
+  "deployed_callers": [
+   "0x19e630"
+  ]
+ },
+ "wrapper_window": {
+  "symbol": "_ZN11anchor_lang14system_program18transfer_with_seed17haef1e0871362152fE",
+  "deployed_start": "0x19e3b0",
+  "deployed_size": 896,
+  "candidate_start": "0x12c940",
+  "candidate_size": 896,
+  "placed_after": "anchor_lang::system_program::transfer (deployed 0x19e090, candidate 0x12c620)",
+  "deployed_callers": [
+   "0x156278 in 0x1557e8 (admin_set_idl_authority handler)"
+  ],
+  "deployed_call_targets": {
+   "0x1a7558": "solana_system_interface::instruction::transfer_with_seed (624 B)",
+   "0x199db8": "drop_in_place<[AccountInfo; 3]>",
+   "0x19a020": "drop_in_place<Vec<AccountInfo>>"
+  }
+ },
+ "artifacts": {
+  "candidate_sha256": "31162d65ed5a56fb60c2beaa62b754b758516411b7b07149c96616bf578f8ae2",
+  "symbols_sha256": "f6401e8a92dba8990a2c2003632c2a1a944bc47d8d720b5ae8ced3da3ade22a9"
+ },
+ "variants": {
+  "baseline_pr28": {
+   "original_windows": 1035,
+   "candidate_windows": 1002,
+   "matched": 793,
+   "exact": 140,
+   "unmatched": 242,
+   "call_consistent_original": 685,
+   "candidate_sha256": "1d77749f01ea68e705f2fc7cf339ff1a2fc57a43de98ac544091fc76d4afe6af"
+  },
+  "wrapper_pr28_ordered_ld": {
+   "original_windows": 1035,
+   "candidate_windows": 1004,
+   "matched": 794,
+   "exact": 140,
+   "unmatched": 241,
+   "call_consistent_original": 686,
+   "candidate_sha256": "05c3d37376485e60f70ba926260f2f3f7bf11aa8695b58386b54c7a9aed26b27"
+  },
+  "wrapper_placed": {
+   "original_windows": 1035,
+   "candidate_windows": 1004,
+   "matched": 794,
+   "exact": 148,
+   "unmatched": 241,
+   "call_consistent_original": 686,
+   "candidate_sha256": "31162d65ed5a56fb60c2beaa62b754b758516411b7b07149c96616bf578f8ae2"
+  }
+ },
+ "drift_solver_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1002,
+  "matched": 793,
+  "exact": 140,
+  "call_only_raw_fail": 222,
+  "potential_if_delta0": 362,
+  "unique_pairs": 791,
+  "intervals_nonzero": 88
+ },
+ "drift_solver_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1004,
+  "matched": 794,
+  "exact": 148,
+  "call_only_raw_fail": 215,
+  "potential_if_delta0": 363,
+  "unique_pairs": 793,
+  "intervals_nonzero": 86
+ },
+ "next_root": {
+  "dep_left": "0x17c548",
+  "dep_right": "0x17cae8",
+  "cand_left": "0x10c538",
+  "cand_right": "0x10c840",
+  "delta": -664,
+  "gap_dep": 664,
+  "gap_cand": 0,
+  "unmatched_dep": [
+   {
+    "start": "0x17c850",
+    "size": 664,
+    "names": []
+   }
+  ],
+  "unmatched_cand": [],
+  "spoiled_call_only": 165
+ }
+}

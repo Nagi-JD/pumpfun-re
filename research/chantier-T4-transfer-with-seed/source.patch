@@ -1,0 +1,23 @@
+--- a/programs/pump/src/admin_set_idl_authority.rs
++++ b/programs/pump/src/admin_set_idl_authority.rs
+@@ -16,13 +16,13 @@
+ pub fn execute(ctx:Context<AdminSetIdlAuthority>,idl_authority:Pubkey)->Result<()> {
+     let account=ctx.accounts.idl_account.to_account_info();
+     if account.owner==&anchor_lang::system_program::ID {
+-        let signer=ctx.accounts.program_signer.key();
+-        let ix=anchor_lang::solana_program::system_instruction::transfer_with_seed(
+-            account.key,&signer,String::from("anchor:idl"),&crate::ID,
+-            &ctx.accounts.authority.key(),account.lamports());
+-        anchor_lang::solana_program::program::invoke_signed(&ix,&[
+-            account.clone(),ctx.accounts.program_signer.to_account_info(),ctx.accounts.authority.to_account_info(),ctx.accounts.system_program.to_account_info()
+-        ],&[&[&[ctx.bumps.program_signer]]])?;
++        let base=ctx.accounts.program_signer.to_account_info();
++        anchor_lang::system_program::transfer_with_seed(
++            CpiContext::new_with_signer(ctx.accounts.system_program.to_account_info(),anchor_lang::system_program::TransferWithSeed{
++            from:account.clone(),base,to:ctx.accounts.authority.to_account_info()},
++            &[&[&[ctx.bumps.program_signer]]]),
++            String::from("anchor:idl"),&crate::ID,account.lamports(),
++        )?;
+         return Ok(());
+     } else {
+         require!(account.owner==&crate::ID,PumpError::AccountTypeNotSupported);
