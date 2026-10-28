@@ -1,0 +1,38 @@
+--- a/programs/pump/src/trade_types.rs
++++ b/programs/pump/src/trade_types.rs
+@@ -328,11 +328,11 @@
+     funding
+ }
+ 
+-#[inline(never)]
+-pub fn reserved_bonding_curve_fees(curve: &BondingCurve) -> Result<u64> {
+-    curve.creator_fee.checked_add(curve.protocol_fees)
+-        .ok_or_else(|| error!(crate::PumpError::Overflow))
+-}
++pub use crate::reserved_bonding_curve_fees;
++
++
++
++
+ 
+ #[inline(never)]
+ pub fn fund_bonding_curve_rent<'info>(
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -2556,11 +2556,11 @@
+ 
+ 
+ 
+-
+-
+-
+-
+-
++#[inline(never)]
++pub fn reserved_bonding_curve_fees(curve: &trade_types::BondingCurve) -> Result<u64> {
++    curve.creator_fee.checked_add(curve.protocol_fees)
++        .ok_or_else(|| error!(crate::PumpError::Overflow))
++}
+ 
+ 
+ 
