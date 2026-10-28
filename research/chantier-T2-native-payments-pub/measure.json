@@ -1,0 +1,48 @@
+{
+ "before": {
+  "note": "chantier-T2-fees-decl-line baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1054,
+  "matched": 909,
+  "exact": 162,
+  "unmatched": 126,
+  "call_consistent_original": 842
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1054,
+  "matched": 911,
+  "exact": 162,
+  "unmatched": 124,
+  "call_consistent_original": 844
+ },
+ "gained_matched": [
+  "0x3b738",
+  "0x8cc58"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1054,
+  "matched": 909,
+  "exact": 162,
+  "call_only_raw_fail": 236,
+  "potential_if_delta0": 398,
+  "unique_pairs": 908,
+  "intervals_nonzero": 149
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1054,
+  "matched": 911,
+  "exact": 162,
+  "call_only_raw_fail": 238,
+  "potential_if_delta0": 400,
+  "unique_pairs": 910,
+  "intervals_nonzero": 151
+ },
+ "candidate_sha256": "8cf8d6e15028b2533a1b82e7e895ffd81cf03deaa6ec4a3f6ec3d60e52989195",
+ "symbols_sha256": "dc15f0ab3df1cef040bb3a72f466470df4ac3a7211a285819d7b4bcdee9758f6"
+}
