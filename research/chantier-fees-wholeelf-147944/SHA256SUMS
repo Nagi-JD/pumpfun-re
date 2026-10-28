@@ -1,0 +1,3 @@
+# symbols.so (pre-strip candidate) produced by `bash ~/rebuild_measure.sh` on the Fees byte-race worker
+ca9e6a933d1406743689f7bad609ce6b5e95ea91c064e0233cbd4db100afb335  symbols.so (parent / 582-normalized baseline)
+5381eb4008c5e13efdc91b55e1b40e88da6ce9c2ba26fac5413c0bd25effc95d  symbols.so (this packet / 583-normalized)
