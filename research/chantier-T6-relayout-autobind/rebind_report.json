@@ -1,0 +1,149 @@
+{
+  "mode": "rebind",
+  "deployed": "/home/Saturn/feesr34/evidence/original/pump_fees/deployed.so",
+  "symbols": "/home/Saturn/t6auto/sym.raw288.so",
+  "link_map": "/home/Saturn/t6auto/raw288.map",
+  "existing_ld": "/home/Saturn/t6auto/ordered.stale.ld",
+  "deployed_windows": 585,
+  "candidate_windows": 585,
+  "unique_pairs": 585,
+  "families": {
+    ".text": {
+      "ld_selectors": 586,
+      "current_sections": 573,
+      "stale_selectors": 10,
+      "orphan_sections": 9,
+      "rebound": 9,
+      "unresolved_stale": [
+        {
+          "line": 599,
+          "sec": ".text._ZN91_$LT$pump_fees_candidate..donation..DonationFeePdaCreated$u20$as$u20$anchor_lang..Event$GT$4data17h4a7b5c231bfa9e1fE",
+          "reason": "no 1:1 same-base orphan (stale=1, orphans=0) -- function deleted or renamed; selector left inert"
+        }
+      ],
+      "unplaced_orphans": [],
+      "bindings": [
+        {
+          "line": 123,
+          "old": ".text._ZN98_$LT$alloc..vec..Vec$LT$T$GT$$u20$as$u20$alloc..vec..spec_from_iter..SpecFromIter$LT$T$C$I$GT$$GT$9from_iter17h147f9523a3a62fb8E",
+          "new": ".text._ZN98_$LT$alloc..vec..Vec$LT$T$GT$$u20$as$u20$alloc..vec..spec_from_iter..SpecFromIter$LT$T$C$I$GT$$GT$9from_iter17h5e8424e0987e72c0E",
+          "dep_slot": "0x10ee0",
+          "cand_vma": "0xc1198",
+          "method": "name+content",
+          "obj_changed": false,
+          "base_match": true
+        },
+        {
+          "line": 241,
+          "old": ".text._ZN92_$LT$pump_fees_candidate..state..BuybackVault$u20$as$u20$anchor_lang..AccountDeserialize$GT$15try_deserialize17h322820d165056992E",
+          "new": ".text._ZN92_$LT$pump_fees_candidate..state..BuybackVault$u20$as$u20$anchor_lang..AccountDeserialize$GT$15try_deserialize17h383b168dbb17d666E",
+          "dep_slot": "0x81450",
+          "cand_vma": "0xc1630",
+          "method": "name+content",
+          "obj_changed": false,
+          "base_match": true
+        },
+        {
+          "line": 242,
+          "old": ".text._ZN92_$LT$pump_fees_candidate..state..BuybackVault$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17he2a66a7f4efecd64E",
+          "new": ".text._ZN92_$LT$pump_fees_candidate..state..BuybackVault$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17h25aa95987fd0cd4bE",
+          "dep_slot": "0x81728",
+          "cand_vma": "0xc1908",
+          "method": "name+content",
+          "obj_changed": false,
+          "base_match": true
+        },
+        {
+          "line": 243,
+          "old": ".text._ZN92_$LT$pump_fees_candidate..state..SocialFeePda$u20$as$u20$anchor_lang..AccountDeserialize$GT$15try_deserialize17h709e0866dee456a6E",
+          "new": ".text._ZN92_$LT$pump_fees_candidate..state..SocialFeePda$u20$as$u20$anchor_lang..AccountDeserialize$GT$15try_deserialize17h043fbd991d794243E",
+          "dep_slot": "0x81b20",
+          "cand_vma": "0xc1d00",
+          "method": "name+content",
+          "obj_changed": false,
+          "base_match": true
+        },
+        {
+          "line": 244,
+          "old": ".text._ZN92_$LT$pump_fees_candidate..state..SocialFeePda$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17h7a0a5576bc6996fbE",
+          "new": ".text._ZN92_$LT$pump_fees_candidate..state..SocialFeePda$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17h65c2145c96f8065fE",
+          "dep_slot": "0x81e08",
+          "cand_vma": "0xc1fe8",
+          "method": "name+content",
+          "obj_changed": false,
+          "base_match": true
+        },
+        {
+          "line": 245,
+          "old": ".text._ZN94_$LT$pump_fees_candidate..state..DonationFeePda$u20$as$u20$anchor_lang..AccountDeserialize$GT$15try_deserialize17h47a36ad840504448E",
+          "new": ".text._ZN94_$LT$pump_fees_candidate..state..DonationFeePda$u20$as$u20$anchor_lang..AccountDeserialize$GT$15try_deserialize17h869fd65d3eaa77a5E",
+          "dep_slot": "0x82188",
+          "cand_vma": "0xc2368",
+          "method": "name+content",
+          "obj_changed": false,
+          "base_match": true
+        },
+        {
+          "line": 246,
+          "old": ".text._ZN94_$LT$pump_fees_candidate..state..DonationFeePda$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17he8282c448e9db4d4E",
+          "new": ".text._ZN94_$LT$pump_fees_candidate..state..DonationFeePda$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17h6194596d4994238fE",
+          "dep_slot": "0x82460",
+          "cand_vma": "0xc2640",
+          "method": "name+content",
+          "obj_changed": false,
+          "base_match": true
+        },
+        {
+          "line": 247,
+          "old": ".text._ZN96_$LT$pump_fees_candidate..state..FeeProgramGlobal$u20$as$u20$anchor_lang..AccountDeserialize$GT$15try_deserialize17hfa4974df3c9e4a36E",
+          "new": ".text._ZN96_$LT$pump_fees_candidate..state..FeeProgramGlobal$u20$as$u20$anchor_lang..AccountDeserialize$GT$15try_deserialize17ha8e1949772183388E",
+          "dep_slot": "0x82b50",
+          "cand_vma": "0xc2d30",
+          "method": "name+content",
+          "obj_changed": false,
+          "base_match": true
+        },
+        {
+          "line": 248,
+          "old": ".text._ZN96_$LT$pump_fees_candidate..state..FeeProgramGlobal$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17h2547c92e951644ceE",
+          "new": ".text._ZN96_$LT$pump_fees_candidate..state..FeeProgramGlobal$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17h1c097c4e5dc34408E",
+          "dep_slot": "0x82e28",
+          "cand_vma": "0xc3008",
+          "method": "name+content",
+          "obj_changed": false,
+          "base_match": true
+        }
+      ]
+    },
+    ".rodata": {
+      "ld_selectors": 619,
+      "current_sections": 469,
+      "stale_selectors": 0,
+      "orphan_sections": 4,
+      "rebound": 0,
+      "unresolved_stale": [],
+      "unplaced_orphans": [
+        ".rodata.cst16",
+        ".rodata.cst32",
+        ".rodata.cst4",
+        ".rodata.cst8"
+      ],
+      "bindings": []
+    },
+    ".data.rel.ro": {
+      "ld_selectors": 265,
+      "current_sections": 205,
+      "stale_selectors": 0,
+      "orphan_sections": 0,
+      "rebound": 0,
+      "unresolved_stale": [],
+      "unplaced_orphans": [],
+      "bindings": []
+    }
+  },
+  "edits": 9,
+  "idempotent": false,
+  "total_rebound": 9,
+  "total_unresolved": 1,
+  "total_unplaced": 4
+}

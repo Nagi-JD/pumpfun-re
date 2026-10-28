@@ -1,0 +1,76 @@
+{
+ "inputs": {
+  "deployed_sha256": "4f2955d0f6b40cc9ff7daa18ccad7d19119ba1249759f4e7e3bb691beee6b35e",
+  "symbols_sha256": "7ec99a6915bcb9245a2d5199996376a76651fa893c71e455b189cf59428f4e66",
+  "stripped_sha256": null
+ },
+ "summary": {
+  "matched": 585,
+  "exact": 585,
+  "data_aligned": 0,
+  "data_residual": 0,
+  "other": 0,
+  "projected_raw": 585,
+  "projected_raw_after_calls": 585,
+  "lddw_sites": 0,
+  "lddw_sites_aligned": 0,
+  "locations_deployed": 105,
+  "locations_candidate": 105,
+  "location_pairs": {},
+  "location_files_equal": 34,
+  "location_files_deployed": 34,
+  "rodata_prefix_equal": 21079,
+  "data_rel_ro_prefix_equal": 6744
+ },
+ "sections": {
+  ".text": {
+   "deployed": {
+    "addr": "0x120",
+    "size": "0xc33a0"
+   },
+   "candidate": {
+    "addr": "0x120",
+    "size": "0xc33a0"
+   },
+   "base_delta": 0,
+   "size_delta": 0
+  },
+  ".rodata": {
+   "deployed": {
+    "addr": "0xc34c0",
+    "size": "0x5257"
+   },
+   "candidate": {
+    "addr": "0xc34c0",
+    "size": "0x5257"
+   },
+   "base_delta": 0,
+   "size_delta": 0
+  },
+  ".data.rel.ro": {
+   "deployed": {
+    "addr": "0xc8718",
+    "size": "0x1a58"
+   },
+   "candidate": {
+    "addr": "0xc8718",
+    "size": "0x1a58"
+   },
+   "base_delta": 0,
+   "size_delta": 0
+  }
+ },
+ "lddw_sites": {},
+ "rodata_order": {
+  "record_pairs": 0,
+  "runs": 0,
+  "shift_runs": []
+ },
+ "location_worklist": [],
+ "location_files": {},
+ "paths": {
+  "deployed_only": [],
+  "candidate_only": []
+ },
+ "windows": []
+}

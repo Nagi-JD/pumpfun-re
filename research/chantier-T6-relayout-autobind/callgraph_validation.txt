@@ -1,0 +1,11 @@
+call-graph primitive check: candidate-callees vs deployed-slot-expected-callees
+  OK  om_iter..SpecFromIter$LT$T$C$I$GT$$GT$9from_iter callees have=3 want=3 match=True
+  OK  or_lang..AccountDeserialize$GT$15try_deserialize callees have=7 want=7 match=True
+  OK  ccountDeserialize$GT$25try_deserialize_unchecked callees have=4 want=4 match=True
+  OK  or_lang..AccountDeserialize$GT$15try_deserialize callees have=7 want=7 match=True
+  OK  ccountDeserialize$GT$25try_deserialize_unchecked callees have=5 want=5 match=True
+  OK  or_lang..AccountDeserialize$GT$15try_deserialize callees have=7 want=7 match=True
+  OK  ccountDeserialize$GT$25try_deserialize_unchecked callees have=4 want=4 match=True
+  OK  or_lang..AccountDeserialize$GT$15try_deserialize callees have=7 want=7 match=True
+  OK  ccountDeserialize$GT$25try_deserialize_unchecked callees have=4 want=4 match=True
+ALL callee-sets match deployed expectation: True
