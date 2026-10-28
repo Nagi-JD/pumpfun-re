@@ -1,0 +1,42 @@
+--- a/programs/pump/src/create_v2.rs
++++ b/programs/pump/src/create_v2.rs
+@@ -10,6 +10,19 @@
+ impl AnchorDeserialize for CreationOptionU64 {
+  fn deserialize_reader<R:std::io::Read>(reader:&mut R)->std::io::Result<Self>{let mut bytes=[0;8];match reader.read_exact(&mut bytes){Ok(())=>Ok(Self(u64::from_le_bytes(bytes))),Err(e) if e.kind()==std::io::ErrorKind::UnexpectedEof=>Ok(Self(0)),Err(e)=>Err(e)}}
+ }
++
++
++
++
++
++
++
++
++
++
++
++
++
+ #[event_cpi]
+ #[derive(Accounts)]
+ pub struct CreateV2<'info>{
+@@ -144,19 +157,6 @@
+ 
+ 
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+ 
+ 
+ 
