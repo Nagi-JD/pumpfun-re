@@ -1,0 +1,38 @@
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -57,7 +57,7 @@
+ pub mod trade_types;
+ #[path = "trade_v3.rs"] pub mod trade;
+ pub use trade::*;
+-
++#[path="util/constant_product.rs"] pub mod constant_product;
+ pub mod quote_control;
+ pub use quote_control::*;
+ 
+@@ -662,7 +662,7 @@
+ 
+ 
+ error!(PumpError::Overflow))?>input{sub(raw_quote,1)?}else{raw_quote};
+- let computed=if exact{require_gt!(raw_quote,0,PumpError::BuyNotEnoughSolToCoverFees);require_gt!(adjusted,0,PumpError::BuySlippageBelowMinTokensOut);let e=adjusted.saturating_sub(1);narrow(c.virtual_token_reserves as u128*e as u128/(c.virtual_quote_reserves as u128+e as u128))?}else{input};
++ let computed=if exact{require_gt!(raw_quote,0,PumpError::BuyNotEnoughSolToCoverFees);require_gt!(adjusted,0,PumpError::BuySlippageBelowMinTokensOut);narrow(crate::constant_product::tokens_for_quote(c,adjusted)?)?}else{input};
+  if !partial{require_gte!(c.real_token_reserves,computed,PumpError::NotEnoughTokensToBuy);}let amount=computed.min(c.real_token_reserves); let quote=if !exact{pre_quote}else if computed<=c.real_token_reserves{adjusted}else{(narrow(amount as u128*c.virtual_quote_reserves as u128/(c.virtual_token_reserves as u128-amount as u128))?).checked_add(1).ok_or_else(||error!(PumpError::Overflow))?};
+  let fq=if exact && computed<=c.real_token_reserves{raw_quote}else{quote};let pf=if exact{ceil_fee(fq,protocol_fee_bps)?}else{initial_protocol_fee};let cf=if exact{ceil_fee(fq,cb)?}else{initial_creator_fee};
+  if exact{if !(partial && computed>c.real_token_reserves){require_gte!(amount,limit,PumpError::BuySlippageBelowMinTokensOut);}}else{require_gte!(limit,add(add(quote,pf)?,cf)?,PumpError::TooMuchSolRequired);}
+--- a/programs/pump/src/util/constant_product.rs
++++ b/programs/pump/src/util/constant_product.rs
+@@ -0,0 +1,15 @@
++use anchor_lang::prelude::*;
++use crate::PumpError;
++
++#[inline(never)]
++pub fn output(amount_in:u128,reserve_in:u128,reserve_out:u128)->Result<u128> {
++    let numerator=amount_in.checked_mul(reserve_out).ok_or_else(||error!(PumpError::Overflow))?;
++    let denominator=reserve_in.checked_add(amount_in).ok_or_else(||error!(PumpError::Overflow))?;
++    numerator.checked_div(denominator).ok_or_else(||error!(PumpError::DivisionByZero))
++}
++
++#[inline(never)]
++pub fn tokens_for_quote(curve:&crate::trade_types::BondingCurve,quote:u64)->Result<u128>{
++    let effective=quote.checked_sub(1).ok_or(PumpError::Overflow)?;
++    output(effective as u128,curve.virtual_quote_reserves as u128,curve.virtual_token_reserves as u128)
++}
