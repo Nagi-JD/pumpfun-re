@@ -1,0 +1,34 @@
+{
+ "build": "chantier-T3-init-user-volume (#41), unchanged",
+ "measure": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 813,
+  "exact": 161,
+  "unmatched": 222,
+  "call_consistent_original": 702
+ },
+ "data_layout": {
+  "matched": 813,
+  "exact": 161,
+  "data_aligned": 231,
+  "data_residual": 421,
+  "other": 0,
+  "lddw_sites": 3087,
+  "lddw_sites_aligned": 527,
+  "locations_deployed": 142,
+  "locations_candidate": 200,
+  "location_pairs": {
+   "equal": 90,
+   "file": 8,
+   "line": 14
+  },
+  "location_files_equal": 25,
+  "location_files_deployed": 41,
+  "rodata_prefix_equal": 216,
+  "data_rel_ro_prefix_equal": 104
+ },
+ "gained_raw": [],
+ "lost_matched": [],
+ "lost_raw": []
+}
