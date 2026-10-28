@@ -1,0 +1,49 @@
+{
+ "before": {
+  "note": "chantier-T1-v3-check-lines baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1045,
+  "matched": 895,
+  "exact": 162,
+  "unmatched": 140,
+  "call_consistent_original": 823
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1045,
+  "matched": 898,
+  "exact": 162,
+  "unmatched": 137,
+  "call_consistent_original": 828
+ },
+ "gained_matched": [
+  "0x98af0",
+  "0x9a190",
+  "0x9ac28"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1045,
+  "matched": 895,
+  "exact": 162,
+  "call_only_raw_fail": 236,
+  "potential_if_delta0": 398,
+  "unique_pairs": 894,
+  "intervals_nonzero": 135
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1045,
+  "matched": 898,
+  "exact": 162,
+  "call_only_raw_fail": 236,
+  "potential_if_delta0": 398,
+  "unique_pairs": 897,
+  "intervals_nonzero": 137
+ },
+ "candidate_sha256": "fe26b03c24e7f579348f18dd11f44868d034ea2aa7b5ece7f08202f73d27fe6b",
+ "symbols_sha256": "8aa83f38b698b9fdda7f722816bec9272fbb1076eddceec1e187caa0d1a22d86"
+}
