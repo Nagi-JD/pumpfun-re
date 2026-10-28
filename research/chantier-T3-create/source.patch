@@ -1,0 +1,121 @@
+--- a/programs/pump/src/create.rs
++++ b/programs/pump/src/create.rs
+@@ -2,30 +2,30 @@
+ use anchor_spl::{token::{self,Mint,Token,TokenAccount},associated_token::AssociatedToken};
+ use anchor_lang::solana_program::{instruction::{Instruction,AccountMeta},program::invoke_signed};
+ pub use anchor_spl::metadata::Metadata as MetadataProgram;
+-#[event_cpi]
+-#[derive(Accounts)]
+-pub struct Create<'info>{
+- #[account(init,payer=user,mint::decimals=6,mint::authority=mint_authority)]
+- pub mint:Box<Account<'info,Mint>>,
+- /// CHECK: canonical program mint authority.
+- #[account(seeds=[b"mint-authority"],bump)]
+- pub mint_authority:UncheckedAccount<'info>,
+- #[account(init,payer=user,space=166,seeds=[b"bonding-curve",mint.key().as_ref()],bump)]
+- pub bonding_curve:Box<Account<'info,trade_types::BondingCurve>>,
+- #[account(init,payer=user,associated_token::mint=mint,associated_token::authority=bonding_curve)]
+- pub associated_bonding_curve:Box<Account<'info,TokenAccount>>,
+- #[account(seeds=[b"global"],bump)]
+- pub global:Account<'info,Global>,
+- pub mpl_token_metadata:Program<'info,MetadataProgram>,
+- /// CHECK: canonical metadata account, allocated by the metadata program.
+- #[account(mut,seeds=[b"metadata",anchor_spl::metadata::ID.as_ref(),mint.key().as_ref()],bump,seeds::program=mpl_token_metadata.key())]
+- pub metadata:UncheckedAccount<'info>,
+- #[account(mut)]pub user:Signer<'info>,
+- pub system_program:Program<'info,System>,
+- pub token_program:Program<'info,Token>,
+- pub associated_token_program:Program<'info,AssociatedToken>,
+- pub rent:Sysvar<'info,Rent>,
+-}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+ pub fn execute(ctx:Context<Create>,name:String,symbol:String,uri:String,creator:Pubkey)->Result<()>{
+  require_keys_neq!(creator,Pubkey::default(),PumpError::CreatorShouldNotBeZero);
+  let a=&ctx.accounts;let bump=[ctx.bumps.mint_authority];let seeds:&[&[u8]]=&[b"mint-authority",&bump];
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -29,7 +29,7 @@
+ pub mod create_v2;
+ pub use create_v2::*;
+ 
+-pub mod create;
++
+ pub use create::*;
+ 
+ #[path="creator/collect_creator_fee.rs"]pub mod collect_v2;
+@@ -2783,3 +2783,52 @@
+  pub system_program:Program<'info,System>,
+ }
+ }
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++pub mod create{include!("create.rs");
++#[event_cpi]
++#[derive(Accounts)]
++pub struct Create<'info>{
++ #[account(init,payer=user,mint::decimals=6,mint::authority=mint_authority)]
++ pub mint:Box<Account<'info,Mint>>,
++ /// CHECK: canonical program mint authority.
++ #[account(seeds=[b"mint-authority"],bump)]
++ pub mint_authority:UncheckedAccount<'info>,
++ #[account(init,payer=user,space=166,seeds=[b"bonding-curve",mint.key().as_ref()],bump)]
++ pub bonding_curve:Box<Account<'info,trade_types::BondingCurve>>,
++ #[account(init,payer=user,associated_token::mint=mint,associated_token::authority=bonding_curve)]
++ pub associated_bonding_curve:Box<Account<'info,TokenAccount>>,
++ #[account(seeds=[b"global"],bump)]
++ pub global:Account<'info,Global>,
++ pub mpl_token_metadata:Program<'info,MetadataProgram>,
++ /// CHECK: canonical metadata account, allocated by the metadata program.
++ #[account(mut,seeds=[b"metadata",anchor_spl::metadata::ID.as_ref(),mint.key().as_ref()],bump,seeds::program=mpl_token_metadata.key())]
++ pub metadata:UncheckedAccount<'info>,
++ #[account(mut)]pub user:Signer<'info>,
++ pub system_program:Program<'info,System>,
++ pub token_program:Program<'info,Token>,
++ pub associated_token_program:Program<'info,AssociatedToken>,
++ pub rent:Sysvar<'info,Rent>,
++}
++}
