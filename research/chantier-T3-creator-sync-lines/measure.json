@@ -1,0 +1,53 @@
+{
+ "before": {
+  "note": "chantier-T3-migrate-client baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 870,
+  "exact": 162,
+  "unmatched": 165,
+  "call_consistent_original": 803
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 877,
+  "exact": 162,
+  "unmatched": 158,
+  "call_consistent_original": 810
+ },
+ "gained_matched": [
+  "0x38fc0",
+  "0x3a7b8",
+  "0x746a8",
+  "0x7b250",
+  "0x96d48",
+  "0x970f8",
+  "0x97580"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 870,
+  "exact": 162,
+  "call_only_raw_fail": 228,
+  "potential_if_delta0": 390,
+  "unique_pairs": 869,
+  "intervals_nonzero": 123
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 877,
+  "exact": 162,
+  "call_only_raw_fail": 228,
+  "potential_if_delta0": 390,
+  "unique_pairs": 876,
+  "intervals_nonzero": 125
+ },
+ "candidate_sha256": "d5a07ef1a8201d117b1c43ba383fded2591d261c9f13636ca5dc56af9948e897",
+ "symbols_sha256": "b6bf9345532e020055d8917a5c219de4c356eafad021e5fcf4ac6ac7402ea65d"
+}
