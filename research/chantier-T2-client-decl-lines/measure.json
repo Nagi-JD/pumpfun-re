@@ -1,0 +1,47 @@
+{
+ "before": {
+  "note": "chantier-T1-transfer-fee-lines baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1053,
+  "matched": 906,
+  "exact": 162,
+  "unmatched": 129,
+  "call_consistent_original": 835
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1053,
+  "matched": 907,
+  "exact": 162,
+  "unmatched": 128,
+  "call_consistent_original": 838
+ },
+ "gained_matched": [
+  "0x1091b0"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1053,
+  "matched": 906,
+  "exact": 162,
+  "call_only_raw_fail": 236,
+  "potential_if_delta0": 398,
+  "unique_pairs": 905,
+  "intervals_nonzero": 141
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1053,
+  "matched": 907,
+  "exact": 162,
+  "call_only_raw_fail": 236,
+  "potential_if_delta0": 398,
+  "unique_pairs": 906,
+  "intervals_nonzero": 141
+ },
+ "candidate_sha256": "2dd6d2edd7e0b82b5acd79b4c5b1b00c0a1d171f841159c63f1ad3720015652b",
+ "symbols_sha256": "eb4477874065c9b673ee53b0f030b0abbdf7b5ee1d6de60495144b92e52a4110"
+}
