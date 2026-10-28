@@ -1,0 +1,13 @@
+{
+  "window": 120816,
+  "function": "sweep_buyback handler body (848 insns / 6960 B)",
+  "tool": "research/fees-composed-frontier188/window_map.py via measure_thin.py (box)",
+  "deployed": "feesr34/evidence/original/pump_fees/deployed.so",
+  "stacks_on": "chantier-fees-wholeelf-163920",
+  "before": {"deployed_windows": 585, "candidate_windows": 585, "normalized": 584, "raw": 200, "unmatched_original_count": 1, "unmatched_original": [120816], "symbols_sha256": "57e11a5ee20b18438298101ba9375f9a187465926ad1dae9eebb5ab60a701a02"},
+  "after":  {"deployed_windows": 585, "candidate_windows": 585, "normalized": 585, "raw": 288, "unmatched_original_count": 0, "unmatched_original": [], "symbols_sha256": "e7a233d207589e7a2082d22084ab512d05facd969ad43682f824bb76b8e8860f"},
+  "gained_normalized": [120816],
+  "lost_normalized": [],
+  "raw_delta": 88,
+  "note": "Completes 585/585 normalized (all deployed Fees function windows matched). Standalone (off the 582 baseline) this change alone dips raw 200->195 due to incidental layout under the plain linker; applied in lineage order after 147944+163920 raw rises 200->288. The whole-ELF raw/layout identity is restored by the orthogonal ordered.ld layer (not part of this packet)."
+}

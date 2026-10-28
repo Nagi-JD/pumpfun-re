@@ -1,0 +1,57 @@
+--- parent/programs/pump-fees/src/instructions/buyback/mod.rs
++++ recovered/programs/pump-fees/src/instructions/buyback/mod.rs
+@@ -106,16 +106,17 @@
+ 
+ 
+ pub fn sweep_buyback(ctx:Context<crate::buyback::SweepBuyback>,index:u8)->Result<()>{
+-    require_gt!(8u8,index,FeeError::InvalidBuybackIndex);
+-    let vault = &mut ctx.accounts.buyback_vault; let bump_value = ctx.bumps.buyback_vault;
++    let bump_value = ctx.bumps.buyback_vault; let destination = &mut ctx.accounts.destination; require_gt!(8u8,index,FeeError::InvalidBuybackIndex);
++    let vault = &mut ctx.accounts.buyback_vault;
++
+     vault.claim()?;
+     let sol_amount = vault.get_lamports().saturating_sub(Rent::get()?.minimum_balance(vault.to_account_info().data_len()));
+     let token_amount = ctx.accounts.buyback_vault_ata.amount;
+-    let index_seed=[index];let bump=[bump_value];let seeds:&[&[u8]]=&[b"buyback-vault",&index_seed,&bump];
+-    anchor_spl::token_interface::transfer_checked(CpiContext::new_with_signer(ctx.accounts.token_program.to_account_info(),anchor_spl::token_interface::TransferChecked{from:ctx.accounts.buyback_vault_ata.to_account_info(),mint:ctx.accounts.mint.to_account_info(),to:ctx.accounts.destination_ata.to_account_info(),authority:vault.to_account_info()},&[seeds]),token_amount,ctx.accounts.mint.decimals)?;
++    
++    anchor_spl::token_interface::transfer_checked(CpiContext::new_with_signer(ctx.accounts.token_program.to_account_info(),anchor_spl::token_interface::TransferChecked{from:ctx.accounts.buyback_vault_ata.to_account_info(),to:ctx.accounts.destination_ata.to_account_info(),authority:vault.to_account_info(),mint:ctx.accounts.mint.to_account_info()},&[&[b"buyback-vault",&[index],&[bump_value]]]),token_amount,ctx.accounts.mint.decimals)?;
+     vault.sub_lamports(sol_amount)?;
+-    ctx.accounts.destination.add_lamports(sol_amount)?;
+-    vault.total_claimed=vault.total_claimed.checked_add(sol_amount).ok_or(FeeError::MathOverflow)?;
+-    if ctx.accounts.mint.key()==anchor_spl::token::spl_token::native_mint::ID{vault.total_claimed_token1=vault.total_claimed_token1.checked_add(token_amount).ok_or(FeeError::MathOverflow)?;}else{vault.total_claimed_token2=vault.total_claimed_token2.checked_add(token_amount).ok_or(FeeError::MathOverflow)?;}
++    destination.add_lamports(sol_amount)?;
++    vault.add_total_claimed(sol_amount)?;
++    if ctx.accounts.mint.key()==anchor_spl::token::spl_token::native_mint::ID{vault.add_total_claimed_token1(token_amount)?;}else{vault.add_total_claimed_token2(token_amount)?;}
+     let event=crate::buyback::SweepBuybackEvent{index,sol_amount,token_amount,destination:ctx.accounts.destination.key(),buyback_vault:vault.key(),mint:ctx.accounts.mint.key()};emit!(event);emit_cpi!(event);Ok(())
+ }
+--- parent/programs/pump-fees/src/state.rs
++++ recovered/programs/pump-fees/src/state.rs
+@@ -62,7 +62,7 @@
+ 
+ 
+ impl BuybackVault {
+-    pub fn claim(&mut self) -> Result<()> {
++    pub fn claim(&mut self) -> core::result::Result<(), crate::FeeError> {
+ 
+         let now = Clock::get().unwrap().unix_timestamp;
+ 
+@@ -71,7 +71,7 @@
+ 
+         if self.claim_rate_limit != 0 {
+         if now - self.last_claimed <= self.claim_rate_limit {
+-            return Err(crate::FeeError::ClaimRateLimitExceeded.into());
++            return Err(crate::FeeError::ClaimRateLimitExceeded);
+         }
+         }
+         self.last_claimed = now;
+@@ -472,3 +472,9 @@
+     *current = new_tiers;
+     Ok(())
+ }
++
++impl BuybackVault {
++    pub(crate) fn add_total_claimed(&mut self, amount: u64) -> Result<()> { self.total_claimed = self.total_claimed.checked_add(amount).ok_or(crate::FeeError::MathOverflow)?; Ok(()) }
++    pub(crate) fn add_total_claimed_token1(&mut self, amount: u64) -> Result<()> { self.total_claimed_token1 = self.total_claimed_token1.checked_add(amount).ok_or(crate::FeeError::MathOverflow)?; Ok(()) }
++    pub(crate) fn add_total_claimed_token2(&mut self, amount: u64) -> Result<()> { self.total_claimed_token2 = self.total_claimed_token2.checked_add(amount).ok_or(crate::FeeError::MathOverflow)?; Ok(()) }
++}
