@@ -1,0 +1,17 @@
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -77,10 +77,10 @@
+ 
+ 
+ 
+-declare_program!(pump_amm);
+-declare_program!(pump_fees);
+-impl AccountDeserialize for distribution::SharingConfig { fn try_deserialize(buf: &mut &[u8]) -> Result<Self> {
+-if buf.len() < Self::DISCRIMINATOR.len() { return Err(anchor_lang::error::ErrorCode::AccountDiscriminatorNotFound.into()); } let given_disc = &buf[..Self::DISCRIMINATOR.len()];
++
++
++
++declare_program!(pump_amm); declare_program!(pump_fees); impl AccountDeserialize for distribution::SharingConfig { fn try_deserialize(buf: &mut &[u8]) -> Result<Self> { if buf.len() < Self::DISCRIMINATOR.len() { return Err(anchor_lang::error::ErrorCode::AccountDiscriminatorNotFound.into()); } let given_disc = &buf[..Self::DISCRIMINATOR.len()];
+ if Self::DISCRIMINATOR != given_disc { return Err(error!(anchor_lang::error::ErrorCode::AccountDiscriminatorMismatch).with_account_name("SharingConfig")); }
+ Self::try_deserialize_unchecked(buf) } fn try_deserialize_unchecked(buf: &mut &[u8]) -> Result<Self> { let mut data: &[u8] = &buf[Self::DISCRIMINATOR.len()..]; AnchorDeserialize::deserialize(&mut data) .map_err(|_| anchor_lang::error::ErrorCode::AccountDidNotDeserialize.into()) } }
+ 
