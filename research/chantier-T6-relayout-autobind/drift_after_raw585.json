@@ -1,0 +1,21 @@
+{
+  "inputs": {
+    "deployed": "/home/Saturn/feesr34/evidence/original/pump_fees/deployed.so",
+    "symbols": "sym.raw585.so",
+    "stripped": null,
+    "deployed_sha256": "4f2955d0f6b40cc9ff7daa18ccad7d19119ba1249759f4e7e3bb691beee6b35e",
+    "symbols_sha256": "7ec99a6915bcb9245a2d5199996376a76651fa893c71e455b189cf59428f4e66"
+  },
+  "summary": {
+    "original_windows": 585,
+    "candidate_windows": 585,
+    "matched": 585,
+    "exact": 585,
+    "call_only_raw_fail": 0,
+    "potential_if_delta0": 585,
+    "unique_pairs": 585,
+    "intervals_nonzero": 0
+  },
+  "root": null,
+  "top_spoilers": []
+}

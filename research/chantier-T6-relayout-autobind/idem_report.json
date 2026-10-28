@@ -1,0 +1,58 @@
+{
+  "mode": "rebind",
+  "deployed": "/home/Saturn/feesr34/evidence/original/pump_fees/deployed.so",
+  "symbols": "/home/Saturn/t6auto/sym.raw585.so",
+  "link_map": "/home/Saturn/t6auto/raw585.map",
+  "existing_ld": "/home/Saturn/t6auto/ordered.WIN.ld",
+  "deployed_windows": 585,
+  "candidate_windows": 585,
+  "unique_pairs": 585,
+  "families": {
+    ".text": {
+      "ld_selectors": 586,
+      "current_sections": 573,
+      "stale_selectors": 1,
+      "orphan_sections": 0,
+      "rebound": 0,
+      "unresolved_stale": [
+        {
+          "line": 599,
+          "sec": ".text._ZN91_$LT$pump_fees_candidate..donation..DonationFeePdaCreated$u20$as$u20$anchor_lang..Event$GT$4data17h4a7b5c231bfa9e1fE",
+          "reason": "no 1:1 same-base orphan (stale=1, orphans=0) -- function deleted or renamed; selector left inert"
+        }
+      ],
+      "unplaced_orphans": [],
+      "bindings": []
+    },
+    ".rodata": {
+      "ld_selectors": 619,
+      "current_sections": 469,
+      "stale_selectors": 0,
+      "orphan_sections": 4,
+      "rebound": 0,
+      "unresolved_stale": [],
+      "unplaced_orphans": [
+        ".rodata.cst16",
+        ".rodata.cst32",
+        ".rodata.cst4",
+        ".rodata.cst8"
+      ],
+      "bindings": []
+    },
+    ".data.rel.ro": {
+      "ld_selectors": 265,
+      "current_sections": 205,
+      "stale_selectors": 0,
+      "orphan_sections": 0,
+      "rebound": 0,
+      "unresolved_stale": [],
+      "unplaced_orphans": [],
+      "bindings": []
+    }
+  },
+  "edits": 0,
+  "idempotent": true,
+  "total_rebound": 0,
+  "total_unresolved": 1,
+  "total_unplaced": 4
+}

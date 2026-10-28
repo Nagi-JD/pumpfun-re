@@ -1,0 +1,80 @@
+{
+  "inputs": {
+    "deployed": "/home/Saturn/feesr34/evidence/original/pump_fees/deployed.so",
+    "symbols": "sym.raw288.so",
+    "stripped": null,
+    "deployed_sha256": "4f2955d0f6b40cc9ff7daa18ccad7d19119ba1249759f4e7e3bb691beee6b35e",
+    "symbols_sha256": "e7a233d207589e7a2082d22084ab512d05facd969ad43682f824bb76b8e8860f"
+  },
+  "summary": {
+    "original_windows": 585,
+    "candidate_windows": 585,
+    "matched": 585,
+    "exact": 288,
+    "call_only_raw_fail": 271,
+    "potential_if_delta0": 559,
+    "unique_pairs": 585,
+    "intervals_nonzero": 4
+  },
+  "root": {
+    "dep_left": "0x10e30",
+    "dep_right": "0x10ee0",
+    "cand_left": "0x10e30",
+    "cand_right": "0xc1198",
+    "delta": 721592,
+    "gap_dep": 0,
+    "gap_cand": 721592,
+    "unmatched_dep": [],
+    "unmatched_cand": []
+  },
+  "top_spoilers": [
+    {
+      "dep_left": "0x82e28",
+      "dep_right": "0x832e0",
+      "cand_left": "0xc3008",
+      "cand_right": "0x80fb8",
+      "delta": -271624,
+      "gap_dep": 0,
+      "gap_cand": -271624,
+      "unmatched_dep": [],
+      "unmatched_cand": [],
+      "spoiled_call_only": 271
+    },
+    {
+      "dep_left": "0x81118",
+      "dep_right": "0x81450",
+      "cand_left": "0x80c80",
+      "cand_right": "0xc1630",
+      "delta": 263800,
+      "gap_dep": 0,
+      "gap_cand": 263800,
+      "unmatched_dep": [],
+      "unmatched_cand": [],
+      "spoiled_call_only": 268
+    },
+    {
+      "dep_left": "0x10e30",
+      "dep_right": "0x10ee0",
+      "cand_left": "0x10e30",
+      "cand_right": "0xc1198",
+      "delta": 721592,
+      "gap_dep": 0,
+      "gap_cand": 721592,
+      "unmatched_dep": [],
+      "unmatched_cand": [],
+      "spoiled_call_only": 226
+    },
+    {
+      "dep_left": "0x10ee0",
+      "dep_right": "0x11378",
+      "cand_left": "0xc1198",
+      "cand_right": "0x10ee0",
+      "delta": -722768,
+      "gap_dep": 0,
+      "gap_cand": -722768,
+      "unmatched_dep": [],
+      "unmatched_cand": [],
+      "spoiled_call_only": 226
+    }
+  ]
+}
