@@ -1,0 +1,19 @@
+--- a/programs/pump/src/quote_control/initialize_quote_control.rs
++++ b/programs/pump/src/quote_control/initialize_quote_control.rs
+@@ -2,6 +2,8 @@
+ 
+ use super::state::{QuoteControl, QUOTE_CONTROL_SEED};
+ 
++
++
+ #[derive(Accounts)]
+ pub struct InitializeQuoteControl<'info> {
+     #[account(
+@@ -26,6 +28,4 @@
+     quote_control.admin = Pubkey::default();
+     quote_control.reserves_admin = Pubkey::default();
+     quote_control._reserved = [0; 32];
+-    quote_control.mints = Vec::new();
+-    Ok(())
+-}
++    quote_control.mints = Vec::new(); Ok(()) }
