@@ -1,0 +1,50 @@
+{
+ "before": {
+  "note": "chantier-T3-creator-sync-lines baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 877,
+  "exact": 162,
+  "unmatched": 158,
+  "call_consistent_original": 810
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 881,
+  "exact": 162,
+  "unmatched": 154,
+  "call_consistent_original": 813
+ },
+ "gained_matched": [
+  "0xa23f0",
+  "0xcf510",
+  "0x1255a8",
+  "0x137fc0"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 877,
+  "exact": 162,
+  "call_only_raw_fail": 228,
+  "potential_if_delta0": 390,
+  "unique_pairs": 876,
+  "intervals_nonzero": 125
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1037,
+  "matched": 881,
+  "exact": 162,
+  "call_only_raw_fail": 229,
+  "potential_if_delta0": 391,
+  "unique_pairs": 880,
+  "intervals_nonzero": 125
+ },
+ "candidate_sha256": "133d57a00dc0ff4f8c9e50316a750bf96faf76cf76dc67f64256277d0d439166",
+ "symbols_sha256": "44e4ff70d60232e7e7a551a96757744e4b1b04c205b4946895c76066c8543d91"
+}
