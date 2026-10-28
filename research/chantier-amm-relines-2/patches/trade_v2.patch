@@ -1,0 +1,193 @@
+--- a/src/instructions/swap/trade_v2.rs
++++ b/src/instructions/swap/trade_v2.rs
+@@ -111,11 +111,38 @@
+     quote_mint: &Pubkey,
+     token_program: &Pubkey,
+ ) -> Result<()> {
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+     require_keys_eq!(*token_account.owner, *token_program, PumpAmmError::AccountTypeNotSupported);
+     let owner = {
+         let data = token_account.try_borrow_data()?;
+         let mut data_slice = data.as_ref();
+         let state = TokenAccount::try_deserialize(&mut data_slice)?;
++
++
++
+         require_keys_eq!(state.mint, *quote_mint, PumpAmmError::InvalidQuoteMint);
+         state.owner
+     };
+@@ -142,6 +169,75 @@
+ #[inline(never)]
+ fn total_quote(amounts: &[u64; 4]) -> Result<u64> {
+     amounts.iter().try_fold(0u64, |total, amount| {
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+         total.checked_add(*amount).ok_or_else(|| error!(PumpAmmError::Overflow))
+     })
+ }
+@@ -184,6 +280,24 @@
+ 
+ impl BuyResult {
+     pub fn total_user_quote(&self) -> Result<u64> {
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+         self.pool_quote_amount_in.checked_add(self.buyback_fee)
+             .ok_or_else(|| error!(PumpAmmError::Overflow))
+     }
+@@ -222,10 +336,50 @@
+     fees: &AppliedFees,
+     real_quote_reserves: u64,
+ ) -> Result<(u64, u64)> {
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+     let quote_amount_out_without_lp_fee = quote_amount_out.checked_sub(fees.lp_fee)
+         .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+     require_gte!(real_quote_reserves, quote_amount_out_without_lp_fee,
+         PumpAmmError::InsufficientRealQuoteReserves);
++
++
++
++
+     let user_quote_amount_out = quote_amount_out_without_lp_fee.checked_sub(fees.creator_fee)
+         .and_then(|amount| amount.checked_sub(fees.protocol_fee))
+         .ok_or_else(|| error!(PumpAmmError::Overflow))?;
