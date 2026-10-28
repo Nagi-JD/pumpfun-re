@@ -1,0 +1,14 @@
+{
+  "deployed": "/home/nagi/pumpre/repo/evidence/original/pump/deployed.so",
+  "symbols": "out/t6base-symbols.so",
+  "link_map": "link-t6base/link.map",
+  "mode": "preserve",
+  "sections_total": 993,
+  "content_matched": 780,
+  "relocated": [],
+  "selectors_emitted": 993,
+  "deployed_windows": 1035,
+  "candidate_windows": 993,
+  "unique_pairs": 780,
+  "already_raw_candidate_windows": 88
+}
