@@ -76,6 +76,9 @@ version macro} → changer ce construct exact → rebuild → re-diff. **Deux le
 
 **Un sous-claim par instruction.** **Effort :** L chacun.
 
+**→ Spec complète et claimable : [`docs/T3_WRAPPERS.md`](T3_WRAPPERS.md)** (prérequis macro vendored,
+cibles à confirmer au solveur, recette par wrapper, protocole de mesure, découpage en sous-claims).
+
 ## T4 — Tailles de fonctions source (Δ résiduels)
 
 Pour chaque fonction appariée-normalisée dont la **taille** diffère encore (les ~21 % hors match de taille)
