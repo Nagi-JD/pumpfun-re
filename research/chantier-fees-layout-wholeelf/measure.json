@@ -1,0 +1,52 @@
+{
+  "packet": "chantier-fees-layout-wholeelf",
+  "goal": "Validate the whole-ELF layout recipe (ordered.ld deployed-order .text/.rodata/.data.rel.ro) end-to-end on pump_fees, on the window-complete (585/585 normalized) program.",
+  "box": "Fees byte-race worker; Anza platform-tools v1.44 build + strip v1.52 llvm-objcopy; metric research/fees-composed-frontier188/window_map.py via measure_thin.py",
+  "deployed": "feesr34/evidence/original/pump_fees/deployed.so",
+  "deployed_stripped_sha256": "5b6ceda57863f0dcc3e0e3623052f8342c2c81883379699e71d7ed5383cb3dcf",
+
+  "step1_window_completion": {
+    "note": "Source = /work/next649/extend-qualified. Three source patches applied in lineage order. Only 147944 (crank) is merged on master (PR #48); 163920 (create_donation_fee_pda) and 120816 (sweep_buyback) are NOT in the repo - applied from the box's working patches (create_rs_only.patch, sweep_source.patch). The box NOTE.md had documented 120816 as unclosed after 8 hypotheses; the box's current sweep_source.patch is a working successor that DOES close it.",
+    "progression": [
+      {"state": "pristine baseline", "normalized": 582, "raw": 200, "unmatched_original": [120816, 147944, 163920], "symbols_sha256": "ca9e6a933d1406743689f7bad609ce6b5e95ea91c064e0233cbd4db100afb335"},
+      {"state": "+crank (147944)", "normalized": 583, "raw": 200, "unmatched_original": [120816, 163920]},
+      {"state": "+create_donation (163920)", "normalized": 584, "raw": 200, "unmatched_original": [120816]},
+      {"state": "+sweep_buyback (120816) = WINDOW-COMPLETE", "normalized": 585, "raw": 288, "unmatched_original": [], "symbols_sha256": "e7a233d207589e7a2082d22084ab512d05facd969ad43682f824bb76b8e8860f"}
+    ],
+    "result": "585/585 normalized, unmatched_original [] CONFIRMED. raw 288 at window completion (as predicted ~288)."
+  },
+
+  "methodology_note": "cargo/rustc does NOT track ordered.ld as a build input. Swapping ordered.ld alone never triggers a relink - the cached .so is silently reused (every variant measured byte-identical). A source file MUST be touched before each rebuild to force the linker to re-run with the new script. All step2 measures below are forced relinks of the IDENTICAL window-complete source (same input objects) so the ONLY variable is the linker-script .text/.rodata/.data.rel.ro ordering.",
+
+  "step2_layout_layer": {
+    "metric": "normalized always 585, unmatched_original always []; only raw (byte-exact windows) varies with layout",
+    "ladder": [
+      {"layout": "pure default catch-all (*(.text*)) only", "raw": 253, "symbols_sha256": "e9f6fde23c37196e69746108cd9833bd7df3edaf33ff15b345944db1f817bcd7"},
+      {"layout": "stale shipped ordered.ld (box pristine layout, 586 stale selectors)", "raw": 288, "symbols_sha256": "e7a233d207589e7a2082d22084ab512d05facd969ad43682f824bb76b8e8860f"},
+      {"layout": "deployed-order .text (regenerated, 438/585 content-paired)", "raw": 393, "symbols_sha256": "ad6ff4adc837e5b7895cb47c26d4e501196e829248e5a2856e14a0382d04ef9b"},
+      {"layout": "deployed-order .text + .data.rel.ro (BEST)", "raw": 403, "symbols_sha256": "3e20ec0d58695dd3e82c152b8c123d6e67b324c2dcc400edb9e183fac2704695"},
+      {"layout": "deployed-order .text + .data.rel.ro + .rodata", "raw": 269, "symbols_sha256": "ae4b4f94c4c513c3938496ca871cc6c2a40c742b68624ac2764f4a99b16a24c4", "note": "REGRESSES - rodata reconstruction scatters dup-content anonymous .rodata..L constant pools (the T6 failure mode)"}
+    ],
+    "pairing": {"sections_total": 585, "text_content_paired": 438, "datarelro_paired": 247, "rodata_paired_attempted": 411, "ptr_correspondences": 772},
+    "residual_characterization_at_393_text_only": {
+      "unique_pairs": 438, "raw_exact_pairs": 262, "non_raw_pairs": 176,
+      "non_raw_pointer_bearing": 176, "non_raw_call_offset_only": 0,
+      "finding": "After deployed-order .text, EVERY remaining non-raw paired window fails ONLY on lddw opaque relocated-pointer values (into .rodata/.data.rel.ro). The .text layout fully solved relative call offsets (0 call-only failures remain)."
+    }
+  },
+
+  "whole_elf_comparison": {
+    "best_layout": "deployed-order .text + .data.rel.ro, raw 403/585",
+    "candidate_stripped_sha256": "8fb0a24d372d12f1f1f304105c81bc0c1c1424d842446158bbfd8b01cd26d955",
+    "deployed_stripped_sha256": "5b6ceda57863f0dcc3e0e3623052f8342c2c81883379699e71d7ed5383cb3dcf",
+    "byte_identical": false,
+    "stripped_size_bytes": 873256,
+    "stripped_size_match": true,
+    "differing_bytes": 7783,
+    "percent_identical": 99.109,
+    "residual_by_section": {".rodata": 5592, ".text": 2102, ".data.rel.ro": 89},
+    "residual_elsewhere": 0,
+    "dynsym_dynstr_reloc_dynamic_headers": "BYTE-IDENTICAL (no dynamic-symbol-ordering or relocation-metadata residual; unlike lalalune's ~30-byte Mayhem dynsym residual, that class of residual is zero here)",
+    "conclusion": "Whole-ELF byte-identity NOT reached on fees with this recipe. 99.11% identical. Residual (7783 B) is dominated by .rodata (5592 B) and the .text windows that point into it (2102 B). .data.rel.ro is essentially solved (89 B). The gap to 585/585 is the .rodata deployed-order reconstruction, which regresses under pure content pairing because of duplicate-content anonymous constant pools."
+  }
+}
