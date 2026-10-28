@@ -1,0 +1,74 @@
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -2448,6 +2448,11 @@
+ 
+ 
+ 
++#[inline(never)]
++pub fn sell_quote(curve:&trade_types::BondingCurve,amount:u64)->Result<u128>{
++ let numerator=curve.virtual_quote_reserves as u128*amount as u128;
++ numerator.checked_div(curve.virtual_token_reserves as u128+amount as u128).ok_or_else(||error!(PumpError::DivisionByZero))
++}
+ 
+ 
+ 
+@@ -2470,16 +2475,11 @@
+ 
+ 
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
++#[inline(never)]
++pub(crate) fn buy_fee_market_cap(curve:&trade_types::BondingCurve,mint:&anchor_spl::token_interface::Mint)->Result<u128>{
++ let supply=if curve.is_mayhem_mode {curve.token_total_supply}else{mint.supply};
++ (u128::from(supply)*u128::from(curve.virtual_quote_reserves)).checked_div(u128::from(curve.virtual_token_reserves)).ok_or_else(||error!(PumpError::DivisionByZero))
++}
+ 
+ 
+ 
+--- a/programs/pump/src/trade_v3.rs
++++ b/programs/pump/src/trade_v3.rs
+@@ -121,7 +121,7 @@
+     require_gte!(a.associated_base_user.amount,amount,PumpError::NotEnoughTokensToSell);
+     if is_sol{require_keys_neq!(a.buyback_fee_recipient.key(),Pubkey::default(),PumpError::BuybackFeeRecipientMissing);require!(a.global.buyback_fee_recipients.contains(&a.buyback_fee_recipient.key()),PumpError::BuybackFeeRecipientNotAuthorized);}
+     let curve=&a.bonding_curve;
+-    let quote=narrow(amount as u128*curve.virtual_quote_reserves as u128/(curve.virtual_token_reserves as u128+amount as u128))?;
++    let quote=narrow(crate::sell_quote(curve,amount)?)?;
+     let (fees,creator_bps)=if a.user.key()==a.global.whitelist_pda {
+         (Fees{lp_fee_bps:0,protocol_fee_bps:0,creator_fee_bps:0},0)
+     }else{
+@@ -1306,16 +1306,16 @@
+ #[derive(Clone)]pub struct PostCompleteBuyEvent{pub user:Pubkey,pub mint:Pubkey,pub bonding_curve:Pubkey,pub quote_mint:Pubkey,pub timestamp:i64,pub base_out:u64,pub quote_in:u64,pub fee_basis_points:u64,pub fee:u64,pub creator_fee_basis_points:u64,pub creator_fee:u64,pub buyback_fee:u64,pub pool_base_reserves_before:u64,pub pool_quote_reserves_before:u64,pub pool_base_reserves_after:u64,pub pool_quote_reserves_after:u64}
+ 
+ // Buy-side pretrade fee basis recovered from the original mode selector.
+-fn buy_fee_market_cap(curve: &BondingCurve, mint: &Mint) -> Result<u128> {
+-    require!(curve.virtual_token_reserves != 0, PumpError::DivisionByZero);
+-    let selected_supply = if curve.is_mayhem_mode {
+-        curve.token_total_supply
+-    } else {
+-        mint.supply
+-    };
+-    Ok(u128::from(selected_supply) * u128::from(curve.virtual_quote_reserves)
+-        / u128::from(curve.virtual_token_reserves))
+-}
++use crate::buy_fee_market_cap;
++
++
++
++
++
++
++
++
++
+ #[path="curve_quote_payments.rs"]
+ pub mod quote_payments;
+ 
