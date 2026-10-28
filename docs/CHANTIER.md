@@ -86,7 +86,7 @@ et qui gâte du raw selon T2 : égaliser la taille (inline/outline, `#[inline(ne
 split/merge) sans casser la signature normalisée.
 **Effort :** M par fonction. Prioriser par raw débloqués.
 
-## T5 — Data / relocations (`lddw`)
+## T5 — Data / relocations (`lddw`) → spec complète : [`T5_DATA_LAYOUT.md`](T5_DATA_LAYOUT.md)
 
 Les cibles `lddw` (`.rodata` / `.data.rel.ro` : Location records, strings, discriminants, tables d'erreurs)
 ont une adresse = cumul des enregistrements précédents. Énumérer les enregistrements déployé vs candidat,
