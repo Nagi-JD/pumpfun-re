@@ -1,0 +1,59 @@
+--- a/programs/pump/src/legacy_native_payments.rs
++++ b/programs/pump/src/legacy_native_payments.rs
+@@ -1,7 +1,7 @@
+ use anchor_lang::prelude::*;
+ 
+ #[inline(never)]
+-pub(crate) fn ensure_rent_exempt<'info>(
++pub fn ensure_rent_exempt<'info>(
+     system_program: &Program<'info, System>,
+     payer: &Signer<'info>,
+     destination: &AccountInfo<'info>,
+@@ -15,7 +15,7 @@
+ }
+ 
+ #[inline(never)]
+-pub(super) fn transfer<'info>(
++pub fn transfer<'info>(
+     system_program: &AccountInfo<'info>,
+     payer: &Signer<'info>,
+     destination: &AccountInfo<'info>,
+--- a/programs/pump/src/buy_v2.rs
++++ b/programs/pump/src/buy_v2.rs
+@@ -1037,7 +1037,7 @@
+ fn check_token(info:&AccountInfo,mint:Pubkey,owner:Pubkey)->Result<()>{let d=info.try_borrow_data()?;let t=TokenAccount::try_deserialize(&mut &d[..])?;require_keys_eq!(t.mint,mint,PumpError::MintDoesNotMatchBondingCurve);let _=owner;Ok(())}
+ 
+ #[path="v2_native_payments.rs"]
+-pub(crate) mod native_payments;
++pub mod native_payments;
+ 
+ #[path="v2_token_transfers.rs"]
+ pub mod token_transfers;
+--- a/programs/pump/src/v2_native_payments.rs
++++ b/programs/pump/src/v2_native_payments.rs
+@@ -1,7 +1,7 @@
+ use anchor_lang::prelude::*;
+ 
+ #[inline(never)]
+-pub(crate) fn ensure_rent_exempt<'info>(
++pub fn ensure_rent_exempt<'info>(
+     size: usize,
+     system_program: &Program<'info, System>,
+     payer: &Signer<'info>,
+@@ -16,7 +16,7 @@
+ }
+ 
+ #[inline(never)]
+-pub(super) fn transfer<'info>(
++pub fn transfer<'info>(
+     system_program: &AccountInfo<'info>,
+     payer: &Signer<'info>,
+     destination: &AccountInfo<'info>,
+--- a/programs/pump/src/buy.rs
++++ b/programs/pump/src/buy.rs
+@@ -32,4 +32,4 @@
+ 
+ pub use crate::legacy_buy_exec::execute;
+ #[path="legacy_native_payments.rs"]
+-pub(crate) mod native_payments;
++pub mod native_payments;
