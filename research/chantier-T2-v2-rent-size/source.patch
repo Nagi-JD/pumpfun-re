@@ -1,0 +1,17 @@
+--- a/programs/pump/src/v2_native_payments.rs
++++ b/programs/pump/src/v2_native_payments.rs
+@@ -2,12 +2,12 @@
+ 
+ #[inline(never)]
+ pub fn ensure_rent_exempt<'info>(
+-    size: usize,
++    _size: usize,
+     system_program: &Program<'info, System>,
+     payer: &Signer<'info>,
+     destination: &AccountInfo<'info>,
+ ) -> Result<()> {
+-    let minimum = Rent::get()?.minimum_balance(size);
++    let minimum = Rent::get()?.minimum_balance(0);
+     if destination.lamports() < minimum {
+         transfer(system_program.as_ref(), payer, destination, minimum)
+     } else {
