@@ -1,0 +1,53 @@
+{
+ "before": {
+  "note": "chantier-T2-v2-rent-size baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1054,
+  "matched": 912,
+  "exact": 162,
+  "unmatched": 123,
+  "call_consistent_original": 845
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1049,
+  "matched": 917,
+  "exact": 163,
+  "unmatched": 118,
+  "call_consistent_original": 850
+ },
+ "gained_matched": [
+  "0x49888",
+  "0x52660",
+  "0x94908",
+  "0x94e28",
+  "0x17c850"
+ ],
+ "lost_matched": [],
+ "gained_raw": [
+  "0x17c850"
+ ],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1054,
+  "matched": 912,
+  "exact": 162,
+  "call_only_raw_fail": 239,
+  "potential_if_delta0": 401,
+  "unique_pairs": 911,
+  "intervals_nonzero": 150
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1049,
+  "matched": 917,
+  "exact": 163,
+  "call_only_raw_fail": 239,
+  "potential_if_delta0": 402,
+  "unique_pairs": 916,
+  "intervals_nonzero": 88
+ },
+ "candidate_sha256": "76159da3a2421b4da87934845d356cd6f7b72af8646720762553bd2cd357d300",
+ "symbols_sha256": "caf2798a784d02e72837e8eb859439deb5c7fa26ddbf186c024afbbd9fd8a948"
+}
