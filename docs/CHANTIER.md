@@ -130,6 +130,9 @@ Plafond estimé par ordre seul ≈ +100 raw ; 333 fenêtres exigent T5 (data/rel
 | T6 layout (relayout+anchor vendored) | open | — | — |
 | T7 PumpSwap | blocked (pump) | — | — |
 
-Next: **T6 infra** (relayout.py + vendored Anchor 0.31.2 `#[used]` macro — we already have it from Fees) is the enabler for T3/T5; a measured "wire vendored macro into pump" experiment is in flight.
+Next: **T3 is unblocked** — measured that pump does NOT need the vendored macro (no `declare_program!`;
+wiring it regressed −1 raw), so T3 = pure `#[derive(Accounts)]` reconstruction on the stock s7p build
+(see [`T3_WRAPPERS.md`](T3_WRAPPERS.md)). **T6 infra** (relayout.py for the layout layer) remains the
+enabler for whole-ELF once bodies match.
 
 Pour claimer : ouvre une issue `chantier: T<n> <titre>` puis une PR avec le packet mesuré.

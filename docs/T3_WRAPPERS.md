@@ -9,22 +9,19 @@
 > **Base:** pump profile **s7p = 802 / 161** (after the merged chain #22–#32). Target to pass:
 > lalalune Round-37 **823 / 203**. **Tool:** `tools/drift_solver.py`.
 
-## Prerequisite — the vendored Anchor macro (do this first)
+## Prerequisite — none beyond the stock s7p build (MEASURED)
 
-pump currently pulls `anchor-attribute-program 0.31.2` from **crates.io**. The recipe requires
-the **vendored** macro with `#[used]` (stock crates.io does not reproduce wrapper bytes). We
-already have the right version from the Fees work: `anchor-attribute-program 0.31.2` with
-`#[used]` at `/work/next637/vendor/used-public`.
+**pump does NOT need the vendored Anchor macro.** A measured experiment wired the vendored
+`anchor-attribute-program 0.31.2 #[used]` (from the Fees work) into pump: it **regressed** raw
+137→136 and moved zero wrappers. Reason: pump has **no `declare_program!`** (grep-confirmed), and
+the vendored `#[used]` delta lives only in `declare_program!`'s `gen_id` — inert for pump, whose
+wrappers come from `#[program]` + `#[derive(Accounts)]` on the **stock** macro. We already match
+802 windows with stock 0.31.2, so the version is correct. (The vendored-macro "hard prerequisite"
+in `WRAPPER_RECONSTRUCTION.md` §d applies to `declare_program!` users like Fees, not pump.)
 
-1. Override the transitive dep in the pump workspace `Cargo.toml`:
-   `[patch.crates-io] anchor-attribute-program = { path = "…/used-public" }` (keep 0.31.2 so it
-   resolves). Add `--gc-sections` to the link step.
-2. Rebuild with the s7p recipe (macOS-host rustc shim + `ordered.ld` + platform-tools v1.44,
-   `--locked --offline`, `-Zremap-cwd-prefix=`).
-3. **Measure** — confirm the base still reproduces (or moves toward deployed on wrappers) with
-   `lost[] = []`. If it regresses, stop and report; do not proceed on a broken base.
-   *(A measured "wire vendored macro" experiment is in flight — coordinate: if its packet
-   `research/chantier-anchor-vendored/` lands, build on it.)*
+So T3 is **pure Accounts-struct reconstruction** on the existing s7p build. Just keep the pinned
+recipe (platform-tools v1.44, macOS-host rustc shim, `ordered.ld`, `--locked --offline`,
+`-Zremap-cwd-prefix=`) and use `--gc-sections` to drop any uncalled candidate-only helper.
 
 ## Targets (confirm current set with the solver)
 
