@@ -5,7 +5,7 @@
    symbols sha256 `3cd921aa5d8853feb111ad7a62a406333512173199558695e653cef169bf3afd`.
 2. Run the solver:
    `python3 tools/data_layout.py DEPLOYED.so symbols.so --cand-stripped candidate.so -o data-layout.json`.
-   Expect the `summary` block of `data-layout-ref.json`: `data_aligned` 231, `data_residual` 421,
+   Expect the `summary` block of `data-layout-ref.json`: `data_aligned` 231, `data_residual` 421, `projected_raw` 161, `projected_raw_after_calls` 392,
    `lddw_sites_aligned` 527 of 3087, `location_pairs` equal 90 / line 14 / file 8,
    `rodata_prefix_equal` 216, `data_rel_ro_prefix_equal` 104.
 3. Detail one window: add `--window 0x101448` (any deployed window start); its differing slots appear under `windows[].slots`.

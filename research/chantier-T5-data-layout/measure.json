@@ -14,6 +14,8 @@
   "data_aligned": 231,
   "data_residual": 421,
   "other": 0,
+  "projected_raw": 161,
+  "projected_raw_after_calls": 392,
   "lddw_sites": 3087,
   "lddw_sites_aligned": 527,
   "locations_deployed": 142,

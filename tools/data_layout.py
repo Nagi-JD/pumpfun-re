@@ -29,6 +29,14 @@ Reported (JSON):
                        data_residual at least one differing lddw points to a
                                      different record
                        other         a differing slot that is neither call nor lddw
+  projected_raw      exact + data_aligned windows with no call residual: windows that
+                     are raw as soon as the section bases equal the deployed ones
+                     (projected, not measured raw, until .text has the deployed length)
+  projected_raw_after_calls
+                     exact + every data_aligned window (also needs the call immediates)
+  rodata_order       deployed->candidate .rodata record pairs from lddw sites, grouped
+                     into runs of constant intra-offset shift in deployed order: each
+                     run boundary is a record inserted, dropped, resized or moved
   lddw_sites         paired differing lddw sites: total, intra-aligned, by section
   locations          core::panic::Location records (24 B: &str file, line, col) in
                      .data.rel.ro; counts per side and the paired list from lddw
@@ -218,6 +226,8 @@ def solve(dep: Path, syms: Path, stripped: Path | None = None, detail=()):
     classes = collections.Counter()
     sites = collections.Counter()
     loc_pairs = {}
+    rod_pairs = set()
+    projected = 0
     per_window = []
     want = {int(x, 16) for x in detail}
     for oa, cas in sorted(byo.items()):
@@ -237,6 +247,8 @@ def solve(dep: Path, syms: Path, stripped: Path | None = None, detail=()):
                 continue
             lo_, lc_ = locate_o(po), locate_c(pc)
             sec_name = lo_[0] or "unmapped"
+            if lo_[0] == ".rodata" and lc_[0] == ".rodata":
+                rod_pairs.add((lo_[1], lc_[1]))
             ok = lo_[0] is not None and lo_ == lc_
             sites[sec_name, ok] += 1
             if not ok:
@@ -249,6 +261,8 @@ def solve(dep: Path, syms: Path, stripped: Path | None = None, detail=()):
             cls = "data_residual"
         else:
             cls = "data_aligned"
+            if not kinds["call"]:
+                projected += 1
         classes[cls] += 1
         rec = {
             "dep": hex(oa),
@@ -311,12 +325,22 @@ def solve(dep: Path, syms: Path, stripped: Path | None = None, detail=()):
     while rp < min(len(rod_o), len(rod_c)) and rod_o[rp] == rod_c[rp]:
         rp += 1
 
+    runs = []
+    for do, co in sorted(rod_pairs):
+        if runs and runs[-1]["shift"] == co - do:
+            runs[-1]["dep_end"] = do
+            runs[-1]["sites"] += 1
+        else:
+            runs.append({"dep_start": do, "dep_end": do, "shift": co - do, "sites": 1})
+
     summary = {
         "matched": len(byo),
         "exact": classes["exact"],
         "data_aligned": classes["data_aligned"],
         "data_residual": classes["data_residual"],
         "other": classes["other"],
+        "projected_raw": classes["exact"] + projected,
+        "projected_raw_after_calls": classes["exact"] + classes["data_aligned"],
         "lddw_sites": sum(sites.values()),
         "lddw_sites_aligned": sum(v for (s, ok), v in sites.items() if ok),
         "locations_deployed": len(lo_o),
@@ -346,6 +370,14 @@ def solve(dep: Path, syms: Path, stripped: Path | None = None, detail=()):
         },
         "lddw_sites": {
             f"{s}:{'aligned' if ok else 'unaligned'}": v for (s, ok), v in sorted(sites.items())
+        },
+        "rodata_order": {
+            "record_pairs": len(rod_pairs),
+            "runs": len(runs),
+            "shift_runs": [
+                {"dep_start": hex(r["dep_start"]), "dep_end": hex(r["dep_end"]), "shift": r["shift"], "sites": r["sites"]}
+                for r in runs
+            ],
         },
         "location_worklist": worklist,
         "location_files": {

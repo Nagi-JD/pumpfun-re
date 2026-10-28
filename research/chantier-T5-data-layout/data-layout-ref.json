@@ -10,6 +10,8 @@
   "data_aligned": 231,
   "data_residual": 421,
   "other": 0,
+  "projected_raw": 161,
+  "projected_raw_after_calls": 392,
   "lddw_sites": 3087,
   "lddw_sites_aligned": 527,
   "locations_deployed": 142,
@@ -69,6 +71,624 @@
   ".rodata:aligned": 1,
   "text:unaligned": 4,
   "text:aligned": 99
+ },
+ "rodata_order": {
+  "record_pairs": 688,
+  "runs": 102,
+  "shift_runs": [
+   {
+    "dep_start": "0x78",
+    "dep_end": "0x78",
+    "shift": 0,
+    "sites": 1
+   },
+   {
+    "dep_start": "0xd8",
+    "dep_end": "0x2f8",
+    "shift": 96,
+    "sites": 13
+   },
+   {
+    "dep_start": "0x398",
+    "dep_end": "0x3a0",
+    "shift": 128,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x3dc",
+    "dep_end": "0x3dc",
+    "shift": 136,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x3f0",
+    "dep_end": "0x420",
+    "shift": 128,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x438",
+    "dep_end": "0x494",
+    "shift": 124,
+    "sites": 8
+   },
+   {
+    "dep_start": "0x4a0",
+    "dep_end": "0x4a0",
+    "shift": 132,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x4f4",
+    "dep_end": "0x518",
+    "shift": 136,
+    "sites": 3
+   },
+   {
+    "dep_start": "0x51c",
+    "dep_end": "0x51c",
+    "shift": 140,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x524",
+    "dep_end": "0x524",
+    "shift": 128,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x53c",
+    "dep_end": "0xa7f",
+    "shift": 136,
+    "sites": 51
+   },
+   {
+    "dep_start": "0xa8f",
+    "dep_end": "0xde4",
+    "shift": 128,
+    "sites": 48
+   },
+   {
+    "dep_start": "0xe17",
+    "dep_end": "0xe17",
+    "shift": 138,
+    "sites": 1
+   },
+   {
+    "dep_start": "0xe28",
+    "dep_end": "0xe28",
+    "shift": 1832,
+    "sites": 1
+   },
+   {
+    "dep_start": "0xe4a",
+    "dep_end": "0xe4a",
+    "shift": 74,
+    "sites": 1
+   },
+   {
+    "dep_start": "0xe57",
+    "dep_end": "0xe57",
+    "shift": 607,
+    "sites": 1
+   },
+   {
+    "dep_start": "0xe87",
+    "dep_end": "0xe87",
+    "shift": 1072,
+    "sites": 1
+   },
+   {
+    "dep_start": "0xea5",
+    "dep_end": "0xea5",
+    "shift": 1116,
+    "sites": 1
+   },
+   {
+    "dep_start": "0xeb2",
+    "dep_end": "0xeb2",
+    "shift": 741,
+    "sites": 1
+   },
+   {
+    "dep_start": "0xec0",
+    "dep_end": "0xec0",
+    "shift": 1145,
+    "sites": 1
+   },
+   {
+    "dep_start": "0xfda",
+    "dep_end": "0xfda",
+    "shift": 950,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x13d9",
+    "dep_end": "0x13d9",
+    "shift": -496,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1413",
+    "dep_end": "0x1413",
+    "shift": -709,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1490",
+    "dep_end": "0x1490",
+    "shift": -865,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x14af",
+    "dep_end": "0x14af",
+    "shift": -1604,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1505",
+    "dep_end": "0x1505",
+    "shift": 333,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1583",
+    "dep_end": "0x1583",
+    "shift": -1131,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x159a",
+    "dep_end": "0x159a",
+    "shift": -917,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1647",
+    "dep_end": "0x1647",
+    "shift": -1826,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1745",
+    "dep_end": "0x1767",
+    "shift": -1740,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x1782",
+    "dep_end": "0x17ab",
+    "shift": -1876,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x17ff",
+    "dep_end": "0x17ff",
+    "shift": -2092,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x183e",
+    "dep_end": "0x183e",
+    "shift": -2304,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x184b",
+    "dep_end": "0x184b",
+    "shift": -575,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x18d5",
+    "dep_end": "0x18d5",
+    "shift": -542,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x18ed",
+    "dep_end": "0x18ed",
+    "shift": -2584,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1913",
+    "dep_end": "0x1913",
+    "shift": -2657,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1936",
+    "dep_end": "0x1936",
+    "shift": -615,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x193c",
+    "dep_end": "0x193c",
+    "shift": -554,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x194b",
+    "dep_end": "0x1959",
+    "shift": 1026,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x1964",
+    "dep_end": "0x196b",
+    "shift": -557,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x1979",
+    "dep_end": "0x1979",
+    "shift": -405,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1982",
+    "dep_end": "0x198f",
+    "shift": -330,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x19ad",
+    "dep_end": "0x19ad",
+    "shift": -688,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x19c2",
+    "dep_end": "0x19c2",
+    "shift": -351,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x19e8",
+    "dep_end": "0x1a12",
+    "shift": -637,
+    "sites": 3
+   },
+   {
+    "dep_start": "0x1a30",
+    "dep_end": "0x1a7f",
+    "shift": -423,
+    "sites": 5
+   },
+   {
+    "dep_start": "0x1aa1",
+    "dep_end": "0x1aa1",
+    "shift": -972,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1aab",
+    "dep_end": "0x1ac6",
+    "shift": -433,
+    "sites": 3
+   },
+   {
+    "dep_start": "0x1ad1",
+    "dep_end": "0x1ad1",
+    "shift": -740,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1ae9",
+    "dep_end": "0x1afc",
+    "shift": -457,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x1b0e",
+    "dep_end": "0x1b18",
+    "shift": -859,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x1b21",
+    "dep_end": "0x1b21",
+    "shift": -53,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1b39",
+    "dep_end": "0x1b39",
+    "shift": -2,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1b60",
+    "dep_end": "0x1b75",
+    "shift": -11,
+    "sites": 3
+   },
+   {
+    "dep_start": "0x1b81",
+    "dep_end": "0x1b81",
+    "shift": -859,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1b93",
+    "dep_end": "0x1ba0",
+    "shift": -29,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x1bae",
+    "dep_end": "0x1bae",
+    "shift": -1104,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1bcc",
+    "dep_end": "0x1c2b",
+    "shift": 110,
+    "sites": 4
+   },
+   {
+    "dep_start": "0x1c60",
+    "dep_end": "0x1c92",
+    "shift": 97,
+    "sites": 3
+   },
+   {
+    "dep_start": "0x1cab",
+    "dep_end": "0x1cab",
+    "shift": -677,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1cc3",
+    "dep_end": "0x1cc3",
+    "shift": -876,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1cd1",
+    "dep_end": "0x1cd1",
+    "shift": -732,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1ce2",
+    "dep_end": "0x1d05",
+    "shift": 42,
+    "sites": 3
+   },
+   {
+    "dep_start": "0x1d0e",
+    "dep_end": "0x1d0e",
+    "shift": -316,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1d15",
+    "dep_end": "0x1d2a",
+    "shift": -371,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x1d45",
+    "dep_end": "0x1d45",
+    "shift": -1344,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1d75",
+    "dep_end": "0x1d75",
+    "shift": -677,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1d91",
+    "dep_end": "0x1d91",
+    "shift": -89,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1db9",
+    "dep_end": "0x1db9",
+    "shift": -1140,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1dcb",
+    "dep_end": "0x1dcb",
+    "shift": -1126,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1de6",
+    "dep_end": "0x1de6",
+    "shift": -738,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1e01",
+    "dep_end": "0x1e01",
+    "shift": -1125,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1e0d",
+    "dep_end": "0x1e0d",
+    "shift": -1072,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1e25",
+    "dep_end": "0x1e25",
+    "shift": -1119,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1e3c",
+    "dep_end": "0x1e3c",
+    "shift": -1165,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1e53",
+    "dep_end": "0x1e53",
+    "shift": -1195,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1e5a",
+    "dep_end": "0x1e5a",
+    "shift": -827,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1e63",
+    "dep_end": "0x1e63",
+    "shift": -1815,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1e91",
+    "dep_end": "0x1e97",
+    "shift": -1957,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x1ea2",
+    "dep_end": "0x1ea2",
+    "shift": -1921,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1eb8",
+    "dep_end": "0x1f00",
+    "shift": -338,
+    "sites": 3
+   },
+   {
+    "dep_start": "0x1f0c",
+    "dep_end": "0x1f15",
+    "shift": -757,
+    "sites": 2
+   },
+   {
+    "dep_start": "0x1f2f",
+    "dep_end": "0x1f2f",
+    "shift": -1897,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1f4d",
+    "dep_end": "0x1f4d",
+    "shift": 8814,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1f8f",
+    "dep_end": "0x1f8f",
+    "shift": -950,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1fe2",
+    "dep_end": "0x1fe2",
+    "shift": 8631,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x1fef",
+    "dep_end": "0x1fef",
+    "shift": -565,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x202f",
+    "dep_end": "0x202f",
+    "shift": -7287,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x2091",
+    "dep_end": "0x2091",
+    "shift": -8089,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x20b7",
+    "dep_end": "0x20b7",
+    "shift": -7615,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x20d7",
+    "dep_end": "0x27ae",
+    "shift": -765,
+    "sites": 53
+   },
+   {
+    "dep_start": "0x27d6",
+    "dep_end": "0x31c4",
+    "shift": -735,
+    "sites": 101
+   },
+   {
+    "dep_start": "0x31de",
+    "dep_end": "0x31de",
+    "shift": -6080,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x44ff",
+    "dep_end": "0x44ff",
+    "shift": -743,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x4511",
+    "dep_end": "0x4511",
+    "shift": -10729,
+    "sites": 1
+   },
+   {
+    "dep_start": "0x4520",
+    "dep_end": "0x46b1",
+    "shift": -758,
+    "sites": 9
+   },
+   {
+    "dep_start": "0x47a0",
+    "dep_end": "0x69d8",
+    "shift": -760,
+    "sites": 162
+   },
+   {
+    "dep_start": "0x6a10",
+    "dep_end": "0x6f5b",
+    "shift": -259,
+    "sites": 80
+   },
+   {
+    "dep_start": "0x6fe2",
+    "dep_end": "0x70eb",
+    "shift": -226,
+    "sites": 28
+   },
+   {
+    "dep_start": "0x71b3",
+    "dep_end": "0x7854",
+    "shift": -198,
+    "sites": 9
+   },
+   {
+    "dep_start": "0x79c4",
+    "dep_end": "0x7a48",
+    "shift": -172,
+    "sites": 2
+   }
+  ]
  },
  "location_worklist": [
   {
