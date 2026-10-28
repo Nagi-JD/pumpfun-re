@@ -1,0 +1,123 @@
+{
+ "before": {
+  "note": "chantier-T4-pk7-borsh-serialize (#27) baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1001,
+  "matched": 791,
+  "exact": 139,
+  "unmatched": 244,
+  "call_consistent_original": 683
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1002,
+  "matched": 793,
+  "exact": 140,
+  "unmatched": 242,
+  "call_consistent_original": 685
+ },
+ "gained_matched": [
+  "0x163ea8",
+  "0xf130"
+ ],
+ "lost_matched": [],
+ "gained_raw": [
+  "0xf130"
+ ],
+ "lost_raw": [],
+ "serialize_window": {
+  "symbol": "_ZN66_$LT$pump_recovered..Pk8$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17h4d76d758b2eba544E",
+  "deployed_start": "0xf130",
+  "deployed_size": 1424,
+  "candidate_start": "0xf130",
+  "deployed_callers": [
+   "0x164080"
+  ],
+  "caller_function": "0x163ea8 <SetParamsEvent as anchor_lang::Event>::data (1040 B)",
+  "deployed_call_targets": {
+   "0xded0": "alloc::raw_vec::RawVec::reserve (x8)"
+  }
+ },
+ "event_data_window": {
+  "symbol": "_ZN81_$LT$pump_recovered..set_params..SetParamsEvent$u20$as$u20$anchor_lang..Event$GT$4data17h5db509fee3433e88E",
+  "deployed_start": "0x163ea8",
+  "deployed_size": 1040,
+  "baseline_size": 3496,
+  "after_size": 1040,
+  "placed_after": "<PostCompleteBuyEvent as anchor_lang::Event>::data"
+ },
+ "artifacts": {
+  "candidate_sha256": "1d77749f01ea68e705f2fc7cf339ff1a2fc57a43de98ac544091fc76d4afe6af",
+  "symbols_sha256": "9166bc551402dfa168ffd335fe94fa8c1727dba4a431edcb5948d3f537573b50"
+ },
+ "variants": {
+  "baseline_pr27": {
+   "note": "PR #27 layout rebuilt natively",
+   "matched": 791,
+   "exact": 139,
+   "candidate_sha256": "43912acb109f6e915329cfe830bb23e0bcc6d27e6d08ebd95829b5d0f7c8898b",
+   "symbols_sha256": "cce37ebcddff394b14a576c581c52f3ae424f9ed9800295d47a5e2256161a5cf"
+  },
+  "pk8_no_placement": {
+   "note": "Pk8 newtype + inline(never) BorshSerialize, #27 ordered.ld",
+   "matched": 793,
+   "exact": 139,
+   "candidate_sha256": "c7c6319b817b3193bb61f8da2fc269aefa13e96f5482bbc83eadfa6188acb3c0",
+   "symbols_sha256": "f164a7a8fd3b81a54170f3564abf77fae8d871723241b9266495a227714600c5"
+  },
+  "pk8_serialize_placed": {
+   "note": "Pk8::serialize placed at 0xf130 only",
+   "matched": 793,
+   "exact": 140,
+   "candidate_sha256": "f476cc046519a65a0570de62f8d6834b80acfe2c7fe7929d0064df8b8fe53ba4",
+   "symbols_sha256": "a1021048032f48d82e98e87c6375a472f786e6141cafbd9424cd8593b64abc2a"
+  },
+  "pk8_plus_ordered_ld_patch": {
+   "note": "this packet; Pk8::serialize at 0xf130, SetParamsEvent::data after PostCompleteBuyEvent::data",
+   "matched": 793,
+   "exact": 140,
+   "candidate_sha256": "1d77749f01ea68e705f2fc7cf339ff1a2fc57a43de98ac544091fc76d4afe6af",
+   "symbols_sha256": "9166bc551402dfa168ffd335fe94fa8c1727dba4a431edcb5948d3f537573b50"
+  }
+ },
+ "drift_solver_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1001,
+  "matched": 791,
+  "exact": 139,
+  "call_only_raw_fail": 221,
+  "potential_if_delta0": 360,
+  "unique_pairs": 789,
+  "intervals_nonzero": 90
+ },
+ "drift_solver_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1002,
+  "matched": 793,
+  "exact": 140,
+  "call_only_raw_fail": 222,
+  "potential_if_delta0": 362,
+  "unique_pairs": 791,
+  "intervals_nonzero": 88
+ },
+ "drift_solver_serialize_placed_only": {
+  "original_windows": 1035,
+  "candidate_windows": 1002,
+  "matched": 793,
+  "exact": 140,
+  "call_only_raw_fail": 222,
+  "potential_if_delta0": 362,
+  "unique_pairs": 791,
+  "intervals_nonzero": 90
+ },
+ "next_root": {
+  "dep_left": "0x12850",
+  "dep_right": "0x12ae8",
+  "cand_left": "0x12850",
+  "cand_right": "0x184f00",
+  "delta": 1516568,
+  "gap_dep": 0,
+  "gap_cand": 1516568,
+  "unmatched_dep": []
+ }
+}
