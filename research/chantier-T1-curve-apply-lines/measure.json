@@ -1,0 +1,49 @@
+{
+ "before": {
+  "note": "chantier-T1-buy-quote-lines baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1048,
+  "matched": 902,
+  "exact": 162,
+  "unmatched": 133,
+  "call_consistent_original": 832
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1051,
+  "matched": 905,
+  "exact": 162,
+  "unmatched": 130,
+  "call_consistent_original": 835
+ },
+ "gained_matched": [
+  "0xa0bf0",
+  "0xa13e0",
+  "0xa1bd8"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1048,
+  "matched": 902,
+  "exact": 162,
+  "call_only_raw_fail": 236,
+  "potential_if_delta0": 398,
+  "unique_pairs": 901,
+  "intervals_nonzero": 140
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1051,
+  "matched": 905,
+  "exact": 162,
+  "call_only_raw_fail": 236,
+  "potential_if_delta0": 398,
+  "unique_pairs": 904,
+  "intervals_nonzero": 140
+ },
+ "candidate_sha256": "7e71290795a8a8096b654ada33d25cd6c81eac73edc960cd9cf32adbea571096",
+ "symbols_sha256": "63397248e4a4ea00ac2107f3b6bffd000b30531106ed005f1355c0eb290efcfa"
+}
