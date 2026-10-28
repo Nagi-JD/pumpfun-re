@@ -1,0 +1,37 @@
+--- a/programs/pump/src/util/fee.rs
++++ b/programs/pump/src/util/fee.rs
+@@ -1,9 +1,12 @@
+ use anchor_lang::prelude::*;
+ 
+-pub fn fee(quote_amount: u64, basis_points: u64) -> Result<u64> {
+-    let value = checked_ceil_div(u128::from(quote_amount) * u128::from(basis_points), 10000)?;
+-    u64::try_from(value).map_err(|_| error!(crate::PumpError::Truncation))
+-}
++
++
++
++
++
++
++
+ 
+ /// Shared checked ceiling division, preserving addition/subtraction/division order.
+ #[inline(never)]
+@@ -16,3 +19,17 @@
+         .ok_or_else(|| error!(crate::PumpError::DivisionByZero))
+ }
+ 
++
++
++
++
++
++
++
++
++
++
++pub fn fee(quote_amount: u64, basis_points: u64) -> Result<u64> {
++    let value = checked_ceil_div(u128::from(quote_amount) * u128::from(basis_points), 10000)?;
++    u64::try_from(value).map_err(|_| error!(crate::PumpError::Truncation))
++}
