@@ -1,0 +1,72 @@
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
+@@ -458,9 +458,9 @@
+ #[derive(Clone)]
+ pub struct ReservedFeeRecipientsEvent{pub timestamp:i64,pub reserved_fee_recipient:Pubkey,pub reserved_fee_recipients:Pk7}
+ 
+-#[account]
+-#[derive(Default)]
+-pub struct UserVolumeAccumulator{pub user:Pubkey,pub needs_claim:bool,pub total_unclaimed_tokens:u64,pub total_claimed_tokens:u64,pub current_sol_volume:u64,pub last_update_timestamp:i64,pub has_total_claimed_tokens:bool,pub cashback_earned:u64,pub total_cashback_claimed:u64,pub stable_cashback_earned:u64,pub total_stable_cashback_claimed:u64}
++pub use token_incentives::volume_accumulator::UserVolumeAccumulator;
++
++
+ include!("token_incentives/init_user_volume_accumulator.rs");
+ 
+ 
+--- a/programs/pump/src/token_incentives/volume_accumulator.rs
++++ b/programs/pump/src/token_incentives/volume_accumulator.rs
+@@ -1,6 +1,26 @@
+-use crate::{GlobalVolumeAccumulator, PumpError, UserVolumeAccumulator};
++use crate::PumpError;
+ use anchor_lang::prelude::*;
+ 
++
++
++
++
++#[account]
++#[derive(Debug)]
++pub struct GlobalVolumeAccumulator {
++    pub start_time: i64,
++    pub end_time: i64,
++    pub seconds_in_a_day: i64,
++    pub mint: Pubkey,
++    pub total_token_supply: [u64;30],
++    pub sol_volumes: [u64;30],
++}
++
++#[account]
++#[derive(Default)]
++pub struct UserVolumeAccumulator{pub user:Pubkey,pub needs_claim:bool,pub total_unclaimed_tokens:u64,pub total_claimed_tokens:u64,pub current_sol_volume:u64,pub last_update_timestamp:i64,pub has_total_claimed_tokens:bool,pub cashback_earned:u64,pub total_cashback_claimed:u64,pub stable_cashback_earned:u64,pub total_stable_cashback_claimed:u64}
++
++
+ // Captured main-Pump worker: 0x7bfd8. Claim passes zero new volume, while
+ // the recovered worker retains the original generic update signature.
+ #[inline(never)]
+--- a/programs/pump/src/volume_sync.rs
++++ b/programs/pump/src/volume_sync.rs
+@@ -1,14 +1,14 @@
+ use crate::*;
+-#[account]
+-#[derive(Debug)]
+-pub struct GlobalVolumeAccumulator {
+-    pub start_time: i64,
+-    pub end_time: i64,
+-    pub seconds_in_a_day: i64,
+-    pub mint: Pubkey,
+-    pub total_token_supply: [u64;30],
+-    pub sol_volumes: [u64;30],
+-}
++pub use crate::token_incentives::volume_accumulator::GlobalVolumeAccumulator;
++
++
++
++
++
++
++
++
++
+ #[event_cpi]
+ #[derive(Accounts)]
+ pub struct SyncUserVolumeAccumulator<'info> {
