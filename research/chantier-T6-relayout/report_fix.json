@@ -1,0 +1,16 @@
+{
+  "deployed": "/home/nagi/pumpre/repo/evidence/original/pump/deployed.so",
+  "symbols": "out/t6perturb-symbols.so",
+  "link_map": "relink-t6perturb/link.map",
+  "mode": "preserve+relocate(1)",
+  "sections_total": 993,
+  "content_matched": 780,
+  "relocated": [
+    ".text._ZN12solana_borsh2v123get_instance_packed_len17h29d07d87687fe6d3E"
+  ],
+  "selectors_emitted": 993,
+  "deployed_windows": 1035,
+  "candidate_windows": 993,
+  "unique_pairs": 780,
+  "already_raw_candidate_windows": 87
+}
