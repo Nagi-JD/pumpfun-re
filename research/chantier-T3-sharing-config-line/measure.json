@@ -1,0 +1,47 @@
+{
+ "before": {
+  "note": "chantier-T3-reserved-fees baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 826,
+  "exact": 161,
+  "unmatched": 209,
+  "call_consistent_original": 763
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 827,
+  "exact": 161,
+  "unmatched": 208,
+  "call_consistent_original": 766
+ },
+ "gained_matched": [
+  "0x115e70"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 826,
+  "exact": 161,
+  "call_only_raw_fail": 205,
+  "potential_if_delta0": 366,
+  "unique_pairs": 825,
+  "intervals_nonzero": 92
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 827,
+  "exact": 161,
+  "call_only_raw_fail": 205,
+  "potential_if_delta0": 366,
+  "unique_pairs": 826,
+  "intervals_nonzero": 92
+ },
+ "candidate_sha256": "b03922b4f3edeed92bc8cadf63ca78104777582c39ccdb4981ac6a61ecb5ae76",
+ "symbols_sha256": "c1dac0b980bc4804a2d5a43d34ec5c5fcd4bfcdc7b1645d834078324936f080f"
+}
