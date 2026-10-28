@@ -1,0 +1,119 @@
+{
+ "before": {
+  "note": "chantier-T4-refund-seeds (#31) baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1008,
+  "matched": 800,
+  "exact": 161,
+  "unmatched": 235,
+  "call_consistent_original": 692
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 802,
+  "exact": 161,
+  "unmatched": 233,
+  "call_consistent_original": 694
+ },
+ "gained_matched": [
+  "0x48710",
+  "0x55630"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "added": {
+  "pump_recovered::migrate::close_lp_account": {
+   "symbol": "_ZN14pump_recovered7migrate16close_lp_account17hb76362d79becbd2bE",
+   "candidate_addr": "0x341f8",
+   "candidate_size": 1792,
+   "deployed_addr": "0x48710",
+   "deployed_size": 1792,
+   "status": "matched"
+  },
+  "pump_recovered::migrate::burn_lp": {
+   "symbol": "_ZN14pump_recovered7migrate7burn_lp17h87002c04ba725022E",
+   "candidate_addr": "0x348f8",
+   "candidate_size": 2312,
+   "deployed_addr": "0x48e10",
+   "deployed_size": 2296,
+   "status": "unmatched"
+  },
+  "pump_recovered::migrate_v2::close_pool_authority_account": {
+   "symbol": "_ZN14pump_recovered10migrate_v228close_pool_authority_account17h9fe22fa04c0e8410E",
+   "candidate_addr": "0x35908",
+   "candidate_size": 1800,
+   "deployed_addr": "0x54f30",
+   "deployed_size": 1792,
+   "status": "unmatched"
+  },
+  "pump_recovered::migrate_v2::close_lp_account": {
+   "symbol": "_ZN14pump_recovered10migrate_v216close_lp_account17ha67f532cd6a32eb4E",
+   "candidate_addr": "0x36010",
+   "candidate_size": 1792,
+   "deployed_addr": "0x55630",
+   "deployed_size": 1792,
+   "status": "matched"
+  },
+  "pump_recovered::migrate_v2::burn_lp": {
+   "symbol": "_ZN14pump_recovered10migrate_v27burn_lp17h45776e7bac0685afE",
+   "candidate_addr": "0x36710",
+   "candidate_size": 2360,
+   "deployed_addr": "0x55d30",
+   "deployed_size": 2344,
+   "status": "unmatched"
+  }
+ },
+ "sha256": {
+  "candidate": "c964dbd9835c98f1d8456a775c6d073c477548e927ae01c39718d1610878bf68",
+  "symbols": "08f489f2b43773667d17fc44c0e409bd94a8a5655844d208df83a9fd1381d2fa",
+  "before_candidate": "10108020c61f670c4418da7850d2f5cf7a011adcdcd541f31a095c23ea5a9bb4"
+ },
+ "drift": {
+  "before": {
+   "call_only_raw_fail": 205,
+   "potential_if_delta0": 366,
+   "intervals_nonzero": 86,
+   "unique_pairs": 799
+  },
+  "after": {
+   "call_only_raw_fail": 205,
+   "potential_if_delta0": 366,
+   "intervals_nonzero": 88,
+   "unique_pairs": 801
+  }
+ },
+ "variants": [
+  {
+   "label": "migrate_v2 helpers, burn via TokenAccount::try_deserialize, unplaced",
+   "matched": 801,
+   "exact": 161,
+   "candidate": "ade5ffe10448a3c513df9c96f0d43271d90cc21538ee41b6a128a1bd8b6545e2"
+  },
+  {
+   "label": "same, placed",
+   "matched": 801,
+   "exact": 161,
+   "candidate": "76660762394129bf442a7d4e31e4256f8a2611396e017770eade701d1c5229d4"
+  },
+  {
+   "label": "migrate_v2 helpers, burn via StateWithExtensions::unpack, placed",
+   "matched": 801,
+   "exact": 161,
+   "candidate": "288d698dee1e14f878c0adad13acfaf1d234a50b12eaea4e3e2e2eb7cc51636b"
+  },
+  {
+   "label": "plus migrate helpers, unplaced",
+   "matched": 802,
+   "exact": 161,
+   "candidate": "30eded32cdcfda41c925c93a0ca382a67435487f0bc39f5118a2ebef039e6924"
+  },
+  {
+   "label": "plus migrate helpers, placed (this packet)",
+   "matched": 802,
+   "exact": 161,
+   "candidate": "c964dbd9835c98f1d8456a775c6d073c477548e927ae01c39718d1610878bf68"
+  }
+ ]
+}
