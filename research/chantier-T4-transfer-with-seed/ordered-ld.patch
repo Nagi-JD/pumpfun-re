@@ -1,0 +1,18 @@
+--- a/ordered.ld
++++ b/ordered.ld
+@@ -588,6 +588,7 @@
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN4core3ptr205drop_in_place$LT$$LT$alloc..boxed..Box$LT$dyn$u20$core..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$u20$as$u20$core..convert..From$LT$alloc..string..String$GT$$GT$..from..StringError$GT$17ha969d899829068ebE")
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN4core3ptr37drop_in_place$LT$core..fmt..Error$GT$17h22006652b6113241E")
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$2$u5d$$GT$17hfb00dca503880918E")
++    *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$3$u5d$$GT$17hf6805be87556f7fcE")
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN4core3ptr76drop_in_place$LT$alloc..vec..Vec$LT$solana_account_info..AccountInfo$GT$$GT$17h817ddc8b7c19c719E")
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN4core5error5Error5cause17hfaf1e646c39748b2E")
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN4core3ptr28drop_in_place$LT$$RF$str$GT$17h7670b584b0572705E")
+@@ -623,6 +624,7 @@
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN11anchor_lang14system_program6assign17h1d660580a752b289E")
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN11anchor_lang14system_program14create_account17ha169272466e010a1E")
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN11anchor_lang14system_program8transfer17hb648f3970dbe8794E")
++    *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN11anchor_lang14system_program18transfer_with_seed17haef1e0871362152fE")
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN11anchor_lang5error9ErrorCode4name17h39269c4182b3a31bE")
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN102_$LT$anchor_lang..error..Error$u20$as$u20$core..convert..From$LT$anchor_lang..error..ErrorCode$GT$$GT$4from17h4c8fb5ba58010b3dE")
+     *libanchor_lang-478dac597c9ed63f.rlib:anchor_lang-478dac597c9ed63f.anchor_lang.d6ff837ff67ca33b-cgu.0.rcgu.o(".text._ZN68_$LT$anchor_lang..error..ErrorCode$u20$as$u20$core..fmt..Display$GT$3fmt17hb69b1ff4cc6a6366E")
