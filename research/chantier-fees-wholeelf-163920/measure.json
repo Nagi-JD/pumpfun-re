@@ -1,0 +1,14 @@
+{
+  "window": 163920,
+  "function": "create_donation_fee_pda::create handler body (1641 insns / 13800 B)",
+  "tool": "research/fees-composed-frontier188/window_map.py via measure_thin.py (box)",
+  "deployed": "feesr34/evidence/original/pump_fees/deployed.so",
+  "stacks_on": "chantier-fees-wholeelf-147944",
+  "before": {"deployed_windows": 585, "candidate_windows": 586, "normalized": 583, "raw": 200, "unmatched_original_count": 2, "unmatched_original": [120816, 163920], "symbols_sha256": "5381eb4008c5e13efdc91b55e1b40e88da6ce9c2ba26fac5413c0bd25effc95d"},
+  "after":  {"deployed_windows": 585, "candidate_windows": 585, "normalized": 584, "raw": 200, "unmatched_original_count": 1, "unmatched_original": [120816], "symbols_sha256": "57e11a5ee20b18438298101ba9375f9a187465926ad1dae9eebb5ab60a701a02"},
+  "gained_normalized": [163920],
+  "lost_normalized": [],
+  "raw_delta": 0,
+  "candidate_window_delta": -1,
+  "note": "candidate_windows 586->585: the standalone DonationFeePdaCreated Event::data helper is inlined and gc-sectioned away, matching the deployed 585-window count."
+}

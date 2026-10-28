@@ -1,0 +1,3 @@
+# symbols.so (pre-strip candidate) produced by `bash ~/rebuild_measure.sh`
+5381eb4008c5e13efdc91b55e1b40e88da6ce9c2ba26fac5413c0bd25effc95d  symbols.so (parent / 583-normalized, after 147944)
+57e11a5ee20b18438298101ba9375f9a187465926ad1dae9eebb5ab60a701a02  symbols.so (this packet / 584-normalized)
