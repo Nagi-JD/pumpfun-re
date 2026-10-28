@@ -1,0 +1,47 @@
+{
+ "before": {
+  "note": "chantier-T4-close-burn-helpers (master 802/161) baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 802,
+  "exact": 161,
+  "unmatched": 233,
+  "call_consistent_original": 694
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 803,
+  "exact": 161,
+  "unmatched": 232,
+  "call_consistent_original": 694
+ },
+ "gained_matched": [
+  "0xa9eb8"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 802,
+  "exact": 161,
+  "call_only_raw_fail": 205,
+  "potential_if_delta0": 366,
+  "unique_pairs": 801,
+  "intervals_nonzero": 88
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 803,
+  "exact": 161,
+  "call_only_raw_fail": 205,
+  "potential_if_delta0": 366,
+  "unique_pairs": 802,
+  "intervals_nonzero": 88
+ },
+ "candidate_sha256": "85dc4036a846148e10d6f1c6724f3ca9caef386b9b6388b60207dd6fba07fd28",
+ "symbols_sha256": "e81855b179c90146c713b48551c7b4f911a0c4123f908630a94394378b8712f2"
+}
