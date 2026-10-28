@@ -1,0 +1,48 @@
+{
+ "before": {
+  "note": "chantier-T3-init-user-volume baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 813,
+  "exact": 161,
+  "unmatched": 222,
+  "call_consistent_original": 702
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 815,
+  "exact": 161,
+  "unmatched": 220,
+  "call_consistent_original": 722
+ },
+ "gained_matched": [
+  "0x101170",
+  "0x101c20"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 813,
+  "exact": 161,
+  "call_only_raw_fail": 205,
+  "potential_if_delta0": 366,
+  "unique_pairs": 812,
+  "intervals_nonzero": 88
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 815,
+  "exact": 161,
+  "call_only_raw_fail": 205,
+  "potential_if_delta0": 366,
+  "unique_pairs": 814,
+  "intervals_nonzero": 91
+ },
+ "candidate_sha256": "e4a5ef1016bed9b6eacdd535067f22844835e1da3bf8f491fda1d9924692e1e7",
+ "symbols_sha256": "b7620cc299e572abb7ea5586ead4a1ff9b59067bf33a1670fe51932aec200890"
+}
