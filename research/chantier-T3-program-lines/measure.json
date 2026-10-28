@@ -1,0 +1,52 @@
+{
+ "before": {
+  "note": "chantier-T3-volume-accumulator baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 815,
+  "exact": 161,
+  "unmatched": 220,
+  "call_consistent_original": 722
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 821,
+  "exact": 161,
+  "unmatched": 214,
+  "call_consistent_original": 735
+ },
+ "gained_matched": [
+  "0x120628",
+  "0x120c00",
+  "0x135580",
+  "0x135820",
+  "0x135ac0",
+  "0x17b780"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 815,
+  "exact": 161,
+  "call_only_raw_fail": 205,
+  "potential_if_delta0": 366,
+  "unique_pairs": 814,
+  "intervals_nonzero": 91
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1012,
+  "matched": 821,
+  "exact": 161,
+  "call_only_raw_fail": 205,
+  "potential_if_delta0": 366,
+  "unique_pairs": 820,
+  "intervals_nonzero": 91
+ },
+ "candidate_sha256": "3873b5d5d02b10138d9565ead76eabe1d4f93ee4ae61efb72049517cdffeb8f5",
+ "symbols_sha256": "d08641f4aff7b88a64d132eaf35bb145df81bfaf6891536fa2a8f09a38b76b21"
+}
