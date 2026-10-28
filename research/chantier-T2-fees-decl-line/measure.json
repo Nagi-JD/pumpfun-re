@@ -1,0 +1,47 @@
+{
+ "before": {
+  "note": "chantier-T2-fee-config-client baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1054,
+  "matched": 908,
+  "exact": 162,
+  "unmatched": 127,
+  "call_consistent_original": 839
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1054,
+  "matched": 909,
+  "exact": 162,
+  "unmatched": 126,
+  "call_consistent_original": 842
+ },
+ "gained_matched": [
+  "0x1156f0"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1054,
+  "matched": 908,
+  "exact": 162,
+  "call_only_raw_fail": 236,
+  "potential_if_delta0": 398,
+  "unique_pairs": 907,
+  "intervals_nonzero": 149
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1054,
+  "matched": 909,
+  "exact": 162,
+  "call_only_raw_fail": 236,
+  "potential_if_delta0": 398,
+  "unique_pairs": 908,
+  "intervals_nonzero": 149
+ },
+ "candidate_sha256": "d2cfe83bf22c8d20564cab6c3fa8ef3755d530ec868a6eb9216b1fbf93d2da2a",
+ "symbols_sha256": "57b7dd515d81dbd5d81b881598dced04f929513ef95f84006ed97956c1d5b862"
+}
