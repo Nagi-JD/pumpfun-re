@@ -132,8 +132,8 @@ coordonnées/relocation (port ou re-ligne).
 | 364040 | 1536 | `validate_protocol_fee_recipient` | 1 | `swap/mod.rs` 23→164 |
 | 365576 | 4456 | `sweep_fees::execute` | 2 | `sweep_fees.rs` 32→91, 43→113 |
 | 398896 | 616 | `GlobalConfig::set_lp_fee_basis_points` | 1 | 7→220 |
-| 399512 | 616 | `GlobalConfig::set_protocol_fee_basis_points` | 2 | 7→230 **+ offset +904 vs +896 (R3)** |
-| 400128 | 616 | `GlobalConfig::set_coin_creator_fee_basis_points` | 2 | 7→243 **+ offset +912 vs +896 (R3)** |
+| 399512 | 616 | `GlobalConfig::set_protocol_fee_basis_points` | 2 | 7→230 ; offset mémoire 904 (R3, §6) |
+| 400128 | 616 | `GlobalConfig::set_coin_creator_fee_basis_points` | 2 | 7→243 ; offset mémoire 912 (R3, §6) |
 | 400744 | 2336 | `GlobalConfig::set_protocol_fee_recipients` | 2 | 25→256, 27→263 |
 | 403080 | 1464 | `GlobalConfig::validate_boost_authority` | 2 | 92→297, 91→292 |
 | 404544 | 552 | `GlobalConfig::set_buyback_basis_points` | 1 | 70→306 |
@@ -217,6 +217,23 @@ coordonnées/relocation (port ou re-ligne).
 > pas de fenêtre supplémentaire, il ajoute la correction de champ.
 
 ---
+
+### Classement (d) — une classe par fenêtre
+
+- **`wrapper` (13)** : `930208`, `947784`, `949640`, `953064`, `954128`, `955192`,
+  `957328`, `958400`, `96608`, `455856`, `717744`, `869600`, `872336`.
+  Entrées `#[program]` / arg-codec Anchor / `try_accounts` / `try_deserialize` ;
+  `455856` est le `BorshDeserialize` de `OptionBool`, assimilé wrapper de serde.
+- **`needs-layout` (4)** : `399512`, `400128`, `111888`, `113408` (ordre mémoire
+  `GlobalConfig`, §6). `84256` est `handler-form` **mais** relève d'une **révision
+  différente** (gardes), à traiter à part (§7.14).
+- **`handler-form` (toutes les autres, 87 fenêtres)** : corps métier, helpers,
+  closures, monomorphisations ; levier = forme source (ligne, frame, inlining,
+  alias), jamais le wrapper.
+
+> Total : 13 wrapper + 4 needs-layout + 87 handler-form = **104**. Chaque ligne des
+> tableaux T0–T4 hérite de cette classe ; les cas mixtes sont signalés dans la
+> colonne action.
 
 ## 3. T0 — reconstruction exacte des 17 portes
 
