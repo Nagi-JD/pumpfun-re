@@ -1,0 +1,70 @@
+{
+ "before": {
+  "note": "chantier-T4-harvest-withheld (#30) baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1008,
+  "matched": 798,
+  "exact": 161,
+  "unmatched": 237,
+  "call_consistent_original": 690
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1008,
+  "matched": 800,
+  "exact": 161,
+  "unmatched": 235,
+  "call_consistent_original": 692
+ },
+ "gained_matched": [
+  "0x49708",
+  "0x56658"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "changed": {
+  "pump_recovered::migrate::refund_pool_authority": {
+   "symbol": "_ZN14pump_recovered7migrate21refund_pool_authority17h3015e1e66d769fc0E",
+   "deployed_start": "0x49708",
+   "candidate_start": "0x349f8",
+   "size": 384,
+   "deployed_callers": [
+    "0x40740 in 0x3fb70"
+   ],
+   "deployed_callees": [
+    "0x8c770 (migrate::transfer_native)"
+   ]
+  },
+  "pump_recovered::migrate_v2::refund_pool_authority": {
+   "symbol": "_ZN14pump_recovered10migrate_v221refund_pool_authority17h805c04c892222bceE",
+   "deployed_start": "0x56658",
+   "candidate_start": "0x35100",
+   "size": 384,
+   "deployed_callers": [
+    "0x4ac10 in 0x49888 (migrate_v2 handler)",
+    "0x54808 in 0x52660"
+   ],
+   "deployed_callees": [
+    "0x8c770 (migrate::transfer_native)"
+   ]
+  }
+ },
+ "ordered_ld": "unchanged (chantier-T4-harvest-withheld ordered.ld)",
+ "candidate_sha256": "10108020c61f670c4418da7850d2f5cf7a011adcdcd541f31a095c23ea5a9bb4",
+ "symbols_sha256": "e814eb629dd6306a5dc1283e7823a93a18414e473b098b670b2b9c37c10edfb1",
+ "drift": {
+  "before": {
+   "call_only_raw_fail": 205,
+   "potential_if_delta0": 366,
+   "unique_pairs": 797,
+   "intervals_nonzero": 84
+  },
+  "after": {
+   "call_only_raw_fail": 205,
+   "potential_if_delta0": 366,
+   "unique_pairs": 799,
+   "intervals_nonzero": 86
+  }
+ }
+}

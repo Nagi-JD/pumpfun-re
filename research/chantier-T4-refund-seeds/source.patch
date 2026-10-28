@@ -1,0 +1,25 @@
+--- a/programs/pump/src/migrate.rs
++++ b/programs/pump/src/migrate.rs
+@@ -298,8 +298,8 @@
+ #[inline(never)]
+ fn refund_pool_authority<'info>(a:&Migrate<'info>,bump:u8,destination:&AccountInfo<'info>,amount:u64)->Result<()>{
+  if amount==0{return Ok(());}
+- let mint=a.mint.key();let bump=[bump];let signer_seeds:&[&[&[u8]];1]=&[&[b"pool-authority",mint.as_ref(),&bump]];
+- crate::migrate::transfer_native(a.system_program.as_ref(),&a.pool_authority,destination,amount,signer_seeds)
++ match &[&[&b"pool-authority"[..],a.mint.key().as_ref(),&[bump][..]][..]]{s=>crate::migrate::transfer_native(a.system_program.as_ref(),&a.pool_authority,destination,amount,s)}
++
+ }
+ 
+ #[inline(never)]
+--- a/programs/pump/src/migrate_v2.rs
++++ b/programs/pump/src/migrate_v2.rs
+@@ -349,7 +349,7 @@
+ #[inline(never)]
+ fn refund_pool_authority<'info>(a:&MigrateV2<'info>,bump:u8,destination:&AccountInfo<'info>,amount:u64)->Result<()>{
+  if amount==0{return Ok(());}
+- let mint=a.base_mint.key();let bump=[bump];let signer_seeds:&[&[&[u8]];1]=&[&[b"pool-authority",mint.as_ref(),&bump]];
+- crate::migrate::transfer_native(a.system_program.as_ref(),&a.pool_authority,destination,amount,signer_seeds)
++ match &[&[&b"pool-authority"[..],a.base_mint.key().as_ref(),&[bump][..]][..]]{s=>crate::migrate::transfer_native(a.system_program.as_ref(),&a.pool_authority,destination,amount,s)}
++
+ }
+ #[inline(never)] fn harvest_withheld<'info>(token_program:&AccountInfo<'info>,mint:&AccountInfo<'info>,source:&AccountInfo<'info>)->Result<()>{anchor_spl::token_2022_extensions::harvest_withheld_tokens_to_mint(CpiContext::new(token_program.clone(),anchor_spl::token_2022_extensions::HarvestWithheldTokensToMint{token_program_id:token_program.clone(),mint:mint.clone()}),vec![source.clone()])}
