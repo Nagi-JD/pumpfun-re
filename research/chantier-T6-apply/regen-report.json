@@ -1,0 +1,14 @@
+{
+  "deployed": "/home/nagi/pumpre/repo/evidence/original/pump/deployed.so",
+  "symbols": "build/out/base-symbols.so",
+  "link_map": "build/link-base/link.map",
+  "mode": "preserve",
+  "sections_total": 1008,
+  "content_matched": 797,
+  "relocated": [],
+  "selectors_emitted": 1008,
+  "deployed_windows": 1035,
+  "candidate_windows": 1008,
+  "unique_pairs": 797,
+  "already_raw_candidate_windows": 122
+}

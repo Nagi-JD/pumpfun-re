@@ -1,0 +1,2687 @@
+{
+  "summary": {
+    "call_only_raw_fail": 205,
+    "unambiguous": 112,
+    "ambiguous_dupstub": 93,
+    "unambiguous_with_crossed_intervals": 112
+  },
+  "candidates": [
+    {
+      "dep_vma": "0x118920",
+      "cand_vma": "0xb3218",
+      "size": 560,
+      "names": [
+        "_ZN118_$LT$pump_recovered..legacy_sell..fee_cpi..definition..GetFeesWithQuoteMint$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17hff684273791477efE",
+        "_ZN129_$LT$pump_recovered..__private..__idl..__cpi_client_accounts_idl_accounts..IdlAccounts$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h8d6fe838f44d5a73E",
+        "_ZN138_$LT$pump_recovered..__private..__idl..__cpi_client_accounts_idl_create_buffer..IdlCreateBuffer$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h2929f13bff9aaa56E",
+        "_ZN166_$LT$pump_recovered..legacy_sell..fee_cpi..definition..__cpi_client_accounts_get_fees_with_quote_mint..GetFeesWithQuoteMint$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h4ddc70e3d1b6d7c2E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": -415496
+    },
+    {
+      "dep_vma": "0x118b50",
+      "cand_vma": "0xb3448",
+      "size": 4352,
+      "names": [
+        "_ZN14pump_recovered9create_v216mayhem_interface3cpi23initialize_mayhem_state17hfe35a98e6d27f3b2E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": -415496
+    },
+    {
+      "dep_vma": "0x11ad10",
+      "cand_vma": "0xb4d60",
+      "size": 2632,
+      "names": [
+        "_ZN129_$LT$pump_recovered..create_v2..mayhem_interface..cpi..accounts..InitializeMayhemState$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h2d77509c0d82e496E",
+        "_ZN130_$LT$pump_recovered..cashback..__cpi_client_accounts_claim_cashback_v2..ClaimCashbackV2$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h87901aa8e4abb34aE",
+        "_ZN141_$LT$pump_recovered..collect_v2..__cpi_client_accounts_collect_creator_fee_v2..CollectCreatorFeeV2$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h850748c19803cdbdE",
+        "_ZN155_$LT$pump_recovered..incentives..__cpi_client_accounts_admin_update_token_incentives..AdminUpdateTokenIncentives$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h1e4b37096929f1a9E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": -417712
+    },
+    {
+      "dep_vma": "0x2bc0",
+      "cand_vma": "0x2bc0",
+      "size": 232,
+      "names": [
+        "_ZN11anchor_lang5error5Error17with_account_name17h30477c9019bd71fbE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x3748",
+      "cand_vma": "0x3748",
+      "size": 352,
+      "names": [
+        "_ZN11anchor_lang8accounts5boxed87_$LT$impl$u20$anchor_lang..Accounts$LT$B$GT$$u20$for$u20$alloc..boxed..Box$LT$T$GT$$GT$12try_accounts17h9ec03c05207e0006E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x38a8",
+      "cand_vma": "0x38a8",
+      "size": 352,
+      "names": [
+        "_ZN11anchor_lang8accounts5boxed87_$LT$impl$u20$anchor_lang..Accounts$LT$B$GT$$u20$for$u20$alloc..boxed..Box$LT$T$GT$$GT$12try_accounts17h17dbc2ff7254f504E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x3a08",
+      "cand_vma": "0x3a08",
+      "size": 352,
+      "names": [
+        "_ZN11anchor_lang8accounts5boxed87_$LT$impl$u20$anchor_lang..Accounts$LT$B$GT$$u20$for$u20$alloc..boxed..Box$LT$T$GT$$GT$12try_accounts17h0f1d4286f6202a88E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x3b68",
+      "cand_vma": "0x3b68",
+      "size": 352,
+      "names": [
+        "_ZN11anchor_lang8accounts5boxed87_$LT$impl$u20$anchor_lang..Accounts$LT$B$GT$$u20$for$u20$alloc..boxed..Box$LT$T$GT$$GT$12try_accounts17h031b3b99705bf6c6E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x3cc8",
+      "cand_vma": "0x3cc8",
+      "size": 368,
+      "names": [
+        "_ZN11anchor_lang8accounts5boxed87_$LT$impl$u20$anchor_lang..Accounts$LT$B$GT$$u20$for$u20$alloc..boxed..Box$LT$T$GT$$GT$12try_accounts17hd45c16d7ac141876E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x7890",
+      "cand_vma": "0x7890",
+      "size": 688,
+      "names": [
+        "_ZN11anchor_lang8accounts7account16Account$LT$T$GT$6reload17ha439d9f0fcaaf0c0E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x878",
+      "cand_vma": "0x878",
+      "size": 2360,
+      "names": [
+        "_ZN11anchor_lang5error5Error11with_values17hcf123b779268cf0bE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xa7b0",
+      "cand_vma": "0xa7b0",
+      "size": 48,
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h56277e3ad0778c49E"
+      ],
+      "mult_dep": 5,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xa7f8",
+      "cand_vma": "0xa7f8",
+      "size": 112,
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17hdc32874a4f6ff375E"
+      ],
+      "mult_dep": 6,
+      "mult_cand": 6,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xa880",
+      "cand_vma": "0xa880",
+      "size": 112,
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h8c65af9d850ad7adE"
+      ],
+      "mult_dep": 6,
+      "mult_cand": 6,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xa920",
+      "cand_vma": "0xa920",
+      "size": 24,
+      "names": [
+        "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17h23931d5ba23cc3f5E"
+      ],
+      "mult_dep": 7,
+      "mult_cand": 7,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xab88",
+      "cand_vma": "0xab88",
+      "size": 104,
+      "names": [
+        "_ZN4core3fmt3num49_$LT$impl$u20$core..fmt..Debug$u20$for$u20$u8$GT$3fmt17hfb2f1b1e19663038E"
+      ],
+      "mult_dep": 8,
+      "mult_cand": 8,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xabf0",
+      "cand_vma": "0xabf0",
+      "size": 104,
+      "names": [
+        "_ZN4core3fmt3num50_$LT$impl$u20$core..fmt..Debug$u20$for$u20$i64$GT$3fmt17h7ebccdfe0649251aE"
+      ],
+      "mult_dep": 8,
+      "mult_cand": 8,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xac80",
+      "cand_vma": "0xac80",
+      "size": 16,
+      "names": [
+        "_ZN4core3fmt9Formatter9write_fmt17h6119a4afef0fe719E"
+      ],
+      "mult_dep": 13,
+      "mult_cand": 14,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xcf18",
+      "cand_vma": "0xcf18",
+      "size": 336,
+      "names": [
+        "_ZN67_$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$core..clone..Clone$GT$5clone17h981bad13a3d6d2f6E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xd258",
+      "cand_vma": "0xd258",
+      "size": 168,
+      "names": [
+        "_ZN58_$LT$alloc..string..String$u20$as$u20$core..fmt..Write$GT$9write_str17h3c31393c25b00ee9E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xd300",
+      "cand_vma": "0xd300",
+      "size": 448,
+      "names": [
+        "_ZN5alloc3fmt6format17hc906f15c7f1c58e2E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xd5d0",
+      "cand_vma": "0xd5d0",
+      "size": 680,
+      "names": [
+        "_ZN5alloc6string6String4push17h4caf904cbb1af86dE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xd878",
+      "cand_vma": "0xd878",
+      "size": 896,
+      "names": [
+        "_ZN5alloc7raw_vec11finish_grow17h72952a24371b83d3E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xe9c0",
+      "cand_vma": "0xe9c0",
+      "size": 40,
+      "names": [
+        "_ZN60_$LT$alloc..string..String$u20$as$u20$core..fmt..Display$GT$3fmt17hc501bcb5ea40ee00E"
+      ],
+      "mult_dep": 6,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 87,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x120",
+      "cand_vma": "0x120",
+      "size": 176,
+      "names": [
+        "_ZN103_$LT$anchor_lang..accounts..interface..Interface$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h0e14175409742fd5E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x127a0",
+      "cand_vma": "0x127a0",
+      "size": 176,
+      "names": [
+        "_ZN88_$LT$anchor_lang..accounts..signer..Signer$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h01e293d2b66ba4acE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x12f80",
+      "cand_vma": "0x12ae8",
+      "size": 200,
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h297d4f84044b9266E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": -1176
+    },
+    {
+      "dep_vma": "0x13048",
+      "cand_vma": "0x12bb0",
+      "size": 184,
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h051d7dce6430079dE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": -1176
+    },
+    {
+      "dep_vma": "0x13100",
+      "cand_vma": "0x12c68",
+      "size": 184,
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h42407c299786fd5fE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": -1176
+    },
+    {
+      "dep_vma": "0x131b8",
+      "cand_vma": "0x12d20",
+      "size": 184,
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h514f4a41d460d74fE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": -1176
+    },
+    {
+      "dep_vma": "0x13270",
+      "cand_vma": "0x12dd8",
+      "size": 184,
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h0653e0eea070c35fE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": -1176
+    },
+    {
+      "dep_vma": "0x13328",
+      "cand_vma": "0x12e90",
+      "size": 184,
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h461aecf72dabcf82E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": -1176
+    },
+    {
+      "dep_vma": "0x133e0",
+      "cand_vma": "0x12f48",
+      "size": 200,
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h016a95bb42810039E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": -1176
+    },
+    {
+      "dep_vma": "0x134a8",
+      "cand_vma": "0x13010",
+      "size": 184,
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h048299cb27d033acE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": -1176
+    },
+    {
+      "dep_vma": "0x13560",
+      "cand_vma": "0x130c8",
+      "size": 200,
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17ha85f766daf16450cE"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": -1176
+    },
+    {
+      "dep_vma": "0x13628",
+      "cand_vma": "0x13190",
+      "size": 200,
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h8cd17fe866110917E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": -1176
+    },
+    {
+      "dep_vma": "0x163ea8",
+      "cand_vma": "0xf7810",
+      "size": 1040,
+      "names": [
+        "_ZN81_$LT$pump_recovered..set_params..SetParamsEvent$u20$as$u20$anchor_lang..Event$GT$4data17h5db509fee3433e88E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": -444056
+    },
+    {
+      "dep_vma": "0x1d0",
+      "cand_vma": "0x1d0",
+      "size": 184,
+      "names": [
+        "_ZN118_$LT$anchor_lang..accounts..interface_account..InterfaceAccount$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h000fbc5675aa85c7E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x288",
+      "cand_vma": "0x288",
+      "size": 184,
+      "names": [
+        "_ZN118_$LT$anchor_lang..accounts..interface_account..InterfaceAccount$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h023f307581da0753E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x2ca8",
+      "cand_vma": "0x2ca8",
+      "size": 416,
+      "names": [
+        "_ZN11anchor_lang8accounts12account_info93_$LT$impl$u20$anchor_lang..Accounts$LT$B$GT$$u20$for$u20$solana_account_info..AccountInfo$GT$12try_accounts17h12cb3b8bbdd7c180E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xa868",
+      "cand_vma": "0xa868",
+      "size": 24,
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17haf7b730dacd4d596E"
+      ],
+      "mult_dep": 7,
+      "mult_cand": 7,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xd4c0",
+      "cand_vma": "0xd4c0",
+      "size": 272,
+      "names": [
+        "_ZN5alloc5alloc15exchange_malloc17h17d7e4e4140eecb8E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xdbf8",
+      "cand_vma": "0xdbf8",
+      "size": 368,
+      "names": [
+        "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$7reserve21do_reserve_and_handle17h7906bc7b0b97c6c2E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xdd68",
+      "cand_vma": "0xdd68",
+      "size": 360,
+      "names": [
+        "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$7reserve21do_reserve_and_handle17he345f4466d2ab34eE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xded0",
+      "cand_vma": "0xded0",
+      "size": 328,
+      "names": [
+        "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$7reserve21do_reserve_and_handle17h6548bc3e779c5277E"
+      ],
+      "mult_dep": 8,
+      "mult_cand": 8,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xe018",
+      "cand_vma": "0xe018",
+      "size": 360,
+      "names": [
+        "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$8grow_one17h2f806fced6300ab9E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xe180",
+      "cand_vma": "0xe180",
+      "size": 360,
+      "names": [
+        "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$8grow_one17hf643036a63ea972bE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xe2e8",
+      "cand_vma": "0xe2e8",
+      "size": 360,
+      "names": [
+        "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$8grow_one17h699450b2a06312deE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xe450",
+      "cand_vma": "0xe450",
+      "size": 352,
+      "names": [
+        "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$8grow_one17hb282a079f758f179E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xe5b0",
+      "cand_vma": "0xe5b0",
+      "size": 360,
+      "names": [
+        "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$8grow_one17h9cd737174bed3a71E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xe718",
+      "cand_vma": "0xe718",
+      "size": 320,
+      "names": [
+        "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$8grow_one17h6e935c5df6b43ec8E"
+      ],
+      "mult_dep": 5,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xe858",
+      "cand_vma": "0xe858",
+      "size": 360,
+      "names": [
+        "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$8grow_one17h547b5d2406f80634E"
+      ],
+      "mult_dep": 3,
+      "mult_cand": 3,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xef40",
+      "cand_vma": "0xef40",
+      "size": 136,
+      "names": [
+        "_ZN69_$LT$$u5b$T$u3b$$u20$N$u5d$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hf206673b5b68afddE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xefc8",
+      "cand_vma": "0xefc8",
+      "size": 360,
+      "names": [
+        "_ZN69_$LT$$u5b$T$u3b$$u20$N$u5d$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hca62fd82e87e5e22E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0xf6c0",
+      "cand_vma": "0xf6c0",
+      "size": 408,
+      "names": [
+        "_ZN69_$LT$$u5b$T$u3b$$u20$N$u5d$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17hca1151e50f19e79eE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 86,
+      "own_drift": 0
+    },
+    {
+      "dep_vma": "0x13b80",
+      "cand_vma": "0x136e8",
+      "size": 552,
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..program..Program$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h158f4fedd98f56acE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 85,
+      "own_drift": -1176
+    },
+    {
+      "dep_vma": "0x296f0",
+      "cand_vma": "0x20268",
+      "size": 448,
+      "names": [
+        "_ZN14pump_recovered9admin_cto16token_raw_amount17hb6ef5124005cbf60E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 79,
+      "own_drift": -38024
+    },
+    {
+      "dep_vma": "0x32530",
+      "cand_vma": "0x24130",
+      "size": 784,
+      "names": [
+        "_ZN14pump_recovered7minimum7execute17h6663f383a7441471E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 78,
+      "own_drift": -58368
+    },
+    {
+      "dep_vma": "0x54db8",
+      "cand_vma": "0x35790",
+      "size": 376,
+      "names": [
+        "_ZN14pump_recovered10migrate_v212quote_amount17hfac67fec3795cb74E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 71,
+      "own_drift": -128552
+    },
+    {
+      "dep_vma": "0x11a4f8",
+      "cand_vma": "0xb4548",
+      "size": 2072,
+      "names": [
+        "_ZN129_$LT$pump_recovered..create_v2..mayhem_interface..cpi..accounts..InitializeMayhemState$u20$as$u20$anchor_lang..ToAccountMetas$GT$16to_account_metas17h8e1fbd9755fe9e20E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 65,
+      "own_drift": -417712
+    },
+    {
+      "dep_vma": "0x8c770",
+      "cand_vma": "0x55cf8",
+      "size": 1256,
+      "names": [
+        "_ZN14pump_recovered7migrate15transfer_native17h27709daa49839e8cE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 52,
+      "own_drift": -223864
+    },
+    {
+      "dep_vma": "0x8d108",
+      "cand_vma": "0x561e0",
+      "size": 1216,
+      "names": [
+        "_ZN14pump_recovered19user_quote_payments25transfer_native_recipient17hf51be392f7797e51E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 51,
+      "own_drift": -225064
+    },
+    {
+      "dep_vma": "0x8da98",
+      "cand_vma": "0x566a0",
+      "size": 1280,
+      "names": [
+        "_ZN14pump_recovered19user_quote_payments21transfer_native_owned17h19ae68e885531777E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 50,
+      "own_drift": -226296
+    },
+    {
+      "dep_vma": "0x8df98",
+      "cand_vma": "0x56ba0",
+      "size": 1208,
+      "names": [
+        "_ZN14pump_recovered19user_quote_payments15transfer_native17h752bf3a7bac9afafE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 50,
+      "own_drift": -226296
+    },
+    {
+      "dep_vma": "0x8e450",
+      "cand_vma": "0x57058",
+      "size": 1208,
+      "names": [
+        "_ZN14pump_recovered7migrate15native_payments15transfer_native17h53609156266c706aE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 50,
+      "own_drift": -226296
+    },
+    {
+      "dep_vma": "0xc4fc0",
+      "cand_vma": "0x7dc98",
+      "size": 1680,
+      "names": [
+        "_ZN103_$LT$pump_recovered..distribution..DistributeCreatorFeesEvent$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17h2f8f5f327a12fc68E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 50,
+      "own_drift": -291624
+    },
+    {
+      "dep_vma": "0x8f5c8",
+      "cand_vma": "0x57510",
+      "size": 2128,
+      "names": [
+        "_ZN14pump_recovered6buy_v215token_transfers21transfer_curve_tokens17h2b2ff8b55eeab524E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 49,
+      "own_drift": -229560
+    },
+    {
+      "dep_vma": "0x8fe18",
+      "cand_vma": "0x57d60",
+      "size": 2080,
+      "names": [
+        "_ZN14pump_recovered7sell_v220user_token_transfers20transfer_user_tokens17ha94e9c22d9c99cf6E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 49,
+      "own_drift": -229560
+    },
+    {
+      "dep_vma": "0x91ef0",
+      "cand_vma": "0x58580",
+      "size": 2352,
+      "names": [
+        "_ZN14pump_recovered7sell_v221quote_token_transfers21transfer_quote_tokens17h89c25becab11d8aaE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 48,
+      "own_drift": -235888
+    },
+    {
+      "dep_vma": "0x95610",
+      "cand_vma": "0x58eb0",
+      "size": 1480,
+      "names": [
+        "_ZN14pump_recovered10migrate_v216harvest_withheld17hd13246a377082940E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 47,
+      "own_drift": -247648
+    },
+    {
+      "dep_vma": "0x95bd8",
+      "cand_vma": "0x59478",
+      "size": 864,
+      "names": [
+        "_ZN14pump_recovered5trade14quote_payments15transfer_native17h5f18ae913c082bd0E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 47,
+      "own_drift": -247648
+    },
+    {
+      "dep_vma": "0x965b8",
+      "cand_vma": "0x597d8",
+      "size": 1080,
+      "names": [
+        "_ZN14pump_recovered5trade14quote_payments15transfer_native17h407271d78724f40eE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 46,
+      "own_drift": -249312
+    },
+    {
+      "dep_vma": "0x969f0",
+      "cand_vma": "0x59c10",
+      "size": 856,
+      "names": [
+        "_ZN14pump_recovered5trade14quote_payments15transfer_native17hc7fac06ff038418dE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 46,
+      "own_drift": -249312
+    },
+    {
+      "dep_vma": "0xa4240",
+      "cand_vma": "0x62928",
+      "size": 312,
+      "names": [
+        "_ZN95_$LT$pump_recovered..idl_authority..AdminSetIdlAuthorityEvent$u20$as$u20$anchor_lang..Event$GT$4data17hd888641e4cdf817aE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 42,
+      "own_drift": -268568
+    },
+    {
+      "dep_vma": "0xbc108",
+      "cand_vma": "0x7a3e0",
+      "size": 696,
+      "names": [
+        "_ZN79_$LT$pump_recovered..admin_cto..AdminCtoEvent$u20$as$u20$anchor_lang..Event$GT$4data17hbae8b7c035942fe7E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 40,
+      "own_drift": -269608
+    },
+    {
+      "dep_vma": "0xbf668",
+      "cand_vma": "0x1aa338",
+      "size": 408,
+      "names": [
+        "_ZN77_$LT$pump_recovered..CollectCreatorFeeEvent$u20$as$u20$anchor_lang..Event$GT$4data17h5d5ae8bce5419084E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 37,
+      "own_drift": 961744
+    },
+    {
+      "dep_vma": "0xcd230",
+      "cand_vma": "0x85750",
+      "size": 424,
+      "names": [
+        "_ZN81_$LT$pump_recovered..extend..ExtendAccountEvent$u20$as$u20$anchor_lang..Event$GT$4data17he6989310e6eb227dE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 34,
+      "own_drift": -293600
+    },
+    {
+      "dep_vma": "0xd5878",
+      "cand_vma": "0x8bc60",
+      "size": 632,
+      "names": [
+        "_ZN93_$LT$pump_recovered..migrate..CompletePumpAmmMigrationEvent$u20$as$u20$anchor_lang..Event$GT$4data17h32653431e490df7aE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 33,
+      "own_drift": -302104
+    },
+    {
+      "dep_vma": "0xf1188",
+      "cand_vma": "0xa09e8",
+      "size": 552,
+      "names": [
+        "_ZN87_$LT$pump_recovered..sweep..SweepBondingCurveFeeEvent$u20$as$u20$anchor_lang..Event$GT$4data17h2d5b12ebb3c5e27aE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 30,
+      "own_drift": -329632
+    },
+    {
+      "dep_vma": "0xfb310",
+      "cand_vma": "0xaab70",
+      "size": 376,
+      "names": [
+        "_ZN83_$LT$pump_recovered..cashback..ClaimCashbackEvent$u20$as$u20$anchor_lang..Event$GT$4data17h68e8f87cae5ce66eE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 30,
+      "own_drift": -329632
+    },
+    {
+      "dep_vma": "0x156e30",
+      "cand_vma": "0xf4bd0",
+      "size": 440,
+      "names": [
+        "entrypoint"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 21,
+      "own_drift": -402016
+    },
+    {
+      "dep_vma": "0x1570c0",
+      "cand_vma": "0xf4e60",
+      "size": 264,
+      "names": [
+        "__rust_realloc"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -402016
+    },
+    {
+      "dep_vma": "0x1571c8",
+      "cand_vma": "0xf4f68",
+      "size": 240,
+      "names": [
+        "__rust_alloc_zeroed"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -402016
+    },
+    {
+      "dep_vma": "0x17e088",
+      "cand_vma": "0x10fbd8",
+      "size": 928,
+      "names": [
+        "_ZN10anchor_spl16associated_token6create17h6561dde2cd623eacE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x17e428",
+      "cand_vma": "0x10ff78",
+      "size": 928,
+      "names": [
+        "_ZN10anchor_spl16associated_token17create_idempotent17h215bd1a6cd303f9dE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x17fcc8",
+      "cand_vma": "0x111818",
+      "size": 2192,
+      "names": [
+        "_ZN10anchor_spl10token_202216transfer_checked17h72375b9d73ad03f9E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x180558",
+      "cand_vma": "0x1120a8",
+      "size": 1896,
+      "names": [
+        "_ZN10anchor_spl10token_20227mint_to17h42efd1cba93bbb51E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x180cc0",
+      "cand_vma": "0x112810",
+      "size": 1896,
+      "names": [
+        "_ZN10anchor_spl10token_20224burn17h454cdfa3b91b9354E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x181428",
+      "cand_vma": "0x112f78",
+      "size": 1880,
+      "names": [
+        "_ZN10anchor_spl10token_202213close_account17h131babf48db8b137E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x181b80",
+      "cand_vma": "0x1136d0",
+      "size": 1480,
+      "names": [
+        "_ZN10anchor_spl10token_202216initialize_mint217hdaa577153d227549E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x182148",
+      "cand_vma": "0x113c98",
+      "size": 1672,
+      "names": [
+        "_ZN10anchor_spl10token_202213set_authority17h57886ceed26e7289E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1827d0",
+      "cand_vma": "0x114320",
+      "size": 1584,
+      "names": [
+        "_ZN10anchor_spl21token_2022_extensions20group_member_pointer31group_member_pointer_initialize17h1e4196de25fe51acE"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x182e00",
+      "cand_vma": "0x114950",
+      "size": 1584,
+      "names": [
+        "_ZN10anchor_spl21token_2022_extensions13group_pointer24group_pointer_initialize17h0314a6ce7eb16b52E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x183430",
+      "cand_vma": "0x114f80",
+      "size": 1584,
+      "names": [
+        "_ZN10anchor_spl21token_2022_extensions16metadata_pointer27metadata_pointer_initialize17hbec52757d59bd745E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x183a60",
+      "cand_vma": "0x1155b0",
+      "size": 1576,
+      "names": [
+        "_ZN10anchor_spl21token_2022_extensions20mint_close_authority31mint_close_authority_initialize17h8047bc779234eaceE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x184088",
+      "cand_vma": "0x115bd8",
+      "size": 1568,
+      "names": [
+        "_ZN10anchor_spl21token_2022_extensions16non_transferable32non_transferable_mint_initialize17hfbdba17d64a64060E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1846a8",
+      "cand_vma": "0x1161f8",
+      "size": 952,
+      "names": [
+        "_ZN10anchor_spl21token_2022_extensions14token_metadata25token_metadata_initialize17h6081758ace839a94E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x184a60",
+      "cand_vma": "0x1165b0",
+      "size": 984,
+      "names": [
+        "_ZN10anchor_spl21token_2022_extensions14token_metadata31token_metadata_update_authority17h661e6c58c172d60bE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x184e38",
+      "cand_vma": "0x116988",
+      "size": 2664,
+      "names": [
+        "_ZN10anchor_spl21token_2022_extensions12transfer_fee31harvest_withheld_tokens_to_mint17hc91da26ce2a822abE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1858a0",
+      "cand_vma": "0x1173f0",
+      "size": 1584,
+      "names": [
+        "_ZN10anchor_spl21token_2022_extensions13transfer_hook24transfer_hook_initialize17h83f19b1f7cb2b122E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1862f0",
+      "cand_vma": "0x117e40",
+      "size": 1136,
+      "names": [
+        "_ZN85_$LT$anchor_spl..token_interface..Mint$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17h47844e3f97f1601bE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1868b8",
+      "cand_vma": "0x118408",
+      "size": 3944,
+      "names": [
+        "_ZN10anchor_spl8metadata27create_metadata_accounts_v317h76bff6d9a5a9cfd7E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x187820",
+      "cand_vma": "0x119370",
+      "size": 984,
+      "names": [
+        "_ZN89_$LT$anchor_spl..metadata..MetadataAccount$u20$as$u20$anchor_lang..AccountDeserialize$GT$15try_deserialize17h20bae18d51a7e4e6E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x187bf8",
+      "cand_vma": "0x119748",
+      "size": 2296,
+      "names": [
+        "_ZN101_$LT$anchor_spl..metadata..SetAndVerifySizedCollectionItem$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h1932b5b6650a565cE",
+        "_ZN141_$LT$anchor_spl..metadata..__cpi_client_accounts_set_and_verify_collection..SetAndVerifyCollection$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h8b334803af922dd5E",
+        "_ZN145_$LT$anchor_spl..metadata..__cpi_client_accounts_create_metadata_accounts_v3..CreateMetadataAccountsV3$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h4f8982cac5a315a9E",
+        "_ZN161_$LT$anchor_spl..metadata..__cpi_client_accounts_set_and_verify_sized_collection_item..SetAndVerifySizedCollectionItem$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17hb5c5a7800727a46dE",
+        "_ZN92_$LT$anchor_spl..metadata..SetAndVerifyCollection$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h910480ee5ab43d7bE",
+        "_ZN94_$LT$anchor_spl..metadata..CreateMetadataAccountsV3$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17hf3d88434254e36b6E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x191338",
+      "cand_vma": "0x122e88",
+      "size": 2688,
+      "names": [
+        "_ZN14spl_token_202211instruction16TokenInstruction4pack17h1e4ff5f224fad351E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x194c40",
+      "cand_vma": "0x126790",
+      "size": 1792,
+      "names": [
+        "_ZN9spl_token11instruction16TokenInstruction4pack17hd512860a9509ef78E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19a1d8",
+      "cand_vma": "0x12bd28",
+      "size": 192,
+      "names": [
+        "_ZN52_$LT$T$u20$as$u20$alloc..slice..hack..ConvertVec$GT$6to_vec17h0398bda17a556effE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19bb30",
+      "cand_vma": "0x12d680",
+      "size": 136,
+      "names": [
+        "_ZN104_$LT$anchor_lang..error..Error$u20$as$u20$core..convert..From$LT$anchor_lang..error..AnchorError$GT$$GT$4from17hf12314b067d455ccE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19c1b8",
+      "cand_vma": "0x12dd08",
+      "size": 520,
+      "names": [
+        "_ZN11anchor_lang5error5Error12with_pubkeys17h8b2286804ce1e694E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19d630",
+      "cand_vma": "0x12f180",
+      "size": 912,
+      "names": [
+        "_ZN11anchor_lang14system_program8allocate17h53f97157afdf40b3E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19d9c0",
+      "cand_vma": "0x12f510",
+      "size": 912,
+      "names": [
+        "_ZN11anchor_lang14system_program6assign17h1d660580a752b289E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19dd50",
+      "cand_vma": "0x12f8a0",
+      "size": 832,
+      "names": [
+        "_ZN11anchor_lang14system_program14create_account17ha169272466e010a1E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19e090",
+      "cand_vma": "0x12fbe0",
+      "size": 800,
+      "names": [
+        "_ZN11anchor_lang14system_program8transfer17hb648f3970dbe8794E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19e3b0",
+      "cand_vma": "0x12ff00",
+      "size": 896,
+      "names": [
+        "_ZN11anchor_lang14system_program18transfer_with_seed17haef1e0871362152fE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a1d70",
+      "cand_vma": "0x1338c0",
+      "size": 984,
+      "names": [
+        "_ZN10solana_cpi23invoke_signed_unchecked17h3238cfad5f21273fE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a2158",
+      "cand_vma": "0x133ca8",
+      "size": 472,
+      "names": [
+        "_ZN10solana_cpi15get_return_data17h67f2bed75186d3a8E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a78e0",
+      "cand_vma": "0x139430",
+      "size": 352,
+      "names": [
+        "_ZN18solana_instruction11Instruction14new_with_bytes17hf217327136360132E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1ab748",
+      "cand_vma": "0x13d270",
+      "size": 208,
+      "names": [
+        "_ZN60_$LT$alloc..string..String$u20$as$u20$core..clone..Clone$GT$5clone17h32a4cac90503f494E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 12,
+      "own_drift": -451800
+    },
+    {
+      "dep_vma": "0x17cae8",
+      "cand_vma": "0x10e638",
+      "size": 448,
+      "names": [
+        "_ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$2$u5d$$GT$17h7e60936a9d1839c2E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x17cca8",
+      "cand_vma": "0x10e7f8",
+      "size": 616,
+      "names": [
+        "_ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$3$u5d$$GT$17h383bc4b080c12987E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x17cf10",
+      "cand_vma": "0x10ea60",
+      "size": 816,
+      "names": [
+        "_ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$4$u5d$$GT$17h49be40543d3b9d3eE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x17d240",
+      "cand_vma": "0x10ed90",
+      "size": 1016,
+      "names": [
+        "_ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$5$u5d$$GT$17h2370504509d7d247E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x17d638",
+      "cand_vma": "0x10f188",
+      "size": 1216,
+      "names": [
+        "_ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$6$u5d$$GT$17heead651fb3789a82E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x17daf8",
+      "cand_vma": "0x10f648",
+      "size": 360,
+      "names": [
+        "_ZN4core3ptr76drop_in_place$LT$alloc..vec..Vec$LT$solana_account_info..AccountInfo$GT$$GT$17h892c4bec000ce951E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x17dc60",
+      "cand_vma": "0x10f7b0",
+      "size": 336,
+      "names": [
+        "_ZN5alloc7raw_vec11finish_grow17ha3c6818157c3c6fbE"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x188758",
+      "cand_vma": "0x11a2a8",
+      "size": 232,
+      "names": [
+        "_ZN4core3ptr176drop_in_place$LT$core..result..Result$LT$core..option..Option$LT$mpl_token_metadata..generated..types..collection_details..CollectionDetails$GT$$C$std..io..error..Error$GT$$GT$17h1c5661c0c907f849E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x188840",
+      "cand_vma": "0x11a390",
+      "size": 232,
+      "names": [
+        "_ZN4core3ptr178drop_in_place$LT$core..result..Result$LT$core..option..Option$LT$mpl_token_metadata..generated..types..programmable_config..ProgrammableConfig$GT$$C$std..io..error..Error$GT$$GT$17h975cf0ce7d8dda8eE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x188928",
+      "cand_vma": "0x11a478",
+      "size": 48,
+      "names": [
+        "_ZN4core3ptr42drop_in_place$LT$alloc..string..String$GT$17he624376a2513f1c3E"
+      ],
+      "mult_dep": 7,
+      "mult_cand": 7,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x188960",
+      "cand_vma": "0x11a4b0",
+      "size": 48,
+      "names": [
+        "_ZN4core3ptr205drop_in_place$LT$$LT$alloc..boxed..Box$LT$dyn$u20$core..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$u20$as$u20$core..convert..From$LT$alloc..string..String$GT$$GT$..from..StringError$GT$17h28a524cbe21fe50eE"
+      ],
+      "mult_dep": 7,
+      "mult_cand": 7,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x188990",
+      "cand_vma": "0x11a4e0",
+      "size": 184,
+      "names": [
+        "_ZN4core3ptr42drop_in_place$LT$std..io..error..Error$GT$17h27e3371d95c426a7E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x188a48",
+      "cand_vma": "0x11a598",
+      "size": 616,
+      "names": [
+        "_ZN4core3ptr450drop_in_place$LT$$LP$core..result..Result$LT$core..option..Option$LT$mpl_token_metadata..generated..types..token_standard..TokenStandard$GT$$C$std..io..error..Error$GT$$C$core..result..Result$LT$core..option..Option$LT$mpl_token_metadata..generated..types..collection..Collection$GT$$C$std..io..error..Error$GT$$C$core..result..Result$LT$core..option..Option$LT$mpl_token_metadata..generated..types..uses..Uses$GT$$C$std..io..error..Error$GT$$RP$$GT$17h9ee01d3d2123a312E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x189088",
+      "cand_vma": "0x11abd8",
+      "size": 336,
+      "names": [
+        "_ZN5alloc7raw_vec11finish_grow17ha1b347cedaf5d907E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x189728",
+      "cand_vma": "0x11b278",
+      "size": 648,
+      "names": [
+        "_ZN5borsh3ser14BorshSerialize10try_to_vec17hdbf5848d021d3b04E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x18e728",
+      "cand_vma": "0x120278",
+      "size": 336,
+      "names": [
+        "_ZN5alloc7raw_vec11finish_grow17h1926dc762afc70d8E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x194848",
+      "cand_vma": "0x126398",
+      "size": 336,
+      "names": [
+        "_ZN5alloc7raw_vec11finish_grow17h1c1a4dbfe30bf46aE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1970a8",
+      "cand_vma": "0x128bf8",
+      "size": 184,
+      "names": [
+        "_ZN4core3ptr42drop_in_place$LT$std..io..error..Error$GT$17hfbcc1e1bbf4cc4f2E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x197160",
+      "cand_vma": "0x128cb0",
+      "size": 440,
+      "names": [
+        "_ZN4core3ptr88drop_in_place$LT$spl_token_metadata_interface..instruction..TokenMetadataInstruction$GT$17h1327de09637fe5f2E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1973b8",
+      "cand_vma": "0x128f08",
+      "size": 336,
+      "names": [
+        "_ZN5alloc7raw_vec11finish_grow17hea24ac1a751d3206E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x198b08",
+      "cand_vma": "0x12a658",
+      "size": 752,
+      "names": [
+        "_ZN28spl_token_metadata_interface11instruction10initialize17h9555b8399e237977E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x198df8",
+      "cand_vma": "0x12a948",
+      "size": 496,
+      "names": [
+        "_ZN28spl_token_metadata_interface11instruction16update_authority17h2248a33dcb8f1b86E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1993f0",
+      "cand_vma": "0x12af40",
+      "size": 1280,
+      "names": [
+        "_ZN35spl_associated_token_account_client11instruction42build_associated_token_account_instruction17h275168420d5155e4E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x199b80",
+      "cand_vma": "0x12b6d0",
+      "size": 48,
+      "names": [
+        "_ZN4core3ptr42drop_in_place$LT$alloc..string..String$GT$17hd337f576b871e04bE"
+      ],
+      "mult_dep": 7,
+      "mult_cand": 7,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x199bc0",
+      "cand_vma": "0x12b710",
+      "size": 48,
+      "names": [
+        "_ZN4core3ptr205drop_in_place$LT$$LT$alloc..boxed..Box$LT$dyn$u20$core..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$u20$as$u20$core..convert..From$LT$alloc..string..String$GT$$GT$..from..StringError$GT$17ha969d899829068ebE"
+      ],
+      "mult_dep": 7,
+      "mult_cand": 7,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x199bf8",
+      "cand_vma": "0x12b748",
+      "size": 448,
+      "names": [
+        "_ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$2$u5d$$GT$17hfb00dca503880918E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x199db8",
+      "cand_vma": "0x12b908",
+      "size": 616,
+      "names": [
+        "_ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$3$u5d$$GT$17hf6805be87556f7fcE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19a020",
+      "cand_vma": "0x12bb70",
+      "size": 360,
+      "names": [
+        "_ZN4core3ptr76drop_in_place$LT$alloc..vec..Vec$LT$solana_account_info..AccountInfo$GT$$GT$17h817ddc8b7c19c719E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19a620",
+      "cand_vma": "0x12c170",
+      "size": 312,
+      "names": [
+        "_ZN5alloc7raw_vec11finish_grow17h2410e7b2da5aec84E"
+      ],
+      "mult_dep": 3,
+      "mult_cand": 3,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19b378",
+      "cand_vma": "0x12cec8",
+      "size": 360,
+      "names": [
+        "_ZN11anchor_lang8accounts12account_info90_$LT$impl$u20$anchor_lang..ToAccountInfos$u20$for$u20$solana_account_info..AccountInfo$GT$16to_account_infos17hdf2f20c30936b72eE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19bbb8",
+      "cand_vma": "0x12d708",
+      "size": 160,
+      "names": [
+        "_ZN107_$LT$anchor_lang..error..Error$u20$as$u20$core..convert..From$LT$solana_program_error..ProgramError$GT$$GT$4from17h7884c24a646e0802E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19bc58",
+      "cand_vma": "0x12d7a8",
+      "size": 176,
+      "names": [
+        "_ZN94_$LT$anchor_lang..error..Error$u20$as$u20$core..convert..From$LT$std..io..error..Error$GT$$GT$4from17h41589d3fe15b14d8E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19d240",
+      "cand_vma": "0x12ed90",
+      "size": 624,
+      "names": [
+        "_ZN11anchor_lang5error117_$LT$impl$u20$core..convert..From$LT$anchor_lang..error..Error$GT$$u20$for$u20$solana_program_error..ProgramError$GT$4from17h013a911537a7a0f9E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a0e30",
+      "cand_vma": "0x132980",
+      "size": 312,
+      "names": [
+        "_ZN5alloc7raw_vec11finish_grow17h9a17a3fef324b228E"
+      ],
+      "mult_dep": 3,
+      "mult_cand": 3,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a3690",
+      "cand_vma": "0x1351e0",
+      "size": 1016,
+      "names": [
+        "_ZN20solana_program_error95_$LT$impl$u20$core..convert..From$LT$solana_program_error..ProgramError$GT$$u20$for$u20$u64$GT$4from17h8cf2e15569df08f5E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a3a88",
+      "cand_vma": "0x1355d8",
+      "size": 1192,
+      "names": [
+        "_ZN85_$LT$solana_program_error..ProgramError$u20$as$u20$core..convert..From$LT$u64$GT$$GT$4from17h2bb00d1bff745246E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a6690",
+      "cand_vma": "0x1381e0",
+      "size": 376,
+      "names": [
+        "_ZN4core3ptr71drop_in_place$LT$alloc..boxed..Box$LT$bincode..error..ErrorKind$GT$$GT$17h6594138e2a8e373dE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a6808",
+      "cand_vma": "0x138358",
+      "size": 312,
+      "names": [
+        "_ZN5alloc7raw_vec11finish_grow17h94c6bb75974eedf9E"
+      ],
+      "mult_dep": 3,
+      "mult_cand": 3,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a7a40",
+      "cand_vma": "0x139590",
+      "size": 104,
+      "names": [
+        "_ZN7bincode5error129_$LT$impl$u20$core..convert..From$LT$std..io..error..Error$GT$$u20$for$u20$alloc..boxed..Box$LT$bincode..error..ErrorKind$GT$$GT$4from17h4d271887899d2c8bE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a8de0",
+      "cand_vma": "0x13a930",
+      "size": 48,
+      "names": [
+        "_ZN4core3ptr205drop_in_place$LT$$LT$alloc..boxed..Box$LT$dyn$u20$core..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$u20$as$u20$core..convert..From$LT$alloc..string..String$GT$$GT$..from..StringError$GT$17haa33e72927efbb22E"
+      ],
+      "mult_dep": 7,
+      "mult_cand": 7,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a8e60",
+      "cand_vma": "0x13a9b0",
+      "size": 328,
+      "names": [
+        "_ZN5borsh2de44unexpected_eof_to_unexpected_length_of_input17h2b3dc24cc6646402E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a91f8",
+      "cand_vma": "0x13ad48",
+      "size": 48,
+      "names": [
+        "_ZN4core3ptr42drop_in_place$LT$alloc..string..String$GT$17h011406a4ea775ceeE"
+      ],
+      "mult_dep": 7,
+      "mult_cand": 7,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a9db0",
+      "cand_vma": "0x13b900",
+      "size": 120,
+      "names": [
+        "_ZN3std2io5error5Error4_new17habca9846dc0b142dE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1aad00",
+      "cand_vma": "0x13c850",
+      "size": 48,
+      "names": [
+        "_ZN4core3ptr42drop_in_place$LT$alloc..string..String$GT$17hc7bdeb3f66a71d91E"
+      ],
+      "mult_dep": 7,
+      "mult_cand": 7,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1ab048",
+      "cand_vma": "0x13cb98",
+      "size": 336,
+      "names": [
+        "_ZN5alloc7raw_vec11finish_grow17hb4c6fa824ed5e3a5E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 11,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1639e8",
+      "cand_vma": "0x196658",
+      "size": 520,
+      "names": [
+        "_ZN81_$LT$pump_recovered..trade_types..CompleteEvent$u20$as$u20$anchor_lang..Event$GT$4data17h3945574688092a28E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 7,
+      "own_drift": 207984
+    },
+    {
+      "dep_vma": "0x163bf0",
+      "cand_vma": "0xf7558",
+      "size": 696,
+      "names": [
+        "_ZN82_$LT$pump_recovered..trade..PostCompleteBuyEvent$u20$as$u20$anchor_lang..Event$GT$4data17h90e671e8b838c96bE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 6,
+      "own_drift": -444056
+    },
+    {
+      "dep_vma": "0x17bc38",
+      "cand_vma": "0x10e1b0",
+      "size": 16,
+      "names": [
+        "__rust_alloc_error_handler"
+      ],
+      "mult_dep": 13,
+      "mult_cand": 14,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 2,
+      "own_drift": -449160
+    },
+    {
+      "dep_vma": "0x17c3d8",
+      "cand_vma": "0x10e1c0",
+      "size": 368,
+      "names": [
+        "_ZN14pump_recovered5trade19native_transfer_fee3Fee13calculate_fee17he9206e20bc8e0880E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 2,
+      "own_drift": -451096
+    },
+    {
+      "dep_vma": "0x17c548",
+      "cand_vma": "0x10e330",
+      "size": 776,
+      "names": [
+        "_ZN14pump_recovered5trade19native_transfer_fee3Fee24calculate_pre_fee_amount17h9e6a91f4b687465eE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 2,
+      "own_drift": -451096
+    },
+    {
+      "dep_vma": "0x1ab1b0",
+      "cand_vma": "0x13cd00",
+      "size": 32,
+      "names": [
+        "_ZN5alloc5alloc18handle_alloc_error17h2639b51fed40df27E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 2,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x17f5c8",
+      "cand_vma": "0x111118",
+      "size": 896,
+      "names": [
+        "_ZN83_$LT$anchor_spl..token..TokenAccount$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17he48b305db3b0f5a2E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x185ed0",
+      "cand_vma": "0x117a20",
+      "size": 1056,
+      "names": [
+        "_ZN93_$LT$anchor_spl..token_interface..TokenAccount$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17hb39bd10713dbb5ceE"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1886c8",
+      "cand_vma": "0x11a218",
+      "size": 104,
+      "names": [
+        "_ZN4core3fmt3num49_$LT$impl$u20$core..fmt..Debug$u20$for$u20$u8$GT$3fmt17hfb2f1b1e19663038E"
+      ],
+      "mult_dep": 8,
+      "mult_cand": 8,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x188d30",
+      "cand_vma": "0x11a880",
+      "size": 688,
+      "names": [
+        "_ZN58_$LT$alloc..string..String$u20$as$u20$core..fmt..Write$GT$10write_char17hde85ebe9d0efc980E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x188fe0",
+      "cand_vma": "0x11ab30",
+      "size": 168,
+      "names": [
+        "_ZN58_$LT$alloc..string..String$u20$as$u20$core..fmt..Write$GT$9write_str17h3c31393c25b00ee9E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x18e048",
+      "cand_vma": "0x11fb98",
+      "size": 1312,
+      "names": [
+        "_ZN100_$LT$mpl_token_metadata..generated..types..data_v2..DataV2$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17ha445b8c4ac074305E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x199060",
+      "cand_vma": "0x12abb0",
+      "size": 384,
+      "names": [
+        "_ZN145_$LT$spl_pod..optional_keys..OptionalNonZeroPubkey$u20$as$u20$core..convert..TryFrom$LT$core..option..Option$LT$solana_pubkey..Pubkey$GT$$GT$$GT$8try_from17ha081e725eab50f0cE",
+        "_ZN188_$LT$spl_pod..optional_keys..OptionalNonZeroElGamalPubkey$u20$as$u20$core..convert..TryFrom$LT$core..option..Option$LT$solana_zk_sdk..encryption..pod..elgamal..PodElGamalPubkey$GT$$GT$$GT$8try_from17hf043d990f8ada951E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x199a50",
+      "cand_vma": "0x12b5a0",
+      "size": 112,
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h6abe537d7d445b66E"
+      ],
+      "mult_dep": 6,
+      "mult_cand": 6,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x199ac0",
+      "cand_vma": "0x12b610",
+      "size": 48,
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17hb1668ebf66e599bfE"
+      ],
+      "mult_dep": 5,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x199af0",
+      "cand_vma": "0x12b640",
+      "size": 40,
+      "names": [
+        "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17ha1c539aaca474a6cE"
+      ],
+      "mult_dep": 3,
+      "mult_cand": 3,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x199b18",
+      "cand_vma": "0x12b668",
+      "size": 48,
+      "names": [
+        "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17h0e800c3e4272b2b4E"
+      ],
+      "mult_dep": 5,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x199b70",
+      "cand_vma": "0x12b6c0",
+      "size": 16,
+      "names": [
+        "_ZN4core3fmt9Formatter9write_fmt17h6119a4afef0fe719E"
+      ],
+      "mult_dep": 13,
+      "mult_cand": 14,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19a2c8",
+      "cand_vma": "0x12be18",
+      "size": 688,
+      "names": [
+        "_ZN58_$LT$alloc..string..String$u20$as$u20$core..fmt..Write$GT$10write_char17hde85ebe9d0efc980E"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19a578",
+      "cand_vma": "0x12c0c8",
+      "size": 168,
+      "names": [
+        "_ZN58_$LT$alloc..string..String$u20$as$u20$core..fmt..Write$GT$9write_str17h3c31393c25b00ee9E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19a9e0",
+      "cand_vma": "0x12c530",
+      "size": 40,
+      "names": [
+        "_ZN60_$LT$alloc..string..String$u20$as$u20$core..fmt..Display$GT$3fmt17hc501bcb5ea40ee00E"
+      ],
+      "mult_dep": 6,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x19aff8",
+      "cand_vma": "0x12cb48",
+      "size": 896,
+      "names": [
+        "_ZN73_$LT$solana_program_error..ProgramError$u20$as$u20$core..clone..Clone$GT$5clone17h69555c9fe52e84d5E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a0530",
+      "cand_vma": "0x132080",
+      "size": 880,
+      "names": [
+        "_ZN14solana_program7program13invoke_signed17h5b75336cd08ad7a2E"
+      ],
+      "mult_dep": 1,
+      "mult_cand": 1,
+      "unambiguous": true,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a2330",
+      "cand_vma": "0x133e80",
+      "size": 16,
+      "names": [
+        "_ZN41_$LT$bool$u20$as$u20$core..fmt..Debug$GT$3fmt17h925303b92f9e2a08E"
+      ],
+      "mult_dep": 13,
+      "mult_cand": 14,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a2358",
+      "cand_vma": "0x133ea8",
+      "size": 104,
+      "names": [
+        "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..Debug$u20$for$u20$usize$GT$3fmt17h82fc57bbe1b9600aE"
+      ],
+      "mult_dep": 8,
+      "mult_cand": 8,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a23c0",
+      "cand_vma": "0x133f10",
+      "size": 104,
+      "names": [
+        "_ZN4core3fmt3num50_$LT$impl$u20$core..fmt..Debug$u20$for$u20$u64$GT$3fmt17h477d3185a1d1c233E"
+      ],
+      "mult_dep": 8,
+      "mult_cand": 8,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a2fd8",
+      "cand_vma": "0x134b28",
+      "size": 48,
+      "names": [
+        "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17h04eb4a4ac12ba48cE"
+      ],
+      "mult_dep": 5,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a3008",
+      "cand_vma": "0x134b58",
+      "size": 24,
+      "names": [
+        "_ZN45_$LT$$RF$T$u20$as$u20$core..fmt..LowerHex$GT$3fmt17hc23b119a6399e29bE"
+      ],
+      "mult_dep": 7,
+      "mult_cand": 7,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a6468",
+      "cand_vma": "0x137fb8",
+      "size": 112,
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h7789c1029afe4fefE"
+      ],
+      "mult_dep": 6,
+      "mult_cand": 6,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a64d8",
+      "cand_vma": "0x138028",
+      "size": 48,
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h34876b5b97c86dd7E"
+      ],
+      "mult_dep": 5,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a6508",
+      "cand_vma": "0x138058",
+      "size": 112,
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h5f5b2390920a8d20E"
+      ],
+      "mult_dep": 6,
+      "mult_cand": 6,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a6620",
+      "cand_vma": "0x138170",
+      "size": 104,
+      "names": [
+        "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..Debug$u20$for$u20$usize$GT$3fmt17h82fc57bbe1b9600aE"
+      ],
+      "mult_dep": 8,
+      "mult_cand": 8,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a7b00",
+      "cand_vma": "0x139650",
+      "size": 112,
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h40cda4353c8ff1aeE"
+      ],
+      "mult_dep": 6,
+      "mult_cand": 6,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a7c18",
+      "cand_vma": "0x139768",
+      "size": 104,
+      "names": [
+        "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..Debug$u20$for$u20$usize$GT$3fmt17h82fc57bbe1b9600aE"
+      ],
+      "mult_dep": 8,
+      "mult_cand": 8,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a9128",
+      "cand_vma": "0x13ac78",
+      "size": 40,
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h685637206419ee7aE"
+      ],
+      "mult_dep": 3,
+      "mult_cand": 3,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a9150",
+      "cand_vma": "0x13aca0",
+      "size": 40,
+      "names": [
+        "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17hf9f8ba58ffb83801E"
+      ],
+      "mult_dep": 3,
+      "mult_cand": 3,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a9178",
+      "cand_vma": "0x13acc8",
+      "size": 104,
+      "names": [
+        "_ZN4core3fmt3num50_$LT$impl$u20$core..fmt..Debug$u20$for$u20$i32$GT$3fmt17hcd10c1fd99870841E"
+      ],
+      "mult_dep": 8,
+      "mult_cand": 8,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a9228",
+      "cand_vma": "0x13ad78",
+      "size": 40,
+      "names": [
+        "_ZN58_$LT$alloc..string..String$u20$as$u20$core..fmt..Debug$GT$3fmt17h3f26e13e535684c2E"
+      ],
+      "mult_dep": 6,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1a9250",
+      "cand_vma": "0x13ada0",
+      "size": 40,
+      "names": [
+        "_ZN223_$LT$$LT$alloc..boxed..Box$LT$dyn$u20$core..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$u20$as$u20$core..convert..From$LT$alloc..string..String$GT$$GT$..from..StringError$u20$as$u20$core..fmt..Display$GT$3fmt17ha903e47335f9322bE"
+      ],
+      "mult_dep": 6,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1ab1f8",
+      "cand_vma": "0x13cd48",
+      "size": 40,
+      "names": [
+        "_ZN221_$LT$$LT$alloc..boxed..Box$LT$dyn$u20$core..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$u20$as$u20$core..convert..From$LT$alloc..string..String$GT$$GT$..from..StringError$u20$as$u20$core..fmt..Debug$GT$3fmt17h7efa36fade732230E"
+      ],
+      "mult_dep": 6,
+      "mult_cand": 5,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451760
+    },
+    {
+      "dep_vma": "0x1ab488",
+      "cand_vma": "0x13cfb0",
+      "size": 680,
+      "names": [
+        "_ZN5alloc6string6String4push17h4caf904cbb1af86dE"
+      ],
+      "mult_dep": 2,
+      "mult_cand": 2,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451800
+    },
+    {
+      "dep_vma": "0x1ab818",
+      "cand_vma": "0x13d340",
+      "size": 168,
+      "names": [
+        "_ZN58_$LT$alloc..string..String$u20$as$u20$core..fmt..Write$GT$9write_str17h3c31393c25b00ee9E"
+      ],
+      "mult_dep": 4,
+      "mult_cand": 4,
+      "unambiguous": false,
+      "crossed_nonzero_intervals": 1,
+      "own_drift": -451800
+    }
+  ]
+}
