@@ -1,0 +1,86 @@
+{
+ "before": {
+  "note": "chantier-T3-pre-fee-amount baseline",
+  "original_windows": 1035,
+  "candidate_windows": 1051,
+  "matched": 919,
+  "exact": 163,
+  "unmatched": 116,
+  "call_consistent_original": 852
+ },
+ "after": {
+  "original_windows": 1035,
+  "candidate_windows": 1058,
+  "matched": 921,
+  "exact": 163,
+  "unmatched": 114,
+  "call_consistent_original": 854
+ },
+ "gained_matched": [
+  "0x80488",
+  "0x834c8"
+ ],
+ "lost_matched": [],
+ "gained_raw": [],
+ "lost_raw": [],
+ "drift_before": {
+  "original_windows": 1035,
+  "candidate_windows": 1051,
+  "matched": 919,
+  "exact": 163,
+  "call_only_raw_fail": 239,
+  "potential_if_delta0": 402,
+  "unique_pairs": 918,
+  "intervals_nonzero": 89
+ },
+ "drift_after": {
+  "original_windows": 1035,
+  "candidate_windows": 1058,
+  "matched": 921,
+  "exact": 163,
+  "call_only_raw_fail": 239,
+  "potential_if_delta0": 402,
+  "unique_pairs": 920,
+  "intervals_nonzero": 95
+ },
+ "helper_windows": {
+  "0x80df8": {
+   "size": 2120,
+   "symbol": "trade_v3::v3_buy_cost",
+   "candidate_size": 2160,
+   "ratio": 0.9495
+  },
+  "0x80488": {
+   "size": 576,
+   "symbol": "trade_v3::v3_sub_fees",
+   "candidate_size": 576,
+   "ratio": 1.0
+  },
+  "0x834c8": {
+   "size": 736,
+   "symbol": "trade_v3::v3_post_base",
+   "candidate_size": 736,
+   "ratio": 1.0
+  },
+  "0x806c8": {
+   "size": 1840,
+   "symbol": "trade_v3::v3_net_quote",
+   "candidate_size": 1848,
+   "ratio": 0.9718
+  },
+  "0x83088": {
+   "size": 1088,
+   "symbol": "trade_v3::v3_post_fill",
+   "candidate_size": 1032,
+   "ratio": 0.8906
+  },
+  "0x837a8": {
+   "size": 1112,
+   "symbol": "trade_v3::v3_fit_post",
+   "candidate_size": 1128,
+   "ratio": 0.8143
+  }
+ },
+ "candidate_sha256": "7134efde2dad4f77d98d77c083c4ebf32012e1e99e541ffd0efdcd126322758e",
+ "symbols_sha256": "a1fb9481747e7ea1cc45e6cd4183a1ac81e172eca4ada2e3dc67a6c53047b587"
+}
